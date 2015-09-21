@@ -76,12 +76,10 @@
     <Compile Include="Commands\BlockCommands\SwitchToUsedBlock.cs" />
     <Compile Include="Commands\BlockCommands\SwitchToUsedQuestionBlockCommand.cs" />
     <Compile Include="Commands\ICommand.cs" />
-    <Compile Include="Commands\MarioCommands\SwitchToCrouchMarioCommand.cs" />
-    <Compile Include="Commands\MarioCommands\SwitchToJumpMarioCommand.cs" />
-    <Compile Include="Commands\MarioCommands\SwitchToLeftIdleMarioCommand.cs" />
-    <Compile Include="Commands\MarioCommands\SwitchToLeftRunMarioCommand.cs" />
-    <Compile Include="Commands\MarioCommands\SwitchToRightIdleMarioCommand.cs" />
-    <Compile Include="Commands\MarioCommands\SwitchToRightRunMarioCommand.cs" />
+    <Compile Include="Commands\MarioCommands\SwitchToFurtherLeftMarioStanceCommand.cs" />
+    <Compile Include="Commands\MarioCommands\SwitchToFurtherRightMarioStanceCommand.cs" />
+    <Compile Include="Commands\MarioCommands\SwitchToHigherMarioStanceCommand.cs" />
+    <Compile Include="Commands\MarioCommands\SwitchToLowerMarioStanceCommand.cs" />
     <Compile Include="Commands\MarioCommands\SwitchToBigMarioCommand.cs" />
     <Compile Include="Commands\MarioCommands\SwitchToDeadMarioCommand.cs" />
     <Compile Include="Commands\MarioCommands\SwitchToFireMarioCommand.cs" />
