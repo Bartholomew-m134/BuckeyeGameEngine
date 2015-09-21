@@ -11,13 +11,11 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Game
 {
-    //Kyle's comment.
-    // John's comment.
-    //Jackson's comment
     public class Game1 : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        List<IController> controllerList;
 
         public Game1()
         {
@@ -27,7 +25,8 @@ namespace Game
 
         protected override void Initialize()
         {
-
+            controllerList = new List<IController>();
+            controllerList.Add(new KeyboardController(this));
             base.Initialize();
         }
 
@@ -44,8 +43,10 @@ namespace Game
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
-                this.Exit();
+            foreach (IController controller in controllerList)
+            {
+                controller.Update();
+            }
 
 
             base.Update(gameTime);
