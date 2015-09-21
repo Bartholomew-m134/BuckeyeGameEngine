@@ -5,11 +5,11 @@ using System.Text;
 
 namespace Game.Commands.MarioCommands
 {
-    public class SwitchToHigherMarioStanceCommand : ICommand
+    public class LowerMarioStanceCommand : ICommand
     {
         private Game1 game;
 
-        public SwitchToHigherMarioStanceCommand(Game1 game)
+        public LowerMarioStanceCommand(Game1 game)
         {
             this.game = game;
         }

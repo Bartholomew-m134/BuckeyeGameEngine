@@ -5,16 +5,16 @@ using System.Text;
 
 namespace Game.Commands.MarioCommands
 {
-    public class SwitchToFurtherLeftMarioStanceCommand : ICommand
+    public class FurtherRightMarioStanceCommand : ICommand
     {
         private Game1 game;
 
-        public SwitchToFurtherLeftMarioStanceCommand(Game1 game)
+        public FurtherRightMarioStanceCommand(Game1 game)
         {
             this.game = game;
         }
 
-        public void Execture()
+        public void Execute()
         {
 
         }
