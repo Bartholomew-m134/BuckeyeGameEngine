@@ -74,6 +74,8 @@
   <ItemGroup>
     <Compile Include="Blocks\BrickBlock.cs" />
     <Compile Include="Blocks\IBlock.cs" />
+    <Compile Include="Blocks\QuestionBlock.cs" />
+    <Compile Include="Blocks\UsedBlock.cs" />
     <Compile Include="Commands\BlockCommands\RemoveBrickBlockCommand.cs" />
     <Compile Include="Commands\BlockCommands\SwitchToUsedBlockCommand.cs" />
     <Compile Include="Commands\BlockCommands\SwitchToUsedQuestionBlockCommand.cs" />
@@ -92,6 +94,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="SpriteFactories\BlockSpriteFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
