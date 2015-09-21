@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Game.Commands.MarioCommands
 {
-    public class SwitchToDeadMarioCommand
+    public class SwitchToDeadMarioCommand : ICommand
     {
         private Game1 game;
 

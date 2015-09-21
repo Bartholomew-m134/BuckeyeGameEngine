@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Game.Commands.MovementCommands
+namespace Game.Commands.MarioCommands
 {
-    public class SwitchToCrouchMarioCommand
+    public class SwitchToLeftRunMarioCommand : ICommand
     {
         private Game1 game;
 
-        public SwitchToCrouchMarioCommand(Game1 game)
+        public SwitchToLeftRunMarioCommand(Game1 game)
         {
             this.game = game;
         }

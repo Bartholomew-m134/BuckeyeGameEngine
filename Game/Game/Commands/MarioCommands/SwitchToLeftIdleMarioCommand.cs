@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Game.Commands.MovementCommands
+namespace Game.Commands.MarioCommands
 {
-    public class SwitchToLeftIdleMarioCommand
+    public class SwitchToLeftIdleMarioCommand : ICommand
     {
         private Game1 game;
 

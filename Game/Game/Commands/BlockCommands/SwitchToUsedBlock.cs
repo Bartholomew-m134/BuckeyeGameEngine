@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Game.Commands.BlockCommands
 {
-    public class SwitchToUsedBlock
+    public class SwitchToUsedBlock : ICommand
     {
         private Game1 game;
 

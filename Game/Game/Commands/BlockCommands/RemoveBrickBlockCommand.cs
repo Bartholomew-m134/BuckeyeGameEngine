@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Game.Commands.BlockCommands
 {
-    public class RemoveBrickBlockCommand
+    public class RemoveBrickBlockCommand : ICommand
     {
         private Game1 game;
 
