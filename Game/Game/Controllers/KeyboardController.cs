@@ -1,4 +1,5 @@
-﻿using Game.Commands.BlockCommands;
+﻿using Game.Commands;
+using Game.Commands.BlockCommands;
 using Game.Commands.MarioCommands;
 using Microsoft.Xna.Framework.Input;
 using System;
@@ -33,7 +34,9 @@ namespace Game
 
             RegisterCommand(Keys.Z, new SwitchToUsedQuestionBlockCommand(game));
             RegisterCommand(Keys.X, new RemoveBrickBlockCommand(game));
-            RegisterCommand(Keys.C, new SwitchToUsedBlock(game));
+            RegisterCommand(Keys.C, new SwitchToUsedBlockCommand(game));
+
+            RegisterCommand(Keys.R, new ResetToDefaultCommand(game));
         }
 
         public void RegisterCommand(Keys key, ICommand command)

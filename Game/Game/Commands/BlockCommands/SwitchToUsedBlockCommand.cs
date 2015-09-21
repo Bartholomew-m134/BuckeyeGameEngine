@@ -5,11 +5,11 @@ using System.Text;
 
 namespace Game.Commands.BlockCommands
 {
-    public class SwitchToUsedBlock : ICommand
+    public class SwitchToUsedBlockCommand : ICommand
     {
         private Game1 game;
 
-        public SwitchToUsedBlock(Game1 game)
+        public SwitchToUsedBlockCommand(Game1 game)
         {
             this.game = game;
         }
