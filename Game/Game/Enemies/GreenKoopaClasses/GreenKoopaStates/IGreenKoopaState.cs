@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Game.Enemies.GoombaClasses.GoombaStates
+namespace Game.Enemies.GreenKoopaClasses.GreenKoopaStates
 {
-    class GoombaWalkingLeftState : IGoombaState
+    public interface IGreenKoopaState
     {
     }
 }

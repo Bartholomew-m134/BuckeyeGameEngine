@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Game.Enemies.GoombaClasses.GoombaStates
 {
-    class GoombaWalkingLeftState : IGoombaState
+    interface GoombaFlippedState : IGoombaState
     {
     }
 }
