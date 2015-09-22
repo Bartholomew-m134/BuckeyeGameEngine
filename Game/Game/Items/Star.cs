@@ -7,11 +7,14 @@ namespace Game.Items
 {
     public class Star : IItem
     {
-        public Star() { 
-        
+        public Star()
+        {
+
         }
 
-        public void Update() { 
-        
+        public void Update()
+        {
+
+        }
     }
 }

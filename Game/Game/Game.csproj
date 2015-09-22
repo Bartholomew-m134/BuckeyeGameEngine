@@ -91,10 +91,17 @@
     <Compile Include="Commands\ResetToDefaultCommand.cs" />
     <Compile Include="Controllers\IController.cs" />
     <Compile Include="Controllers\KeyboardController.cs" />
+    <Compile Include="Items\Coin.cs" />
+    <Compile Include="Items\Flower.cs" />
+    <Compile Include="Items\GreenMushroom.cs" />
+    <Compile Include="Items\IItem.cs" />
+    <Compile Include="Items\RedMushroom.cs" />
+    <Compile Include="Items\Star.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="SpriteFactories\BlockSpriteFactory.cs" />
+    <Compile Include="SpriteFactories\ItemsSpriteFactory.cs" />
     <Compile Include="States\Dead.cs" />
     <Compile Include="States\FireLeftCrouching.cs" />
     <Compile Include="States\FireLeftIdle.cs" />

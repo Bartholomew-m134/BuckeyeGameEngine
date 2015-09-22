@@ -7,13 +7,14 @@ namespace Game.Items
 {
     public class Coin : IItem
     {
-        public Coin() { 
-        
+        public Coin()
+        {
+
         }
 
-        public void Update() { 
-        
-        }
+        public void Update()
+        {
 
+        }
     }
 }

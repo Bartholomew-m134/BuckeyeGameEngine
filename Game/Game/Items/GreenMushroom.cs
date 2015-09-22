@@ -8,11 +8,11 @@ namespace Game.Items
     public class GreenMushroom : IItem
     {
         public GreenMushroom() { 
-        
+
         }
 
-        public void Update() { 
-        
+        public void Update(){
+    
         }
     }
 }

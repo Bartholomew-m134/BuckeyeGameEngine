@@ -7,9 +7,8 @@ using System.Text;
 
 namespace Game.SpriteFactories
 {
-    class ItemSpriteFactory
+    public static class ItemsSpriteFactory
     {
-
         private static Texture2D itemSpriteSheet;
 
         public static void Load(ContentManager content, GraphicsDevice device)
@@ -21,7 +20,5 @@ namespace Game.SpriteFactories
         {
 
         }
-
-
     }
 }
