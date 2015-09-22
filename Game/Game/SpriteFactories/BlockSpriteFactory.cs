@@ -13,7 +13,7 @@ namespace Game.SpriteFactories
 
         public static void Load(ContentManager content, GraphicsDevice device)
         {
-
+            blockSpriteSheet = content.Load<Texture2D>("MarioTilesSpriteSheet");
         }
 
         public static void Unload()

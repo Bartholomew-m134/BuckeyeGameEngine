@@ -102,6 +102,7 @@
     <Compile Include="Game1.cs" />
     <Compile Include="SpriteFactories\BlockSpriteFactory.cs" />
     <Compile Include="SpriteFactories\ItemsSpriteFactory.cs" />
+    <Compile Include="States\BlockStates\IBlockState.cs" />
     <Compile Include="States\Dead.cs" />
     <Compile Include="States\FireLeftCrouching.cs" />
     <Compile Include="States\FireLeftIdle.cs" />
