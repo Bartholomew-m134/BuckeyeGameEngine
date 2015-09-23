@@ -5,7 +5,26 @@ using System.Text;
 
 namespace Game.Enemies.GoombaClasses.GoombaStates
 {
-    class GoombaSmashedState : IGoombaState
+    public class GoombaSmashedState : IGoombaState
     {
+        private Goomba goomba;
+        private Game1 myGame;
+        public GoombaSmashedState(Goomba goomba, Game1 game)
+        {
+            this.goomba = goomba;
+            this.myGame = game;
+            this.goomba.goombaSprite = Game.SpriteFactories.EnemySpriteFactory.CreateGoombaSmashedSprite(myGame);
+        }
+        public void SmashGoomba()
+        {
+        }
+        public void DirectionChangeGoomba()
+        {
+            goomba.state = new GoombaWalkingRightState(goomba, myGame);
+        }
+        public void FlipGoomba()
+        {
+            goomba.state = new GoombaFlippedState(goomba, myGame);
+        }
     }
 }
