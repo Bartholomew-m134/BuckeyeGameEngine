@@ -161,6 +161,7 @@
     <Compile Include="States\BlockStates\BrickBlockState.cs" />
     <Compile Include="States\BlockStates\HiddenBlockState.cs" />
     <Compile Include="States\BlockStates\IBlockState.cs" />
+    <Compile Include="States\BlockStates\NullBlockState.cs" />
     <Compile Include="States\BlockStates\QuestionBlockState.cs" />
     <Compile Include="States\BlockStates\UsedBlockState.cs" />
     <Compile Include="States\MarioStates\Dead.cs" />

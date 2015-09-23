@@ -16,7 +16,7 @@ namespace Game.Blocks
         public BrickBlock(Game1 game)
         {
             this.game = game;
-            blockState = new BrickBlockState(game);
+            blockState = new BrickBlockState(this, game);
         }
 
         public void Update()
@@ -26,7 +26,7 @@ namespace Game.Blocks
 
         public void Draw()
         {
-            blockState.Draw();
+            sprite.Draw(game.spriteBatch, new Microsoft.Xna.Framework.Vector2(10, 10));
         }
 
         public void Disappear()

@@ -1,4 +1,5 @@
-﻿using Game.SpriteFactories;
+﻿using Game.Blocks;
+using Game.SpriteFactories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,28 +10,27 @@ namespace Game.States.BlockStates
     public class BrickBlockState : IBlockState
     {
         private Game1 game;
-        private ISprite sprite;
+        private Block block;
 
-        public BrickBlockState(Game1 game)
+        public BrickBlockState(Block block, Game1 game)
         {
             this.game = game;
-            sprite = BlockSpriteFactory.CreateBrickBlockSprite(game);
-        }
-
-
-        public void Draw()
-        {
-            
+            this.block = block;
+            block.sprite = BlockSpriteFactory.CreateBrickBlockSprite(game);
         }
 
         public void Update()
         {
-            
+            block.sprite.Update();
         }
 
-        public IBlockState Disappear()
+        public void Disappear()
         {
-            return new HiddenBlockState(game);
+            block.blockState = new NullBlockState(block, game);
+        }
+
+        public void GetUsed()
+        {
         }
     }
 }

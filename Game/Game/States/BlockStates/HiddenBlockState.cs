@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Game.Blocks;
+using Game.SpriteFactories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,24 +10,26 @@ namespace Game.States.BlockStates
     public class HiddenBlockState : IBlockState
     {
         private Game1 game;
+        private Block block;
 
-        public HiddenBlockState(Game1 game)
+        public HiddenBlockState(Block block, Game1 game)
         {
             this.game = game;
-        }
-
-        public void Draw() 
-        {
+            this.block = block;
+            block.sprite = BlockSpriteFactory.Create
         }
 
         public void Update()
         {
-            
+            block.sprite.Update();
+        }
+        public void Disappear()
+        {
         }
 
-        public void ToUsed()
+        public void GetUsed()
         {
-
+            block.blockState = new UsedBlockState(block, game);
         }
     }
 }

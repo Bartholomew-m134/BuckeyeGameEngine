@@ -1,4 +1,5 @@
 ﻿using Game.Blocks;
+using Game.SpriteFactories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,12 +7,12 @@ using System.Text;
 
 namespace Game.States.BlockStates
 {
-    public class QuestionBlockState : IBlockState
+    public class NullBlockState : IBlockState
     {
         private Game1 game;
         private Block block;
 
-        public QuestionBlockState(Block block, Game1 game)
+        public NullBlockState(Block block, Game1 game)
         {
             this.game = game;
             this.block = block;
@@ -20,16 +21,18 @@ namespace Game.States.BlockStates
 
         public void Update()
         {
-            block.sprite.Update();
+            
         }
+
 
         public void Disappear()
         {
+
         }
 
         public void GetUsed()
         {
-            block.blockState = new UsedBlockState(block, game);
+
         }
     }
 }
