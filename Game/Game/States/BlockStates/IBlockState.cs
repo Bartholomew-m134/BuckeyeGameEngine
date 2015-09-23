@@ -7,8 +7,10 @@ namespace Game.States.BlockStates
 {
     public interface IBlockState
     {
-        public void Draw();
-
         public void Update();
+
+        public void Disappear();
+
+        public void GetUsed();
     }
 }

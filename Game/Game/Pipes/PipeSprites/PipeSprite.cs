@@ -20,16 +20,18 @@ namespace Game.Pipes.PipeSprites
 
         }
 
-        public void Update() {
-        
+        public void Update()
+        {
+
         }
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 location) {
+        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        {
             int width = 32;
             int height = 32;
             int sourceX = 0;
             int sourceY = 128;
-            
+
 
             Rectangle sourceRectangle = new Rectangle(sourceX, sourceY, width, height);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
@@ -38,5 +40,6 @@ namespace Game.Pipes.PipeSprites
             spriteBatch.Draw(Texture, destinationRectangle, Color.White);
             spriteBatch.End();
 
+        }
     }
 }
