@@ -16,8 +16,7 @@ namespace Game.States.BlockStates
         {
             this.game = game;
             this.block = block;
-            block.sprite = 
-     
+            block.sprite = TileSpriteFactory.CreateUsedBlockSprite(game);
         }
 
         public void Update()

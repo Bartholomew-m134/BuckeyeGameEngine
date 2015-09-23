@@ -77,10 +77,7 @@
     <Compile Include="Blocks\BlockSprites\HiddenBlockSprite.cs" />
     <Compile Include="Blocks\BlockSprites\QuestionBlockSprite.cs" />
     <Compile Include="Blocks\BlockSprites\UsedBlockSprite.cs" />
-    <Compile Include="Blocks\BrickBlock.cs" />
     <Compile Include="Blocks\IBlock.cs" />
-    <Compile Include="Blocks\QuestionBlock.cs" />
-    <Compile Include="Blocks\UsedBlock.cs" />
     <Compile Include="Commands\BlockCommands\RemoveBrickBlockCommand.cs" />
     <Compile Include="Commands\BlockCommands\SwitchToUsedBlockCommand.cs" />
     <Compile Include="Commands\BlockCommands\SwitchToUsedQuestionBlockCommand.cs" />

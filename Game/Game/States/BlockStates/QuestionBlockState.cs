@@ -1,4 +1,5 @@
 ﻿using Game.Blocks;
+using Game.SpriteFactories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace Game.States.BlockStates
         {
             this.game = game;
             this.block = block;
-            block.sprite = 
+            block.sprite = TileSpriteFactory.CreateQuestionBlockSprite(game);
         }
 
         public void Update()
