@@ -12,7 +12,7 @@ namespace Game.Mario
         public ISprite sprite;
         public MarioInstance()
         {
-
+          
         }
 
         public void Update()
