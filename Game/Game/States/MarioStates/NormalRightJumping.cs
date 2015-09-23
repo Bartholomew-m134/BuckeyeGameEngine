@@ -9,11 +9,14 @@ namespace Game.States
     class NormalRightJumping : IMarioState
     {
 
-               private MarioInstance mario;
+        private MarioInstance mario;
+        private Game1 game;
 
-        public NormalRightJumping(MarioInstance mario)
+        public NormalRightJumping(MarioInstance mario, Game1 game)
         {
             this.mario = mario;
+            this.game = game;
+            SpriteFactories.MarioSpriteFactory.CreateNormalRightJumpingSprite(game);
         }
 
         public void left()
@@ -38,7 +41,7 @@ namespace Game.States
 
         public void land()
         {
-            mario.state = new NormalRightIdle(mario);
+            mario.state = new NormalRightIdle(mario, game);
         }
 
         public void jump()
@@ -48,7 +51,7 @@ namespace Game.States
 
         public void flower()
         {
-            mario.state = new FireRightJumping(mario);
+            mario.state = new FireRightJumping(mario, game);
         }
 
         public void mushroom()
@@ -58,12 +61,12 @@ namespace Game.States
 
         public void damage()
         {
-            mario.state = new SmallRightJumping(mario);
+            mario.state = new SmallRightJumping(mario, game);
         }
 
         public void die()
         {
-            mario.state = new Dead(mario);
+            mario.state = new Dead(mario, game);
         }
 
     }

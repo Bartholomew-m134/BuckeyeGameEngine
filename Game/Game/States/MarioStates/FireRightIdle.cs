@@ -10,20 +10,23 @@ namespace Game.States
     {
 
         private MarioInstance mario;
+        private Game1 game;
 
-        public FireRightIdle(MarioInstance mario)
+        public FireRightIdle(MarioInstance mario, Game1 game)
         {
             this.mario = mario;
+            this.game = game;
+            SpriteFactories.MarioSpriteFactory.CreateFireRightIdleSprite(game);
         }
 
         public void left()
         {
-            mario.state = new FireLeftIdle(mario);
+            mario.state = new FireLeftIdle(mario, game);
         }
 
         public void right()
         {
-            mario.state = new FireRightRunning(mario);
+            mario.state = new FireRightRunning(mario, game);
         }
 
         public void up()
@@ -33,7 +36,7 @@ namespace Game.States
 
         public void down()
         {
-            mario.state = new FireRightCrouching(mario);
+            mario.state = new FireRightCrouching(mario, game);
         }
 
         public void land()
@@ -43,7 +46,7 @@ namespace Game.States
 
         public void jump()
         {
-            mario.state = new FireRightJumping(mario);
+            mario.state = new FireRightJumping(mario, game);
         }
 
         public void flower()
@@ -58,12 +61,12 @@ namespace Game.States
 
         public void damage()
         {
-            mario.state = new SmallRightIdle(mario);
+            mario.state = new SmallRightIdle(mario, game);
         }
 
         public void die()
         {
-            mario.state = new Dead(mario);
+            mario.state = new Dead(mario, game);
         }
 
     }

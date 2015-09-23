@@ -154,7 +154,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="SpriteFactories\BlockSpriteFactory.cs" />
+    <Compile Include="SpriteFactories\TileSpriteFactory.cs" />
     <Compile Include="SpriteFactories\EnemySpriteFactory.cs" />
     <Compile Include="SpriteFactories\ItemsSpriteFactory.cs" />
     <Compile Include="SpriteFactories\MarioSpriteFactory.cs" />

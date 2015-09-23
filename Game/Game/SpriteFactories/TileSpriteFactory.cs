@@ -8,13 +8,13 @@ using System.Text;
 
 namespace Game.SpriteFactories
 {
-    public static class BlockSpriteFactory
+    public static class TileSpriteFactory
     {
-        private static Texture2D blockSpriteSheet;
+        private static Texture2D tileSpriteSheet;
 
         public static void Load(ContentManager content, GraphicsDevice device)
         {
-            blockSpriteSheet = content.Load<Texture2D>("MarioTilesSpriteSheet");
+            tileSpriteSheet = content.Load<Texture2D>("MarioTilesSpriteSheet");
         }
 
         public static void Unload()
@@ -24,17 +24,17 @@ namespace Game.SpriteFactories
 
         public static ISprite CreateQuestionBlockSprite(Game1 game)
         {
-            return new QuestionBlockSprite(blockSpriteSheet, game);
+            return new QuestionBlockSprite(tileSpriteSheet, game);
         }
 
         public static ISprite CreateBrickBlockSprite(Game1 game)
         {
-            return new BrickBlockSprite(blockSpriteSheet, game);
+            return new BrickBlockSprite(tileSpriteSheet, game);
         }
 
         public static ISprite CreateUsedBlockSprite(Game1 game)
         {
-
+            return new UsedBlockSprite(tileSpriteSheet, game);
         }
 
 
