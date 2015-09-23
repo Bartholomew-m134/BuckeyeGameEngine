@@ -1,12 +1,16 @@
-﻿using System;
+﻿using Game.States.BlockStates;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+
 
 namespace Game.Blocks
 {
     public class BrickBlock : IBlock
     {
+        private IBlockState blockState;
+
         public BrickBlock(Game1 game)
         {
 
@@ -20,6 +24,11 @@ namespace Game.Blocks
         public void Draw()
         {
             
+        }
+
+        public void ToUsed()
+        {
+            blockState = new UsedBlockState();
         }
     }
 }
