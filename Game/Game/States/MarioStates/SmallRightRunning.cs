@@ -12,7 +12,7 @@ namespace Game.States
         private MarioInstance mario;
         private Game1 game;
 
-        public SmallRIghtRunning(MarioInstance mario, Game1 game)
+        public SmallRightRunning(MarioInstance mario, Game1 game)
         {
             this.mario = mario;
             this.game = game;
