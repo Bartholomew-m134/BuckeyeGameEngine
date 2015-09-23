@@ -4,26 +4,40 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
 
 namespace Game.Mario.MarioSprites
 {
     public class NormalRightJumpingSprite : ISprite
     {
-        private Texture2D Texture { get; set; }
-
-        public NormalRightJumpingSprite(Texture2D texture, Game1 game)
+        private Game1 game;
+        private Texture2D spriteSheet;
+        private int width;
+        private int height;
+        private int sheetXLocation;
+        private int sheetYLocation;
+        public NormalRightJumpingSprite(Texture2D spriteSheet, Game1 game)
         {
-
-            
+            this.game = game;
+            this.spriteSheet = spriteSheet;
+            width = 15;
+            height = 31;
+            sheetXLocation = 359;
+            sheetYLocation = 83;
         }
         void Update()
         {
 
         }
 
-        void Draw()
+        void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
+            Rectangle sourceRectangle = new Rectangle(sheetXLocation, sheetYLocation, width, height);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
 
+            spriteBatch.Begin();
+            spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.End();
         }
     }
 }

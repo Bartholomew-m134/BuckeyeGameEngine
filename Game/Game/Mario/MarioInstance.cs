@@ -16,11 +16,12 @@ namespace Game.Mario
 
         public void Update()
         {
-
+            throw new NotImplementedException();
         }
 
-        public void Draw() { 
-        
+        public void Draw() 
+        {
+            throw new NotImplementedException();
         }
     }
 }

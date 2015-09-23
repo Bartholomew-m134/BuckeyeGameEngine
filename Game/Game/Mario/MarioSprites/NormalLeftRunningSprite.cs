@@ -4,24 +4,25 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
 
 namespace Game.Mario.MarioSprites
 {
     public class NormalLeftRunningSprite : ISprite
     {
-        private Texture2D Texture { get; set; }
-
-
-        public NormalLeftRunningSprite(Texture2D texture, Game1 game) {
-
-            
+        private Game1 game;
+        private Texture2D spriteSheet;
+        public NormalLeftRunningSprite(Texture2D spriteSheet, Game1 game)
+        {
+            this.game = game;
+            this.spriteSheet = spriteSheet; 
         }
         void Update()
         {
 
         }
 
-        void Draw()
+        void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
 
         }
