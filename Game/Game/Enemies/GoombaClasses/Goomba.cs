@@ -13,7 +13,7 @@ namespace Game.Enemies.GoombaClasses
         public IGoombaState state;
         public ISprite goombaSprite;
         private Game1 myGame;
-        private Vector2 greenKoopaVector;
+        private Vector2 goombaVector;
 
         public Goomba(Game1 game)
         {

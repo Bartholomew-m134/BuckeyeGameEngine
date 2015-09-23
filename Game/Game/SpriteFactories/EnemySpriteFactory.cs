@@ -42,5 +42,10 @@ namespace Game.SpriteFactories
         {
             return new GoombaWalkingRightSprite(enemySpriteSheet, game);
         }
+
+        public static ISprite CreateGoombaWalkingRightSprite(Game1 game)
+        {
+            return new GoombaWalkingRightSprite(enemySpriteSheet, game);
+        }
     }
 }

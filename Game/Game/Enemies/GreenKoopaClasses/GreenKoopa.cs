@@ -22,5 +22,34 @@ namespace Game.Enemies.GreenKoopaClasses
             greenKoopaVector.X = 400;
             greenKoopaVector.Y = 200;
         }
+
+        public void GreenKoopaEmergingFromShell()
+        {
+            state.GreenKoopaEmergingFromShell();
+        }
+
+        public void GreenKoopaShellFlipped()
+        {
+            state.GreenKoopaShellFlipped();
+        }
+
+        public void GreenKoopaHidingInShell()
+        {
+            state.GreenKoopaHidingInShell();
+        }
+
+        public void GreenKoopaChangeDirection()
+        {
+            state.GreenKoopaChangeDirection();
+        }
+        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        {
+            greenKoopaSprite.Draw(spriteBatch, greenKoopaVector);
+        }
+
+        public void Update()
+        {
+            greenKoopaSprite.Update();
+        }
     }
 }
