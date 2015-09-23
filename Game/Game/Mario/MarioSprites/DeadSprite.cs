@@ -23,7 +23,7 @@ namespace Game.Mario.MarioSprites
             width = 14;
             height = 13;
             sheetXLocation = 390;
-            sheetYLocation = 29;
+            sheetYLocation = 16;
         }
         void Update()
         {
