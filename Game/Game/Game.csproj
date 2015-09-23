@@ -74,11 +74,10 @@
   <ItemGroup>
     <Compile Include="Blocks\Block.cs" />
     <Compile Include="Blocks\BlockSprites\BrickBlockSprite.cs" />
+    <Compile Include="Blocks\BlockSprites\HiddenBlockSprite.cs" />
     <Compile Include="Blocks\BlockSprites\QuestionBlockSprite.cs" />
-    <Compile Include="Blocks\BrickBlock.cs" />
+    <Compile Include="Blocks\BlockSprites\UsedBlockSprite.cs" />
     <Compile Include="Blocks\IBlock.cs" />
-    <Compile Include="Blocks\QuestionBlock.cs" />
-    <Compile Include="Blocks\UsedBlock.cs" />
     <Compile Include="Commands\BlockCommands\RemoveBrickBlockCommand.cs" />
     <Compile Include="Commands\BlockCommands\SwitchToUsedBlockCommand.cs" />
     <Compile Include="Commands\BlockCommands\SwitchToUsedQuestionBlockCommand.cs" />
@@ -161,6 +160,7 @@
     <Compile Include="States\BlockStates\BrickBlockState.cs" />
     <Compile Include="States\BlockStates\HiddenBlockState.cs" />
     <Compile Include="States\BlockStates\IBlockState.cs" />
+    <Compile Include="States\BlockStates\NullBlockState.cs" />
     <Compile Include="States\BlockStates\QuestionBlockState.cs" />
     <Compile Include="States\BlockStates\UsedBlockState.cs" />
     <Compile Include="States\MarioStates\Dead.cs" />
