@@ -18,7 +18,6 @@ namespace Game.Mario.MarioSprites
         private int currentSprite;
         private Vector2 currentDimensions;
         private Vector2 currentLocation;
-        private bool leftArmMovingFoward;
 
         private Vector2 firstFireLeftRunningSpriteLocation;
         private Vector2 secondFireLeftRunningSpriteLocation;
@@ -47,21 +46,23 @@ namespace Game.Mario.MarioSprites
             thirdFireLeftRunningSpriteDimensions.Y = 29;
  
             firstFireLeftRunningSpriteLocation.X = 152;
-            firstFireLeftRunningSpriteLocation.Y = 153;
+            firstFireLeftRunningSpriteLocation.Y = 122;
 
             secondFireLeftRunningSpriteLocation.X = 128;
-            secondFireLeftRunningSpriteLocation.X = 152;
+            secondFireLeftRunningSpriteLocation.X = 122;
 
             thirdFireLeftRunningSpriteLocation.X = 102;
-            thirdFireLeftRunningSpriteLocation.Y = 152;
+            thirdFireLeftRunningSpriteLocation.Y = 123;
             
             fireLeftRunningSpriteDimensions.Add(firstFireLeftRunningSpriteDimensions);
             fireLeftRunningSpriteDimensions.Add(secondFireLeftRunningSpriteDimensions);
             fireLeftRunningSpriteDimensions.Add(thirdFireLeftRunningSpriteDimensions);
+            fireLeftRunningSpriteDimensions.Add(secondFireLeftRunningSpriteDimensions);
 
             fireLeftRunningSpriteLocations.Add(firstFireLeftRunningSpriteLocation);
             fireLeftRunningSpriteLocations.Add(secondFireLeftRunningSpriteLocation);
             fireLeftRunningSpriteLocations.Add(thirdFireLeftRunningSpriteLocation);
+            fireLeftRunningSpriteLocations.Add(secondFireLeftRunningSpriteLocation);
         }
         void Update()
         {
