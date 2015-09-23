@@ -103,10 +103,16 @@
     <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaStates\GreenKoopaWalkingLeftState.cs" />
     <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaStates\GreenKoopaWalkingRightState.cs" />
     <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaStates\IGreenKoopaState.cs" />
+    <Compile Include="ISprite.cs" />
     <Compile Include="Items\Coin.cs" />
     <Compile Include="Items\Flower.cs" />
     <Compile Include="Items\GreenMushroom.cs" />
     <Compile Include="Items\IItem.cs" />
+    <Compile Include="Items\ItemSprites\CoinSprite.cs" />
+    <Compile Include="Items\ItemSprites\FlowerSprite.cs" />
+    <Compile Include="Items\ItemSprites\GreenMushroomSprite.cs" />
+    <Compile Include="Items\ItemSprites\RedMushroomSprite.cs" />
+    <Compile Include="Items\ItemSprites\StarSprite.cs" />
     <Compile Include="Items\RedMushroom.cs" />
     <Compile Include="Items\Star.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
