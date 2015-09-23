@@ -9,6 +9,7 @@ namespace Game.Mario
     public class MarioInstance : IMario
     {
         public IMarioState state;
+        public ISprite sprite;
         public MarioInstance()
         {
 
