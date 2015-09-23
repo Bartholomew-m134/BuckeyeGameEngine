@@ -16,7 +16,7 @@ namespace Game.States
         {
             this.mario = mario;
             this.game = game;
-            SpriteFactories.MarioSpriteFactory.CreateFireLeftCrouchingSprite(game);
+            mario.sprite = SpriteFactories.MarioSpriteFactory.CreateFireLeftCrouchingSprite(game);
         }
 
         public void left()
@@ -56,12 +56,12 @@ namespace Game.States
 
         public void mushroom()
         {
-
+            mario.state = new NormalLeftCrouching(mario, game);
         }
 
         public void damage()
         {
-            mario.state = new SmallLeftIdle(mario);
+            mario.state = new SmallLeftIdle(mario, game);
         }
 
         public void die()

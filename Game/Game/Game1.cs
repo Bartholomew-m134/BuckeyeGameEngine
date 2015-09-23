@@ -10,6 +10,8 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Game.Items;
 using Game.SpriteFactories;
+using Game.Mario;
+using Game.Blocks;
 
 namespace Game
 {
@@ -18,11 +20,21 @@ namespace Game
         public GraphicsDeviceManager graphics;
         public SpriteBatch spriteBatch;
         private List<IController> controllerList;
-        private IItem coin;
-        private IItem flower;
-        private IItem redMushroom;
-        private IItem greenMushroom;
-        private IItem star;
+
+        public IItem coin;
+        public IItem flower;
+        public IItem redMushroom;
+        public IItem greenMushroom;
+        public IItem star;
+
+        public MarioInstance mario;
+
+        public Block brickBlock;
+        public Block hiddenBlock;
+        public Block questionBlock;
+
+
+
 
         public Game1()
         {
@@ -48,6 +60,12 @@ namespace Game
             greenMushroom = new GreenMushroom(this);
             redMushroom = new RedMushroom(this);
             star = new Star(this);
+
+            mario = new MarioInstance();
+
+            brickBlock = new Block(1, this);
+            hiddenBlock = new Block(2, this);
+            questionBlock = new Block(3, this);
         }
 
         protected override void UnloadContent()
@@ -68,6 +86,12 @@ namespace Game
             redMushroom.Update();
             star.Update();
 
+            mario.Update();
+
+            brickBlock.Update();
+            hiddenBlock.Update();
+            questionBlock.Update();
+
             base.Update(gameTime);
         }
 
@@ -82,6 +106,12 @@ namespace Game
             greenMushroom.Draw();
             redMushroom.Draw();
             star.Draw();
+
+            mario.Draw();
+
+            brickBlock.Draw();
+            hiddenBlock.Draw();
+            questionBlock.Draw();
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Game.States
         {
             this.mario = mario;
             this.game = game;
-            SpriteFactories.MarioSpriteFactory.CreateSmallRightIdleSprite(game);
+            mario.sprite = SpriteFactories.MarioSpriteFactory.CreateSmallRightIdleSprite(game);
         }
 
         public void left()
@@ -61,7 +61,7 @@ namespace Game.States
 
         public void damage()
         {
-            mario.state = new Dead(mario, game);
+            //mario.state = new Dead(mario, game);
         }
 
         public void die()

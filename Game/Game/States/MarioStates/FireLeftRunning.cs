@@ -16,7 +16,7 @@ namespace Game.States
         {
             this.mario = mario;
             this.game = game;
-            SpriteFactories.MarioSpriteFactory.CreateFireLeftRunningSprite(game);
+            mario.sprite = SpriteFactories.MarioSpriteFactory.CreateFireLeftRunningSprite(game);
         }
 
         public void left()
@@ -56,7 +56,7 @@ namespace Game.States
 
         public void mushroom()
         {
-
+            mario.state = new NormalLeftRunning(mario, game);
         }
 
         public void damage()
