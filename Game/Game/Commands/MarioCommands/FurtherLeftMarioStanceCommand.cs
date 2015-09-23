@@ -14,9 +14,9 @@ namespace Game.Commands.MarioCommands
             this.game = game;
         }
 
-        public void Execture()
+        public void Execute()
         {
-
+            Mario.MarioInstance.state.left();
         }
     }
 }
