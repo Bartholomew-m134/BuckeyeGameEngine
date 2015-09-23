@@ -16,5 +16,9 @@ namespace Game.Items
         {
 
         }
+
+        public void Draw() { 
+        
+        }
     }
 }

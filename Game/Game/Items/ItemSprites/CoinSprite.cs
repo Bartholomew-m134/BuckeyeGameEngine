@@ -3,12 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Game.Items
+namespace Game.Items.ItemSprites
 {
-    public interface IItem
+    class CoinSprite
     {
-        void Update();
-
-        void Draw();
     }
 }

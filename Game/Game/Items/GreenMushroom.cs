@@ -14,5 +14,9 @@ namespace Game.Items
         public void Update(){
     
         }
+
+        public void Draw() { 
+        
+        }
     }
 }

@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Game.Items
+namespace Game
 {
-    public interface IItem
+    public interface ISprite
     {
         void Update();
 
         void Draw();
+
     }
 }
