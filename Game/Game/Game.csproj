@@ -104,6 +104,11 @@
     <Compile Include="Enemies\GoombaClasses\GoombaStates\GoombaWalkingRightState.cs" />
     <Compile Include="Enemies\GoombaClasses\GoombaStates\IGoombaState.cs" />
     <Compile Include="Enemies\GreenKoopaClasses\GreenKoopa.cs" />
+    <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaSprites\GreenKoopaEmergingFromShellSprite.cs" />
+    <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaSprites\GreenKoopaFlippedInShellSprite.cs" />
+    <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaSprites\GreenKoopaHidingInShellSprite.cs" />
+    <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaSprites\GreenKoopaWalkingLeftSprite.cs" />
+    <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaSprites\GreenKoopaWalkingRightSprite.cs" />
     <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaStates\GreenKoopaEmergingFromShellState.cs" />
     <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaStates\GreenKoopaFlippedInShellState.cs" />
     <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaStates\GreenKoopaHidingInShellState.cs" />
@@ -225,7 +230,9 @@
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="CodeReviews\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
   <!--
