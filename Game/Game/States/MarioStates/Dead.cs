@@ -19,6 +19,10 @@ namespace Game.States
             mario.sprite = SpriteFactories.MarioSpriteFactory.CreateDeadSprite(game);
         }
 
+        public void Update() {
+            mario.sprite.Update();
+        }
+
         public void left()
         {
 
