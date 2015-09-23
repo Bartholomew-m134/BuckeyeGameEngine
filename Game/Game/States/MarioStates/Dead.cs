@@ -11,9 +11,11 @@ namespace Game.States
     {
 
         private MarioInstance mario;
+        private Game1 game;
 
         public Dead(MarioInstance mario, Game1 game)
         {
+            this.game = game;
             SpriteFactories.MarioSpriteFactory.CreateDeadSprite(game);
         }
 
@@ -29,7 +31,7 @@ namespace Game.States
 
         public void up()
         {
-            mario.state = new FireLeftIdle(mario, game);
+            
         }
 
         public void down()
@@ -49,22 +51,22 @@ namespace Game.States
 
         public void flower()
         {
-
+            mario.state = new FireRightIdle(mario, game);
         }
 
         public void mushroom()
         {
-
+            mario.state = new NormalRightIdle(mario, game);
         }
 
         public void damage()
         {
-            mario.state = new SmallLeftIdle(mario);
+            mario.state = new SmallRightIdle(mario, game);
         }
 
         public void die()
         {
-            mario.state = new Dead(mario, game);
+            
         }
 
     }

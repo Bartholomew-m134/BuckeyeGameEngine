@@ -16,7 +16,7 @@ namespace Game.Commands.MarioCommands
 
         public void Execute()
         {
-            Mario.MarioInstance.state.die();
+            game.mario.state.die();
         }
     }
 }

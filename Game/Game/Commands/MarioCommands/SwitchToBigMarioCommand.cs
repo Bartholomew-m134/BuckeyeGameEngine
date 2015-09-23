@@ -16,7 +16,7 @@ namespace Game.Commands.MarioCommands
 
         public void Execute()
         {
-            Mario.MarioInstance.state.mushroom();
+            game.mario.state.mushroom();
         }
     }
 }

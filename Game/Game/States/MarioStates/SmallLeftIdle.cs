@@ -61,7 +61,7 @@ namespace Game.States
 
         public void damage()
         {
-            mario.state = new Dead(mario, game);
+            //mario.state = new Dead(mario, game);
         }
 
         public void die()

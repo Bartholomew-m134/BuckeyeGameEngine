@@ -16,8 +16,8 @@ namespace Game.Commands.MarioCommands
 
         public void Execute()
         {
-            Mario.MarioInstance.state.down();
-            Mario.MarioInstance.state.land();
+            game.mario.state.down();
+            game.mario.state.land();
         }
     }
 }

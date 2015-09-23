@@ -8,8 +8,8 @@ namespace Game.Mario
 {
     public class MarioInstance : IMario
     {
-        public static IMarioState state;
-        public static ISprite sprite;
+        public IMarioState state;
+        public ISprite sprite;
         public MarioInstance()
         {
 
