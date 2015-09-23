@@ -9,26 +9,29 @@ namespace Game.Blocks
 {
     public class BrickBlock : IBlock
     {
-        private IBlockState blockState;
+        public IBlockState blockState;
+        public ISprite sprite;
+        private Game1 game;
 
         public BrickBlock(Game1 game)
         {
-
+            this.game = game;
+            blockState = new BrickBlockState(game);
         }
 
         public void Update()
         {
-            
+            blockState.Update();
         }
 
         public void Draw()
         {
-            
+            blockState.Draw();
         }
 
-        public void ToUsed()
+        public void Disappear()
         {
-            blockState = new UsedBlockState();
+            blockState = new HiddenBlockState(game);
         }
     }
 }

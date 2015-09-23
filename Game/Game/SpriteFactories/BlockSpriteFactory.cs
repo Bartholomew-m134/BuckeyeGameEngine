@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Content;
+﻿using Game.Blocks.BlockSprites;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -20,5 +21,22 @@ namespace Game.SpriteFactories
         {
 
         }
+
+        public static ISprite CreateQuestionBlockSprite(Game1 game)
+        {
+            return new QuestionBlockSprite(blockSpriteSheet, game);
+        }
+
+        public static ISprite CreateBrickBlockSprite(Game1 game)
+        {
+            return new BrickBlockSprite(blockSpriteSheet, game);
+        }
+
+        public static ISprite CreateUsedBlockSprite(Game1 game)
+        {
+
+        }
+
+
     }
 }

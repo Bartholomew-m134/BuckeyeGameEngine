@@ -72,6 +72,9 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Blocks\Block.cs" />
+    <Compile Include="Blocks\BlockSprites\BrickBlockSprite.cs" />
+    <Compile Include="Blocks\BlockSprites\QuestionBlockSprite.cs" />
     <Compile Include="Blocks\BrickBlock.cs" />
     <Compile Include="Blocks\IBlock.cs" />
     <Compile Include="Blocks\QuestionBlock.cs" />

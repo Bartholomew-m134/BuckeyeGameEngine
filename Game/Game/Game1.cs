@@ -13,9 +13,9 @@ namespace Game
 {
     public class Game1 : Microsoft.Xna.Framework.Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
-        List<IController> controllerList;
+        public GraphicsDeviceManager graphics;
+        public SpriteBatch spriteBatch;
+        private List<IController> controllerList;
 
         public Game1()
         {
