@@ -16,21 +16,20 @@ namespace Game.Mario.MarioSprites
         private ArrayList fireLeftRunningSpriteDimensions;
         private ArrayList fireLeftRunningSpriteLocations;
         private int currentSprite;
-        Vector2 currentDimensions;
-        Vector2 currentLocation;
+        private Vector2 currentDimensions;
+        private Vector2 currentLocation;
+        private bool leftArmMovingFoward;
 
-        Vector2 firstFireLeftRunningSpriteLocation;
-        Vector2 secondFireLeftRunningSpriteLocation;
-        Vector2 thirdFireLeftRunningSpriteLocation;
-        Vector2 fourthFireLeftRunningSpriteLocation;
+        private Vector2 firstFireLeftRunningSpriteLocation;
+        private Vector2 secondFireLeftRunningSpriteLocation;
+        private Vector2 thirdFireLeftRunningSpriteLocation;
 
-        Vector2 firstFireLeftRunningSpriteDimensions;
-        Vector2 secondFireLeftRunningSpriteDimensions;
-        Vector2 thirdFireLeftRunningSpriteDimensions;
-        Vector2 fourthFireLeftRunningSpriteDimensions;
+        private Vector2 firstFireLeftRunningSpriteDimensions;
+        private Vector2 secondFireLeftRunningSpriteDimensions;
+        private Vector2 thirdFireLeftRunningSpriteDimensions;
 
-        Rectangle sourceRectangle;
-        Rectangle destinationRectangle;
+        private Rectangle sourceRectangle;
+        private Rectangle destinationRectangle;
 
         public FireLeftRunningSprite(Texture2D spriteSheet, Game1 game)
         {
@@ -46,9 +45,6 @@ namespace Game.Mario.MarioSprites
 
             thirdFireLeftRunningSpriteDimensions.X = 15;
             thirdFireLeftRunningSpriteDimensions.Y = 29;
-
-            fourthFireLeftRunningSpriteDimensions.X = 15;
-            fourthFireLeftRunningSpriteDimensions.Y = 29;
  
             firstFireLeftRunningSpriteLocation.X = 152;
             firstFireLeftRunningSpriteLocation.Y = 153;
@@ -58,25 +54,27 @@ namespace Game.Mario.MarioSprites
 
             thirdFireLeftRunningSpriteLocation.X = 102;
             thirdFireLeftRunningSpriteLocation.Y = 152;
-
-            fourthFireLeftRunningSpriteLocation.X = 77;
-            fourthFireLeftRunningSpriteLocation.Y = 152;
             
             fireLeftRunningSpriteDimensions.Add(firstFireLeftRunningSpriteDimensions);
             fireLeftRunningSpriteDimensions.Add(secondFireLeftRunningSpriteDimensions);
             fireLeftRunningSpriteDimensions.Add(thirdFireLeftRunningSpriteDimensions);
-            fireLeftRunningSpriteDimensions.Add(fourthFireLeftRunningSpriteDimensions);
 
             fireLeftRunningSpriteLocations.Add(firstFireLeftRunningSpriteLocation);
             fireLeftRunningSpriteLocations.Add(secondFireLeftRunningSpriteLocation);
             fireLeftRunningSpriteLocations.Add(thirdFireLeftRunningSpriteLocation);
-            fireLeftRunningSpriteLocations.Add(fourthFireLeftRunningSpriteLocation);
         }
         void Update()
         {
-            if (currentSprite < 4)
+            if (currentSprite < 3)
             {
                 currentDimensions=  (Vector2)fireLeftRunningSpriteDimensions[currentSprite];
+                currentLocation = (Vector2)fireLeftRunningSpriteLocations[currentSprite];
+                currentSprite++;
+            }
+            else
+            {
+                currentSprite = 0;
+                currentDimensions = (Vector2)fireLeftRunningSpriteDimensions[currentSprite];
                 currentLocation = (Vector2)fireLeftRunningSpriteLocations[currentSprite];
                 currentSprite++;
             }
@@ -84,8 +82,8 @@ namespace Game.Mario.MarioSprites
 
         void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            sourceRectangle = new Rectangle(sheetXLocation, sheetYLocation, width, height);
-            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
+            sourceRectangle = new Rectangle((int)currentLocation.X, (int)currentLocation.Y, (int)currentDimensions.X, (int)currentDimensions.Y);
+            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, (int)currentDimensions.X, (int)currentDimensions.Y);
 
             spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
