@@ -56,7 +56,7 @@ namespace Game.States
 
         public void mushroom()
         {
-
+            mario.state = new NormalRightCrouching(mario, game);
         }
 
         public void damage()

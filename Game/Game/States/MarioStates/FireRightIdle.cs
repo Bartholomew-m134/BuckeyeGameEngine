@@ -56,7 +56,7 @@ namespace Game.States
 
         public void mushroom()
         {
-
+            mario.state = new NormalRightIdle(mario, game);
         }
 
         public void damage()
