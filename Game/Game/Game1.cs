@@ -29,9 +29,11 @@ namespace Game
 
         public MarioInstance mario;
 
-        public Block questionBlock;
-        public Block hiddenBlock;
         public Block brickBlock;
+        public Block hiddenBlock;
+        public Block questionBlock;
+
+
 
 
         public Game1()
@@ -61,7 +63,9 @@ namespace Game
 
             mario = new MarioInstance();
 
-            
+            brickBlock = new Block(1, this);
+            hiddenBlock = new Block(2, this);
+            questionBlock = new Block(3, this);
         }
 
         protected override void UnloadContent()
@@ -82,6 +86,12 @@ namespace Game
             redMushroom.Update();
             star.Update();
 
+            mario.Update();
+
+            brickBlock.Update();
+            hiddenBlock.Update();
+            questionBlock.Update();
+
             base.Update(gameTime);
         }
 
@@ -96,6 +106,12 @@ namespace Game
             greenMushroom.Draw();
             redMushroom.Draw();
             star.Draw();
+
+            mario.Draw();
+
+            brickBlock.Draw();
+            hiddenBlock.Draw();
+            questionBlock.Draw();
         }
     }
 }
