@@ -16,7 +16,7 @@ namespace Game.States
         {
             this.mario = mario;
             this.game = game;
-            SpriteFactories.MarioSpriteFactory.CreateFireLeftJumpingSprite(game);
+            mario.sprite = SpriteFactories.MarioSpriteFactory.CreateFireLeftJumpingSprite(game);
         }
 
         public void left()

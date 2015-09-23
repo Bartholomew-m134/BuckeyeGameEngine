@@ -16,7 +16,7 @@ namespace Game.States
         public Dead(MarioInstance mario, Game1 game)
         {
             this.game = game;
-            SpriteFactories.MarioSpriteFactory.CreateDeadSprite(game);
+            mario.sprite = SpriteFactories.MarioSpriteFactory.CreateDeadSprite(game);
         }
 
         public void left()
