@@ -37,6 +37,11 @@ namespace Game.SpriteFactories
             return new UsedBlockSprite(tileSpriteSheet, game);
         }
 
+        public static ISprite CreateHiddenBlockSprite(Game1 game)
+        {
+            return new HiddenBlockSprite(tileSpriteSheet, game);
+        }
+
 
     }
 }
