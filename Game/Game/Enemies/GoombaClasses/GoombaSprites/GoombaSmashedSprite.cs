@@ -11,9 +11,6 @@ namespace Game.Enemies.GoombaClasses.GoombaSprites
     {
         private Game1 myGame;
         private Texture2D spriteSheet;
-        // Temporary Positioning
-        private int xPosition = 400;
-        private int yPosition = 200;
 
         public GoombaSmashedSprite(Texture2D texture, Game1 game)
         {
@@ -28,8 +25,7 @@ namespace Game.Enemies.GoombaClasses.GoombaSprites
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Rectangle sourceRectangle = new Rectangle(60, 8, 16, 8);
-            // Temporary Destination Location
-            Rectangle destinationRectangle = new Rectangle(xPosition, yPosition, 16, 8);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 8);
 
             spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
