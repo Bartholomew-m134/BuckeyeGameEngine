@@ -10,10 +10,13 @@ namespace Game.States
     {
 
         private MarioInstance mario;
+        private Game1 game;
 
-        public NormalLeftCrouching(MarioInstance mario)
+        public NormalLeftCrouching(MarioInstance mario, Game1 game)
         {
             this.mario = mario;
+            this.game = game;
+            SpriteFactories.MarioSpriteFactory.CreateNormalLeftCrouchingSprite(game);
         }
 
         public void left()
@@ -28,7 +31,7 @@ namespace Game.States
 
         public void up()
         {
-            mario.state = new NormalLeftIdle(mario);
+            mario.state = new NormalLeftIdle(mario, game);
         }
 
         public void down()
@@ -48,7 +51,7 @@ namespace Game.States
 
         public void flower()
         {
-            mario.state = new FireLeftCrouching(mario);
+            mario.state = new FireLeftCrouching(mario, game);
         }
 
         public void mushroom()
@@ -58,12 +61,12 @@ namespace Game.States
 
         public void damage()
         {
-            mario.state = new SmallLeftIdle(mario);
+            mario.state = new SmallLeftIdle(mario, game);
         }
 
         public void die()
         {
-            mario.state = new Dead(mario);
+            mario.state = new Dead(mario, game);
         }
 
     }
