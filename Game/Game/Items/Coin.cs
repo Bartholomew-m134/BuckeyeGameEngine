@@ -9,7 +9,7 @@ namespace Game.Items
     {
         public Coin()
         {
-
+            
         }
 
         public void Update()
