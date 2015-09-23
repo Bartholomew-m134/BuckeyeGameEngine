@@ -20,11 +20,9 @@ namespace Game.Enemies.GoombaClasses.GoombaStates
         }
         public void DirectionChangeGoomba()
         {
-            goomba.state = new GoombaWalkingRightState(goomba, myGame);
         }
         public void FlipGoomba()
         {
-            goomba.state = new GoombaFlippedState(goomba, myGame);
         }
     }
 }

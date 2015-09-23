@@ -5,14 +5,14 @@ using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 
-namespace Game.Enemies.GoombaClasses.GoombaSprites
+namespace Game.Enemies.GreenKoopaClasses.GreenKoopaSprites
 {
-    class GoombaSmashedSprite : ISprite
+    class GreenKoopaEmergingFromShellSprite
     {
         private Game1 myGame;
         private Texture2D spriteSheet;
 
-        public GoombaSmashedSprite(Texture2D texture, Game1 game)
+        public GreenKoopaEmergingFromShellSprite(Texture2D texture, Game1 game)
         {
             spriteSheet = texture;
             myGame = game;
@@ -24,10 +24,11 @@ namespace Game.Enemies.GoombaClasses.GoombaSprites
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle(60, 8, 16, 8);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 8);
+            Rectangle sourceRectangle = new Rectangle(0, 4, 16, 16);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16);
 
             spriteBatch.Begin();
+            // Update after learning to flip the sprite
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }

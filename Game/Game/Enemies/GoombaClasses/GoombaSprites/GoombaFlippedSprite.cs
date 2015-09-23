@@ -11,9 +11,6 @@ namespace Game.Enemies.GoombaClasses.GoombaSprites
     {
         private Game1 myGame;
         private Texture2D spriteSheet;
-        // Temporary Positioning
-        private int xPosition = 400;
-        private int yPosition = 200;
 
         public GoombaFlippedSprite(Texture2D texture, Game1 game)
         {
@@ -28,8 +25,7 @@ namespace Game.Enemies.GoombaClasses.GoombaSprites
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Rectangle sourceRectangle = new Rectangle(0, 4, 16, 16);
-            // Temporary Destination Location
-            Rectangle destinationRectangle = new Rectangle(xPosition, yPosition, 16, 16);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16);
 
             spriteBatch.Begin();
             // Update after learning to flip the sprite
