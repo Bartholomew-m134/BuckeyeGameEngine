@@ -12,6 +12,8 @@ using Game.Items;
 using Game.SpriteFactories;
 using Game.Mario;
 using Game.Blocks;
+using Game.Enemies.GoombaClasses;
+using Game.Enemies.GreenKoopaClasses;
 
 namespace Game
 {
@@ -33,7 +35,8 @@ namespace Game
         public Block hiddenBlock;
         public Block questionBlock;
 
-
+        public Goomba goomba;
+        public GreenKoopa greenKoopa;
 
 
         public Game1()
@@ -54,6 +57,9 @@ namespace Game
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             ItemsSpriteFactory.Load(Content, GraphicsDevice);
+            EnemySpriteFactory.Load(Content, GraphicsDevice);
+            MarioSpriteFactory.Load(Content, GraphicsDevice);
+            TileSpriteFactory.Load(Content, GraphicsDevice);
 
             coin = new Coin(this);
             flower = new Flower(this);
@@ -61,11 +67,14 @@ namespace Game
             redMushroom = new RedMushroom(this);
             star = new Star(this);
 
-            mario = new MarioInstance();
+            mario = new MarioInstance(this);
 
             brickBlock = new Block(1, this);
             hiddenBlock = new Block(2, this);
             questionBlock = new Block(3, this);
+
+            goomba = new Goomba(this);
+            greenKoopa = new GreenKoopa(this);
         }
 
         protected override void UnloadContent()
@@ -92,6 +101,9 @@ namespace Game
             hiddenBlock.Update();
             questionBlock.Update();
 
+            goomba.Update();
+            greenKoopa.Update();
+
             base.Update(gameTime);
         }
 
@@ -112,6 +124,9 @@ namespace Game
             brickBlock.Draw();
             hiddenBlock.Draw();
             questionBlock.Draw();
+
+            goomba.Draw();
+            greenKoopa.Draw();
         }
     }
 }
