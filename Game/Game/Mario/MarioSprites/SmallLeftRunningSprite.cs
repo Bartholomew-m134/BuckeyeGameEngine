@@ -34,6 +34,8 @@ namespace Game.Mario.MarioSprites
             this.game = game;
             this.spriteSheet = spriteSheet;
             currentSprite = 0;
+            smallLeftRunningSpriteDimensions = new ArrayList();
+            smallLeftRunningSpriteLocations = new ArrayList();
 
             firstSmallLeftRunningSpriteDimensions.X = 13;
             firstSmallLeftRunningSpriteDimensions.Y = 14;

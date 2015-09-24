@@ -35,6 +35,8 @@ namespace Game.Mario.MarioSprites
             this.game = game;
             this.spriteSheet = spriteSheet;
             currentSprite = 0;
+            fireLeftRunningSpriteDimensions = new ArrayList();
+            fireLeftRunningSpriteLocations = new ArrayList();
             
             firstFireLeftRunningSpriteDimensions.X = 15;
             firstFireLeftRunningSpriteDimensions.Y = 31;
@@ -66,7 +68,7 @@ namespace Game.Mario.MarioSprites
         }
         public void Update()
         {
-            if (currentSprite < 3)
+            if (currentSprite < 2)
             {
                 currentDimensions=  (Vector2)fireLeftRunningSpriteDimensions[currentSprite];
                 currentLocation = (Vector2)fireLeftRunningSpriteLocations[currentSprite];
