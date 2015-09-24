@@ -34,6 +34,8 @@ namespace Game
         public Block brickBlock;
         public Block hiddenBlock;
         public Block questionBlock;
+        public ISprite solidBlock;
+        public ISprite breakingBlock;
 
         public Goomba goomba;
         public GreenKoopa greenKoopa;
@@ -72,6 +74,8 @@ namespace Game
             brickBlock = new Block(1, this);
             hiddenBlock = new Block(2, this);
             questionBlock = new Block(3, this);
+            solidBlock = TileSpriteFactory.CreateSolidBlockSprite(this);
+            breakingBlock = TileSpriteFactory.CreateBreakingBlockSprite(this);
 
             goomba = new Goomba(this);
             greenKoopa = new GreenKoopa(this);
@@ -97,10 +101,6 @@ namespace Game
 
             mario.Update();
 
-            brickBlock.Update();
-            hiddenBlock.Update();
-            questionBlock.Update();
-
             goomba.Update();
             greenKoopa.Update();
 
@@ -124,6 +124,7 @@ namespace Game
             brickBlock.Draw();
             hiddenBlock.Draw();
             questionBlock.Draw();
+
 
             goomba.Draw();
             greenKoopa.Draw();
