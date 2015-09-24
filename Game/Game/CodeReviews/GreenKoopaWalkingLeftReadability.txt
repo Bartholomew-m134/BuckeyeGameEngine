@@ -1,0 +1,10 @@
+﻿Author: Kyle Powers
+Date: 9/23/2015
+Sprint:2 
+File name: GreenKoopaWalkingLeftSprite.cs
+Author: John Cramer
+Comments: All methods/variable names are readable. The delay logic and the frame drawing logic
+are simple and easy to understand. The only thing I found potentially confusing or difficult 
+to understand is the hardcoded coordinates and rectangle dimensions in the source and destination
+rectangles in the draw method.
+Minutes to complete review: 5
