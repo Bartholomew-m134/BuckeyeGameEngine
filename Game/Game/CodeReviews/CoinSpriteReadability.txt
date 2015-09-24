@@ -1,0 +1,11 @@
+﻿Author:							Connor Swick
+Date :							9/23/15
+Sprint:							0
+Reviewed file:					CoinSprite.cs
+File Author:					Kyle Powers
+Minutes to complete:			5
+Readability:
+	This file is overall very readable. The variable names are meaningful and the structure is organized.
+	The functionalities of the methods are easy to understand without any sort of contract or comment. 
+	The only slight lack of readability is with the inclusion of magic numbers while calculating and 
+	drawing the current frames. 

@@ -73,12 +73,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Blocks\Block.cs" />
+    <Compile Include="Blocks\BlockSprites\BreakingBlockSprite.cs" />
     <Compile Include="Blocks\BlockSprites\BrickBlockSprite.cs" />
+    <Compile Include="Blocks\BlockSprites\HiddenBlockSprite.cs" />
     <Compile Include="Blocks\BlockSprites\QuestionBlockSprite.cs" />
-    <Compile Include="Blocks\BrickBlock.cs" />
+    <Compile Include="Blocks\BlockSprites\SolidBlockSprite.cs" />
+    <Compile Include="Blocks\BlockSprites\UsedBlockSprite.cs" />
     <Compile Include="Blocks\IBlock.cs" />
-    <Compile Include="Blocks\QuestionBlock.cs" />
-    <Compile Include="Blocks\UsedBlock.cs" />
     <Compile Include="Commands\BlockCommands\RemoveBrickBlockCommand.cs" />
     <Compile Include="Commands\BlockCommands\SwitchToUsedBlockCommand.cs" />
     <Compile Include="Commands\BlockCommands\SwitchToUsedQuestionBlockCommand.cs" />
@@ -95,13 +96,23 @@
     <Compile Include="Controllers\IController.cs" />
     <Compile Include="Controllers\KeyboardController.cs" />
     <Compile Include="Enemies\GoombaClasses\Goomba.cs" />
+    <Compile Include="Enemies\GoombaClasses\GoombaSprites\GoombaFlippedSprite.cs" />
+    <Compile Include="Enemies\GoombaClasses\GoombaSprites\GoombaSmashedSprite.cs" />
+    <Compile Include="Enemies\GoombaClasses\GoombaSprites\GoombaWalkingLeftSprite.cs" />
+    <Compile Include="Enemies\GoombaClasses\GoombaSprites\GoombaWalkingRightSprite.cs" />
     <Compile Include="Enemies\GoombaClasses\GoombaStates\GoombaFlippedState.cs" />
     <Compile Include="Enemies\GoombaClasses\GoombaStates\GoombaSmashedState.cs" />
     <Compile Include="Enemies\GoombaClasses\GoombaStates\GoombaWalkingLeftState.cs" />
     <Compile Include="Enemies\GoombaClasses\GoombaStates\GoombaWalkingRightState.cs" />
     <Compile Include="Enemies\GoombaClasses\GoombaStates\IGoombaState.cs" />
     <Compile Include="Enemies\GreenKoopaClasses\GreenKoopa.cs" />
+    <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaSprites\GreenKoopaEmergingFromShellSprite.cs" />
+    <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaSprites\GreenKoopaFlippedInShellSprite.cs" />
+    <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaSprites\GreenKoopaHidingInShellSprite.cs" />
+    <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaSprites\GreenKoopaWalkingLeftSprite.cs" />
+    <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaSprites\GreenKoopaWalkingRightSprite.cs" />
     <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaStates\GreenKoopaEmergingFromShellState.cs" />
+    <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaStates\GreenKoopaFlippedInShellState.cs" />
     <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaStates\GreenKoopaHidingInShellState.cs" />
     <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaStates\GreenKoopaWalkingLeftState.cs" />
     <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaStates\GreenKoopaWalkingRightState.cs" />
@@ -149,12 +160,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="SpriteFactories\BlockSpriteFactory.cs" />
+    <Compile Include="SpriteFactories\TileSpriteFactory.cs" />
+    <Compile Include="SpriteFactories\EnemySpriteFactory.cs" />
     <Compile Include="SpriteFactories\ItemsSpriteFactory.cs" />
     <Compile Include="SpriteFactories\MarioSpriteFactory.cs" />
     <Compile Include="States\BlockStates\BrickBlockState.cs" />
     <Compile Include="States\BlockStates\HiddenBlockState.cs" />
     <Compile Include="States\BlockStates\IBlockState.cs" />
+    <Compile Include="States\BlockStates\NullBlockState.cs" />
     <Compile Include="States\BlockStates\QuestionBlockState.cs" />
     <Compile Include="States\BlockStates\UsedBlockState.cs" />
     <Compile Include="States\MarioStates\Dead.cs" />
@@ -183,6 +196,8 @@
     <Compile Include="States\MarioStates\SmallRightRunning.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CodeReviews\CoinSpriteCodeQuality.txt" />
+    <Content Include="CodeReviews\CoinSpriteReadability.txt" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>

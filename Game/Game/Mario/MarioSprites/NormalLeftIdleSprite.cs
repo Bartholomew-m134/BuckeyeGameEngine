@@ -5,30 +5,39 @@ using System.Text;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework;
 
 namespace Game.Mario.MarioSprites
 {
     public class NormalLeftIdleSprite : ISprite
     {
-        private Texture2D Texture { get; set; }
-
-
-        public NormalLeftIdleSprite(Texture2D texture, Game1 game) {
-
-            
+        private Game1 game;
+        private Texture2D spriteSheet;
+        private int width;
+        private int height;
+        private int sheetXLocation;
+        private int sheetYLocation;
+        public NormalLeftIdleSprite(Texture2D spriteSheet, Game1 game)
+        {
+            this.game = game;
+            this.spriteSheet = spriteSheet;
+            width = 15;
+            height = 31;
+            sheetXLocation = 180;
+            sheetYLocation = 52;
         }
-        void Update()
+        public void Update()
         {
 
         }
 
-        void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle();
-            Rectangle destinationRectangle = new Rectangle();
+            Rectangle sourceRectangle = new Rectangle(sheetXLocation, sheetYLocation, width, height);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
 
             spriteBatch.Begin();
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
     }

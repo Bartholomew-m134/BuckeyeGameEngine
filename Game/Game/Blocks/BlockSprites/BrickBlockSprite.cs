@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,19 @@ namespace Game.Blocks.BlockSprites
     {
         private Game1 game;
         private Texture2D spriteSheet;
+        private int width;
+        private int height;
+        private int sheetXLocation;
+        private int sheetYLocation;
 
         public BrickBlockSprite(Texture2D spriteSheet, Game1 game)
         {
             this.game = game;
             this.spriteSheet = spriteSheet;
+            width = 16;
+            height = 16;
+            sheetXLocation = 16;
+            sheetYLocation = 0;
         }
 
         public void Update()
@@ -24,7 +33,12 @@ namespace Game.Blocks.BlockSprites
 
         public void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch, Microsoft.Xna.Framework.Vector2 location)
         {
-            
+            Rectangle sourceRectangle = new Rectangle(sheetXLocation, sheetYLocation, width, height);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
+
+            spriteBatch.Begin();
+            spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.End();
         }
     }
 }

@@ -14,6 +14,7 @@ namespace Game.Items.ItemSprites
         private Texture2D Texture { get; set; }
         private int currentFrame;
         private int totalFrames;
+        private int delayBetweenFrames = 0;
 
         private Game1 myGame;
         public CoinSprite(Texture2D texture, Game1 game)
@@ -26,13 +27,20 @@ namespace Game.Items.ItemSprites
         }
 
         public void Update() {
-            currentFrame++;
-            if (currentFrame == totalFrames)
+            if (delayBetweenFrames == 10)
             {
-                currentFrame = 0;
+                delayBetweenFrames = 0;
+                currentFrame++;
+                if (currentFrame == totalFrames)
+                {
+                    currentFrame = 0;
 
+                }
             }
-        
+            else {
+
+                delayBetweenFrames++;
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location) {
@@ -46,7 +54,7 @@ namespace Game.Items.ItemSprites
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
 
             spriteBatch.Begin();
-            spriteBatch.Draw(Texture, destinationRectangle, Color.White);
+            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
 
         }

@@ -5,7 +5,35 @@ using System.Text;
 
 namespace Game.Enemies.GreenKoopaClasses.GreenKoopaStates
 {
-    class GreenKoopaHidingInShellState : IGreenKoopaState
+    public class GreenKoopaHidingInShellState : IGreenKoopaState
     {
+        private GreenKoopa greenKoopa;
+        private Game1 myGame;
+
+        public GreenKoopaHidingInShellState(GreenKoopa greenKoopa, Game1 game)
+        {
+            this.greenKoopa = greenKoopa;
+            this.myGame = game;
+            this.greenKoopa.greenKoopaSprite = Game.SpriteFactories.EnemySpriteFactory.CreateGreenKoopaHidingInShellSprite(myGame);
+        }
+
+        public void GreenKoopaEmergingFromShell()
+        {
+            greenKoopa.state = new GreenKoopaEmergingFromShellState(greenKoopa, myGame);
+        }
+
+        public void GreenKoopaShellFlipped()
+        {
+            greenKoopa.state = new GreenKoopaFlippedInShellState(greenKoopa, myGame);
+        }
+
+        public void GreenKoopaHidingInShell()
+        {
+        }
+
+        public void GreenKoopaChangeDirection()
+        {
+            greenKoopa.state = new GreenKoopaWalkingLeftState(greenKoopa, myGame);
+        }
     }
 }

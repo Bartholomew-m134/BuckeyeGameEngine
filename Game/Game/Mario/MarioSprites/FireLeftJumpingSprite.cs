@@ -4,26 +4,41 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
+using System.Collections;
 
 namespace Game.Mario.MarioSprites
 {
     public class FireLeftJumpingSprite : ISprite
     {
-        private Texture2D Texture { get; set; }
-
-
-        public FireLeftJumpingSprite(Texture2D texture, Game1 game) {
-
-            
+        private Game1 game;
+        private Texture2D spriteSheet;
+        private int width;
+        private int height;
+        private int sheetXLocation;
+        private int sheetYLocation;
+        public FireLeftJumpingSprite(Texture2D spriteSheet, Game1 game)
+        {
+            this.game = game;
+            this.spriteSheet = spriteSheet;
+            width = 15;
+            height = 31;
+            sheetXLocation = 27;
+            sheetYLocation = 122;
         }
-        void Update()
+        public void Update()
         {
 
         }
 
-        void Draw()
+        public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
+            Rectangle sourceRectangle = new Rectangle(sheetXLocation, sheetYLocation, width, height);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
 
+            spriteBatch.Begin();
+            spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.End();
         }
     }
 }

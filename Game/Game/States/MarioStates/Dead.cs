@@ -3,25 +3,75 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Game.Mario;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework;
 
-namespace Game.States.MarioStates
+
+namespace Game.States
 {
     class Dead : IMarioState
     {
 
         private MarioInstance mario;
         private Game1 game;
-        private Texture2D texture;
 
-        public Dead(MarioInstance mario)
+        public Dead(MarioInstance mario, Game1 game)
         {
-            this.mario = mario;
-            mario.sprite = new Game.Mario.MarioSprites.DeadSprite(texture, game);
+            this.game = game;
+            mario.sprite = SpriteFactories.MarioSpriteFactory.CreateDeadSprite(game);
+        }
+
+        public void Update() {
+            mario.sprite.Update();
+        }
+
+        public void left()
+        {
 
         }
-    
+
+        public void right()
+        {
+
+        }
+
+        public void up()
+        {
+            
+        }
+
+        public void down()
+        {
+
+        }
+
+        public void land()
+        {
+
+        }
+
+        public void jump()
+        {
+
+        }
+
+        public void flower()
+        {
+            mario.state = new FireRightIdle(mario, game);
+        }
+
+        public void mushroom()
+        {
+            mario.state = new NormalRightIdle(mario, game);
+        }
+
+        public void damage()
+        {
+            mario.state = new SmallRightIdle(mario, game);
+        }
+
+        public void die()
+        {
+            
+        }
+
     }
 }

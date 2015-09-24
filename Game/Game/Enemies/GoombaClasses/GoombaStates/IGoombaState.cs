@@ -7,5 +7,8 @@ namespace Game.Enemies.GoombaClasses.GoombaStates
 {
     public interface IGoombaState
     {
+        void SmashGoomba();
+        void DirectionChangeGoomba();
+        void FlipGoomba();
     }
 }

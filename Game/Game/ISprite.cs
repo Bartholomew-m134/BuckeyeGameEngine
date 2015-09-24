@@ -9,9 +9,9 @@ namespace Game
 {
     public interface ISprite
     {
-        void Update();
+         void Update();
 
-        void Draw(SpriteBatch spriteBatch, Vector2 location);
+         void Draw(SpriteBatch spriteBatch, Vector2 location);
 
     }
 }

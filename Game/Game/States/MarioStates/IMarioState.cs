@@ -5,38 +5,38 @@ using System.Text;
 
 namespace Game.States
 {
-    interface IMarioState
+    public interface IMarioState
     {
+         void Update();
+
+         void left();
 
 
-        public void left();
+         void right();
 
 
-        public void right();
+         void up();
 
 
-        public void up();
+         void down();
 
 
-        public void down();
+         void land();
 
 
-        public void land();
+         void jump();
 
 
-        public void jump();
+         void flower();
 
 
-        public void flower();
+         void mushroom();
 
 
-        public void mushroom();
+         void damage();
 
 
-        public void damage();
-
-
-        public void die();
+         void die();
 
 
     }
