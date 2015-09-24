@@ -1,4 +1,5 @@
 ﻿using Game.Blocks.BlockSprites;
+using Game.Pipes.PipeSprites;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -42,6 +43,9 @@ namespace Game.SpriteFactories
             return new HiddenBlockSprite(tileSpriteSheet, game);
         }
 
-
+        public static ISprite CreatePipeSprite(Game1 game)
+        {
+            return new PipeSprite(tileSpriteSheet, game);
+        }
     }
 }

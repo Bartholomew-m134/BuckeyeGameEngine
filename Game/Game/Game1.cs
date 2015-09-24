@@ -14,6 +14,7 @@ using Game.Mario;
 using Game.Blocks;
 using Game.Enemies.GoombaClasses;
 using Game.Enemies.GreenKoopaClasses;
+using Game.Pipes;
 
 namespace Game
 {
@@ -38,6 +39,7 @@ namespace Game
         public Goomba goomba;
         public GreenKoopa greenKoopa;
 
+        public IPipe pipe;
 
         public Game1()
         {
@@ -75,6 +77,8 @@ namespace Game
 
             goomba = new Goomba(this);
             greenKoopa = new GreenKoopa(this);
+
+            pipe = new Pipe(this);
         }
 
         protected override void UnloadContent()
@@ -104,6 +108,8 @@ namespace Game
             goomba.Update();
             greenKoopa.Update();
 
+            pipe.Update();
+
             base.Update(gameTime);
         }
 
@@ -127,6 +133,8 @@ namespace Game
 
             goomba.Draw();
             greenKoopa.Draw();
+
+            pipe.Draw();
         }
     }
 }
