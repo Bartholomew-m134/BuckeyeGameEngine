@@ -1,6 +1,6 @@
 ﻿Author:							Connor Swick
 Date :							9/23/15
-Sprint:							0
+Sprint:							2
 Reviewed file:					CoinSprite.cs
 File Author:					Kyle Powers
 Minutes to complete:			5
