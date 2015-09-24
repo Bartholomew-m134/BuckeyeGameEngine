@@ -131,7 +131,7 @@ namespace Game
             hiddenBlock.Draw();
             questionBlock.Draw();
             solidBlock.Draw();
-            breakingBlock.Draw()
+            breakingBlock.Draw();
 
             goomba.Draw();
             greenKoopa.Draw();

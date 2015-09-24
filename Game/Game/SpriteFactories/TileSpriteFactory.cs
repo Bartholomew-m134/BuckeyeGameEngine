@@ -43,6 +43,19 @@ namespace Game.SpriteFactories
             return new HiddenBlockSprite(tileSpriteSheet, game);
         }
 
+        public static ISprite CreateSolidBlockSprite(Game1 game)
+        {
+            return new SolidBlockSprite(tileSpriteSheet, game);
+        }
 
+        public static ISprite CreateBreakingBlockSprite(Game1 game)
+        {
+            return new BreakingBlockSprite(tileSpriteSheet, game);
+        }
+
+        public static ISprite CreatePipeSprite(Game1 game)
+        {
+            return new PipeSprite(tileSpriteSheet, game);
+        }
     }
 }
