@@ -1,0 +1,9 @@
+﻿Author:							Matt Bartholomew
+Date :							9/23/15
+Sprint:							2
+Reviewed file:					MarioSpriteFactory.cs
+File Author:					Conner Swick
+Minutes to complete:			7
+Readability:
+	The file was complete. All methods had reasonable and easy to understand names. Fields that were required to be private were.
+	There was no uneeded methods or fields and was comletely readable.

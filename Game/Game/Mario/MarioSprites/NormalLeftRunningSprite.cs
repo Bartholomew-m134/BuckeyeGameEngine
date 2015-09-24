@@ -52,7 +52,7 @@ namespace Game.Mario.MarioSprites
             firstNormalLeftRunningSpriteLocation.Y = 52;
 
             secondNormalLeftRunningSpriteLocation.X = 121;
-            secondNormalLeftRunningSpriteLocation.X = 52;
+            secondNormalLeftRunningSpriteLocation.Y = 52;
 
             thirdNormalLeftRunningSpriteLocation.X = 90;
             thirdNormalLeftRunningSpriteLocation.Y = 53;

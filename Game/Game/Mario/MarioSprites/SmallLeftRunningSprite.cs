@@ -51,7 +51,7 @@ namespace Game.Mario.MarioSprites
             firstSmallLeftRunningSpriteLocation.Y = 0;
 
             secondSmallLeftRunningSpriteLocation.X = 121;
-            secondSmallLeftRunningSpriteLocation.X = 0;
+            secondSmallLeftRunningSpriteLocation.Y = 0;
 
             thirdSmallLeftRunningSpriteLocation.X = 89;
             thirdSmallLeftRunningSpriteLocation.Y = 0;
