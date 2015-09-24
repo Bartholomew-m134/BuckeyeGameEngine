@@ -196,7 +196,6 @@
     <Compile Include="States\MarioStates\SmallRightRunning.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CodeReviews\CoinSpriteCodeQuality.txt" />
     <Content Include="CodeReviews\CoinSpriteReadability.txt" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png">

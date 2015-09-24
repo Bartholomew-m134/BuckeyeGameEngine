@@ -51,7 +51,7 @@ namespace Game.Mario.MarioSprites
             firstFireRightRunningSpriteLocation.Y = 122;
 
             secondFireRightRunningSpriteLocation.X = 264;
-            secondFireRightRunningSpriteLocation.X = 122;
+            secondFireRightRunningSpriteLocation.Y = 122;
 
             thirdFireRightRunningSpriteLocation.X = 287;
             thirdFireRightRunningSpriteLocation.Y = 123;
@@ -64,7 +64,8 @@ namespace Game.Mario.MarioSprites
             fireRightRunningSpriteLocations.Add(firstFireRightRunningSpriteLocation);
             fireRightRunningSpriteLocations.Add(secondFireRightRunningSpriteLocation);
             fireRightRunningSpriteLocations.Add(thirdFireRightRunningSpriteLocation);
-            fireRightRunningSpriteLocations.Add(secondFireRightRunningSpriteLocation); 
+            fireRightRunningSpriteLocations.Add(secondFireRightRunningSpriteLocation);
+            
         }
         public void Update()
         {

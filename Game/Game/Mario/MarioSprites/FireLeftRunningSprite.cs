@@ -52,7 +52,7 @@ namespace Game.Mario.MarioSprites
             firstFireLeftRunningSpriteLocation.Y = 122;
 
             secondFireLeftRunningSpriteLocation.X = 128;
-            secondFireLeftRunningSpriteLocation.X = 122;
+            secondFireLeftRunningSpriteLocation.Y = 122;
 
             thirdFireLeftRunningSpriteLocation.X = 102;
             thirdFireLeftRunningSpriteLocation.Y = 123;
@@ -72,7 +72,7 @@ namespace Game.Mario.MarioSprites
             if (delayBetweenFrames == 10)
             {
                 delayBetweenFrames = 0;
-                if (currentSprite < 2)
+                if (currentSprite < 3)
                 {
                     currentDimensions = (Vector2)fireLeftRunningSpriteDimensions[currentSprite];
                     currentLocation = (Vector2)fireLeftRunningSpriteLocations[currentSprite];
