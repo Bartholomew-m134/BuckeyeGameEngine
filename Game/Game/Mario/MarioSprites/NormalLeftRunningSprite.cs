@@ -16,6 +16,8 @@ namespace Game.Mario.MarioSprites
         private ArrayList normalLeftRunningSpriteDimensions;
         private ArrayList normalLeftRunningSpriteLocations;
         private int currentSprite;
+        private int delayBetweenFrames = 0;
+
         private Vector2 currentDimensions;
         private Vector2 currentLocation;
 
@@ -67,18 +69,26 @@ namespace Game.Mario.MarioSprites
         }
         public void Update()
         {
-            if (currentSprite < 3)
+            if (delayBetweenFrames == 10)
             {
-                currentDimensions = (Vector2)normalLeftRunningSpriteDimensions[currentSprite];
-                currentLocation = (Vector2)normalLeftRunningSpriteLocations[currentSprite];
-                currentSprite++;
+                delayBetweenFrames = 0;
+                if (currentSprite < 3)
+                {
+                    currentDimensions = (Vector2)normalLeftRunningSpriteDimensions[currentSprite];
+                    currentLocation = (Vector2)normalLeftRunningSpriteLocations[currentSprite];
+                    currentSprite++;
+                }
+                else
+                {
+                    currentSprite = 0;
+                    currentDimensions = (Vector2)normalLeftRunningSpriteDimensions[currentSprite];
+                    currentLocation = (Vector2)normalLeftRunningSpriteLocations[currentSprite];
+                    currentSprite++;
+                }
             }
             else
             {
-                currentSprite = 0;
-                currentDimensions = (Vector2)normalLeftRunningSpriteDimensions[currentSprite];
-                currentLocation = (Vector2)normalLeftRunningSpriteLocations[currentSprite];
-                currentSprite++;
+                delayBetweenFrames++;
             }
         }
 
