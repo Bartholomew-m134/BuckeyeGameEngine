@@ -197,6 +197,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CodeReviews\CoinSpriteReadability.txt" />
+    <Content Include="CodeReviews\GreenKoopaWalkingLeftCodeQuality.txt" />
+    <Content Include="CodeReviews\GreenKoopaWalkingLeftReadability.txt" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
