@@ -42,13 +42,13 @@ namespace Game.Blocks
             switch (blockType)
             {
                 case 1:
-                    sprite.Draw(game.spriteBatch, new Microsoft.Xna.Framework.Vector2(50, 50));
+                    sprite.Draw(game.spriteBatch, new Microsoft.Xna.Framework.Vector2(400, 200));
                     break;
                 case 2:
-                    sprite.Draw(game.spriteBatch, new Microsoft.Xna.Framework.Vector2(80, 50));
+                    sprite.Draw(game.spriteBatch, new Microsoft.Xna.Framework.Vector2(200, 200));
                     break;
                 case 3:
-                    sprite.Draw(game.spriteBatch, new Microsoft.Xna.Framework.Vector2(110, 50));
+                    sprite.Draw(game.spriteBatch, new Microsoft.Xna.Framework.Vector2(300, 200));
                     break;
             }
            
