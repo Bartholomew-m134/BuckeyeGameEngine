@@ -196,6 +196,7 @@
     <Compile Include="States\MarioStates\SmallRightRunning.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CodeReviews\BlockReadability.txt" />
     <Content Include="CodeReviews\CoinSpriteReadability.txt" />
     <Content Include="CodeReviews\GreenKoopaWalkingLeftCodeQuality.txt" />
     <Content Include="CodeReviews\GreenKoopaWalkingLeftReadability.txt" />

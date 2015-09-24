@@ -1,0 +1,8 @@
+﻿Author:							Jackson Luken
+Date :							9/23/15
+Sprint:							2
+Reviewed file:					Block.cs
+File Author:					Matt Bartholomew
+Minutes to complete:			3
+Readability:
+	Readable code and good naming scheme. Fields that are public are needed to be, otherwise private.  
