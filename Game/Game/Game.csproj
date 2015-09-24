@@ -198,6 +198,7 @@
   <ItemGroup>
     <Content Include="CodeReviews\CoinSpriteCodeQuality.txt" />
     <Content Include="CodeReviews\CoinSpriteReadability.txt" />
+    <Content Include="CodeReviews\TextFile1.txt" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>

@@ -1,0 +1,7 @@
+﻿Matt Bartholomew
+9/23/2015
+Sprint 2
+NormalRightRunningSprite.cs
+Conner Swick
+
+Names are
