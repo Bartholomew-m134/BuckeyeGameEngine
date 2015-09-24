@@ -1,0 +1,8 @@
+﻿Author:							Connor Swick
+Date :							9/23/15
+Sprint:							0
+Reviewed file:					CoinSprite.cs
+File Author:					Kyle Powers
+Minutes to complete:			5
+Readability:
+	This file is overall very readable. The variable names are meaningful and 

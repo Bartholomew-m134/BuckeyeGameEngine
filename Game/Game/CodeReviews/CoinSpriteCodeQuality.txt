@@ -1,0 +1,8 @@
+﻿Author:							Connor Swick
+Date :							9/23/15
+Sprint:							0
+Reviewed file:					CoinSprite.cs
+File Author:					Kyle Powers
+Comments on code quality:
+
+Hypothetical Change:

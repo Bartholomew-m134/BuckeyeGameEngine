@@ -73,9 +73,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Blocks\Block.cs" />
+    <Compile Include="Blocks\BlockSprites\BreakingBlockSprite.cs" />
     <Compile Include="Blocks\BlockSprites\BrickBlockSprite.cs" />
     <Compile Include="Blocks\BlockSprites\HiddenBlockSprite.cs" />
     <Compile Include="Blocks\BlockSprites\QuestionBlockSprite.cs" />
+    <Compile Include="Blocks\BlockSprites\SolidBlockSprite.cs" />
     <Compile Include="Blocks\BlockSprites\UsedBlockSprite.cs" />
     <Compile Include="Blocks\IBlock.cs" />
     <Compile Include="Commands\BlockCommands\RemoveBrickBlockCommand.cs" />
@@ -194,8 +196,8 @@
     <Compile Include="States\MarioStates\SmallRightRunning.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CodeReviews\JacksonQuality.txt" />
-    <Content Include="CodeReviews\JacksonReadability.txt" />
+    <Content Include="CodeReviews\CoinSpriteCodeQuality.txt" />
+    <Content Include="CodeReviews\CoinSpriteReadability.txt" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>

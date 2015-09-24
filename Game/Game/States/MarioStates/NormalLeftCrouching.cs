@@ -18,6 +18,10 @@ namespace Game.States
             this.game = game;
             mario.sprite = SpriteFactories.MarioSpriteFactory.CreateNormalLeftCrouchingSprite(game);
         }
+        public void Update()
+        {
+            mario.sprite.Update();
+        }
 
         public void left()
         {

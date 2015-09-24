@@ -7,7 +7,7 @@ namespace Game.States
 {
     interface IMarioState
     {
-
+        public void Update();
 
         public void left();
 
