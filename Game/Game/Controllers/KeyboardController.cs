@@ -48,13 +48,21 @@ namespace Game
         public void Update()
         {
             Keys[] pressedKeys = Keyboard.GetState().GetPressedKeys();
-
-            foreach (Keys key in pressedKeys)
+            if (delayBetweenFrames == 5)
             {
-                if (keyMappings.ContainsKey(key))
+                foreach (Keys key in pressedKeys)
                 {
-                    keyMappings[key].Execute();
+                    if (keyMappings.ContainsKey(key))
+                    {
+                        keyMappings[key].Execute();
+                    }
                 }
+            }
+
+            delayBetweenFrames++;
+            if (delayBetweenFrames == 6)
+            {
+                delayBetweenFrames = 0;
             }
         }
     }
