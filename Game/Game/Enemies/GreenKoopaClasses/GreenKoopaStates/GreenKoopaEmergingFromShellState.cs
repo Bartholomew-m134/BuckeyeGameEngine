@@ -14,7 +14,7 @@ namespace Game.Enemies.GreenKoopaClasses.GreenKoopaStates
         {
             this.greenKoopa = greenKoopa;
             this.myGame = game;
-            this.greenKoopa.greenKoopaSprite = Game.SpriteFactories.EnemySpriteFactory.CreateGoombaFlippedSprite(myGame);
+            this.greenKoopa.greenKoopaSprite = Game.SpriteFactories.EnemySpriteFactory.CreateGreenKoopaEmergingFromShellSprite(myGame);
         }
 
         public void GreenKoopaEmergingFromShell()

@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 
 namespace Game.Enemies.GreenKoopaClasses.GreenKoopaSprites
 {
-    class GreenKoopaWalkingLeftSprite
+    class GreenKoopaWalkingLeftSprite : ISprite
     {
         private Game1 myGame;
         private Texture2D spriteSheet;

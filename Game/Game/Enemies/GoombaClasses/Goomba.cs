@@ -19,8 +19,8 @@ namespace Game.Enemies.GoombaClasses
         {
             myGame = game;
             state = new GoombaWalkingLeftState(this, myGame);
-            goombaVector.X = 400;
-            goombaVector.Y = 200;
+            goombaVector.X = 500;
+            goombaVector.Y = 100;
         }
 
         public void SmashedGoomba()

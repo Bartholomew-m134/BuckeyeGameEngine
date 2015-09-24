@@ -19,8 +19,8 @@ namespace Game.Enemies.GreenKoopaClasses
         {
             myGame = game;
             state = new GreenKoopaWalkingLeftState(this, myGame);
-            greenKoopaVector.X = 400;
-            greenKoopaVector.Y = 200;
+            greenKoopaVector.X = 600;
+            greenKoopaVector.Y = 100;
         }
 
         public void GreenKoopaEmergingFromShell()
