@@ -130,8 +130,8 @@ namespace Game
             brickBlock.Draw();
             hiddenBlock.Draw();
             questionBlock.Draw();
-            solidBlock.Draw();
-            breakingBlock.Draw();
+            solidBlock.Draw(spriteBatch, new Vector2(100,200));
+            breakingBlock.Draw(spriteBatch, new Vector2(500,200));
 
             goomba.Draw();
             greenKoopa.Draw();
