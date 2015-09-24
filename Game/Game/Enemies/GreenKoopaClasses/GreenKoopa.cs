@@ -42,9 +42,9 @@ namespace Game.Enemies.GreenKoopaClasses
         {
             state.GreenKoopaChangeDirection();
         }
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        public void Draw()
         {
-            greenKoopaSprite.Draw(spriteBatch, greenKoopaVector);
+            greenKoopaSprite.Draw(myGame.spriteBatch, greenKoopaVector);
         }
 
         public void Update()

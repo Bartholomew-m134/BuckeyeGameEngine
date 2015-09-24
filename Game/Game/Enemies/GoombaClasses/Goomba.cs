@@ -38,9 +38,9 @@ namespace Game.Enemies.GoombaClasses
             state.FlipGoomba();
         }
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        public void Draw()
         {
-            goombaSprite.Draw(spriteBatch, goombaVector);
+            goombaSprite.Draw(myGame.spriteBatch, goombaVector);
         }
 
         public void Update()
