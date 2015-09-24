@@ -12,6 +12,7 @@ namespace Game
     public class KeyboardController : IController
     {
         private Dictionary<Keys, ICommand> keyMappings;
+        private int delayBetweenFrames = 0;
 
         public KeyboardController(Game1 game)
         {
