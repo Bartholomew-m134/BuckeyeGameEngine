@@ -11,12 +11,15 @@ namespace Game.Blocks
         public IBlockState blockState;
         public ISprite sprite; 
         private Game1 game;
+        private int blockType;
 
-        public Block(int block, Game1 game)
+        public Block(int blockType, Game1 game)
         {
             this.game = game;
+            this.blockType = blockType;
 
-            switch (block){
+            switch (blockType)
+            {
                 case 1:
                     blockState = new BrickBlockState(this, game);
                     break;
@@ -36,7 +39,19 @@ namespace Game.Blocks
 
         public void Draw()
         {
-            sprite.Draw(game.spriteBatch, new Microsoft.Xna.Framework.Vector2(10, 10));
+            switch (blockType)
+            {
+                case 1:
+                    sprite.Draw(game.spriteBatch, new Microsoft.Xna.Framework.Vector2(50, 50));
+                    break;
+                case 2:
+                    sprite.Draw(game.spriteBatch, new Microsoft.Xna.Framework.Vector2(80, 50));
+                    break;
+                case 3:
+                    sprite.Draw(game.spriteBatch, new Microsoft.Xna.Framework.Vector2(110, 50));
+                    break;
+            }
+           
         }
 
 
