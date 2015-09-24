@@ -45,7 +45,7 @@ namespace Game.Items.ItemSprites
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
 
             spriteBatch.Begin();
-            spriteBatch.Draw(Texture, destinationRectangle, Color.White);
+            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
 
         }
