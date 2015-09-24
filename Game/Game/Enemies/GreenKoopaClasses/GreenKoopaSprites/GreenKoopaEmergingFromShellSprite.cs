@@ -24,11 +24,10 @@ namespace Game.Enemies.GreenKoopaClasses.GreenKoopaSprites
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle(0, 4, 16, 16);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16);
+            Rectangle sourceRectangle = new Rectangle(331, 4, 14, 15);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 14, 15);
 
             spriteBatch.Begin();
-            // Update after learning to flip the sprite
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
