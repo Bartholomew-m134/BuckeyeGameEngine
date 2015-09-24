@@ -197,6 +197,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CodeReviews\CoinSpriteReadability.txt" />
+    <Content Include="CodeReviews\DeadReadibility.txt" />
     <Content Include="CodeReviews\GreenKoopaWalkingLeftCodeQuality.txt" />
     <Content Include="CodeReviews\GreenKoopaWalkingLeftReadability.txt" />
     <Content Include="CodeReviews\MarioSpriteFactory.txt" />
