@@ -64,7 +64,7 @@ namespace Game.Mario.MarioSprites
             fireLeftRunningSpriteLocations.Add(thirdFireLeftRunningSpriteLocation);
             fireLeftRunningSpriteLocations.Add(secondFireLeftRunningSpriteLocation);
         }
-        void Update()
+        public void Update()
         {
             if (currentSprite < 3)
             {
@@ -81,7 +81,7 @@ namespace Game.Mario.MarioSprites
             }
         }
 
-        void Draw(SpriteBatch spriteBatch, Vector2 location)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             sourceRectangle = new Rectangle((int)currentLocation.X, (int)currentLocation.Y, (int)currentDimensions.X, (int)currentDimensions.Y);
             destinationRectangle = new Rectangle((int)location.X, (int)location.Y, (int)currentDimensions.X, (int)currentDimensions.Y);

@@ -26,12 +26,12 @@ namespace Game.Mario.MarioSprites
             sheetXLocation = 0;
             sheetYLocation = 127;
         }
-        void Update()
+        public void Update()
         {
 
         }
 
-        void Draw(SpriteBatch spriteBatch, Vector2 location)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Rectangle sourceRectangle = new Rectangle(sheetXLocation, sheetYLocation, width, height);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);

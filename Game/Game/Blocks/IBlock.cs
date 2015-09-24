@@ -7,8 +7,8 @@ namespace Game.Blocks
 {
     public interface IBlock
     {
-        public void Update();
+          void Update();
 
-        public void Draw();
+          void Draw();
     }
 }
