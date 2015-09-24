@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Game.Blocks.BlockSprites
 {
-    public class BrickBlockSprite : ISprite
+    public class SolidBlockSprite : ISprite
     {
         private Game1 game;
         private Texture2D spriteSheet;
@@ -16,22 +16,21 @@ namespace Game.Blocks.BlockSprites
         private int sheetXLocation;
         private int sheetYLocation;
 
-        public BrickBlockSprite(Texture2D spriteSheet, Game1 game)
+        public SolidBlockSprite(Texture2D spriteSheet, Game1 game)
         {
             this.game = game;
             this.spriteSheet = spriteSheet;
             width = 16;
             height = 16;
-            sheetXLocation = 16;
-            sheetYLocation = 0;
+            sheetXLocation = 0;
+            sheetYLocation = 16;
         }
 
         public void Update()
         {
-            
         }
 
-        public void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch, Microsoft.Xna.Framework.Vector2 location)
+        public void Draw(SpriteBatch spriteBatch, Microsoft.Xna.Framework.Vector2 location)
         {
             Rectangle sourceRectangle = new Rectangle(sheetXLocation, sheetYLocation, width, height);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
