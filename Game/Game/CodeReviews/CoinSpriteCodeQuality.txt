@@ -4,5 +4,11 @@ Sprint:							0
 Reviewed file:					CoinSprite.cs
 File Author:					Kyle Powers
 Comments on code quality:
-
+	The quality of this code is very good. The code is simple and robust. This nature of the
+	code causes it to be more maintanable and readable. The variables declared just inside the 
+	the class are also private, preventing the client from making any serious changes. 
 Hypothetical Change:
+	One hypothetical change would be if the coins flipped vertically rather than horizontally.
+	This file would support it as long as the sprites were arranged in the spritesheet in the
+	same places as the existing horizontal flipping coins are now. This change would not be 
+	supported if the coins were put into different spots on the spritesheet.
