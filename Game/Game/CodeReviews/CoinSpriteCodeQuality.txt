@@ -1,0 +1,12 @@
+﻿Author:							Connor Swick
+Date :							9/28/15
+Sprint:							2
+Reviewed file:					CoinSprite.cs
+File Author:					Kyle Powers
+Minutes to complete:			5
+Readability:
+	This overall code quality of this file is very good. It is very cohesive in the fact that 
+	all of the included objects and methods are related to the subject matter of the class
+	as a whole. It also has fairly low coupling because it is mostly independent of other classes,
+	and primarily depends on objects declared within itself and the interface it implements. The
+	overall desired functionality is consise and lacks any serious code smells.  
