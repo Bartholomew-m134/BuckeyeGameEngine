@@ -53,9 +53,9 @@ namespace Game.SpriteFactories
             return new BreakingBlockSprite(tileSpriteSheet);
         }
 
-        public static ISprite CreatePipeSprite(Game1 game)
+        public static ISprite CreatePipeSprite()
         {
-            return new PipeSprite(tileSpriteSheet, game);
+            return new PipeSprite(tileSpriteSheet);
         }
     }
 }
