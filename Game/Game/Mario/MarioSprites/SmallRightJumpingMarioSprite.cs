@@ -8,20 +8,20 @@ using Microsoft.Xna.Framework;
 
 namespace Game.Mario.MarioSprites
 {
-    public class FireRightJumpingSprite : ISprite
+    public class SmallRightJumpingMarioSprite : ISprite
     {
         private Texture2D spriteSheet;
         private int width;
         private int height;
         private int sheetXLocation;
         private int sheetYLocation;
-        public FireRightJumpingSprite(Texture2D spriteSheet)
+        public SmallRightJumpingMarioSprite(Texture2D spriteSheet)
         {
             this.spriteSheet = spriteSheet;
-            width = 15;
-            height = 31;
-            sheetXLocation = 362;
-            sheetYLocation = 122;
+            width = 16;
+            height = 15;
+            sheetXLocation = 359;
+            sheetYLocation = 0;
         }
         public void Update()
         {
@@ -37,5 +37,6 @@ namespace Game.Mario.MarioSprites
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
+
     }
 }

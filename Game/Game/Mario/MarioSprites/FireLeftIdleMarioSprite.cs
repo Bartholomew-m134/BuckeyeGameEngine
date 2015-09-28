@@ -6,23 +6,22 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 
-
 namespace Game.Mario.MarioSprites
 {
-    public class NormalLeftIdleSprite : ISprite
+    public class FireLeftIdleMarioSprite : ISprite
     {
         private Texture2D spriteSheet;
         private int width;
         private int height;
         private int sheetXLocation;
         private int sheetYLocation;
-        public NormalLeftIdleSprite(Texture2D spriteSheet)
+        public FireLeftIdleMarioSprite(Texture2D spriteSheet)
         {
             this.spriteSheet = spriteSheet;
             width = 15;
             height = 31;
             sheetXLocation = 180;
-            sheetYLocation = 52;
+            sheetYLocation = 122;
         }
         public void Update()
         {

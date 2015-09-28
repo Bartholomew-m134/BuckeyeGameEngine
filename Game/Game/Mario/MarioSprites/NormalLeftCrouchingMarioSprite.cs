@@ -8,20 +8,20 @@ using Microsoft.Xna.Framework;
 
 namespace Game.Mario.MarioSprites
 {
-    public class SmallLeftJumpingSprite : ISprite
+    public class NormalLeftCrouchingMarioSprite : ISprite
     {
         private Texture2D spriteSheet;
         private int width;
         private int height;
         private int sheetXLocation;
         private int sheetYLocation;
-        public SmallLeftJumpingSprite(Texture2D spriteSheet)
+        public NormalLeftCrouchingMarioSprite(Texture2D spriteSheet)
         {
             this.spriteSheet = spriteSheet;
-            width = 16;
-            height = 15;
-            sheetXLocation = 29;
-            sheetYLocation = 0;
+            width = 15;
+            height = 21;
+            sheetXLocation = 0;
+            sheetYLocation = 57;
         }
         public void Update()
         {

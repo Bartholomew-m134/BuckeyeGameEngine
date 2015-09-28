@@ -9,7 +9,7 @@ using System.Collections;
 
 namespace Game.Mario.MarioSprites
 {
-    public class FireRightRunningSprite : ISprite
+    public class FireRightRunningMarioSprite : ISprite
     {
         private Texture2D spriteSheet;
         private ArrayList fireRightRunningSpriteDimensions;
@@ -29,7 +29,7 @@ namespace Game.Mario.MarioSprites
 
         private Rectangle sourceRectangle;
         private Rectangle destinationRectangle;
-        public FireRightRunningSprite(Texture2D spriteSheet)
+        public FireRightRunningMarioSprite(Texture2D spriteSheet)
         {
             this.spriteSheet = spriteSheet;
             currentSprite = 0;

@@ -5,23 +5,24 @@ using System.Text;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using System.Collections;
 
 namespace Game.Mario.MarioSprites
 {
-    public class FireRightCrouchingSprite : ISprite
+    public class FireLeftJumpingMarioSprite : ISprite
     {
         private Texture2D spriteSheet;
         private int width;
         private int height;
         private int sheetXLocation;
         private int sheetYLocation;
-        public FireRightCrouchingSprite(Texture2D spriteSheet)
+        public FireLeftJumpingMarioSprite(Texture2D spriteSheet)
         {
             this.spriteSheet = spriteSheet;
-            width = 16;
-            height = 21;
-            sheetXLocation = 389;
-            sheetYLocation = 127;
+            width = 15;
+            height = 31;
+            sheetXLocation = 27;
+            sheetYLocation = 122;
         }
         public void Update()
         {
