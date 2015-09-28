@@ -15,6 +15,12 @@ namespace Game.Items.ItemSprites
         private int totalFrames;
         private int delayBetweenFrames = 10;
         private Game1 myGame;
+        private int width = 17;
+        private int height = 17;
+        private int sourceX = 3;
+        private int sourceY = 93;
+        private int distanceBetweenSprites = 30;
+
         public StarSprite(Texture2D texture, Game1 game)
         {
             Texture = texture;
@@ -44,10 +50,7 @@ namespace Game.Items.ItemSprites
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location) {
-            int width = 17;
-            int height = 17;
-            int sourceX = 3 + 30*currentFrame;
-            int sourceY = 93;
+            sourceX = 3 + distanceBetweenSprites * currentFrame;
             
 
             Rectangle sourceRectangle = new Rectangle(sourceX, sourceY, width, height);
