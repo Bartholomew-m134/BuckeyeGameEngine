@@ -33,7 +33,7 @@ namespace Game.Enemies.GreenKoopaClasses.GreenKoopaSprites
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, (int)spriteDimensions.X, (int)spriteDimensions.Y);
 
             spriteBatch.Begin();
-            spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White, 0, new Vector2(0, 0), SpriteEffects.FlipVertically, 0);
             spriteBatch.End();
         }
     }
