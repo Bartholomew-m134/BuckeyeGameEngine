@@ -15,6 +15,11 @@ namespace Game.Items.ItemSprites
         private int currentFrame;
         private int totalFrames;
         private int delayBetweenFrames = 0;
+        private int width = 9;
+        private int height = 15;
+        private int sourceX = 127;
+        private int sourceY = 94;
+        private int distanceBetweenSprites = 30;
 
         private Game1 myGame;
         public CoinSprite(Texture2D texture, Game1 game)
@@ -44,10 +49,8 @@ namespace Game.Items.ItemSprites
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location) {
-            int width = 9;
-            int height = 15;
-            int sourceX = 127 + 30*currentFrame;
-            int sourceY = 94;
+
+            currentFrame = sourceX + currentFrame * distanceBetweenSprites;            
             
 
             Rectangle sourceRectangle = new Rectangle(sourceX, sourceY, width, height);

@@ -1,8 +1,0 @@
-﻿Author: Kyle Powers
-Date: 9/23/2015
-Sprint: 2
-File Name: GreenKoopaWalkingLeftSprite.cs
-Author Name: John Cramer
-Comments on Code Quality: Class is well implemented and serves only a single purpose. Methods are complete and well
-written. Hardcoding the destinationRectangle coordinates in this Sprint is functionally fine however,
-adding a hypothetical change such as making the sprites move would require changing the hardcoded coordinates. 
