@@ -16,7 +16,7 @@ namespace Game.Commands.BlockCommands
 
         public void Execute()
         {
-            game.brickBlock.blockState.Disappear();
+            game.brickBlock.Disappear();
         }
     }
 }

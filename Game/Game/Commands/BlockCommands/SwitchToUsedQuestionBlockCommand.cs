@@ -16,7 +16,7 @@ namespace Game.Commands.BlockCommands
 
         public void Execute()
         {
-            game.questionBlock.blockState.GetUsed();
+            game.questionBlock.GetUsed();
         }
     }
 }
