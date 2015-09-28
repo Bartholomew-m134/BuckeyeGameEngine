@@ -16,7 +16,7 @@ namespace Game.States
         {
             this.mario = mario;
             this.game = game;
-            mario.sprite = SpriteFactories.MarioSpriteFactory.CreateSmallRightRunningSprite(game);
+            mario.sprite = SpriteFactories.MarioSpriteFactory.CreateSmallRightRunningSprite();
         }
         public void Update()
         {

@@ -23,119 +23,119 @@ namespace Game.SpriteFactories
 
         }
 
-        public static ISprite CreateDeadSprite(Game1 game)
+        public static ISprite CreateDeadSprite()
         {
-            return new DeadSprite(marioSpriteSheet, game);
+            return new DeadSprite(marioSpriteSheet);
         }
 
-        public static ISprite CreateFireLeftCrouchingSprite(Game1 game)
+        public static ISprite CreateFireLeftCrouchingSprite()
         {
-            return new FireLeftCrouchingSprite(marioSpriteSheet, game);
+            return new FireLeftCrouchingSprite(marioSpriteSheet);
         }
 
-        public static ISprite CreateFireLeftIdleSprite(Game1 game)
+        public static ISprite CreateFireLeftIdleSprite()
         {
-            return new FireLeftIdleSprite(marioSpriteSheet, game);
+            return new FireLeftIdleSprite(marioSpriteSheet);
         }
 
-        public static ISprite CreateFireLeftJumpingSprite(Game1 game)
+        public static ISprite CreateFireLeftJumpingSprite()
         {
-            return new FireLeftJumpingSprite(marioSpriteSheet, game);
+            return new FireLeftJumpingSprite(marioSpriteSheet);
         }
 
-        public static ISprite CreateFireLeftRunningSprite(Game1 game)
+        public static ISprite CreateFireLeftRunningSprite()
         {
-            return new FireLeftRunningSprite(marioSpriteSheet, game);
+            return new FireLeftRunningSprite(marioSpriteSheet);
         }
 
-        public static ISprite CreateFireRightCrouchingSprite(Game1 game)
+        public static ISprite CreateFireRightCrouchingSprite()
         {
-            return new FireRightCrouchingSprite(marioSpriteSheet, game);
+            return new FireRightCrouchingSprite(marioSpriteSheet);
         }
 
-        public static ISprite CreateFireRightIdleSprite(Game1 game)
+        public static ISprite CreateFireRightIdleSprite()
         {
-            return new FireRightIdleSprite(marioSpriteSheet, game);
+            return new FireRightIdleSprite(marioSpriteSheet);
         }
 
-        public static ISprite CreateFireRightJumpingSprite(Game1 game)
+        public static ISprite CreateFireRightJumpingSprite()
         {
-            return new FireRightJumpingSprite(marioSpriteSheet, game);
+            return new FireRightJumpingSprite(marioSpriteSheet);
         }
 
-        public static ISprite CreateFireRightRunningSprite(Game1 game)
+        public static ISprite CreateFireRightRunningSprite()
         {
-            return new FireRightRunningSprite(marioSpriteSheet, game);
+            return new FireRightRunningSprite(marioSpriteSheet);
         }
 
-        public static ISprite CreateNormalLeftCrouchingSprite(Game1 game)
+        public static ISprite CreateNormalLeftCrouchingSprite()
         {
-            return new NormalLeftCrouchingSprite(marioSpriteSheet, game);
+            return new NormalLeftCrouchingSprite(marioSpriteSheet);
         }
 
-        public static ISprite CreateNormalLeftIdleSprite(Game1 game)
+        public static ISprite CreateNormalLeftIdleSprite()
         {
-            return new NormalLeftIdleSprite(marioSpriteSheet, game);
+            return new NormalLeftIdleSprite(marioSpriteSheet);
         }
 
-        public static ISprite CreateNormalLeftJumpingSprite(Game1 game)
+        public static ISprite CreateNormalLeftJumpingSprite()
         {
-            return new NormalLeftJumpingSprite(marioSpriteSheet, game);
+            return new NormalLeftJumpingSprite(marioSpriteSheet);
         }
 
-        public static ISprite CreateNormalLeftRunningSprite(Game1 game)
+        public static ISprite CreateNormalLeftRunningSprite()
         {
-            return new NormalLeftRunningSprite(marioSpriteSheet, game);
+            return new NormalLeftRunningSprite(marioSpriteSheet);
         }
 
-        public static ISprite CreateNormalRightCrouchingSprite(Game1 game)
+        public static ISprite CreateNormalRightCrouchingSprite()
         {
-            return new NormalRightCrouchingSprite(marioSpriteSheet, game);
+            return new NormalRightCrouchingSprite(marioSpriteSheet);
         }
 
-        public static ISprite CreateNormalRightIdleSprite(Game1 game)
+        public static ISprite CreateNormalRightIdleSprite()
         {
-            return new NormalRightIdleSprite(marioSpriteSheet, game);
+            return new NormalRightIdleSprite(marioSpriteSheet);
         }
 
-        public static ISprite CreateNormalRightJumpingSprite(Game1 game)
+        public static ISprite CreateNormalRightJumpingSprite()
         {
-            return new NormalRightJumpingSprite(marioSpriteSheet, game);
+            return new NormalRightJumpingSprite(marioSpriteSheet);
         }
 
-        public static ISprite CreateNormalRightRunningSprite(Game1 game)
+        public static ISprite CreateNormalRightRunningSprite()
         {
-            return new NormalRightRunningSprite(marioSpriteSheet, game);
+            return new NormalRightRunningSprite(marioSpriteSheet);
         }
 
-        public static ISprite CreateSmallLeftIdleSprite(Game1 game)
+        public static ISprite CreateSmallLeftIdleSprite()
         {
-            return new SmallLeftIdleSprite(marioSpriteSheet, game);
+            return new SmallLeftIdleSprite(marioSpriteSheet);
         }
 
-        public static ISprite CreateSmallLeftJumpingSprite(Game1 game)
+        public static ISprite CreateSmallLeftJumpingSprite()
         {
-            return new SmallLeftJumpingSprite(marioSpriteSheet, game);
+            return new SmallLeftJumpingSprite(marioSpriteSheet);
         }
 
-        public static ISprite CreateSmallLeftRunningSprite(Game1 game)
+        public static ISprite CreateSmallLeftRunningSprite()
         {
-            return new SmallLeftRunningSprite(marioSpriteSheet, game);
+            return new SmallLeftRunningSprite(marioSpriteSheet);
         }
 
-        public static ISprite CreateSmallRightIdleSprite(Game1 game)
+        public static ISprite CreateSmallRightIdleSprite()
         {
-            return new SmallRightIdleSprite(marioSpriteSheet, game);
+            return new SmallRightIdleSprite(marioSpriteSheet);
         }
 
-        public static ISprite CreateSmallRightJumpingSprite(Game1 game)
+        public static ISprite CreateSmallRightJumpingSprite()
         {
-            return new SmallRightJumpingSprite(marioSpriteSheet, game);
+            return new SmallRightJumpingSprite(marioSpriteSheet);
         }
 
-        public static ISprite CreateSmallRightRunningSprite(Game1 game)
+        public static ISprite CreateSmallRightRunningSprite()
         {
-            return new SmallRightRunningSprite(marioSpriteSheet, game);
+            return new SmallRightRunningSprite(marioSpriteSheet);
         }
     }
 }

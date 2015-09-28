@@ -9,7 +9,6 @@ namespace Game.Enemies.GoombaClasses.GoombaSprites
 {
     class GoombaWalkingLeftSprite : ISprite
     {
-        private Game1 myGame;
         private Texture2D spriteSheet;
         private int currentFrame;
         private int totalFrames = 2;
@@ -17,11 +16,10 @@ namespace Game.Enemies.GoombaClasses.GoombaSprites
         private Vector2[] spriteLocations;
         private Vector2 spriteDimensions;
 
-        public GoombaWalkingLeftSprite(Texture2D texture, Game1 game)
+        public GoombaWalkingLeftSprite(Texture2D texture)
         {
             spriteSheet = texture;
             currentFrame = 0;
-            myGame = game;
             spriteLocations = new Vector2[2];
 
             spriteLocations[0].X = 0;

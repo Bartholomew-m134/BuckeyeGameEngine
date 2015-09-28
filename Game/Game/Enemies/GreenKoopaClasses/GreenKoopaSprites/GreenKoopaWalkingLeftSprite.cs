@@ -9,7 +9,6 @@ namespace Game.Enemies.GreenKoopaClasses.GreenKoopaSprites
 {
     class GreenKoopaWalkingLeftSprite : ISprite
     {
-        private Game1 myGame;
         private Texture2D spriteSheet;
         private int currentFrame;
         private int totalFrames = 2;
@@ -17,11 +16,10 @@ namespace Game.Enemies.GreenKoopaClasses.GreenKoopaSprites
         private Vector2[] spriteLocations;
         private Vector2[] spriteDimensions;
 
-        public GreenKoopaWalkingLeftSprite(Texture2D texture, Game1 game)
+        public GreenKoopaWalkingLeftSprite(Texture2D texture)
         {
             spriteSheet = texture;
             currentFrame = 0;
-            myGame = game;
             spriteLocations = new Vector2[2];
             spriteDimensions = new Vector2[2];
 

@@ -9,15 +9,13 @@ namespace Game.Enemies.GoombaClasses.GoombaSprites
 {
     class GoombaSmashedSprite : ISprite
     {
-        private Game1 myGame;
         private Texture2D spriteSheet;
         private Vector2 spriteLocations;
         private Vector2 spriteDimensions;
 
-        public GoombaSmashedSprite(Texture2D texture, Game1 game)
+        public GoombaSmashedSprite(Texture2D texture)
         {
             spriteSheet = texture;
-            myGame = game;
 
             spriteLocations.X = 60;
             spriteLocations.Y = 8;
