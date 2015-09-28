@@ -11,11 +11,19 @@ namespace Game.Enemies.GoombaClasses.GoombaSprites
     {
         private Game1 myGame;
         private Texture2D spriteSheet;
+        private Vector2 spriteLocations;
+        private Vector2 spriteDimensions;
 
         public GoombaFlippedSprite(Texture2D texture, Game1 game)
         {
             spriteSheet = texture;
             myGame = game;
+
+            spriteLocations.X = 0;
+            spriteLocations.Y = 4;
+
+            spriteDimensions.X = 16;
+            spriteDimensions.Y = 16;
         }
 
         public void Update()
@@ -24,11 +32,10 @@ namespace Game.Enemies.GoombaClasses.GoombaSprites
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle(0, 4, 16, 16);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16);
+            Rectangle sourceRectangle = new Rectangle((int)spriteLocations.X, (int)spriteLocations.Y, (int)spriteDimensions.X, (int)spriteDimensions.Y);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, (int)spriteDimensions.X, (int)spriteDimensions.Y);
 
             spriteBatch.Begin();
-            // Update after learning to flip the sprite
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }

@@ -14,12 +14,24 @@ namespace Game.Enemies.GoombaClasses.GoombaSprites
         private int currentFrame;
         private int totalFrames = 2;
         private int delayBetweenFrames = 0;
+        private Vector2[] spriteLocations;
+        private Vector2 spriteDimensions;
 
         public GoombaWalkingLeftSprite(Texture2D texture, Game1 game)
         {
             spriteSheet = texture;
             currentFrame = 0;
             myGame = game;
+            spriteLocations = new Vector2[2];
+
+            spriteLocations[0].X = 0;
+            spriteLocations[0].Y = 4;
+
+            spriteLocations[1].X = 30;
+            spriteLocations[1].Y = 4;
+
+            spriteDimensions.X = 16;
+            spriteDimensions.Y = 16;
         }
 
         public void Update()
@@ -39,24 +51,12 @@ namespace Game.Enemies.GoombaClasses.GoombaSprites
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            if (currentFrame == 0)
-            {
-                Rectangle sourceRectangle = new Rectangle(0, 4, 16, 16);
-                Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16);
+            Rectangle sourceRectangle = new Rectangle((int)spriteLocations[currentFrame].X, (int)spriteLocations[currentFrame].Y, (int)spriteDimensions.X, (int)spriteDimensions.Y);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, (int)spriteDimensions.X, (int)spriteDimensions.Y);
 
-                spriteBatch.Begin();
-                spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
-                spriteBatch.End();
-            }
-            else if (currentFrame == 1)
-            {
-                Rectangle sourceRectangle = new Rectangle(30, 4, 16, 16);
-                Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16);
-
-                spriteBatch.Begin();
-                spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
-                spriteBatch.End();
-            }
+            spriteBatch.Begin();
+            spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.End();
         }
     }
 }
