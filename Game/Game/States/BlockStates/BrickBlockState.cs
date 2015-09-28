@@ -9,12 +9,10 @@ namespace Game.States.BlockStates
 {
     public class BrickBlockState : IBlockState
     {
-        private Game1 game;
         private Block block;
 
-        public BrickBlockState(Block block, Game1 game)
+        public BrickBlockState(Block block)
         {
-            this.game = game;
             this.block = block;
             block.sprite = TileSpriteFactory.CreateBrickBlockSprite();
         }

@@ -9,12 +9,10 @@ namespace Game.States.BlockStates
 {
     public class HiddenBlockState : IBlockState
     {
-        private Game1 game;
         private Block block;
 
-        public HiddenBlockState(Block block, Game1 game)
+        public HiddenBlockState(Block block)
         {
-            this.game = game;
             this.block = block;
             block.sprite = TileSpriteFactory.CreateHiddenBlockSprite();
         }

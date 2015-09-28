@@ -9,10 +9,9 @@ namespace Game.States.BlockStates
 {
     public class NullBlockState : IBlockState
     {
-        private Block block;
 
         public NullBlockState(Block block)
-        {
+        {        
             block.sprite = TileSpriteFactory.CreateHiddenBlockSprite();
         }
 
