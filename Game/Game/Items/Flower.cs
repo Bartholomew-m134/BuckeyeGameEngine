@@ -16,7 +16,7 @@ namespace Game.Items
         public Flower(Game1 game)
         {
             myGame = game;
-            flowerSprite = ItemsSpriteFactory.CreateFlowerSprite(game);
+            flowerSprite = ItemsSpriteFactory.CreateFlowerSprite();
             location = new Vector2(130, 80);
 
         }

@@ -16,7 +16,7 @@ namespace Game.Items
         public Star(Game1 game)
         {
             myGame = game;
-            starSprite = ItemsSpriteFactory.CreateStarSprite(game);
+            starSprite = ItemsSpriteFactory.CreateStarSprite();
             location = new Vector2(430, 80);
 
         }

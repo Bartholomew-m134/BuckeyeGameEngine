@@ -8,13 +8,11 @@ namespace Game.Enemies.GreenKoopaClasses.GreenKoopaStates
     public class GreenKoopaFlippedInShellState : IGreenKoopaState
     {
         private GreenKoopa greenKoopa;
-        private Game1 myGame;
 
-        public GreenKoopaFlippedInShellState(GreenKoopa greenKoopa, Game1 game)
+        public GreenKoopaFlippedInShellState(GreenKoopa greenKoopa)
         {
             this.greenKoopa = greenKoopa;
-            this.myGame = game;
-            this.greenKoopa.greenKoopaSprite = Game.SpriteFactories.EnemySpriteFactory.CreateGreenKoopaFlippedInShellSprite(myGame);
+            this.greenKoopa.greenKoopaSprite = Game.SpriteFactories.EnemySpriteFactory.CreateGreenKoopaFlippedInShellSprite();
         }
 
         public void GreenKoopaEmergingFromShell()

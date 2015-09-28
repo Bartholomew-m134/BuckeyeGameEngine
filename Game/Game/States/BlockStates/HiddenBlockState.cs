@@ -9,14 +9,12 @@ namespace Game.States.BlockStates
 {
     public class HiddenBlockState : IBlockState
     {
-        private Game1 game;
         private Block block;
 
-        public HiddenBlockState(Block block, Game1 game)
+        public HiddenBlockState(Block block)
         {
-            this.game = game;
             this.block = block;
-            block.sprite = TileSpriteFactory.CreateHiddenBlockSprite(game);
+            block.sprite = TileSpriteFactory.CreateHiddenBlockSprite();
         }
 
         public void Update()
@@ -29,7 +27,7 @@ namespace Game.States.BlockStates
 
         public void GetUsed()
         {
-            block.blockState = new UsedBlockState(block, game);
+            block.blockState = new UsedBlockState(block);
         }
     }
 }

@@ -14,11 +14,15 @@ namespace Game.Items.ItemSprites
         private int currentFrame;
         private int totalFrames;
         private int delayBetweenFrames = 10;
-        private Game1 myGame;
-        public FlowerSprite(Texture2D texture, Game1 game)
+  
+        private int width = 17;
+        private int height = 17;
+        private int sourceX = 3;
+        private int sourceY = 63;
+        private int distanceBetweenSprites = 30;
+        public FlowerSprite(Texture2D texture)
         {
             Texture = texture;
-            myGame = game;
             currentFrame = 0;
             totalFrames = 4;
 
@@ -44,10 +48,7 @@ namespace Game.Items.ItemSprites
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location) {
-            int width = 17;
-            int height = 17;
-            int sourceX = 3 + 30*currentFrame;
-            int sourceY = 63;
+            sourceX = 3 + distanceBetweenSprites * currentFrame;
             
 
             Rectangle sourceRectangle = new Rectangle(sourceX, sourceY, width, height);

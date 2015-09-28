@@ -11,7 +11,6 @@ namespace Game.Mario.MarioSprites
 {
     public class FireLeftRunningSprite : ISprite
     {
-        private Game1 game;
         private Texture2D spriteSheet;
         private ArrayList fireLeftRunningSpriteDimensions;
         private ArrayList fireLeftRunningSpriteLocations;
@@ -31,9 +30,8 @@ namespace Game.Mario.MarioSprites
         private Rectangle sourceRectangle;
         private Rectangle destinationRectangle;
 
-        public FireLeftRunningSprite(Texture2D spriteSheet, Game1 game)
+        public FireLeftRunningSprite(Texture2D spriteSheet)
         {
-            this.game = game;
             this.spriteSheet = spriteSheet;
             currentSprite = 0;
             fireLeftRunningSpriteDimensions = new ArrayList();

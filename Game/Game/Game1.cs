@@ -76,8 +76,8 @@ namespace Game
             brickBlock = new Block(1, this);
             hiddenBlock = new Block(2, this);
             questionBlock = new Block(3, this);
-            solidBlock = TileSpriteFactory.CreateSolidBlockSprite(this);
-            breakingBlock = TileSpriteFactory.CreateBreakingBlockSprite(this);
+            solidBlock = TileSpriteFactory.CreateSolidBlockSprite();
+            breakingBlock = TileSpriteFactory.CreateBreakingBlockSprite();
 
             goomba = new Goomba(this);
             greenKoopa = new GreenKoopa(this);

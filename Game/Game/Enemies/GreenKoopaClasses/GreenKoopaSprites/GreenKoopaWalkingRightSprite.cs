@@ -9,16 +9,31 @@ namespace Game.Enemies.GreenKoopaClasses.GreenKoopaSprites
 {
     class GreenKoopaWalkingRightSprite : ISprite
     {
-        private Game1 myGame;
         private Texture2D spriteSheet;
         private int currentFrame;
         private int totalFrames = 2;
         private int delayBetweenFrames = 0;
+        private Vector2[] spriteLocations;
+        private Vector2[] spriteDimensions;
 
-        public GreenKoopaWalkingRightSprite(Texture2D texture, Game1 game)
+        public GreenKoopaWalkingRightSprite(Texture2D texture)
         {
             spriteSheet = texture;
-            myGame = game;
+            currentFrame = 0;
+            spriteLocations = new Vector2[2];
+            spriteDimensions = new Vector2[2];
+
+            spriteLocations[0].X = 210;
+            spriteLocations[0].Y = 2;
+
+            spriteDimensions[0].X = 16;
+            spriteDimensions[0].Y = 21;
+
+            spriteLocations[1].X = 241;
+            spriteLocations[1].Y = 2;
+
+            spriteDimensions[1].X = 15;
+            spriteDimensions[1].Y = 22;
         }
 
         public void Update()
@@ -38,24 +53,12 @@ namespace Game.Enemies.GreenKoopaClasses.GreenKoopaSprites
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            if (currentFrame == 0)
-            {
-                Rectangle sourceRectangle = new Rectangle(210, 2, 16, 21);
-                Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 21);
+            Rectangle sourceRectangle = new Rectangle((int)spriteLocations[currentFrame].X, (int)spriteLocations[currentFrame].Y, (int)spriteDimensions[currentFrame].X, (int)spriteDimensions[currentFrame].Y);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, (int)spriteDimensions[currentFrame].X, (int)spriteDimensions[currentFrame].Y);
 
-                spriteBatch.Begin();
-                spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
-                spriteBatch.End();
-            }
-            else if (currentFrame == 1)
-            {
-                Rectangle sourceRectangle = new Rectangle(241, 2, 15, 22);
-                Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 15, 22);
-
-                spriteBatch.Begin();
-                spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
-                spriteBatch.End();
-            }
+            spriteBatch.Begin();
+            spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.End();
         }
     }
 }

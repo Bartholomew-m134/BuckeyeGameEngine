@@ -9,34 +9,34 @@ namespace Game.States
     {
          void Update();
 
-         void left();
+         void Left();
 
 
-         void right();
+         void Right();
 
 
-         void up();
+         void Up();
 
 
-         void down();
+         void Down();
 
 
-         void land();
+         void Land();
 
 
-         void jump();
+         void Jump();
 
 
-         void flower();
+         void Flower();
 
 
-         void mushroom();
+         void Mushroom();
 
 
-         void damage();
+         void Damage();
 
 
-         void die();
+         void Die();
 
 
     }

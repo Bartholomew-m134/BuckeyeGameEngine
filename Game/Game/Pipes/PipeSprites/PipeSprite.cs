@@ -12,11 +12,9 @@ namespace Game.Pipes.PipeSprites
     {
         private Texture2D Texture { get; set; }
 
-        private Game1 myGame;
-        public PipeSprite(Texture2D texture, Game1 game)
+        public PipeSprite(Texture2D texture)
         {
             Texture = texture;
-            myGame = game;
 
         }
 

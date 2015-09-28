@@ -23,39 +23,39 @@ namespace Game.SpriteFactories
 
         }
 
-        public static ISprite CreateQuestionBlockSprite(Game1 game)
+        public static ISprite CreateQuestionBlockSprite()
         {
-            return new QuestionBlockSprite(tileSpriteSheet, game);
+            return new QuestionBlockSprite(tileSpriteSheet);
         }
 
-        public static ISprite CreateBrickBlockSprite(Game1 game)
+        public static ISprite CreateBrickBlockSprite()
         {
-            return new BrickBlockSprite(tileSpriteSheet, game);
+            return new BrickBlockSprite(tileSpriteSheet);
         }
 
-        public static ISprite CreateUsedBlockSprite(Game1 game)
+        public static ISprite CreateUsedBlockSprite()
         {
-            return new UsedBlockSprite(tileSpriteSheet, game);
+            return new UsedBlockSprite(tileSpriteSheet);
         }
 
-        public static ISprite CreateHiddenBlockSprite(Game1 game)
+        public static ISprite CreateHiddenBlockSprite()
         {
-            return new HiddenBlockSprite(tileSpriteSheet, game);
+            return new HiddenBlockSprite(tileSpriteSheet);
         }
 
-        public static ISprite CreateSolidBlockSprite(Game1 game)
+        public static ISprite CreateSolidBlockSprite()
         {
-            return new SolidBlockSprite(tileSpriteSheet, game);
+            return new SolidBlockSprite(tileSpriteSheet);
         }
 
-        public static ISprite CreateBreakingBlockSprite(Game1 game)
+        public static ISprite CreateBreakingBlockSprite()
         {
-            return new BreakingBlockSprite(tileSpriteSheet, game);
+            return new BreakingBlockSprite(tileSpriteSheet);
         }
 
-        public static ISprite CreatePipeSprite(Game1 game)
+        public static ISprite CreatePipeSprite()
         {
-            return new PipeSprite(tileSpriteSheet, game);
+            return new PipeSprite(tileSpriteSheet);
         }
     }
 }

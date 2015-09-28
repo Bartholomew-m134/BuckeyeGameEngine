@@ -10,5 +10,9 @@ namespace Game.Blocks
           void Update();
 
           void Draw();
+
+          void Disappear();
+
+          void GetUsed();
     }
 }

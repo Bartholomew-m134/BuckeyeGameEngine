@@ -24,49 +24,49 @@ namespace Game.SpriteFactories
 
         }
 
-        public static ISprite CreateGoombaFlippedSprite(Game1 game)
+        public static ISprite CreateGoombaFlippedSprite()
         {
-            return new GoombaSmashedSprite(enemySpriteSheet, game);
+            return new GoombaSmashedSprite(enemySpriteSheet);
         }
 
-        public static ISprite CreateGoombaSmashedSprite(Game1 game)
+        public static ISprite CreateGoombaSmashedSprite()
         {
-            return new GoombaFlippedSprite(enemySpriteSheet, game);
+            return new GoombaFlippedSprite(enemySpriteSheet);
         }
 
-        public static ISprite CreateGoombaWalkingLeftSprite(Game1 game)
+        public static ISprite CreateGoombaWalkingLeftSprite()
         {
-            return new GoombaWalkingLeftSprite(enemySpriteSheet, game);
+            return new GoombaWalkingLeftSprite(enemySpriteSheet);
         }
 
-        public static ISprite CreateGoombaWalkingRightSprite(Game1 game)
+        public static ISprite CreateGoombaWalkingRightSprite()
         {
-            return new GoombaWalkingRightSprite(enemySpriteSheet, game);
+            return new GoombaWalkingRightSprite(enemySpriteSheet);
         }
 
-        public static ISprite CreateGreenKoopaEmergingFromShellSprite(Game1 game)
+        public static ISprite CreateGreenKoopaEmergingFromShellSprite()
         {
-            return new GreenKoopaEmergingFromShellSprite(enemySpriteSheet, game);
+            return new GreenKoopaEmergingFromShellSprite(enemySpriteSheet);
         }
 
-        public static ISprite CreateGreenKoopaFlippedInShellSprite(Game1 game)
+        public static ISprite CreateGreenKoopaFlippedInShellSprite()
         {
-            return new GreenKoopaFlippedInShellSprite(enemySpriteSheet, game);
+            return new GreenKoopaFlippedInShellSprite(enemySpriteSheet);
         }
 
-        public static ISprite CreateGreenKoopaHidingInShellSprite(Game1 game)
+        public static ISprite CreateGreenKoopaHidingInShellSprite()
         {
-            return new GreenKoopaHidingInShellSprite(enemySpriteSheet, game);
+            return new GreenKoopaHidingInShellSprite(enemySpriteSheet);
         }
 
-        public static ISprite CreateGreenKoopaWalkingLeftSprite(Game1 game)
+        public static ISprite CreateGreenKoopaWalkingLeftSprite()
         {
-            return new GreenKoopaWalkingLeftSprite(enemySpriteSheet, game);
+            return new GreenKoopaWalkingLeftSprite(enemySpriteSheet);
         }
 
-        public static ISprite CreateGreenKoopaWalkingRightSprite(Game1 game)
+        public static ISprite CreateGreenKoopaWalkingRightSprite()
         {
-            return new GreenKoopaWalkingRightSprite(enemySpriteSheet, game);
+            return new GreenKoopaWalkingRightSprite(enemySpriteSheet);
         }
 
     }

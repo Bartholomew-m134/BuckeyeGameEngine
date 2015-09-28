@@ -11,7 +11,6 @@ namespace Game.Mario.MarioSprites
 {
     public class NormalLeftRunningSprite : ISprite
     {
-        private Game1 game;
         private Texture2D spriteSheet;
         private ArrayList normalLeftRunningSpriteDimensions;
         private ArrayList normalLeftRunningSpriteLocations;
@@ -31,9 +30,8 @@ namespace Game.Mario.MarioSprites
 
         private Rectangle sourceRectangle;
         private Rectangle destinationRectangle;
-        public NormalLeftRunningSprite(Texture2D spriteSheet, Game1 game)
+        public NormalLeftRunningSprite(Texture2D spriteSheet)
         {
-            this.game = game;
             this.spriteSheet = spriteSheet;
             currentSprite = 0;
             normalLeftRunningSpriteDimensions = new ArrayList();

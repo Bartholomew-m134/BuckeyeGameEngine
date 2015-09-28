@@ -46,6 +46,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <PlatformTarget>x86</PlatformTarget>
     <XnaCompressContent>false</XnaCompressContent>
+    <CodeAnalysisRuleSet>BasicDesignGuidelineRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>pdbonly</DebugType>
@@ -170,30 +171,30 @@
     <Compile Include="States\BlockStates\NullBlockState.cs" />
     <Compile Include="States\BlockStates\QuestionBlockState.cs" />
     <Compile Include="States\BlockStates\UsedBlockState.cs" />
-    <Compile Include="States\MarioStates\Dead.cs" />
-    <Compile Include="States\MarioStates\FireLeftCrouching.cs" />
-    <Compile Include="States\MarioStates\FireLeftIdle.cs" />
-    <Compile Include="States\MarioStates\FireLeftJumping.cs" />
-    <Compile Include="States\MarioStates\FireLeftRunning.cs" />
-    <Compile Include="States\MarioStates\FireRightCrouching.cs" />
-    <Compile Include="States\MarioStates\FireRightIdle.cs" />
-    <Compile Include="States\MarioStates\FireRightJumping.cs" />
-    <Compile Include="States\MarioStates\FireRightRunning.cs" />
+    <Compile Include="States\MarioStates\DeadMarioState.cs" />
+    <Compile Include="States\MarioStates\FireLeftCrouchingState.cs" />
+    <Compile Include="States\MarioStates\FireLeftIdleState.cs" />
+    <Compile Include="States\MarioStates\FireLeftJumpingState.cs" />
+    <Compile Include="States\MarioStates\FireLeftRunningState.cs" />
+    <Compile Include="States\MarioStates\FireRightCrouchingState.cs" />
+    <Compile Include="States\MarioStates\FireRightIdleState.cs" />
+    <Compile Include="States\MarioStates\FireRightJumpingState.cs" />
+    <Compile Include="States\MarioStates\FireRightRunningState.cs" />
     <Compile Include="States\MarioStates\IMarioState.cs" />
-    <Compile Include="States\MarioStates\NormalLeftCrouching.cs" />
-    <Compile Include="States\MarioStates\NormalLeftIdle.cs" />
-    <Compile Include="States\MarioStates\NormalLeftJumping.cs" />
-    <Compile Include="States\MarioStates\NormalLeftRunning.cs" />
-    <Compile Include="States\MarioStates\NormalRightCrouching.cs" />
-    <Compile Include="States\MarioStates\NormalRightIdle.cs" />
-    <Compile Include="States\MarioStates\NormalRightJumping.cs" />
-    <Compile Include="States\MarioStates\NormalRightRunning.cs" />
-    <Compile Include="States\MarioStates\SmallLeftIdle.cs" />
-    <Compile Include="States\MarioStates\SmallLeftJumping.cs" />
-    <Compile Include="States\MarioStates\SmallLeftRunning.cs" />
-    <Compile Include="States\MarioStates\SmallRightIdle.cs" />
-    <Compile Include="States\MarioStates\SmallRightJumping.cs" />
-    <Compile Include="States\MarioStates\SmallRightRunning.cs" />
+    <Compile Include="States\MarioStates\NormalLeftCrouchingState.cs" />
+    <Compile Include="States\MarioStates\NormalLeftIdleState.cs" />
+    <Compile Include="States\MarioStates\NormalLeftJumpingState.cs" />
+    <Compile Include="States\MarioStates\NormalLeftRunningState.cs" />
+    <Compile Include="States\MarioStates\NormalRightCrouchingState.cs" />
+    <Compile Include="States\MarioStates\NormalRightIdleState.cs" />
+    <Compile Include="States\MarioStates\NormalRightJumpingState.cs" />
+    <Compile Include="States\MarioStates\NormalRightRunningState.cs" />
+    <Compile Include="States\MarioStates\SmallLeftIdleState.cs" />
+    <Compile Include="States\MarioStates\SmallLeftJumpingState.cs" />
+    <Compile Include="States\MarioStates\SmallLeftRunningState.cs" />
+    <Compile Include="States\MarioStates\SmallRightIdleState.cs" />
+    <Compile Include="States\MarioStates\SmallRightJumpingState.cs" />
+    <Compile Include="States\MarioStates\SmallRightRunningState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="CodeReviews\BlockReadability.txt" />

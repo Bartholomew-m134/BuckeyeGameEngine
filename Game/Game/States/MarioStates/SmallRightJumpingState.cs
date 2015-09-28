@@ -6,69 +6,69 @@ using Game.Mario;
 
 namespace Game.States
 {
-    class SmallLeftJumping : IMarioState
+    class SmallRightJumping : IMarioState
     {
 
         private MarioInstance mario;
         private Game1 game;
 
-        public SmallLeftJumping(MarioInstance mario, Game1 game)
+        public SmallRightJumping(MarioInstance mario, Game1 game)
         {
             this.mario = mario;
             this.game = game;
-            mario.sprite = SpriteFactories.MarioSpriteFactory.CreateSmallLeftJumpingSprite(game);
+            mario.sprite = SpriteFactories.MarioSpriteFactory.CreateSmallRightJumpingSprite();
         }
         public void Update()
         {
             mario.sprite.Update();
         }
 
-        public void left()
+        public void Left()
         {
 
         }
 
-        public void right()
+        public void Right()
         {
 
         }
 
-        public void up()
+        public void Up()
         {
 
         }
 
-        public void down()
+        public void Down()
         {
 
         }
 
-        public void land()
+        public void Land()
         {
-            mario.state = new SmallLeftIdle(mario, game);
+            mario.state = new SmallRightIdle(mario, game);
         }
 
-        public void jump()
+        public void Jump()
         {
 
         }
 
-        public void flower()
+        public void Flower()
         {
-            mario.state = new FireLeftJumping(mario, game);
+            mario.state = new FireRightJumping(mario, game);
         }
 
-        public void mushroom()
+        public void Mushroom()
         {
-            mario.state = new NormalLeftJumping(mario, game);
+            mario.state = new NormalRightJumping(mario, game);
         }
 
-        public void damage()
+        public void Damage()
         {
             //mario.state = new Dead(mario, game);
         }
 
-        public void die()
+        public void Die()
         {
             mario.state = new Dead(mario, game);
         }

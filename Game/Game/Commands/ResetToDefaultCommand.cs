@@ -34,8 +34,8 @@ namespace Game.Commands
             game.brickBlock = new Block(1, game);
             game.hiddenBlock = new Block(2, game);
             game.questionBlock = new Block(3, game);
-            game.solidBlock = TileSpriteFactory.CreateSolidBlockSprite(game);
-            game.breakingBlock = TileSpriteFactory.CreateBreakingBlockSprite(game);
+            game.solidBlock = TileSpriteFactory.CreateSolidBlockSprite();
+            game.breakingBlock = TileSpriteFactory.CreateBreakingBlockSprite();
 
             game.goomba = new Goomba(game);
             game.greenKoopa = new GreenKoopa(game);

@@ -9,13 +9,19 @@ namespace Game.Enemies.GoombaClasses.GoombaSprites
 {
     class GoombaSmashedSprite : ISprite
     {
-        private Game1 myGame;
         private Texture2D spriteSheet;
+        private Vector2 spriteLocations;
+        private Vector2 spriteDimensions;
 
-        public GoombaSmashedSprite(Texture2D texture, Game1 game)
+        public GoombaSmashedSprite(Texture2D texture)
         {
             spriteSheet = texture;
-            myGame = game;
+
+            spriteLocations.X = 60;
+            spriteLocations.Y = 8;
+
+            spriteDimensions.X = 16;
+            spriteDimensions.Y = 8;
         }
 
         public void Update()
@@ -24,8 +30,8 @@ namespace Game.Enemies.GoombaClasses.GoombaSprites
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle(60, 8, 16, 8);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 8);
+            Rectangle sourceRectangle = new Rectangle((int)spriteLocations.X, (int)spriteLocations.Y, (int)spriteDimensions.X, (int)spriteDimensions.Y);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, (int)spriteDimensions.X, (int)spriteDimensions.Y);
 
             spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);

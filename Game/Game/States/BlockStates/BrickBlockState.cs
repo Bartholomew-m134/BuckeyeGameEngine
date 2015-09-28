@@ -9,14 +9,12 @@ namespace Game.States.BlockStates
 {
     public class BrickBlockState : IBlockState
     {
-        private Game1 game;
         private Block block;
 
-        public BrickBlockState(Block block, Game1 game)
+        public BrickBlockState(Block block)
         {
-            this.game = game;
             this.block = block;
-            block.sprite = TileSpriteFactory.CreateBrickBlockSprite(game);
+            block.sprite = TileSpriteFactory.CreateBrickBlockSprite();
         }
 
         public void Update()
@@ -26,7 +24,7 @@ namespace Game.States.BlockStates
 
         public void Disappear()
         {
-            block.blockState = new NullBlockState(block, game);
+            block.blockState = new NullBlockState(block);
         }
 
         public void GetUsed()

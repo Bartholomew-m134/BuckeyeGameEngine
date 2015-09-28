@@ -30,5 +30,64 @@ namespace Game.Mario
         {
             sprite.Draw(myGame.spriteBatch, location);
         }
+
+        public void Left()
+        {
+            state.Left();
+        }
+
+
+        public void Right()
+        {
+            state.Right();
+        }
+
+
+        public void Up()
+        {
+            state.Up();
+        }
+
+
+        public void Down()
+        {
+            state.Down();
+        }
+
+
+        public void Land()
+        {
+            state.Land();
+        }
+
+
+        public void Jump()
+        {
+            state.Jump();
+        }
+
+
+        public void Flower()
+        {
+            state.Flower();
+        }
+
+
+        public void Mushroom()
+        {
+            state.Mushroom();
+        }
+
+
+        public void Damage()
+        {
+            state.Damage();
+        }
+
+
+        public void Die()
+        {
+            state.Die();
+        }
     }
 }

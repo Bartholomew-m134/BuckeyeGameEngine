@@ -10,15 +10,13 @@ namespace Game.Mario.MarioSprites
 {
     public class DeadSprite : ISprite
     {
-        private Game1 game;
         private Texture2D spriteSheet;
         private int width;
         private int height;
         private int sheetXLocation;
         private int sheetYLocation;
-        public DeadSprite(Texture2D spriteSheet, Game1 game)
+        public DeadSprite(Texture2D spriteSheet)
         {
-            this.game = game;
             this.spriteSheet = spriteSheet;
             width = 14;
             height = 13;

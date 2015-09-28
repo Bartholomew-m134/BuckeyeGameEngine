@@ -10,15 +10,13 @@ namespace Game.Mario.MarioSprites
 {
     public class FireLeftIdleSprite : ISprite
     {
-        private Game1 game;
         private Texture2D spriteSheet;
         private int width;
         private int height;
         private int sheetXLocation;
         private int sheetYLocation;
-        public FireLeftIdleSprite(Texture2D spriteSheet, Game1 game)
+        public FireLeftIdleSprite(Texture2D spriteSheet)
         {
-            this.game = game;
             this.spriteSheet = spriteSheet;
             width = 15;
             height = 31;

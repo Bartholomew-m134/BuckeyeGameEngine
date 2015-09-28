@@ -16,7 +16,7 @@ namespace Game.Pipes
         public Pipe(Game1 game)
         {
             myGame = game;
-            pipeSprite = TileSpriteFactory.CreatePipeSprite(game);
+            pipeSprite = TileSpriteFactory.CreatePipeSprite();
             location = new Vector2(600,200);
 
         }

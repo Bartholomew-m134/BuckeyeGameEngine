@@ -21,13 +21,13 @@ namespace Game.Blocks
             switch (blockType)
             {
                 case 1:
-                    blockState = new BrickBlockState(this, game);
+                    blockState = new BrickBlockState(this);
                     break;
                 case 2:
-                    blockState = new HiddenBlockState(this, game);
+                    blockState = new HiddenBlockState(this);
                     break;
                 case 3:
-                    blockState = new QuestionBlockState(this, game);
+                    blockState = new QuestionBlockState(this);
                     break;
             }
         }
@@ -54,6 +54,14 @@ namespace Game.Blocks
            
         }
 
+        public void Disappear()
+        {
+            blockState.Disappear();
+        }
 
+        public void GetUsed()
+        {
+            blockState.GetUsed();
+        }
     }
 }

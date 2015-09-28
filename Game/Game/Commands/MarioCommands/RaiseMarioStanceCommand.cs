@@ -16,8 +16,8 @@ namespace Game.Commands.MarioCommands
 
         public void Execute()
         {
-            game.mario.state.up();
-            game.mario.state.jump();
+            game.mario.Up();
+            game.mario.Jump();
         }
     }
 }

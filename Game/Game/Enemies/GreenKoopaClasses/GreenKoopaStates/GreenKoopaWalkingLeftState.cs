@@ -8,33 +8,31 @@ namespace Game.Enemies.GreenKoopaClasses.GreenKoopaStates
     public class GreenKoopaWalkingLeftState : IGreenKoopaState
     {
         private GreenKoopa greenKoopa;
-        private Game1 myGame;
 
-        public GreenKoopaWalkingLeftState(GreenKoopa greenKoopa, Game1 game)
+        public GreenKoopaWalkingLeftState(GreenKoopa greenKoopa)
         {
             this.greenKoopa = greenKoopa;
-            this.myGame = game;
-            this.greenKoopa.greenKoopaSprite = Game.SpriteFactories.EnemySpriteFactory.CreateGreenKoopaWalkingLeftSprite(myGame);
+            this.greenKoopa.greenKoopaSprite = Game.SpriteFactories.EnemySpriteFactory.CreateGreenKoopaWalkingLeftSprite();
         }
 
         public void GreenKoopaEmergingFromShell()
         {
-            greenKoopa.state = new GreenKoopaEmergingFromShellState(greenKoopa, myGame);
+            greenKoopa.state = new GreenKoopaEmergingFromShellState(greenKoopa);
         }
 
         public void GreenKoopaShellFlipped()
         {
-            greenKoopa.state = new GreenKoopaFlippedInShellState(greenKoopa, myGame);
+            greenKoopa.state = new GreenKoopaFlippedInShellState(greenKoopa);
         }
 
         public void GreenKoopaHidingInShell()
         {
-            greenKoopa.state = new GreenKoopaHidingInShellState(greenKoopa, myGame);
+            greenKoopa.state = new GreenKoopaHidingInShellState(greenKoopa);
         }
 
         public void GreenKoopaChangeDirection()
         {
-            greenKoopa.state = new GreenKoopaWalkingRightState(greenKoopa, myGame);
+            greenKoopa.state = new GreenKoopaWalkingRightState(greenKoopa);
         }
     }
 }

@@ -16,59 +16,59 @@ namespace Game.States
         {
             this.mario = mario;
             this.game = game;
-            mario.sprite = SpriteFactories.MarioSpriteFactory.CreateFireRightCrouchingSprite(game);
+            mario.sprite = SpriteFactories.MarioSpriteFactory.CreateFireRightCrouchingSprite();
         }
         public void Update()
         {
             mario.sprite.Update();
         }
 
-        public void left()
+        public void Left()
         {
 
         }
 
-        public void right()
+        public void Right()
         {
 
         }
 
-        public void up()
+        public void Up()
         {
             mario.state = new FireRightIdle(mario, game);
         }
 
-        public void down()
+        public void Down()
         {
 
         }
 
-        public void land()
+        public void Land()
         {
 
         }
 
-        public void jump()
+        public void Jump()
         {
 
         }
 
-        public void flower()
+        public void Flower()
         {
 
         }
 
-        public void mushroom()
+        public void Mushroom()
         {
             mario.state = new NormalRightCrouching(mario, game);
         }
 
-        public void damage()
+        public void Damage()
         {
             mario.state = new SmallRightIdle(mario, game);
         }
 
-        public void die()
+        public void Die()
         {
             mario.state = new Dead(mario, game);
         }

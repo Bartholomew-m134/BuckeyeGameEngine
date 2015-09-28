@@ -8,12 +8,10 @@ namespace Game.Enemies.GoombaClasses.GoombaStates
     public class GoombaSmashedState : IGoombaState
     {
         private Goomba goomba;
-        private Game1 myGame;
-        public GoombaSmashedState(Goomba goomba, Game1 game)
+        public GoombaSmashedState(Goomba goomba)
         {
             this.goomba = goomba;
-            this.myGame = game;
-            this.goomba.goombaSprite = Game.SpriteFactories.EnemySpriteFactory.CreateGoombaSmashedSprite(myGame);
+            this.goomba.goombaSprite = Game.SpriteFactories.EnemySpriteFactory.CreateGoombaSmashedSprite();
         }
         public void SmashGoomba()
         {
