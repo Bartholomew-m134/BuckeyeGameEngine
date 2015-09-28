@@ -11,8 +11,6 @@ namespace Game.Mario
 
         void Draw();
 
-        void Update();
-
         void left();
 
 

@@ -31,11 +31,6 @@ namespace Game.Mario
             sprite.Draw(myGame.spriteBatch, location);
         }
 
-        public void Update()
-        {
-            state.Update();
-        }
-
         public void left()
         {
             state.left();
