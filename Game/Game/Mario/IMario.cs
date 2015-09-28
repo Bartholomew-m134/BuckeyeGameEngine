@@ -10,5 +10,34 @@ namespace Game.Mario
         void Update();
 
         void Draw();
+
+        void left();
+
+
+        void right();
+
+
+        void up();
+
+
+        void down();
+
+
+        void land();
+
+
+        void jump();
+
+
+        void flower();
+
+
+        void mushroom();
+
+
+        void damage();
+
+
+        void die();
     }
 }

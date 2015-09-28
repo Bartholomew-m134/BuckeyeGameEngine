@@ -54,6 +54,14 @@ namespace Game.Blocks
            
         }
 
+        public void Disappear()
+        {
+            blockState.Disappear();
+        }
 
+        public void GetUsed()
+        {
+            blockState.GetUsed();
+        }
     }
 }
