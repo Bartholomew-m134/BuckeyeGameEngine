@@ -21,11 +21,9 @@ namespace Game.Items.ItemSprites
         private int sourceY = 94;
         private int distanceBetweenSprites = 30;
 
-        private Game1 myGame;
-        public CoinSprite(Texture2D texture, Game1 game)
+        public CoinSprite(Texture2D texture)
         {
             Texture = texture;
-            myGame = game;
             currentFrame = 0;
             totalFrames = 4;
 

@@ -16,7 +16,7 @@ namespace Game.Items
         public GreenMushroom(Game1 game)
         {
             myGame = game;
-            greenMushroomSprite = ItemsSpriteFactory.CreateGreenMushroomSprite(game);
+            greenMushroomSprite = ItemsSpriteFactory.CreateGreenMushroomSprite();
             location = new Vector2(230, 80);
 
         }

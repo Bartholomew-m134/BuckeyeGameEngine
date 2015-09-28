@@ -23,24 +23,24 @@ namespace Game.SpriteFactories
 
         }
 
-        public static ISprite CreateRedMushroomSprite(Game1 game) {
-            return new RedMushroomSprite(itemSpriteSheet, game);
+        public static ISprite CreateRedMushroomSprite() {
+            return new RedMushroomSprite(itemSpriteSheet);
         }
 
-        public static ISprite CreateGreenMushroomSprite(Game1 game) {
-            return new GreenMushroomSprite(itemSpriteSheet, game);
+        public static ISprite CreateGreenMushroomSprite() {
+            return new GreenMushroomSprite(itemSpriteSheet);
         }
 
-        public static ISprite CreateCoinSprite(Game1 game) {
-            return new CoinSprite(itemSpriteSheet, game);
+        public static ISprite CreateCoinSprite() {
+            return new CoinSprite(itemSpriteSheet);
         }
 
-        public static ISprite CreateFlowerSprite(Game1 game) {
-            return new FlowerSprite(itemSpriteSheet, game);
+        public static ISprite CreateFlowerSprite() {
+            return new FlowerSprite(itemSpriteSheet);
         }
 
-        public static ISprite CreateStarSprite(Game1 game) {
-            return new StarSprite(itemSpriteSheet, game);
+        public static ISprite CreateStarSprite() {
+            return new StarSprite(itemSpriteSheet);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Game.Items
         public Coin(Game1 game)
         {
             myGame = game;
-            coinSprite = ItemsSpriteFactory.CreateCoinSprite(game);
+            coinSprite = ItemsSpriteFactory.CreateCoinSprite();
             location = new Vector2(30, 80);
 
         }
