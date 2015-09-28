@@ -1,0 +1,17 @@
+﻿Author:							Jackson Luken
+Date :							9/28/15
+Sprint:							2
+Reviewed file:					Block.cs
+File Author:					Matt Bartholomew
+Code Quality:
+	The block class is very well constructed with no unneeded coupling. 
+	It uses methods to allow outside calls to use its fields without having to call the fields themselves
+	and therefor further increases code cohesion and completeness throughout the program. the only "code smell"
+	is the long variable chain used in the draw calls, but these do not add any real problems to the code's cleanness 
+	or reusability.
+
+Hypothetical Change:
+	One hypothetical change would be if the user wanted to add the number of blocks available to be used. In this
+	case all that would need to be done would be to insert the new blocks into the switch cases and they would be simply implemented
+	for this class.
+
