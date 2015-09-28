@@ -9,16 +9,14 @@ namespace Game.Blocks.BlockSprites
 {
     public class BreakingBlockSprite : ISprite
     {
-        private Game1 game;
         private Texture2D spriteSheet;
         private int width;
         private int height;
         private int sheetXLocation;
         private int sheetYLocation;
 
-        public BreakingBlockSprite(Texture2D spriteSheet, Game1 game)
+        public BreakingBlockSprite(Texture2D spriteSheet)
         {
-            this.game = game;
             this.spriteSheet = spriteSheet;
             width = 16;
             height = 16;

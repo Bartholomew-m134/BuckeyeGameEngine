@@ -16,7 +16,7 @@ namespace Game.States.BlockStates
         {
             this.game = game;
             this.block = block;
-            block.sprite = TileSpriteFactory.CreateQuestionBlockSprite(game);
+            block.sprite = TileSpriteFactory.CreateQuestionBlockSprite();
         }
 
         public void Update()
