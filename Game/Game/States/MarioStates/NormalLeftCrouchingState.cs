@@ -6,69 +6,69 @@ using Game.Mario;
 
 namespace Game.States
 {
-    class NormalRightCrouching : IMarioState
+    class NormalLeftCrouching : IMarioState
     {
 
         private MarioInstance mario;
         private Game1 game;
 
-        public NormalRightCrouching(MarioInstance mario, Game1 game)
+        public NormalLeftCrouching(MarioInstance mario, Game1 game)
         {
             this.mario = mario;
             this.game = game;
-            mario.sprite = SpriteFactories.MarioSpriteFactory.CreateNormalRightCrouchingSprite();
+            mario.sprite = SpriteFactories.MarioSpriteFactory.CreateNormalLeftCrouchingSprite();
         }
         public void Update()
         {
             mario.sprite.Update();
         }
 
-        public void left()
+        public void Left()
+        {
+ 
+        }
+
+        public void Right()
         {
 
         }
 
-        public void right()
+        public void Up()
+        {
+            mario.state = new NormalLeftIdle(mario, game);
+        }
+
+        public void Down()
         {
 
         }
 
-        public void up()
-        {
-            mario.state = new NormalRightIdle(mario, game);
-        }
-
-        public void down()
+        public void Land()
         {
 
         }
 
-        public void land()
+        public void Jump()
         {
 
         }
 
-        public void jump()
+        public void Flower()
+        {
+            mario.state = new FireLeftCrouching(mario, game);
+        }
+
+        public void Mushroom()
         {
 
         }
 
-        public void flower()
-        {
-            mario.state = new FireRightCrouching(mario, game);
-        }
-
-        public void mushroom()
-        {
-
-        }
-
-        public void damage()
+        public void Damage()
         {
             mario.state = new SmallLeftIdle(mario, game);
         }
 
-        public void die()
+        public void Die()
         {
             mario.state = new Dead(mario, game);
         }

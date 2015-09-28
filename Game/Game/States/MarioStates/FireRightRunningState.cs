@@ -1,74 +1,74 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Game.Mario;
+using System.Text;
 
 namespace Game.States
 {
-    class FireRightIdle : IMarioState
+    class FireRightRunning : IMarioState
     {
 
         private MarioInstance mario;
         private Game1 game;
 
-        public FireRightIdle(MarioInstance mario, Game1 game)
+        public FireRightRunning(MarioInstance mario, Game1 game)
         {
             this.mario = mario;
             this.game = game;
-            mario.sprite = SpriteFactories.MarioSpriteFactory.CreateFireRightIdleSprite();
+            mario.sprite = SpriteFactories.MarioSpriteFactory.CreateFireRightRunningSprite();
         }
         public void Update()
         {
             mario.sprite.Update();
         }
 
-        public void left()
+        public void Left()
         {
-            mario.state = new FireLeftIdle(mario, game);
+            mario.state = new FireRightIdle(mario, game);
         }
 
-        public void right()
-        {
-            mario.state = new FireRightRunning(mario, game);
-        }
-
-        public void up()
+        public void Right()
         {
 
         }
 
-        public void down()
+        public void Up()
+        {
+
+        }
+
+        public void Down()
         {
             mario.state = new FireRightCrouching(mario, game);
         }
 
-        public void land()
+        public void Land()
         {
 
         }
 
-        public void jump()
+        public void Jump()
         {
             mario.state = new FireRightJumping(mario, game);
         }
 
-        public void flower()
+        public void Flower()
         {
 
         }
 
-        public void mushroom()
+        public void Mushroom()
         {
-            mario.state = new NormalRightIdle(mario, game);
+            mario.state = new NormalRightRunning(mario, game);
         }
 
-        public void damage()
+        public void Damage()
         {
-            mario.state = new SmallRightIdle(mario, game);
+            mario.state = new SmallRightRunning(mario, game);
         }
 
-        public void die()
+        public void Die()
         {
             mario.state = new Dead(mario, game);
         }

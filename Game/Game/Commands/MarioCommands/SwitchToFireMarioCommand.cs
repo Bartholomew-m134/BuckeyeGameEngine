@@ -16,7 +16,7 @@ namespace Game.Commands.MarioCommands
 
         public void Execute()
         {
-            game.mario.flower();
+            game.mario.Flower();
         }
     }
 }

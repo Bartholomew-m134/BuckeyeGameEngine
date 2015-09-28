@@ -23,52 +23,52 @@ namespace Game.States
             mario.sprite.Update();
         }
 
-        public void left()
+        public void Left()
         {
             mario.state = new NormalLeftIdle(mario, game);
         }
 
-        public void right()
+        public void Right()
         {
             mario.state = new NormalRightRunning(mario, game);
         }
 
-        public void up()
+        public void Up()
         {
 
         }
 
-        public void down()
+        public void Down()
         {
             mario.state = new NormalRightCrouching(mario, game);
         }
 
-        public void land()
+        public void Land()
         {
 
         }
 
-        public void jump()
+        public void Jump()
         {
             mario.state = new NormalRightJumping(mario, game);
         }
 
-        public void flower()
+        public void Flower()
         {
             mario.state = new FireRightIdle(mario, game);
         }
 
-        public void mushroom()
+        public void Mushroom()
         {
 
         }
 
-        public void damage()
+        public void Damage()
         {
             mario.state = new SmallRightIdle(mario, game);
         }
 
-        public void die()
+        public void Die()
         {
             mario.state = new Dead(mario, game);
         }
