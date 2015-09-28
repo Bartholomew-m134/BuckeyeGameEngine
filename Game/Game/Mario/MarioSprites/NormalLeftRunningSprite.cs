@@ -69,7 +69,7 @@ namespace Game.Mario.MarioSprites
         }
         public void Update()
         {
-            if (delayBetweenFrames == 0)
+            if (delayBetweenFrames == 10)
             {
                 delayBetweenFrames = 0;
                 if (currentSprite < 3)

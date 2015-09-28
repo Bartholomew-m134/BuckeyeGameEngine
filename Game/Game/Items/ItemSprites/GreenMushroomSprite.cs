@@ -13,12 +13,8 @@ namespace Game.Items.ItemSprites
         private Texture2D Texture { get; set; }
         private int currentFrame;
         private int totalFrames;
-        private Game1 myGame;
-        private int width = 17;
-        private int height = 17;
-        private int sourceX = 213;
-        private int sourceY = 33;
 
+        private Game1 myGame;
         public GreenMushroomSprite(Texture2D texture, Game1 game)
         {
             Texture = texture;
@@ -34,6 +30,11 @@ namespace Game.Items.ItemSprites
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location) {
+            int width = 17;
+            int height = 17;
+            int sourceX = 213;
+            int sourceY = 33;
+            
 
             Rectangle sourceRectangle = new Rectangle(sourceX, sourceY, width, height);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);

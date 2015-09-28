@@ -199,6 +199,7 @@
     <Content Include="CodeReviews\BlockReadability.txt" />
     <Content Include="CodeReviews\CoinSpriteReadability.txt" />
     <Content Include="CodeReviews\DeadReadibility.txt" />
+    <Content Include="CodeReviews\GreenKoopaWalkingLeftCodeQuality.txt" />
     <Content Include="CodeReviews\GreenKoopaWalkingLeftReadability.txt" />
     <Content Include="CodeReviews\MarioSpriteFactory.txt" />
     <Content Include="Game.ico" />
