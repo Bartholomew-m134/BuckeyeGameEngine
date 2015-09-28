@@ -26,7 +26,7 @@ namespace Game.States.BlockStates
 
         public void Disappear()
         {
-            block.blockState = new NullBlockState(block, game);
+            block.blockState = new NullBlockState(block);
         }
 
         public void GetUsed()

@@ -29,7 +29,7 @@ namespace Game.States.BlockStates
 
         public void GetUsed()
         {
-            block.blockState = new UsedBlockState(block, game);
+            block.blockState = new UsedBlockState(block);
         }
     }
 }
