@@ -1,0 +1,16 @@
+﻿Author:							Matt Bartholomew
+Date:							9/28/15
+Sprint:							2
+Reviewed file:					MarioSpriteFactory.cs
+File Author:					Conner Swick
+Code Quality:
+	The class has high cohesion and loose coupling. Though static, the class
+	itself must only have one instance or else spritesheets may be loaded more 
+	than once or even unloaded without notice. All methods perform one action,
+	in a clean fashion. There are a multitude of functions, but, all are needed 
+	for	the current implementation of the project.
+Hypothetical Change:
+	If another state of Mario was implemented that required new sprites, such
+	as Star Mario, all the MarioSpriteFactory would need to do is load the new 
+	spritesheet, if applicable, and then create a new function that would return
+	the new ISprite. This would be quite an easy change to make to the class. 
