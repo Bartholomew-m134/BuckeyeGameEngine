@@ -1,0 +1,13 @@
+﻿Author:							John Cramer
+Date :							9/28/15
+Sprint:							2
+Reviewed file:					DeadMarioState.cs
+File Author:					Jackson Luken
+Minutes to complete:			10
+Review:
+	Following the phillosophies of state pattern design, I would say this is a quality piece
+	of code. The code is cohesive, as it only deals with dead Mario state transitions. The code
+	is about as low-coupled as it can be, as there will always need to be some dependencies
+	other Mario states following state pattern design. One change to implement for Sprint 3 
+	will be the removal of unnecessary transitions needed for Sprint 2, as from the dead state,
+	no other state should be reachable.

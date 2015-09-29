@@ -7,13 +7,13 @@ using Game.Mario;
 
 namespace Game.States
 {
-    class Dead : IMarioState
+    class DeadMarioState : IMarioState
     {
 
         private MarioInstance mario;
         private Game1 game;
 
-        public Dead(MarioInstance mario, Game1 game)
+        public DeadMarioState(MarioInstance mario, Game1 game)
         {
             this.mario = mario;
             this.game = game;
@@ -56,17 +56,17 @@ namespace Game.States
 
         public void Flower()
         {
-            mario.state = new FireRightIdle(mario, game);
+            mario.state = new FireRightIdleState(mario, game);
         }
 
         public void Mushroom()
         {
-            mario.state = new NormalRightIdle(mario, game);
+            mario.state = new NormalRightIdleState(mario, game);
         }
 
         public void Damage()
         {
-            mario.state = new SmallRightIdle(mario, game);
+            mario.state = new SmallRightIdleState(mario, game);
         }
 
         public void Die()

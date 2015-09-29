@@ -6,13 +6,13 @@ using Game.Mario;
 
 namespace Game.States
 {
-    class FireLeftCrouching : IMarioState
+    class FireLeftCrouchingState : IMarioState
     {
 
         private MarioInstance mario;
         private Game1 game;
 
-        public FireLeftCrouching(MarioInstance mario, Game1 game)
+        public FireLeftCrouchingState(MarioInstance mario, Game1 game)
         {
             this.mario = mario;
             this.game = game;
@@ -35,7 +35,7 @@ namespace Game.States
 
         public void Up()
         {
-            mario.state = new FireLeftIdle(mario, game);
+            mario.state = new FireLeftIdleState(mario, game);
         }
 
         public void Down()
@@ -60,17 +60,17 @@ namespace Game.States
 
         public void Mushroom()
         {
-            mario.state = new NormalLeftCrouching(mario, game);
+            mario.state = new NormalLeftCrouchingState(mario, game);
         }
 
         public void Damage()
         {
-            mario.state = new SmallLeftIdle(mario, game);
+            mario.state = new SmallLeftIdleState(mario, game);
         }
 
         public void Die()
         {
-            mario.state = new Dead(mario, game);
+            mario.state = new DeadMarioState(mario, game);
         }
 
 

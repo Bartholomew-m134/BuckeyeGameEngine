@@ -6,13 +6,13 @@ using Game.Mario;
 
 namespace Game.States
 {
-    class SmallLeftJumping : IMarioState
+    class SmallLeftJumpingState : IMarioState
     {
 
         private MarioInstance mario;
         private Game1 game;
 
-        public SmallLeftJumping(MarioInstance mario, Game1 game)
+        public SmallLeftJumpingState(MarioInstance mario, Game1 game)
         {
             this.mario = mario;
             this.game = game;
@@ -45,7 +45,7 @@ namespace Game.States
 
         public void Land()
         {
-            mario.state = new SmallLeftIdle(mario, game);
+            mario.state = new SmallLeftIdleState(mario, game);
         }
 
         public void Jump()
@@ -55,12 +55,12 @@ namespace Game.States
 
         public void Flower()
         {
-            mario.state = new FireLeftJumping(mario, game);
+            mario.state = new FireLeftJumpingState(mario, game);
         }
 
         public void Mushroom()
         {
-            mario.state = new NormalLeftJumping(mario, game);
+            mario.state = new NormalLeftJumpingState(mario, game);
         }
 
         public void Damage()
@@ -70,7 +70,7 @@ namespace Game.States
 
         public void Die()
         {
-            mario.state = new Dead(mario, game);
+            mario.state = new DeadMarioState(mario, game);
         }
     }
 }

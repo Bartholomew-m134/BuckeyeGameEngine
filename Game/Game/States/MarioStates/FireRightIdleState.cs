@@ -6,13 +6,13 @@ using Game.Mario;
 
 namespace Game.States
 {
-    class FireRightIdle : IMarioState
+    class FireRightIdleState : IMarioState
     {
 
         private MarioInstance mario;
         private Game1 game;
 
-        public FireRightIdle(MarioInstance mario, Game1 game)
+        public FireRightIdleState(MarioInstance mario, Game1 game)
         {
             this.mario = mario;
             this.game = game;
@@ -25,12 +25,12 @@ namespace Game.States
 
         public void Left()
         {
-            mario.state = new FireLeftIdle(mario, game);
+            mario.state = new FireLeftIdleState(mario, game);
         }
 
         public void Right()
         {
-            mario.state = new FireRightRunning(mario, game);
+            mario.state = new FireRightRunningState(mario, game);
         }
 
         public void Up()
@@ -40,7 +40,7 @@ namespace Game.States
 
         public void Down()
         {
-            mario.state = new FireRightCrouching(mario, game);
+            mario.state = new FireRightCrouchingState(mario, game);
         }
 
         public void Land()
@@ -50,7 +50,7 @@ namespace Game.States
 
         public void Jump()
         {
-            mario.state = new FireRightJumping(mario, game);
+            mario.state = new FireRightJumpingState(mario, game);
         }
 
         public void Flower()
@@ -60,17 +60,17 @@ namespace Game.States
 
         public void Mushroom()
         {
-            mario.state = new NormalRightIdle(mario, game);
+            mario.state = new NormalRightIdleState(mario, game);
         }
 
         public void Damage()
         {
-            mario.state = new SmallRightIdle(mario, game);
+            mario.state = new SmallRightIdleState(mario, game);
         }
 
         public void Die()
         {
-            mario.state = new Dead(mario, game);
+            mario.state = new DeadMarioState(mario, game);
         }
 
     }
