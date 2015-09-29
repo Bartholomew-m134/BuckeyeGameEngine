@@ -197,13 +197,14 @@
     <Compile Include="States\MarioStates\SmallRightRunningState.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CodeReviews\BlockReadability.txt" />
+    <Content Include="CodeReviews\JacksonBlockReadability.txt" />
     <Content Include="CodeReviews\CoinSpriteCodeQuality.txt" />
     <Content Include="CodeReviews\CoinSpriteReadability.txt" />
     <Content Include="CodeReviews\DeadReadibility.txt" />
     <Content Include="CodeReviews\GreenKoopaWalkingLeftCodeQuality.txt" />
     <Content Include="CodeReviews\GreenKoopaWalkingLeftReadability.txt" />
-    <Content Include="CodeReviews\MarioSpriteFactory.txt" />
+    <Content Include="CodeReviews\MarioSpriteFactoryCodeQuality.txt" />
+    <Content Include="CodeReviews\MarioSpriteFactoryReadability.txt" />
     <Content Include="CodeReviews\JacksonCodeQualityReview.txt" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png">
