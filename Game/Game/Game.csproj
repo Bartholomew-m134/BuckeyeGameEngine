@@ -138,6 +138,7 @@
     <Compile Include="Items\ItemSprites\StarSprite.cs" />
     <Compile Include="Items\RedMushroom.cs" />
     <Compile Include="Items\Star.cs" />
+    <Compile Include="LevelLoader.cs" />
     <Compile Include="Mario\IMario.cs" />
     <Compile Include="Mario\MarioInstance.cs" />
     <Compile Include="Mario\MarioSprites\DeadMarioSprite.cs" />
@@ -203,6 +204,7 @@
     <Compile Include="States\MarioStates\SmallRightIdleState.cs" />
     <Compile Include="States\MarioStates\SmallRightJumpingState.cs" />
     <Compile Include="States\MarioStates\SmallRightRunningState.cs" />
+    <Compile Include="WorldManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="CodeReviews\JacksonBlockReadability.txt" />
