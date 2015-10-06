@@ -81,12 +81,8 @@
     <Compile Include="Blocks\BlockSprites\SolidBlockSprite.cs" />
     <Compile Include="Blocks\BlockSprites\UsedBlockSprite.cs" />
     <Compile Include="Blocks\IBlock.cs" />
-    <Compile Include="CollisionHandling\EnemyCollisionHandling\GoombaCollisions\GoombaBlockCollisionHandler.cs" />
-    <Compile Include="CollisionHandling\EnemyCollisionHandling\GoombaCollisions\GoombaGoombaCollisionHandler.cs" />
-    <Compile Include="CollisionHandling\EnemyCollisionHandling\GoombaCollisions\GoombaKoopaCollisionHandler.cs" />
-    <Compile Include="CollisionHandling\EnemyCollisionHandling\KoopaCollisions\KoopaBlockCollisionHandler.cs" />
-    <Compile Include="CollisionHandling\EnemyCollisionHandling\KoopaCollisions\KoopaGoombaCollisionHandler.cs" />
-    <Compile Include="CollisionHandling\EnemyCollisionHandling\KoopaCollisions\KoopaKoopaCollisionHandler.cs" />
+    <Compile Include="CollisionHandling\EnemyCollisionHandling\EnemyEnemyCollisions\EnemyBlockCollisionHandler.cs" />
+    <Compile Include="CollisionHandling\EnemyCollisionHandling\EnemyEnemyCollisions\EnemyEnemyCollisionHandler.cs" />
     <Compile Include="CollisionHandling\EnemyCollisionHandling\MarioEnemyCollisions\MarioGoombaCollisionHandler.cs" />
     <Compile Include="CollisionHandling\EnemyCollisionHandling\MarioEnemyCollisions\MarioKoopaCollisionHandler.cs" />
     <Compile Include="Commands\BlockCommands\RemoveBrickBlockCommand.cs" />
