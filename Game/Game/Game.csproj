@@ -89,7 +89,6 @@
     <Compile Include="CollisionHandling\EnemyCollisionHandling\KoopaCollisions\KoopaKoopaCollisionHandler.cs" />
     <Compile Include="CollisionHandling\EnemyCollisionHandling\MarioEnemyCollisions\MarioGoombaCollisionHandler.cs" />
     <Compile Include="CollisionHandling\EnemyCollisionHandling\MarioEnemyCollisions\MarioKoopaCollisionHandler.cs" />
-    <Compile Include="CollisionHandling\ICollisionHandler.cs" />
     <Compile Include="Commands\BlockCommands\RemoveBrickBlockCommand.cs" />
     <Compile Include="Commands\BlockCommands\SwitchToUsedBlockCommand.cs" />
     <Compile Include="Commands\BlockCommands\SwitchToUsedQuestionBlockCommand.cs" />
