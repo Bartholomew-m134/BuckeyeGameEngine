@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Game.CollisionHandling.EnemyCollisionHandling
 {
-    interface IEnemyCollisionHandler
+    class KoopaKoopaCollisionHandler
     {
     }
 }
