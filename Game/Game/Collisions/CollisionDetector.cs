@@ -11,7 +11,12 @@ namespace Game.Collisions
     {
         private ICollisionSide collisionSide;
 
-        public CollisionDetector(Rectangle hitBoxA, Rectangle hitBoxB)
+        public CollisionDetector()
+        {
+            collisionSide = null;
+        }
+
+        public void HandleCollision(Rectangle hitBoxA, Rectangle hitBoxB)
         {
             Rectangle collisionRectangle = Rectangle.Intersect(hitBoxA, hitBoxB);
 
