@@ -21,6 +21,16 @@ namespace Game.Mario
             myGame = game;
         }
 
+        public Vector2 getLocation()
+        {
+            return this.location;
+        }
+
+        public void setLocation(Vector2 loc)
+        {
+            this.location = loc;
+        }
+
         public void Update()
         {
             state.Update();
