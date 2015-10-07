@@ -9,16 +9,11 @@ namespace Game.Collisions
 {
     public class CollisionDetector
     {
-        private Rectangle hitBoxA;
-        private Rectangle hitBoxB;
-        private Rectangle collisionRectangle;
-
         private ICollisionSide collisionSide;
 
-        public CollisionDetector(Rectangle hitBox1, Rectangle hitBox2)
+        public CollisionDetector(Rectangle hitBoxA, Rectangle hitBoxB)
         {
-            hitBoxA = hitBox1;
-            hitBoxB = hitBox2;
+            Rectangle collisionRectangle = Rectangle.Intersect(hitBoxA, hitBoxB);
         }
     }
 }
