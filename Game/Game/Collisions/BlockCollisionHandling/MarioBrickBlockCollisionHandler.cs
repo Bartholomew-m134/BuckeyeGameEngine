@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Game.Collisions.BlockCollisionHandling
 {
-    class MarioUsedBlockCollisionHandler
+    class MarioBrickBlockCollisionHandler
     {
     }
 }
