@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Game.CollisionHandling.EnemyCollisionHandling
+namespace Game.Collisions
 {
-    class GoombaKoopaCollisionHandler
+    class TopSideCollision : ICollisionSide
     {
     }
 }

@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 namespace Game.Enemies.GreenKoopaClasses
 {
-    public class GreenKoopa
+    public class GreenKoopa : IKoopa
     {
         public IGreenKoopaState state;
         public ISprite greenKoopaSprite;
