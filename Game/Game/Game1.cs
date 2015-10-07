@@ -22,26 +22,11 @@ namespace Game
     {
         public GraphicsDeviceManager graphics;
         public SpriteBatch spriteBatch;
-        private List<IController> controllerList;
 
-        public IItem coin;
-        public IItem flower;
-        public IItem redMushroom;
-        public IItem greenMushroom;
-        public IItem star;
-
-        public MarioInstance mario;
-
-        public Block brickBlock;
-        public Block hiddenBlock;
-        public Block questionBlock;
         public ISprite solidBlock;
         public ISprite breakingBlock;
 
-        public Goomba goomba;
-        public GreenKoopa greenKoopa;
-
-        public IPipe pipe;
+        private List<IController> controllerList;
 
         public Game1()
         {
@@ -65,24 +50,11 @@ namespace Game
             MarioSpriteFactory.Load(Content, GraphicsDevice);
             TileSpriteFactory.Load(Content, GraphicsDevice);
 
-            coin = new Coin(this);
-            flower = new Flower(this);
-            greenMushroom = new GreenMushroom(this);
-            redMushroom = new RedMushroom(this);
-            star = new Star(this);
+            WorldManager.LoadListFromFile("", this);
 
-            mario = new MarioInstance(this);
-
-            brickBlock = new Block(1, this);
-            hiddenBlock = new Block(2, this);
-            questionBlock = new Block(3, this);
             solidBlock = TileSpriteFactory.CreateSolidBlockSprite();
             breakingBlock = TileSpriteFactory.CreateBreakingBlockSprite();
 
-            goomba = new Goomba(this);
-            greenKoopa = new GreenKoopa(this);
-
-            pipe = new Pipe(this);
         }
 
         protected override void UnloadContent()
@@ -97,19 +69,7 @@ namespace Game
                 controller.Update();
             }
 
-            coin.Update();
-            flower.Update();
-            greenMushroom.Update();
-            redMushroom.Update();
-            star.Update();
-
-            mario.Update();
-
-            goomba.Update();
-            greenKoopa.Update();
-
-            pipe.Update();
-
+            WorldManager.Update();
             base.Update(gameTime);
         }
 
@@ -119,24 +79,10 @@ namespace Game
 
             base.Draw(gameTime);
 
-            coin.Draw();
-            flower.Draw();
-            greenMushroom.Draw();
-            redMushroom.Draw();
-            star.Draw();
+            WorldManager.Draw();
 
-            mario.Draw();
-
-            brickBlock.Draw();
-            hiddenBlock.Draw();
-            questionBlock.Draw();
             solidBlock.Draw(spriteBatch, new Vector2(100,200));
             breakingBlock.Draw(spriteBatch, new Vector2(500,200));
-
-            goomba.Draw();
-            greenKoopa.Draw();
-
-            pipe.Draw();
         }
     }
 }

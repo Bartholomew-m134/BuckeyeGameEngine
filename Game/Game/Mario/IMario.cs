@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Game.Mario
 {
-    public interface IMario
+    public interface IMario : IGameObject
     {
         void Update();
 

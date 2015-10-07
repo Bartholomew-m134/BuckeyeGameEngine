@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Game.Pipes
 {
-    public interface IPipe
+    public interface IPipe : IGameObject
     {
         void Update();
 

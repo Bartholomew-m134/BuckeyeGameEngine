@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Game.Enemies.GreenKoopaClasses
 {
-    interface IKoopa
+    public interface IKoopa : IGameObject
     {
-        public void Draw();
-        public void Update();
+        void Draw();
+        void Update();
     }
 }
