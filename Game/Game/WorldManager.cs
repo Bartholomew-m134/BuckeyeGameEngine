@@ -24,7 +24,6 @@ namespace Game
         {
             foreach (IGameObject gameObject in gameObjects)
                 gameObject.Update();       
-            foreach ()
         }
 
         public static void Draw()
@@ -33,7 +32,7 @@ namespace Game
                 gameObject.Draw(); 
         }
 
-        public static IMario GetMario()
+        public static MarioInstance GetMario()
         {
             IGameObject mario = null;
 
