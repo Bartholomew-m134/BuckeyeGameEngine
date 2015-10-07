@@ -7,17 +7,12 @@ using Microsoft.Xna.Framework;
 
 namespace Game.Collisions
 {
-    public class CollisionDetector
+    public static class CollisionDetector
     {
-        private ICollisionSide collisionSide;
-
-        public CollisionDetector()
+        public ICollisionSide DetectCollision(Rectangle hitBoxA, Rectangle hitBoxB)
         {
-            collisionSide = null;
-        }
+            ICollisionSide collisionSide;
 
-        public void HandleCollision(Rectangle hitBoxA, Rectangle hitBoxB)
-        {
             Rectangle collisionRectangle = Rectangle.Intersect(hitBoxA, hitBoxB);
 
             if (collisionRectangle.IsEmpty)
@@ -46,11 +41,8 @@ namespace Game.Collisions
                     collisionSide = new RightSideCollision();
                 }
             }
-        }
 
-        public ICollisionSide CollisionSide
-        {
-            get { return collisionSide; }
+            return collisionSide;
         }
 
     }
