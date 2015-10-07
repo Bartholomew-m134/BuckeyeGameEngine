@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Game.Collisions
+namespace Game.Collisions.BlockCollisionHandling
 {
-    public class CollisionSelector
+    class MarioBreakingBlockCollisionHandler
     {
     }
 }

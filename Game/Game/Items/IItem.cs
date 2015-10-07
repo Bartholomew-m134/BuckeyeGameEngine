@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Game.Items
 {
-    public interface IItem: IGameObject
+    public interface IItem : IGameObject
     {
         void Update();
 

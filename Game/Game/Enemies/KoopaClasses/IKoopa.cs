@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Game.Pipes
+namespace Game.Enemies.KoopaClasses
 {
-    public interface IPipe : IGameObject
+    public interface IKoopa : IGameObject
     {
-        void Update();
-
         void Draw();
+        void Update();
     }
 }

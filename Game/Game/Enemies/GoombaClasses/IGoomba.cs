@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Game.Enemies.GoombaClasses
 {
-    public interface IGoomba
+    public interface IGoomba : IGameObject
     {
-        public void Draw();
-        public void Update();
+        void Draw();
+        void Update();
     }
 }

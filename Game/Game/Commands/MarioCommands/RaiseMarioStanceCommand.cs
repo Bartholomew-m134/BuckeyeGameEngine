@@ -16,8 +16,8 @@ namespace Game.Commands.MarioCommands
 
         public void Execute()
         {
-            game.mario.Up();
-            game.mario.Jump();
+            WorldManager.GetMario().Up();
+            WorldManager.GetMario().Jump();
         }
     }
 }
