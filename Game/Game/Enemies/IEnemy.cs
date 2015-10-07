@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Game.Enemies.GoombaClasses
+namespace Game.Enemies
 {
-    public interface IGoomba : IGameObject
+    public interface IEnemy : IGameObject
     {
         void Draw();
         void Update();
