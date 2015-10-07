@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Game.Collisions
 {
-    class TopSideCollision : ICollisionSide
+    public class TopSideCollision : ICollisionSide
     {
     }
 }
