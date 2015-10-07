@@ -81,10 +81,17 @@
     <Compile Include="Blocks\BlockSprites\SolidBlockSprite.cs" />
     <Compile Include="Blocks\BlockSprites\UsedBlockSprite.cs" />
     <Compile Include="Blocks\IBlock.cs" />
-    <Compile Include="CollisionHandling\EnemyCollisionHandling\EnemyEnemyCollisions\EnemyBlockCollisionHandler.cs" />
-    <Compile Include="CollisionHandling\EnemyCollisionHandling\EnemyEnemyCollisions\EnemyEnemyCollisionHandler.cs" />
-    <Compile Include="CollisionHandling\EnemyCollisionHandling\MarioEnemyCollisions\MarioGoombaCollisionHandler.cs" />
-    <Compile Include="CollisionHandling\EnemyCollisionHandling\MarioEnemyCollisions\MarioKoopaCollisionHandler.cs" />
+    <Compile Include="Collisions\BottomSideCollision.cs" />
+    <Compile Include="Collisions\CollisionDetector.cs" />
+    <Compile Include="Collisions\CollisionSelector.cs" />
+    <Compile Include="Collisions\EnemyCollisionHandling\EnemyEnemyCollisions\EnemyBlockCollisionHandler.cs" />
+    <Compile Include="Collisions\EnemyCollisionHandling\EnemyEnemyCollisions\EnemyEnemyCollisionHandler.cs" />
+    <Compile Include="Collisions\EnemyCollisionHandling\MarioEnemyCollisions\MarioGoombaCollisionHandler.cs" />
+    <Compile Include="Collisions\EnemyCollisionHandling\MarioEnemyCollisions\MarioKoopaCollisionHandler.cs" />
+    <Compile Include="Collisions\ICollisionSide.cs" />
+    <Compile Include="Collisions\LeftSideCollision.cs" />
+    <Compile Include="Collisions\RightSideCollision.cs" />
+    <Compile Include="Collisions\TopSideCollision.cs" />
     <Compile Include="Commands\BlockCommands\RemoveBrickBlockCommand.cs" />
     <Compile Include="Commands\BlockCommands\SwitchToUsedBlockCommand.cs" />
     <Compile Include="Commands\BlockCommands\SwitchToUsedQuestionBlockCommand.cs" />
@@ -110,6 +117,7 @@
     <Compile Include="Enemies\GoombaClasses\GoombaStates\GoombaWalkingLeftState.cs" />
     <Compile Include="Enemies\GoombaClasses\GoombaStates\GoombaWalkingRightState.cs" />
     <Compile Include="Enemies\GoombaClasses\GoombaStates\IGoombaState.cs" />
+    <Compile Include="Enemies\GoombaClasses\IGoomba.cs" />
     <Compile Include="Enemies\GreenKoopaClasses\GreenKoopa.cs" />
     <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaSprites\GreenKoopaEmergingFromShellSprite.cs" />
     <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaSprites\GreenKoopaFlippedInShellSprite.cs" />
@@ -122,6 +130,7 @@
     <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaStates\GreenKoopaWalkingLeftState.cs" />
     <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaStates\GreenKoopaWalkingRightState.cs" />
     <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaStates\IGreenKoopaState.cs" />
+    <Compile Include="Enemies\GreenKoopaClasses\IKoopa.cs" />
     <Compile Include="ISprite.cs" />
     <Compile Include="Items\Coin.cs" />
     <Compile Include="Items\Flower.cs" />

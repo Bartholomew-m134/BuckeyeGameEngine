@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 namespace Game.Enemies.GoombaClasses
 {
-    public class Goomba
+    public class Goomba : IGoomba
     {
         public IGoombaState state;
         public ISprite goombaSprite;
