@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 
 namespace Game.Collisions
 {
-    public class CollisionDetector
+    public static class CollisionDetector
     {
         public ICollisionSide DetectCollision(Rectangle hitBoxA, Rectangle hitBoxB)
         {

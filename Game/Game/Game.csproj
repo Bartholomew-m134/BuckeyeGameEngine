@@ -85,6 +85,7 @@
     <Compile Include="Collisions\BlockCollisionHandling\MarioHiddenBlockCollisionHandler.cs" />
     <Compile Include="Collisions\BlockCollisionHandling\MarioSolidBlockCollisionHandler.cs" />
     <Compile Include="Collisions\BottomSideCollision.cs" />
+    <Compile Include="Collisions\CollisionData.cs" />
     <Compile Include="Collisions\CollisionDetector.cs" />
     <Compile Include="Collisions\CollisionSelector.cs" />
     <Compile Include="Collisions\EnemyCollisionHandling\EnemyEnemyCollisions\EnemyBlockCollisionHandler.cs" />
@@ -92,6 +93,8 @@
     <Compile Include="Collisions\EnemyCollisionHandling\MarioEnemyCollisions\MarioGoombaCollisionHandler.cs" />
     <Compile Include="Collisions\EnemyCollisionHandling\MarioEnemyCollisions\MarioKoopaCollisionHandler.cs" />
     <Compile Include="Collisions\ICollisionSide.cs" />
+    <Compile Include="Collisions\ItemCollisionHandling\ItemBlockCollisionHandler.cs" />
+    <Compile Include="Collisions\ItemCollisionHandling\MarioItemCollisionHandler.cs" />
     <Compile Include="Collisions\LeftSideCollision.cs" />
     <Compile Include="Collisions\RightSideCollision.cs" />
     <Compile Include="Collisions\TopSideCollision.cs" />
