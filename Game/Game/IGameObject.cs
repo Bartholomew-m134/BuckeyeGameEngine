@@ -7,8 +7,8 @@ namespace Game
 {
     public interface IGameObject
     {
-		void Update();
+        void Update();
 
-		void Draw();
+        void Draw();
     }
 }

@@ -126,6 +126,7 @@
     <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaStates\GreenKoopaWalkingLeftState.cs" />
     <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaStates\GreenKoopaWalkingRightState.cs" />
     <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaStates\IGreenKoopaState.cs" />
+    <Compile Include="IGameObject.cs" />
     <Compile Include="ISprite.cs" />
     <Compile Include="Items\Coin.cs" />
     <Compile Include="Items\Flower.cs" />
@@ -221,7 +222,6 @@
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
     </Content>
-    <Content Include="IGameObject.c" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GameContent\GameContent.contentproj">
