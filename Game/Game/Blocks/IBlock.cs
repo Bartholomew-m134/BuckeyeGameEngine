@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Game.Blocks
 {
-    public interface IBlock
+    public interface IBlock : IGameObject 
     {
           void Update();
 
