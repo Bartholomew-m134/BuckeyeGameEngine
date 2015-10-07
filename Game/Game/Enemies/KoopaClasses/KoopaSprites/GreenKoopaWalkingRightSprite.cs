@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 
-namespace Game.Enemies.GreenKoopaClasses.GreenKoopaSprites
+namespace Game.Enemies.KoopaClasses.GreenKoopaSprites
 {
     class GreenKoopaWalkingRightSprite : ISprite
     {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Game.Enemies.GreenKoopaClasses
+namespace Game.Enemies.KoopaClasses
 {
-    public interface IKoopa : IGameObject
+    public interface IKoopa
     {
         void Draw();
         void Update();

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Game.Enemies.GreenKoopaClasses.GreenKoopaStates
+namespace Game.Enemies.KoopaClasses.KoopaStates
 {
-    public class GreenKoopaEmergingFromShellState : IGreenKoopaState
+    public class GreenKoopaEmergingFromShellState : IKoopaState
     {
         private GreenKoopa greenKoopa;
 
@@ -15,21 +15,21 @@ namespace Game.Enemies.GreenKoopaClasses.GreenKoopaStates
             this.greenKoopa.greenKoopaSprite = Game.SpriteFactories.EnemySpriteFactory.CreateGreenKoopaEmergingFromShellSprite();
         }
 
-        public void GreenKoopaEmergingFromShell()
+        public void KoopaEmergingFromShell()
         {
         }
 
-        public void GreenKoopaShellFlipped()
+        public void KoopaShellFlipped()
         {
             greenKoopa.state = new GreenKoopaFlippedInShellState(greenKoopa);
         }
 
-        public void GreenKoopaHidingInShell()
+        public void KoopaHidingInShell()
         {
             greenKoopa.state = new GreenKoopaHidingInShellState(greenKoopa);
         }
 
-        public void GreenKoopaChangeDirection()
+        public void KoopaChangeDirection()
         {
             greenKoopa.state = new GreenKoopaWalkingLeftState(greenKoopa);
         }
