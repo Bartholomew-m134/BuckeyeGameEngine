@@ -131,6 +131,7 @@
     <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaStates\GreenKoopaWalkingRightState.cs" />
     <Compile Include="Enemies\GreenKoopaClasses\GreenKoopaStates\IGreenKoopaState.cs" />
     <Compile Include="Enemies\GreenKoopaClasses\IKoopa.cs" />
+    <Compile Include="IGameObject.cs" />
     <Compile Include="ISprite.cs" />
     <Compile Include="Items\Coin.cs" />
     <Compile Include="Items\Flower.cs" />
