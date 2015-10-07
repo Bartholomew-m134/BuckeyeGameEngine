@@ -7,5 +7,9 @@ namespace Game.Collisions
 {
     public class TopSideCollision : ICollisionSide
     {
+        public TopSideCollision()
+        {
+
+        }
     }
 }
