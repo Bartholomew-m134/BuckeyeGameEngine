@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Game.Enemies.KoopaClasses
 {
-    public interface IKoopa
+    public interface IKoopa : IGameObject
     {
         void Draw();
         void Update();
