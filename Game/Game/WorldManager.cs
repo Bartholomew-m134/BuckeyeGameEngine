@@ -39,7 +39,7 @@ namespace Game
 
             foreach (IGameObject gameObject in gameObjects)
             {
-                if (gameObject is IMario)
+                if (gameObject is MarioInstance)
                 {
                     mario = gameObject;
                     break;
