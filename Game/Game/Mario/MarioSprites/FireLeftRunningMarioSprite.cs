@@ -89,9 +89,6 @@ namespace Game.Mario.MarioSprites
                 delayBetweenFrames++;
             }
 
-                Vector2 loc = WorldManager.GetMario().getLocation();
-                loc.X--;
-                WorldManager.GetMario().setLocation(loc);
             
         }
 

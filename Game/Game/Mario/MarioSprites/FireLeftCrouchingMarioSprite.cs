@@ -26,9 +26,7 @@ namespace Game.Mario.MarioSprites
         }
         public void Update()
         {
-            Vector2 loc = WorldManager.GetMario().getLocation();
-            loc.Y--;
-            WorldManager.GetMario().setLocation(loc);
+
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

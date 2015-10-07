@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Game.Mario;
+using Microsoft.Xna.Framework;
 
 namespace Game.States
 {
@@ -25,7 +26,9 @@ namespace Game.States
 
         public void Left()
         {
-
+            Vector2 loc = WorldManager.GetMario().getLocation();
+            loc.X--;
+            WorldManager.GetMario().setLocation(loc);
         }
 
         public void Right()
