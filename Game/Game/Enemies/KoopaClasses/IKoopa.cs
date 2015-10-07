@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Game.Enemies.GreenKoopaClasses
+namespace Game.Enemies.KoopaClasses
 {
-    interface IKoopa
+    public interface IKoopa
     {
-        public void Draw();
-        public void Update();
+        void Draw();
+        void Update();
     }
 }

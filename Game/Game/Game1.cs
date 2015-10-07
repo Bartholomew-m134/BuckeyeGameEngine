@@ -13,7 +13,7 @@ using Game.SpriteFactories;
 using Game.Mario;
 using Game.Blocks;
 using Game.Enemies.GoombaClasses;
-using Game.Enemies.GreenKoopaClasses;
+using Game.Enemies.KoopaClasses;
 using Game.Pipes;
 
 namespace Game

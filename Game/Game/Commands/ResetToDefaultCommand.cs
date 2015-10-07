@@ -1,6 +1,6 @@
 ﻿using Game.Blocks;
 using Game.Enemies.GoombaClasses;
-using Game.Enemies.GreenKoopaClasses;
+using Game.Enemies.KoopaClasses;
 using Game.Items;
 using Game.Mario;
 using Game.Pipes;

@@ -136,7 +136,7 @@
     <Compile Include="Enemies\KoopaClasses\KoopaStates\GreenKoopaHidingInShellState.cs" />
     <Compile Include="Enemies\KoopaClasses\KoopaStates\GreenKoopaWalkingLeftState.cs" />
     <Compile Include="Enemies\KoopaClasses\KoopaStates\GreenKoopaWalkingRightState.cs" />
-    <Compile Include="Enemies\KoopaClasses\KoopaStates\IGreenKoopaState.cs" />
+    <Compile Include="Enemies\KoopaClasses\KoopaStates\IKoopaState.cs" />
     <Compile Include="Enemies\KoopaClasses\IKoopa.cs" />
     <Compile Include="IGameObject.cs" />
     <Compile Include="ISprite.cs" />

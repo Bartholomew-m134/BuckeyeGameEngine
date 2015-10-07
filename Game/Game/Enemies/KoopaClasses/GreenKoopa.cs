@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Game.Enemies.GreenKoopaClasses.GreenKoopaStates;
+using Game.Enemies.KoopaClasses.KoopaStates;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 
-namespace Game.Enemies.GreenKoopaClasses
+namespace Game.Enemies.KoopaClasses
 {
     public class GreenKoopa : IKoopa
     {
-        public IGreenKoopaState state;
+        public IKoopaState state;
         public ISprite greenKoopaSprite;
         private Game1 myGame;
         private Vector2 greenKoopaVector;
@@ -25,22 +25,22 @@ namespace Game.Enemies.GreenKoopaClasses
 
         public void GreenKoopaEmergingFromShell()
         {
-            state.GreenKoopaEmergingFromShell();
+            state.KoopaEmergingFromShell();
         }
 
         public void GreenKoopaShellFlipped()
         {
-            state.GreenKoopaShellFlipped();
+            state.KoopaShellFlipped();
         }
 
         public void GreenKoopaHidingInShell()
         {
-            state.GreenKoopaHidingInShell();
+            state.KoopaHidingInShell();
         }
 
         public void GreenKoopaChangeDirection()
         {
-            state.GreenKoopaChangeDirection();
+            state.KoopaChangeDirection();
         }
         public void Draw()
         {

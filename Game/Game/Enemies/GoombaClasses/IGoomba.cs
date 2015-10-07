@@ -7,7 +7,7 @@ namespace Game.Enemies.GoombaClasses
 {
     public interface IGoomba
     {
-        public void Draw();
-        public void Update();
+        void Draw();
+        void Update();
     }
 }
