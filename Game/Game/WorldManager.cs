@@ -1,4 +1,5 @@
-﻿using Game.Mario;
+﻿using Game.Collisions;
+using Game.Mario;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace Game
         public static void LoadListFromFile(string filename, Game1 game)
         {
             LevelLoader loader = new LevelLoader(game);
+            CollisionDetector detector = new CollisionDetector();
             gameObjects = new List<IGameObject>();
             
             loader.Load(filename, gameObjects);
@@ -22,6 +24,7 @@ namespace Game
         {
             foreach (IGameObject gameObject in gameObjects)
                 gameObject.Update();       
+            foreach ()
         }
 
         public static void Draw()
@@ -43,7 +46,7 @@ namespace Game
                 }
             }
 
-            return (IMario) mario;
+            return (MarioInstance) mario;
         }
     }
 }
