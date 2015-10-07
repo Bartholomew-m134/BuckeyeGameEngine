@@ -81,6 +81,13 @@
     <Compile Include="Blocks\BlockSprites\SolidBlockSprite.cs" />
     <Compile Include="Blocks\BlockSprites\UsedBlockSprite.cs" />
     <Compile Include="Blocks\IBlock.cs" />
+    <Compile Include="Collisions\BlockCollisionHandling\MarioBreakingBlockCollisionHandler.cs" />
+    <Compile Include="Collisions\BlockCollisionHandling\MarioHiddenBlockCollisionHandler.cs" />
+    <Compile Include="Collisions\BlockCollisionHandling\MarioQuestionBlockCollisionHandler.cs" />
+    <Compile Include="Collisions\BlockCollisionHandling\MarioSolidBlockCollisionHandler.cs" />
+    <Compile Include="Collisions\BlockCollisionHandling\MarioUsedBlockCollisionHandler.cs" />
+    <Compile Include="Collisions\BlockCollisionHandling\SizeDependentMarioBlockCollisions\BigMarioBrickBlockCollisionHandler.cs" />
+    <Compile Include="Collisions\BlockCollisionHandling\SizeDependentMarioBlockCollisions\SmallMarioBrickCollisionHandler.cs" />
     <Compile Include="Collisions\BottomSideCollision.cs" />
     <Compile Include="Collisions\CollisionDetector.cs" />
     <Compile Include="Collisions\CollisionSelector.cs" />
