@@ -23,17 +23,17 @@ namespace Game.Enemies.GoombaClasses
             goombaVector.Y = 100;
         }
 
-        public void SmashedGoomba()
+        public void IsHit()
         {
             state.SmashGoomba();
         }
 
-        public void DirectionChangeGoomba()
+        public void ShiftDirection()
         {
             state.DirectionChangeGoomba();
         }
 
-        public void FlipGoomba()
+        public void Flipped()
         {
             state.FlipGoomba();
         }

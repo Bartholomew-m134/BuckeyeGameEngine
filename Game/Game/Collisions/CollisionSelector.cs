@@ -8,8 +8,7 @@ using Game.Blocks;
 using Game.Items;
 using Game.Pipes;
 using Game.States.BlockStates;
-using Game.Collisions.EnemyCollisionHandling.MarioEnemyCollisions;
-using Game.Collisions.EnemyCollisionHandling.EnemyEnemyCollisions;
+using Game.Collisions.EnemyCollisionHandling;
 using Game.Collisions.BlockCollisionHandling;
 using Game.Collisions.ItemCollisionHandling;
 
@@ -20,7 +19,8 @@ namespace Game.Collisions
         public static void HandleCollision(CollisionData collision){
             if ((collision.gameObjectA is IMario && collision.gameObjectB is IEnemy) || (collision.gameObjectA is IEnemy && collision.gameObjectB is IMario))
             {
-
+                MarioEnemyCollisionHandler collisionHandler = new MarioEnemyCollisionHandler(collision);
+                collisionHandler.HandleCollision();
             }
             else if ((collision.gameObjectA is IMario && collision.gameObjectB is IBlock) || (collision.gameObjectA is IBlock && collision.gameObjectB is IMario))
             {
@@ -40,10 +40,6 @@ namespace Game.Collisions
 
             }
             else if ((collision.gameObjectA is IEnemy && collision.gameObjectB is IBlock) || (collision.gameObjectA is IBlock && collision.gameObjectB is IEnemy))
-            {
-
-            }
-            else if ((collision.gameObjectA is IEnemy && collision.gameObjectB is IItem) || (collision.gameObjectA is IItem && collision.gameObjectB is IEnemy))
             {
 
             }

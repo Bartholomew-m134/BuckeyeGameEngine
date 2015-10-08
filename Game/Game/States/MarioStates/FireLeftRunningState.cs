@@ -27,7 +27,7 @@ namespace Game.States
         public void Left()
         {
             Vector2 loc = WorldManager.GetMario().getLocation();
-            loc.X--;
+            loc.X -= 4;
             WorldManager.GetMario().setLocation(loc);
         }
 
@@ -63,12 +63,11 @@ namespace Game.States
 
         public void Mushroom()
         {
-            mario.state = new NormalLeftRunningState(mario, game);
         }
 
         public void Damage()
         {
-            mario.state = new SmallLeftRunningState(mario, game);
+            mario.state = new NormalLeftRunningState(mario, game);
         }
 
         public void Die()

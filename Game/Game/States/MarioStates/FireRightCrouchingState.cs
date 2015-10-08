@@ -26,12 +26,12 @@ namespace Game.States
 
         public void Left()
         {
-
+            mario.state = new FireLeftRunningState(mario, game);
         }
 
         public void Right()
         {
-
+            mario.state = new FireRightRunningState(mario, game);
         }
 
         public void Up()
@@ -42,7 +42,7 @@ namespace Game.States
         public void Down()
         {
             Vector2 loc = WorldManager.GetMario().getLocation();
-            loc.Y++;
+            loc.Y += 4;
             WorldManager.GetMario().setLocation(loc);
         }
 
@@ -63,12 +63,11 @@ namespace Game.States
 
         public void Mushroom()
         {
-            mario.state = new NormalRightCrouchingState(mario, game);
         }
 
         public void Damage()
         {
-            mario.state = new SmallRightIdleState(mario, game);
+            mario.state = new NormalRightIdleState(mario, game);
         }
 
         public void Die()

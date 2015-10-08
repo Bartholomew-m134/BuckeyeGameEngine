@@ -26,12 +26,12 @@ namespace Game.States
 
         public void Left()
         {
-
+            mario.state = new NormalLeftRunningState(mario, game);
         }
 
         public void Right()
         {
-
+            mario.state = new NormalRightRunningState(mario, game);
         }
 
         public void Up()
@@ -42,7 +42,7 @@ namespace Game.States
         public void Down()
         {
             Vector2 loc = WorldManager.GetMario().getLocation();
-            loc.Y++;
+            loc.Y += 4;
             WorldManager.GetMario().setLocation(loc);
         }
 

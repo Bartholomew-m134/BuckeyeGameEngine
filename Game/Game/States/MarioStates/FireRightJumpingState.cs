@@ -26,12 +26,14 @@ namespace Game.States
 
         public void Left()
         {
-
+            mario.state = new FireLeftJumpingState(mario, game);
         }
 
         public void Right()
         {
-
+            Vector2 loc = WorldManager.GetMario().getLocation();
+            loc.X += 4;
+            WorldManager.GetMario().setLocation(loc);
         }
 
         public void Up()
@@ -52,7 +54,7 @@ namespace Game.States
         public void Jump()
         {
             Vector2 loc = WorldManager.GetMario().getLocation();
-            loc.Y--;
+            loc.Y -= 4;
             WorldManager.GetMario().setLocation(loc);
         }
 
@@ -63,12 +65,11 @@ namespace Game.States
 
         public void Mushroom()
         {
-            mario.state = new NormalRightJumpingState(mario, game);
         }
 
         public void Damage()
         {
-            mario.state = new SmallRightJumpingState(mario, game);
+            mario.state = new NormalRightJumpingState(mario, game);
         }
 
         public void Die()

@@ -8,6 +8,10 @@ namespace Game.Enemies
 {
     public interface IEnemy : IGameObject
     {
+        void IsHit();
 
+        void ShiftDirection();
+
+        void Flipped();
     }
 }

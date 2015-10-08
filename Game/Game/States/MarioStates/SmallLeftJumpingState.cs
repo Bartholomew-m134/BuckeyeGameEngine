@@ -26,18 +26,20 @@ namespace Game.States
 
         public void Left()
         {
-
+            Vector2 loc = WorldManager.GetMario().getLocation();
+            loc.X -= 4;
+            WorldManager.GetMario().setLocation(loc);
         }
 
         public void Right()
         {
-
+            mario.state = new SmallRightJumpingState(mario, game);
         }
 
         public void Up()
         {
             Vector2 loc = WorldManager.GetMario().getLocation();
-            loc.Y--;
+            loc.Y -= 4;
             WorldManager.GetMario().setLocation(loc);
         }
 

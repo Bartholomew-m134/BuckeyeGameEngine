@@ -32,7 +32,7 @@ namespace Game.States
         public void Right()
         {
             Vector2 loc = WorldManager.GetMario().getLocation();
-            loc.X++;
+            loc.X += 4;
             WorldManager.GetMario().setLocation(loc);
         }
 
@@ -43,7 +43,7 @@ namespace Game.States
 
         public void Down()
         {
-
+            mario.state = new SmallRightIdleState(mario, game);
         }
 
         public void Land()
