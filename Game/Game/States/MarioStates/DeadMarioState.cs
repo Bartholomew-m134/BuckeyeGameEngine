@@ -73,6 +73,9 @@ namespace Game.States
         {
             
         }
-
+        public bool IsBig()
+        {
+            return false;
+        }
     }
 }

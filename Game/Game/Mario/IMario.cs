@@ -39,5 +39,8 @@ namespace Game.Mario
 
 
         void Die();
+
+        bool IsBig();
+
     }
 }

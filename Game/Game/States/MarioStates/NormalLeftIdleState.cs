@@ -73,6 +73,9 @@ namespace Game.States
         {
             mario.state = new DeadMarioState(mario, game);
         }
-
+        public bool IsBig()
+        {
+            return true;
+        }
     }
 }

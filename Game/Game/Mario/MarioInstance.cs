@@ -99,5 +99,10 @@ namespace Game.Mario
         {
             state.Die();
         }
+
+        public bool IsBig()
+        {
+            return state.IsBig();
+        }
     }
 }
