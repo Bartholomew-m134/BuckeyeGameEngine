@@ -12,7 +12,7 @@ namespace Game.States.BlockStates
 
         public NullBlockState(Block block)
         {        
-            block.sprite = TileSpriteFactory.CreateHiddenBlockSprite();
+
         }
 
         public void Update()

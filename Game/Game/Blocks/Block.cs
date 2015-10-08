@@ -1,4 +1,5 @@
 ﻿using Game.States.BlockStates;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,10 @@ namespace Game.Blocks
     public class Block : IBlock
     {
         public IBlockState blockState;
-        public ISprite sprite; 
+        public ISprite sprite;
         private Game1 game;
         private int blockType;
+        private Vector2 location;
 
         public Block(int blockType, Game1 game)
         {
