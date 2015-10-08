@@ -51,5 +51,11 @@ namespace Game.Enemies.KoopaClasses
         {
             greenKoopaSprite.Update();
         }
+
+        Vector2 VectorCoordinates
+        {
+            get { return greenKoopaVector; }
+            set { greenKoopaVector = value; }
+        }
     }
 }

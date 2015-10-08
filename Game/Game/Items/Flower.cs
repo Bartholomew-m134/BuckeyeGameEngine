@@ -30,6 +30,12 @@ namespace Game.Items
             flowerSprite.Draw(myGame.spriteBatch, location);
         }
 
+        Vector2 VectorCoordinates
+        {
+            get { return location; }
+            set { location = value; }
+        }
+
     }
 
 }

@@ -29,5 +29,11 @@ namespace Game.Items
         public void Draw() {
             greenMushroomSprite.Draw(myGame.spriteBatch, location);
         }
+
+        Vector2 VectorCoordinates
+        {
+            get { return location; }
+            set { location = value; }
+        }
     }
 }

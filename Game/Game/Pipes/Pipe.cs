@@ -29,6 +29,12 @@ namespace Game.Pipes
         public void Draw() {
             pipeSprite.Draw(myGame.spriteBatch, location);
         }
+
+        Vector2 VectorCoordinates
+        {
+            get { return location; }
+            set { location = value; }
+        }
     }
 
 
