@@ -34,5 +34,10 @@ namespace Game.Enemies.KoopaClasses.GreenKoopaSprites
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White, 0, new Vector2(0, 0), SpriteEffects.FlipVertically, 0);
             spriteBatch.End();
         }
+
+        Vector2 SpriteDimensions
+        {
+            get { return spriteDimensions; }
+        }
     }
 }

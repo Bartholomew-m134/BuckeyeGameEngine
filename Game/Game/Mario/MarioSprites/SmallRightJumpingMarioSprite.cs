@@ -38,5 +38,9 @@ namespace Game.Mario.MarioSprites
             spriteBatch.End();
         }
 
+        Vector2 SpriteDimensions
+        {
+            get { return new Vector2(width, height); }
+        }
     }
 }

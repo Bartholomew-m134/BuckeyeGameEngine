@@ -100,5 +100,10 @@ namespace Game.Mario.MarioSprites
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
+
+        Vector2 SpriteDimensions
+        {
+            get { return currentDimensions; }
+        }
     }
 }

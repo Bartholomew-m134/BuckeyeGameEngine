@@ -37,5 +37,10 @@ namespace Game.Enemies.GoombaClasses.GoombaSprites
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
+
+        Vector2 SpriteDimensions
+        {
+            get { return spriteDimensions; }
+        }
     }
 }

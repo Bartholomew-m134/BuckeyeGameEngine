@@ -10,11 +10,20 @@ namespace Game.Pipes.PipeSprites
 {
     class PipeSprite : ISprite
     {
+        private int width = 32;
+        private int height = 32;
+        private int sourceX = 0;
+        private int sourceY = 128;
         private Texture2D Texture { get; set; }
 
         public PipeSprite(Texture2D texture)
         {
             Texture = texture;
+
+            width = 32;
+            height = 32;
+            sourceX = 0;
+            sourceY = 128;
 
         }
 
@@ -25,12 +34,6 @@ namespace Game.Pipes.PipeSprites
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            int width = 32;
-            int height = 32;
-            int sourceX = 0;
-            int sourceY = 128;
-
-
             Rectangle sourceRectangle = new Rectangle(sourceX, sourceY, width, height);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
 
@@ -38,6 +41,11 @@ namespace Game.Pipes.PipeSprites
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
 
+        }
+
+        Vector2 SpriteDimensions
+        {
+            get { return new Vector2(width, height); }
         }
     }
 }

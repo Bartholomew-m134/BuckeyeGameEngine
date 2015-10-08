@@ -13,5 +13,10 @@ namespace Game
 
          void Draw(SpriteBatch spriteBatch, Vector2 location);
 
+         Vector2 SpriteDimensions
+         {
+             get;
+         }
+
     }
 }

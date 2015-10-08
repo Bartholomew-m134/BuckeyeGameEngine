@@ -38,8 +38,12 @@ namespace Game.Items.ItemSprites
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
 
-        } 
-        
+        }
+
+        Vector2 SpriteDimensions
+        {
+            get { return new Vector2(width, height); }
+        }
 
     }
 }

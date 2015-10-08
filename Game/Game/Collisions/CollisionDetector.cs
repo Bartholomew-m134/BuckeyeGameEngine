@@ -17,12 +17,7 @@ namespace Game.Collisions
             Rectangle hitBoxA;
             Rectangle hitBoxB;
 
-            if(objectA is IMario)
-            {
-
-            } else if(objectA is IEnemy) {
-
-            }
+            Rectangle hitBoxA = new Rectangle((int)objectA.VectorCoordinates.X, (int)objectA.VectorCoordinates.Y, width, height);
 
             Rectangle collisionRectangle = Rectangle.Intersect(hitBoxA, hitBoxB);
 
