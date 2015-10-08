@@ -60,5 +60,10 @@ namespace Game
 
             return (MarioInstance) mario;
         }
+
+        public static void SetMario(MarioInstance mario)
+        {
+            
+        }
     }
 }

@@ -47,5 +47,11 @@ namespace Game.Enemies.GoombaClasses
         {
             goombaSprite.Update();
         }
+
+        Vector2 VectorCoordinates
+        {
+            get{return goombaVector;}
+            set { goombaVector = value; }
+        }
     }
 }

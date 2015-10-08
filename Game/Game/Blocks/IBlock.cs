@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Game;
+using Microsoft.Xna.Framework;
 
 namespace Game.Blocks
 {
@@ -11,6 +12,12 @@ namespace Game.Blocks
           void Update();
 
           void Draw();
+
+          Vector2 VectorCoordinates
+          {
+              get;
+              set;
+          }
 
           void Disappear();
 

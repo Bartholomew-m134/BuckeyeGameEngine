@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework;
 
 namespace Game.Enemies
 {
@@ -9,5 +10,10 @@ namespace Game.Enemies
     {
         void Draw();
         void Update();
+        Vector2 VectorCoordinates
+        {
+            get;
+            set;
+        }
     }
 }
