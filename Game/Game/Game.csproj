@@ -184,11 +184,13 @@
     <Compile Include="SpriteFactories\EnemySpriteFactory.cs" />
     <Compile Include="SpriteFactories\ItemsSpriteFactory.cs" />
     <Compile Include="SpriteFactories\MarioSpriteFactory.cs" />
+    <Compile Include="States\BlockStates\BreakingBlockState.cs" />
     <Compile Include="States\BlockStates\BrickBlockState.cs" />
     <Compile Include="States\BlockStates\HiddenBlockState.cs" />
     <Compile Include="States\BlockStates\IBlockState.cs" />
     <Compile Include="States\BlockStates\NullBlockState.cs" />
     <Compile Include="States\BlockStates\QuestionBlockState.cs" />
+    <Compile Include="States\BlockStates\SolidBlockState.cs" />
     <Compile Include="States\BlockStates\UsedBlockState.cs" />
     <Compile Include="States\MarioStates\DeadMarioState.cs" />
     <Compile Include="States\MarioStates\FireLeftCrouchingState.cs" />
