@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
-using Game.Mario;
-using Game.Enemies;
 
 namespace Game.Collisions
 {
@@ -16,36 +14,32 @@ namespace Game.Collisions
             ICollisionSide collisionSide;
             Rectangle hitBoxA;
             Rectangle hitBoxB;
+            Rectangle collisionRectangle;
 
-            Rectangle hitBoxA = new Rectangle((int)objectA.VectorCoordinates.X, (int)objectA.VectorCoordinates.Y, width, height);
+            hitBoxA = new Rectangle((int)objectA.VectorCoordinates.X, (int)objectA.VectorCoordinates.Y, (int)objectA.GetSprite.SpriteDimensions.X, (int)objectA.GetSprite.SpriteDimensions.Y);
+            hitBoxB = new Rectangle((int)objectB.VectorCoordinates.X, (int)objectB.VectorCoordinates.Y, (int)objectB.GetSprite.SpriteDimensions.X, (int)objectB.GetSprite.SpriteDimensions.Y);
 
-            Rectangle collisionRectangle = Rectangle.Intersect(hitBoxA, hitBoxB);
+            collisionRectangle = Rectangle.Intersect(hitBoxA, hitBoxB);
 
             if (collisionRectangle.IsEmpty)
             {
                 collisionSide = null;
             }
+            else if (collisionRectangle.Width > collisionRectangle.Height && hitBoxA.Bottom < hitBoxB.Top)
+            {
+                collisionSide = new TopSideCollision();
+            }
             else if (collisionRectangle.Width > collisionRectangle.Height)
             {
-                if (hitBoxA.Bottom < hitBoxB.Top)
-                {
-                    collisionSide = new TopSideCollision();
-                }
-                else
-                {
-                    collisionSide = new BottomSideCollision();
-                }
+                collisionSide = new BottomSideCollision();
+            }
+            else if (collisionRectangle.Height >= collisionRectangle.Width && hitBoxA.Right > hitBoxB.Left)
+            {
+                collisionSide = new LeftSideCollision();
             }
             else
             {
-                if (hitBoxA.Right > hitBoxB.Left)
-                {
-                    collisionSide = new LeftSideCollision();
-                }
-                else
-                {
-                    collisionSide = new RightSideCollision();
-                }
+                collisionSide = new RightSideCollision();
             }
 
             return collisionSide;
