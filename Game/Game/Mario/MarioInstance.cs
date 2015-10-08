@@ -105,7 +105,11 @@ namespace Game.Mario
             get { return location; }
             set { location = value; }
         }
-    }
+
+        ISprite GetSprite
+        {
+            get { return sprite; }
+        }
 
         public bool IsBig()
         {

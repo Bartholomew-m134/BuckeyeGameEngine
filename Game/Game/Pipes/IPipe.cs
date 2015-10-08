@@ -17,5 +17,10 @@ namespace Game.Pipes
             get;
             set;
         }
+
+        ISprite GetSprite
+        {
+            get;
+        }
     }
 }

@@ -15,5 +15,9 @@ namespace Game.Enemies
             get;
             set;
         }
+        ISprite GetSprite
+        {
+            get;
+        }
     }
 }

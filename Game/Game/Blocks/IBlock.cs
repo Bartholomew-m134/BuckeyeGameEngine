@@ -19,6 +19,11 @@ namespace Game.Blocks
               set;
           }
 
+          ISprite GetSprite
+          {
+              get;
+          }
+
           void Disappear();
 
           void GetUsed();

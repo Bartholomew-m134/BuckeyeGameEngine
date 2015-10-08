@@ -57,5 +57,10 @@ namespace Game.Enemies.KoopaClasses
             get { return greenKoopaVector; }
             set { greenKoopaVector = value; }
         }
+
+        ISprite GetSprite
+        {
+            get { return greenKoopaSprite; }
+        }
     }
 }

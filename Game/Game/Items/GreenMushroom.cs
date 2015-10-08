@@ -42,5 +42,10 @@ namespace Game.Items
             get { return location; }
             set { location = value; }
         }
+
+        ISprite GetSprite
+        {
+            get { return greenMushroomSprite; }
+        }
     }
 }

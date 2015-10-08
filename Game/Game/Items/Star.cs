@@ -42,5 +42,10 @@ namespace Game.Items
             set { location = value; }
         }
 
+        ISprite GetSprite
+        {
+            get { return starSprite; }
+        }
+
     }
 }

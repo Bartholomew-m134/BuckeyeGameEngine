@@ -35,6 +35,11 @@ namespace Game.Pipes
             get { return location; }
             set { location = value; }
         }
+
+        ISprite GetSprite
+        {
+            get { return pipeSprite; }
+        }
     }
 
 

@@ -12,12 +12,17 @@ namespace Game.Items
 
         void Draw();
 
-        void Disappear();
-
         Vector2 VectorCoordinates
         {
             get;
             set;
         }
+
+        ISprite GetSprite
+        {
+            get;
+        }
+
+        void Disappear();
     }
 }

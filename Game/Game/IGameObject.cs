@@ -18,5 +18,10 @@ namespace Game
             set;
         }
 
+        ISprite GetSprite
+        {
+            get;
+        }
+
     }
 }

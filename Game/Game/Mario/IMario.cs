@@ -12,6 +12,17 @@ namespace Game.Mario
 
         void Draw();
 
+        Vector2 VectorCoordinates
+        {
+            get;
+            set;
+        }
+
+        ISprite GetSprite
+        {
+            get;
+        }
+
         void Left();
 
 

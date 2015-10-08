@@ -53,5 +53,10 @@ namespace Game.Enemies.GoombaClasses
             get{return goombaVector;}
             set { goombaVector = value; }
         }
+
+        ISprite GetSprite
+        {
+            get { return goombaSprite; }
+        }
     }
 }
