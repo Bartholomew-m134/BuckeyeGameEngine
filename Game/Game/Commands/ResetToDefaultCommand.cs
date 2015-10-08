@@ -23,7 +23,7 @@ namespace Game.Commands
 
         public void Execute()
         {
-            
+            WorldManager.ResetToDefault(game);
         }
     }
 }

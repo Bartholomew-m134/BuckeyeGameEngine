@@ -12,11 +12,13 @@ namespace Game
     {
         private static List<IGameObject> gameObjects;
         private static List<CollisionData> collisionList;
+        private static string currentFileName;
 
         public static void LoadListFromFile(string filename, Game1 game)
         {
             LevelLoader loader = new LevelLoader(game);
             gameObjects = new List<IGameObject>();
+            currentFileName = filename;
             
             loader.Load(filename, gameObjects);
         }
@@ -45,8 +47,6 @@ namespace Game
             {
                 CollisionSelector.HandleCollision(collision);
             }
-
-            collisionList.Clear();
         }
 
         public static void Draw()
@@ -73,7 +73,19 @@ namespace Game
 
         public static void SetMario(MarioInstance mario)
         {
-            
+            for (int i = 0; i < gameObjects.Count; i++)
+            {
+                if (gameObjects[i] is IMario)
+                {
+                    gameObjects[i] = mario;
+                    break;
+                }
+            }
+        }
+
+        public static void ResetToDefault(Game1 game)
+        {
+            LoadListFromFile(currentFileName, game);
         }
     }
 }
