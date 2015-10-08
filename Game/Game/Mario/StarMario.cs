@@ -36,7 +36,6 @@ namespace Game.Mario
             WorldManager.SetMario(mario);
         }
 
-
         void IMario.Update()
         {
             throw new NotImplementedException();
