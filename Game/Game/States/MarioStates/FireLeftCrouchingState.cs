@@ -26,12 +26,12 @@ namespace Game.States
 
         public void Left()
         {
-
+            mario.state = new FireLeftRunningState(mario, game);
         }
 
         public void Right()
         {
-            
+            mario.state = new FireRightRunningState(mario, game);
         }
 
         public void Up()
@@ -63,12 +63,11 @@ namespace Game.States
 
         public void Mushroom()
         {
-            mario.state = new NormalLeftCrouchingState(mario, game);
         }
 
         public void Damage()
         {
-            mario.state = new SmallLeftIdleState(mario, game);
+            mario.state = new NormalLeftIdleState(mario, game);
         }
 
         public void Die()

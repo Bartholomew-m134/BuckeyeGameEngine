@@ -26,12 +26,12 @@ namespace Game.States
 
         public void Left()
         {
-
+            mario.state = new NormalLeftRunningState(mario, game);
         }
 
         public void Right()
         {
-
+            mario.state = new NormalRightRunningState(mario, game);
         }
 
         public void Up()

@@ -60,12 +60,11 @@ namespace Game.States
 
         public void Mushroom()
         {
-            mario.state = new NormalRightIdleState(mario, game);
         }
 
         public void Damage()
         {
-            mario.state = new SmallRightIdleState(mario, game);
+            mario.state = new NormalRightIdleState(mario, game);
         }
 
         public void Die()

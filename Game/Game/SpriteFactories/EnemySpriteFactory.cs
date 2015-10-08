@@ -26,12 +26,12 @@ namespace Game.SpriteFactories
 
         public static ISprite CreateGoombaFlippedSprite()
         {
-            return new GoombaSmashedSprite(enemySpriteSheet);
+            return new GoombaFlippedSprite(enemySpriteSheet);
         }
 
         public static ISprite CreateGoombaSmashedSprite()
         {
-            return new GoombaFlippedSprite(enemySpriteSheet);
+            return new GoombaSmashedSprite(enemySpriteSheet);
         }
 
         public static ISprite CreateGoombaWalkingLeftSprite()

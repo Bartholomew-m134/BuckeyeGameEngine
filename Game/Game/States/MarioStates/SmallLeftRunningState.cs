@@ -43,7 +43,7 @@ namespace Game.States
 
         public void Down()
         {
-
+            mario.state = new SmallLeftIdleState(mario, game);
         }
 
         public void Land()
