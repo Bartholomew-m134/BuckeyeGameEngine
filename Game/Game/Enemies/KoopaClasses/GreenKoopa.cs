@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 namespace Game.Enemies.KoopaClasses
 {
-    public class GreenKoopa : IKoopa
+    public class GreenKoopa : IEnemy
     {
         public IKoopaState state;
         public ISprite greenKoopaSprite;
@@ -50,6 +50,12 @@ namespace Game.Enemies.KoopaClasses
         public void Update()
         {
             greenKoopaSprite.Update();
+        }
+
+        Vector2 VectorCoordinates
+        {
+            get { return greenKoopaVector; }
+            set { greenKoopaVector = value; }
         }
     }
 }

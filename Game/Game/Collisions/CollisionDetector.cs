@@ -4,14 +4,25 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using Game.Mario;
+using Game.Enemies;
 
 namespace Game.Collisions
 {
-    public class CollisionDetector
+    public static class CollisionDetector
     {
-        public ICollisionSide DetectCollision(Rectangle hitBoxA, Rectangle hitBoxB)
+        public ICollisionSide DetectCollision(IGameObject objectA, IGameObject objectB)
         {
             ICollisionSide collisionSide;
+            Rectangle hitBoxA;
+            Rectangle hitBoxB;
+
+            if(objectA is IMario)
+            {
+
+            } else if(objectA is IEnemy) {
+
+            }
 
             Rectangle collisionRectangle = Rectangle.Intersect(hitBoxA, hitBoxB);
 

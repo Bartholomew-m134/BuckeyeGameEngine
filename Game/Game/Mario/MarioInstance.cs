@@ -99,5 +99,12 @@ namespace Game.Mario
         {
             state.Die();
         }
+
+        Vector2 VectorCoordinates
+        {
+            get { return location; }
+            set { location = value; }
+        }
+    }
     }
 }

@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 namespace Game.Enemies.GoombaClasses
 {
-    public class Goomba : IGoomba
+    public class Goomba : IEnemy
     {
         public IGoombaState state;
         public ISprite goombaSprite;
@@ -46,6 +46,12 @@ namespace Game.Enemies.GoombaClasses
         public void Update()
         {
             goombaSprite.Update();
+        }
+
+        Vector2 VectorCoordinates
+        {
+            get{return goombaVector;}
+            set { goombaVector = value; }
         }
     }
 }

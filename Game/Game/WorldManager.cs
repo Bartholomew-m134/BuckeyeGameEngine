@@ -14,7 +14,6 @@ namespace Game
         public static void LoadListFromFile(string filename, Game1 game)
         {
             LevelLoader loader = new LevelLoader(game);
-            CollisionDetector detector = new CollisionDetector();
             gameObjects = new List<IGameObject>();
             
             loader.Load(filename, gameObjects);
@@ -23,7 +22,21 @@ namespace Game
         public static void Update()
         {
             foreach (IGameObject gameObject in gameObjects)
-                gameObject.Update();       
+                gameObject.Update();
+
+
+            for (int i = 0; i < gameObjects.Count; i++)
+            {
+                for (int j = 0; j < gameObjects.Count; j++)
+                {
+                    ICollisionSide 
+
+                    if()
+                    {
+
+                    }
+                }
+            }
         }
 
         public static void Draw()

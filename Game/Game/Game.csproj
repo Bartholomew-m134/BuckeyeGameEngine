@@ -81,14 +81,11 @@
     <Compile Include="Blocks\BlockSprites\SolidBlockSprite.cs" />
     <Compile Include="Blocks\BlockSprites\UsedBlockSprite.cs" />
     <Compile Include="Blocks\IBlock.cs" />
-    <Compile Include="Collisions\BlockCollisionHandling\MarioBreakingBlockCollisionHandler.cs" />
+    <Compile Include="Collisions\BlockCollisionHandling\MarioBrickBlockCollisionHandler.cs" />
     <Compile Include="Collisions\BlockCollisionHandling\MarioHiddenBlockCollisionHandler.cs" />
-    <Compile Include="Collisions\BlockCollisionHandling\MarioQuestionBlockCollisionHandler.cs" />
     <Compile Include="Collisions\BlockCollisionHandling\MarioSolidBlockCollisionHandler.cs" />
-    <Compile Include="Collisions\BlockCollisionHandling\MarioUsedBlockCollisionHandler.cs" />
-    <Compile Include="Collisions\BlockCollisionHandling\SizeDependentMarioBlockCollisions\BigMarioBrickBlockCollisionHandler.cs" />
-    <Compile Include="Collisions\BlockCollisionHandling\SizeDependentMarioBlockCollisions\SmallMarioBrickCollisionHandler.cs" />
     <Compile Include="Collisions\BottomSideCollision.cs" />
+    <Compile Include="Collisions\CollisionData.cs" />
     <Compile Include="Collisions\CollisionDetector.cs" />
     <Compile Include="Collisions\CollisionSelector.cs" />
     <Compile Include="Collisions\EnemyCollisionHandling\EnemyEnemyCollisions\EnemyBlockCollisionHandler.cs" />
@@ -96,6 +93,8 @@
     <Compile Include="Collisions\EnemyCollisionHandling\MarioEnemyCollisions\MarioGoombaCollisionHandler.cs" />
     <Compile Include="Collisions\EnemyCollisionHandling\MarioEnemyCollisions\MarioKoopaCollisionHandler.cs" />
     <Compile Include="Collisions\ICollisionSide.cs" />
+    <Compile Include="Collisions\ItemCollisionHandling\ItemBlockCollisionHandler.cs" />
+    <Compile Include="Collisions\ItemCollisionHandling\MarioItemCollisionHandler.cs" />
     <Compile Include="Collisions\LeftSideCollision.cs" />
     <Compile Include="Collisions\RightSideCollision.cs" />
     <Compile Include="Collisions\TopSideCollision.cs" />
@@ -124,7 +123,7 @@
     <Compile Include="Enemies\GoombaClasses\GoombaStates\GoombaWalkingLeftState.cs" />
     <Compile Include="Enemies\GoombaClasses\GoombaStates\GoombaWalkingRightState.cs" />
     <Compile Include="Enemies\GoombaClasses\GoombaStates\IGoombaState.cs" />
-    <Compile Include="Enemies\GoombaClasses\IGoomba.cs" />
+    <Compile Include="Enemies\IEnemy.cs" />
     <Compile Include="Enemies\KoopaClasses\GreenKoopa.cs" />
     <Compile Include="Enemies\KoopaClasses\KoopaSprites\GreenKoopaEmergingFromShellSprite.cs" />
     <Compile Include="Enemies\KoopaClasses\KoopaSprites\GreenKoopaFlippedInShellSprite.cs" />
@@ -137,7 +136,6 @@
     <Compile Include="Enemies\KoopaClasses\KoopaStates\GreenKoopaWalkingLeftState.cs" />
     <Compile Include="Enemies\KoopaClasses\KoopaStates\GreenKoopaWalkingRightState.cs" />
     <Compile Include="Enemies\KoopaClasses\KoopaStates\IKoopaState.cs" />
-    <Compile Include="Enemies\KoopaClasses\IKoopa.cs" />
     <Compile Include="IGameObject.cs" />
     <Compile Include="ISprite.cs" />
     <Compile Include="Items\Coin.cs" />

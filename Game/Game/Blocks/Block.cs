@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework;
 
 namespace Game.Blocks
 {
@@ -12,6 +13,7 @@ namespace Game.Blocks
         public ISprite sprite; 
         private Game1 game;
         private int blockType;
+        private Vector2 location;
 
         public Block(int blockType, Game1 game)
         {
@@ -62,6 +64,12 @@ namespace Game.Blocks
         public void GetUsed()
         {
             blockState.GetUsed();
+        }
+
+        Vector2 VectorCoordinates
+        {
+            get { return location; }
+            set { location = value; }
         }
     }
 }

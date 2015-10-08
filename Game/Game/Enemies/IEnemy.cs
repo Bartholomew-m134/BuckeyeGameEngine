@@ -4,16 +4,12 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 
-namespace Game.Items
+namespace Game.Enemies
 {
-    public interface IItem : IGameObject
+    public interface IEnemy : IGameObject
     {
-        void Update();
-
         void Draw();
-
-        void Disappear();
-
+        void Update();
         Vector2 VectorCoordinates
         {
             get;
