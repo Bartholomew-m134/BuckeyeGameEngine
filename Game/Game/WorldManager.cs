@@ -1,6 +1,7 @@
 ﻿using Game.Collisions;
 using Game.Mario;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,21 +26,24 @@ namespace Game
             foreach (IGameObject gameObject in gameObjects)
                 gameObject.Update();
 
+            collisionList = new List<CollisionData>();
 
             for (int i = 0; i < gameObjects.Count; i++)
             {
-                for (int j = 0; j < gameObjects.Count; j++)
+                for (int j = i; j < gameObjects.Count; j++)
                 {
-                    ICollisionSide side = null;
+                    ICollisionSide side = CollisionDetector.DetectCollision(gameObjects[i], gameObjects[j]);
 
-                    if(side != null)
-                        collisionList.Add(new CollisionData(gameObjects[i], gameObjects[j], side));             
+                    if (side != null)
+                    {
+                        collisionList.Add(new CollisionData(gameObjects[i], gameObjects[j], side));
+                    }
                 }
             }
 
             foreach (CollisionData collision in collisionList)
             {
-                CollisionSelector
+                CollisionSelector.HandleCollision(collision);
             }
         }
 
