@@ -58,7 +58,7 @@ namespace Game.States
 
         public void Flower()
         {
-            mario.state = new FireRightRunningState(mario, game);
+            mario.state = new FireLeftRunningState(mario, game);
         }
 
         public void Mushroom()
