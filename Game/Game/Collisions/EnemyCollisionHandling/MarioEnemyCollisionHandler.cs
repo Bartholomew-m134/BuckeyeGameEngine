@@ -6,6 +6,7 @@ using Game.Mario;
 using Game.Enemies;
 using Game.Enemies.GoombaClasses;
 using Game.Enemies.KoopaClasses;
+using System.Diagnostics;
 
 namespace Game.Collisions.EnemyCollisionHandling
 {
@@ -50,6 +51,7 @@ namespace Game.Collisions.EnemyCollisionHandling
         {
             if (side is TopSideCollision)
             {
+                Debug.WriteLine("Top\n");
                 enemy.IsHit();
             }
             else if (side is BottomSideCollision)

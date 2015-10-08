@@ -54,15 +54,15 @@ namespace Game.Mario.MarioSprites
 
             thirdFireLeftRunningSpriteLocation.X = 102;
             thirdFireLeftRunningSpriteLocation.Y = 123;
-            
+
+            fireLeftRunningSpriteDimensions.Add(thirdFireLeftRunningSpriteDimensions);           
+            fireLeftRunningSpriteDimensions.Add(secondFireLeftRunningSpriteDimensions);
             fireLeftRunningSpriteDimensions.Add(firstFireLeftRunningSpriteDimensions);
             fireLeftRunningSpriteDimensions.Add(secondFireLeftRunningSpriteDimensions);
-            fireLeftRunningSpriteDimensions.Add(thirdFireLeftRunningSpriteDimensions);
-            fireLeftRunningSpriteDimensions.Add(secondFireLeftRunningSpriteDimensions);
 
-            fireLeftRunningSpriteLocations.Add(firstFireLeftRunningSpriteLocation);
-            fireLeftRunningSpriteLocations.Add(secondFireLeftRunningSpriteLocation);
             fireLeftRunningSpriteLocations.Add(thirdFireLeftRunningSpriteLocation);
+            fireLeftRunningSpriteLocations.Add(secondFireLeftRunningSpriteLocation);
+            fireLeftRunningSpriteLocations.Add(firstFireLeftRunningSpriteLocation);
             fireLeftRunningSpriteLocations.Add(secondFireLeftRunningSpriteLocation);
         }
         public void Update()

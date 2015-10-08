@@ -54,9 +54,9 @@ namespace Game.Mario.MarioSprites
             thirdSmallLeftRunningSpriteLocation.X = 89;
             thirdSmallLeftRunningSpriteLocation.Y = 0;
 
-            smallLeftRunningSpriteDimensions.Add(firstSmallLeftRunningSpriteDimensions);
+            smallLeftRunningSpriteDimensions.Add(thirdSmallLeftRunningSpriteDimensions);     
             smallLeftRunningSpriteDimensions.Add(secondSmallLeftRunningSpriteDimensions);
-            smallLeftRunningSpriteDimensions.Add(thirdSmallLeftRunningSpriteDimensions);
+            smallLeftRunningSpriteDimensions.Add(firstSmallLeftRunningSpriteDimensions);
             smallLeftRunningSpriteDimensions.Add(secondSmallLeftRunningSpriteDimensions);
 
             smallLeftRunningSpriteLocations.Add(firstSmallLeftRunningSpriteLocation);

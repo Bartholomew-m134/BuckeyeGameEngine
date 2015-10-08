@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using System.Diagnostics;
 
 namespace Game.Collisions
 {
@@ -23,23 +24,33 @@ namespace Game.Collisions
 
             if (collisionRectangle.IsEmpty)
             {
+                
                 collisionSide = null;
             }
-            else if ((collisionRectangle.Width > collisionRectangle.Height) /*&& (hitBoxA.Bottom < hitBoxB.Top)*/)
+            else if ((collisionRectangle.Width > collisionRectangle.Height) && (hitBoxA.Bottom > hitBoxB.Top))
             {
+                Debug.WriteLine("Top\n");
+                Debug.WriteLine(objectA.ToString());
+                Debug.WriteLine(objectB.ToString());
                 collisionSide = new TopSideCollision();
             }
             else if (collisionRectangle.Width > collisionRectangle.Height)
             {
                 collisionSide = new BottomSideCollision();
+                Debug.WriteLine("Bottom\n");
             }
-            else if (collisionRectangle.Height >= collisionRectangle.Width && hitBoxA.Right > hitBoxB.Left)
+            else if (collisionRectangle.Height < collisionRectangle.Width && hitBoxA.Right > hitBoxB.Left)
             {
                 collisionSide = new LeftSideCollision();
+                Debug.WriteLine("Left\n");
             }
             else
             {
                 collisionSide = new RightSideCollision();
+                Debug.WriteLine("Right\n");
+                
+                Debug.WriteLine(objectA.ToString());
+                Debug.WriteLine(objectB.ToString());
             }
 
             return collisionSide;

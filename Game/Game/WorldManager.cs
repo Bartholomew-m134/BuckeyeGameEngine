@@ -30,7 +30,7 @@ namespace Game
 
             for (int i = 0; i < gameObjects.Count; i++)
             {
-                for (int j = i; j < gameObjects.Count; j++)
+                for (int j = i + 1; j < gameObjects.Count; j++)
                 {
                     ICollisionSide side = CollisionDetector.DetectCollision(gameObjects[i], gameObjects[j]);
 
@@ -45,6 +45,8 @@ namespace Game
             {
                 CollisionSelector.HandleCollision(collision);
             }
+
+            collisionList.Clear();
         }
 
         public static void Draw()

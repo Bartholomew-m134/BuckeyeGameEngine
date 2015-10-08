@@ -54,14 +54,14 @@ namespace Game.Mario.MarioSprites
             thirdNormalRightRunningSpriteLocation.X = 299;
             thirdNormalRightRunningSpriteLocation.Y = 53;
 
+            normalRightRunningSpriteDimensions.Add(thirdNormalRightRunningSpriteDimensions);       
+            normalRightRunningSpriteDimensions.Add(secondNormalRightRunningSpriteDimensions);
             normalRightRunningSpriteDimensions.Add(firstNormalRightRunningSpriteDimensions);
             normalRightRunningSpriteDimensions.Add(secondNormalRightRunningSpriteDimensions);
-            normalRightRunningSpriteDimensions.Add(thirdNormalRightRunningSpriteDimensions);
-            normalRightRunningSpriteDimensions.Add(secondNormalRightRunningSpriteDimensions);
 
-            normalRightRunningSpriteLocations.Add(firstNormalRightRunningSpriteLocation);
-            normalRightRunningSpriteLocations.Add(secondNormalRightRunningSpriteLocation);
             normalRightRunningSpriteLocations.Add(thirdNormalRightRunningSpriteLocation);
+            normalRightRunningSpriteLocations.Add(secondNormalRightRunningSpriteLocation);
+            normalRightRunningSpriteLocations.Add(firstNormalRightRunningSpriteLocation);
             normalRightRunningSpriteLocations.Add(secondNormalRightRunningSpriteLocation);
         }
         public void Update()

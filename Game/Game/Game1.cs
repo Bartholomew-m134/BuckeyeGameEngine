@@ -23,8 +23,8 @@ namespace Game
         public GraphicsDeviceManager graphics;
         public SpriteBatch spriteBatch;
 
-        public ISprite solidBlock;
-        public ISprite breakingBlock;
+        //public ISprite solidBlock;
+        //public ISprite breakingBlock;
 
         private List<IController> controllerList;
 
@@ -52,8 +52,8 @@ namespace Game
 
             WorldManager.LoadListFromFile("", this);
 
-            solidBlock = TileSpriteFactory.CreateSolidBlockSprite();
-            breakingBlock = TileSpriteFactory.CreateBreakingBlockSprite();
+            //solidBlock = TileSpriteFactory.CreateSolidBlockSprite();
+            //breakingBlock = TileSpriteFactory.CreateBreakingBlockSprite();
 
         }
 
@@ -81,8 +81,8 @@ namespace Game
 
             WorldManager.Draw();
 
-            solidBlock.Draw(spriteBatch, new Vector2(100,200));
-            breakingBlock.Draw(spriteBatch, new Vector2(500,200));
+            //solidBlock.Draw(spriteBatch, new Vector2(100,200));
+            //breakingBlock.Draw(spriteBatch, new Vector2(500,200));
         }
     }
 }
