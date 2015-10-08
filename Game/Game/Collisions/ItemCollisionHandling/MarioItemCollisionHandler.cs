@@ -14,8 +14,16 @@ namespace Game.Collisions.ItemCollisionHandling
   
 
         public MarioItemCollisionHandler(CollisionData collision) {
-            collidingMario = (MarioInstance)collision.gameObjectA;
-            collidingItem = (IItem)collision.gameObjectB;
+            if (collision.gameObjectA is IMario)
+            {
+                collidingMario = (MarioInstance)collision.gameObjectA;
+                collidingItem = (IItem)collision.gameObjectB;
+            }
+            else
+            {
+                collidingMario = (MarioInstance)collision.gameObjectB;
+                collidingItem = (IItem)collision.gameObjectA;
+            }
 
         }
 

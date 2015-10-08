@@ -18,20 +18,20 @@ namespace Game.Collisions
     public static class CollisionSelector
     {
         public static void HandleCollision(CollisionData collision){
-            if (collision.gameObjectA is IMario && collision.gameObjectB is IEnemy)
+            if ((collision.gameObjectA is IMario && collision.gameObjectB is IEnemy) || (collision.gameObjectA is IEnemy && collision.gameObjectB is IMario))
             {
 
             }
-            else if (collision.gameObjectA is IMario && collision.gameObjectB is IBlock)
+            else if ((collision.gameObjectA is IMario && collision.gameObjectB is IBlock) || (collision.gameObjectA is IBlock && collision.gameObjectB is IMario))
             {
 
             }
-            else if (collision.gameObjectA is IMario && collision.gameObjectB is IItem)
+            else if ((collision.gameObjectA is IMario && collision.gameObjectB is IItem) || (collision.gameObjectA is IItem && collision.gameObjectB is IMario))
             {
                 MarioItemCollisionHandler collisionHandler = new MarioItemCollisionHandler(collision);
                 collisionHandler.HandleCollision();
             }
-            else if (collision.gameObjectA is IMario && collision.gameObjectB is IPipe)
+            else if ((collision.gameObjectA is IMario && collision.gameObjectB is IPipe) || (collision.gameObjectA is IPipe && collision.gameObjectB is IMario))
             {
 
             }
@@ -39,23 +39,23 @@ namespace Game.Collisions
             {
 
             }
-            else if (collision.gameObjectA is IEnemy && collision.gameObjectB is IBlock)
+            else if ((collision.gameObjectA is IEnemy && collision.gameObjectB is IBlock) || (collision.gameObjectA is IBlock && collision.gameObjectB is IEnemy))
             {
 
             }
-            else if (collision.gameObjectA is IEnemy && collision.gameObjectB is IItem)
+            else if ((collision.gameObjectA is IEnemy && collision.gameObjectB is IItem) || (collision.gameObjectA is IItem && collision.gameObjectB is IEnemy))
             {
 
             }
-            else if (collision.gameObjectA is IEnemy && collision.gameObjectB is IPipe)
+            else if ((collision.gameObjectA is IEnemy && collision.gameObjectB is IPipe) || (collision.gameObjectA is IPipe && collision.gameObjectB is IEnemy))
             {
 
             }
-            else if (collision.gameObjectA is IItem && collision.gameObjectB is IBlock)
+            else if ((collision.gameObjectA is IItem && collision.gameObjectB is IBlock) || (collision.gameObjectA is IBlock && collision.gameObjectB is IItem))
             {
 
             }
-            else if (collision.gameObjectA is IItem && collision.gameObjectB is IPipe)
+            else if ((collision.gameObjectA is IItem && collision.gameObjectB is IPipe) || (collision.gameObjectA is IPipe && collision.gameObjectB is IItem))
             {
 
             }
