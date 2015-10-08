@@ -23,25 +23,21 @@ namespace Game.Enemies.KoopaClasses
             greenKoopaVector.Y = 100;
         }
 
-        public void GreenKoopaEmergingFromShell()
-        {
-            state.KoopaEmergingFromShell();
-        }
-
-        public void GreenKoopaShellFlipped()
-        {
-            state.KoopaShellFlipped();
-        }
-
-        public void GreenKoopaHidingInShell()
+        public void IsHit()
         {
             state.KoopaHidingInShell();
         }
 
-        public void GreenKoopaChangeDirection()
+        public void ShiftDirection()
         {
             state.KoopaChangeDirection();
         }
+
+        public void Flipped()
+        {
+            state.KoopaShellFlipped();
+        }
+
         public void Draw()
         {
             greenKoopaSprite.Draw(myGame.spriteBatch, greenKoopaVector);
