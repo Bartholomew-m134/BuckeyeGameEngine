@@ -12,13 +12,13 @@ namespace Game.Items
         private Game1 myGame;
         private ISprite redMushroomSprite;
         private Vector2 location;
-
+        private bool isVisible;
         public RedMushroom(Game1 game)
         {
             myGame = game;
             redMushroomSprite = ItemsSpriteFactory.CreateRedMushroomSprite();
             location = new Vector2(330, 80);
-
+            isVisible = true;
         }
 
         public void Update()
@@ -27,8 +27,14 @@ namespace Game.Items
         }
 
         public void Draw() {
-            redMushroomSprite.Draw(myGame.spriteBatch, location);
+            if (isVisible)
+            {
+                redMushroomSprite.Draw(myGame.spriteBatch, location);
+            }
         }
 
+        public void Disappear() {
+            isVisible = false;
+        }
     }
 }

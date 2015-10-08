@@ -10,5 +10,7 @@ namespace Game.Items
         void Update();
 
         void Draw();
+
+        void Disappear();
     }
 }

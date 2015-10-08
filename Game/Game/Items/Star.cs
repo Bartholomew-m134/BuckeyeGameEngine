@@ -12,13 +12,13 @@ namespace Game.Items
         private Game1 myGame;
         private ISprite starSprite;
         private Vector2 location;
-
+        private bool isVisible;
         public Star(Game1 game)
         {
             myGame = game;
             starSprite = ItemsSpriteFactory.CreateStarSprite();
             location = new Vector2(430, 80);
-
+            isVisible = true;
         }
 
         public void Update()
@@ -27,8 +27,13 @@ namespace Game.Items
         }
 
         public void Draw() {
-            starSprite.Draw(myGame.spriteBatch, location);
+            if (isVisible)
+            {
+                starSprite.Draw(myGame.spriteBatch, location);
+            }
         }
-
+        public void Disappear() {
+            isVisible = false;
+        }
     }
 }

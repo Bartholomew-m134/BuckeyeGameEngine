@@ -12,22 +12,30 @@ namespace Game.Items
         private Game1 myGame;
         private ISprite coinSprite;
         private Vector2 location;
+        private bool isVisible;
 
         public Coin(Game1 game)
         {
             myGame = game;
             coinSprite = ItemsSpriteFactory.CreateCoinSprite();
             location = new Vector2(30, 80);
-
+            isVisible = true;
         }
 
         public void Update()
         {
             coinSprite.Update();
         }
-
+       
         public void Draw() {
-            coinSprite.Draw(myGame.spriteBatch, location);
+            if (isVisible)
+            {
+                coinSprite.Draw(myGame.spriteBatch, location);
+            }
+        }
+
+        public void Disappear() {
+            isVisible = false;            
         }
     }
 }
