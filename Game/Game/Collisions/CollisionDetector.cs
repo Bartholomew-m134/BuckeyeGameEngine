@@ -25,7 +25,7 @@ namespace Game.Collisions
             {
                 collisionSide = null;
             }
-            else if (collisionRectangle.Width > collisionRectangle.Height && hitBoxA.Bottom < hitBoxB.Top)
+            else if ((collisionRectangle.Width > collisionRectangle.Height) /*&& (hitBoxA.Bottom < hitBoxB.Top)*/)
             {
                 collisionSide = new TopSideCollision();
             }

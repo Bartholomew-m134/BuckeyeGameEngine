@@ -52,7 +52,7 @@ namespace Game.States
         public void Jump()
         {
             Vector2 loc = WorldManager.GetMario().getLocation();
-            loc.Y--;
+            loc.Y -= 4;
             WorldManager.GetMario().setLocation(loc);
         }
 
