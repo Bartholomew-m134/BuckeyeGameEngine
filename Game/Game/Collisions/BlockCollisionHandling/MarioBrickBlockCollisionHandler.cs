@@ -13,10 +13,18 @@ namespace Game.Collisions.BlockCollisionHandling
         public IBlock collidingBlock;
         public ICollisionSide collisionSide;
 
-        public MarioBrickBlockCollisionHandler(CollisionData collision) {
-            collidingMario = (MarioInstance)collision.gameObjectA;
-            collidingBlock = (IBlock)collision.gameObjectB;
-            collisionSide = collision.collisionSide;
+        public MarioBrickBlockCollisionHandler(CollisionData collision) 
+        {
+            if (collision.gameObjectA is IMario)
+            {
+                collidingMario = (MarioInstance)collision.gameObjectA;
+                collidingBlock = (IBlock)collision.gameObjectB;
+            }
+            else
+            {
+                collidingMario = (MarioInstance)collision.gameObjectB;
+                collidingBlock = (IBlock)collision.gameObjectA;
+            }
         }
 
         public void HandleCollision()

@@ -17,7 +17,7 @@ namespace Game.Collisions.BlockCollisionHandling
         {
             collidingMario = (MarioInstance)collision.gameObjectA;
             collidingBlock = (IBlock)collision.gameObjectB;
-            collisionSide = collision.collisionSide;
+            collisionSide = (ICollisionSide)collision.collisionSide;
         }
 
         public void HandleCollision()

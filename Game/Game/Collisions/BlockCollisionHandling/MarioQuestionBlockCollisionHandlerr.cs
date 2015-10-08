@@ -2,22 +2,29 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Game.Blocks;
 using Game.Mario;
-using Game.Collisions;
+using Game.Blocks;
 
 namespace Game.Collisions.BlockCollisionHandling
 {
-    class MarioSolidBlockCollisionHandler
+    class MarioQuestionBlockCollisionHandler
     {
         private MarioInstance collidingMario;
         public IBlock collidingBlock;
         public ICollisionSide collisionSide;
 
-        public MarioSolidBlockCollisionHandler(CollisionData collision) {
-            collidingMario = (MarioInstance)collision.gameObjectA;
-            collidingBlock = (IBlock)collision.gameObjectB;
-            collisionSide = (ICollisionSide)collision.collisionSide;
+        public MarioQuestionBlockCollisionHandler(CollisionData collision)
+        {
+            if (collision.gameObjectA is IMario)
+            {
+                collidingMario = (MarioInstance)collision.gameObjectA;
+                collidingBlock = (IBlock)collision.gameObjectB;
+            }
+            else
+            {
+                collidingMario = (MarioInstance)collision.gameObjectB;
+                collidingBlock = (IBlock)collision.gameObjectA;
+            }
         }
 
         public void HandleCollision()
@@ -42,19 +49,20 @@ namespace Game.Collisions.BlockCollisionHandling
         }
         private void HandleTopSide()
         {
-            // stop mario from going through block
+            // stop mario from passing through block
         }
         private void HandleBottomSide()
         {
+            collidingBlock.GetUsed();
             // stop mario from going through block
         }
         private void HandleRightSide()
         {
-            // stop mario from going through block
+            // stop mario from passing through block
         }
         private void HandleLeftSide()
         {
-            // stop mario from going through block
+            // stop mario from passing through block
         }
     }
 }
