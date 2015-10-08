@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.States;
+using Microsoft.Xna.Framework;
 
 namespace Game.Mario
 {
@@ -11,7 +13,6 @@ namespace Game.Mario
         int timer = 1000;
         public StarMario(MarioInstance mario)
         {
-
             this.mario = mario;
         }
 
@@ -34,11 +35,6 @@ namespace Game.Mario
         void RemoveStar()
         {
             WorldManager.SetMario(mario);
-        }
-
-        void IMario.Update()
-        {
-            throw new NotImplementedException();
         }
 
         public void Draw()
@@ -99,6 +95,22 @@ namespace Game.Mario
         void IGameObject.Update()
         {
             throw new NotImplementedException();
+        }
+
+        public Vector2 VectorCoordinates
+        {
+            get { return mario.VectorCoordinates; }
+            set { mario.VectorCoordinates = value; }
+        }
+
+        public ISprite GetSprite
+        {
+            get { return mario.GetSprite; }
+        }
+
+        public bool IsBig()
+        {
+            return mario.state.IsBig();
         }
     }
 }

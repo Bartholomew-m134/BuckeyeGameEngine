@@ -9,7 +9,7 @@ namespace Game.Collisions
 {
     public static class CollisionDetector
     {
-        public ICollisionSide DetectCollision(IGameObject objectA, IGameObject objectB)
+        public static ICollisionSide DetectCollision(IGameObject objectA, IGameObject objectB)
         {
             ICollisionSide collisionSide;
             Rectangle hitBoxA;

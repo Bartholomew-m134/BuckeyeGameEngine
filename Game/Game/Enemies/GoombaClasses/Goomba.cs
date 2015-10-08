@@ -48,13 +48,13 @@ namespace Game.Enemies.GoombaClasses
             goombaSprite.Update();
         }
 
-        Vector2 VectorCoordinates
+        public Vector2 VectorCoordinates
         {
             get{return goombaVector;}
             set { goombaVector = value; }
         }
 
-        ISprite GetSprite
+        public ISprite GetSprite
         {
             get { return goombaSprite; }
         }

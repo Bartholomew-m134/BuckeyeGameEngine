@@ -8,19 +8,6 @@ namespace Game.Pipes
 {
     public interface IPipe : IGameObject
     {
-        void Update();
 
-        void Draw();
-
-        Vector2 VectorCoordinates
-        {
-            get;
-            set;
-        }
-
-        ISprite GetSprite
-        {
-            get;
-        }
     }
 }

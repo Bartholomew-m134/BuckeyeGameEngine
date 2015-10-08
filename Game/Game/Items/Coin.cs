@@ -38,13 +38,13 @@ namespace Game.Items
             isVisible = false;            
         }
 
-        Vector2 VectorCoordinates
+        public Vector2 VectorCoordinates
         {
             get { return location; }
             set { location = value; }
         }
 
-        ISprite GetSprite
+        public ISprite GetSprite
         {
             get { return coinSprite; }
         }

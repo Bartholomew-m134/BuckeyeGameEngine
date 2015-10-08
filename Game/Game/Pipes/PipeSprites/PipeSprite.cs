@@ -43,7 +43,7 @@ namespace Game.Pipes.PipeSprites
 
         }
 
-        Vector2 SpriteDimensions
+        public Vector2 SpriteDimensions
         {
             get { return new Vector2(width, height); }
         }

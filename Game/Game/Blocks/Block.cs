@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Microsoft.Xna.Framework;
 
 namespace Game.Blocks
 {
@@ -67,13 +66,13 @@ namespace Game.Blocks
             blockState.GetUsed();
         }
 
-        Vector2 VectorCoordinates
+        public Vector2 VectorCoordinates
         {
             get { return location; }
             set { location = value; }
         }
 
-        ISprite GetSprite
+        public ISprite GetSprite
         {
             get { return sprite; }
         }

@@ -41,7 +41,7 @@ namespace Game.Items.ItemSprites
 
         }
 
-        Vector2 SpriteDimensions
+        public Vector2 SpriteDimensions
         {
             get { return new Vector2(width, height); }
         }

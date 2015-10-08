@@ -35,7 +35,7 @@ namespace Game.Enemies.KoopaClasses.GreenKoopaSprites
             spriteBatch.End();
         }
 
-        Vector2 SpriteDimensions
+        public Vector2 SpriteDimensions
         {
             get { return spriteDimensions; }
         }

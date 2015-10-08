@@ -52,13 +52,13 @@ namespace Game.Enemies.KoopaClasses
             greenKoopaSprite.Update();
         }
 
-        Vector2 VectorCoordinates
+        public Vector2 VectorCoordinates
         {
             get { return greenKoopaVector; }
             set { greenKoopaVector = value; }
         }
 
-        ISprite GetSprite
+        public ISprite GetSprite
         {
             get { return greenKoopaSprite; }
         }

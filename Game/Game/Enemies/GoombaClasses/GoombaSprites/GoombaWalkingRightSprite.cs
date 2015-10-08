@@ -57,7 +57,7 @@ namespace Game.Enemies.GoombaClasses.GoombaSprites
             spriteBatch.End();
         }
 
-        Vector2 SpriteDimensions
+        public Vector2 SpriteDimensions
         {
             get { return spriteDimensions; }
         }

@@ -8,21 +8,6 @@ namespace Game.Mario
 {
     public interface IMario : IGameObject
     {
-        void Update();
-
-        void Draw();
-
-        Vector2 VectorCoordinates
-        {
-            get;
-            set;
-        }
-
-        ISprite GetSprite
-        {
-            get;
-        }
-
         void Left();
 
 

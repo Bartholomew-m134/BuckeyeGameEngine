@@ -9,21 +9,6 @@ namespace Game.Blocks
 {
     public interface IBlock : IGameObject
     {
-          void Update();
-
-          void Draw();
-
-          Vector2 VectorCoordinates
-          {
-              get;
-              set;
-          }
-
-          ISprite GetSprite
-          {
-              get;
-          }
-
           void Disappear();
 
           void GetUsed();
