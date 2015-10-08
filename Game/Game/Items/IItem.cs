@@ -12,6 +12,8 @@ namespace Game.Items
 
         void Draw();
 
+        void Disappear();
+
         Vector2 VectorCoordinates
         {
             get;
