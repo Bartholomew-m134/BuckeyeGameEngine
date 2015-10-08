@@ -83,7 +83,7 @@
     <Compile Include="Blocks\IBlock.cs" />
     <Compile Include="Collisions\BlockCollisionHandling\MarioBrickBlockCollisionHandler.cs" />
     <Compile Include="Collisions\BlockCollisionHandling\MarioHiddenBlockCollisionHandler.cs" />
-    <Compile Include="Collisions\BlockCollisionHandling\MarioQuestionBlockCollisionHandlerr.cs" />
+    <Compile Include="Collisions\BlockCollisionHandling\MarioQuestionBlockCollisionHandler.cs" />
     <Compile Include="Collisions\BlockCollisionHandling\MarioSolidBlockCollisionHandler.cs" />
     <Compile Include="Collisions\BottomSideCollision.cs" />
     <Compile Include="Collisions\CollisionData.cs" />
