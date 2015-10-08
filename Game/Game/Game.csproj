@@ -177,6 +177,7 @@
     <Compile Include="Mario\MarioSprites\SmallRightIdleMarioSprite.cs" />
     <Compile Include="Mario\MarioSprites\SmallRightJumpingMarioSprite.cs" />
     <Compile Include="Mario\MarioSprites\SmallRightRunningMarioSprite.cs" />
+    <Compile Include="Mario\StarMario.cs" />
     <Compile Include="Pipes\IPipe.cs" />
     <Compile Include="Pipes\Pipe.cs" />
     <Compile Include="Pipes\PipeSprites\PipeSprite.cs" />
