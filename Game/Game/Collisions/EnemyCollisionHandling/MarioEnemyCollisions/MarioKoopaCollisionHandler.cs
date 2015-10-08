@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Game.CollisionHandling.EnemyCollisionHandling
+namespace Game.Collisions.EnemyCollisionHandling.MarioEnemyCollisions
 {
     class MarioKoopaCollisionHandler
     {

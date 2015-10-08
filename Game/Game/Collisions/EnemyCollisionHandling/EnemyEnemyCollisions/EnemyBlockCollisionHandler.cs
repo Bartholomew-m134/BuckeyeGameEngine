@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Game.CollisionHandling.EnemyCollisionHandling.EnemyEnemyCollisions
+namespace Game.Collisions.EnemyCollisionHandling.EnemyEnemyCollisions
 {
     class EnemyBlockCollisionHandler
     {
