@@ -31,6 +31,14 @@ namespace Game.Blocks
                 case 3:
                     blockState = new QuestionBlockState(this);
                     break;
+                case 4:
+                    blockState = new SolidBlockState(this);
+                    break;
+                case 5:
+                    blockState = new BreakingBlockState(this);
+                    break;
+
+
             }
         }
 
@@ -51,6 +59,12 @@ namespace Game.Blocks
                     break;
                 case 3:
                     sprite.Draw(game.spriteBatch, new Microsoft.Xna.Framework.Vector2(300, 200));
+                    break;
+                case 4:
+                    sprite.Draw(game.spriteBatch, new Microsoft.Xna.Framework.Vector2(100, 200));
+                    break;
+                case 5:
+                    sprite.Draw(game.spriteBatch, new Microsoft.Xna.Framework.Vector2(500, 200));
                     break;
             }
            

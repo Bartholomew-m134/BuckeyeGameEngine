@@ -34,6 +34,8 @@ namespace Game
             gameObjects.Add(new Block(1, game));
             gameObjects.Add(new Block(2, game));
             gameObjects.Add(new Block(3, game));
+            gameObjects.Add(new Block(4, game));
+            gameObjects.Add(new Block(5, game));
 
             gameObjects.Add(new Goomba(game));
             gameObjects.Add(new GreenKoopa(game));
