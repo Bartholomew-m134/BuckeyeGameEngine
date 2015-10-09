@@ -11,6 +11,7 @@ using Game.States.BlockStates;
 using Game.Collisions.EnemyCollisionHandling;
 using Game.Collisions.BlockCollisionHandling;
 using Game.Collisions.ItemCollisionHandling;
+using System.Diagnostics;
 
 namespace Game.Collisions
 {
@@ -24,8 +25,10 @@ namespace Game.Collisions
             }
             else if ((collision.gameObjectA is IMario && collision.gameObjectB is IBlock) || (collision.gameObjectA is IBlock && collision.gameObjectB is IMario))
             {
+                Debug.WriteLine("seen block collision");
                 MarioBlockCollisionHandler collisionHandler = new MarioBlockCollisionHandler(collision);
                 collisionHandler.HandleCollision();
+      
             }
             else if ((collision.gameObjectA is IMario && collision.gameObjectB is IItem) || (collision.gameObjectA is IItem && collision.gameObjectB is IMario))
             {

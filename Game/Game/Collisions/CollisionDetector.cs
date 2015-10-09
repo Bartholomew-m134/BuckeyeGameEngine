@@ -29,28 +29,19 @@ namespace Game.Collisions
             }
             else if ((collisionRectangle.Width > collisionRectangle.Height) && (hitBoxA.Bottom < hitBoxB.Bottom))
             {
-                Debug.WriteLine("Top\n");
-                Debug.WriteLine(objectA.ToString());
-                Debug.WriteLine(objectB.ToString());
                 collisionSide = new TopSideCollision();
             }
             else if (collisionRectangle.Width > collisionRectangle.Height)
             {
                 collisionSide = new BottomSideCollision();
-                Debug.WriteLine("Bottom\n");
             }
             else if (collisionRectangle.Height < collisionRectangle.Width && hitBoxA.Right > hitBoxB.Left)
             {
                 collisionSide = new LeftSideCollision();
-                Debug.WriteLine("Left\n");
             }
             else
             {
                 collisionSide = new RightSideCollision();
-                Debug.WriteLine("Right\n");
-                
-                Debug.WriteLine(objectA.ToString());
-                Debug.WriteLine(objectB.ToString());
             }
 
             return collisionSide;
