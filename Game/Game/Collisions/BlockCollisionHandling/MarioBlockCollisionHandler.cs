@@ -14,7 +14,7 @@ namespace Game.Collisions.BlockCollisionHandling
         public Block collidingBlock;
         public ICollisionSide collisionSide;
 
-        public MarioBlockCollisionHandler(CollisionData collision)
+        public MarioBlockCollisionHandler(Collision collision)
         {
             if (collision.gameObjectA is IMario)
             {

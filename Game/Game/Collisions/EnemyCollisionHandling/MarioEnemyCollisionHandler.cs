@@ -15,9 +15,11 @@ namespace Game.Collisions.EnemyCollisionHandling
         private MarioInstance mario;
         private IEnemy enemy;
         private ICollisionSide side;
-
-        public MarioEnemyCollisionHandler(CollisionData collision)
+        private Collision collision;
+        public MarioEnemyCollisionHandler(Collision collision)
         {
+            this.collision = collision;
+
             side = collision.collisionSide;
             if (collision.gameObjectA is IMario)
             {
@@ -49,8 +51,11 @@ namespace Game.Collisions.EnemyCollisionHandling
 
         public void HandleCollision()
         {
+            collision.ResolveOverlap(mario);
+
             if (side is TopSideCollision)
             {
+                
                 Debug.WriteLine("Top\n");
                 enemy.IsHit();
             }
