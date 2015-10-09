@@ -29,7 +29,7 @@ namespace Game.Collisions
             
             if (collisionSide is LeftSideCollision) {
                 xCoordinate -= hitBox.Width;
-                Vector2 newLocation = new Vector2(xCoordinate, yCoordinate );
+                Vector2 newLocation = new Vector2(xCoordinate, yCoordinate);
                 overlappingObject.VectorCoordinates = newLocation;
             }
             else if (collisionSide is RightSideCollision) {
