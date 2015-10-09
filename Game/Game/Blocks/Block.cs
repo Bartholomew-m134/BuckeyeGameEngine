@@ -53,18 +53,23 @@ namespace Game.Blocks
             {
                 case 1:
                     sprite.Draw(game.spriteBatch, new Microsoft.Xna.Framework.Vector2(400, 200));
+                    location = new Vector2(400, 200);
                     break;
                 case 2:
                     sprite.Draw(game.spriteBatch, new Microsoft.Xna.Framework.Vector2(200, 200));
+                    location = new Vector2(200, 200);
                     break;
                 case 3:
                     sprite.Draw(game.spriteBatch, new Microsoft.Xna.Framework.Vector2(300, 200));
+                    location = new Vector2(300, 200);
                     break;
                 case 4:
                     sprite.Draw(game.spriteBatch, new Microsoft.Xna.Framework.Vector2(100, 200));
+                    location = new Vector2(100, 200);
                     break;
                 case 5:
                     sprite.Draw(game.spriteBatch, new Microsoft.Xna.Framework.Vector2(500, 200));
+                    location = new Vector2(500, 200);
                     break;
             }
            
