@@ -14,7 +14,7 @@ namespace Game.States.BlockStates
         public SolidBlockState(Block block)
         {
             this.block = block;
-            block.sprite = TileSpriteFactory.CreateBreakingBlockSprite();
+            block.sprite = TileSpriteFactory.CreateSolidBlockSprite();
         }
 
         public void Update()
