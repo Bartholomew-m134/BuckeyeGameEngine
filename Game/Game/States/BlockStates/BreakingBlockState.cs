@@ -25,6 +25,7 @@ namespace Game.States.BlockStates
         public void Disappear()
         {
             block.blockState = new NullBlockState(block);
+            block.blockType = 6;
         }
 
         public void GetUsed()

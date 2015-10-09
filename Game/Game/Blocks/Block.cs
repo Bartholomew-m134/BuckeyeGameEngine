@@ -12,7 +12,7 @@ namespace Game.Blocks
         public IBlockState blockState;
         public ISprite sprite;
         private Game1 game;
-        private int blockType;
+        public int blockType;
         private Vector2 location;
 
         public Block(int blockType, Game1 game)
@@ -37,7 +37,9 @@ namespace Game.Blocks
                 case 5:
                     blockState = new BreakingBlockState(this);
                     break;
-
+                case 6:
+                    blockState = new NullBlockState(this);
+                    break;
 
             }
         }
@@ -70,6 +72,9 @@ namespace Game.Blocks
                 case 5:
                     sprite.Draw(game.spriteBatch, new Microsoft.Xna.Framework.Vector2(500, 200));
                     location = new Vector2(500, 200);
+                    break;
+                case 6:
+                    blockState = new NullBlockState(this);
                     break;
             }
            
