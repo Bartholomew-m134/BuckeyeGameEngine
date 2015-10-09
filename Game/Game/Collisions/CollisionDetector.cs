@@ -35,7 +35,7 @@ namespace Game.Collisions
             {
                 collisionSide = new BottomSideCollision();
             }
-            else if (collisionRectangle.Height < collisionRectangle.Width && hitBoxA.Right < hitBoxB.Right)
+            else if (collisionRectangle.Height > collisionRectangle.Width && hitBoxA.Right < hitBoxB.Right)
             {
                 collisionSide = new LeftSideCollision();
             }

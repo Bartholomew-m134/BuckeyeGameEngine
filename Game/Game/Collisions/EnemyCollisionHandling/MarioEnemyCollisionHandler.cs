@@ -51,7 +51,7 @@ namespace Game.Collisions.EnemyCollisionHandling
 
         public void HandleCollision()
         {
-            collision.ResolveOverlap(mario);
+            collision.ResolveOverlap(mario, side);
 
             if (side is TopSideCollision)
             {
