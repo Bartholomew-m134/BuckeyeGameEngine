@@ -16,10 +16,8 @@ namespace Game
 
         public static void LoadListFromFile(string filename, Game1 game)
         {
-            gameObjects = new List<IGameObject>();
-            currentFileName = filename;
-            
-            LevelLoader.Load(filename, gameObjects, game);
+            gameObjects = LevelLoader.Load(filename, game);
+            currentFileName = filename; 
         }
 
         public static void Update()

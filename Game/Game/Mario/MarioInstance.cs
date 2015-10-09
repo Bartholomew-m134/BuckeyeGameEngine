@@ -88,6 +88,11 @@ namespace Game.Mario
             state.Mushroom();
         }
 
+        //public void Star()
+        //{
+        //    state.Star();
+        //}
+
 
         public void Damage()
         {

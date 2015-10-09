@@ -57,6 +57,10 @@ namespace Game.Enemies.GoombaClasses.GoombaSprites
             spriteBatch.End();
         }
 
+        public void StarDraw(SpriteBatch spriteBatch, Vector2 location)
+        {
+        }
+
         public Vector2 SpriteDimensions
         {
             get { return spriteDimensions; }

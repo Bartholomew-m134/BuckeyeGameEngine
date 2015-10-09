@@ -58,6 +58,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Levels\World1-1.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>World1-1</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="ScenarySpriteSheet.png">
       <Name>ScenarySpriteSheet</Name>
       <Importer>TextureImporter</Importer>

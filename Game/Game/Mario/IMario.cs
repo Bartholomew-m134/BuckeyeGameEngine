@@ -31,6 +31,8 @@ namespace Game.Mario
 
         void Mushroom();
 
+        //void Star();
+
 
         void Damage();
 

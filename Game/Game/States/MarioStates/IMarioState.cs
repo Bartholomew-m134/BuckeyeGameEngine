@@ -32,6 +32,8 @@ namespace Game.States
 
          void Mushroom();
 
+         //void Star();
+
 
          void Damage();
 

@@ -41,7 +41,7 @@ namespace Game
             TileSpriteFactory.Load(Content, GraphicsDevice);
             BackgroundElementsSpriteFactory.Load(Content, GraphicsDevice);
 
-            WorldManager.LoadListFromFile("", this);
+            WorldManager.LoadListFromFile("World1-1", this);
         }
 
         protected override void UnloadContent()
