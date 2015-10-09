@@ -11,8 +11,8 @@ namespace Game.States.BlockStates
     {
 
         public NullBlockState(Block block)
-        {        
-
+        {
+            block.sprite = TileSpriteFactory.CreateBrickBlockSprite();
         }
 
         public void Update()
