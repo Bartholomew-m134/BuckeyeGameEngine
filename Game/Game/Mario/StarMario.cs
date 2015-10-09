@@ -16,7 +16,7 @@ namespace Game.Mario
         private Vector2 location;
         private Game1 myGame;
 
-        int timer = 1000;
+        int timer = 10000;
         public StarMario(MarioInstance mario, Game1 game)
         {
             this.mario = mario;

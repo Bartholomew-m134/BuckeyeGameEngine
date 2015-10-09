@@ -45,14 +45,7 @@ namespace Game.Collisions.EnemyCollisionHandling
             }
             else
             {
-                if (mario.IsBig() && enemy.CanDealDamage == true)
-                {
                     mario.Damage();
-                }
-                else if (enemy.CanDealDamage == true)
-                {
-                    mario.Die();
-                }
             }
         }
     }
