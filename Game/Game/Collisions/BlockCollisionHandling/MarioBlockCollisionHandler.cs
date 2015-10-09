@@ -34,7 +34,7 @@ namespace Game.Collisions.BlockCollisionHandling
 
         public void HandleCollision()
         {
-            collision.ResolveOverlap(collidingMario);
+            collision.ResolveOverlap(collidingMario, collisionSide);
             if (collisionSide is RightSideCollision){
                 HandleRightSide();
             }

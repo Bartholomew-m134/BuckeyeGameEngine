@@ -18,7 +18,7 @@ namespace Game.Collisions
             collisionSide = side;
         }
 
-        public void ResolveOverlap(IGameObject overlappingObject) {
+        public void ResolveOverlap(IGameObject overlappingObject, ICollisionSide side) {
             int xCoordinate = (int)overlappingObject.VectorCoordinates.X;
             int yCoordinate = (int)overlappingObject.VectorCoordinates.Y;
 
@@ -27,23 +27,23 @@ namespace Game.Collisions
 
             Rectangle collisionRectangle = Rectangle.Intersect(hitBoxA, hitBoxB);   
             
-            if (collisionSide is LeftSideCollision) {
+            if (side is LeftSideCollision) {
                 xCoordinate -= collisionRectangle.Width;
                 Vector2 newLocation = new Vector2(xCoordinate, yCoordinate );
                 overlappingObject.VectorCoordinates = newLocation;
             }
-            else if (collisionSide is RightSideCollision) {
+            else if (side is RightSideCollision) {
                 xCoordinate += collisionRectangle.Width;
                 Vector2 newLocation = new Vector2(xCoordinate, yCoordinate);
                 overlappingObject.VectorCoordinates = newLocation;
             }
-            else if (collisionSide is TopSideCollision)
+            else if (side is TopSideCollision)
             {
                 yCoordinate -= collisionRectangle.Height;
                 Vector2 newLocation = new Vector2(xCoordinate, yCoordinate);
                 overlappingObject.VectorCoordinates = newLocation;
             }
-            else if (collisionSide is BottomSideCollision)
+            else if (side is BottomSideCollision)
             {
                 yCoordinate += collisionRectangle.Height;
                 Vector2 newLocation = new Vector2(xCoordinate, yCoordinate);
