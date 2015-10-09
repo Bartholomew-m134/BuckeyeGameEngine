@@ -16,9 +16,50 @@ namespace Game
 {
     public static class LevelLoader
     {
-        public static void Load(string filename, List<IGameObject> gameObjects, Game1 game)
+        public static List<IGameObject> Load(string filename, Game1 game)
         {
-            
+            string directory = game.Content.RootDirectory + "\\Levels\\" + filename + ".csv";
+            List<string[]> objectList = ParseFile(GetFileContents(directory));
+            return CreateNewGameObjects(objectList, game);
+        }
+
+        private static List<string[]> ParseFile(List<string> fileContents)
+        {
+            List<string[]> parsedObjects = new List<string[]>();
+
+            foreach (string line in fileContents)
+                parsedObjects.Add(line.Split(','));
+
+            return parsedObjects;
+        }
+
+        private static List<string> GetFileContents(string directory)
+        {
+            List<string> fileContents = new List<string>();
+            StreamReader reader = new StreamReader(directory);
+
+            try
+            {
+                do
+                    fileContents.Add(reader.ReadLine());            
+                while (reader.Peek() != -1);
+            }
+            catch
+            {
+                Debug.WriteLine("File Was Not Loaded\n");
+            }
+            finally
+            {
+                reader.Close();
+            }
+
+            return fileContents;
+        }
+
+        private static List<IGameObject> CreateNewGameObjects(List<string[]> objectList, Game1 game)
+        {
+            List<IGameObject> gameObjects = new List<IGameObject>();
+
             gameObjects.Add(new Coin(game));
             gameObjects.Add(new Flower(game));
             gameObjects.Add(new GreenMushroom(game));
@@ -37,18 +78,8 @@ namespace Game
             gameObjects.Add(new GreenKoopa(game));
 
             gameObjects.Add(new Pipe(game));
-            
-            List<string> fileContents = new List<string>();
-            string winDir = System.Environment.GetEnvironmentVariable("windir");
-            Debug.WriteLine(winDir);
+
+            return gameObjects;
         }
-
-        private static void ParseFile(string filename)
-        {
-
-        }
-
-        //private static string
-
     }
 }

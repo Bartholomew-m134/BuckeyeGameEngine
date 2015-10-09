@@ -40,7 +40,7 @@ namespace Game
             MarioSpriteFactory.Load(Content, GraphicsDevice);
             TileSpriteFactory.Load(Content, GraphicsDevice);
 
-            WorldManager.LoadListFromFile("", this);
+            WorldManager.LoadListFromFile("World1-1", this);
         }
 
         protected override void UnloadContent()
