@@ -11,7 +11,7 @@ namespace Game.Enemies.GoombaClasses.GoombaStates
         public GoombaWalkingLeftState(Goomba goomba)
         {
             this.goomba = goomba;
-            this.goomba.goombaSprite = Game.SpriteFactories.EnemySpriteFactory.CreateGoombaWalkingLeftSprite();
+            this.goomba.sprite = Game.SpriteFactories.EnemySpriteFactory.CreateGoombaWalkingLeftSprite();
         }
         public void SmashGoomba()
         {

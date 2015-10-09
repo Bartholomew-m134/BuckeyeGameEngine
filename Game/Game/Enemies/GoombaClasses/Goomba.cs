@@ -11,16 +11,17 @@ namespace Game.Enemies.GoombaClasses
     public class Goomba : IEnemy
     {
         public IGoombaState state;
-        public ISprite goombaSprite;
+        public ISprite sprite;
         private Game1 myGame;
-        private Vector2 goombaVector;
+        private Vector2 location;
+        private bool canDealDamage = true;
 
         public Goomba(Game1 game)
         {
             myGame = game;
             state = new GoombaWalkingLeftState(this);
-            goombaVector.X = 500;
-            goombaVector.Y = 100;
+            location.X = 500;
+            location.Y = 100;
         }
 
         public void IsHit()
@@ -38,25 +39,31 @@ namespace Game.Enemies.GoombaClasses
             state.FlipGoomba();
         }
 
+        public bool CanDealDamage
+        {
+            get { return canDealDamage; }
+            set { canDealDamage = value; }
+        }
+
         public void Draw()
         {
-            goombaSprite.Draw(myGame.spriteBatch, goombaVector);
+            sprite.Draw(myGame.spriteBatch, location);
         }
 
         public void Update()
         {
-            goombaSprite.Update();
+            sprite.Update();
         }
 
         public Vector2 VectorCoordinates
         {
-            get{return goombaVector;}
-            set { goombaVector = value; }
+            get{return location;}
+            set { location = value; }
         }
 
         public ISprite GetSprite
         {
-            get { return goombaSprite; }
+            get { return sprite; }
         }
     }
 }

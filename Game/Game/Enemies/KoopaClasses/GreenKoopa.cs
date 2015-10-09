@@ -11,16 +11,17 @@ namespace Game.Enemies.KoopaClasses
     public class GreenKoopa : IEnemy
     {
         public IKoopaState state;
-        public ISprite greenKoopaSprite;
+        public ISprite sprite;
         private Game1 myGame;
-        private Vector2 greenKoopaVector;
+        private Vector2 location;
+        private bool canDealDamage = true;
 
         public GreenKoopa(Game1 game)
         {
             myGame = game;
             state = new GreenKoopaWalkingLeftState(this);
-            greenKoopaVector.X = 600;
-            greenKoopaVector.Y = 100;
+            location.X = 600;
+            location.Y = 100;
         }
 
         public void IsHit()
@@ -38,25 +39,31 @@ namespace Game.Enemies.KoopaClasses
             state.KoopaShellFlipped();
         }
 
+        public bool CanDealDamage
+        {
+            get { return canDealDamage; }
+            set { canDealDamage = value; }
+        }
+
         public void Draw()
         {
-            greenKoopaSprite.Draw(myGame.spriteBatch, greenKoopaVector);
+            sprite.Draw(myGame.spriteBatch, location);
         }
 
         public void Update()
         {
-            greenKoopaSprite.Update();
+            sprite.Update();
         }
 
         public Vector2 VectorCoordinates
         {
-            get { return greenKoopaVector; }
-            set { greenKoopaVector = value; }
+            get { return location; }
+            set { location = value; }
         }
 
         public ISprite GetSprite
         {
-            get { return greenKoopaSprite; }
+            get { return sprite; }
         }
     }
 }

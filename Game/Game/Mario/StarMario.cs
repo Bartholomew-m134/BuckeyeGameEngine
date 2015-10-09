@@ -23,12 +23,11 @@ namespace Game.Mario
             this.myGame = game;
         }
 
-        void Damage()
+        public void Damage()
         {
-            // StarMario does not take damage
         }
 
-        void Update()
+        public void Update()
         {
             timer--;
             if (timer == 0)
@@ -46,7 +45,7 @@ namespace Game.Mario
 
         public void Draw()
         {
-            sprite.StarDraw(myGame.spriteBatch, location);
+            //sprite.StarDraw(myGame.spriteBatch, location);
         }
 
         public void Left()

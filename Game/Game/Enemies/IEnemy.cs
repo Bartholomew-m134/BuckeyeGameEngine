@@ -13,5 +13,11 @@ namespace Game.Enemies
         void ShiftDirection();
 
         void Flipped();
+
+        bool CanDealDamage
+        {
+            get;
+            set;
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace Game.Enemies.KoopaClasses.KoopaStates
         public GreenKoopaEmergingFromShellState(GreenKoopa greenKoopa)
         {
             this.greenKoopa = greenKoopa;
-            this.greenKoopa.greenKoopaSprite = Game.SpriteFactories.EnemySpriteFactory.CreateGreenKoopaEmergingFromShellSprite();
+            this.greenKoopa.sprite = Game.SpriteFactories.EnemySpriteFactory.CreateGreenKoopaEmergingFromShellSprite();
         }
 
         public void KoopaEmergingFromShell()

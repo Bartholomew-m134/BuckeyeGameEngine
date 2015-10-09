@@ -40,37 +40,16 @@ namespace Game.Collisions.EnemyCollisionHandling
 
             if (side is TopSideCollision)
             {
+                enemy.CanDealDamage = false;
                 enemy.IsHit();
-            }
-            else if (side is BottomSideCollision)
-            {
-                if (mario.IsBig())
-                {
-                    mario.Damage();
-                }
-                else
-                {
-                    mario.Die();
-                }
-            }
-            else if (side is LeftSideCollision)
-            {
-                if (mario.IsBig())
-                {
-                    mario.Damage();
-                }
-                else
-                {
-                    mario.Die();
-                }
             }
             else
             {
-                if (mario.IsBig())
+                if (mario.IsBig() && enemy.CanDealDamage == true)
                 {
                     mario.Damage();
                 }
-                else
+                else if (enemy.CanDealDamage == true)
                 {
                     mario.Die();
                 }
