@@ -11,13 +11,13 @@ using Game.States.BlockStates;
 using Game.Collisions.EnemyCollisionHandling;
 using Game.Collisions.BlockCollisionHandling;
 using Game.Collisions.ItemCollisionHandling;
-using System.Diagnostics;
 
 namespace Game.Collisions
 {
     public static class CollisionSelector
     {
         public static void HandleCollision(Collision collision){
+
             if ((collision.gameObjectA is IMario && collision.gameObjectB is IEnemy) || (collision.gameObjectA is IEnemy && collision.gameObjectB is IMario))
             {
                 MarioEnemyCollisionHandler collisionHandler = new MarioEnemyCollisionHandler(collision);
@@ -25,7 +25,6 @@ namespace Game.Collisions
             }
             else if ((collision.gameObjectA is IMario && collision.gameObjectB is IBlock) || (collision.gameObjectA is IBlock && collision.gameObjectB is IMario))
             {
-                Debug.WriteLine("seen block collision");
                 MarioBlockCollisionHandler collisionHandler = new MarioBlockCollisionHandler(collision);
                 collisionHandler.HandleCollision();
       

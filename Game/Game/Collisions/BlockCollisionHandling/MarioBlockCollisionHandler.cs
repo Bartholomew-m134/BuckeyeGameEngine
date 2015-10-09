@@ -52,7 +52,7 @@ namespace Game.Collisions.BlockCollisionHandling
         private void HandleTopSide()
         {
             if (!(collidingBlock.blockState is HiddenBlockState)){
-                // do not let mario pass through
+                collision.ResolveOverlap(collidingMario);
             }
 
         }
@@ -60,35 +60,35 @@ namespace Game.Collisions.BlockCollisionHandling
         {
             if (collidingBlock.blockState is HiddenBlockState){
                 collidingBlock.GetUsed();
-                // do not let mario pass through
+                collision.ResolveOverlap(collidingMario);
             }
             else if (collidingBlock.blockState is BrickBlockState && collidingMario.IsBig()){
                 collidingBlock.Disappear();
             }
             else if (collidingBlock.blockState is QuestionBlockState){
                 collidingBlock.GetUsed();
-                // do not let mario pass through
+                collision.ResolveOverlap(collidingMario);
             }
             else if(collidingBlock.blockState is BreakingBlockState){
                 collidingBlock.Disappear();
             }
             else
             {
-                // do not let mario pass through
+                collision.ResolveOverlap(collidingMario);
             }
         }
         private void HandleRightSide()
         {
             if (!(collidingBlock.blockState is HiddenBlockState))
             {
-                // do not let mario pass through
+                collision.ResolveOverlap(collidingMario);
             }
         }
         private void HandleLeftSide()
         {
             if (!(collidingBlock.blockState is HiddenBlockState))
             {
-                // do not let mario pass through
+                collision.ResolveOverlap(collidingMario);
             }
         }
     }
