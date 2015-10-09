@@ -13,7 +13,7 @@ namespace Game.Collisions.ItemCollisionHandling
         public IItem collidingItem;
   
 
-        public MarioItemCollisionHandler(Collision collision) {
+        public MarioItemCollisionHandler(CollisionData collision) {
             if (collision.gameObjectA is IMario)
             {
                 collidingMario = (MarioInstance)collision.gameObjectA;

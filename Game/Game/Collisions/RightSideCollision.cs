@@ -11,5 +11,10 @@ namespace Game.Collisions
         {
 
         }
+
+        public ICollisionSide FlipSide()
+        {
+            return new LeftSideCollision();
+        }
     }
 }

@@ -12,9 +12,9 @@ namespace Game.Collisions.PipeCollisionHandling
         private MarioInstance mario;
         private IPipe pipe;
         private ICollisionSide side;
-        private Collision collision;
+        private CollisionData collision;
 
-        public MarioPipeCollisionHandler(Collision collision)
+        public MarioPipeCollisionHandler(CollisionData collision)
         {
             this.collision = collision;
 
@@ -28,22 +28,7 @@ namespace Game.Collisions.PipeCollisionHandling
             {
                 mario = (MarioInstance)collision.gameObjectB;
                 pipe = (IPipe)collision.gameObjectA;
-                if (side is TopSideCollision)
-                {
-                    side = new BottomSideCollision();
-                }
-                else if (side is BottomSideCollision)
-                {
-                    side = new TopSideCollision();
-                }
-                else if (side is RightSideCollision)
-                {
-                    side = new LeftSideCollision();
-                }
-                else
-                {
-                    side = new RightSideCollision();
-                }
+                side = side.FlipSide();
             }
         }
 

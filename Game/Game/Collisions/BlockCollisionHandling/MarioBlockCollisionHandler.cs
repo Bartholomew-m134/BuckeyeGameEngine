@@ -15,11 +15,12 @@ namespace Game.Collisions.BlockCollisionHandling
         private MarioInstance collidingMario;
         public Block collidingBlock;
         public ICollisionSide collisionSide;
-        private Collision collision;
+        private CollisionData collision;
 
-        public MarioBlockCollisionHandler(Collision collision)
+        public MarioBlockCollisionHandler(CollisionData collision)
         {
             this.collision = collision;
+            collisionSide = (ICollisionSide)collision.collisionSide;
             if (collision.gameObjectA is IMario)
             {
                 collidingMario = (MarioInstance)collision.gameObjectA;
@@ -29,8 +30,8 @@ namespace Game.Collisions.BlockCollisionHandling
             {
                 collidingMario = (MarioInstance)collision.gameObjectB;
                 collidingBlock = (Block)collision.gameObjectA;
+                collisionSide = collisionSide.FlipSide();
             }
-            collisionSide = (ICollisionSide)collision.collisionSide;
         }
 
         public void HandleCollision()

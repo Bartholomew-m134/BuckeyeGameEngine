@@ -7,5 +7,6 @@ namespace Game.Collisions
 {
     public interface ICollisionSide
     {
+        ICollisionSide FlipSide();
     }
 }

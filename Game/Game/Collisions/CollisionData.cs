@@ -6,13 +6,13 @@ using System.Text;
 
 namespace Game.Collisions
 {
-    public class Collision
+    public class CollisionData
     {
         public IGameObject gameObjectA;
         public IGameObject gameObjectB;
         public ICollisionSide collisionSide;
 
-        public Collision(IGameObject objectA, IGameObject objectB, ICollisionSide side) {
+        public CollisionData(IGameObject objectA, IGameObject objectB, ICollisionSide side) {
             gameObjectA = objectA;
             gameObjectB = objectB;
             collisionSide = side;

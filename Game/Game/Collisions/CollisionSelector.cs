@@ -17,7 +17,7 @@ namespace Game.Collisions
 {
     public static class CollisionSelector
     {
-        public static void HandleCollision(Collision collision){
+        public static void HandleCollision(CollisionData collision){
 
             if ((collision.gameObjectA is IMario && collision.gameObjectB is IEnemy) || (collision.gameObjectA is IEnemy && collision.gameObjectB is IMario))
             {

@@ -11,7 +11,7 @@ namespace Game
     public static class WorldManager
     {
         private static List<IGameObject> gameObjects;
-        private static List<Collision> collisionList;
+        private static List<CollisionData> collisionList;
         private static string currentFileName;
 
         public static void LoadListFromFile(string filename, Game1 game)
@@ -27,7 +27,7 @@ namespace Game
             foreach (IGameObject gameObject in gameObjects)
                 gameObject.Update();
 
-            collisionList = new List<Collision>();
+            collisionList = new List<CollisionData>();
 
             for (int i = 0; i < gameObjects.Count; i++)
             {
@@ -37,12 +37,12 @@ namespace Game
 
                     if (side != null)
                     {
-                        collisionList.Add(new Collision(gameObjects[i], gameObjects[j], side));
+                        collisionList.Add(new CollisionData(gameObjects[i], gameObjects[j], side));
                     }
                 }
             }
 
-            foreach (Collision collision in collisionList)
+            foreach (CollisionData collision in collisionList)
             {
                 CollisionSelector.HandleCollision(collision);
             }

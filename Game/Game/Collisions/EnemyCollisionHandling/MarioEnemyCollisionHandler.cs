@@ -15,8 +15,8 @@ namespace Game.Collisions.EnemyCollisionHandling
         private MarioInstance mario;
         private IEnemy enemy;
         private ICollisionSide side;
-        private Collision collision;
-        public MarioEnemyCollisionHandler(Collision collision)
+        private CollisionData collision;
+        public MarioEnemyCollisionHandler(CollisionData collision)
         {
             this.collision = collision;
 
@@ -30,22 +30,7 @@ namespace Game.Collisions.EnemyCollisionHandling
             {
                 mario = (MarioInstance)collision.gameObjectB;
                 enemy = (IEnemy)collision.gameObjectA;
-                if (side is TopSideCollision)
-                {
-                    side = new BottomSideCollision();
-                }
-                else if (side is BottomSideCollision)
-                {
-                    side = new TopSideCollision();
-                }
-                else if (side is RightSideCollision)
-                {
-                    side = new LeftSideCollision();
-                }
-                else
-                {
-                    side = new RightSideCollision();
-                }
+                side = side.FlipSide();
             }
         }
 
