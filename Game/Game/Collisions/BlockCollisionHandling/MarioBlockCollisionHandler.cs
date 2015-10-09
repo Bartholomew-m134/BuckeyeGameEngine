@@ -65,6 +65,9 @@ namespace Game.Collisions.BlockCollisionHandling
                 collidingBlock.GetUsed();
                 // do not let mario pass through
             }
+            else if(collidingBlock.blockState is BreakingBlockState){
+                collidingBlock.Disappear();
+            }
             else
             {
                 // do not let mario pass through
