@@ -60,7 +60,7 @@ namespace Game
         private static List<IGameObject> CreateNewGameObjects(List<string[]> objectList, Game1 game)
         {
             List<IGameObject> gameObjects = new List<IGameObject>();
-
+            
             gameObjects.Add(new Coin(game));
             gameObjects.Add(new Flower(game));
             gameObjects.Add(new GreenMushroom(game));
@@ -79,6 +79,9 @@ namespace Game
             gameObjects.Add(new GreenKoopa(game));
 
             gameObjects.Add(new Pipe(game));
+            
+
+
 
             gameObjects.Add(new BigHill(game));
             gameObjects.Add(new SmallHill(game));
