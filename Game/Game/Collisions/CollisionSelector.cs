@@ -11,6 +11,7 @@ using Game.States.BlockStates;
 using Game.Collisions.EnemyCollisionHandling;
 using Game.Collisions.BlockCollisionHandling;
 using Game.Collisions.ItemCollisionHandling;
+using Game.Collisions.PipeCollisionHandling;
 
 namespace Game.Collisions
 {
@@ -36,7 +37,8 @@ namespace Game.Collisions
             }
             else if ((collision.gameObjectA is IMario && collision.gameObjectB is IPipe) || (collision.gameObjectA is IPipe && collision.gameObjectB is IMario))
             {
-
+                MarioPipeCollisionHandler collisionHandler = new MarioPipeCollisionHandler(collision);
+                collisionHandler.HandleCollision();
             }
             else if (collision.gameObjectA is IEnemy && collision.gameObjectB is IEnemy)
             {

@@ -55,8 +55,6 @@ namespace Game.Collisions.EnemyCollisionHandling
 
             if (side is TopSideCollision)
             {
-                
-                Debug.WriteLine("Top\n");
                 enemy.IsHit();
             }
             else if (side is BottomSideCollision)

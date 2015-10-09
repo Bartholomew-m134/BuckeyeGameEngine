@@ -94,6 +94,7 @@
     <Compile Include="Collisions\ItemCollisionHandling\ItemBlockCollisionHandler.cs" />
     <Compile Include="Collisions\ItemCollisionHandling\MarioItemCollisionHandler.cs" />
     <Compile Include="Collisions\LeftSideCollision.cs" />
+    <Compile Include="Collisions\PipeCollisionHandling\MarioPipeCollisionHandler.cs" />
     <Compile Include="Collisions\RightSideCollision.cs" />
     <Compile Include="Collisions\TopSideCollision.cs" />
     <Compile Include="Commands\BlockCommands\RemoveBrickBlockCommand.cs" />
