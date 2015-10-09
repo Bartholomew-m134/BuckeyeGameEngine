@@ -12,6 +12,7 @@ using System.Text;
 using System.IO;
 using System.Diagnostics;
 using Game.Background_Elements;
+using Microsoft.Xna.Framework;
 
 namespace Game
 {
@@ -60,7 +61,9 @@ namespace Game
         private static List<IGameObject> CreateNewGameObjects(List<string[]> objectList, Game1 game)
         {
             List<IGameObject> gameObjects = new List<IGameObject>();
+            Vector2 location = new Vector2(0,0);
             
+            /*
             gameObjects.Add(new Coin(game));
             gameObjects.Add(new Flower(game));
             gameObjects.Add(new GreenMushroom(game));
@@ -89,6 +92,57 @@ namespace Game
             gameObjects.Add(new TripleCloud(game));
             gameObjects.Add(new SingleBush(game));
             gameObjects.Add(new TripleBush(game));
+            */
+            
+            foreach(string[] line in objectList)
+            {
+                foreach(string objectName in line)
+                {
+                    IGameObject gameObject = null;
+
+
+                    if (objectName.Equals("Mario"))
+                        gameObject = new MarioInstance(game);
+                    else if (objectName.Equals("Coin"))
+                        gameObject = new Coin(game);
+                    else if (objectName.Equals("Flower"))
+                        gameObject = new Flower(game);
+                    else if (objectName.Equals("GreenMush"))
+                        gameObject = new GreenMushroom(game);
+                    else if (objectName.Equals("RedMush"))
+                        gameObject = new RedMushroom(game);
+                    else if (objectName.Equals("Star"))
+                        gameObject = new Star(game);
+                    else if (objectName.Equals("Koopa"))
+                        gameObject = new GreenKoopa(game);
+                    else if (objectName.Equals("Goomba"))
+                        gameObject = new Goomba(game);
+                    else if (objectName.Equals("Pipe"))
+                        gameObject = new Pipe(game);
+                    else if (objectName.Equals("SolidBlock"))
+                        gameObject = new Block(4, game);
+                    else if (objectName.Equals("InvisBlock"))
+                        gameObject = new Block(2, game);
+                    else if (objectName.Equals("QuestionBlock"))
+                        gameObject = new Block(3, game);
+                    else if (objectName.Equals("BrickBlock"))
+                        gameObject = new Block(1, game);
+                    else if (objectName.Equals("BreakingBlock"))
+                        gameObject = new Block(5, game);
+                    else if (objectName.Equals("Pipe"))
+                        gameObject = new Pipe(game);
+                    
+
+                    if(gameObject != null){
+                        gameObject.VectorCoordinates = location;  
+                        gameObjects.Add(gameObject);   
+                    }
+                    location.X += 16;
+                }
+
+                location.Y += 16;
+                location.X = 0;
+            }
 
             return gameObjects;
         }
