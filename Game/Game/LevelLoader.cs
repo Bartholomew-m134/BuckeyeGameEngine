@@ -9,6 +9,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
+using System.Diagnostics;
 
 namespace Game
 {
@@ -16,6 +18,7 @@ namespace Game
     {
         public static void Load(string filename, List<IGameObject> gameObjects, Game1 game)
         {
+            
             gameObjects.Add(new Coin(game));
             gameObjects.Add(new Flower(game));
             gameObjects.Add(new GreenMushroom(game));
@@ -34,7 +37,18 @@ namespace Game
             gameObjects.Add(new GreenKoopa(game));
 
             gameObjects.Add(new Pipe(game));
+            
+            List<string> fileContents = new List<string>();
+            string winDir = System.Environment.GetEnvironmentVariable("windir");
+            Debug.WriteLine(winDir);
         }
+
+        private static void ParseFile(string filename)
+        {
+
+        }
+
+        //private static string
 
     }
 }
