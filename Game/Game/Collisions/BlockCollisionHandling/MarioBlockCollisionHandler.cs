@@ -73,8 +73,7 @@ namespace Game.Collisions.BlockCollisionHandling
             else if(collidingBlock.blockState is BreakingBlockState){
                 collidingBlock.Disappear();
             }
-            else
-            {
+            else {
                 collision.ResolveOverlap(collidingMario, collisionSide);
             }
         }
@@ -84,6 +83,7 @@ namespace Game.Collisions.BlockCollisionHandling
             {
                 collision.ResolveOverlap(collidingMario, collisionSide);
             }
+
         }
         private void HandleLeftSide()
         {
