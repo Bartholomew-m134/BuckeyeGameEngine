@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Diagnostics;
+using Game.Background_Elements;
 
 namespace Game
 {
@@ -78,6 +79,13 @@ namespace Game
             gameObjects.Add(new GreenKoopa(game));
 
             gameObjects.Add(new Pipe(game));
+
+            gameObjects.Add(new BigHill(game));
+            gameObjects.Add(new SmallHill(game));
+            gameObjects.Add(new SingleCloud(game));
+            gameObjects.Add(new TripleCloud(game));
+            gameObjects.Add(new SingleBush(game));
+            gameObjects.Add(new TripleBush(game));
 
             return gameObjects;
         }
