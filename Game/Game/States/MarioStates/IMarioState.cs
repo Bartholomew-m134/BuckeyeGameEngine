@@ -32,7 +32,7 @@ namespace Game.States
 
          void Mushroom();
 
-         //void Star();
+         void Star();
 
 
          void Damage();

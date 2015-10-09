@@ -10,8 +10,9 @@ namespace Game.Mario
     public class StarMario : IMario
     {
         public MarioInstance mario;
-        public IMarioState state;
+        public IMario imario;
         public ISprite sprite;
+        public IMarioSprite mariosprite;
         private Vector2 location;
         private Game1 myGame;
 
@@ -20,8 +21,10 @@ namespace Game.Mario
         {
             this.mario = mario;
             this.sprite = mario.GetSprite;
+            this.mariosprite = mario.GetMarioSprite;
             this.location = mario.getLocation();
             this.myGame = game;
+            this.imario = (IMario)mario;
         }
 
         public Vector2 getLocation()
@@ -57,7 +60,7 @@ namespace Game.Mario
 
         public void Draw()
         {
-            //sprite.StarDraw(myGame.spriteBatch, location);
+            mariosprite.StarDraw(myGame.spriteBatch, location);
         }
 
         public void Left()
@@ -100,10 +103,10 @@ namespace Game.Mario
             mario.Mushroom();
         }
 
-        //public void Star()
-        //{
-        //    mario.Star();
-        //}
+        public void Star()
+        {
+            imario = new StarMario(mario, myGame);
+        }
 
         public void Die()
         {
@@ -120,6 +123,11 @@ namespace Game.Mario
         public ISprite GetSprite
         {
             get { return mario.GetSprite; }
+        }
+
+        public IMarioSprite GetMarioSprite
+        {
+            get { return mario.GetMarioSprite; }
         }
 
         public bool IsBig()

@@ -44,7 +44,7 @@ namespace Game.Collisions.ItemCollisionHandling
             }
             else if (collidingItem is Star) {
                 collidingItem.Disappear();
-                //collidingMario.Star();
+                collidingMario.Star();
             }
         }
         

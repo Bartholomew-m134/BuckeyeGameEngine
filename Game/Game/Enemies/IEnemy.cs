@@ -14,6 +14,7 @@ namespace Game.Enemies
 
         void Flipped();
 
+
         bool CanDealDamage
         {
             get;

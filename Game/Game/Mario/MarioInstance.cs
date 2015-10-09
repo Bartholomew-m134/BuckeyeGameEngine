@@ -10,6 +10,7 @@ namespace Game.Mario
     public class MarioInstance : IMario
     {
         public IMarioState state;
+        public IMarioSprite mariosprite;
         public ISprite sprite;
         private Vector2 location;
         private Game1 myGame;
@@ -18,6 +19,7 @@ namespace Game.Mario
         {
             state = new SmallRightIdleState(this, game);
             myGame = game;
+  
         }
 
         public Vector2 getLocation()
@@ -87,10 +89,10 @@ namespace Game.Mario
             state.Mushroom();
         }
 
-        //public void Star()
-        //{
-        //    state.Star();
-        //}
+        public void Star()
+        {
+            state.Star();
+        }
 
 
         public void Damage()
@@ -114,6 +116,12 @@ namespace Game.Mario
         {
             get { return sprite; }
         }
+
+        public IMarioSprite GetMarioSprite
+        {
+            get { return mariosprite;  }
+        }
+
 
         public bool IsBig()
         {

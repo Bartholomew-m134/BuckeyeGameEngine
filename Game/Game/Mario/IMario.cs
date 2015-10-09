@@ -31,8 +31,12 @@ namespace Game.Mario
 
         void Mushroom();
 
-        //void Star();
+        void Star();
 
+        IMarioSprite GetMarioSprite
+        {
+            get;
+        }
 
         void Damage();
 

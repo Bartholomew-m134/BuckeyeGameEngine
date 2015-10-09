@@ -12,11 +12,13 @@ namespace Game.States
 
         private MarioInstance mario;
         private Game1 game;
+        private IMario imario;
 
         public SmallLeftJumpingState(MarioInstance mario, Game1 game)
         {
             this.mario = mario;
             this.game = game;
+            this.imario = (IMario)mario;
             mario.sprite = SpriteFactories.MarioSpriteFactory.CreateSmallLeftJumpingSprite();
         }
         public void Update()
@@ -68,9 +70,14 @@ namespace Game.States
             mario.state = new NormalLeftJumpingState(mario, game);
         }
 
+        public void Star()
+        {
+            imario = new StarMario(mario, game);
+        }
+
         public void Damage()
         {
-            //mario.state = new Dead(mario, game);
+            mario.state = new DeadMarioState(mario, game);
         }
 
         public void Die()

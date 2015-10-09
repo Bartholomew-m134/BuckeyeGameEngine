@@ -11,6 +11,7 @@ namespace Game.Blocks
     {
           void Disappear();
 
+
           void GetUsed();
     }
 }

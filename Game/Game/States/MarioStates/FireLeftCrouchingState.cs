@@ -11,12 +11,14 @@ namespace Game.States
     {
 
         private MarioInstance mario;
+        private IMario imario;
         private Game1 game;
 
         public FireLeftCrouchingState(MarioInstance mario, Game1 game)
         {
             this.mario = mario;
             this.game = game;
+            this.imario = (IMario)mario;
             mario.sprite = SpriteFactories.MarioSpriteFactory.CreateFireLeftCrouchingSprite();
         }
         public void Update()
@@ -65,11 +67,12 @@ namespace Game.States
         {
         }
         
-        //public void Star()
-        //{
+       public void Star()
+        {
 
-            //mario = new StarMario(mario, game);
-        //}
+            imario = new StarMario(mario, game);
+
+        }
 
         public void Damage()
         {

@@ -64,10 +64,10 @@ namespace Game.States
             mario.state = new NormalRightIdleState(mario, game);
         }
 
-        //public void Star()
-        //{
+        public void Star()
+        {
 
-        //}
+        }
 
         public void Damage()
         {

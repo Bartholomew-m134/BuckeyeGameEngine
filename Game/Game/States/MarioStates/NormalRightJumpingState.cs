@@ -12,11 +12,13 @@ namespace Game.States
 
         private MarioInstance mario;
         private Game1 game;
+        private IMario imario;
 
         public NormalRightJumpingState(MarioInstance mario, Game1 game)
         {
             this.mario = mario;
             this.game = game;
+            this.imario = (IMario)mario;
             mario.sprite = SpriteFactories.MarioSpriteFactory.CreateNormalRightJumpingSprite();
         }
         public void Update()
@@ -66,6 +68,11 @@ namespace Game.States
         public void Mushroom()
         {
 
+        }
+
+        public void Star()
+        {
+            imario = new StarMario(mario, game);
         }
 
         public void Damage()

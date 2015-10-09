@@ -9,5 +9,7 @@ namespace Game.Items
     public interface IItem : IGameObject
     {
         void Disappear();
+
+
     }
 }

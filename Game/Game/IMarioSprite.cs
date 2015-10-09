@@ -1,16 +1,25 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
 
 namespace Game
 {
-    interface IMarioSprite : ISprite
+    public interface IMarioSprite : ISprite
     {
+        void Update();
 
-        //void StarDraw(SpriteBatch spriteBatch, Vector2 location);
+        void Draw(SpriteBatch spriteBatch, Vector2 location);
+
+        void StarDraw(SpriteBatch spriteBatch, Vector2 location);
+
+        Vector2 SpriteDimensions
+        {
+            get;
+        }
+        
 
     }
 }
