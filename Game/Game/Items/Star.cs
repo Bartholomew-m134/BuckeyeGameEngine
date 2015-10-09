@@ -34,6 +34,7 @@ namespace Game.Items
         }
         public void Disappear() {
             isVisible = false;
+            location.Y -= 1000;
         }
 
         public Vector2 VectorCoordinates

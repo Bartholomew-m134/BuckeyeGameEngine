@@ -8,13 +8,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
-using Game.Items;
 using Game.SpriteFactories;
-using Game.Mario;
-using Game.Blocks;
-using Game.Enemies.GoombaClasses;
-using Game.Enemies.KoopaClasses;
-using Game.Pipes;
 
 namespace Game
 {
@@ -66,10 +60,8 @@ namespace Game
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            base.Draw(gameTime);
-
             WorldManager.Draw();
+            base.Draw(gameTime);
         }
     }
 }

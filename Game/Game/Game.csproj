@@ -109,6 +109,7 @@
     <Compile Include="Commands\MarioCommands\SwitchToFireMarioCommand.cs" />
     <Compile Include="Commands\MarioCommands\SwitchToSmallMarioCommand.cs" />
     <Compile Include="Commands\ResetToDefaultCommand.cs" />
+    <Compile Include="Controllers\DefaultKeyboardControls1.cs" />
     <Compile Include="Controllers\IController.cs" />
     <Compile Include="Controllers\KeyboardController.cs" />
     <Compile Include="Enemies\GoombaClasses\Goomba.cs" />

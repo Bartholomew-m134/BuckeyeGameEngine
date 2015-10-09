@@ -12,16 +12,9 @@ using System.Text;
 
 namespace Game
 {
-    public class LevelLoader
+    public static class LevelLoader
     {
-        private Game1 game;
-
-        public LevelLoader(Game1 game)
-        {
-            this.game = game;
-        }
-
-        public void Load(string filename, List<IGameObject> gameObjects)
+        public static void Load(string filename, List<IGameObject> gameObjects, Game1 game)
         {
             gameObjects.Add(new Coin(game));
             gameObjects.Add(new Flower(game));

@@ -10,12 +10,15 @@ namespace Game.Collisions.BlockCollisionHandling
 {
     class MarioBlockCollisionHandler
     {
+
         private MarioInstance collidingMario;
         public Block collidingBlock;
         public ICollisionSide collisionSide;
+        private Collision collision;
 
         public MarioBlockCollisionHandler(Collision collision)
         {
+            this.collision = collision;
             if (collision.gameObjectA is IMario)
             {
                 collidingMario = (MarioInstance)collision.gameObjectA;
@@ -31,6 +34,7 @@ namespace Game.Collisions.BlockCollisionHandling
 
         public void HandleCollision()
         {
+            collision.ResolveOverlap(collidingMario);
             if (collisionSide is RightSideCollision){
                 HandleRightSide();
             }
