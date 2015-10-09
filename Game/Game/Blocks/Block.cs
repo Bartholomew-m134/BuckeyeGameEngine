@@ -54,24 +54,22 @@ namespace Game.Blocks
             switch (blockType)
             {
                 case 1:
-                    sprite.Draw(game.spriteBatch, new Microsoft.Xna.Framework.Vector2(400, 200));
-                    location = new Vector2(400, 200);
+                    sprite.Draw(game.spriteBatch, location);
+                    
                     break;
                 case 2:
-                    sprite.Draw(game.spriteBatch, new Microsoft.Xna.Framework.Vector2(200, 200));
-                    location = new Vector2(200, 200);
+                    sprite.Draw(game.spriteBatch, location);
+                
                     break;
                 case 3:
-                    sprite.Draw(game.spriteBatch, new Microsoft.Xna.Framework.Vector2(300, 200));
-                    location = new Vector2(300, 200);
+                    sprite.Draw(game.spriteBatch, location);
+
                     break;
                 case 4:
-                    sprite.Draw(game.spriteBatch, new Microsoft.Xna.Framework.Vector2(100, 200));
-                    location = new Vector2(100, 200);
+                    sprite.Draw(game.spriteBatch, location);
                     break;
                 case 5:
-                    sprite.Draw(game.spriteBatch, new Microsoft.Xna.Framework.Vector2(500, 200));
-                    location = new Vector2(500, 200);
+                    sprite.Draw(game.spriteBatch, location);
                     break;
                 case 6:
                     blockState = new NullBlockState(this);

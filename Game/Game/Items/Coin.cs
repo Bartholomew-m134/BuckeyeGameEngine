@@ -18,7 +18,6 @@ namespace Game.Items
         {
             myGame = game;
             coinSprite = ItemsSpriteFactory.CreateCoinSprite();
-            location = new Vector2(30, 80);
             isVisible = true;
         }
 

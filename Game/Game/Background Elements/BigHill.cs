@@ -19,7 +19,6 @@ namespace Game.Background_Elements
         {
             myGame = game;
             bigHillSprite = BackgroundElementsSpriteFactory.CreateBigHillSprite();
-            location = new Vector2(40, 444);
             isVisible = true;
         }
 
