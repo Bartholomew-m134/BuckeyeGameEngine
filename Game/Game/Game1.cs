@@ -39,6 +39,7 @@ namespace Game
             EnemySpriteFactory.Load(Content, GraphicsDevice);
             MarioSpriteFactory.Load(Content, GraphicsDevice);
             TileSpriteFactory.Load(Content, GraphicsDevice);
+            BackgroundElementsSpriteFactory.Load(Content, GraphicsDevice);
 
             WorldManager.LoadListFromFile("", this);
         }

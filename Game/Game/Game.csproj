@@ -73,6 +73,18 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Background Elements\BackgroundElementSprites\BigHillSprite.cs" />
+    <Compile Include="Background Elements\BackgroundElementSprites\SingleBushSprite.cs" />
+    <Compile Include="Background Elements\BackgroundElementSprites\SingleCloudSprite.cs" />
+    <Compile Include="Background Elements\BackgroundElementSprites\SmallHillSprite.cs" />
+    <Compile Include="Background Elements\BackgroundElementSprites\TripleBushSprite.cs" />
+    <Compile Include="Background Elements\BackgroundElementSprites\TripleCloudSprite.cs" />
+    <Compile Include="Background Elements\BigHill.cs" />
+    <Compile Include="Background Elements\SingleBush.cs" />
+    <Compile Include="Background Elements\SingleCloud.cs" />
+    <Compile Include="Background Elements\SmallHill.cs" />
+    <Compile Include="Background Elements\TripleBush.cs" />
+    <Compile Include="Background Elements\TripleCloud.cs" />
     <Compile Include="Blocks\Block.cs" />
     <Compile Include="Blocks\BlockSprites\BreakingBlockSprite.cs" />
     <Compile Include="Blocks\BlockSprites\BrickBlockSprite.cs" />
@@ -182,6 +194,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="SpriteFactories\BackgroundElementsSpriteFactory.cs" />
     <Compile Include="SpriteFactories\TileSpriteFactory.cs" />
     <Compile Include="SpriteFactories\EnemySpriteFactory.cs" />
     <Compile Include="SpriteFactories\ItemsSpriteFactory.cs" />
