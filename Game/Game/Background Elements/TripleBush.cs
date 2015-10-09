@@ -19,7 +19,6 @@ namespace Game.Background_Elements
         {
             myGame = game;
             tripleBushSprite = BackgroundElementsSpriteFactory.CreateTripleBushSprite();
-            location = new Vector2(310, 463);
             isVisible = true;
         }
 

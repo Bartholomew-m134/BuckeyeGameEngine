@@ -20,8 +20,6 @@ namespace Game.Enemies.GoombaClasses
         {
             myGame = game;
             state = new GoombaWalkingLeftState(this);
-            location.X = 500;
-            location.Y = 100;
         }
 
         public void IsHit()

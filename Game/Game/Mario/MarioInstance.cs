@@ -17,7 +17,6 @@ namespace Game.Mario
         public MarioInstance(Game1 game)
         {
             state = new SmallRightIdleState(this, game);
-            location = new Vector2(358, 316);
             myGame = game;
         }
 

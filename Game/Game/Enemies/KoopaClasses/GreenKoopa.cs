@@ -20,8 +20,6 @@ namespace Game.Enemies.KoopaClasses
         {
             myGame = game;
             state = new GreenKoopaWalkingLeftState(this);
-            location.X = 600;
-            location.Y = 100;
         }
 
         public void IsHit()

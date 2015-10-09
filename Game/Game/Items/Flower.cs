@@ -17,7 +17,6 @@ namespace Game.Items
         {
             myGame = game;
             flowerSprite = ItemsSpriteFactory.CreateFlowerSprite();
-            location = new Vector2(130, 80);
             isVisible = true;
         }
 
