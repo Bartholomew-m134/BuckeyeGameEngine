@@ -19,33 +19,33 @@ namespace Game.Collisions
         }
 
         public void ResolveOverlap(IGameObject overlappingObject) {
-            Rectangle hitBox;
             int xCoordinate = (int)overlappingObject.VectorCoordinates.X;
             int yCoordinate = (int)overlappingObject.VectorCoordinates.Y;
 
+            Rectangle hitBoxA = new Rectangle((int)gameObjectA.VectorCoordinates.X, (int)gameObjectA.VectorCoordinates.Y, (int)gameObjectA.GetSprite.SpriteDimensions.X, (int)gameObjectA.GetSprite.SpriteDimensions.Y);
+            Rectangle hitBoxB = new Rectangle((int)gameObjectB.VectorCoordinates.X, (int)gameObjectB.VectorCoordinates.Y, (int)gameObjectB.GetSprite.SpriteDimensions.X, (int)gameObjectB.GetSprite.SpriteDimensions.Y);
 
-            hitBox = new Rectangle((int)overlappingObject.VectorCoordinates.X, (int)overlappingObject.VectorCoordinates.Y, (int)overlappingObject.GetSprite.SpriteDimensions.X, (int)overlappingObject.GetSprite.SpriteDimensions.Y);
-            
+            Rectangle collisionRectangle = Rectangle.Intersect(hitBoxA, hitBoxB);   
             
             if (collisionSide is LeftSideCollision) {
-                xCoordinate -= hitBox.Width;
+                xCoordinate -= collisionRectangle.Width;
                 Vector2 newLocation = new Vector2(xCoordinate, yCoordinate );
                 overlappingObject.VectorCoordinates = newLocation;
             }
             else if (collisionSide is RightSideCollision) {
-                xCoordinate += hitBox.Width;
+                xCoordinate += collisionRectangle.Width;
                 Vector2 newLocation = new Vector2(xCoordinate, yCoordinate);
                 overlappingObject.VectorCoordinates = newLocation;
             }
             else if (collisionSide is TopSideCollision)
             {
-                yCoordinate -= hitBox.Height;
+                yCoordinate -= collisionRectangle.Height;
                 Vector2 newLocation = new Vector2(xCoordinate, yCoordinate);
                 overlappingObject.VectorCoordinates = newLocation;
             }
             else if (collisionSide is BottomSideCollision)
             {
-                yCoordinate += hitBox.Height;
+                yCoordinate += collisionRectangle.Height;
                 Vector2 newLocation = new Vector2(xCoordinate, yCoordinate);
                 overlappingObject.VectorCoordinates = newLocation;
             }
