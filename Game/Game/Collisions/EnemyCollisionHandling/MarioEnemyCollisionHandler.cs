@@ -6,7 +6,6 @@ using Game.Mario;
 using Game.Enemies;
 using Game.Enemies.GoombaClasses;
 using Game.Enemies.KoopaClasses;
-using System.Diagnostics;
 
 namespace Game.Collisions.EnemyCollisionHandling
 {
@@ -45,7 +44,10 @@ namespace Game.Collisions.EnemyCollisionHandling
             }
             else
             {
+                if (enemy.CanDealDamage)
+                {
                     mario.Damage();
+                }      
             }
         }
     }

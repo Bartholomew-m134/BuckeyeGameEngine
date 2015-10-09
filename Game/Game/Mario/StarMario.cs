@@ -39,7 +39,6 @@ namespace Game.Mario
 
         public void Damage()
         {
-            //takes no damage
         }
 
         public void Update()
@@ -110,7 +109,6 @@ namespace Game.Mario
 
         public void Die()
         {
-            mario.Die();
         }
 
 
