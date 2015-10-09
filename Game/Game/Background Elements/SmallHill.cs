@@ -18,7 +18,6 @@ namespace Game.Background_Elements
         {
             myGame = game;
             smallHillSprite = BackgroundElementsSpriteFactory.CreateSmallHillSprite();
-            location = new Vector2(615, 460);
             isVisible = true;
         }
 

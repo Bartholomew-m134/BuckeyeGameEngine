@@ -9,7 +9,7 @@ using System.Collections;
 
 namespace Game.Mario.MarioSprites
 {
-    public class FireLeftJumpingMarioSprite : ISprite
+    public class FireLeftJumpingMarioSprite : IMarioSprite
     {
         private Texture2D spriteSheet;
         private int width;

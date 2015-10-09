@@ -39,10 +39,6 @@ namespace Game.Blocks.BlockSprites
             spriteBatch.End();
         }
 
-        public void StarDraw(SpriteBatch spriteBatch, Vector2 location)
-        {
-        }
-
         public Vector2 SpriteDimensions
         {
             get { return new Vector2(width, height); }

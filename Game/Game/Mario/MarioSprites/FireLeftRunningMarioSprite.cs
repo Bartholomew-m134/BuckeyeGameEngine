@@ -9,7 +9,7 @@ using System.Collections;
 
 namespace Game.Mario.MarioSprites
 {
-    public class FireLeftRunningMarioSprite : ISprite
+    public class FireLeftRunningMarioSprite : IMarioSprite
     {
         private int toggle;
         private Texture2D spriteSheet;

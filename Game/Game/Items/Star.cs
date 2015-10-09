@@ -17,7 +17,6 @@ namespace Game.Items
         {
             myGame = game;
             starSprite = ItemsSpriteFactory.CreateStarSprite();
-            location = new Vector2(430, 80);
             isVisible = true;
         }
 

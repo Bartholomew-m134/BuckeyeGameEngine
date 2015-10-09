@@ -17,7 +17,6 @@ namespace Game.Items
         {
             myGame = game;
             greenMushroomSprite = ItemsSpriteFactory.CreateGreenMushroomSprite();
-            location = new Vector2(230, 80);
             isVisible = true;
         }
 

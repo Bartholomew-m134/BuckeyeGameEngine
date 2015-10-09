@@ -18,7 +18,6 @@ namespace Game.Background_Elements
         {
             myGame = game;
             tripleCloudSprite = BackgroundElementsSpriteFactory.CreateTripleCloudSprite();
-            location = new Vector2(310, 115);
             isVisible = true;
         }
 

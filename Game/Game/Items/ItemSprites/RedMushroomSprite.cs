@@ -40,10 +40,6 @@ namespace Game.Items.ItemSprites
             spriteBatch.End();
 
         }
-        public void StarDraw(SpriteBatch spriteBatch, Vector2 location)
-        {
-        }
-
 
         public Vector2 SpriteDimensions
         {

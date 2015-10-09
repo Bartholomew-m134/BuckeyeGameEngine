@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 namespace Game.Mario.MarioSprites
 {
-    public class FireRightJumpingMarioSprite : ISprite
+    public class FireRightJumpingMarioSprite : IMarioSprite
     {
         private int toggle;
         private Texture2D spriteSheet;

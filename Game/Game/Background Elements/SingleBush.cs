@@ -19,7 +19,6 @@ namespace Game.Background_Elements
         {
             myGame = game;
             singleBushSprite = BackgroundElementsSpriteFactory.CreateSingleBushSprite();
-            location = new Vector2(270, 463);
             isVisible = true;
         }
 
