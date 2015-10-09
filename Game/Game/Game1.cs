@@ -22,10 +22,6 @@ namespace Game
     {
         public GraphicsDeviceManager graphics;
         public SpriteBatch spriteBatch;
-
-        //public ISprite solidBlock;
-        //public ISprite breakingBlock;
-
         private List<IController> controllerList;
 
         public Game1()
@@ -51,10 +47,6 @@ namespace Game
             TileSpriteFactory.Load(Content, GraphicsDevice);
 
             WorldManager.LoadListFromFile("", this);
-
-            //solidBlock = TileSpriteFactory.CreateSolidBlockSprite();
-            //breakingBlock = TileSpriteFactory.CreateBreakingBlockSprite();
-
         }
 
         protected override void UnloadContent()
@@ -65,9 +57,7 @@ namespace Game
         protected override void Update(GameTime gameTime)
         {
             foreach (IController controller in controllerList)
-            {
                 controller.Update();
-            }
 
             WorldManager.Update();
             base.Update(gameTime);
@@ -80,9 +70,6 @@ namespace Game
             base.Draw(gameTime);
 
             WorldManager.Draw();
-
-            //solidBlock.Draw(spriteBatch, new Vector2(100,200));
-            //breakingBlock.Draw(spriteBatch, new Vector2(500,200));
         }
     }
 }
