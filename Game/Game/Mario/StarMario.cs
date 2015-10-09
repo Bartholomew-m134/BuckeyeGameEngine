@@ -10,10 +10,17 @@ namespace Game.Mario
     class StarMario : IMario
     {
         MarioInstance mario;
+        public ISprite sprite;
+        private Vector2 location;
+        private Game1 myGame;
+
         int timer = 1000;
-        public StarMario(MarioInstance mario)
+        public StarMario(MarioInstance mario, Game1 game)
         {
             this.mario = mario;
+            this.sprite = mario.GetSprite;
+            this.location = mario.getLocation();
+            this.myGame = game;
         }
 
         void Damage()
@@ -39,63 +46,54 @@ namespace Game.Mario
 
         public void Draw()
         {
-            throw new NotImplementedException();
+            sprite.StarDraw(myGame.spriteBatch, location);
         }
 
         public void Left()
         {
-            throw new NotImplementedException();
+            mario.Left();
         }
 
         public void Right()
         {
-            throw new NotImplementedException();
+            mario.Right();
         }
 
         public void Up()
         {
-            throw new NotImplementedException();
+            mario.Up();
         }
 
         public void Down()
         {
-            throw new NotImplementedException();
+            mario.Down();
         }
 
         public void Land()
         {
-            throw new NotImplementedException();
+            mario.Land();
         }
 
         public void Jump()
         {
-            throw new NotImplementedException();
+            mario.Jump();
         }
 
         public void Flower()
         {
-            throw new NotImplementedException();
+            mario.Flower();
         }
 
         public void Mushroom()
         {
-            throw new NotImplementedException();
-        }
-
-        void IMario.Damage()
-        {
-            throw new NotImplementedException();
+            mario.Mushroom();
         }
 
         public void Die()
         {
-            throw new NotImplementedException();
+            mario.Die();
         }
 
-        void IGameObject.Update()
-        {
-            throw new NotImplementedException();
-        }
 
         public Vector2 VectorCoordinates
         {
