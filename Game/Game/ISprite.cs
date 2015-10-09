@@ -13,6 +13,9 @@ namespace Game
 
          void Draw(SpriteBatch spriteBatch, Vector2 location);
 
+         void StarDraw(SpriteBatch spriteBatch, Vector2 location);
+
+
          Vector2 SpriteDimensions
          {
              get;

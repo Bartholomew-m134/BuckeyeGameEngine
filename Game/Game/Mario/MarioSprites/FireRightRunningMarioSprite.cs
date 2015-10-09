@@ -11,6 +11,7 @@ namespace Game.Mario.MarioSprites
 {
     public class FireRightRunningMarioSprite : ISprite
     {
+        private int toggle;
         private Texture2D spriteSheet;
         private ArrayList fireRightRunningSpriteDimensions;
         private ArrayList fireRightRunningSpriteLocations;
@@ -31,6 +32,7 @@ namespace Game.Mario.MarioSprites
         private Rectangle destinationRectangle;
         public FireRightRunningMarioSprite(Texture2D spriteSheet)
         {
+            toggle = 0;
             this.spriteSheet = spriteSheet;
             currentSprite = 0;
             fireRightRunningSpriteDimensions = new ArrayList();
@@ -100,6 +102,29 @@ namespace Game.Mario.MarioSprites
             spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
+        }
+
+        public void StarDraw(SpriteBatch spriteBatch, Vector2 location)
+        {
+            sourceRectangle = new Rectangle((int)currentLocation.X, (int)currentLocation.Y, (int)currentDimensions.X, (int)currentDimensions.Y);
+            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, (int)currentDimensions.X, (int)currentDimensions.Y);
+
+            if (toggle == 0)
+            {
+                spriteBatch.Begin();
+                spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
+                spriteBatch.End();
+                toggle = 1;
+            }
+
+            else
+            {
+                spriteBatch.Begin();
+                spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.Yellow);
+                spriteBatch.End();
+                toggle = 0;
+            }
+
         }
 
         public Vector2 SpriteDimensions

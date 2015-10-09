@@ -15,6 +15,8 @@ namespace Game.Mario.MarioSprites
         private int height;
         private int sheetXLocation;
         private int sheetYLocation;
+        private int toggle;
+
         public DeadMarioSprite(Texture2D spriteSheet)
         {
             this.spriteSheet = spriteSheet;
@@ -22,6 +24,7 @@ namespace Game.Mario.MarioSprites
             height = 13;
             sheetXLocation = 390;
             sheetYLocation = 16;
+            toggle = 0;
         }
         public void Update()
         {
@@ -37,6 +40,30 @@ namespace Game.Mario.MarioSprites
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
+
+        public void StarDraw(SpriteBatch spriteBatch, Vector2 location)
+        {
+            Rectangle sourceRectangle = new Rectangle(sheetXLocation, sheetYLocation, width, height);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
+
+            if (toggle == 0)
+            {
+                spriteBatch.Begin();
+                spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
+                spriteBatch.End();
+                toggle = 1;
+            }
+
+            else
+            {
+                spriteBatch.Begin();
+                spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.Yellow);
+                spriteBatch.End();
+                toggle = 0;
+            }
+
+        }
+
 
         public Vector2 SpriteDimensions
         {

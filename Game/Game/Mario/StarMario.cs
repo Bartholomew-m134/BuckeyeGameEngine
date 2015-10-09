@@ -7,9 +7,10 @@ using Microsoft.Xna.Framework;
 
 namespace Game.Mario
 {
-    class StarMario : IMario
+    public class StarMario : IMario
     {
-        MarioInstance mario;
+        public MarioInstance mario;
+        public IMarioState state;
         public ISprite sprite;
         private Vector2 location;
         private Game1 myGame;
@@ -23,8 +24,19 @@ namespace Game.Mario
             this.myGame = game;
         }
 
+        public Vector2 getLocation()
+        {
+            return this.location;
+        }
+
+        public void setLocation(Vector2 loc)
+        {
+            this.location = loc;
+        }
+
         public void Damage()
         {
+            //takes no damage
         }
 
         public void Update()
@@ -87,6 +99,11 @@ namespace Game.Mario
         {
             mario.Mushroom();
         }
+
+        //public void Star()
+        //{
+        //    mario.Star();
+        //}
 
         public void Die()
         {

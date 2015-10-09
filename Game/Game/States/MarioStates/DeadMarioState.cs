@@ -64,6 +64,11 @@ namespace Game.States
             mario.state = new NormalRightIdleState(mario, game);
         }
 
+        //public void Star()
+        //{
+
+        //}
+
         public void Damage()
         {
             mario.state = new SmallRightIdleState(mario, game);

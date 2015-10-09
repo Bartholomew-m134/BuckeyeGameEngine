@@ -11,6 +11,7 @@ namespace Game.Mario.MarioSprites
 {
     public class NormalLeftIdleMarioSprite : ISprite
     {
+        private int toggle;
         private Texture2D spriteSheet;
         private int width;
         private int height;
@@ -18,6 +19,7 @@ namespace Game.Mario.MarioSprites
         private int sheetYLocation;
         public NormalLeftIdleMarioSprite(Texture2D spriteSheet)
         {
+            toggle = 0;
             this.spriteSheet = spriteSheet;
             width = 15;
             height = 31;
@@ -37,6 +39,29 @@ namespace Game.Mario.MarioSprites
             spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
+        }
+
+        public void StarDraw(SpriteBatch spriteBatch, Vector2 location)
+        {
+            Rectangle sourceRectangle = new Rectangle(sheetXLocation, sheetYLocation, width, height);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
+
+            if (toggle == 0)
+            {
+                spriteBatch.Begin();
+                spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
+                spriteBatch.End();
+                toggle = 1;
+            }
+
+            else
+            {
+                spriteBatch.Begin();
+                spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.Yellow);
+                spriteBatch.End();
+                toggle = 0;
+            }
+
         }
 
         public Vector2 SpriteDimensions

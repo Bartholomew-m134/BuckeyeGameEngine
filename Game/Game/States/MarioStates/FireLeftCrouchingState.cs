@@ -64,6 +64,12 @@ namespace Game.States
         public void Mushroom()
         {
         }
+        
+        //public void Star()
+        //{
+
+            //mario = new StarMario(mario, game);
+        //}
 
         public void Damage()
         {
