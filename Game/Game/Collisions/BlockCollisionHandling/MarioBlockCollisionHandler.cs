@@ -9,7 +9,7 @@ using System.Diagnostics;
 
 namespace Game.Collisions.BlockCollisionHandling
 {
-    class MarioBlockCollisionHandler
+    public class MarioBlockCollisionHandler
     {
 
         private MarioInstance collidingMario;

@@ -82,6 +82,7 @@
     <Compile Include="FireMarioGreenMushroomCollisionTests.cs" />
     <Compile Include="FireMarioRedMushroomCollisionTests.cs" />
     <Compile Include="FireMarioStarCollisionTests.cs" />
+    <Compile Include="Block Tests\SmallMarioBreakingBlockCollisionTests.cs" />
     <Compile Include="SmallMarioCoinCollisionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SmallMarioFlowerCollisionTests.cs" />
