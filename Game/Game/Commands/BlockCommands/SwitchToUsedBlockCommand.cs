@@ -18,5 +18,10 @@ namespace Game.Commands.BlockCommands
         {
             //game.hiddenBlock.GetUsed();
         }
+
+        public void Release()
+        {
+
+        }
     }
 }

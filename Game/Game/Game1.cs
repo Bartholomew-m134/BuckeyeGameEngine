@@ -27,7 +27,8 @@ namespace Game
         protected override void Initialize()
         {
             controllerList = new List<IController>();
-            controllerList.Add(new KeyboardController(this));
+            controllerList.Add(new KeyboardController());
+            controllerList.Add(new GamePadController());
             base.Initialize();
         }
 

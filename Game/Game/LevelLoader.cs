@@ -93,7 +93,9 @@ namespace Game
             gameObjects.Add(new SingleBush(game));
             gameObjects.Add(new TripleBush(game));
             */
-            
+
+            objectList.RemoveAt(0);
+
             foreach(string[] line in objectList)
             {
                 foreach(string objectName in line)
@@ -131,6 +133,23 @@ namespace Game
                         gameObject = new Block(5, game);
                     else if (objectName.Equals("Pipe"))
                         gameObject = new Pipe(game);
+                    else if (objectName.Equals("BigHill"))
+                    {
+                        gameObject = new BigHill(game);
+                        gameObject.VectorCoordinates = location;
+                        Debug.WriteLine(gameObject.VectorCoordinates.Y);
+                    }
+                    else if (objectName.Equals("Bush"))
+                        gameObject = new SingleBush(game);
+                    else if (objectName.Equals("Cloud"))
+                        gameObject = new SingleCloud(game);
+                    else if (objectName.Equals("SmHill"))
+                        gameObject = new SmallHill(game);
+                    else if (objectName.Equals("TripleBush"))
+                        gameObject = new TripleBush(game);
+                    else if (objectName.Equals("TripleCloud"))
+                        gameObject = new TripleCloud(game);
+
                     
 
                     if(gameObject != null){

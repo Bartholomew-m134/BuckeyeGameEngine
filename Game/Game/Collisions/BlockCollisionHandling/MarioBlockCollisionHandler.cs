@@ -70,10 +70,7 @@ namespace Game.Collisions.BlockCollisionHandling
             else if (collidingBlock.blockState is QuestionBlockState){
                 collidingBlock.GetUsed();
                 collision.ResolveOverlap(collidingMario, collisionSide);
-            }
-            else if(collidingBlock.blockState is BreakingBlockState){
-                collidingBlock.Disappear();
-            }
+            } 
             else {
                 collision.ResolveOverlap(collidingMario, collisionSide);
             }

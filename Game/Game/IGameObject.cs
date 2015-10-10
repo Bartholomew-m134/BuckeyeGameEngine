@@ -21,6 +21,7 @@ namespace Game
         ISprite GetSprite
         {
             get;
+            set;
         }
 
     }

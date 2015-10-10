@@ -117,11 +117,18 @@ namespace Game.Mario
         public ISprite GetSprite
         {
             get { return sprite; }
+            set { sprite = value; }
         }
 
         public IMarioSprite GetMarioSprite
         {
             get { return mariosprite;  }
+        }
+
+        public IMarioState MarioStateProperty
+        {
+            get { return state; }
+            set { state = value; }
         }
 
 

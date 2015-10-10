@@ -7,16 +7,18 @@ namespace Game.Commands.MarioCommands
 {
     public class SwitchToSmallMarioCommand : ICommand
     {
-        private Game1 game;
-
-        public SwitchToSmallMarioCommand(Game1 game)
+        public SwitchToSmallMarioCommand()
         {
-            this.game = game;
         }
 
         public void Execute()
         {
             WorldManager.GetMario().Damage();
+        }
+
+        public void Release()
+        {
+
         }
     }
 }

@@ -10,18 +10,18 @@ namespace Game.States
     class DeadMarioState : IMarioState
     {
 
-        private MarioInstance mario;
+        private IMario mario;
         private Game1 game;
 
-        public DeadMarioState(MarioInstance mario, Game1 game)
+        public DeadMarioState(IMario mario, Game1 game)
         {
             this.mario = mario;
             this.game = game;
-            mario.sprite = SpriteFactories.MarioSpriteFactory.CreateDeadSprite();
+            mario.GetSprite = SpriteFactories.MarioSpriteFactory.CreateDeadSprite();
         }
 
         public void Update() {
-            mario.sprite.Update();
+            mario.GetSprite.Update();
         }
 
         public void Left()
@@ -56,12 +56,10 @@ namespace Game.States
 
         public void Flower()
         {
-            mario.state = new FireRightIdleState(mario, game);
         }
 
         public void Mushroom()
         {
-            mario.state = new NormalRightIdleState(mario, game);
         }
 
         public void Star()
@@ -71,7 +69,6 @@ namespace Game.States
 
         public void Damage()
         {
-            mario.state = new SmallRightIdleState(mario, game);
         }
 
         public void Die()

@@ -7,16 +7,18 @@ namespace Game.Commands.MarioCommands
 {
     public class SwitchToBigMarioCommand : ICommand
     {
-        private Game1 game;
-
-        public SwitchToBigMarioCommand(Game1 game)
+        public SwitchToBigMarioCommand()
         {
-            this.game = game;
         }
 
         public void Execute()
         {
             WorldManager.GetMario().Mushroom();
+        }
+
+        public void Release()
+        {
+
         }
     }
 }

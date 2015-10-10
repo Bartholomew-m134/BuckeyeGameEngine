@@ -7,17 +7,19 @@ namespace Game.Commands.MarioCommands
 {
     public class LowerMarioStanceCommand : ICommand
     {
-        private Game1 game;
-
-        public LowerMarioStanceCommand(Game1 game)
+        public LowerMarioStanceCommand()
         {
-            this.game = game;
         }
 
         public void Execute()
         {
             WorldManager.GetMario().Down();
             WorldManager.GetMario().Land();
+        }
+
+        public void Release()
+        {
+
         }
     }
 }

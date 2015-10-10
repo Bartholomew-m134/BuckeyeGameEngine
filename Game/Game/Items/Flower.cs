@@ -45,6 +45,7 @@ namespace Game.Items
         public ISprite GetSprite
         {
             get { return flowerSprite; }
+            set { flowerSprite = value; }
         }
 
     }

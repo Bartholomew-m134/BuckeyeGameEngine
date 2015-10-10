@@ -9,16 +9,8 @@ namespace Game
 {
     public interface IMarioSprite : ISprite
     {
-        void Update();
-
-        void Draw(SpriteBatch spriteBatch, Vector2 location);
 
         void StarDraw(SpriteBatch spriteBatch, Vector2 location);
-
-        Vector2 SpriteDimensions
-        {
-            get;
-        }
         
 
     }

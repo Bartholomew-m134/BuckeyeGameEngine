@@ -124,6 +124,7 @@
     <Compile Include="Commands\ResetToDefaultCommand.cs" />
     <Compile Include="Controllers\DefaultKeyboardControls1.cs" />
     <Compile Include="Controllers\IController.cs" />
+    <Compile Include="Controllers\GamePadController.cs" />
     <Compile Include="Controllers\KeyboardController.cs" />
     <Compile Include="Enemies\GoombaClasses\Goomba.cs" />
     <Compile Include="Enemies\GoombaClasses\GoombaSprites\GoombaFlippedSprite.cs" />

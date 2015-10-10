@@ -13,11 +13,13 @@ namespace Game
         private static List<IGameObject> gameObjects;
         private static List<CollisionData> collisionList;
         private static string currentFileName;
+        private static Game1 currentGame;
 
         public static void LoadListFromFile(string filename, Game1 game)
         {
             gameObjects = LevelLoader.Load(filename, game);
-            currentFileName = filename; 
+            currentFileName = filename;
+            currentGame = game;
         }
 
         public static void Update()
@@ -52,23 +54,23 @@ namespace Game
                 gameObject.Draw(); 
         }
 
-        public static MarioInstance GetMario()
+        public static IMario GetMario()
         {
             IGameObject mario = null;
 
             foreach (IGameObject gameObject in gameObjects)
             {
-                if (gameObject is MarioInstance)
+                if (gameObject is IMario)
                 {
                     mario = gameObject;
                     break;
                 }
             }
 
-            return (MarioInstance) mario;
+            return (IMario)mario;
         }
 
-        public static void SetMario(MarioInstance mario)
+        public static void SetMario(IMario mario)
         {
             for (int i = 0; i < gameObjects.Count; i++)
             {
@@ -80,9 +82,9 @@ namespace Game
             }
         }
 
-        public static void ResetToDefault(Game1 game)
+        public static void ResetToDefault()
         {
-            LoadListFromFile(currentFileName, game);
+            LoadListFromFile(currentFileName, currentGame);
         }
     }
 }

@@ -7,16 +7,18 @@ namespace Game.Commands.MarioCommands
 {
     public class FurtherLeftMarioStanceCommand : ICommand
     {
-        private Game1 game;
-
-        public FurtherLeftMarioStanceCommand(Game1 game)
+        public FurtherLeftMarioStanceCommand()
         {
-            this.game = game;
         }
 
         public void Execute()
         {
             WorldManager.GetMario().Left();
+        }
+
+        public void Release()
+        {
+            WorldManager.GetMario().Right();
         }
     }
 }
