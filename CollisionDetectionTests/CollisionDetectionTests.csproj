@@ -72,22 +72,22 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="BigMarioCoinCollisionTests.cs" />
-    <Compile Include="BigMarioFlowerCollisionTests.cs" />
-    <Compile Include="BigMarioGreenMushrromCollisionTests.cs" />
-    <Compile Include="BigMarioRedMushroomCollisionTests.cs" />
-    <Compile Include="BigMarioStarCollisionTests.cs" />
-    <Compile Include="FireMarioCoinCollisionTests.cs" />
-    <Compile Include="FireMarioFlowerCollisionTests.cs" />
-    <Compile Include="FireMarioGreenMushroomCollisionTests.cs" />
-    <Compile Include="FireMarioRedMushroomCollisionTests.cs" />
-    <Compile Include="FireMarioStarCollisionTests.cs" />
-    <Compile Include="SmallMarioCoinCollisionTests.cs" />
+    <Compile Include="MarioItemCollisionTests\BigMarioCoinCollisionTests.cs" />
+    <Compile Include="MarioItemCollisionTests\BigMarioFlowerCollisionTests.cs" />
+    <Compile Include="MarioItemCollisionTests\BigMarioGreenMushrromCollisionTests.cs" />
+    <Compile Include="MarioItemCollisionTests\BigMarioRedMushroomCollisionTests.cs" />
+    <Compile Include="MarioItemCollisionTests\BigMarioStarCollisionTests.cs" />
+    <Compile Include="MarioItemCollisionTests\FireMarioCoinCollisionTests.cs" />
+    <Compile Include="MarioItemCollisionTests\FireMarioFlowerCollisionTests.cs" />
+    <Compile Include="MarioItemCollisionTests\FireMarioGreenMushroomCollisionTests.cs" />
+    <Compile Include="MarioItemCollisionTests\FireMarioRedMushroomCollisionTests.cs" />
+    <Compile Include="MarioItemCollisionTests\FireMarioStarCollisionTests.cs" />
+    <Compile Include="MarioItemCollisionTests\SmallMarioCoinCollisionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SmallMarioFlowerCollisionTests.cs" />
-    <Compile Include="SmallMarioGreenMushroomCollisionTests.cs" />
-    <Compile Include="SmallMarioRedMushroomCollisionTests.cs" />
-    <Compile Include="SmallMarioStarCollisionTests.cs" />
+    <Compile Include="MarioItemCollisionTests\SmallMarioFlowerCollisionTests.cs" />
+    <Compile Include="MarioItemCollisionTests\SmallMarioGreenMushroomCollisionTests.cs" />
+    <Compile Include="MarioItemCollisionTests\SmallMarioRedMushroomCollisionTests.cs" />
+    <Compile Include="MarioItemCollisionTests\SmallMarioStarCollisionTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Game\Game\Game.csproj">
