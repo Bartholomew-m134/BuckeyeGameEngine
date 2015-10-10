@@ -6,7 +6,7 @@ using Game.Mario;
 
 namespace Game.States
 {
-    class FireRightIdleState : IMarioState
+    public class FireRightIdleState : IMarioState
     {
 
         private MarioInstance mario;

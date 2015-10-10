@@ -14,9 +14,11 @@ namespace Game.Mario
         public ISprite sprite;
         private Vector2 location;
         private Game1 myGame;
+        
 
         public MarioInstance(Game1 game)
         {
+            
             state = new SmallRightIdleState(this, game);
             myGame = game;
   
