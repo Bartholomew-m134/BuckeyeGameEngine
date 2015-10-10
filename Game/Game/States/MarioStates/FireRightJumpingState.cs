@@ -32,7 +32,7 @@ namespace Game.States
         public void Right()
         {
             Vector2 loc = WorldManager.GetMario().VectorCoordinates;
-            loc.X += 4;
+            loc.X += 2;
             WorldManager.GetMario().VectorCoordinates = (loc);
         }
 
@@ -54,7 +54,7 @@ namespace Game.States
         public void Jump()
         {
             Vector2 loc = WorldManager.GetMario().VectorCoordinates;
-            loc.Y -= 4;
+            loc.Y -= 2;
             WorldManager.GetMario().VectorCoordinates = (loc);
         }
 

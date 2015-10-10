@@ -117,7 +117,7 @@ namespace Game.Mario
 
         public ISprite GetSprite
         {
-            get { return mario.GetSprite; }
+            get { return sprite; }
             set { sprite = value; }
         }
 
