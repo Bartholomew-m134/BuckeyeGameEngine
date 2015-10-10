@@ -12,11 +12,12 @@ namespace Game
     public class KeyboardController : IController
     {
         private Dictionary<Keys, ICommand> keyMappings;
-        private int delayBetweenFrames = 0;
+        private Keys[] prevPressedKeys;
 
         public KeyboardController(Game1 game)
         {
             keyMappings = new Dictionary<Keys, ICommand>();
+            prevPressedKeys = Keyboard.GetState().GetPressedKeys();
 
             RegisterCommand(Keys.Up, new RaiseMarioStanceCommand(game));
             RegisterCommand(Keys.W, new RaiseMarioStanceCommand(game));
@@ -27,15 +28,6 @@ namespace Game
             RegisterCommand(Keys.A, new FurtherLeftMarioStanceCommand(game));
             RegisterCommand(Keys.Right, new FurtherRightMarioStanceCommand(game));
             RegisterCommand(Keys.D, new FurtherRightMarioStanceCommand(game));
-
-            RegisterCommand(Keys.Y, new SwitchToSmallMarioCommand(game));
-            RegisterCommand(Keys.U, new SwitchToBigMarioCommand(game));
-            RegisterCommand(Keys.I, new SwitchToFireMarioCommand(game));
-            RegisterCommand(Keys.O, new SwitchToDeadMarioCommand(game));
-
-            RegisterCommand(Keys.Z, new SwitchToUsedQuestionBlockCommand(game));
-            RegisterCommand(Keys.X, new RemoveBrickBlockCommand(game));
-            RegisterCommand(Keys.C, new SwitchToUsedBlockCommand(game));
 
             RegisterCommand(Keys.R, new ResetToDefaultCommand(game));
         }
@@ -48,22 +40,20 @@ namespace Game
         public void Update()
         {
             Keys[] pressedKeys = Keyboard.GetState().GetPressedKeys();
-            if (delayBetweenFrames == 5)
+                    
+            foreach (Keys key in pressedKeys)
             {
-                foreach (Keys key in pressedKeys)
-                {
-                    if (keyMappings.ContainsKey(key))
-                    {
-                        keyMappings[key].Execute();
-                    }
-                }
+                if (keyMappings.ContainsKey(key))
+                    keyMappings[key].Execute();               
             }
 
-            delayBetweenFrames++;
-            if (delayBetweenFrames == 6)
+            foreach (Keys key in prevPressedKeys)
             {
-                delayBetweenFrames = 0;
+                if (keyMappings.ContainsKey(key) && !pressedKeys.Contains(key))
+                    keyMappings[key].Release();
             }
+
+            prevPressedKeys = pressedKeys;
         }
     }
 }

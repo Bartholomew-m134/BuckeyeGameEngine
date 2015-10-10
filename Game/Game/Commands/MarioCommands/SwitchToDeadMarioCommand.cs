@@ -18,5 +18,10 @@ namespace Game.Commands.MarioCommands
         {
             WorldManager.GetMario().Die();
         }
+
+        public void Release()
+        {
+
+        }
     }
 }

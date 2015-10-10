@@ -18,5 +18,10 @@ namespace Game.Commands.MarioCommands
         {
             WorldManager.GetMario().Left();
         }
+
+        public void Release()
+        {
+            WorldManager.GetMario().Right();
+        }
     }
 }

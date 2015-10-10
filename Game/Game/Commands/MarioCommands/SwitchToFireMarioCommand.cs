@@ -18,5 +18,10 @@ namespace Game.Commands.MarioCommands
         {
             WorldManager.GetMario().Flower();
         }
+
+        public void Release()
+        {
+
+        }
     }
 }

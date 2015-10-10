@@ -18,5 +18,10 @@ namespace Game.Commands.BlockCommands
         {
             //game.questionBlock.GetUsed();
         }
+
+        public void Release()
+        {
+
+        }
     }
 }

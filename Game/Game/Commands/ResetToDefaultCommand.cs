@@ -17,5 +17,10 @@ namespace Game.Commands
         {
             WorldManager.ResetToDefault(game);
         }
+
+        public void Release()
+        {
+
+        }
     }
 }
