@@ -14,22 +14,22 @@ namespace Game
         private Dictionary<Keys, ICommand> keyMappings;
         private Keys[] prevPressedKeys;
 
-        public KeyboardController(Game1 game)
+        public KeyboardController()
         {
             keyMappings = new Dictionary<Keys, ICommand>();
             prevPressedKeys = Keyboard.GetState().GetPressedKeys();
 
-            RegisterCommand(Keys.Up, new RaiseMarioStanceCommand(game));
-            RegisterCommand(Keys.W, new RaiseMarioStanceCommand(game));
-            RegisterCommand(Keys.Down, new LowerMarioStanceCommand(game));
-            RegisterCommand(Keys.S, new LowerMarioStanceCommand(game));
+            RegisterCommand(Keys.Up, new RaiseMarioStanceCommand());
+            RegisterCommand(Keys.W, new RaiseMarioStanceCommand());
+            RegisterCommand(Keys.Down, new LowerMarioStanceCommand());
+            RegisterCommand(Keys.S, new LowerMarioStanceCommand());
 
-            RegisterCommand(Keys.Left, new FurtherLeftMarioStanceCommand(game));
-            RegisterCommand(Keys.A, new FurtherLeftMarioStanceCommand(game));
-            RegisterCommand(Keys.Right, new FurtherRightMarioStanceCommand(game));
-            RegisterCommand(Keys.D, new FurtherRightMarioStanceCommand(game));
+            RegisterCommand(Keys.Left, new FurtherLeftMarioStanceCommand());
+            RegisterCommand(Keys.A, new FurtherLeftMarioStanceCommand());
+            RegisterCommand(Keys.Right, new FurtherRightMarioStanceCommand());
+            RegisterCommand(Keys.D, new FurtherRightMarioStanceCommand());
 
-            RegisterCommand(Keys.R, new ResetToDefaultCommand(game));
+            RegisterCommand(Keys.R, new ResetToDefaultCommand());
         }
 
         public void RegisterCommand(Keys key, ICommand command)

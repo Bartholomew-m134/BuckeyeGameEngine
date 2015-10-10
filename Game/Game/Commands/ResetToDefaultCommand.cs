@@ -6,16 +6,13 @@ namespace Game.Commands
 {
     public class ResetToDefaultCommand : ICommand
     {
-        private Game1 game;
-
-        public ResetToDefaultCommand(Game1 game)
+        public ResetToDefaultCommand()
         {
-            this.game = game;
         }
 
         public void Execute()
         {
-            WorldManager.ResetToDefault(game);
+            WorldManager.ResetToDefault();
         }
 
         public void Release()

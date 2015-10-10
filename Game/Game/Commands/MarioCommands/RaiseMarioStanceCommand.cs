@@ -7,11 +7,8 @@ namespace Game.Commands.MarioCommands
 {
     public class RaiseMarioStanceCommand : ICommand
     {
-        private Game1 game;
-
-        public RaiseMarioStanceCommand(Game1 game)
+        public RaiseMarioStanceCommand()
         {
-            this.game = game;
         }
 
         public void Execute()
