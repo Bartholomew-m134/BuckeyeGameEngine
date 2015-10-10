@@ -19,5 +19,10 @@ namespace Game.Commands.MarioCommands
             WorldManager.GetMario().Up();
             WorldManager.GetMario().Jump();
         }
+
+        public void Release()
+        {
+
+        }
     }
 }

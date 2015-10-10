@@ -18,5 +18,10 @@ namespace Game.Commands.BlockCommands
         {
             //game.brickBlock.Disappear();
         }
+
+        public void Release()
+        {
+
+        }
     }
 }
