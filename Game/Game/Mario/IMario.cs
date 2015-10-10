@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Game.States;
 
 namespace Game.Mario
 {
@@ -36,6 +37,12 @@ namespace Game.Mario
         IMarioSprite GetMarioSprite
         {
             get;
+        }
+
+        IMarioState MarioStateProperty
+        {
+            get;
+            set;
         }
 
         void Damage();

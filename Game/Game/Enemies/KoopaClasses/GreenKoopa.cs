@@ -62,6 +62,7 @@ namespace Game.Enemies.KoopaClasses
         public ISprite GetSprite
         {
             get { return sprite; }
+            set { sprite = value; }
         }
     }
 }

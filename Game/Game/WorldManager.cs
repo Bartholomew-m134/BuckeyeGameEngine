@@ -52,23 +52,23 @@ namespace Game
                 gameObject.Draw(); 
         }
 
-        public static MarioInstance GetMario()
+        public static IMario GetMario()
         {
             IGameObject mario = null;
 
             foreach (IGameObject gameObject in gameObjects)
             {
-                if (gameObject is MarioInstance)
+                if (gameObject is IMario)
                 {
                     mario = gameObject;
                     break;
                 }
             }
 
-            return (MarioInstance) mario;
+            return (IMario)mario;
         }
 
-        public static void SetMario(MarioInstance mario)
+        public static void SetMario(IMario mario)
         {
             for (int i = 0; i < gameObjects.Count; i++)
             {

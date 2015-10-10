@@ -10,30 +10,28 @@ namespace Game.States
     class SmallLeftIdleState : IMarioState
     {
 
-        private MarioInstance mario;
+        private IMario mario;
         private Game1 game;
-        private IMario imario;
 
-        public SmallLeftIdleState(MarioInstance mario, Game1 game)
+        public SmallLeftIdleState(IMario mario, Game1 game)
         {
             this.mario = mario;
             this.game = game;
-            this.imario = (IMario)mario;
-            mario.sprite = SpriteFactories.MarioSpriteFactory.CreateSmallLeftIdleSprite();
+            mario.GetSprite = SpriteFactories.MarioSpriteFactory.CreateSmallLeftIdleSprite();
         }
         public void Update()
         {
-            mario.sprite.Update();
+            mario.GetSprite.Update();
         }
 
         public void Left()
         {
-            mario.state = new SmallLeftRunningState(mario, game);
+            mario.MarioStateProperty = new SmallLeftRunningState(mario, game);
         }
 
         public void Right()
         {
-            mario.state = new SmallRightIdleState(mario, game);
+            mario.MarioStateProperty = new SmallRightIdleState(mario, game);
         }
 
         public void Up()
@@ -43,9 +41,9 @@ namespace Game.States
 
         public void Down()
         {
-            Vector2 loc = WorldManager.GetMario().getLocation();
+            Vector2 loc = WorldManager.GetMario().VectorCoordinates;
             loc.Y +=4;
-            WorldManager.GetMario().setLocation(loc);
+            WorldManager.GetMario().VectorCoordinates = (loc);
         }
 
         public void Land()
@@ -55,32 +53,32 @@ namespace Game.States
 
         public void Jump()
         {
-            mario.state = new SmallLeftJumpingState(mario, game);
+            mario.MarioStateProperty = new SmallLeftJumpingState(mario, game);
         }
 
         public void Flower()
         {
-            mario.state = new FireLeftIdleState(mario, game);
+            mario.MarioStateProperty = new FireLeftIdleState(mario, game);
         }
 
         public void Mushroom()
         {
-            mario.state = new NormalLeftIdleState(mario, game);
+            mario.MarioStateProperty = new NormalLeftIdleState(mario, game);
         }
 
         public void Star()
         {
-            imario = new StarMario(mario, game);
+            mario = new StarMario(mario, game);
         }
 
         public void Damage()
         {
-            mario.state = new DeadMarioState(mario, game);
+            mario.MarioStateProperty = new DeadMarioState(mario, game);
         }
 
         public void Die()
         {
-            mario.state = new DeadMarioState(mario, game);
+            mario.MarioStateProperty = new DeadMarioState(mario, game);
         }
         public bool IsBig()
         {

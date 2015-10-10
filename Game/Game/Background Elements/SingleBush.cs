@@ -48,6 +48,7 @@ namespace Game.Background_Elements
         public ISprite GetSprite
         {
             get { return singleBushSprite; }
+            set { singleBushSprite = value; }
         }
     }
   }

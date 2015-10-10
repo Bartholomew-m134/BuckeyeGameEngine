@@ -10,32 +10,30 @@ namespace Game.States
     class NormalRightRunningState : IMarioState
     {
 
-        private MarioInstance mario;
+        private IMario mario;
         private Game1 game;
-        private IMario imario;
 
-        public NormalRightRunningState(MarioInstance mario, Game1 game)
+        public NormalRightRunningState(IMario mario, Game1 game)
         {
             this.mario = mario;
             this.game = game;
-            this.imario = (IMario)mario;
-            mario.sprite = SpriteFactories.MarioSpriteFactory.CreateNormalRightRunningSprite();
+            mario.GetSprite = SpriteFactories.MarioSpriteFactory.CreateNormalRightRunningSprite();
         }
         public void Update()
         {
-            mario.sprite.Update();
+            mario.GetSprite.Update();
         }
 
         public void Left()
         {
-            mario.state = new NormalRightIdleState(mario, game);
+            mario.MarioStateProperty = new NormalRightIdleState(mario, game);
         }
 
         public void Right()
         {
-            Vector2 loc = WorldManager.GetMario().getLocation();
+            Vector2 loc = WorldManager.GetMario().VectorCoordinates;
             loc.X += 4;
-            WorldManager.GetMario().setLocation(loc);
+            WorldManager.GetMario().VectorCoordinates = loc;
         }
 
         public void Up()
@@ -45,7 +43,7 @@ namespace Game.States
 
         public void Down()
         {
-            mario.state = new NormalRightCrouchingState(mario, game);
+            mario.MarioStateProperty = new NormalRightCrouchingState(mario, game);
         }
 
         public void Land()
@@ -55,12 +53,12 @@ namespace Game.States
 
         public void Jump()
         {
-            mario.state = new NormalRightJumpingState(mario, game);
+            mario.MarioStateProperty = new NormalRightJumpingState(mario, game);
         }
 
         public void Flower()
         {
-            mario.state = new FireRightRunningState(mario, game);
+            mario.MarioStateProperty = new FireRightRunningState(mario, game);
         }
 
         public void Mushroom()
@@ -70,17 +68,17 @@ namespace Game.States
 
         public void Star()
         {
-            imario = new StarMario(mario, game);
+            mario = new StarMario(mario, game);
         }
 
         public void Damage()
         {
-            mario.state = new SmallRightRunningState(mario, game);
+            mario.MarioStateProperty = new SmallRightRunningState(mario, game);
         }
 
         public void Die()
         {
-            mario.state = new DeadMarioState(mario, game);
+            mario.MarioStateProperty = new DeadMarioState(mario, game);
         }
         public bool IsBig()
         {

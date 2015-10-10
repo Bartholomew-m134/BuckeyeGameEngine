@@ -97,6 +97,7 @@ namespace Game.Blocks
         public ISprite GetSprite
         {
             get { return sprite; }
+            set { sprite = value; }
         }
     }
 }
