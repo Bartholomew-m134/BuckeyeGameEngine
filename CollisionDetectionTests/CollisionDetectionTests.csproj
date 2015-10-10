@@ -72,18 +72,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="BigMarioCoinCollisionTests.cs" />
-    <Compile Include="BigMarioFlowerCollisionTests.cs" />
-    <Compile Include="BigMarioGreenMushrromCollisionTests.cs" />
-    <Compile Include="BigMarioRedMushroomCollisionTests.cs" />
-    <Compile Include="BigMarioStarCollisionTests.cs" />
-    <Compile Include="FireMarioCoinCollisionTests.cs" />
-    <Compile Include="FireMarioFlowerCollisionTests.cs" />
-    <Compile Include="FireMarioGreenMushroomCollisionTests.cs" />
-    <Compile Include="FireMarioRedMushroomCollisionTests.cs" />
-    <Compile Include="FireMarioStarCollisionTests.cs" />
     <Compile Include="Block Tests\SmallMarioBreakingBlockCollisionTests.cs" />
-    <Compile Include="SmallMarioCoinCollisionTests.cs" />
     <Compile Include="MarioItemCollisionTests\BigMarioCoinCollisionTests.cs" />
     <Compile Include="MarioItemCollisionTests\BigMarioFlowerCollisionTests.cs" />
     <Compile Include="MarioItemCollisionTests\BigMarioGreenMushrromCollisionTests.cs" />
