@@ -29,15 +29,6 @@ namespace Game
             RegisterCommand(Keys.Right, new FurtherRightMarioStanceCommand(game));
             RegisterCommand(Keys.D, new FurtherRightMarioStanceCommand(game));
 
-            RegisterCommand(Keys.Y, new SwitchToSmallMarioCommand(game));
-            RegisterCommand(Keys.U, new SwitchToBigMarioCommand(game));
-            RegisterCommand(Keys.I, new SwitchToFireMarioCommand(game));
-            RegisterCommand(Keys.O, new SwitchToDeadMarioCommand(game));
-
-            RegisterCommand(Keys.Z, new SwitchToUsedQuestionBlockCommand(game));
-            RegisterCommand(Keys.X, new RemoveBrickBlockCommand(game));
-            RegisterCommand(Keys.C, new SwitchToUsedBlockCommand(game));
-
             RegisterCommand(Keys.R, new ResetToDefaultCommand(game));
         }
 
