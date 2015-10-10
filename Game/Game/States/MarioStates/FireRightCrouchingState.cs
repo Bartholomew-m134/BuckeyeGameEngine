@@ -42,7 +42,7 @@ namespace Game.States
         public void Down()
         {
             Vector2 loc = WorldManager.GetMario().VectorCoordinates;
-            loc.Y += 4;
+            loc.Y += 2;
             WorldManager.GetMario().VectorCoordinates = (loc);
         }
 
