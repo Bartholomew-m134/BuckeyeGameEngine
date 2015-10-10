@@ -98,6 +98,7 @@
     <Compile Include="MarioBlockCollisionTests\SmallMarioQuestionBlockCollisionTests.cs" />
     <Compile Include="MarioBlockCollisionTests\SmallMarioSolidBlockCollisionTests.cs" />
     <Compile Include="SmallMarioCoinCollisionTests.cs" />
+    <Compile Include="Block Tests\SmallMarioBreakingBlockCollisionTests.cs" />
     <Compile Include="MarioItemCollisionTests\BigMarioCoinCollisionTests.cs" />
     <Compile Include="MarioItemCollisionTests\BigMarioFlowerCollisionTests.cs" />
     <Compile Include="MarioItemCollisionTests\BigMarioGreenMushrromCollisionTests.cs" />
