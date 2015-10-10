@@ -11,7 +11,7 @@ namespace Game.Background_Elements.BackgroundElementSprites
     {
         private Texture2D Texture { get; set; }
         private int width = 49;
-        private int height = 20;
+        private int height = 19;
         private int sourceX = 168;
         private int sourceY = 20;
         public SmallHillSprite(Texture2D texture)
