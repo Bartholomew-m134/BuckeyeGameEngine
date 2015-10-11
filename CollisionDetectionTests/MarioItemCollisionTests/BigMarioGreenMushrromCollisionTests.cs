@@ -33,10 +33,10 @@ namespace CollisionDetectionTests
 
             collisionHandler.HandleCollision();
 
-            bool testState = testMario.state is NormalRightIdleState;
-            bool expectedState = expectedMario.state is NormalRightIdleState;
-            Vector2 testLocation = testMario.getLocation();
-            Vector2 expectedLocation = expectedMario.getLocation();
+            bool testState = testMario.GetSetMarioState is NormalRightIdleState;
+            bool expectedState = expectedMario.GetSetMarioState is NormalRightIdleState;
+            Vector2 testLocation = testMario.VectorCoordinates;
+            Vector2 expectedLocation = expectedMario.VectorCoordinates;
 
             Assert.AreEqual(testState, expectedState);
             Assert.AreEqual(testLocation, expectedLocation);
@@ -60,10 +60,10 @@ namespace CollisionDetectionTests
 
             collisionHandler.HandleCollision();
 
-            bool testState = testMario.state is NormalRightIdleState;
-            bool expectedState = expectedMario.state is NormalRightIdleState;
-            Vector2 testLocation = testMario.getLocation();
-            Vector2 expectedLocation = expectedMario.getLocation();
+            bool testState = testMario.GetSetMarioState is NormalRightIdleState;
+            bool expectedState = expectedMario.GetSetMarioState is NormalRightIdleState;
+            Vector2 testLocation = testMario.VectorCoordinates;
+            Vector2 expectedLocation = expectedMario.VectorCoordinates;
 
             Assert.AreEqual(testState, expectedState);
             Assert.AreEqual(testLocation, expectedLocation);
@@ -87,10 +87,10 @@ namespace CollisionDetectionTests
 
             collisionHandler.HandleCollision();
 
-            bool testState = testMario.state is NormalRightIdleState;
-            bool expectedState = expectedMario.state is NormalRightIdleState;
-            Vector2 testLocation = testMario.getLocation();
-            Vector2 expectedLocation = expectedMario.getLocation();
+            bool testState = testMario.GetSetMarioState is NormalRightIdleState;
+            bool expectedState = expectedMario.GetSetMarioState is NormalRightIdleState;
+            Vector2 testLocation = testMario.VectorCoordinates;
+            Vector2 expectedLocation = expectedMario.VectorCoordinates;
 
             Assert.AreEqual(testState, expectedState);
             Assert.AreEqual(testLocation, expectedLocation);
@@ -114,10 +114,10 @@ namespace CollisionDetectionTests
 
             collisionHandler.HandleCollision();
 
-            bool testState = testMario.state is NormalRightIdleState;
-            bool expectedState = expectedMario.state is NormalRightIdleState;
-            Vector2 testLocation = testMario.getLocation();
-            Vector2 expectedLocation = expectedMario.getLocation();
+            bool testState = testMario.GetSetMarioState is NormalRightIdleState;
+            bool expectedState = expectedMario.GetSetMarioState is NormalRightIdleState;
+            Vector2 testLocation = testMario.VectorCoordinates;
+            Vector2 expectedLocation = expectedMario.VectorCoordinates;
 
             Assert.AreEqual(testState, expectedState);
             Assert.AreEqual(testLocation, expectedLocation);

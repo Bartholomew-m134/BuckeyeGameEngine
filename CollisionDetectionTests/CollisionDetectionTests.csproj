@@ -77,6 +77,7 @@
     <Compile Include="MarioBlockCollisionTests\FireMarioQuestionBlockCollisionTests.cs" />
     <Compile Include="MarioBlockCollisionTests\FireMarioSolidBlockCollisionTests.cs" />
     <Compile Include="MarioBlockCollisionTests\SmallMarioBreakingBlockCollisionTests.cs" />
+    <Compile Include="MarioEnemyCollisionTests\SmallMarioGoombaCollisionTest.cs" />
     <Compile Include="MarioItemCollisionTests\BigMarioCoinCollisionTests.cs" />
     <Compile Include="MarioItemCollisionTests\BigMarioFlowerCollisionTests.cs" />
     <Compile Include="MarioItemCollisionTests\BigMarioGreenMushrromCollisionTests.cs" />
@@ -100,6 +101,7 @@
       <Name>Game</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

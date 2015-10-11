@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 
 namespace Game.States
 {
-    class SmallRightJumpingState : IMarioState
+    public class SmallRightJumpingState : IMarioState
     {
 
         private IMario mario;
