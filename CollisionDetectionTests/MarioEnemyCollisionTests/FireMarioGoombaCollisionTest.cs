@@ -122,6 +122,7 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
             IMario testMario = WorldManager.GetMario();
             testMario.Flower();
             testMario.Star();
+            testMario = WorldManager.GetMario();
 
             Goomba testGoomba = new Goomba(game);
             Goomba expectedGoomba = new Goomba(game);

@@ -118,6 +118,7 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
             IMario testMario = WorldManager.GetMario();
             testMario.Flower();
             testMario.Star();
+            testMario = WorldManager.GetMario();
 
             GreenKoopa testGreenKoopa = new GreenKoopa(game);
             GreenKoopa expectedGreenKoopa = new GreenKoopa(game);

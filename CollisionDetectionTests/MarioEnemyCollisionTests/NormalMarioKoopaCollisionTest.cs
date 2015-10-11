@@ -123,6 +123,7 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
             IMario testMario = WorldManager.GetMario();
             testMario.Mushroom();
             testMario.Star();
+            testMario = WorldManager.GetMario();
 
             GreenKoopa testGreenKoopa = new GreenKoopa(game);
             GreenKoopa expectedGreenKoopa = new GreenKoopa(game);
