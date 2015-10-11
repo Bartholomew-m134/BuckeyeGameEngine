@@ -37,7 +37,7 @@ namespace Game.Collisions.EnemyCollisionHandling
         {
             collision.ResolveOverlap(mario, side);
 
-            if (side is TopSideCollision && !mario.IsStar())
+            if (!mario.IsStar() && side is TopSideCollision)
             {
                 enemy.CanDealDamage = false;
                 enemy.IsHit();

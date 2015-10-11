@@ -118,7 +118,8 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
         [TestMethod]
         public void StarNormalMarioGoombaCollisionTest()
         {
-            IMario testMario = new MarioInstance(game);
+            WorldManager.LoadListFromFile("World1-1", game);
+            IMario testMario = WorldManager.GetMario();
             testMario.Mushroom();
             testMario.Star();
 

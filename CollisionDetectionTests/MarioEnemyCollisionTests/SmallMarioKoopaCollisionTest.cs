@@ -104,7 +104,8 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
         [TestMethod]
         public void StarSmallMarioKoopaCollisionTest()
         {
-            IMario testMario = new MarioInstance(game);
+            WorldManager.LoadListFromFile("World1-1", game);
+            IMario testMario = WorldManager.GetMario();
             testMario.Star();
 
             GreenKoopa testGreenKoopa = new GreenKoopa(game);
