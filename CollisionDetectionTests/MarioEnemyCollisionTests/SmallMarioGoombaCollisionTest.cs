@@ -84,7 +84,6 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
         public void SmallMarioGoombaTopSideCollisionTest()
         {
             IMario testMario = new MarioInstance(game);
-            testMario.Star();
 
             Goomba testGoomba = new Goomba(game);
             Goomba expectedGoomba = new Goomba(game);
@@ -105,8 +104,8 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
         [TestMethod]
         public void StarSmallMarioGoombaCollisionTest()
         {
-            IMario mario = new MarioInstance(game);
-            IMario testMario = new StarMario(mario, game);
+            IMario testMario = new MarioInstance(game);
+            testMario.Star();
 
             Goomba testGoomba = new Goomba(game);
             Goomba expectedGoomba = new Goomba(game);

@@ -1,0 +1,9 @@
+﻿Author: John Cramer
+Date: 10/11/2015
+Sprint:3
+File name: StarMario.cs
+Author: Jackson Luken
+
+Comments: Overall the class is very cohesive, and performs its job correctly. I would argue however that
+the a few of the classes from the IMario interface are unnecessary, and a few could have more specific names
+to further increase the file's readibility.

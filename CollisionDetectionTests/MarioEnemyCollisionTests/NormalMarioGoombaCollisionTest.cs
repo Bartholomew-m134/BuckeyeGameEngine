@@ -118,9 +118,9 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
         [TestMethod]
         public void StarNormalMarioGoombaCollisionTest()
         {
-            IMario mario = new MarioInstance(game);
-            mario.GetSetMarioState = new NormalRightIdleState(mario, game);
-            IMario testMario = new StarMario(mario, game);
+            IMario testMario = new MarioInstance(game);
+            testMario.Mushroom();
+            testMario.Star();
 
             Goomba testGoomba = new Goomba(game);
             Goomba expectedGoomba = new Goomba(game);

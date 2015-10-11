@@ -96,7 +96,6 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
         public void NormalMarioKoopaTopSideCollisionTest()
         {
             IMario testMario = new MarioInstance(game);
-            testMario.Star();
 
             GreenKoopa testGreenKoopa = new GreenKoopa(game);
             GreenKoopa expectedGreenKoopa = new GreenKoopa(game);
@@ -120,9 +119,9 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
         [TestMethod]
         public void StarNormalMarioKoopaCollisionTest()
         {
-            IMario mario = new MarioInstance(game);
-            mario.GetSetMarioState = new NormalRightIdleState(mario, game);
-            IMario testMario = new StarMario(mario, game);
+            IMario testMario = new MarioInstance(game);
+            testMario.Mushroom();
+            testMario.Star();
 
             GreenKoopa testGreenKoopa = new GreenKoopa(game);
             GreenKoopa expectedGreenKoopa = new GreenKoopa(game);
