@@ -55,7 +55,7 @@ namespace Game.States
         {
             Vector2 loc = WorldManager.GetMario().VectorCoordinates;
             loc.Y -= 4;
-            WorldManager.GetMario().VectorCoordinates = (loc);
+            WorldManager.GetMario().VectorCoordinates = loc;
         }
 
         public void Flower()

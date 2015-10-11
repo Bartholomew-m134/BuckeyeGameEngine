@@ -38,9 +38,7 @@ namespace Game.States
 
         public void Up()
         {
-            Vector2 loc = WorldManager.GetMario().VectorCoordinates;
-            loc.Y -= 4;
-            WorldManager.GetMario().VectorCoordinates = (loc);
+            
         }
 
         public void Down()
@@ -55,7 +53,9 @@ namespace Game.States
 
         public void Jump()
         {
-
+            Vector2 loc = WorldManager.GetMario().VectorCoordinates;
+            loc.Y -= 4;
+            WorldManager.GetMario().VectorCoordinates = (loc);
         }
 
         public void Flower()
