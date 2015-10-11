@@ -10,7 +10,7 @@ using System.Diagnostics;
 
 namespace Game.Mario.MarioSprites
 {
-    public class NormalRightRunningMarioSprite : ISprite
+    public class NormalRightRunningMarioSprite : IMarioSprite
     {
         private int toggle;
         private Texture2D spriteSheet;

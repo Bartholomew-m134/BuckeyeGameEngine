@@ -17,11 +17,11 @@ namespace Game.States
         {
             this.mario = mario;
             this.game = game;
-            mario.GetSprite = SpriteFactories.MarioSpriteFactory.CreateDeadSprite();
+            mario.GetSetSprite = SpriteFactories.MarioSpriteFactory.CreateDeadSprite();
         }
 
         public void Update() {
-            mario.GetSprite.Update();
+            mario.GetSetSprite.Update();
         }
 
         public void Left()

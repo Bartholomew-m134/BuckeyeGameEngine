@@ -39,7 +39,7 @@ namespace Game.Mario
             get;
         }
 
-        IMarioState MarioStateProperty
+        IMarioState GetSetMarioState
         {
             get;
             set;

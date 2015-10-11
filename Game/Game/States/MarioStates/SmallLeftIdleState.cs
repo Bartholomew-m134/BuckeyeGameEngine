@@ -17,21 +17,21 @@ namespace Game.States
         {
             this.mario = mario;
             this.game = game;
-            mario.GetSprite = SpriteFactories.MarioSpriteFactory.CreateSmallLeftIdleSprite();
+            mario.GetSetSprite = SpriteFactories.MarioSpriteFactory.CreateSmallLeftIdleSprite();
         }
         public void Update()
         {
-            mario.GetSprite.Update();
+            mario.GetSetSprite.Update();
         }
 
         public void Left()
         {
-            mario.MarioStateProperty = new SmallLeftRunningState(mario, game);
+            mario.GetSetMarioState = new SmallLeftRunningState(mario, game);
         }
 
         public void Right()
         {
-            mario.MarioStateProperty = new SmallRightIdleState(mario, game);
+            mario.GetSetMarioState = new SmallRightIdleState(mario, game);
         }
 
         public void Up()
@@ -53,17 +53,17 @@ namespace Game.States
 
         public void Jump()
         {
-            mario.MarioStateProperty = new SmallLeftJumpingState(mario, game);
+            mario.GetSetMarioState = new SmallLeftJumpingState(mario, game);
         }
 
         public void Flower()
         {
-            mario.MarioStateProperty = new FireLeftIdleState(mario, game);
+            mario.GetSetMarioState = new FireLeftIdleState(mario, game);
         }
 
         public void Mushroom()
         {
-            mario.MarioStateProperty = new NormalLeftIdleState(mario, game);
+            mario.GetSetMarioState = new NormalLeftIdleState(mario, game);
         }
 
         public void Star()
@@ -73,12 +73,12 @@ namespace Game.States
 
         public void Damage()
         {
-            mario.MarioStateProperty = new DeadMarioState(mario, game);
+            mario.GetSetMarioState = new DeadMarioState(mario, game);
         }
 
         public void Die()
         {
-            mario.MarioStateProperty = new DeadMarioState(mario, game);
+            mario.GetSetMarioState = new DeadMarioState(mario, game);
         }
         public bool IsBig()
         {

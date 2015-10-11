@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 namespace Game.Mario.MarioSprites
 {
-    public class FireLeftIdleMarioSprite : ISprite
+    public class FireLeftIdleMarioSprite : IMarioSprite
     {
         private Texture2D spriteSheet;
         private int width;

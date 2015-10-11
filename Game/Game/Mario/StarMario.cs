@@ -10,8 +10,7 @@ namespace Game.Mario
     public class StarMario : IMario
     {
         public IMario mario;
-        public ISprite sprite;
-        public IMarioSprite mariosprite;
+        public IMarioSprite sprite;
         private Vector2 location;
         private Game1 myGame;
 
@@ -19,7 +18,7 @@ namespace Game.Mario
         public StarMario(IMario mario, Game1 game)
         {
             this.mario = mario;
-            this.sprite = mario.GetSprite;
+            this.sprite = (IMarioSprite)mario.GetSetSprite;
             this.location = mario.VectorCoordinates;
             this.myGame = game;
         }
@@ -56,7 +55,7 @@ namespace Game.Mario
 
         public void Draw()
         {
-            mariosprite.StarDraw(myGame.spriteBatch, location);
+            sprite.StarDraw(myGame.spriteBatch, location);
         }
 
         public void Left()
@@ -115,10 +114,10 @@ namespace Game.Mario
             set { mario.VectorCoordinates = value; }
         }
 
-        public ISprite GetSprite
+        public new ISprite GetSetSprite
         {
-            get { return sprite; }
-            set { sprite = value; }
+            get { return (ISprite)sprite; }
+            set { sprite = (IMarioSprite)value; }
         }
 
         public IMarioSprite GetMarioSprite
@@ -126,15 +125,15 @@ namespace Game.Mario
             get { return mario.GetMarioSprite; }
         }
 
-        public IMarioState MarioStateProperty
+        public IMarioState GetSetMarioState
         {
-            get { return mario.MarioStateProperty; }
-            set { mario.MarioStateProperty = value; }
+            get { return mario.GetSetMarioState; }
+            set { mario.GetSetMarioState = value; }
         }
 
         public bool IsBig()
         {
-            return mario.MarioStateProperty.IsBig();
+            return mario.GetSetMarioState.IsBig();
         }
     }
 }
