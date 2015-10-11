@@ -246,6 +246,7 @@
     <Content Include="CodeReviews\Sprint 2\MarioSpriteFactoryCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 2\MarioSpriteFactoryReadability.txt" />
     <Content Include="CodeReviews\Sprint 2\JacksonCodeQualityReview.txt" />
+    <Content Include="CodeReviews\Sprint 3\JacksonCodeReadability.txt" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
@@ -283,7 +284,6 @@
     <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CodeReviews\Sprint 3\" />
     <Folder Include="Utilities\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
