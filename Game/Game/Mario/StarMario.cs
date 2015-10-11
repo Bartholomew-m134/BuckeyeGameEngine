@@ -132,5 +132,10 @@ namespace Game.Mario
         {
             return true;
         }
+
+        public void ToIdle()
+        {
+            mario.ToIdle();
+        }
     }
 }

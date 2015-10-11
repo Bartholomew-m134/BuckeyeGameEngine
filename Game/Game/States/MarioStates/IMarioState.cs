@@ -41,5 +41,7 @@ namespace Game.States
          void Die();
 
          bool IsBig();
+
+         void ToIdle();
     }
 }
