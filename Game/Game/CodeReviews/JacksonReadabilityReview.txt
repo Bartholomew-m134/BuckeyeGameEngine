@@ -1,9 +1,0 @@
-﻿Date :							9/23/15
-author:							Jackson Luken
-Sprint:							2
-Reviewed file:					KeyboardController.cs
-File Author:					Matt Bartholemew
-Comments on code quality:
-	All of the code is in simple segments that are clearly labeled with logical variable/method names. No method 
-	has any superfluous functions and the logic of the class is very neat and easy to follow. Because the method names
-	describe implicitly what they do, there is no need for comments.
