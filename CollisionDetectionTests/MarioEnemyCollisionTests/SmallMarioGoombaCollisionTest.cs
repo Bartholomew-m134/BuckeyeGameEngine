@@ -5,13 +5,15 @@ using Game.States;
 using Game;
 using Game.Enemies;
 using Game.Enemies.GoombaClasses;
+using Game.Enemies.GoombaClasses.GoombaStates;
 using Game.Collisions;
 using Game.Collisions.EnemyCollisionHandling;
 using Microsoft.Xna.Framework;
 
 namespace CollisionDetectionTests.MarioEnemyCollisionTests
 {
-    class SmallMarioGoombaCollisionTest
+    [TestClass]
+    public class SmallMarioGoombaCollisionTest
     {
         Game1 game = new Game1();
 
@@ -38,8 +40,8 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
 
         public void SmallMarioGoombaRightSideCollisionTest()
         {
-            MarioInstance testMario = new MarioInstance(game);
-            MarioInstance expectedMario = new MarioInstance(game);
+            IMario testMario = new MarioInstance(game);
+            IMario expectedMario = new MarioInstance(game);
             expectedMario.Damage();
 
             Goomba testGoomba = new Goomba(game);
@@ -58,8 +60,8 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
 
         public void SmallMarioGoombaBottomSideCollisionTest()
         {
-            MarioInstance testMario = new MarioInstance(game);
-            MarioInstance expectedMario = new MarioInstance(game);
+            IMario testMario = new MarioInstance(game);
+            IMario expectedMario = new MarioInstance(game);
             expectedMario.Damage();
 
             Goomba testGoomba = new Goomba(game);
@@ -72,6 +74,26 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
 
             bool testState = testMario.GetSetMarioState is DeadMarioState;
             bool expectedState = expectedMario.GetSetMarioState is DeadMarioState;
+
+            Assert.AreEqual(testState, expectedState);
+        }
+
+        public void SmallMarioGoombaTopSideCollisionTest()
+        {
+            IMario testMario = new MarioInstance(game);
+
+            Goomba testGoomba = new Goomba(game);
+            Goomba expectedGoomba = new Goomba(game);
+            expectedGoomba.IsHit();
+
+            ICollisionSide side = new TopSideCollision();
+            CollisionData collision = new CollisionData(testMario, testGoomba, side);
+            MarioEnemyCollisionHandler collisionHandler = new MarioEnemyCollisionHandler(collision);
+
+            collisionHandler.HandleCollision();
+
+            bool testState = testGoomba.state is GoombaSmashedState;
+            bool expectedState = expectedGoomba.state is GoombaSmashedState;
 
             Assert.AreEqual(testState, expectedState);
         }

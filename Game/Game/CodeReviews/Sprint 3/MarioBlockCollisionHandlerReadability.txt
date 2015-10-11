@@ -1,0 +1,13 @@
+﻿Author:							Matt Bartholomew
+Date :							10/11/15
+Sprint:							3
+Reviewed file:					MarioBlockCollisionHandler.cs
+File Author:					Conner Swick
+Minutes to complete:			8
+Readability:
+	Constructor is pretty easy to read but it may be better to
+	handle determining which object is IMario to be in a private method.
+	All methods are written very cleanly and short except for HandleBottomSide().
+	However, HandleBottomSide() is not badly written and must have
+	the extra actions to resolve more specifc conditions than the
+	other sides.
