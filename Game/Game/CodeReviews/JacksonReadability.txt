@@ -1,8 +1,0 @@
-﻿Author: Jackson Luken
-Date: 9/23/2015
-Sprint 2
-cs file: CoinSprite
-cs author: Kyle Powers
-comments:
-
-All of the code within the class is very readable with easy to understand variable and method names. The methods are all small enough that the reader does not have to keep track of too many things at once.
