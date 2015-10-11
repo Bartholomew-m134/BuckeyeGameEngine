@@ -17,11 +17,11 @@ namespace Game.States
         {
             this.mario = mario;
             this.game = game;
-            mario.GetSprite = SpriteFactories.MarioSpriteFactory.CreateFireLeftJumpingSprite();
+            mario.GetSetSprite = SpriteFactories.MarioSpriteFactory.CreateFireLeftJumpingSprite();
         }
         public void Update()
         {
-            mario.GetSprite.Update();
+            mario.GetSetSprite.Update();
         }
 
         public void Left()
@@ -33,7 +33,7 @@ namespace Game.States
 
         public void Right()
         {
-            mario.MarioStateProperty = new FireRightJumpingState(mario, game);
+            mario.GetSetMarioState = new FireRightJumpingState(mario, game);
         }
 
         public void Up()
@@ -48,7 +48,7 @@ namespace Game.States
 
         public void Land()
         {
-            mario.MarioStateProperty = new FireLeftIdleState(mario, game);
+            mario.GetSetMarioState = new FireLeftIdleState(mario, game);
         }
 
         public void Jump()
@@ -74,12 +74,12 @@ namespace Game.States
 
         public void Damage()
         {
-            mario.MarioStateProperty = new NormalLeftJumpingState(mario, game);
+            mario.GetSetMarioState = new NormalLeftJumpingState(mario, game);
         }
 
         public void Die()
         {
-            mario.MarioStateProperty = new DeadMarioState(mario, game);
+            mario.GetSetMarioState = new DeadMarioState(mario, game);
         }
         public bool IsBig()
         {

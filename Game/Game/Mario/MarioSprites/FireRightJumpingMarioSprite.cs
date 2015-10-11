@@ -45,20 +45,35 @@ namespace Game.Mario.MarioSprites
             Rectangle sourceRectangle = new Rectangle(sheetXLocation, sheetYLocation, width, height);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
 
-            if (toggle == 0)
+            if (toggle < 5)
             {
                 spriteBatch.Begin();
-                spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
+                spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.Brown);
                 spriteBatch.End();
-                toggle = 1;
+                toggle++;
+            }
+
+            else if (toggle > 6 && toggle < 10)
+            {
+                spriteBatch.Begin();
+                spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.YellowGreen);
+                spriteBatch.End();
+                toggle++;
             }
 
             else
             {
                 spriteBatch.Begin();
-                spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.Yellow);
+                spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.Orange);
                 spriteBatch.End();
-                toggle = 0;
+                if (toggle < 15)
+                {
+                    toggle++;
+                }
+                else
+                {
+                    toggle = 0;
+                }
             }
 
         }

@@ -17,26 +17,26 @@ namespace Game.States
         {
             this.mario = mario;
             this.game = game;
-            mario.GetSprite = SpriteFactories.MarioSpriteFactory.CreateNormalRightCrouchingSprite();
+            mario.GetSetSprite = SpriteFactories.MarioSpriteFactory.CreateNormalRightCrouchingSprite();
         }
         public void Update()
         {
-            mario.GetSprite.Update();
+            mario.GetSetSprite.Update();
         }
 
         public void Left()
         {
-            mario.MarioStateProperty = new NormalLeftRunningState(mario, game);
+            mario.GetSetMarioState = new NormalLeftRunningState(mario, game);
         }
 
         public void Right()
         {
-            mario.MarioStateProperty = new NormalRightRunningState(mario, game);
+            mario.GetSetMarioState = new NormalRightRunningState(mario, game);
         }
 
         public void Up()
         {
-            mario.MarioStateProperty = new NormalRightIdleState(mario, game);
+            mario.GetSetMarioState = new NormalRightIdleState(mario, game);
         }
 
         public void Down()
@@ -58,7 +58,7 @@ namespace Game.States
 
         public void Flower()
         {
-            mario.MarioStateProperty = new FireRightCrouchingState(mario, game);
+            mario.GetSetMarioState = new FireRightCrouchingState(mario, game);
         }
 
         public void Mushroom()
@@ -73,12 +73,12 @@ namespace Game.States
 
         public void Damage()
         {
-            mario.MarioStateProperty = new SmallLeftIdleState(mario, game);
+            mario.GetSetMarioState = new SmallLeftIdleState(mario, game);
         }
 
         public void Die()
         {
-            mario.MarioStateProperty = new DeadMarioState(mario, game);
+            mario.GetSetMarioState = new DeadMarioState(mario, game);
         }
         public bool IsBig()
         {

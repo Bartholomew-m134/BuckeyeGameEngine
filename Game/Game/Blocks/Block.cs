@@ -94,7 +94,7 @@ namespace Game.Blocks
             set { location = value; }
         }
 
-        public ISprite GetSprite
+        public ISprite GetSetSprite
         {
             get { return sprite; }
             set { sprite = value; }

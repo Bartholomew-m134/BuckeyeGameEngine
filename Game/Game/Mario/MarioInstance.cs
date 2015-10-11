@@ -10,8 +10,7 @@ namespace Game.Mario
     public class MarioInstance : IMario
     {
         public IMarioState state;
-        public IMarioSprite mariosprite;
-        public ISprite sprite;
+        public IMarioSprite sprite;
         private Vector2 location;
         private Game1 myGame;
         
@@ -114,18 +113,18 @@ namespace Game.Mario
             set { location = value; }
         }
 
-        public ISprite GetSprite
+        public ISprite GetSetSprite
         {
-            get { return sprite; }
-            set { sprite = value; }
+            get { return (ISprite)sprite; }
+            set { sprite = (IMarioSprite)value; }
         }
 
         public IMarioSprite GetMarioSprite
         {
-            get { return mariosprite;  }
+            get { return sprite;  }
         }
 
-        public IMarioState MarioStateProperty
+        public IMarioState GetSetMarioState
         {
             get { return state; }
             set { state = value; }
@@ -137,6 +136,9 @@ namespace Game.Mario
             return state.IsBig();
         }
 
-
+        public bool IsStar()
+        {
+            return false;
+        }
     }
 }

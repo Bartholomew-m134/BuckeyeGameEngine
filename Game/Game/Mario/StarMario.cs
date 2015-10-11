@@ -4,34 +4,31 @@ using System.Linq;
 using System.Text;
 using Game.States;
 using Microsoft.Xna.Framework;
+using System.Diagnostics;
 
 namespace Game.Mario
 {
     public class StarMario : IMario
     {
         public IMario mario;
-        public ISprite sprite;
-        public IMarioSprite mariosprite;
-        private Vector2 location;
         private Game1 myGame;
+        int timer = 1000;
 
-        int timer = 10000;
         public StarMario(IMario mario, Game1 game)
         {
             this.mario = mario;
-            this.sprite = mario.GetSprite;
-            this.location = mario.VectorCoordinates;
             this.myGame = game;
+            WorldManager.SetMario(this);
         }
 
         public Vector2 getLocation()
         {
-            return this.location;
+            return mario.VectorCoordinates;
         }
 
         public void setLocation(Vector2 loc)
         {
-            this.location = loc;
+            mario.VectorCoordinates = loc;
         }
 
         public void Damage()
@@ -43,20 +40,14 @@ namespace Game.Mario
             timer--;
             if (timer == 0)
             {
-                RemoveStar();
+                WorldManager.SetMario(this.mario);
             }
-
             mario.Update();
-        }
-
-        void RemoveStar()
-        {
-            WorldManager.SetMario(mario);
         }
 
         public void Draw()
         {
-            mariosprite.StarDraw(myGame.spriteBatch, location);
+            mario.GetMarioSprite.StarDraw(myGame.spriteBatch, mario.VectorCoordinates);
         }
 
         public void Left()
@@ -101,7 +92,7 @@ namespace Game.Mario
 
         public void Star()
         {
-            mario = new StarMario(mario, myGame);
+            timer = 1000;
         }
 
         public void Die()
@@ -115,10 +106,10 @@ namespace Game.Mario
             set { mario.VectorCoordinates = value; }
         }
 
-        public ISprite GetSprite
+        public ISprite GetSetSprite
         {
-            get { return sprite; }
-            set { sprite = value; }
+            get { return mario.GetSetSprite; }
+            set { mario.GetSetSprite = (IMarioSprite)value; }
         }
 
         public IMarioSprite GetMarioSprite
@@ -126,15 +117,20 @@ namespace Game.Mario
             get { return mario.GetMarioSprite; }
         }
 
-        public IMarioState MarioStateProperty
+        public IMarioState GetSetMarioState
         {
-            get { return mario.MarioStateProperty; }
-            set { mario.MarioStateProperty = value; }
+            get { return mario.GetSetMarioState; }
+            set { mario.GetSetMarioState = value; }
         }
 
         public bool IsBig()
         {
-            return mario.MarioStateProperty.IsBig();
+            return mario.GetSetMarioState.IsBig();
+        }
+
+        public bool IsStar()
+        {
+            return true;
         }
     }
 }

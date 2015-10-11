@@ -17,16 +17,16 @@ namespace Game.States
         {
             this.mario = mario;
             this.game = game;
-            mario.GetSprite = SpriteFactories.MarioSpriteFactory.CreateSmallRightJumpingSprite();
+            mario.GetSetSprite = SpriteFactories.MarioSpriteFactory.CreateSmallRightJumpingSprite();
         }
         public void Update()
         {
-            mario.GetSprite.Update();
+            mario.GetSetSprite.Update();
         }
 
         public void Left()
         {
-            mario.MarioStateProperty = new SmallLeftJumpingState(mario, game);
+            mario.GetSetMarioState = new SmallLeftJumpingState(mario, game);
         }
 
         public void Right()
@@ -48,24 +48,24 @@ namespace Game.States
 
         public void Land()
         {
-            mario.MarioStateProperty = new SmallRightIdleState(mario, game);
+            mario.GetSetMarioState = new SmallRightIdleState(mario, game);
         }
 
         public void Jump()
         {
             Vector2 loc = WorldManager.GetMario().VectorCoordinates;
-            loc.Y -= 4;
+            loc.Y -= 2;
             WorldManager.GetMario().VectorCoordinates = (loc);
         }
 
         public void Flower()
         {
-            mario.MarioStateProperty = new FireRightJumpingState(mario, game);
+            mario.GetSetMarioState = new FireRightJumpingState(mario, game);
         }
 
         public void Mushroom()
         {
-            mario.MarioStateProperty = new NormalRightJumpingState(mario, game);
+            mario.GetSetMarioState = new NormalRightJumpingState(mario, game);
         }
 
         public void Star()
@@ -75,12 +75,12 @@ namespace Game.States
 
         public void Damage()
         {
-            mario.MarioStateProperty = new DeadMarioState(mario, game);
+            mario.GetSetMarioState = new DeadMarioState(mario, game);
         }
 
         public void Die()
         {
-            mario.MarioStateProperty = new DeadMarioState(mario, game);
+            mario.GetSetMarioState = new DeadMarioState(mario, game);
         }
         public bool IsBig()
         {

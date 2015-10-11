@@ -17,8 +17,8 @@ namespace Game.Collisions
             Rectangle hitBoxB;
             Rectangle collisionRectangle;
 
-            hitBoxA = new Rectangle((int)objectA.VectorCoordinates.X, (int)objectA.VectorCoordinates.Y, (int)objectA.GetSprite.SpriteDimensions.X, (int)objectA.GetSprite.SpriteDimensions.Y);
-            hitBoxB = new Rectangle((int)objectB.VectorCoordinates.X, (int)objectB.VectorCoordinates.Y, (int)objectB.GetSprite.SpriteDimensions.X, (int)objectB.GetSprite.SpriteDimensions.Y);
+            hitBoxA = new Rectangle((int)objectA.VectorCoordinates.X, (int)objectA.VectorCoordinates.Y, (int)objectA.GetSetSprite.SpriteDimensions.X, (int)objectA.GetSetSprite.SpriteDimensions.Y);
+            hitBoxB = new Rectangle((int)objectB.VectorCoordinates.X, (int)objectB.VectorCoordinates.Y, (int)objectB.GetSetSprite.SpriteDimensions.X, (int)objectB.GetSetSprite.SpriteDimensions.Y);
             
             collisionRectangle = Rectangle.Intersect(hitBoxA, hitBoxB);
 

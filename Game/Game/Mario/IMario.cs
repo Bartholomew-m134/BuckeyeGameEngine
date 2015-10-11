@@ -39,7 +39,7 @@ namespace Game.Mario
             get;
         }
 
-        IMarioState MarioStateProperty
+        IMarioState GetSetMarioState
         {
             get;
             set;
@@ -51,6 +51,8 @@ namespace Game.Mario
         void Die();
 
         bool IsBig();
+
+        bool IsStar();
 
     }
 }
