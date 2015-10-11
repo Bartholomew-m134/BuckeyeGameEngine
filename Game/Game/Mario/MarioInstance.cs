@@ -113,7 +113,7 @@ namespace Game.Mario
             set { location = value; }
         }
 
-        public new ISprite GetSetSprite
+        public ISprite GetSetSprite
         {
             get { return (ISprite)sprite; }
             set { sprite = (IMarioSprite)value; }

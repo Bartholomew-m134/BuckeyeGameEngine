@@ -11,8 +11,8 @@ namespace Game.Mario
     {
         public IMario mario;
         private Game1 myGame;
-
         int timer = 1000;
+
         public StarMario(IMario mario, Game1 game)
         {
             this.mario = mario;
@@ -39,15 +39,10 @@ namespace Game.Mario
             timer--;
             if (timer == 0)
             {
-                RemoveStar();
+                WorldManager.SetMario(this.mario);
             }
 
             mario.Update();
-        }
-
-        void RemoveStar()
-        {
-            WorldManager.SetMario(mario);
         }
 
         public void Draw()
@@ -97,7 +92,7 @@ namespace Game.Mario
 
         public void Star()
         {
-            mario = new StarMario(mario, myGame);
+            timer = 1000;
         }
 
         public void Die()
