@@ -18,7 +18,7 @@ namespace Game.Commands.MarioCommands
 
         public void Release()
         {
-            WorldManager.GetMario().Left();
+            WorldManager.GetMario().ToIdle();
         }
     }
 }

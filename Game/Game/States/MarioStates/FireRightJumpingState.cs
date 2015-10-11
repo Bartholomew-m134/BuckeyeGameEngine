@@ -31,9 +31,9 @@ namespace Game.States
 
         public void Right()
         {
-            Vector2 loc = WorldManager.GetMario().VectorCoordinates;
+            Vector2 loc = mario.VectorCoordinates;
             loc.X += 2;
-            WorldManager.GetMario().VectorCoordinates = (loc);
+            mario.VectorCoordinates = (loc);
         }
 
         public void Up()
@@ -53,9 +53,9 @@ namespace Game.States
 
         public void Jump()
         {
-            Vector2 loc = WorldManager.GetMario().VectorCoordinates;
+            Vector2 loc = mario.VectorCoordinates;
             loc.Y -= 2;
-            WorldManager.GetMario().VectorCoordinates = (loc);
+            mario.VectorCoordinates = (loc);
         }
 
         public void Flower()
@@ -83,6 +83,11 @@ namespace Game.States
         public bool IsBig()
         {
             return true;
+        }
+
+        public void ToIdle()
+        {
+
         }
     }
 }

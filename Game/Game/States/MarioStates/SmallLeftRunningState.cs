@@ -84,5 +84,10 @@ namespace Game.States
         {
             return false;
         }
+
+        public void ToIdle()
+        {
+            mario.Right();
+        }
     }
 }

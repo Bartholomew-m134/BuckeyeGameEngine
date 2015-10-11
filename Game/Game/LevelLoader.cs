@@ -10,7 +10,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
-using System.Diagnostics;
 using Game.Background_Elements;
 using Microsoft.Xna.Framework;
 
@@ -48,7 +47,7 @@ namespace Game
             }
             catch
             {
-                Debug.WriteLine("File Was Not Loaded\n");
+                Console.WriteLine("File Was Not Loaded\n");
             }
             finally
             {
@@ -63,37 +62,6 @@ namespace Game
             List<IGameObject> gameObjects = new List<IGameObject>();
             Vector2 location = new Vector2(0,0);
             
-            /*
-            gameObjects.Add(new Coin(game));
-            gameObjects.Add(new Flower(game));
-            gameObjects.Add(new GreenMushroom(game));
-            gameObjects.Add(new RedMushroom(game));
-            gameObjects.Add(new Star(game));
-
-            gameObjects.Add(new MarioInstance(game));
-
-            gameObjects.Add(new Block(1, game));
-            gameObjects.Add(new Block(2, game));
-            gameObjects.Add(new Block(3, game));
-            gameObjects.Add(new Block(4, game));
-            gameObjects.Add(new Block(5, game));
-
-            gameObjects.Add(new Goomba(game));
-            gameObjects.Add(new GreenKoopa(game));
-
-            gameObjects.Add(new Pipe(game));
-            
-
-
-
-            gameObjects.Add(new BigHill(game));
-            gameObjects.Add(new SmallHill(game));
-            gameObjects.Add(new SingleCloud(game));
-            gameObjects.Add(new TripleCloud(game));
-            gameObjects.Add(new SingleBush(game));
-            gameObjects.Add(new TripleBush(game));
-            */
-
             objectList.RemoveAt(0);
 
             foreach(string[] line in objectList)
@@ -101,7 +69,6 @@ namespace Game
                 foreach(string objectName in line)
                 {
                     IGameObject gameObject = null;
-
 
                     if (objectName.Equals("Mario"))
                         gameObject = new MarioInstance(game);
@@ -134,11 +101,7 @@ namespace Game
                     else if (objectName.Equals("Pipe"))
                         gameObject = new Pipe(game);
                     else if (objectName.Equals("BigHill"))
-                    {
                         gameObject = new BigHill(game);
-                        gameObject.VectorCoordinates = location;
-                        Debug.WriteLine(gameObject.VectorCoordinates.Y);
-                    }
                     else if (objectName.Equals("Bush"))
                         gameObject = new SingleBush(game);
                     else if (objectName.Equals("Cloud"))
@@ -149,8 +112,6 @@ namespace Game
                         gameObject = new TripleBush(game);
                     else if (objectName.Equals("TripleCloud"))
                         gameObject = new TripleCloud(game);
-
-                    
 
                     if(gameObject != null){
                         gameObject.VectorCoordinates = location;  
