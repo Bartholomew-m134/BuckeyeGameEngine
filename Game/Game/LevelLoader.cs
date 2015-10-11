@@ -124,6 +124,17 @@ namespace Game
                 location.X = 0;
             }
 
+            for(int index = 0; index < gameObjects.Count; index++)
+            {
+                if (gameObjects[index] is IMario)
+                {
+                    IGameObject mario = gameObjects[index];
+                    gameObjects.RemoveAt(index);
+                    gameObjects.Add(mario);
+                    break;
+                }
+            }
+
             return gameObjects;
         }
     }
