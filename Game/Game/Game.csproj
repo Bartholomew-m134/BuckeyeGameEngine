@@ -236,16 +236,16 @@
     <Compile Include="WorldManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CodeReviews\JacksonBlockReadability.txt" />
-    <Content Include="CodeReviews\CoinSpriteCodeQuality.txt" />
-    <Content Include="CodeReviews\CoinSpriteReadability.txt" />
-    <Content Include="CodeReviews\DeadMarioStateCodeQuality.txt" />
-    <Content Include="CodeReviews\DeadReadibility.txt" />
-    <Content Include="CodeReviews\GreenKoopaWalkingLeftCodeQuality.txt" />
-    <Content Include="CodeReviews\GreenKoopaWalkingLeftReadability.txt" />
-    <Content Include="CodeReviews\MarioSpriteFactoryCodeQuality.txt" />
-    <Content Include="CodeReviews\MarioSpriteFactoryReadability.txt" />
-    <Content Include="CodeReviews\JacksonCodeQualityReview.txt" />
+    <Content Include="CodeReviews\Sprint 2\JacksonBlockReadability.txt" />
+    <Content Include="CodeReviews\Sprint 2\CoinSpriteCodeQuality.txt" />
+    <Content Include="CodeReviews\Sprint 2\CoinSpriteReadability.txt" />
+    <Content Include="CodeReviews\Sprint 2\DeadMarioStateCodeQuality.txt" />
+    <Content Include="CodeReviews\Sprint 2\DeadReadibility.txt" />
+    <Content Include="CodeReviews\Sprint 2\GreenKoopaWalkingLeftCodeQuality.txt" />
+    <Content Include="CodeReviews\Sprint 2\GreenKoopaWalkingLeftReadability.txt" />
+    <Content Include="CodeReviews\Sprint 2\MarioSpriteFactoryCodeQuality.txt" />
+    <Content Include="CodeReviews\Sprint 2\MarioSpriteFactoryReadability.txt" />
+    <Content Include="CodeReviews\Sprint 2\JacksonCodeQualityReview.txt" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
@@ -283,6 +283,7 @@
     <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="CodeReviews\Sprint 3\" />
     <Folder Include="Utilities\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

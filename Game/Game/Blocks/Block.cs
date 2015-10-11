@@ -81,6 +81,7 @@ namespace Game.Blocks
         public void Disappear()
         {
             blockState.Disappear();
+            location = new Vector2(-1000,-1000);
         }
 
         public void GetUsed()
