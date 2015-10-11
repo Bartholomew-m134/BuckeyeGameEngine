@@ -92,7 +92,7 @@ namespace CollisionDetectionTests
         {
             MarioInstance testMario = new MarioInstance(game);
             MarioInstance expectedMario = new MarioInstance(game);
-
+            expectedMario.VectorCoordinates = new Vector2(0, 15);
             Block testBlock = new Block(2, game);
             Block expectedBlock = new Block(2, game);
             expectedBlock.GetUsed();

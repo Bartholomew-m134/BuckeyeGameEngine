@@ -18,6 +18,7 @@ namespace CollisionDetectionTests
         [TestMethod]
         public void BigMarioStarLeftSideCollisionTest()
         {
+            WorldManager.LoadListFromFile("World1-1", game);
             MarioInstance testMario = new MarioInstance(game);
             MarioInstance expectedMario = new MarioInstance(game);
             testMario.Mushroom();
@@ -46,6 +47,7 @@ namespace CollisionDetectionTests
         [TestMethod]
         public void BigMarioStarRightSideCollisionTest()
         {
+            WorldManager.LoadListFromFile("World1-1", game);
             MarioInstance testMario = new MarioInstance(game);
             MarioInstance expectedMario = new MarioInstance(game);
             testMario.Mushroom();
@@ -74,6 +76,7 @@ namespace CollisionDetectionTests
         [TestMethod]
         public void BigMarioStarTopSideCollisionTest()
         {
+            WorldManager.LoadListFromFile("World1-1", game);
             MarioInstance testMario = new MarioInstance(game);
             MarioInstance expectedMario = new MarioInstance(game);
             testMario.Mushroom();
@@ -102,6 +105,7 @@ namespace CollisionDetectionTests
         [TestMethod]
         public void BigMarioStarBottomSideCollisionTest()
         {
+            WorldManager.LoadListFromFile("World1-1", game);
             MarioInstance testMario = new MarioInstance(game);
             MarioInstance expectedMario = new MarioInstance(game);
             testMario.Mushroom();

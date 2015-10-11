@@ -14,10 +14,15 @@ namespace CollisionDetectionTests
     public class SmallMarioStarCollisionTests
     {
         Game1 game = new Game1();
+       
+      
+                    
+        
 
         [TestMethod]
         public void SmallMarioStarLeftSideCollisionTest()
         {
+            WorldManager.LoadListFromFile("World1-1", game);
             MarioInstance testMario = new MarioInstance(game);
             MarioInstance expectedMario = new MarioInstance(game);
             expectedMario.Star();
@@ -44,6 +49,7 @@ namespace CollisionDetectionTests
         [TestMethod]
         public void SmallMarioStarRightSideCollisionTest()
         {
+            WorldManager.LoadListFromFile("World1-1", game);
             MarioInstance testMario = new MarioInstance(game);
             MarioInstance expectedMario = new MarioInstance(game);
             expectedMario.Star();
@@ -70,8 +76,10 @@ namespace CollisionDetectionTests
         [TestMethod]
         public void SmallMarioStarTopSideCollisionTest()
         {
+            WorldManager.LoadListFromFile("World1-1", game);
             MarioInstance testMario = new MarioInstance(game);
             MarioInstance expectedMario = new MarioInstance(game);
+            expectedMario.VectorCoordinates = new Vector2(0, 0);
             expectedMario.Star();
 
             Star testStar = new Star(game);
@@ -96,6 +104,7 @@ namespace CollisionDetectionTests
         [TestMethod]
         public void SmallMarioStarBottomSideCollisionTest()
         {
+            WorldManager.LoadListFromFile("World1-1", game);
             MarioInstance testMario = new MarioInstance(game);
             MarioInstance expectedMario = new MarioInstance(game);
             expectedMario.Star();
