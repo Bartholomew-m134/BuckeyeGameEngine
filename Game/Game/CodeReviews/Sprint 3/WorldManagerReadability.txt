@@ -1,0 +1,11 @@
+﻿Author:							Jackson Luken
+Date :							10/11/15
+Sprint:							3
+Reviewed file:					WorldManager.cs
+File Author:					Matt Bartholomew
+Minutes to complete:			3
+Readability:
+	All of the methods are clearly titled such that their purpose is made clear to the reader immediately.
+	The method bodies themselves are structured so that it is very easy to follow along with what they do and
+	when they call an outside class or method, those titles make it easy to realize what is happening and where 
+	those actions are taking place.
