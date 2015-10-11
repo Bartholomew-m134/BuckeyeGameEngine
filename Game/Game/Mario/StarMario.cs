@@ -10,25 +10,15 @@ namespace Game.Mario
 {
     public class StarMario : IMario
     {
-        public IMario mario;
+        private IMario mario;
         private Game1 myGame;
-        int timer = 1000;
+        private int timer = 1000;
 
         public StarMario(IMario mario, Game1 game)
         {
             this.mario = mario;
             this.myGame = game;
             WorldManager.SetMario(this);
-        }
-
-        public Vector2 getLocation()
-        {
-            return mario.VectorCoordinates;
-        }
-
-        public void setLocation(Vector2 loc)
-        {
-            mario.VectorCoordinates = loc;
         }
 
         public void Damage()
@@ -47,7 +37,7 @@ namespace Game.Mario
 
         public void Draw()
         {
-            mario.GetMarioSprite.StarDraw(myGame.spriteBatch, mario.VectorCoordinates);
+            ((IMarioSprite)mario.GetSetSprite).StarDraw(myGame.spriteBatch, mario.VectorCoordinates);
         }
 
         public void Left()
@@ -110,11 +100,6 @@ namespace Game.Mario
         {
             get { return mario.GetSetSprite; }
             set { mario.GetSetSprite = (IMarioSprite)value; }
-        }
-
-        public IMarioSprite GetMarioSprite
-        {
-            get { return mario.GetMarioSprite; }
         }
 
         public IMarioState GetSetMarioState

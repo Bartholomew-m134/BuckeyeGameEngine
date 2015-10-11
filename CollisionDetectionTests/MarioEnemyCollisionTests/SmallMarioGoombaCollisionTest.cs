@@ -30,8 +30,8 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
 
             collisionHandler.HandleCollision();
 
-            bool testState = testMario.state is DeadMarioState;
-            bool expectedState = expectedMario.state is DeadMarioState;
+            bool testState = testMario.GetSetMarioState is DeadMarioState;
+            bool expectedState = expectedMario.GetSetMarioState is DeadMarioState;
 
             Assert.AreEqual(testState, expectedState);
         }
@@ -50,8 +50,8 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
 
             collisionHandler.HandleCollision();
 
-            bool testState = testMario.state is DeadMarioState;
-            bool expectedState = expectedMario.state is DeadMarioState;
+            bool testState = testMario.GetSetMarioState is DeadMarioState;
+            bool expectedState = expectedMario.GetSetMarioState is DeadMarioState;
 
             Assert.AreEqual(testState, expectedState);
         }
@@ -70,8 +70,8 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
 
             collisionHandler.HandleCollision();
 
-            bool testState = testMario.state is DeadMarioState;
-            bool expectedState = expectedMario.state is DeadMarioState;
+            bool testState = testMario.GetSetMarioState is DeadMarioState;
+            bool expectedState = expectedMario.GetSetMarioState is DeadMarioState;
 
             Assert.AreEqual(testState, expectedState);
         }

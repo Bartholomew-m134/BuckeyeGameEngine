@@ -34,11 +34,6 @@ namespace Game.Mario
 
         void Star();
 
-        IMarioSprite GetMarioSprite
-        {
-            get;
-        }
-
         IMarioState GetSetMarioState
         {
             get;

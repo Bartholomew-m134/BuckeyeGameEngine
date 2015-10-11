@@ -9,8 +9,8 @@ namespace Game.Mario
 {
     public class MarioInstance : IMario
     {
-        public IMarioState state;
-        public IMarioSprite sprite;
+        private IMarioState state;
+        private IMarioSprite sprite;
         private Vector2 location;
         private Game1 myGame;
         
@@ -21,16 +21,6 @@ namespace Game.Mario
             state = new SmallRightIdleState(this, game);
             myGame = game;
   
-        }
-
-        public Vector2 getLocation()
-        {
-            return this.location;
-        }
-
-        public void setLocation(Vector2 loc)
-        {
-            this.location = loc;
         }
 
         public void Update()
@@ -117,11 +107,6 @@ namespace Game.Mario
         {
             get { return (ISprite)sprite; }
             set { sprite = (IMarioSprite)value; }
-        }
-
-        public IMarioSprite GetMarioSprite
-        {
-            get { return sprite;  }
         }
 
         public IMarioState GetSetMarioState
