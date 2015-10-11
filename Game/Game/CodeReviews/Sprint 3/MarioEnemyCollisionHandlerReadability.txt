@@ -3,6 +3,7 @@ Date: 10/11/2015
 Sprint:3
 File name: MarioEnemyCollisionHandler.cs
 Author: John Cramer
+Minutes to complete: 5
 
 Comments: Class is very cohesive, contains all necessary elements to properly
 handle collisions, takes into consideration all corner cases and handles 
