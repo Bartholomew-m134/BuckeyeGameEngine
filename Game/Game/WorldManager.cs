@@ -24,8 +24,8 @@ namespace Game
 
         public static void Update()
         {
-            foreach (IGameObject gameObject in gameObjects)
-                gameObject.Update();
+            for (int index = 0; index < gameObjects.Count; index++)
+                gameObjects[index].Update();
 
             collisionList = new List<CollisionData>();
 

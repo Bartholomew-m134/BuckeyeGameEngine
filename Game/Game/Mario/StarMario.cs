@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Game.States;
 using Microsoft.Xna.Framework;
+using System.Diagnostics;
 
 namespace Game.Mario
 {
@@ -13,7 +14,7 @@ namespace Game.Mario
         public IMarioSprite sprite;
         private Game1 myGame;
 
-        int timer = 10000;
+        int timer = 1000;
         public StarMario(IMario mario, Game1 game)
         {
             this.mario = mario;
@@ -42,7 +43,6 @@ namespace Game.Mario
             {
                 RemoveStar();
             }
-
             mario.Update();
         }
 

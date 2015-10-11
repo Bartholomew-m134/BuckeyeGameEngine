@@ -93,6 +93,7 @@ namespace Game.Mario
         public void Star()
         {
             state.Star();
+            WorldManager.SetMario(new StarMario(this, myGame));
         }
 
 
