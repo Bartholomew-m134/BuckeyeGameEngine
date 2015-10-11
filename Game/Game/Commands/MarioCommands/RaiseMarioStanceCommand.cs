@@ -13,7 +13,6 @@ namespace Game.Commands.MarioCommands
 
         public void Execute()
         {
-            WorldManager.GetMario().Up();
             WorldManager.GetMario().Jump();
         }
 
