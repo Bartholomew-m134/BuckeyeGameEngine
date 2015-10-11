@@ -87,7 +87,12 @@
     <Compile Include="MarioBlockCollisionTests\SmallMarioHiddenBlockCollisionTest.cs" />
     <Compile Include="MarioBlockCollisionTests\SmallMarioQuestionBlockCollisionTests.cs" />
     <Compile Include="MarioBlockCollisionTests\SmallMarioSolidBlockCollisionTests.cs" />
+    <Compile Include="MarioEnemyCollisionTests\FireMarioGoombaCollisionTest.cs" />
+    <Compile Include="MarioEnemyCollisionTests\FireMarioKoopaCollisionTest.cs" />
+    <Compile Include="MarioEnemyCollisionTests\NormalMarioGoombaCollisionTest.cs" />
+    <Compile Include="MarioEnemyCollisionTests\NormalMarioKoopaCollisionTest.cs" />
     <Compile Include="MarioEnemyCollisionTests\SmallMarioGoombaCollisionTest.cs" />
+    <Compile Include="MarioEnemyCollisionTests\SmallMarioKoopaCollisionTest.cs" />
     <Compile Include="MarioItemCollisionTests\BigMarioCoinCollisionTests.cs" />
     <Compile Include="MarioItemCollisionTests\BigMarioFlowerCollisionTests.cs" />
     <Compile Include="MarioItemCollisionTests\BigMarioGreenMushrromCollisionTests.cs" />

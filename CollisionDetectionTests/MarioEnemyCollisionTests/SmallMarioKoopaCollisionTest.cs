@@ -4,8 +4,8 @@ using Game.Mario;
 using Game.States;
 using Game;
 using Game.Enemies;
-using Game.Enemies.GoombaClasses;
-using Game.Enemies.GoombaClasses.GoombaStates;
+using Game.Enemies.KoopaClasses;
+using Game.Enemies.KoopaClasses.KoopaStates;
 using Game.Collisions;
 using Game.Collisions.EnemyCollisionHandling;
 using Microsoft.Xna.Framework;
@@ -13,21 +13,21 @@ using Microsoft.Xna.Framework;
 namespace CollisionDetectionTests.MarioEnemyCollisionTests
 {
     [TestClass]
-    public class SmallMarioGoombaCollisionTest
+    public class SmallMarioKoopaCollisionTest
     {
         Game1 game = new Game1();
 
         [TestMethod]
-        public void SmallMarioGoombaLeftSideCollisionTest()
+        public void SmallMarioKoopaLeftSideCollisionTest()
         {
             MarioInstance testMario = new MarioInstance(game);
             MarioInstance expectedMario = new MarioInstance(game);
             expectedMario.Damage();
 
-            Goomba testGoomba = new Goomba(game);
+            GreenKoopa testGreenKoopa = new GreenKoopa(game);
 
             ICollisionSide side = new LeftSideCollision();
-            CollisionData collision = new CollisionData(testMario, testGoomba, side);
+            CollisionData collision = new CollisionData(testMario, testGreenKoopa, side);
             MarioEnemyCollisionHandler collisionHandler = new MarioEnemyCollisionHandler(collision);
 
             collisionHandler.HandleCollision();
@@ -39,16 +39,16 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
         }
 
         [TestMethod]
-        public void SmallMarioGoombaRightSideCollisionTest()
+        public void SmallMarioKoopaRightSideCollisionTest()
         {
             IMario testMario = new MarioInstance(game);
             IMario expectedMario = new MarioInstance(game);
             expectedMario.Damage();
 
-            Goomba testGoomba = new Goomba(game);
+            GreenKoopa testGreenKoopa = new GreenKoopa(game);
 
             ICollisionSide side = new RightSideCollision();
-            CollisionData collision = new CollisionData(testMario, testGoomba, side);
+            CollisionData collision = new CollisionData(testMario, testGreenKoopa, side);
             MarioEnemyCollisionHandler collisionHandler = new MarioEnemyCollisionHandler(collision);
 
             collisionHandler.HandleCollision();
@@ -60,16 +60,16 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
         }
 
         [TestMethod]
-        public void SmallMarioGoombaBottomSideCollisionTest()
+        public void SmallMarioKoopaBottomSideCollisionTest()
         {
             IMario testMario = new MarioInstance(game);
             IMario expectedMario = new MarioInstance(game);
             expectedMario.Damage();
 
-            Goomba testGoomba = new Goomba(game);
+            GreenKoopa testGreenKoopa = new GreenKoopa(game);
 
             ICollisionSide side = new BottomSideCollision();
-            CollisionData collision = new CollisionData(testMario, testGoomba, side);
+            CollisionData collision = new CollisionData(testMario, testGreenKoopa, side);
             MarioEnemyCollisionHandler collisionHandler = new MarioEnemyCollisionHandler(collision);
 
             collisionHandler.HandleCollision();
@@ -81,45 +81,44 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
         }
 
         [TestMethod]
-        public void SmallMarioGoombaTopSideCollisionTest()
+        public void SmallMarioKoopaTopSideCollisionTest()
         {
             IMario testMario = new MarioInstance(game);
-            testMario.Star();
 
-            Goomba testGoomba = new Goomba(game);
-            Goomba expectedGoomba = new Goomba(game);
-            expectedGoomba.IsHit();
+            GreenKoopa testGreenKoopa = new GreenKoopa(game);
+            GreenKoopa expectedGreenKoopa = new GreenKoopa(game);
+            expectedGreenKoopa.IsHit();
 
             ICollisionSide side = new TopSideCollision();
-            CollisionData collision = new CollisionData(testMario, testGoomba, side);
+            CollisionData collision = new CollisionData(testMario, testGreenKoopa, side);
             MarioEnemyCollisionHandler collisionHandler = new MarioEnemyCollisionHandler(collision);
 
             collisionHandler.HandleCollision();
 
-            bool testState = testGoomba.state is GoombaSmashedState;
-            bool expectedState = expectedGoomba.state is GoombaSmashedState;
+            bool testState = testGreenKoopa.state is GreenKoopaHidingInShellState;
+            bool expectedState = expectedGreenKoopa.state is GreenKoopaHidingInShellState;
 
             Assert.AreEqual(testState, expectedState);
         }
 
         [TestMethod]
-        public void StarSmallMarioGoombaCollisionTest()
+        public void StarSmallMarioKoopaCollisionTest()
         {
             IMario mario = new MarioInstance(game);
             IMario testMario = new StarMario(mario, game);
 
-            Goomba testGoomba = new Goomba(game);
-            Goomba expectedGoomba = new Goomba(game);
-            expectedGoomba.Flipped();
+            GreenKoopa testGreenKoopa = new GreenKoopa(game);
+            GreenKoopa expectedGreenKoopa = new GreenKoopa(game);
+            expectedGreenKoopa.Flipped();
 
             ICollisionSide side = new LeftSideCollision();
-            CollisionData collision = new CollisionData(testMario, testGoomba, side);
+            CollisionData collision = new CollisionData(testMario, testGreenKoopa, side);
             MarioEnemyCollisionHandler collisionHandler = new MarioEnemyCollisionHandler(collision);
 
             collisionHandler.HandleCollision();
 
-            bool testState = testGoomba.state is GoombaFlippedState;
-            bool expectedState = expectedGoomba.state is GoombaFlippedState;
+            bool testState = testGreenKoopa.state is GreenKoopaFlippedInShellState;
+            bool expectedState = expectedGreenKoopa.state is GreenKoopaFlippedInShellState;
 
             Assert.AreEqual(testState, expectedState);
         }

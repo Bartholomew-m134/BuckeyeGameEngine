@@ -13,15 +13,19 @@ using Microsoft.Xna.Framework;
 namespace CollisionDetectionTests.MarioEnemyCollisionTests
 {
     [TestClass]
-    public class SmallMarioGoombaCollisionTest
+    public class FireMarioGoombaCollisionTest
     {
         Game1 game = new Game1();
 
         [TestMethod]
-        public void SmallMarioGoombaLeftSideCollisionTest()
+        public void FireMarioGoombaLeftSideCollisionTest()
         {
             MarioInstance testMario = new MarioInstance(game);
             MarioInstance expectedMario = new MarioInstance(game);
+
+            testMario.GetSetMarioState = new FireRightIdleState(testMario, game);
+            expectedMario.GetSetMarioState = new FireRightIdleState(expectedMario, game);
+
             expectedMario.Damage();
 
             Goomba testGoomba = new Goomba(game);
@@ -32,17 +36,21 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
 
             collisionHandler.HandleCollision();
 
-            bool testState = testMario.GetSetMarioState is DeadMarioState;
-            bool expectedState = expectedMario.GetSetMarioState is DeadMarioState;
+            bool testState = testMario.GetSetMarioState is NormalRightIdleState;
+            bool expectedState = expectedMario.GetSetMarioState is NormalRightIdleState;
 
             Assert.AreEqual(testState, expectedState);
         }
 
         [TestMethod]
-        public void SmallMarioGoombaRightSideCollisionTest()
+        public void FireMarioGoombaRightSideCollisionTest()
         {
             IMario testMario = new MarioInstance(game);
             IMario expectedMario = new MarioInstance(game);
+
+            testMario.GetSetMarioState = new FireRightIdleState(testMario, game);
+            expectedMario.GetSetMarioState = new FireRightIdleState(expectedMario, game);
+
             expectedMario.Damage();
 
             Goomba testGoomba = new Goomba(game);
@@ -53,17 +61,21 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
 
             collisionHandler.HandleCollision();
 
-            bool testState = testMario.GetSetMarioState is DeadMarioState;
-            bool expectedState = expectedMario.GetSetMarioState is DeadMarioState;
+            bool testState = testMario.GetSetMarioState is NormalRightIdleState;
+            bool expectedState = expectedMario.GetSetMarioState is NormalRightIdleState;
 
             Assert.AreEqual(testState, expectedState);
         }
 
         [TestMethod]
-        public void SmallMarioGoombaBottomSideCollisionTest()
+        public void FireMarioGoombaBottomSideCollisionTest()
         {
             IMario testMario = new MarioInstance(game);
             IMario expectedMario = new MarioInstance(game);
+
+            testMario.GetSetMarioState = new FireRightIdleState(testMario, game);
+            expectedMario.GetSetMarioState = new FireRightIdleState(expectedMario, game);
+
             expectedMario.Damage();
 
             Goomba testGoomba = new Goomba(game);
@@ -74,17 +86,18 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
 
             collisionHandler.HandleCollision();
 
-            bool testState = testMario.GetSetMarioState is DeadMarioState;
-            bool expectedState = expectedMario.GetSetMarioState is DeadMarioState;
+            bool testState = testMario.GetSetMarioState is NormalRightIdleState;
+            bool expectedState = expectedMario.GetSetMarioState is NormalRightIdleState;
 
             Assert.AreEqual(testState, expectedState);
         }
 
         [TestMethod]
-        public void SmallMarioGoombaTopSideCollisionTest()
+        public void FireMarioGoombaTopSideCollisionTest()
         {
             IMario testMario = new MarioInstance(game);
-            testMario.Star();
+
+            testMario.GetSetMarioState = new FireRightIdleState(testMario, game);
 
             Goomba testGoomba = new Goomba(game);
             Goomba expectedGoomba = new Goomba(game);
@@ -103,9 +116,10 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
         }
 
         [TestMethod]
-        public void StarSmallMarioGoombaCollisionTest()
+        public void StarFireMarioGoombaCollisionTest()
         {
             IMario mario = new MarioInstance(game);
+            mario.GetSetMarioState = new FireRightIdleState(mario, game);
             IMario testMario = new StarMario(mario, game);
 
             Goomba testGoomba = new Goomba(game);
