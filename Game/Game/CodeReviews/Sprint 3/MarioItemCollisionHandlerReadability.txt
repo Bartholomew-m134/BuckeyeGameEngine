@@ -1,0 +1,10 @@
+﻿Author: Connor Swick
+Date: 10/11/2015
+Sprint: 3
+File name: StarMario.cs
+Author: Kyle Powers
+Minutes to complete: 7
+
+Comments: This class is overall very readable. The variable names are descriptive and the method names
+used make it very clear what action is being performed. The code in this class leaves no room for any 
+confusion and can be read like normal sentences.
