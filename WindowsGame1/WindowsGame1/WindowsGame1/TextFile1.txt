@@ -1,0 +1,305 @@
+﻿#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+
+#define MAXLINE 80 /* *0 chars per line, per command, should be enough. */
+
+struct Command {
+	char name[MAXLINE];
+	char ars[MAXLINE/2+1][MAXLINE];
+	int num;
+};
+
+struct Node {
+	struct Command cmd;
+	struct Node *nextptr;
+} *head =NULL;
+
+void deleteCommand(struct Node **head, char* com, char* args){
+	struct Node *current;
+	int delete = 1;
+	if (*head != NULL){
+		current = *head;
+		while(current != NULL && delete ==1){
+			if (strcmp(com, current->cmd.name) !=0 || strcmp(ags,current->cmd.ars[1])!=0){
+				current = current -> nextPtr;
+			}
+			else{
+				current -> cmd.num = 0;
+				delete = 0;
+			}
+		}
+	}
+}
+
+void insertCommand(struct Node **head, struct Node **newNode){
+	struct Node *current;
+	if(*head == NULL){
+		*head = *newNode;
+	}
+	else{
+		current = *head;
+		while (current -> nextPtr!=NULL){
+			current = current -> nextPtr;
+		}
+		(*newNode) -> nextPtr = current->nextPtr;
+		current -> nextPtr = *newNode;
+	}
+}
+
+void deleteHead(struct Node **head){
+	struct Node *current;
+	int delete = 1;
+	if (*head != NULL && (*head) -> cmd.num != 0){
+		(*head) -> cmd.num = 0;
+	}
+	else{
+		current = *head;
+		while (current != NULL && delete ==1){
+			if (current -> cmd.num ==0){
+				current = current -> nextPtr;
+			}
+			else{
+				current -> cmd.num = 0;
+				delete = 0;
+			}
+		}
+	}
+}
+
+void addCommand(int num, char *command, char *args[MAXLINE/2+1]){
+	struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
+	if(newNode == NULL){
+		printf("Memory allocation failure.\n");
+		exit(0);
+	}
+
+	int i = 0;
+	int j = 0;
+	newNode -> cmd.num = num;
+	while(i< (MAXLINE)){
+		newNode->cmd.name[i] = command[i];
+		i++
+	}
+	i = 0;
+	while (i<(MAXLINE/2) && args[i] != NULL){
+		j = 0;
+		while(j<MAXLINE){
+			newNode -> cmd.ars[i][j] = args[i][j];
+			j++;
+		}
+		i++;
+	}
+	deleteCommand(&head, newNode -> cmd.name, newNode -> cmd.ars[1]);
+	insertCommand(&head, &newNode);
+}
+
+int countCommand(){
+	struct Node *traverse;
+	int count = 0;
+	traverse = head;
+	while(traverse!=NULL){
+		if(traverse -> cmd.num!=0){
+			count++;
+		}
+		traverse=traverse -> nextPtr;
+	}
+	return count;
+}
+
+void history(int historyLimit){
+	struct  Node *traverse;
+	int track =0;
+	int empty =0;
+	int count = countCommand();
+	while(count>historyLimit){
+		deleteHead(&head);
+		count = countCommand();
+	}
+	traverse = head;
+	while(traverse!=NULL && (track-empty)<historyLimit){
+		if(traverse-> cmd.num!=0){
+			printf("%i ", traverse -> cmd.num);
+			printf("%s", traverse-> cmd.name);
+			int i=1;
+			while(traverse-> cmd.ars[i]!=NULL && i<((MAXLINE/2)+1)){
+				printf(" %s", traverse->cmd.ars[i]);
+				i++;
+			}
+			printf("\n");
+		}
+		else{
+			empty++;
+		}
+		traverse = traverse -> nextPtr;
+		track++;
+	}
+}
+
+void edit(int r_num, char name[MAXLINE], char args[MAXLINE/2+1][MAXLINE], struct Node **head){
+	struct Node *current;
+	current = *head;
+	int found = 1;
+	while(current!=NULL && found ==1){
+		if(current -> cmd.num!=r_num){
+			current = current -> nextPtr;
+		}
+		else{
+			int j = 0;
+			int i = 0;
+			for(i=0; i <MAXLINE; i++){
+				current -> cmd.name[i] = name[i];
+			}
+			for(i = 0; i <MAXLINE/2+1; i++){
+				for(j = 0; j<MAXLINE;j++){
+					current -> cmd.ars[i][j] = args[i][j];
+				}
+			}
+			found = 0;
+		}
+	}
+}
+
+void runSetup(struct Node **head, int num, int r_num){
+	struct Node *current;
+	int found = 1;
+	if(*head == NULL){
+		printf("ERROR: No command found. \n");
+	}
+	else{
+		current = *head;
+		while(current!=NULL && found == 1){
+			if(num != current -> cmd.num){
+				current = current->nextPtr;
+			}
+			else{
+				current->cmd.num = 0;
+				edit(r_num, current->cmd.name, current->cmd.ars, head);
+				found = 0;
+			}
+		}
+		if(found == 1){
+			printf("ERROR: No command found.\n");
+		}
+	}
+}
+
+void runExecute(struct Node **head, int num){
+	struct Node *current;
+	int found =1;
+	int error;
+	int i;
+	char *temp[MAXLINE/2+1];
+	if (*head !=NULL){
+		current = *head;
+		while(current!=NULL && found ==1){
+			if (num!=current->cmd.num){
+				current = current->nextPtr;
+			}
+			else{
+				for(i = 0; i<MAXLINE/2+1; i++){
+					temp[i] = current->cmd.ars[i];
+				}
+				error = execvp(current->cmd.name, temp);
+				if(error == -1){
+					printf("Invalid command\n");
+				}
+				found ==0;
+			}
+		}
+	}
+}
+
+void add(int num, char *command){
+	struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
+	if(newNode==NULL){
+		printf("Memory allocation failure. \n");
+		exit(0);
+	}
+	int i = 0;
+	int j = 0;
+	newNode->cmd.num=num;
+	while(i<(MAXLINE)){
+		newNode->cmd.name[i] = command[i];
+		i++;
+	}
+	deleteCommand(&head, newNode->cmd.name, newNode->cmd.ars[1]);
+	insertCommand(&head, &newNode);
+}
+
+int countLines(){
+	FILE *fp;
+	fp = fopen("history.txt", "r");
+	int lines = 0;
+	while(!feof(fp)){
+		char ch == fgetc(fp);
+		if(ch == '\n'){
+			lines++;
+		}
+	}
+	fclose(fp);
+	return lines;
+}
+
+int readHistory(int *count){
+	int limit = countLines();
+	FILE *fp;
+	fp = fopen("history.txt", "r");
+	int i = 0;
+	int num;
+	size_t len;
+	char *name;
+	if(fp!=NULL){
+		while(i<limit){
+			fscanf(fp, "%i ", &num);
+			getline(&name, &len, fp);
+			name[strlen(name) - 1] = 0;
+			add(num, name);
+			i++;
+		}
+		*count = num;
+	}
+	fclose(fp);
+	return limit;
+}
+
+void writeHistory(int historyLimit, int historyOutLimit, int flag){
+	FILE *fp;
+	fp = fopen("history.txt", "w");
+	if(fp!=NULL){
+		struct Node *traverse;
+		int track = 0;
+		int empty = 0;
+		int count = countCommand();
+		int limit = historyOutLimit;
+		if(flag == 0){
+			limit = historyLimit;
+		}
+		while(count>limit){
+			deleteHead(&head);
+			count = countCommand();
+		}
+		traverse = head;
+		while(traverse!=NULL && (track-empty)<limit){
+			if(traverse->cmd.num!=0){
+				fprintf(fp, "%i ", traverse->cmd.num);
+				fprintf(fp, "%s", traverse->cmd.name);
+				int i = 1;
+				while(traverse->cmd.ars[i]!=NULL && i<3){
+					fprintf(fp, " %s", traverse->cmd.ars[i]);
+				}
+				fprintf(fp, "\n");
+			}
+			else{
+				empty++;
+			}
+			traverse=traverse->nextPtr;
+			track++;
+		}
+	}
+	fclose(fp);
+	exit(0);
+}
+
+
