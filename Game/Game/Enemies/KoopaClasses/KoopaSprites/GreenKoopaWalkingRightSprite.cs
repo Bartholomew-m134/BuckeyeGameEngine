@@ -38,7 +38,7 @@ namespace Game.Enemies.KoopaClasses.GreenKoopaSprites
 
         public void Update()
         {
-            if (delayBetweenFrames == 10)
+            if (delayBetweenFrames == 2)
             {
                 delayBetweenFrames = 0;
                 currentFrame++;

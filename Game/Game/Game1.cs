@@ -17,11 +17,13 @@ namespace Game
         public GraphicsDeviceManager graphics;
         public SpriteBatch spriteBatch;
         private List<IController> controllerList;
+        private int delay;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            delay = 0;
         }
 
         protected override void Initialize()
@@ -52,11 +54,20 @@ namespace Game
 
         protected override void Update(GameTime gameTime)
         {
-            foreach (IController controller in controllerList)
-                controller.Update();
+            if (delay == 5)
+            {
+                foreach (IController controller in controllerList)
+                    controller.Update();
 
-            WorldManager.Update();
-            base.Update(gameTime);
+                WorldManager.Update();
+                base.Update(gameTime);
+                delay = 0;
+            }
+
+            else
+            {
+                delay++;
+            }
         }
 
         protected override void Draw(GameTime gameTime)

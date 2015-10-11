@@ -12,7 +12,7 @@ namespace Game.Mario
     {
         private IMario mario;
         private Game1 myGame;
-        private int timer = 1000;
+        private int timer = 200;
 
         public StarMario(IMario mario, Game1 game)
         {

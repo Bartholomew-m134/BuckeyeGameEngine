@@ -32,7 +32,7 @@ namespace Game.States
         public void Right()
         {
             Vector2 loc = mario.VectorCoordinates;
-            loc.X += 2;
+            loc.X += 4;
             mario.VectorCoordinates = (loc);
         }
 
@@ -43,18 +43,18 @@ namespace Game.States
 
         public void Down()
         {
-
+            mario.GetSetMarioState = new FireRightIdleState(mario, game);
         }
 
         public void Land()
         {
-            mario.GetSetMarioState = new FireRightIdleState(mario, game);
+            
         }
 
         public void Jump()
         {
             Vector2 loc = mario.VectorCoordinates;
-            loc.Y -= 2;
+            loc.Y -= 4;
             mario.VectorCoordinates = (loc);
         }
 

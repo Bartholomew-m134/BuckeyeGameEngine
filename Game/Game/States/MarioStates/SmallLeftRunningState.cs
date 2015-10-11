@@ -27,7 +27,7 @@ namespace Game.States
         public void Left()
         {
             Vector2 loc = WorldManager.GetMario().VectorCoordinates;
-            loc.X-=2;
+            loc.X-=4;
             WorldManager.GetMario().VectorCoordinates = loc;
         }
 

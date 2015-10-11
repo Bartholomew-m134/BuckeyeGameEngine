@@ -13,7 +13,7 @@ namespace Game.Items.ItemSprites
         private Texture2D Texture { get; set; }
         private int currentFrame;
         private int totalFrames;
-        private int delayBetweenFrames = 10;
+        private int delayBetweenFrames = 0;
         private int width = 17;
         private int height = 17;
         private int sourceX = 3;
@@ -30,7 +30,7 @@ namespace Game.Items.ItemSprites
 
         public void Update()
         {
-            if (delayBetweenFrames == 10)
+            if (delayBetweenFrames == 0)
             {
                 delayBetweenFrames = 0;
                 currentFrame++;

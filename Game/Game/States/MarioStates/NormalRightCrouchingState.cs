@@ -36,13 +36,13 @@ namespace Game.States
 
         public void Up()
         {
-            mario.GetSetMarioState = new NormalRightIdleState(mario, game);
+            
         }
 
         public void Down()
         {
             Vector2 loc = WorldManager.GetMario().VectorCoordinates;
-            loc.Y += 2;
+            loc.Y += 4;
             WorldManager.GetMario().VectorCoordinates = (loc);
         }
 
@@ -53,7 +53,7 @@ namespace Game.States
 
         public void Jump()
         {
-
+            mario.GetSetMarioState = new NormalRightIdleState(mario, game);
         }
 
         public void Flower()

@@ -27,7 +27,7 @@ namespace Game.States
         public void Left()
         {
             Vector2 loc = WorldManager.GetMario().VectorCoordinates;
-            loc.X -= 2;
+            loc.X -= 4;
             WorldManager.GetMario().VectorCoordinates = (loc);
         }
 
@@ -39,18 +39,18 @@ namespace Game.States
         public void Up()
         {
             Vector2 loc = WorldManager.GetMario().VectorCoordinates;
-            loc.Y -= 2;
+            loc.Y -= 4;
             WorldManager.GetMario().VectorCoordinates = (loc);
         }
 
         public void Down()
         {
-
+            mario.GetSetMarioState = new SmallLeftIdleState(mario, game);
         }
 
         public void Land()
         {
-            mario.GetSetMarioState = new SmallLeftIdleState(mario, game);
+            
         }
 
         public void Jump()
