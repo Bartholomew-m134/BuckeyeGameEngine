@@ -72,22 +72,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="MarioBlockCollisionTests\BigMarioBreakingBlockCollisionTests.cs" />
-    <Compile Include="MarioBlockCollisionTests\BigMarioBrickBlockCollisionTests.cs" />
-    <Compile Include="MarioBlockCollisionTests\BigMarioHiddenBlockCollisionTests.cs" />
-    <Compile Include="MarioBlockCollisionTests\BigMarioQuestionBlockCollisionTests.cs" />
-    <Compile Include="MarioBlockCollisionTests\BigMarioSolidBlockCollisionTests.cs" />
-    <Compile Include="MarioBlockCollisionTests\FireMarioBreakingBlockCollisionTests.cs" />
     <Compile Include="MarioBlockCollisionTests\FireMarioBrickBlockCollisionTests.cs" />
     <Compile Include="MarioBlockCollisionTests\FireMarioHiddenBlockCollisionTests.cs" />
     <Compile Include="MarioBlockCollisionTests\FireMarioQuestionBlockCollisionTests.cs" />
     <Compile Include="MarioBlockCollisionTests\FireMarioSolidBlockCollisionTests.cs" />
     <Compile Include="MarioBlockCollisionTests\SmallMarioBreakingBlockCollisionTests.cs" />
-    <Compile Include="MarioBlockCollisionTests\SmallMarioBrickBlockCollisionTests.cs" />
-    <Compile Include="MarioBlockCollisionTests\SmallMarioHiddenBlockCollisionTest.cs" />
-    <Compile Include="MarioBlockCollisionTests\SmallMarioQuestionBlockCollisionTests.cs" />
-    <Compile Include="MarioBlockCollisionTests\SmallMarioSolidBlockCollisionTests.cs" />
-    <Compile Include="Block Tests\SmallMarioBreakingBlockCollisionTests.cs" />
     <Compile Include="MarioItemCollisionTests\BigMarioCoinCollisionTests.cs" />
     <Compile Include="MarioItemCollisionTests\BigMarioFlowerCollisionTests.cs" />
     <Compile Include="MarioItemCollisionTests\BigMarioGreenMushrromCollisionTests.cs" />
