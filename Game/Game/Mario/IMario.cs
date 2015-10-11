@@ -54,5 +54,7 @@ namespace Game.Mario
 
         bool IsStar();
 
+        void ToIdle();
+
     }
 }

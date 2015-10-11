@@ -84,5 +84,10 @@ namespace Game.States
         {
             return true;
         }
+
+        public void ToIdle()
+        {
+
+        }
     }
 }
