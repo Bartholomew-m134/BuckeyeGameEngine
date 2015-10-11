@@ -47,7 +47,7 @@ namespace Game.Collisions.EnemyCollisionHandling
                 if (enemy.CanDealDamage)
                 {
                     mario.Damage();
-                }      
+                }
             }
         }
     }
