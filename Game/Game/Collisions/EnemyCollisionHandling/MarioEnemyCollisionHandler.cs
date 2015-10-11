@@ -11,7 +11,7 @@ namespace Game.Collisions.EnemyCollisionHandling
 {
     public class MarioEnemyCollisionHandler
     {
-        private MarioInstance mario;
+        private IMario mario;
         private IEnemy enemy;
         private ICollisionSide side;
         private CollisionData collision;
@@ -22,12 +22,12 @@ namespace Game.Collisions.EnemyCollisionHandling
             side = collision.collisionSide;
             if (collision.gameObjectA is IMario)
             {
-                mario = (MarioInstance)collision.gameObjectA;
+                mario = (IMario)collision.gameObjectA;
                 enemy = (IEnemy)collision.gameObjectB;
             }
             else
             {
-                mario = (MarioInstance)collision.gameObjectB;
+                mario = (IMario)collision.gameObjectB;
                 enemy = (IEnemy)collision.gameObjectA;
                 side = side.FlipSide();
             }
@@ -37,17 +37,22 @@ namespace Game.Collisions.EnemyCollisionHandling
         {
             collision.ResolveOverlap(mario, side);
 
-            if (side is TopSideCollision)
+            if (side is TopSideCollision && !mario.IsStar())
             {
                 enemy.CanDealDamage = false;
                 enemy.IsHit();
             }
-            else
+            else if(!mario.IsStar())
             {
                 if (enemy.CanDealDamage)
                 {
                     mario.Damage();
-                }      
+                }
+            }
+            else
+            {
+                enemy.CanDealDamage = false;
+                enemy.Flipped();
             }
         }
     }

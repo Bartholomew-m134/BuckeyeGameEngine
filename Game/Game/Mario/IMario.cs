@@ -52,5 +52,7 @@ namespace Game.Mario
 
         bool IsBig();
 
+        bool IsStar();
+
     }
 }

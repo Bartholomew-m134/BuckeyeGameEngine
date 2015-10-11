@@ -11,7 +11,6 @@ namespace Game.Mario
     {
         public IMario mario;
         public IMarioSprite sprite;
-        private Vector2 location;
         private Game1 myGame;
 
         int timer = 10000;
@@ -19,18 +18,17 @@ namespace Game.Mario
         {
             this.mario = mario;
             this.sprite = (IMarioSprite)mario.GetSetSprite;
-            this.location = mario.VectorCoordinates;
             this.myGame = game;
         }
 
         public Vector2 getLocation()
         {
-            return this.location;
+            return mario.VectorCoordinates;
         }
 
         public void setLocation(Vector2 loc)
         {
-            this.location = loc;
+            mario.VectorCoordinates = loc;
         }
 
         public void Damage()
@@ -55,7 +53,7 @@ namespace Game.Mario
 
         public void Draw()
         {
-            sprite.StarDraw(myGame.spriteBatch, location);
+            sprite.StarDraw(myGame.spriteBatch, mario.VectorCoordinates);
         }
 
         public void Left()
@@ -114,7 +112,7 @@ namespace Game.Mario
             set { mario.VectorCoordinates = value; }
         }
 
-        public new ISprite GetSetSprite
+        public ISprite GetSetSprite
         {
             get { return (ISprite)sprite; }
             set { sprite = (IMarioSprite)value; }
@@ -134,6 +132,11 @@ namespace Game.Mario
         public bool IsBig()
         {
             return mario.GetSetMarioState.IsBig();
+        }
+
+        public bool IsStar()
+        {
+            return true;
         }
     }
 }

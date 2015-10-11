@@ -135,5 +135,10 @@ namespace Game.Mario
         {
             return state.IsBig();
         }
+
+        public bool IsStar()
+        {
+            return false;
+        }
     }
 }

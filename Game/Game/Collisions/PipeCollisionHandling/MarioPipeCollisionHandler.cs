@@ -9,7 +9,7 @@ namespace Game.Collisions.PipeCollisionHandling
 {
     public class MarioPipeCollisionHandler
     {
-        private MarioInstance mario;
+        private IMario mario;
         private IPipe pipe;
         private ICollisionSide side;
         private CollisionData collision;
@@ -21,12 +21,12 @@ namespace Game.Collisions.PipeCollisionHandling
             side = collision.collisionSide;
             if (collision.gameObjectA is IMario)
             {
-                mario = (MarioInstance)collision.gameObjectA;
+                mario = (IMario)collision.gameObjectA;
                 pipe = (IPipe)collision.gameObjectB;
             }
             else
             {
-                mario = (MarioInstance)collision.gameObjectB;
+                mario = (IMario)collision.gameObjectB;
                 pipe = (IPipe)collision.gameObjectA;
                 side = side.FlipSide();
             }
