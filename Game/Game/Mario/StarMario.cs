@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Game.States;
 using Microsoft.Xna.Framework;
+using System.Diagnostics;
 
 namespace Game.Mario
 {
@@ -41,7 +42,6 @@ namespace Game.Mario
             {
                 WorldManager.SetMario(this.mario);
             }
-
             mario.Update();
         }
 
