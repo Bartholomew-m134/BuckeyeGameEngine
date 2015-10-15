@@ -23,8 +23,8 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
             MarioInstance testMario = new MarioInstance(game);
             MarioInstance expectedMario = new MarioInstance(game);
 
-            testMario.GetSetMarioState = new FireRightIdleState(testMario, game);
-            expectedMario.GetSetMarioState = new FireRightIdleState(expectedMario, game);
+            testMario.GetSetMarioState = new FireRightIdleState(testMario);
+            expectedMario.GetSetMarioState = new FireRightIdleState(expectedMario);
 
             expectedMario.Damage();
 
@@ -48,8 +48,8 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
             IMario testMario = new MarioInstance(game);
             IMario expectedMario = new MarioInstance(game);
 
-            testMario.GetSetMarioState = new FireRightIdleState(testMario, game);
-            expectedMario.GetSetMarioState = new FireRightIdleState(expectedMario, game);
+            testMario.GetSetMarioState = new FireRightIdleState(testMario);
+            expectedMario.GetSetMarioState = new FireRightIdleState(expectedMario);
 
             expectedMario.Damage();
 
@@ -94,7 +94,7 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
             IMario testMario = new MarioInstance(game);
 
             GreenKoopa testGreenKoopa = new GreenKoopa(game);
-            testMario.GetSetMarioState = new FireRightIdleState(testMario, game);
+            testMario.GetSetMarioState = new FireRightIdleState(testMario);
             GreenKoopa expectedGreenKoopa = new GreenKoopa(game);
 
             expectedGreenKoopa.IsHit();

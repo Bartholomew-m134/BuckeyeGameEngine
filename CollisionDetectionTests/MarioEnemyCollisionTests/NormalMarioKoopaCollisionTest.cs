@@ -23,8 +23,8 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
             MarioInstance testMario = new MarioInstance(game);
             MarioInstance expectedMario = new MarioInstance(game);
 
-            testMario.GetSetMarioState = new NormalRightIdleState(testMario, game);
-            expectedMario.GetSetMarioState = new NormalRightIdleState(expectedMario, game);
+            testMario.GetSetMarioState = new NormalRightIdleState(testMario);
+            expectedMario.GetSetMarioState = new NormalRightIdleState(expectedMario);
 
             expectedMario.Damage();
 
@@ -48,8 +48,8 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
             IMario testMario = new MarioInstance(game);
             IMario expectedMario = new MarioInstance(game);
 
-            testMario.GetSetMarioState = new NormalRightIdleState(testMario, game);
-            expectedMario.GetSetMarioState = new NormalRightIdleState(expectedMario, game);
+            testMario.GetSetMarioState = new NormalRightIdleState(testMario);
+            expectedMario.GetSetMarioState = new NormalRightIdleState(expectedMario);
 
             expectedMario.Damage();
 
@@ -73,8 +73,8 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
             IMario testMario = new MarioInstance(game);
             IMario expectedMario = new MarioInstance(game);
 
-            testMario.GetSetMarioState = new NormalRightIdleState(testMario, game);
-            expectedMario.GetSetMarioState = new NormalRightIdleState(expectedMario, game);
+            testMario.GetSetMarioState = new NormalRightIdleState(testMario);
+            expectedMario.GetSetMarioState = new NormalRightIdleState(expectedMario);
 
             expectedMario.Damage();
 
@@ -100,7 +100,7 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
             GreenKoopa testGreenKoopa = new GreenKoopa(game);
             GreenKoopa expectedGreenKoopa = new GreenKoopa(game);
 
-            testMario.GetSetMarioState = new NormalRightIdleState(testMario, game);
+            testMario.GetSetMarioState = new NormalRightIdleState(testMario);
 
             expectedGreenKoopa.IsHit();
 

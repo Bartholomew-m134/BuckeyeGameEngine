@@ -98,8 +98,6 @@ namespace CollisionDetectionTests
             expectedMario.VectorCoordinates = new Vector2(0, 15);
 
             Block testBlock = new Block(Block.Type.BrickBlock, game);
-            Block expectedBlock = new Block(Block.Type.BrickBlock, game);
-            expectedBlock.Disappear();
 
             ICollisionSide side = new BottomSideCollision();
             CollisionData collision = new CollisionData(testMario, testBlock, side);
