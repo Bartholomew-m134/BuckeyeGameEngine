@@ -5,29 +5,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Game.States.BlockStates
+namespace Game.Blocks.BlockStates
 {
-    public class HiddenBlockState : IBlockState
+    public class BreakingBlockState : IBlockState
     {
         private IBlock block;
 
-        public HiddenBlockState(IBlock block)
+        public BreakingBlockState(IBlock block)
         {
             this.block = block;
-            block.GetSetSprite = TileSpriteFactory.CreateHiddenBlockSprite();
+            block.GetSetSprite = TileSpriteFactory.CreateBreakingBlockSprite();
         }
 
         public void Update()
         {
             block.GetSetSprite.Update();
         }
+
         public void Disappear()
         {
+            block.State = new NullBlockState(block);
         }
 
         public void GetUsed()
         {
-            block.State = new UsedBlockState(block);
+            
         }
     }
 }

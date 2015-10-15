@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Game.Mario;
 using Game.Blocks;
-using Game.States.BlockStates;
+using Game.Blocks.BlockStates;
 using System.Diagnostics;
 
 namespace Game.Collisions.BlockCollisionHandling

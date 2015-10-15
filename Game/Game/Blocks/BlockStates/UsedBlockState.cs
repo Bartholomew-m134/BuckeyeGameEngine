@@ -5,16 +5,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Game.States.BlockStates
+namespace Game.Blocks.BlockStates
 {
-    public class QuestionBlockState : IBlockState
+    public class UsedBlockState : IBlockState
     {
         private IBlock block;
 
-        public QuestionBlockState(IBlock block)
+        public UsedBlockState(IBlock block)
         {
             this.block = block;
-            block.GetSetSprite = TileSpriteFactory.CreateQuestionBlockSprite();
+            block.GetSetSprite = TileSpriteFactory.CreateUsedBlockSprite();
         }
 
         public void Update()
@@ -24,11 +24,12 @@ namespace Game.States.BlockStates
 
         public void Disappear()
         {
+
         }
 
         public void GetUsed()
         {
-            block.State = new UsedBlockState(block);
+
         }
     }
 }

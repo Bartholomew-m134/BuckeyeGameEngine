@@ -1,4 +1,4 @@
-﻿using Game.States.BlockStates;
+﻿using Game.Blocks.BlockStates;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;

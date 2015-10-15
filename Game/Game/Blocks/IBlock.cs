@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Game;
 using Microsoft.Xna.Framework;
-using Game.States.BlockStates;
+using Game.Blocks.BlockStates;
 
 namespace Game.Blocks
 {

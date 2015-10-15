@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Game.States.BlockStates
+namespace Game.Blocks.BlockStates
 {
     public class NullBlockState : IBlockState
     {

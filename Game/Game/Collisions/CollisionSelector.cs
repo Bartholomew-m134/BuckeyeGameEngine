@@ -7,7 +7,7 @@ using Game.Enemies;
 using Game.Blocks;
 using Game.Items;
 using Game.Pipes;
-using Game.States.BlockStates;
+using Game.Blocks.BlockStates;
 using Game.Collisions.EnemyCollisionHandling;
 using Game.Collisions.BlockCollisionHandling;
 using Game.Collisions.ItemCollisionHandling;
