@@ -6,7 +6,7 @@ using Game;
 using Microsoft.Xna.Framework;
 using Game.Blocks.BlockStates;
 
-namespace Game.Blocks
+namespace Game.Interfaces
 {
     public interface IBlock : IGameObject
     {

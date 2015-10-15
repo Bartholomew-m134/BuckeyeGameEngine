@@ -12,6 +12,7 @@ using Game.Collisions.EnemyCollisionHandling;
 using Game.Collisions.BlockCollisionHandling;
 using Game.Collisions.ItemCollisionHandling;
 using Game.Collisions.PipeCollisionHandling;
+using Game.Interfaces;
 
 namespace Game.Collisions
 {
