@@ -22,8 +22,8 @@ namespace CollisionDetectionTests
             MarioInstance expectedMario = new MarioInstance(game);
             expectedMario.VectorCoordinates = new Vector2(-12, 0);
 
-            Block testBlock = new Block(1, game);
-            Block expectedBlock = new Block(1, game);
+            Block testBlock = new Block(Block.Type.BrickBlock, game);
+            Block expectedBlock = new Block(Block.Type.BrickBlock, game);
 
             ICollisionSide side = new LeftSideCollision();
             CollisionData collision = new CollisionData(testMario, testBlock, side);
@@ -47,8 +47,8 @@ namespace CollisionDetectionTests
             MarioInstance expectedMario = new MarioInstance(game);
             expectedMario.VectorCoordinates = new Vector2(12, 0);
 
-            Block testBlock = new Block(1, game);
-            Block expectedBlock = new Block(1, game);
+            Block testBlock = new Block(Block.Type.BrickBlock, game);
+            Block expectedBlock = new Block(Block.Type.BrickBlock, game);
 
             ICollisionSide side = new RightSideCollision();
             CollisionData collision = new CollisionData(testMario, testBlock, side);
@@ -72,8 +72,8 @@ namespace CollisionDetectionTests
             MarioInstance expectedMario = new MarioInstance(game);
             expectedMario.VectorCoordinates = new Vector2(0, -15);
 
-            Block testBlock = new Block(1, game);
-            Block expectedBlock = new Block(1, game);
+            Block testBlock = new Block(Block.Type.BrickBlock, game);
+            Block expectedBlock = new Block(Block.Type.BrickBlock, game);
 
             ICollisionSide side = new TopSideCollision();
             CollisionData collision = new CollisionData(testMario, testBlock, side);
@@ -97,8 +97,8 @@ namespace CollisionDetectionTests
             MarioInstance expectedMario = new MarioInstance(game);
             expectedMario.VectorCoordinates = new Vector2(0, 15);
 
-            Block testBlock = new Block(1, game);
-            Block expectedBlock = new Block(1, game);
+            Block testBlock = new Block(Block.Type.BrickBlock, game);
+            Block expectedBlock = new Block(Block.Type.BrickBlock, game);
 
             ICollisionSide side = new BottomSideCollision();
             CollisionData collision = new CollisionData(testMario, testBlock, side);

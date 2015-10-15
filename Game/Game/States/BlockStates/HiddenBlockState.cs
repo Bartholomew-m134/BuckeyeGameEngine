@@ -9,17 +9,17 @@ namespace Game.States.BlockStates
 {
     public class HiddenBlockState : IBlockState
     {
-        private Block block;
+        private IBlock block;
 
-        public HiddenBlockState(Block block)
+        public HiddenBlockState(IBlock block)
         {
             this.block = block;
-            block.sprite = TileSpriteFactory.CreateHiddenBlockSprite();
+            block.GetSetSprite = TileSpriteFactory.CreateHiddenBlockSprite();
         }
 
         public void Update()
         {
-            block.sprite.Update();
+            block.GetSetSprite.Update();
         }
         public void Disappear()
         {
@@ -27,7 +27,7 @@ namespace Game.States.BlockStates
 
         public void GetUsed()
         {
-            block.blockState = new UsedBlockState(block);
+            block.State = new UsedBlockState(block);
         }
     }
 }

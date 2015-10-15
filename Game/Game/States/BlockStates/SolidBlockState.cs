@@ -9,22 +9,22 @@ namespace Game.States.BlockStates
 {
     public class SolidBlockState : IBlockState
     {
-        private Block block;
+        private IBlock block;
 
-        public SolidBlockState(Block block)
+        public SolidBlockState(IBlock block)
         {
             this.block = block;
-            block.sprite = TileSpriteFactory.CreateSolidBlockSprite();
+            block.GetSetSprite = TileSpriteFactory.CreateSolidBlockSprite();
         }
 
         public void Update()
         {
-            block.sprite.Update();
+            block.GetSetSprite.Update();
         }
 
         public void Disappear()
         {
-            block.blockState = new NullBlockState(block);
+            block.State = new NullBlockState(block);
         }
 
         public void GetUsed()

@@ -89,15 +89,15 @@ namespace Game
                     else if (objectName.Equals("Pipe"))
                         gameObject = new Pipe(game);
                     else if (objectName.Equals("SolidBlock"))
-                        gameObject = new Block(4, game);
+                        gameObject = new Block(Block.Type.SolidBlock, game);
                     else if (objectName.Equals("InvisBlock"))
-                        gameObject = new Block(2, game);
+                        gameObject = new Block(Block.Type.HiddenBlock, game);
                     else if (objectName.Equals("QuestionBlock"))
-                        gameObject = new Block(3, game);
+                        gameObject = new Block(Block.Type.QuestionBlock, game);
                     else if (objectName.Equals("BrickBlock"))
-                        gameObject = new Block(1, game);
+                        gameObject = new Block(Block.Type.BrickBlock, game);
                     else if (objectName.Equals("BreakingBlock"))
-                        gameObject = new Block(5, game);
+                        gameObject = new Block(Block.Type.BreakingBlock, game);
                     else if (objectName.Equals("Pipe"))
                         gameObject = new Pipe(game);
                     else if (objectName.Equals("BigHill"))

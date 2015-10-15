@@ -9,39 +9,17 @@ namespace Game.Blocks
 {
     public class Block : IBlock
     {
-        public IBlockState blockState;
-        public ISprite sprite;
+        public enum Type {NullBlock, BrickBlock, HiddenBlock, QuestionBlock, SolidBlock, BreakingBlock};
+        
+        private IBlockState blockState;
+        private ISprite sprite;
         private Game1 game;
-        public int blockType;
         private Vector2 location;
 
-        public Block(int blockType, Game1 game)
+        public Block(Type blockType, Game1 game)
         {
             this.game = game;
-            this.blockType = blockType;
-
-            switch (blockType)
-            {
-                case 1:
-                    blockState = new BrickBlockState(this);
-                    break;
-                case 2:
-                    blockState = new HiddenBlockState(this);
-                    break;
-                case 3:
-                    blockState = new QuestionBlockState(this);
-                    break;
-                case 4:
-                    blockState = new SolidBlockState(this);
-                    break;
-                case 5:
-                    blockState = new BreakingBlockState(this);
-                    break;
-                case 6:
-                    blockState = new NullBlockState(this);
-                    break;
-
-            }
+            SetInitialState(blockType);           
         }
 
         public void Update()
@@ -51,31 +29,7 @@ namespace Game.Blocks
 
         public void Draw()
         {
-            switch (blockType)
-            {
-                case 1:
-                    sprite.Draw(game.spriteBatch, location);
-                    
-                    break;
-                case 2:
-                    sprite.Draw(game.spriteBatch, location);
-                
-                    break;
-                case 3:
-                    sprite.Draw(game.spriteBatch, location);
-
-                    break;
-                case 4:
-                    sprite.Draw(game.spriteBatch, location);
-                    break;
-                case 5:
-                    sprite.Draw(game.spriteBatch, location);
-                    break;
-                case 6:
-                    blockState = new NullBlockState(this);
-                    break;
-            }
-           
+            sprite.Draw(game.spriteBatch, location);
         }
 
         public void Disappear()
@@ -99,6 +53,37 @@ namespace Game.Blocks
         {
             get { return sprite; }
             set { sprite = value; }
+        }
+
+        public IBlockState State
+        {
+            get { return blockState; }
+            set { blockState = value; }
+        }
+
+        private void SetInitialState(Type blockType)
+        {
+            switch (blockType)
+            {
+                case Type.BrickBlock:
+                    blockState = new BrickBlockState(this);
+                    break;
+                case Type.HiddenBlock:
+                    blockState = new HiddenBlockState(this);
+                    break;
+                case Type.QuestionBlock:
+                    blockState = new QuestionBlockState(this);
+                    break;
+                case Type.SolidBlock:
+                    blockState = new SolidBlockState(this);
+                    break;
+                case Type.BreakingBlock:
+                    blockState = new BreakingBlockState(this);
+                    break;
+                case Type.NullBlock:
+                    blockState = new NullBlockState(this);
+                    break;
+            }
         }
     }
 }

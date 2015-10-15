@@ -9,17 +9,17 @@ namespace Game.States.BlockStates
 {
     public class UsedBlockState : IBlockState
     {
-        private Block block;
+        private IBlock block;
 
-        public UsedBlockState(Block block)
+        public UsedBlockState(IBlock block)
         {
             this.block = block;
-            block.sprite = TileSpriteFactory.CreateUsedBlockSprite();
+            block.GetSetSprite = TileSpriteFactory.CreateUsedBlockSprite();
         }
 
         public void Update()
         {
-            block.sprite.Update();
+            block.GetSetSprite.Update();
         }
 
         public void Disappear()

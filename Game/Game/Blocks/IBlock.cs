@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using Game;
 using Microsoft.Xna.Framework;
+using Game.States.BlockStates;
 
 namespace Game.Blocks
 {
     public interface IBlock : IGameObject
     {
-          void Disappear();
+        IBlockState State { get; set; }
 
+        void Disappear();
 
-          void GetUsed();
+        void GetUsed();
     }
 }

@@ -21,8 +21,8 @@ namespace CollisionDetectionTests
             MarioInstance testMario = new MarioInstance(game);
             MarioInstance expectedMario = new MarioInstance(game);
 
-            Block testBlock = new Block(2, game);
-            Block expectedBlock = new Block(2, game);
+            Block testBlock = new Block(Block.Type.HiddenBlock, game);
+            Block expectedBlock = new Block(Block.Type.HiddenBlock, game);
 
             ICollisionSide side = new LeftSideCollision();
             CollisionData collision = new CollisionData(testMario, testBlock, side);
@@ -45,8 +45,8 @@ namespace CollisionDetectionTests
             MarioInstance testMario = new MarioInstance(game);
             MarioInstance expectedMario = new MarioInstance(game);
 
-            Block testBlock = new Block(2, game);
-            Block expectedBlock = new Block(2, game);
+            Block testBlock = new Block(Block.Type.HiddenBlock, game);
+            Block expectedBlock = new Block(Block.Type.HiddenBlock, game);
 
             ICollisionSide side = new RightSideCollision();
             CollisionData collision = new CollisionData(testMario, testBlock, side);
@@ -69,8 +69,8 @@ namespace CollisionDetectionTests
             MarioInstance testMario = new MarioInstance(game);
             MarioInstance expectedMario = new MarioInstance(game);
 
-            Block testBlock = new Block(2, game);
-            Block expectedBlock = new Block(2, game);
+            Block testBlock = new Block(Block.Type.HiddenBlock, game);
+            Block expectedBlock = new Block(Block.Type.HiddenBlock, game);
 
             ICollisionSide side = new TopSideCollision();
             CollisionData collision = new CollisionData(testMario, testBlock, side);
@@ -93,8 +93,8 @@ namespace CollisionDetectionTests
             MarioInstance testMario = new MarioInstance(game);
             MarioInstance expectedMario = new MarioInstance(game);
             expectedMario.VectorCoordinates = new Vector2(0, 15);
-            Block testBlock = new Block(2, game);
-            Block expectedBlock = new Block(2, game);
+            Block testBlock = new Block(Block.Type.HiddenBlock, game);
+            Block expectedBlock = new Block(Block.Type.HiddenBlock, game);
             expectedBlock.GetUsed();
 
             ICollisionSide side = new BottomSideCollision();
