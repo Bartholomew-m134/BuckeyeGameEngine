@@ -17,8 +17,8 @@ namespace Game.Mario
 
         public MarioInstance(Game1 game)
         {
-            
-            state = new SmallRightIdleState(this, game);
+
+            state = new SmallRightIdleState(this);
             myGame = game;
   
         }
@@ -82,7 +82,8 @@ namespace Game.Mario
 
         public void Star()
         {
-            state.Star();
+            //state.Star();
+            new StarMario(this, myGame);
         }
 
 

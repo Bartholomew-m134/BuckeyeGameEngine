@@ -11,12 +11,10 @@ namespace Game.States
     {
 
         private IMario mario;
-        private Game1 game;
 
-        public DeadMarioState(IMario mario, Game1 game)
+        public DeadMarioState(IMario mario)
         {
             this.mario = mario;
-            this.game = game;
             mario.GetSetSprite = SpriteFactories.MarioSpriteFactory.CreateDeadSprite();
         }
 

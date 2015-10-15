@@ -11,12 +11,10 @@ namespace Game.States
     {
 
         private IMario mario;
-        private Game1 game;
 
-        public SmallRightJumpingState(IMario mario, Game1 game)
+        public SmallRightJumpingState(IMario mario)
         {
             this.mario = mario;
-            this.game = game;
             mario.GetSetSprite = SpriteFactories.MarioSpriteFactory.CreateSmallRightJumpingSprite();
         }
         public void Update()
@@ -26,14 +24,14 @@ namespace Game.States
 
         public void Left()
         {
-            mario.GetSetMarioState = new SmallLeftJumpingState(mario, game);
+            mario.GetSetMarioState = new SmallLeftJumpingState(mario);
         }
 
         public void Right()
         {
-            Vector2 loc = WorldManager.GetMario().VectorCoordinates;
+            Vector2 loc = mario.VectorCoordinates;
             loc.X += 4;
-            WorldManager.GetMario().VectorCoordinates = (loc);
+            mario.VectorCoordinates = loc;
         }
 
         public void Up()
@@ -43,7 +41,7 @@ namespace Game.States
 
         public void Down()
         {
-            mario.GetSetMarioState = new SmallRightIdleState(mario, game);
+            mario.GetSetMarioState = new SmallRightIdleState(mario);
         }
 
         public void Land()
@@ -53,34 +51,34 @@ namespace Game.States
 
         public void Jump()
         {
-            Vector2 loc = WorldManager.GetMario().VectorCoordinates;
+            Vector2 loc = mario.VectorCoordinates;
             loc.Y -= 4;
-            WorldManager.GetMario().VectorCoordinates = loc;
+            mario.VectorCoordinates = loc;
         }
 
         public void Flower()
         {
-            mario.GetSetMarioState = new FireRightJumpingState(mario, game);
+            mario.GetSetMarioState = new FireRightJumpingState(mario);
         }
 
         public void Mushroom()
         {
-            mario.GetSetMarioState = new NormalRightJumpingState(mario, game);
+            mario.GetSetMarioState = new NormalRightJumpingState(mario);
         }
 
         public void Star()
         {
-            mario = new StarMario(mario, game);
+            //mario = new StarMario(mario);
         }
 
         public void Damage()
         {
-            mario.GetSetMarioState = new DeadMarioState(mario, game);
+            mario.GetSetMarioState = new DeadMarioState(mario);
         }
 
         public void Die()
         {
-            mario.GetSetMarioState = new DeadMarioState(mario, game);
+            mario.GetSetMarioState = new DeadMarioState(mario);
         }
         public bool IsBig()
         {

@@ -10,12 +10,10 @@ namespace Game.States
     {
 
         private IMario mario;
-        private Game1 game;
 
-        public NormalLeftIdleState(IMario mario, Game1 game)
+        public NormalLeftIdleState(IMario mario)
         {
             this.mario = mario;
-            this.game = game;
             mario.GetSetSprite = SpriteFactories.MarioSpriteFactory.CreateNormalLeftIdleSprite();
         }
         public void Update()
@@ -25,12 +23,12 @@ namespace Game.States
 
         public void Left()
         {
-            mario.GetSetMarioState = new NormalLeftRunningState(mario, game);
+            mario.GetSetMarioState = new NormalLeftRunningState(mario);
         }
 
         public void Right()
         {
-            mario.GetSetMarioState = new NormalRightIdleState(mario, game);
+            mario.GetSetMarioState = new NormalRightIdleState(mario);
         }
 
         public void Up()
@@ -40,7 +38,7 @@ namespace Game.States
 
         public void Down()
         {
-            mario.GetSetMarioState = new NormalLeftCrouchingState(mario, game);
+            mario.GetSetMarioState = new NormalLeftCrouchingState(mario);
         }
 
         public void Land()
@@ -50,12 +48,12 @@ namespace Game.States
 
         public void Jump()
         {
-            mario.GetSetMarioState = new NormalLeftJumpingState(mario, game);
+            mario.GetSetMarioState = new NormalLeftJumpingState(mario);
         }
 
         public void Flower()
         {
-            mario.GetSetMarioState = new FireLeftIdleState(mario, game);
+            mario.GetSetMarioState = new FireLeftIdleState(mario);
 
         }
 
@@ -66,17 +64,17 @@ namespace Game.States
 
         public void Star()
         {
-            mario = new StarMario(mario, game);
+            //mario = new StarMario(mario);
         }
 
         public void Damage()
         {
-            mario.GetSetMarioState = new SmallLeftIdleState(mario, game);
+            mario.GetSetMarioState = new SmallLeftIdleState(mario);
         }
 
         public void Die()
         {
-            mario.GetSetMarioState = new DeadMarioState(mario, game);
+            mario.GetSetMarioState = new DeadMarioState(mario);
         }
         public bool IsBig()
         {

@@ -10,12 +10,10 @@ namespace Game.States
     {
 
         private IMario mario;
-        private Game1 game;
 
-        public FireRightIdleState(IMario mario, Game1 game)
+        public FireRightIdleState(IMario mario)
         {
             this.mario = mario;
-            this.game = game;
             mario.GetSetSprite = SpriteFactories.MarioSpriteFactory.CreateFireRightIdleSprite();
         }
         public void Update()
@@ -25,12 +23,12 @@ namespace Game.States
 
         public void Left()
         {
-            mario.GetSetMarioState = new FireLeftIdleState(mario, game);
+            mario.GetSetMarioState = new FireLeftIdleState(mario);
         }
 
         public void Right()
         {
-            mario.GetSetMarioState = new FireRightRunningState(mario, game);
+            mario.GetSetMarioState = new FireRightRunningState(mario);
         }
 
         public void Up()
@@ -40,7 +38,7 @@ namespace Game.States
 
         public void Down()
         {
-            mario.GetSetMarioState = new FireRightCrouchingState(mario, game);
+            mario.GetSetMarioState = new FireRightCrouchingState(mario);
         }
 
         public void Land()
@@ -50,7 +48,7 @@ namespace Game.States
 
         public void Jump()
         {
-            mario.GetSetMarioState = new FireRightJumpingState(mario, game);
+            mario.GetSetMarioState = new FireRightJumpingState(mario);
         }
 
         public void Flower()
@@ -64,17 +62,17 @@ namespace Game.States
 
         public void Star()
         {
-            mario = new StarMario(mario, game);
+            //mario = new StarMario(mario);
         }
 
         public void Damage()
         {
-            mario.GetSetMarioState = new NormalRightIdleState(mario, game);
+            mario.GetSetMarioState = new NormalRightIdleState(mario);
         }
 
         public void Die()
         {
-            mario.GetSetMarioState = new DeadMarioState(mario, game);
+            mario.GetSetMarioState = new DeadMarioState(mario);
         }
         public bool IsBig()
         {
