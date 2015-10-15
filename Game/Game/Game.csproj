@@ -204,7 +204,7 @@
     <Compile Include="Blocks\BlockStates\BreakingBlockState.cs" />
     <Compile Include="Blocks\BlockStates\BrickBlockState.cs" />
     <Compile Include="Blocks\BlockStates\HiddenBlockState.cs" />
-    <Compile Include="Blocks\BlockStates\IBlockState.cs" />
+    <Compile Include="Interfaces\IBlockState.cs" />
     <Compile Include="Blocks\BlockStates\NullBlockState.cs" />
     <Compile Include="Blocks\BlockStates\QuestionBlockState.cs" />
     <Compile Include="Blocks\BlockStates\SolidBlockState.cs" />
