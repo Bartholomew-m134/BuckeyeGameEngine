@@ -10,78 +10,48 @@ namespace Game
 {
     public static class WorldManager
     {
-        private static List<IGameObject> gameObjects;
-        private static List<CollisionData> collisionList;
+        private static List<IGameObject> objectList;
         private static string currentFileName;
         private static Game1 currentGame;
 
         public static void LoadListFromFile(string filename, Game1 game)
         {
-            gameObjects = LevelLoader.Load(filename, game);
+            objectList = LevelLoader.Load(filename, game);
             currentFileName = filename;
             currentGame = game;
         }
 
         public static void Update()
         {
-            for (int i = 0; i < gameObjects.Count; i++)
+            for (int i = objectList.Count - 1; i >= 0; i--)
             {
-                gameObjects[i].Update();
-            }            
-
-            collisionList = new List<CollisionData>();
-
-            for (int i = 0; i < gameObjects.Count; i++)
-            {
-                for (int j = i + 1; j < gameObjects.Count; j++)
-                {
-                    ICollisionSide side = CollisionDetector.DetectCollision(gameObjects[i], gameObjects[j]);
-
-                    if (side != null)
-                    {
-                        collisionList.Add(new CollisionData(gameObjects[i], gameObjects[j], side));
-                    }
-                }
+                    objectList[i].Update();
             }
 
-            foreach (CollisionData collision in collisionList)
-            {
-                CollisionSelector.HandleCollision(collision);
-            }
+            CollisionManager.Update(objectList);
         }
 
         public static void Draw()
         {
-            foreach (IGameObject gameObject in gameObjects)
+            foreach (IGameObject gameObject in objectList)
                 gameObject.Draw(); 
         }
 
         public static IMario GetMario()
         {
-            IGameObject mario = null;
-
-            foreach (IGameObject gameObject in gameObjects)
-            {
-                if (gameObject is IMario)
-                {
-                    mario = gameObject;
-                    break;
-                }
-            }
-
-            return (IMario)mario;
+            return (IMario)objectList.Find(i => i is IMario);
         }
 
         public static void SetMario(IMario mario)
         {
-            for (int i = 0; i < gameObjects.Count; i++)
-            {
-                if (gameObjects[i] is IMario)
-                {
-                    gameObjects[i] = mario;
-                    break;
-                }
-            }
+            int index = objectList.FindIndex(i => i is IMario);
+            objectList[index] = mario;
+        }
+
+        public static void FreeObject(IGameObject referenceObject)
+        {
+            //IGameObject gameObject = objectList.Find(i => object.ReferenceEquals(i, referenceObject));
+            objectList.Remove(referenceObject);
         }
 
         public static void ResetToDefault()

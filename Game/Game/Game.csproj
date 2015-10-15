@@ -92,6 +92,7 @@
     <Compile Include="Blocks\BlockSprites\QuestionBlockSprite.cs" />
     <Compile Include="Blocks\BlockSprites\SolidBlockSprite.cs" />
     <Compile Include="Blocks\BlockSprites\UsedBlockSprite.cs" />
+    <Compile Include="Collisions\CollisionManager.cs" />
     <Compile Include="Interfaces\IBlock.cs" />
     <Compile Include="Collisions\BlockCollisionHandling\MarioBlockCollisionHandler.cs" />
     <Compile Include="Collisions\BottomSideCollision.cs" />

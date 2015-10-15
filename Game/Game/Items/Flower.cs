@@ -12,12 +12,11 @@ namespace Game.Items
         private Game1 myGame;
         private ISprite flowerSprite;
         private Vector2 location;
-        private bool isVisible;
+
         public Flower(Game1 game)
         {
             myGame = game;
             flowerSprite = ItemsSpriteFactory.CreateFlowerSprite();
-            isVisible = true;
         }
 
         public void Update()
@@ -26,16 +25,13 @@ namespace Game.Items
         }
 
         public void Draw() {
-            if (isVisible)
-            {
             flowerSprite.Draw(myGame.spriteBatch, location);
-        }
         }
 
         public void Disappear() {
-            isVisible = false;
-            location.Y -= 1000;
+            WorldManager.FreeObject(this);
         }
+
         public Vector2 VectorCoordinates
         {
             get { return location; }

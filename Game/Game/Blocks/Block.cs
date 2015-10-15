@@ -36,7 +36,7 @@ namespace Game.Blocks
         public void Disappear()
         {
             blockState.Disappear();
-            location = new Vector2(-1000,-1000);
+            WorldManager.FreeObject(this);
         }
 
         public void GetUsed()
