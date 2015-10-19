@@ -6,6 +6,7 @@ using Game.Mario;
 using Game.Blocks;
 using Game.Blocks.BlockStates;
 using System.Diagnostics;
+using Game.Interfaces;
 
 namespace Game.Collisions.BlockCollisionHandling
 {

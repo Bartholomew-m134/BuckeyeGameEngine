@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 
-namespace Game.Enemies
+namespace Game.Interfaces
 {
     public interface IEnemy : IGameObject
     {

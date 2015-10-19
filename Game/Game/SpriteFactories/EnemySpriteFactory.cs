@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Game.Enemies.GoombaClasses.GoombaSprites;
 using Game.Enemies.KoopaClasses.GreenKoopaSprites;
+using Game.Interfaces;
 
 namespace Game.SpriteFactories
 {

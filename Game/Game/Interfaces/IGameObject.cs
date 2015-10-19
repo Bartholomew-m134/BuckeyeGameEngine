@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Game.Interfaces;
 
-namespace Game
+namespace Game.Interfaces
 {
     public interface IGameObject
     {

@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using Game.Interfaces;
 
-namespace Game
+namespace Game.Interfaces
 {
     public interface IMarioSprite : ISprite
     {

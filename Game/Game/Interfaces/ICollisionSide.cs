@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Game.Collisions
+namespace Game.Interfaces
 {
     public interface ICollisionSide
     {

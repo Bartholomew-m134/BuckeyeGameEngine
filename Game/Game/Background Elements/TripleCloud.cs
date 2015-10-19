@@ -1,4 +1,5 @@
-﻿using Game.SpriteFactories;
+﻿using Game.Interfaces;
+using Game.SpriteFactories;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;

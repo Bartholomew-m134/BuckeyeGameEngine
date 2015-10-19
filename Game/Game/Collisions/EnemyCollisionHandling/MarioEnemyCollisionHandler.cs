@@ -6,6 +6,7 @@ using Game.Mario;
 using Game.Enemies;
 using Game.Enemies.GoombaClasses;
 using Game.Enemies.KoopaClasses;
+using Game.Interfaces;
 
 namespace Game.Collisions.EnemyCollisionHandling
 {

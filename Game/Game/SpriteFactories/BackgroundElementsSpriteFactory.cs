@@ -1,4 +1,5 @@
 ﻿using Game.Background_Elements.BackgroundElementSprites;
+using Game.Interfaces;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;

@@ -12,6 +12,7 @@ using System.Text;
 using System.IO;
 using Game.Background_Elements;
 using Microsoft.Xna.Framework;
+using Game.Interfaces;
 
 namespace Game
 {

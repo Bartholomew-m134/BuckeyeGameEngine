@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Game.Mario;
 using Game.Pipes;
+using Game.Interfaces;
 
 namespace Game.Collisions.PipeCollisionHandling
 {
