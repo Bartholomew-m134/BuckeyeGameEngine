@@ -1,0 +1,14 @@
+﻿Author:							Jackson Luken
+Date :							10/19/15
+Sprint:							3
+Reviewed file:					WorldManager.cs
+File Author:					Matt Bartholomew
+Code Quality:
+	The code in the world manager is very succinct. There is a seemingly high
+	amount of strong coupling, but there is only what is absolutely necessary due to
+	the nature of a worldManager class. Overall the code is very well refactored for its
+	purposes.
+Hypothetical Change:
+	One change could be if you wanted to be able to call and alter different objects aside 
+	from mario, and that could be easily added/implemented by repeating what was done for mario but for 
+	other objects such as enemy or items.

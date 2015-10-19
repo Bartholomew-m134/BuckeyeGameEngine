@@ -13,13 +13,11 @@ namespace Game.Background_Elements
         private Game1 myGame;
         private ISprite tripleCloudSprite;
         private Vector2 location;
-        private bool isVisible;
 
         public TripleCloud(Game1 game)
         {
             myGame = game;
             tripleCloudSprite = BackgroundElementsSpriteFactory.CreateTripleCloudSprite();
-            isVisible = true;
         }
 
         public void Update()
@@ -28,16 +26,11 @@ namespace Game.Background_Elements
         }
        
         public void Draw() {
-            if (isVisible)
-            {
+            
                 tripleCloudSprite.Draw(myGame.spriteBatch, location);
-            }
+            
         }
 
-        public void Disappear() {
-            isVisible = false;
-            location.Y -= 1000;
-        }
 
         public Vector2 VectorCoordinates
         {

@@ -51,7 +51,6 @@ namespace Game
 
         public static void FreeObject(IGameObject referenceObject)
         {
-            //IGameObject gameObject = objectList.Find(i => object.ReferenceEquals(i, referenceObject));
             objectList.Remove(referenceObject);
         }
 

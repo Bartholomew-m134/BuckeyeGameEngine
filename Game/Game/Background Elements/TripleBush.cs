@@ -14,13 +14,13 @@ namespace Game.Background_Elements
         private Game1 myGame;
         private ISprite tripleBushSprite;
         private Vector2 location;
-        private bool isVisible;
+
 
         public TripleBush(Game1 game)
         {
             myGame = game;
             tripleBushSprite = BackgroundElementsSpriteFactory.CreateTripleBushSprite();
-            isVisible = true;
+
         }
 
         public void Update()
@@ -29,16 +29,11 @@ namespace Game.Background_Elements
         }
        
         public void Draw() {
-            if (isVisible)
-            {
+            
                 tripleBushSprite.Draw(myGame.spriteBatch, location);
-            }
+            
         }
 
-        public void Disappear() {
-            isVisible = false;
-            location.Y -= 1000;
-        }
 
         public Vector2 VectorCoordinates
         {
