@@ -248,6 +248,7 @@
     <Content Include="CodeReviews\Sprint 2\MarioSpriteFactoryReadability.txt" />
     <Content Include="CodeReviews\Sprint 2\JacksonCodeQualityReview.txt" />
     <Content Include="CodeReviews\Sprint 3\MarioBlockCollisionHandlerReadability.txt" />
+    <Content Include="CodeReviews\Sprint 3\MarioEnemyCollisionHandlerCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 3\MarioEnemyCollisionHandlerReadability.txt" />
     <Content Include="CodeReviews\Sprint 3\MarioItemCollisionHandlerReadability.txt" />
     <Content Include="CodeReviews\Sprint 3\StarMarioReadability.txt" />
