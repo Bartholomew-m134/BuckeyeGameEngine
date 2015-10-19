@@ -11,8 +11,7 @@ namespace Game.Enemies.GoombaClasses.GoombaSprites
     {
         private Texture2D spriteSheet;
         private int currentFrame;
-        private int totalFrames = 2;
-        private int delayBetweenFrames = 0;
+        private int totalFrames = 6;
         private Vector2[] spriteLocations;
         private Vector2 spriteDimensions;
 
@@ -20,13 +19,25 @@ namespace Game.Enemies.GoombaClasses.GoombaSprites
         {
             spriteSheet = texture;
             currentFrame = 0;
-            spriteLocations = new Vector2[2];
+            spriteLocations = new Vector2[6];
 
             spriteLocations[0].X = 0;
             spriteLocations[0].Y = 4;
 
-            spriteLocations[1].X = 30;
+            spriteLocations[1].X = 0;
             spriteLocations[1].Y = 4;
+
+            spriteLocations[2].X = 0;
+            spriteLocations[2].Y = 4;
+
+            spriteLocations[3].X = 30;
+            spriteLocations[3].Y = 4;
+
+            spriteLocations[4].X = 30;
+            spriteLocations[4].Y = 4;
+
+            spriteLocations[5].X = 30;
+            spriteLocations[5].Y = 4;
 
             spriteDimensions.X = 16;
             spriteDimensions.Y = 16;
@@ -34,17 +45,10 @@ namespace Game.Enemies.GoombaClasses.GoombaSprites
 
         public void Update()
         {
-            if (delayBetweenFrames == 2)
-            {
-                delayBetweenFrames = 0;
                 currentFrame++;
                 if (currentFrame == totalFrames)
                     currentFrame = 0;
-            }
-            else
-            {
-                delayBetweenFrames++;
-            }
+            
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
