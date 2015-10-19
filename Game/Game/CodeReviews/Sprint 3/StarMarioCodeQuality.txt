@@ -1,0 +1,13 @@
+﻿Author: John Cramer
+Date: 10/19/2015
+Sprint:3
+File name: StarMario.cs
+Minutes to complete: 4
+Author: Jackson Luken
+
+
+Comments: The class is very cohesive, as it only deals with star Mario, 
+and has fairly low coupling, other than having a strict reliance on
+the MarioInstance class. A change that could be made would be to remove some unnessary methods such as
+land(), and to give methods more specific names. Also for future sprints some parts will need modified
+for physics handling.
