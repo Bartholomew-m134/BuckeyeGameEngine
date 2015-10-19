@@ -1,12 +1,13 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Game.Mario;
-using Game.States;
 using Game;
 using Game.Blocks;
 using Game.Collisions;
 using Game.Collisions.BlockCollisionHandling;
 using Microsoft.Xna.Framework;
+using Game.Interfaces;
+using Game.Mario.MarioStates;
 
 namespace CollisionDetectionTests
 {

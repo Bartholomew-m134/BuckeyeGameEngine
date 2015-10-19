@@ -1,0 +1,16 @@
+﻿Author: Kyle Powers
+Date: 10/11/2015
+Sprint:3
+File name: MarioEnemyCollisionHandler.cs
+Author: John Cramer
+
+
+Comments: The class is very cohesive, it is soley responsible for handling the
+collisions between Mario and Enemies. The logic implemented handles all cases 
+for collisions between Mario and enemies, thus it is complete. It does not
+contain unnecessary or unavoidable dependencies, so coupling is low. 
+A hypothetical change that would require refactoring would be adding another
+state that changes how Mario interacts with enemies, such as a 
+"recently damaged" state in which he passes through enemies without taking 
+damage would require adding more logic to the handler, but it would not
+be very difficult to add and is unavoidable regardless.

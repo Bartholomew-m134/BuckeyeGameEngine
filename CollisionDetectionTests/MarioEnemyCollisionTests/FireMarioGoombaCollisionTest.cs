@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Game.Mario;
-using Game.States;
 using Game;
 using Game.Enemies;
 using Game.Enemies.GoombaClasses;
@@ -9,6 +8,8 @@ using Game.Enemies.GoombaClasses.GoombaStates;
 using Game.Collisions;
 using Game.Collisions.EnemyCollisionHandling;
 using Microsoft.Xna.Framework;
+using Game.Mario.MarioStates;
+using Game.Interfaces;
 
 namespace CollisionDetectionTests.MarioEnemyCollisionTests
 {
