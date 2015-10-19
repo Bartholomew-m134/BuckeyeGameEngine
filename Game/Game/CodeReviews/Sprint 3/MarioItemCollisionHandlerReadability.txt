@@ -1,7 +1,7 @@
 ﻿Author: Connor Swick
 Date: 10/11/2015
 Sprint: 3
-File name: StarMario.cs
+File name: MarioItemCollisionHandler.cs
 Author: Kyle Powers
 Minutes to complete: 7
 

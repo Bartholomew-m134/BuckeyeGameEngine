@@ -251,6 +251,7 @@
     <Content Include="CodeReviews\Sprint 3\MarioEnemyCollisionHandlerReadability.txt" />
     <Content Include="CodeReviews\Sprint 3\MarioItemCollisionHandlerReadability.txt" />
     <Content Include="CodeReviews\Sprint 3\StarMarioReadability.txt" />
+    <Content Include="CodeReviews\Sprint 3\MarioItemCollisionHandlerCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 3\WorldManagerCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 3\WorldManagerReadability.txt" />
     <Content Include="Game.ico" />
