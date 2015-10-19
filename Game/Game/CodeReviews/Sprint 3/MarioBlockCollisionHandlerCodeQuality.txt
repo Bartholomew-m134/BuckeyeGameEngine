@@ -1,0 +1,14 @@
+﻿Author:							Matt Bartholomew
+Date :							10/19/15
+Sprint:							3
+Reviewed file:					MarioBlockCollisionHandler.cs
+File Author:					Conner Swick
+Minutes to complete:			7
+Code Quallity:
+	Very high cohesion since the class only handels MarioBlock collsions. Coupling is somewhat low, with
+	references to Block, IMario, and Collision. However, these are needed to correctly make the class. 
+	Each method is short and clean, and the all fields are private.
+Hypothetical Addition:
+	If a new block is added, nothing would need changed unless the neww block had a specical attribute.
+	If the block is something new, a simple addition to the if-else for each side to then call the 
+	special attribute of the block. Overall, a minimal change.
