@@ -12,13 +12,13 @@ namespace Game.Background_Elements
         private Game1 myGame;
         private ISprite smallHillSprite;
         private Vector2 location;
-        private bool isVisible;
+
 
         public SmallHill(Game1 game)
         {
             myGame = game;
             smallHillSprite = BackgroundElementsSpriteFactory.CreateSmallHillSprite();
-            isVisible = true;
+
         }
 
         public void Update()
@@ -27,16 +27,11 @@ namespace Game.Background_Elements
         }
        
         public void Draw() {
-            if (isVisible)
-            {
+          
                 smallHillSprite.Draw(myGame.spriteBatch, location);
-            }
+            
         }
 
-        public void Disappear() {
-            isVisible = false;
-            location.Y -= 1000;
-        }
 
         public Vector2 VectorCoordinates
         {

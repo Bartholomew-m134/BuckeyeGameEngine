@@ -29,7 +29,7 @@ namespace Game.Items
         }
 
         public void Disappear() {
-            WorldManager.FreeObject(this);
+            location.Y -= 2000;
         }
         public Vector2 VectorCoordinates
         {
