@@ -136,7 +136,7 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
         }
 
         [TestMethod]
-        public void StarFireMarioGoombaCollisionTest()
+        public void StarFireMarioGoombaLeftCollisionTest()
         {
             WorldManager.LoadListFromFile("World1-1", game);
             IMario testMario = WorldManager.GetMario();
@@ -160,6 +160,96 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
             bool expectedState = expectedGoomba.state is GoombaFlippedState;
             Vector2 testLocation = testMario.VectorCoordinates;
             Vector2 expectedLocation = new Vector2(-1, 0);
+
+            Assert.AreEqual(testState, expectedState);
+            Assert.AreEqual(testLocation, expectedLocation);
+        }
+
+        [TestMethod]
+        public void StarFireMarioGoombaRightCollisionTest()
+        {
+            WorldManager.LoadListFromFile("World1-1", game);
+            IMario testMario = WorldManager.GetMario();
+            testMario.Flower();
+            testMario.Star();
+            testMario = WorldManager.GetMario();
+            testMario.VectorCoordinates = new Vector2(14, 0);
+
+            Goomba testGoomba = new Goomba(game);
+            testGoomba.VectorCoordinates = new Vector2(0, 0);
+            Goomba expectedGoomba = new Goomba(game);
+            expectedGoomba.Flipped();
+
+            ICollisionSide side = new RightSideCollision();
+            CollisionData collision = new CollisionData(testMario, testGoomba, side);
+            MarioEnemyCollisionHandler collisionHandler = new MarioEnemyCollisionHandler(collision);
+
+            collisionHandler.HandleCollision();
+
+            bool testState = testGoomba.state is GoombaFlippedState;
+            bool expectedState = expectedGoomba.state is GoombaFlippedState;
+            Vector2 testLocation = testMario.VectorCoordinates;
+            Vector2 expectedLocation = new Vector2(16, 0);
+
+            Assert.AreEqual(testState, expectedState);
+            Assert.AreEqual(testLocation, expectedLocation);
+        }
+
+        [TestMethod]
+        public void StarFireMarioGoombaBottomCollisionTest()
+        {
+            WorldManager.LoadListFromFile("World1-1", game);
+            IMario testMario = WorldManager.GetMario();
+            testMario.Flower();
+            testMario.Star();
+            testMario = WorldManager.GetMario();
+            testMario.VectorCoordinates = new Vector2(0, 14);
+
+            Goomba testGoomba = new Goomba(game);
+            testGoomba.VectorCoordinates = new Vector2(0, 0);
+            Goomba expectedGoomba = new Goomba(game);
+            expectedGoomba.Flipped();
+
+            ICollisionSide side = new BottomSideCollision();
+            CollisionData collision = new CollisionData(testMario, testGoomba, side);
+            MarioEnemyCollisionHandler collisionHandler = new MarioEnemyCollisionHandler(collision);
+
+            collisionHandler.HandleCollision();
+
+            bool testState = testGoomba.state is GoombaFlippedState;
+            bool expectedState = expectedGoomba.state is GoombaFlippedState;
+            Vector2 testLocation = testMario.VectorCoordinates;
+            Vector2 expectedLocation = new Vector2(0, 16);
+
+            Assert.AreEqual(testState, expectedState);
+            Assert.AreEqual(testLocation, expectedLocation);
+        }
+
+        [TestMethod]
+        public void StarFireMarioGoombaTopCollisionTest()
+        {
+            WorldManager.LoadListFromFile("World1-1", game);
+            IMario testMario = WorldManager.GetMario();
+            testMario.Flower();
+            testMario.Star();
+            testMario = WorldManager.GetMario();
+            testMario.VectorCoordinates = new Vector2(0, 0);
+
+            Goomba testGoomba = new Goomba(game);
+            testGoomba.VectorCoordinates = new Vector2(0, 30);
+            Goomba expectedGoomba = new Goomba(game);
+            expectedGoomba.Flipped();
+
+            ICollisionSide side = new TopSideCollision();
+            CollisionData collision = new CollisionData(testMario, testGoomba, side);
+            MarioEnemyCollisionHandler collisionHandler = new MarioEnemyCollisionHandler(collision);
+
+            collisionHandler.HandleCollision();
+
+            bool testState = testGoomba.state is GoombaFlippedState;
+            bool expectedState = expectedGoomba.state is GoombaFlippedState;
+            Vector2 testLocation = testMario.VectorCoordinates;
+            Vector2 expectedLocation = new Vector2(0, -1);
 
             Assert.AreEqual(testState, expectedState);
             Assert.AreEqual(testLocation, expectedLocation);

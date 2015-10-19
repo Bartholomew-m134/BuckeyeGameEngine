@@ -61,18 +61,12 @@
     <XnaCompressContent>true</XnaCompressContent>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="Microsoft.Xna.Framework.GamerServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="mscorlib" />
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -258,7 +252,7 @@
     <Content Include="CodeReviews\Sprint 3\MarioEnemyCollisionHandlerReadability.txt" />
     <Content Include="CodeReviews\Sprint 3\MarioItemCollisionHandlerReadability.txt" />
     <Content Include="CodeReviews\Sprint 3\StarMarioReadability.txt" />
-    <Content Include="CodeReviews\Sprint 3\MarioBlockCollisionHandlerCodeQuality.txt" />
+    <Content Include="CodeReviews\Sprint 3\MarioItemCollisionHandlerCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 3\WorldManagerCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 3\WorldManagerReadability.txt" />
     <Content Include="Game.ico" />
@@ -295,9 +289,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="ClassDiagram1.cd" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Utilities\" />

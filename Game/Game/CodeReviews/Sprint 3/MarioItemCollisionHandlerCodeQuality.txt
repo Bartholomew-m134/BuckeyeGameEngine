@@ -1,0 +1,17 @@
+﻿Author: Connor Swick
+Date: 10/19/2015
+Sprint: 3
+File name: MarioItemCollisionHandler.cs
+Author: Kyle Powers
+Minutes to complete: 7
+
+Comments: This class is very cohesive by definition because it has only one
+method; therefore it has one main functionality and no other unrelated/unnecessary 
+functionalities. The class has fairly loose coupling because it inherits objects 
+of interface types rather than concrete types. The only sign of coupling is where
+the collidingItem is checked against the various concrete item types, but this is
+totally necessary in order to complete the correct collision behavior because the 
+object must know exactly what concrete type it is. If an additional item needed
+to be added to this game, the only code that would need to be added would be an
+extra "else if" clause to handle the explicit behavior of Mario and the item.
+Overall great job on this class.
