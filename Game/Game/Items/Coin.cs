@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Game.SpriteFactories;
+using Game.Interfaces;
 
 namespace Game.Items
 {

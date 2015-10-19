@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 
-namespace Game.Pipes
+namespace Game.Interfaces
 {
-    public interface IPipe : IGameObject
+    public interface IItem : IGameObject
     {
+        void Disappear();
+
 
     }
 }

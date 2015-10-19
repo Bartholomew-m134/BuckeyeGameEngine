@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Game.Mario.MarioSprites;
+using Game.Interfaces;
 
 namespace Game.SpriteFactories
 {

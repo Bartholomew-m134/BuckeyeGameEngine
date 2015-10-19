@@ -103,7 +103,7 @@
     <Compile Include="Collisions\EnemyCollisionHandling\EnemyEnemyCollisionHandler.cs" />
     <Compile Include="Collisions\EnemyCollisionHandling\EnemyPipeCollisionHandler.cs" />
     <Compile Include="Collisions\EnemyCollisionHandling\MarioEnemyCollisionHandler.cs" />
-    <Compile Include="Collisions\ICollisionSide.cs" />
+    <Compile Include="Interfaces\ICollisionSide.cs" />
     <Compile Include="Collisions\ItemCollisionHandling\ItemBlockCollisionHandler.cs" />
     <Compile Include="Collisions\ItemCollisionHandling\MarioItemCollisionHandler.cs" />
     <Compile Include="Collisions\LeftSideCollision.cs" />
@@ -113,7 +113,7 @@
     <Compile Include="Commands\BlockCommands\RemoveBrickBlockCommand.cs" />
     <Compile Include="Commands\BlockCommands\SwitchToUsedBlockCommand.cs" />
     <Compile Include="Commands\BlockCommands\SwitchToUsedQuestionBlockCommand.cs" />
-    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Interfaces\ICommand.cs" />
     <Compile Include="Commands\MarioCommands\FurtherLeftMarioStanceCommand.cs" />
     <Compile Include="Commands\MarioCommands\FurtherRightMarioStanceCommand.cs" />
     <Compile Include="Commands\MarioCommands\RaiseMarioStanceCommand.cs" />
@@ -124,7 +124,7 @@
     <Compile Include="Commands\MarioCommands\SwitchToSmallMarioCommand.cs" />
     <Compile Include="Commands\ResetToDefaultCommand.cs" />
     <Compile Include="Controllers\DefaultKeyboardControls1.cs" />
-    <Compile Include="Controllers\IController.cs" />
+    <Compile Include="Interfaces\IController.cs" />
     <Compile Include="Controllers\GamePadController.cs" />
     <Compile Include="Controllers\KeyboardController.cs" />
     <Compile Include="Enemies\GoombaClasses\Goomba.cs" />
@@ -137,7 +137,7 @@
     <Compile Include="Enemies\GoombaClasses\GoombaStates\GoombaWalkingLeftState.cs" />
     <Compile Include="Enemies\GoombaClasses\GoombaStates\GoombaWalkingRightState.cs" />
     <Compile Include="Enemies\GoombaClasses\GoombaStates\IGoombaState.cs" />
-    <Compile Include="Enemies\IEnemy.cs" />
+    <Compile Include="Interfaces\IEnemy.cs" />
     <Compile Include="Enemies\KoopaClasses\GreenKoopa.cs" />
     <Compile Include="Enemies\KoopaClasses\KoopaSprites\GreenKoopaEmergingFromShellSprite.cs" />
     <Compile Include="Enemies\KoopaClasses\KoopaSprites\GreenKoopaFlippedInShellSprite.cs" />
@@ -150,13 +150,13 @@
     <Compile Include="Enemies\KoopaClasses\KoopaStates\GreenKoopaWalkingLeftState.cs" />
     <Compile Include="Enemies\KoopaClasses\KoopaStates\GreenKoopaWalkingRightState.cs" />
     <Compile Include="Enemies\KoopaClasses\KoopaStates\IKoopaState.cs" />
-    <Compile Include="IGameObject.cs" />
-    <Compile Include="IMarioSprite.cs" />
-    <Compile Include="ISprite.cs" />
+    <Compile Include="Interfaces\IGameObject.cs" />
+    <Compile Include="Interfaces\IMarioSprite.cs" />
+    <Compile Include="Interfaces\ISprite.cs" />
     <Compile Include="Items\Coin.cs" />
     <Compile Include="Items\Flower.cs" />
     <Compile Include="Items\GreenMushroom.cs" />
-    <Compile Include="Items\IItem.cs" />
+    <Compile Include="Interfaces\IItem.cs" />
     <Compile Include="Items\ItemSprites\CoinSprite.cs" />
     <Compile Include="Items\ItemSprites\FlowerSprite.cs" />
     <Compile Include="Items\ItemSprites\GreenMushroomSprite.cs" />
@@ -191,7 +191,7 @@
     <Compile Include="Mario\MarioSprites\SmallRightJumpingMarioSprite.cs" />
     <Compile Include="Mario\MarioSprites\SmallRightRunningMarioSprite.cs" />
     <Compile Include="Mario\StarMario.cs" />
-    <Compile Include="Pipes\IPipe.cs" />
+    <Compile Include="Interfaces\IPipe.cs" />
     <Compile Include="Pipes\Pipe.cs" />
     <Compile Include="Pipes\PipeSprites\PipeSprite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -289,7 +289,6 @@
     <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="States\" />
     <Folder Include="Utilities\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

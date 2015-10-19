@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Game
+namespace Game.Interfaces
 {
-    public interface ICommand
+    public interface IController
     {
-        void Execute();
-
-        void Release();
+        void Update();
     }
 }

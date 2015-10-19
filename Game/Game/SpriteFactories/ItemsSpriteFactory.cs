@@ -1,4 +1,5 @@
-﻿using Game.Items.ItemSprites;
+﻿using Game.Interfaces;
+using Game.Items.ItemSprites;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;

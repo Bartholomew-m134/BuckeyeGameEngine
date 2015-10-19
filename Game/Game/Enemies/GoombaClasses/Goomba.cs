@@ -5,6 +5,7 @@ using System.Text;
 using Game.Enemies.GoombaClasses.GoombaStates;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using Game.Interfaces;
 
 namespace Game.Enemies.GoombaClasses
 {

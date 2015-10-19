@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using System.Collections;
 using System.Diagnostics;
+using Game.Interfaces;
 
 namespace Game.Mario.MarioSprites
 {
