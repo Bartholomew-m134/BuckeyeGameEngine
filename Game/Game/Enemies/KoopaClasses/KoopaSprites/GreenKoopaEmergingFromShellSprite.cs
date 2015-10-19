@@ -12,7 +12,6 @@ namespace Game.Enemies.KoopaClasses.GreenKoopaSprites
         private Texture2D spriteSheet;
         private int currentFrame;
         private int totalFrames = 2;
-        private int delayBetweenFrames = 0;
         private Vector2[] spriteLocations;
         private Vector2[] spriteDimensions;
 
@@ -39,17 +38,11 @@ namespace Game.Enemies.KoopaClasses.GreenKoopaSprites
 
         public void Update()
         {
-            if (delayBetweenFrames == 2)
-            {
-                delayBetweenFrames = 0;
+
                 currentFrame++;
                 if (currentFrame == totalFrames)
                     currentFrame = 0;
-            }
-            else
-            {
-                delayBetweenFrames++;
-            }
+
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

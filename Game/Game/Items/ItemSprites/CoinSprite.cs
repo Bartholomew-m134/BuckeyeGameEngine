@@ -14,7 +14,6 @@ namespace Game.Items.ItemSprites
         private Texture2D Texture { get; set; }
         private int currentFrame;
         private int totalFrames;
-        private int delayBetweenFrames = 0;
         private int width = 9;
         private int height = 15;
         private int sourceX = 127;
@@ -30,20 +29,13 @@ namespace Game.Items.ItemSprites
         }
 
         public void Update() {
-            if (delayBetweenFrames == 0)
-            {
-                delayBetweenFrames = 0;
                 currentFrame++;
                 if (currentFrame == totalFrames)
                 {
                     currentFrame = 0;
 
                 }
-            }
-            else {
 
-                delayBetweenFrames++;
-            }
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location) {
