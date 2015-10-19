@@ -22,6 +22,7 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
         {
             MarioInstance testMario = new MarioInstance(game);
             MarioInstance expectedMario = new MarioInstance(game);
+            expectedMario.VectorCoordinates = new Vector2(-1, 0);
 
             testMario.GetSetMarioState = new NormalRightIdleState(testMario);
             expectedMario.GetSetMarioState = new NormalRightIdleState(expectedMario);
@@ -29,6 +30,7 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
             expectedMario.Damage();
 
             GreenKoopa testGreenKoopa = new GreenKoopa(game);
+            testGreenKoopa.VectorCoordinates = new Vector2(14, 0);
 
             ICollisionSide side = new LeftSideCollision();
             CollisionData collision = new CollisionData(testMario, testGreenKoopa, side);
@@ -38,15 +40,20 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
 
             bool testState = testMario.GetSetMarioState is SmallRightIdleState;
             bool expectedState = expectedMario.GetSetMarioState is SmallRightIdleState;
+            Vector2 testLocation = testMario.VectorCoordinates;
+            Vector2 expectedLocation = expectedMario.VectorCoordinates;
 
             Assert.AreEqual(testState, expectedState);
+            Assert.AreEqual(testLocation, expectedLocation);
         }
 
         [TestMethod]
         public void NormalMarioKoopaRightSideCollisionTest()
         {
             IMario testMario = new MarioInstance(game);
+            testMario.VectorCoordinates = new Vector2(14, 0);
             IMario expectedMario = new MarioInstance(game);
+            expectedMario.VectorCoordinates = new Vector2(16, 0);
 
             testMario.GetSetMarioState = new NormalRightIdleState(testMario);
             expectedMario.GetSetMarioState = new NormalRightIdleState(expectedMario);
@@ -63,15 +70,20 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
 
             bool testState = testMario.GetSetMarioState is SmallRightIdleState;
             bool expectedState = expectedMario.GetSetMarioState is SmallRightIdleState;
+            Vector2 testLocation = testMario.VectorCoordinates;
+            Vector2 expectedLocation = expectedMario.VectorCoordinates;
 
             Assert.AreEqual(testState, expectedState);
+            Assert.AreEqual(testLocation, expectedLocation);
         }
 
         [TestMethod]
         public void NormalMarioKoopaBottomSideCollisionTest()
         {
             IMario testMario = new MarioInstance(game);
+            testMario.VectorCoordinates = new Vector2(0, 19);
             IMario expectedMario = new MarioInstance(game);
+            expectedMario.VectorCoordinates = new Vector2(0, 21);
 
             testMario.GetSetMarioState = new NormalRightIdleState(testMario);
             expectedMario.GetSetMarioState = new NormalRightIdleState(expectedMario);
@@ -88,20 +100,22 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
 
             bool testState = testMario.GetSetMarioState is SmallRightIdleState;
             bool expectedState = expectedMario.GetSetMarioState is SmallRightIdleState;
+            Vector2 testLocation = testMario.VectorCoordinates;
+            Vector2 expectedLocation = expectedMario.VectorCoordinates;
 
             Assert.AreEqual(testState, expectedState);
+            Assert.AreEqual(testLocation, expectedLocation);
         }
 
         [TestMethod]
         public void NormalMarioKoopaTopSideCollisionTest()
         {
             IMario testMario = new MarioInstance(game);
-
-            GreenKoopa testGreenKoopa = new GreenKoopa(game);
-            GreenKoopa expectedGreenKoopa = new GreenKoopa(game);
-
             testMario.GetSetMarioState = new NormalRightIdleState(testMario);
 
+            GreenKoopa testGreenKoopa = new GreenKoopa(game);
+            testGreenKoopa.VectorCoordinates = new Vector2(0, 30);
+            GreenKoopa expectedGreenKoopa = new GreenKoopa(game);
             expectedGreenKoopa.IsHit();
 
             ICollisionSide side = new TopSideCollision();
@@ -112,8 +126,11 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
 
             bool testState = testGreenKoopa.state is GreenKoopaHidingInShellState;
             bool expectedState = expectedGreenKoopa.state is GreenKoopaHidingInShellState;
+            Vector2 testLocation = testMario.VectorCoordinates;
+            Vector2 expectedLocation = new Vector2(0, -1);
 
             Assert.AreEqual(testState, expectedState);
+            Assert.AreEqual(testLocation, expectedLocation);
         }
 
         [TestMethod]
@@ -124,8 +141,10 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
             testMario.Mushroom();
             testMario.Star();
             testMario = WorldManager.GetMario();
+            testMario.VectorCoordinates = new Vector2(0, 0);
 
             GreenKoopa testGreenKoopa = new GreenKoopa(game);
+            testGreenKoopa.VectorCoordinates = new Vector2(14, 0);
             GreenKoopa expectedGreenKoopa = new GreenKoopa(game);
             expectedGreenKoopa.Flipped();
 
@@ -137,8 +156,11 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
 
             bool testState = testGreenKoopa.state is GreenKoopaFlippedInShellState;
             bool expectedState = expectedGreenKoopa.state is GreenKoopaFlippedInShellState;
+            Vector2 testLocation = testMario.VectorCoordinates;
+            Vector2 expectedLocation = new Vector2(-1, 0);
 
             Assert.AreEqual(testState, expectedState);
+            Assert.AreEqual(testLocation, expectedLocation);
         }
     }
 }

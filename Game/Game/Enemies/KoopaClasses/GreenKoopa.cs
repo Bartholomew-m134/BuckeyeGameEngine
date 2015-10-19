@@ -15,6 +15,7 @@ namespace Game.Enemies.KoopaClasses
         private Game1 myGame;
         private Vector2 location;
         private bool canDealDamage = true;
+        private int inShellTimer = 0;
 
         public GreenKoopa(Game1 game)
         {
@@ -50,6 +51,20 @@ namespace Game.Enemies.KoopaClasses
 
         public void Update()
         {
+            if (state is GreenKoopaHidingInShellState || state is GreenKoopaEmergingFromShellState)
+            {
+                inShellTimer++;
+            }
+            if (inShellTimer == 100 && state is GreenKoopaHidingInShellState)
+            {
+                state.KoopaEmergingFromShell();
+                inShellTimer = 0;
+            }
+            else if (inShellTimer == 45 && state is GreenKoopaEmergingFromShellState)
+            {
+                state.KoopaChangeDirection();
+                inShellTimer = 0;
+            }
             sprite.Update();
         }
 
