@@ -19,16 +19,16 @@ namespace Game.Collisions.PipeCollisionHandling
         {
             this.collision = collision;
 
-            side = collision.collisionSide;
-            if (collision.gameObjectA is IMario)
+            side = collision.CollisionSide;
+            if (collision.GameObjectA is IMario)
             {
-                mario = (IMario)collision.gameObjectA;
-                pipe = (IPipe)collision.gameObjectB;
+                mario = (IMario)collision.GameObjectA;
+                pipe = (IPipe)collision.GameObjectB;
             }
             else
             {
-                mario = (IMario)collision.gameObjectB;
-                pipe = (IPipe)collision.gameObjectA;
+                mario = (IMario)collision.GameObjectB;
+                pipe = (IPipe)collision.GameObjectA;
                 side = side.FlipSide();
             }
         }

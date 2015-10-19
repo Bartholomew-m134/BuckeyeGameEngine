@@ -21,16 +21,16 @@ namespace Game.Collisions.BlockCollisionHandling
         public MarioBlockCollisionHandler(CollisionData collision)
         {
             this.collision = collision;
-            collisionSide = (ICollisionSide)collision.collisionSide;
-            if (collision.gameObjectA is IMario)
+            collisionSide = (ICollisionSide)collision.CollisionSide;
+            if (collision.GameObjectA is IMario)
             {
-                collidingMario = (IMario)collision.gameObjectA;
-                collidingBlock = (Block)collision.gameObjectB;
+                collidingMario = (IMario)collision.GameObjectA;
+                collidingBlock = (Block)collision.GameObjectB;
             }
             else
             {
-                collidingMario = (IMario)collision.gameObjectB;
-                collidingBlock = (Block)collision.gameObjectA;
+                collidingMario = (IMario)collision.GameObjectB;
+                collidingBlock = (Block)collision.GameObjectA;
                 collisionSide = collisionSide.FlipSide();
             }
         }

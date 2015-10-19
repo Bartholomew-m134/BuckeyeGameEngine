@@ -13,7 +13,7 @@ namespace Game.SpriteFactories
     {
         private static Texture2D marioSpriteSheet;
 
-        public static void Load(ContentManager content, GraphicsDevice device)
+        public static void Load(ContentManager content)
         {
             marioSpriteSheet = content.Load<Texture2D>("MarioSpriteSheet");
 

@@ -12,7 +12,7 @@ namespace Game.Enemies.KoopaClasses.KoopaStates
         public GreenKoopaWalkingLeftState(GreenKoopa greenKoopa)
         {
             this.greenKoopa = greenKoopa;
-            this.greenKoopa.sprite = Game.SpriteFactories.EnemySpriteFactory.CreateGreenKoopaWalkingLeftSprite();
+            this.greenKoopa.GetSetSprite = Game.SpriteFactories.EnemySpriteFactory.CreateGreenKoopaWalkingLeftSprite();
         }
 
         public void KoopaEmergingFromShell()

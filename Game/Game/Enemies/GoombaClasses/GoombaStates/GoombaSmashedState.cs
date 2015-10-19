@@ -11,7 +11,7 @@ namespace Game.Enemies.GoombaClasses.GoombaStates
         public GoombaSmashedState(Goomba goomba)
         {
             this.goomba = goomba;
-            this.goomba.sprite = Game.SpriteFactories.EnemySpriteFactory.CreateGoombaSmashedSprite();
+            this.goomba.GetSetSprite = Game.SpriteFactories.EnemySpriteFactory.CreateGoombaSmashedSprite();
         }
         public void SmashGoomba()
         {

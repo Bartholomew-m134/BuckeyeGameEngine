@@ -20,16 +20,16 @@ namespace Game.Collisions.EnemyCollisionHandling
         {
             this.collision = collision;
 
-            side = collision.collisionSide;
-            if (collision.gameObjectA is IMario)
+            side = collision.CollisionSide;
+            if (collision.GameObjectA is IMario)
             {
-                mario = (IMario)collision.gameObjectA;
-                enemy = (IEnemy)collision.gameObjectB;
+                mario = (IMario)collision.GameObjectA;
+                enemy = (IEnemy)collision.GameObjectB;
             }
             else
             {
-                mario = (IMario)collision.gameObjectB;
-                enemy = (IEnemy)collision.gameObjectA;
+                mario = (IMario)collision.GameObjectB;
+                enemy = (IEnemy)collision.GameObjectA;
                 side = side.FlipSide();
             }
         }

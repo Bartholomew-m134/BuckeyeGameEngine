@@ -110,9 +110,6 @@
     <Compile Include="Collisions\PipeCollisionHandling\MarioPipeCollisionHandler.cs" />
     <Compile Include="Collisions\RightSideCollision.cs" />
     <Compile Include="Collisions\TopSideCollision.cs" />
-    <Compile Include="Commands\BlockCommands\RemoveBrickBlockCommand.cs" />
-    <Compile Include="Commands\BlockCommands\SwitchToUsedBlockCommand.cs" />
-    <Compile Include="Commands\BlockCommands\SwitchToUsedQuestionBlockCommand.cs" />
     <Compile Include="Interfaces\ICommand.cs" />
     <Compile Include="Commands\MarioCommands\FurtherLeftMarioStanceCommand.cs" />
     <Compile Include="Commands\MarioCommands\FurtherRightMarioStanceCommand.cs" />

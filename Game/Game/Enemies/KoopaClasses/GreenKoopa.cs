@@ -12,7 +12,7 @@ namespace Game.Enemies.KoopaClasses
     public class GreenKoopa : IEnemy
     {
         public IKoopaState state;
-        public ISprite sprite;
+        private ISprite sprite;
         private Game1 myGame;
         private Vector2 location;
         private bool canDealDamage = true;

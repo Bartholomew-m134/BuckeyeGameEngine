@@ -14,7 +14,7 @@ namespace Game.SpriteFactories
     {
         private static Texture2D tileSpriteSheet;
 
-        public static void Load(ContentManager content, GraphicsDevice device)
+        public static void Load(ContentManager content)
         {
             tileSpriteSheet = content.Load<Texture2D>("MarioTilesSpriteSheet");
         }

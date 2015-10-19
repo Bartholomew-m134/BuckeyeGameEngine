@@ -9,11 +9,11 @@ using System.Text;
 
 namespace Game.SpriteFactories
 {
-    class BackgroundElementsSpriteFactory
+    public static class BackgroundElementsSpriteFactory
     {
         private static Texture2D backgroundElementsSpriteSheet;
 
-        public static void Load(ContentManager content, GraphicsDevice device)
+        public static void Load(ContentManager content)
         {
             backgroundElementsSpriteSheet = content.Load<Texture2D>("ScenarySpriteSheet");
 

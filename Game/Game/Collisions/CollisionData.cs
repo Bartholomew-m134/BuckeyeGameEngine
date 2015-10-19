@@ -9,9 +9,9 @@ namespace Game.Collisions
 {
     public class CollisionData
     {
-        public IGameObject gameObjectA;
-        public IGameObject gameObjectB;
-        public ICollisionSide collisionSide;
+        private IGameObject gameObjectA;
+        private IGameObject gameObjectB;
+        private ICollisionSide collisionSide;
 
         public CollisionData(IGameObject objectA, IGameObject objectB, ICollisionSide side) {
             gameObjectA = objectA;
@@ -50,6 +50,21 @@ namespace Game.Collisions
                 Vector2 newLocation = new Vector2(xCoordinate, yCoordinate);
                 overlappingObject.VectorCoordinates = newLocation;
             }
+        }
+
+        public IGameObject GameObjectA 
+        {
+            get { return gameObjectA; }
+        }
+
+        public IGameObject GameObjectB
+        {
+            get { return gameObjectB; }
+        }
+
+        public ICollisionSide CollisionSide
+        {
+            get { return collisionSide; }
         }
     }
 }

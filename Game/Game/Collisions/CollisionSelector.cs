@@ -20,44 +20,44 @@ namespace Game.Collisions
     {
         public static void HandleCollision(CollisionData collision){
 
-            if ((collision.gameObjectA is IMario && collision.gameObjectB is IEnemy) || (collision.gameObjectA is IEnemy && collision.gameObjectB is IMario))
+            if ((collision.GameObjectA is IMario && collision.GameObjectB is IEnemy) || (collision.GameObjectA is IEnemy && collision.GameObjectB is IMario))
             {
                 MarioEnemyCollisionHandler collisionHandler = new MarioEnemyCollisionHandler(collision);
                 collisionHandler.HandleCollision();
             }
-            else if ((collision.gameObjectA is IMario && collision.gameObjectB is IBlock) || (collision.gameObjectA is IBlock && collision.gameObjectB is IMario))
+            else if ((collision.GameObjectA is IMario && collision.GameObjectB is IBlock) || (collision.GameObjectA is IBlock && collision.GameObjectB is IMario))
             {
                 MarioBlockCollisionHandler collisionHandler = new MarioBlockCollisionHandler(collision);
                 collisionHandler.HandleCollision();
       
             }
-            else if ((collision.gameObjectA is IMario && collision.gameObjectB is IItem) || (collision.gameObjectA is IItem && collision.gameObjectB is IMario))
+            else if ((collision.GameObjectA is IMario && collision.GameObjectB is IItem) || (collision.GameObjectA is IItem && collision.GameObjectB is IMario))
             {
                 MarioItemCollisionHandler collisionHandler = new MarioItemCollisionHandler(collision);
                 collisionHandler.HandleCollision();
             }
-            else if ((collision.gameObjectA is IMario && collision.gameObjectB is IPipe) || (collision.gameObjectA is IPipe && collision.gameObjectB is IMario))
+            else if ((collision.GameObjectA is IMario && collision.GameObjectB is IPipe) || (collision.GameObjectA is IPipe && collision.GameObjectB is IMario))
             {
                 MarioPipeCollisionHandler collisionHandler = new MarioPipeCollisionHandler(collision);
                 collisionHandler.HandleCollision();
             }
-            else if (collision.gameObjectA is IEnemy && collision.gameObjectB is IEnemy)
+            else if (collision.GameObjectA is IEnemy && collision.GameObjectB is IEnemy)
             {
 
             }
-            else if ((collision.gameObjectA is IEnemy && collision.gameObjectB is IBlock) || (collision.gameObjectA is IBlock && collision.gameObjectB is IEnemy))
+            else if ((collision.GameObjectA is IEnemy && collision.GameObjectB is IBlock) || (collision.GameObjectA is IBlock && collision.GameObjectB is IEnemy))
             {
 
             }
-            else if ((collision.gameObjectA is IEnemy && collision.gameObjectB is IPipe) || (collision.gameObjectA is IPipe && collision.gameObjectB is IEnemy))
+            else if ((collision.GameObjectA is IEnemy && collision.GameObjectB is IPipe) || (collision.GameObjectA is IPipe && collision.GameObjectB is IEnemy))
             {
 
             }
-            else if ((collision.gameObjectA is IItem && collision.gameObjectB is IBlock) || (collision.gameObjectA is IBlock && collision.gameObjectB is IItem))
+            else if ((collision.GameObjectA is IItem && collision.GameObjectB is IBlock) || (collision.GameObjectA is IBlock && collision.GameObjectB is IItem))
             {
 
             }
-            else if ((collision.gameObjectA is IItem && collision.gameObjectB is IPipe) || (collision.gameObjectA is IPipe && collision.gameObjectB is IItem))
+            else if ((collision.GameObjectA is IItem && collision.GameObjectB is IPipe) || (collision.GameObjectA is IPipe && collision.GameObjectB is IItem))
             {
 
             }

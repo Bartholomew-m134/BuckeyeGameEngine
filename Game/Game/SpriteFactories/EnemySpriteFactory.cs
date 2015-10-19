@@ -15,7 +15,7 @@ namespace Game.SpriteFactories
     {
         private static Texture2D enemySpriteSheet;
 
-        public static void Load(ContentManager content, GraphicsDevice device)
+        public static void Load(ContentManager content)
         {
             enemySpriteSheet = content.Load<Texture2D>("EnemiesSpriteSheet");
         }

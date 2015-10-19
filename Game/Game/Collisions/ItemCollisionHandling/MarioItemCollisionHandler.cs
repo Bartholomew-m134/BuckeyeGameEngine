@@ -11,19 +11,19 @@ namespace Game.Collisions.ItemCollisionHandling
     public class MarioItemCollisionHandler
     {
         private IMario collidingMario;
-        public IItem collidingItem;
+        private IItem collidingItem;
   
 
         public MarioItemCollisionHandler(CollisionData collision) {
-            if (collision.gameObjectA is IMario)
+            if (collision.GameObjectA is IMario)
             {
-                collidingMario = (IMario)collision.gameObjectA;
-                collidingItem = (IItem)collision.gameObjectB;
+                collidingMario = (IMario)collision.GameObjectA;
+                collidingItem = (IItem)collision.GameObjectB;
             }
             else
             {
-                collidingMario = (IMario)collision.gameObjectB;
-                collidingItem = (IItem)collision.gameObjectA;
+                collidingMario = (IMario)collision.GameObjectB;
+                collidingItem = (IItem)collision.GameObjectA;
             }
 
         }

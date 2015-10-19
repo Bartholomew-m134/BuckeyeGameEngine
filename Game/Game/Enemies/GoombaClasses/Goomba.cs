@@ -12,7 +12,7 @@ namespace Game.Enemies.GoombaClasses
     public class Goomba : IEnemy
     {
         public IGoombaState state;
-        public ISprite sprite;
+        private ISprite sprite;
         private Game1 myGame;
         private Vector2 location;
         private bool canDealDamage = true;

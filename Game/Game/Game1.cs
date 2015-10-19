@@ -39,11 +39,11 @@ namespace Game
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            ItemsSpriteFactory.Load(Content, GraphicsDevice);
-            EnemySpriteFactory.Load(Content, GraphicsDevice);
-            MarioSpriteFactory.Load(Content, GraphicsDevice);
-            TileSpriteFactory.Load(Content, GraphicsDevice);
-            BackgroundElementsSpriteFactory.Load(Content, GraphicsDevice);
+            ItemsSpriteFactory.Load(Content);
+            EnemySpriteFactory.Load(Content);
+            MarioSpriteFactory.Load(Content);
+            TileSpriteFactory.Load(Content);
+            BackgroundElementsSpriteFactory.Load(Content);
 
             WorldManager.LoadListFromFile("World1-1", this);
         }
