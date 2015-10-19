@@ -4,18 +4,19 @@ using System.Linq;
 using System.Text;
 using Game.Mario;
 using Microsoft.Xna.Framework;
+using Game.Interfaces;
 
-namespace Game.States
+namespace Game.Mario.MarioStates
 {
-    public class FireLeftRunningState : IMarioState
+    public class SmallLeftJumpingState : IMarioState
     {
 
         private IMario mario;
 
-        public FireLeftRunningState(IMario mario)
+        public SmallLeftJumpingState(IMario mario)
         {
             this.mario = mario;
-            mario.GetSetSprite = SpriteFactories.MarioSpriteFactory.CreateFireLeftRunningSprite();
+            mario.GetSetSprite = SpriteFactories.MarioSpriteFactory.CreateSmallLeftJumpingSprite();
         }
         public void Update()
         {
@@ -26,41 +27,44 @@ namespace Game.States
         {
             Vector2 loc = mario.VectorCoordinates;
             loc.X -= 4;
-            mario.VectorCoordinates = loc;
+            mario.VectorCoordinates = (loc);
         }
 
         public void Right()
         {
-            mario.GetSetMarioState = new FireLeftIdleState(mario);
+            mario.GetSetMarioState = new SmallRightJumpingState(mario);
         }
 
         public void Up()
         {
-
+            
         }
 
         public void Down()
         {
-            mario.GetSetMarioState = new FireLeftCrouchingState(mario);
+            mario.GetSetMarioState = new SmallLeftIdleState(mario);
         }
 
         public void Land()
         {
-
+            
         }
 
         public void Jump()
         {
-            mario.GetSetMarioState = new FireLeftJumpingState(mario);
+            Vector2 loc = WorldManager.GetMario().VectorCoordinates;
+            loc.Y -= 4;
+            WorldManager.GetMario().VectorCoordinates = (loc);
         }
 
         public void Flower()
         {
-
+            mario.GetSetMarioState = new FireLeftJumpingState(mario);
         }
 
         public void Mushroom()
         {
+            mario.GetSetMarioState = new NormalLeftJumpingState(mario);
         }
 
         public void Star()
@@ -70,7 +74,7 @@ namespace Game.States
 
         public void Damage()
         {
-            mario.GetSetMarioState = new NormalLeftRunningState(mario);
+            mario.GetSetMarioState = new DeadMarioState(mario);
         }
 
         public void Die()
@@ -79,12 +83,12 @@ namespace Game.States
         }
         public bool IsBig()
         {
-            return true;
+            return false;
         }
 
         public void ToIdle()
         {
-            mario.Right();
+
         }
     }
 }

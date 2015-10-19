@@ -165,7 +165,7 @@
     <Compile Include="Items\RedMushroom.cs" />
     <Compile Include="Items\Star.cs" />
     <Compile Include="LevelLoader.cs" />
-    <Compile Include="Mario\IMario.cs" />
+    <Compile Include="Interfaces\IMario.cs" />
     <Compile Include="Mario\MarioInstance.cs" />
     <Compile Include="Mario\MarioSprites\DeadMarioSprite.cs" />
     <Compile Include="Mario\MarioSprites\FireLeftCrouchingMarioSprite.cs" />
@@ -210,30 +210,30 @@
     <Compile Include="Blocks\BlockStates\QuestionBlockState.cs" />
     <Compile Include="Blocks\BlockStates\SolidBlockState.cs" />
     <Compile Include="Blocks\BlockStates\UsedBlockState.cs" />
-    <Compile Include="States\MarioStates\DeadMarioState.cs" />
-    <Compile Include="States\MarioStates\FireLeftCrouchingState.cs" />
-    <Compile Include="States\MarioStates\FireLeftIdleState.cs" />
-    <Compile Include="States\MarioStates\FireLeftJumpingState.cs" />
-    <Compile Include="States\MarioStates\FireLeftRunningState.cs" />
-    <Compile Include="States\MarioStates\FireRightCrouchingState.cs" />
-    <Compile Include="States\MarioStates\FireRightIdleState.cs" />
-    <Compile Include="States\MarioStates\FireRightJumpingState.cs" />
-    <Compile Include="States\MarioStates\FireRightRunningState.cs" />
-    <Compile Include="States\MarioStates\IMarioState.cs" />
-    <Compile Include="States\MarioStates\NormalLeftCrouchingState.cs" />
-    <Compile Include="States\MarioStates\NormalLeftIdleState.cs" />
-    <Compile Include="States\MarioStates\NormalLeftJumpingState.cs" />
-    <Compile Include="States\MarioStates\NormalLeftRunningState.cs" />
-    <Compile Include="States\MarioStates\NormalRightCrouchingState.cs" />
-    <Compile Include="States\MarioStates\NormalRightIdleState.cs" />
-    <Compile Include="States\MarioStates\NormalRightJumpingState.cs" />
-    <Compile Include="States\MarioStates\NormalRightRunningState.cs" />
-    <Compile Include="States\MarioStates\SmallLeftIdleState.cs" />
-    <Compile Include="States\MarioStates\SmallLeftJumpingState.cs" />
-    <Compile Include="States\MarioStates\SmallLeftRunningState.cs" />
-    <Compile Include="States\MarioStates\SmallRightIdleState.cs" />
-    <Compile Include="States\MarioStates\SmallRightJumpingState.cs" />
-    <Compile Include="States\MarioStates\SmallRightRunningState.cs" />
+    <Compile Include="Mario\MarioStates\DeadMarioState.cs" />
+    <Compile Include="Mario\MarioStates\FireLeftCrouchingState.cs" />
+    <Compile Include="Mario\MarioStates\FireLeftIdleState.cs" />
+    <Compile Include="Mario\MarioStates\FireLeftJumpingState.cs" />
+    <Compile Include="Mario\MarioStates\FireLeftRunningState.cs" />
+    <Compile Include="Mario\MarioStates\FireRightCrouchingState.cs" />
+    <Compile Include="Mario\MarioStates\FireRightIdleState.cs" />
+    <Compile Include="Mario\MarioStates\FireRightJumpingState.cs" />
+    <Compile Include="Mario\MarioStates\FireRightRunningState.cs" />
+    <Compile Include="Interfaces\IMarioState.cs" />
+    <Compile Include="Mario\MarioStates\NormalLeftCrouchingState.cs" />
+    <Compile Include="Mario\MarioStates\NormalLeftIdleState.cs" />
+    <Compile Include="Mario\MarioStates\NormalLeftJumpingState.cs" />
+    <Compile Include="Mario\MarioStates\NormalLeftRunningState.cs" />
+    <Compile Include="Mario\MarioStates\NormalRightCrouchingState.cs" />
+    <Compile Include="Mario\MarioStates\NormalRightIdleState.cs" />
+    <Compile Include="Mario\MarioStates\NormalRightJumpingState.cs" />
+    <Compile Include="Mario\MarioStates\NormalRightRunningState.cs" />
+    <Compile Include="Mario\MarioStates\SmallLeftIdleState.cs" />
+    <Compile Include="Mario\MarioStates\SmallLeftJumpingState.cs" />
+    <Compile Include="Mario\MarioStates\SmallLeftRunningState.cs" />
+    <Compile Include="Mario\MarioStates\SmallRightIdleState.cs" />
+    <Compile Include="Mario\MarioStates\SmallRightJumpingState.cs" />
+    <Compile Include="Mario\MarioStates\SmallRightRunningState.cs" />
     <Compile Include="WorldManager.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -289,6 +289,7 @@
     <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="States\" />
     <Folder Include="Utilities\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

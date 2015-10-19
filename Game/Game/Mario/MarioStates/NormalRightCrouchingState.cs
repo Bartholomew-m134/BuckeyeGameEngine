@@ -3,18 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Game.Mario;
+using Microsoft.Xna.Framework;
+using Game.Interfaces;
 
-namespace Game.States
+namespace Game.Mario.MarioStates
 {
-    public class FireRightIdleState : IMarioState
+    public class NormalRightCrouchingState : IMarioState
     {
 
         private IMario mario;
 
-        public FireRightIdleState(IMario mario)
+        public NormalRightCrouchingState(IMario mario)
         {
             this.mario = mario;
-            mario.GetSetSprite = SpriteFactories.MarioSpriteFactory.CreateFireRightIdleSprite();
+            mario.GetSetSprite = SpriteFactories.MarioSpriteFactory.CreateNormalRightCrouchingSprite();
         }
         public void Update()
         {
@@ -23,22 +25,24 @@ namespace Game.States
 
         public void Left()
         {
-            mario.GetSetMarioState = new FireLeftIdleState(mario);
+            mario.GetSetMarioState = new NormalLeftRunningState(mario);
         }
 
         public void Right()
         {
-            mario.GetSetMarioState = new FireRightRunningState(mario);
+            mario.GetSetMarioState = new NormalRightRunningState(mario);
         }
 
         public void Up()
         {
-
+            
         }
 
         public void Down()
         {
-            mario.GetSetMarioState = new FireRightCrouchingState(mario);
+            Vector2 loc = mario.VectorCoordinates;
+            loc.Y += 4;
+            mario.VectorCoordinates = loc;
         }
 
         public void Land()
@@ -48,26 +52,27 @@ namespace Game.States
 
         public void Jump()
         {
-            mario.GetSetMarioState = new FireRightJumpingState(mario);
+            mario.GetSetMarioState = new NormalRightIdleState(mario);
         }
 
         public void Flower()
         {
-
+            mario.GetSetMarioState = new FireRightCrouchingState(mario);
         }
 
         public void Mushroom()
         {
+
         }
 
         public void Star()
         {
-            //mario = new StarMario(mario);
+            //mario = new StarMario((MarioInstance)mario);
         }
 
         public void Damage()
         {
-            mario.GetSetMarioState = new NormalRightIdleState(mario);
+            mario.GetSetMarioState = new SmallLeftIdleState(mario);
         }
 
         public void Die()

@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Game.States;
 using Microsoft.Xna.Framework;
+using Game.Interfaces;
+using Game.Mario.MarioStates;
 
 namespace Game.Mario
 {

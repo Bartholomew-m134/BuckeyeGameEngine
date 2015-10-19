@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Game.Mario;
-using Microsoft.Xna.Framework;
+using Game.Interfaces;
 
-namespace Game.States
+namespace Game.Mario.MarioStates
 {
-    public class FireRightCrouchingState : IMarioState
+    public class FireRightIdleState : IMarioState
     {
 
         private IMario mario;
 
-        public FireRightCrouchingState(IMario mario)
+        public FireRightIdleState(IMario mario)
         {
             this.mario = mario;
-            mario.GetSetSprite = SpriteFactories.MarioSpriteFactory.CreateFireRightCrouchingSprite();
+            mario.GetSetSprite = SpriteFactories.MarioSpriteFactory.CreateFireRightIdleSprite();
         }
         public void Update()
         {
@@ -24,7 +24,7 @@ namespace Game.States
 
         public void Left()
         {
-            mario.GetSetMarioState = new FireLeftRunningState(mario);
+            mario.GetSetMarioState = new FireLeftIdleState(mario);
         }
 
         public void Right()
@@ -34,14 +34,12 @@ namespace Game.States
 
         public void Up()
         {
-            mario.GetSetMarioState = new FireRightIdleState(mario);
+
         }
 
         public void Down()
         {
-            Vector2 loc = mario.VectorCoordinates;
-            loc.Y += 4;
-            mario.VectorCoordinates = loc;
+            mario.GetSetMarioState = new FireRightCrouchingState(mario);
         }
 
         public void Land()
@@ -51,7 +49,7 @@ namespace Game.States
 
         public void Jump()
         {
-            mario.GetSetMarioState = new FireRightIdleState(mario);
+            mario.GetSetMarioState = new FireRightJumpingState(mario);
         }
 
         public void Flower()

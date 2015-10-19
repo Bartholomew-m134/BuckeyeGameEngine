@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Game.States;
 using Microsoft.Xna.Framework;
 using System.Diagnostics;
+using Game.Interfaces;
 
 namespace Game.Mario
 {

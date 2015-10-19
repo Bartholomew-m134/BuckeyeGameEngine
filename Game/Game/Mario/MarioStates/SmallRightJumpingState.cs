@@ -4,18 +4,19 @@ using System.Linq;
 using System.Text;
 using Game.Mario;
 using Microsoft.Xna.Framework;
+using Game.Interfaces;
 
-namespace Game.States
+namespace Game.Mario.MarioStates
 {
-    public class SmallLeftJumpingState : IMarioState
+    public class SmallRightJumpingState : IMarioState
     {
 
         private IMario mario;
 
-        public SmallLeftJumpingState(IMario mario)
+        public SmallRightJumpingState(IMario mario)
         {
             this.mario = mario;
-            mario.GetSetSprite = SpriteFactories.MarioSpriteFactory.CreateSmallLeftJumpingSprite();
+            mario.GetSetSprite = SpriteFactories.MarioSpriteFactory.CreateSmallRightJumpingSprite();
         }
         public void Update()
         {
@@ -24,24 +25,24 @@ namespace Game.States
 
         public void Left()
         {
-            Vector2 loc = mario.VectorCoordinates;
-            loc.X -= 4;
-            mario.VectorCoordinates = (loc);
+            mario.GetSetMarioState = new SmallLeftJumpingState(mario);
         }
 
         public void Right()
         {
-            mario.GetSetMarioState = new SmallRightJumpingState(mario);
+            Vector2 loc = mario.VectorCoordinates;
+            loc.X += 4;
+            mario.VectorCoordinates = loc;
         }
 
         public void Up()
         {
-            
+
         }
 
         public void Down()
         {
-            mario.GetSetMarioState = new SmallLeftIdleState(mario);
+            mario.GetSetMarioState = new SmallRightIdleState(mario);
         }
 
         public void Land()
@@ -51,19 +52,19 @@ namespace Game.States
 
         public void Jump()
         {
-            Vector2 loc = WorldManager.GetMario().VectorCoordinates;
+            Vector2 loc = mario.VectorCoordinates;
             loc.Y -= 4;
-            WorldManager.GetMario().VectorCoordinates = (loc);
+            mario.VectorCoordinates = loc;
         }
 
         public void Flower()
         {
-            mario.GetSetMarioState = new FireLeftJumpingState(mario);
+            mario.GetSetMarioState = new FireRightJumpingState(mario);
         }
 
         public void Mushroom()
         {
-            mario.GetSetMarioState = new NormalLeftJumpingState(mario);
+            mario.GetSetMarioState = new NormalRightJumpingState(mario);
         }
 
         public void Star()
