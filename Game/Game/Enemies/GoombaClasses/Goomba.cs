@@ -6,6 +6,7 @@ using Game.Enemies.GoombaClasses.GoombaStates;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
+using Game.Utilities;
 
 namespace Game.Enemies.GoombaClasses
 {
@@ -16,6 +17,7 @@ namespace Game.Enemies.GoombaClasses
         private Game1 myGame;
         private Vector2 location;
         private bool canDealDamage = true;
+        private ObjectPhysics physics;
 
         public Goomba(Game1 game)
         {

@@ -6,6 +6,7 @@ using Game.Enemies.KoopaClasses.KoopaStates;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
+using Game.Utilities;
 
 namespace Game.Enemies.KoopaClasses
 {
@@ -17,6 +18,7 @@ namespace Game.Enemies.KoopaClasses
         private Vector2 location;
         private bool canDealDamage = true;
         private int inShellTimer = 0;
+        private ObjectPhysics physics;
 
         public GreenKoopa(Game1 game)
         {
