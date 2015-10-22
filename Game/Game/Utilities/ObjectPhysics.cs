@@ -16,6 +16,16 @@ namespace Game.Utilities
             acceleration = new Vector2(0, 0);
         }
 
+        public Vector2 Update(Vector2 coordinates)
+        {
+            Vector2 oldVelocity = velocity;
+
+            velocity += acceleration;
+
+            return (coordinates + (oldVelocity + velocity) / 2);
+           
+        }
+
         public Vector2 GetSetVelocity
         {
             get { return velocity; }
