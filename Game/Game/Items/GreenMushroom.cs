@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.Utilities;
 
 namespace Game.Items
 {
@@ -13,11 +14,13 @@ namespace Game.Items
         private Game1 myGame;
         private ISprite greenMushroomSprite;
         private Vector2 location;
+        private ObjectPhysics physics;
 
         public GreenMushroom(Game1 game)
         {
             myGame = game;
             greenMushroomSprite = ItemsSpriteFactory.CreateGreenMushroomSprite();
+            physics = new ObjectPhysics();
         }
 
         public void Update()
@@ -43,6 +46,11 @@ namespace Game.Items
         {
             get { return greenMushroomSprite; }
             set { greenMushroomSprite = value; }
+        }
+
+        public ObjectPhysics Physics
+        {
+            get { return physics; }
         }
     }
 }
