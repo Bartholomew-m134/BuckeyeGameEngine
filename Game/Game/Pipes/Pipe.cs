@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.Utilities;
 
 namespace Game.Pipes
 {
@@ -40,6 +41,11 @@ namespace Game.Pipes
         {
             get { return pipeSprite; }
             set { pipeSprite = value; }
+        }
+
+        public ObjectPhysics Physics
+        {
+            get { return null; }
         }
     }
 
