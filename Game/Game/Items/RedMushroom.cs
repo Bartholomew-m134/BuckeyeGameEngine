@@ -25,8 +25,9 @@ namespace Game.Items
             redMushroomSprite.Update();
         }
 
-        public void Draw() {
-            redMushroomSprite.Draw(myGame.spriteBatch, location);
+        public void Draw(ICamera camera)
+        {
+            redMushroomSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
         public void Disappear() {

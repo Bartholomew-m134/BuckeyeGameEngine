@@ -26,8 +26,9 @@ namespace Game.Pipes
             pipeSprite.Update();
         }
 
-        public void Draw() {
-            pipeSprite.Draw(myGame.spriteBatch, location);
+        public void Draw(ICamera camera)
+        {
+            pipeSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
         public Vector2 VectorCoordinates

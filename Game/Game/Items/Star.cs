@@ -25,9 +25,11 @@ namespace Game.Items
             starSprite.Update();
         }
 
-        public void Draw() {
-            starSprite.Draw(myGame.spriteBatch, location);
+        public void Draw(ICamera camera)
+        {
+            starSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
+
         public void Disappear() {
             location.Y -= 2000;
         }

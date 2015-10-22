@@ -28,9 +28,9 @@ namespace Game.Blocks
             blockState.Update();
         }
 
-        public void Draw()
+        public void Draw(ICamera camera)
         {
-            sprite.Draw(game.spriteBatch, location);
+            sprite.Draw(game.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
         public void Disappear()

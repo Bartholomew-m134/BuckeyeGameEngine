@@ -31,9 +31,9 @@ namespace Game.Mario
             state.Update();
         }
 
-        public void Draw() 
+        public void Draw(ICamera camera)
         {
-            sprite.Draw(myGame.spriteBatch, location);
+            sprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
         public void Left()

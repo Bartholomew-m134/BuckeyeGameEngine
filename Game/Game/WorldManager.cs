@@ -14,6 +14,7 @@ namespace Game
         private static List<IGameObject> objectList;
         private static string currentFileName;
         private static Game1 currentGame;
+        private static Camera camera;
 
         public static void LoadListFromFile(string filename, Game1 game)
         {
