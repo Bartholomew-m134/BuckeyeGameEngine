@@ -5,6 +5,7 @@ using System.Text;
 using Game.Mario;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
+using Game.Utilities;
 
 namespace Game.Mario.MarioStates
 {
@@ -30,7 +31,10 @@ namespace Game.Mario.MarioStates
 
         public void Right()
         {
-            mario.
+            ObjectPhysics physics = mario.Physics;
+            Vector2 acceleration = physics.GetSetAcceleration;
+            acceleration.X = 2;
+            physics.GetSetAcceleration = acceleration;
         }
 
         public void Up()

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.Utilities;
 
 namespace Game.Blocks
 {
@@ -85,6 +86,11 @@ namespace Game.Blocks
                     blockState = new NullBlockState(this);
                     break;
             }
+        }
+
+        public ObjectPhysics Physics
+        {
+            get { return null; }
         }
     }
 }

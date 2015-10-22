@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using Game.SpriteFactories;
 using Game.Interfaces;
+using Game.Utilities;
 
 namespace Game.Items
 {
@@ -13,11 +14,13 @@ namespace Game.Items
         private Game1 myGame;
         private ISprite coinSprite;
         private Vector2 location;
+        private ObjectPhysics physics;
 
         public Coin(Game1 game)
         {
             myGame = game;
             coinSprite = ItemsSpriteFactory.CreateCoinSprite();
+            physics = new ObjectPhysics();
         }
 
         public void Update()
@@ -44,6 +47,11 @@ namespace Game.Items
         {
             get { return coinSprite; }
             set { coinSprite = value; }
+        }
+
+        public ObjectPhysics Physics
+        {
+            get { return physics; }
         }
     }
 }
