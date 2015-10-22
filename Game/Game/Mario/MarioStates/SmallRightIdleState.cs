@@ -40,9 +40,7 @@ namespace Game.Mario.MarioStates
 
         public void Down()
         {
-            Vector2 loc = mario.VectorCoordinates;
-            loc.Y += 4;
-            mario.VectorCoordinates = (loc);
+
         }
 
         public void Land()

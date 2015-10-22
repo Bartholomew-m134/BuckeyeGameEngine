@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
+using Game.Utilities;
 
 namespace Game.Interfaces
 {
@@ -23,6 +24,11 @@ namespace Game.Interfaces
         {
             get;
             set;
+        }
+
+        ObjectPhysics Physics
+        {
+            get;
         }
 
     }
