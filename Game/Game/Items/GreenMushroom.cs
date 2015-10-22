@@ -28,8 +28,9 @@ namespace Game.Items
             greenMushroomSprite.Update();
         }
 
-        public void Draw() {
-            greenMushroomSprite.Draw(myGame.spriteBatch, location);
+        public void Draw(ICamera camera)
+        {
+            greenMushroomSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
         public void Disappear() {

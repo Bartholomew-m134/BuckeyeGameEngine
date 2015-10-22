@@ -12,7 +12,7 @@ namespace Game.Interfaces
     {
         void Update();
 
-        void Draw();
+        void Draw(ICamera camera);
 
         Vector2 VectorCoordinates
         {

@@ -28,8 +28,9 @@ namespace Game.Items
             flowerSprite.Update();
         }
 
-        public void Draw() {
-            flowerSprite.Draw(myGame.spriteBatch, location);
+        public void Draw(ICamera camera)
+        {
+            flowerSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
         public void Disappear() {

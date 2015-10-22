@@ -27,9 +27,10 @@ namespace Game.Items
         {
             coinSprite.Update();
         }
-       
-        public void Draw() {
-            coinSprite.Draw(myGame.spriteBatch, location);
+
+        public void Draw(ICamera camera)
+        {
+            coinSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
         public void Disappear() {

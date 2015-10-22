@@ -36,9 +36,9 @@ namespace Game.Mario
             mario.Update();
         }
 
-        public void Draw()
+        public void Draw(ICamera camera)
         {
-            ((IMarioSprite)mario.GetSetSprite).StarDraw(myGame.spriteBatch, mario.VectorCoordinates);
+            ((IMarioSprite)mario.GetSetSprite).StarDraw(myGame.spriteBatch, camera.GetAdjustedPosition(mario.VectorCoordinates));
         }
 
         public void Left()

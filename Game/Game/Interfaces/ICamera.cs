@@ -10,7 +10,15 @@ namespace Game.Interfaces
     {
         Vector2 GetAdjustedPosition(Vector2 position);
 
-        bool IsWithinBounds(IGameObject gameObject);
+        bool IsWithinBounds(Vector2 position);
+
+        bool IsLeftOfCamera(Vector2 position);
+      
+        bool IsRightOfCamera(Vector2 position);
+      
+        bool IsAboveCamera(Vector2 position);
+        
+        bool IsBelowCamera(Vector2 position);        
 
         void AdjustCameraPosition(Vector2 adjustment);
     }
