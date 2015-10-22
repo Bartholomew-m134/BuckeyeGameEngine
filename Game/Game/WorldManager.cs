@@ -32,6 +32,7 @@ namespace Game
             }
 
             CollisionManager.Update(objectList);
+            camera.AdjustCameraPosition(GetMario().VectorCoordinates);
         }
 
         public static void Draw()

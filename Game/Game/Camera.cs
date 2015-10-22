@@ -10,11 +10,25 @@ namespace Game
     public class Camera : ICamera
     {
         private Vector2 location;
-        private Vector2 dimension = new Vector2(800,600);
+        private Vector2 dimension;
+        private Vector2 prevPlayerLocation;
+        private bool leftScrollingDisabled;
+
+        public Camera()
+        {
+            dimension = new Vector2(800,480);
+            leftScrollingDisabled = true;
+        }
+
+        public Camera(Vector2 dimension)
+        {
+            this.dimension = dimension;
+            leftScrollingDisabled = true;
+        }
 
         public Vector2 GetAdjustedPosition(Vector2 position)
         {
-            return new Vector2(position.X - location.X, position.Y - location.Y);
+            return new Vector2(position.X - location.X + dimension.X/2, position.Y);
         }
 
         public bool IsWithinBounds(Vector2 position)
@@ -42,9 +56,30 @@ namespace Game
             return position.Y > location.Y + dimension.Y;
         }
 
-        public void AdjustCameraPosition(Vector2 adjustment)
+        public void AdjustCameraPosition(Vector2 position)
         {
-            location = Vector2.Add(location, adjustment);
+            Vector2 difference = Vector2.Subtract(position, prevPlayerLocation);
+
+            /*if(leftScrollingDisabled)
+            {
+                if (difference.X < 0)
+                    difference.X = 0;
+
+                if (position.X > location.X + dimension.X / 2)
+                    location = Vector2.Add(location, difference);
+            }*/
+            
+                location = Vector2.Add(location, difference);
+            
+            
+
+            prevPlayerLocation = position;
+        }
+
+        public bool LeftScrollingDisabled
+        {
+            get {return leftScrollingDisabled;}
+            set {leftScrollingDisabled = value;}
         }
     }
 }
