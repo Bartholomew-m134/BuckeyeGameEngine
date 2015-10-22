@@ -26,10 +26,10 @@ namespace Game.Mario.MarioStates
 
         public void Left()
         {
-            ObjectPhysics physics = mario.Physics;
-            Vector2 acceleration = physics.GetSetAcceleration;
+            
+            Vector2 acceleration = mario.Physics.GetSetAcceleration;
             acceleration.X = -2;
-            physics.GetSetAcceleration = acceleration;
+            mario.Physics.GetSetAcceleration = acceleration;
         }
 
         public void Right()
