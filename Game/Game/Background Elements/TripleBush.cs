@@ -27,11 +27,10 @@ namespace Game.Background_Elements
         {
             tripleBushSprite.Update();
         }
-       
-        public void Draw() {
-            
-                tripleBushSprite.Draw(myGame.spriteBatch, location);
-            
+
+        public void Draw(ICamera camera)
+        {
+            tripleBushSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
 

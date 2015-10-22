@@ -25,11 +25,10 @@ namespace Game.Background_Elements
         {
             singleBushSprite.Update();
         }
-       
-        public void Draw() {
-            
-                singleBushSprite.Draw(myGame.spriteBatch, location);
-            
+
+        public void Draw(ICamera camera)
+        {
+            singleBushSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
         public Vector2 VectorCoordinates

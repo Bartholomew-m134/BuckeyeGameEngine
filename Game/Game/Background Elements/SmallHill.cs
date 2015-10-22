@@ -26,11 +26,10 @@ namespace Game.Background_Elements
         {
             smallHillSprite.Update();
         }
-       
-        public void Draw() {
-          
-                smallHillSprite.Draw(myGame.spriteBatch, location);
-            
+
+        public void Draw(ICamera camera)
+        {
+            smallHillSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
 

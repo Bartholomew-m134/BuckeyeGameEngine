@@ -24,11 +24,10 @@ namespace Game.Background_Elements
         {
             tripleCloudSprite.Update();
         }
-       
-        public void Draw() {
-            
-                tripleCloudSprite.Draw(myGame.spriteBatch, location);
-            
+
+        public void Draw(ICamera camera)
+        {
+            tripleCloudSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
 

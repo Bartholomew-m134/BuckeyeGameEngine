@@ -26,11 +26,10 @@ namespace Game.Background_Elements
         {
             singleCloudSprite.Update();
         }
-       
-        public void Draw() {
-            
-                singleCloudSprite.Draw(myGame.spriteBatch, location);
-            
+
+        public void Draw(ICamera camera)
+        {
+            singleCloudSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
 
