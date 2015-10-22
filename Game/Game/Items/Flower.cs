@@ -20,7 +20,7 @@ namespace Game.Items
         {
             myGame = game;
             flowerSprite = ItemsSpriteFactory.CreateFlowerSprite();
-            physics = new ObjectPhysics;
+            physics = new ObjectPhysics();
         }
 
         public void Update()

@@ -136,7 +136,7 @@ namespace Game.Mario
             state.ToIdle();
         }
 
-        ObjectPhysics Physics
+        public ObjectPhysics Physics
         {
             get { return physics; }
         }
