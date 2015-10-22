@@ -36,7 +36,7 @@ namespace Game
         public static void Draw()
         {
             foreach (IGameObject gameObject in objectList)
-                gameObject.Draw(); 
+                gameObject.Draw(camera); 
         }
 
         public static IMario GetMario()
