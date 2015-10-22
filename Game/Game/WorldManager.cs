@@ -21,6 +21,7 @@ namespace Game
             objectList = LevelLoader.Load(filename, game);
             currentFileName = filename;
             currentGame = game;
+            camera = new Camera();
         }
 
         public static void Update()
