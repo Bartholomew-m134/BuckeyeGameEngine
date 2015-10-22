@@ -29,6 +29,7 @@ namespace Game.Mario
         public void Update()
         {
             state.Update();
+            location = physics.Update(location);
         }
 
         public void Draw() 
@@ -133,6 +134,11 @@ namespace Game.Mario
         public void ToIdle()
         {
             state.ToIdle();
+        }
+
+        ObjectPhysics Physics
+        {
+            get { return physics; }
         }
     }
 }
