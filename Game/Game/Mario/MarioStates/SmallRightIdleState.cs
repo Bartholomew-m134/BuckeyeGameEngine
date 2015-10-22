@@ -5,6 +5,7 @@ using System.Text;
 using Game.Mario;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
+using Game.Utilities;
 
 namespace Game.Mario.MarioStates
 {
@@ -65,7 +66,6 @@ namespace Game.Mario.MarioStates
 
         public void Star()
         {
-            //mario = new StarMario(mario);
         }
 
         public void Damage()

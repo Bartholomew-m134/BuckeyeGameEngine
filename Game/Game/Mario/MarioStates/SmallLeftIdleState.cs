@@ -5,6 +5,7 @@ using System.Text;
 using Game.Mario;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
+using Game.Utilities;
 
 namespace Game.Mario.MarioStates
 {
@@ -40,9 +41,6 @@ namespace Game.Mario.MarioStates
 
         public void Down()
         {
-            Vector2 loc = mario.VectorCoordinates;
-            loc.Y +=4;
-            mario.VectorCoordinates = loc;
         }
 
         public void Land()
@@ -86,7 +84,6 @@ namespace Game.Mario.MarioStates
 
         public void ToIdle()
         {
-
         }
     }
 }

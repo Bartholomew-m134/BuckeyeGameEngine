@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using Game.Mario;
 using Game.Interfaces;
+using Microsoft.Xna.Framework;
+using Game.Utilities;
 
 namespace Game.Mario.MarioStates
 {
@@ -84,7 +86,6 @@ namespace Game.Mario.MarioStates
 
         public void ToIdle()
         {
-
         }
     }
 }
