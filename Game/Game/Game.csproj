@@ -92,6 +92,7 @@
     <Compile Include="Blocks\BlockSprites\QuestionBlockSprite.cs" />
     <Compile Include="Blocks\BlockSprites\SolidBlockSprite.cs" />
     <Compile Include="Blocks\BlockSprites\UsedBlockSprite.cs" />
+    <Compile Include="Camera.cs" />
     <Compile Include="Collisions\CollisionManager.cs" />
     <Compile Include="Interfaces\IBlock.cs" />
     <Compile Include="Collisions\BlockCollisionHandling\MarioBlockCollisionHandler.cs" />
@@ -103,6 +104,7 @@
     <Compile Include="Collisions\EnemyCollisionHandling\EnemyEnemyCollisionHandler.cs" />
     <Compile Include="Collisions\EnemyCollisionHandling\EnemyPipeCollisionHandler.cs" />
     <Compile Include="Collisions\EnemyCollisionHandling\MarioEnemyCollisionHandler.cs" />
+    <Compile Include="Interfaces\ICamera.cs" />
     <Compile Include="Interfaces\ICollisionSide.cs" />
     <Compile Include="Collisions\ItemCollisionHandling\ItemBlockCollisionHandler.cs" />
     <Compile Include="Collisions\ItemCollisionHandling\MarioItemCollisionHandler.cs" />
