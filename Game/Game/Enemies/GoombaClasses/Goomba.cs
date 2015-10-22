@@ -23,6 +23,7 @@ namespace Game.Enemies.GoombaClasses
         {
             myGame = game;
             state = new GoombaWalkingLeftState(this);
+            physics = new ObjectPhysics();
         }
 
         public void IsHit()
@@ -66,6 +67,11 @@ namespace Game.Enemies.GoombaClasses
         {
             get { return sprite; }
             set { sprite = value; }
+        }
+
+        public ObjectPhysics Physics
+        {
+            get { return physics; }
         }
     }
 }

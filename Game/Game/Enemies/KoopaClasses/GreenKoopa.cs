@@ -24,6 +24,7 @@ namespace Game.Enemies.KoopaClasses
         {
             myGame = game;
             state = new GreenKoopaWalkingLeftState(this);
+            physics = new ObjectPhysics();
         }
 
         public void IsHit()
@@ -81,6 +82,11 @@ namespace Game.Enemies.KoopaClasses
         {
             get { return sprite; }
             set { sprite = value; }
+        }
+
+        public ObjectPhysics Physics
+        {
+            get {return physics;}
         }
     }
 }
