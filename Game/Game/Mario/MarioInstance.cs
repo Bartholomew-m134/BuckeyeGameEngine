@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
 using Game.Mario.MarioStates;
+using Game.Utilities;
 
 namespace Game.Mario
 {
@@ -14,13 +15,14 @@ namespace Game.Mario
         private IMarioSprite sprite;
         private Vector2 location;
         private Game1 myGame;
-        
+        private ObjectPhysics physics;
 
         public MarioInstance(Game1 game)
         {
 
             state = new SmallRightIdleState(this);
             myGame = game;
+            physics = new ObjectPhysics();
   
         }
 
@@ -83,7 +85,7 @@ namespace Game.Mario
 
         public void Star()
         {
-            //state.Star();
+            
             new StarMario(this, myGame);
         }
 

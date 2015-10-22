@@ -30,9 +30,7 @@ namespace Game.Mario.MarioStates
 
         public void Right()
         {
-            Vector2 loc = mario.VectorCoordinates;
-            loc.X += 4;
-            mario.VectorCoordinates = loc;
+            mario.
         }
 
         public void Up()
