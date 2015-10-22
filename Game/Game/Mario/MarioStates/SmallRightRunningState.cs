@@ -31,10 +31,10 @@ namespace Game.Mario.MarioStates
 
         public void Right()
         {
-            ObjectPhysics physics = mario.Physics;
-            Vector2 acceleration = physics.GetSetAcceleration;
+            
+            Vector2 acceleration =mario.Physics.GetSetAcceleration;
             acceleration.X = 2;
-            physics.GetSetAcceleration = acceleration;
+            mario.Physics.GetSetAcceleration = acceleration;
         }
 
         public void Up()
@@ -44,7 +44,7 @@ namespace Game.Mario.MarioStates
 
         public void Down()
         {
-            mario.GetSetMarioState = new SmallRightIdleState(mario);
+            
         }
 
         public void Land()

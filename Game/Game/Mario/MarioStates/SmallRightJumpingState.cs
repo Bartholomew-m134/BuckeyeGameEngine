@@ -29,7 +29,9 @@ namespace Game.Mario.MarioStates
 
         public void Left()
         {
-            mario.GetSetMarioState = new SmallLeftJumpingState(mario);
+            Vector2 acceleration = mario.Physics.GetSetAcceleration;
+            acceleration.X = -2;
+            mario.Physics.GetSetAcceleration = acceleration;
         }
 
         public void Right()
