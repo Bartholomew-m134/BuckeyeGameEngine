@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Game.Mario;
+using Microsoft.Xna.Framework;
 using Game.Interfaces;
 
 namespace Game.Mario.MarioStates
@@ -82,7 +83,6 @@ namespace Game.Mario.MarioStates
 
         public void ToIdle()
         {
-
         }
     }
 }

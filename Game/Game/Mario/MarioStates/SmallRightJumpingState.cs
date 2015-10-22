@@ -18,6 +18,9 @@ namespace Game.Mario.MarioStates
         {
             this.mario = mario;
             mario.GetSetSprite = SpriteFactories.MarioSpriteFactory.CreateSmallRightJumpingSprite();
+            Vector2 velocity = this.mario.Physics.GetSetVelocity;
+            velocity.Y = -11;
+            this.mario.Physics.GetSetVelocity = velocity;
         }
         public void Update()
         {
@@ -26,15 +29,17 @@ namespace Game.Mario.MarioStates
 
         public void Left()
         {
-            mario.GetSetMarioState = new SmallLeftJumpingState(mario);
+            Vector2 acceleration = mario.Physics.GetSetAcceleration;
+            acceleration.X = -2;
+            mario.Physics.GetSetAcceleration = acceleration;
         }
 
         public void Right()
         {
-            ObjectPhysics physics = mario.Physics;
-            Vector2 acceleration = physics.GetSetAcceleration;
+            
+            Vector2 acceleration = mario.Physics.GetSetAcceleration;
             acceleration.X = 2;
-            physics.GetSetAcceleration = acceleration;
+            mario.Physics.GetSetAcceleration = acceleration;
         }
 
         public void Up()
@@ -44,7 +49,7 @@ namespace Game.Mario.MarioStates
 
         public void Down()
         {
-            mario.GetSetMarioState = new SmallRightIdleState(mario);
+            
         }
 
         public void Land()
@@ -54,9 +59,21 @@ namespace Game.Mario.MarioStates
 
         public void Jump()
         {
-            Vector2 loc = mario.VectorCoordinates;
-            loc.Y -= 4;
-            mario.VectorCoordinates = loc;
+            Vector2 velocity = mario.Physics.GetSetVelocity;
+            Vector2 acceleration = mario.Physics.GetSetAcceleration;
+
+            if (velocity.Y < 0)
+            {
+                acceleration.Y = 1;
+                mario.Physics.GetSetAcceleration = acceleration;
+            }
+            else {
+                velocity.Y = 5;
+                acceleration.Y = 0;
+                mario.Physics.GetSetVelocity = velocity;
+                mario.Physics.GetSetAcceleration = acceleration;
+            }
+
         }
 
         public void Flower()
