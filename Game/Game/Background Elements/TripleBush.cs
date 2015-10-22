@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.Utilities;
 
 namespace Game.Background_Elements
 {
@@ -44,6 +45,11 @@ namespace Game.Background_Elements
         {
             get { return tripleBushSprite; }
             set { tripleBushSprite = value; }
+        }
+
+        public ObjectPhysics Physics
+        {
+            get { return null; }
         }
     }
 }

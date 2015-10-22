@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using System.Diagnostics;
 using Game.Interfaces;
+using Game.Utilities;
 
 namespace Game.Mario
 {
@@ -121,6 +122,11 @@ namespace Game.Mario
         public void ToIdle()
         {
             mario.ToIdle();
+        }
+
+        public ObjectPhysics Physics
+        {
+            get { return ((MarioInstance)mario).Physics; }
         }
     }
 }
