@@ -34,14 +34,14 @@ namespace Game.Blocks.BlockSprites
         public void Update()
         {
             if (isBumped){
-                if ((bumpY < 20) && (isBumpingUpward))
+                if ((bumpY < 30) && (isBumpingUpward))
                 {
-                    bumpY++;
+                    bumpY+=3;
                 }
                 else
                 {
                     isBumpingUpward = false;
-                    bumpY--;
+                    bumpY-=3;
                 }
             }
         }
