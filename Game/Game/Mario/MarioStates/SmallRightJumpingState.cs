@@ -67,12 +67,6 @@ namespace Game.Mario.MarioStates
                 acceleration.Y = 1;
                 mario.Physics.Acceleration = acceleration;
             }
-            else {
-                velocity.Y = 5;
-                acceleration.Y = 0;
-                mario.Physics.Velocity = velocity;
-                mario.Physics.Acceleration = acceleration;
-            }
 
         }
 

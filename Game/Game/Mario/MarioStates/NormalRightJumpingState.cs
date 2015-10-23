@@ -23,7 +23,7 @@ namespace Game.Mario.MarioStates
             this.mario.Physics.Velocity = velocity;
         }
         public void Update()
-        {
+        {   
             mario.Sprite.Update();
         }
 
@@ -65,13 +65,6 @@ namespace Game.Mario.MarioStates
             if (velocity.Y < 0)
             {
                 acceleration.Y = 1;
-                mario.Physics.Acceleration = acceleration;
-            }
-            else
-            {
-                velocity.Y = 5;
-                acceleration.Y = 0;
-                mario.Physics.Velocity = velocity;
                 mario.Physics.Acceleration = acceleration;
             }
         }
