@@ -37,20 +37,20 @@ namespace Game.Blocks
         {
             if (isBumped && (bumpTimer >0))
             {
-                BumpDraw();
+                BumpDraw(camera);
                 bumpTimer--;
             }
             else
             {
-                sprite.Draw(game.spriteBatch, location);
+                sprite.Draw(game.spriteBatch, camera.GetAdjustedPosition(location));
                 bumpTimer = 20;
                 isBumped = false;
             }
         }
 
-        public void BumpDraw()
+        public void BumpDraw(ICamera camera)
         {
-            sprite.BumpDraw(game.spriteBatch, location);
+            sprite.BumpDraw(game.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
         public void Disappear()
