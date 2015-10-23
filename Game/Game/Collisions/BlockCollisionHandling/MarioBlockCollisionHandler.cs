@@ -58,11 +58,11 @@ namespace Game.Collisions.BlockCollisionHandling
             if (!(collidingBlock.State is HiddenBlockState) && !(collidingBlock.State is BrickDebrisState))
             {
                 collision.ResolveOverlap(collidingMario, collisionSide);
-            }
-            if (collidingMario.IsJumping())
-            {
-                collidingMario.Physics.ResetPhysics();
-                collidingMario.MarioState.ToIdle();
+                if (collidingMario.IsJumping())
+                {
+                    collidingMario.Physics.ResetPhysics();
+                    collidingMario.MarioState.ToIdle();
+                }
             }
 
         }
