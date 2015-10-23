@@ -1,6 +1,7 @@
 ﻿using Game.Collisions;
 using Game.Interfaces;
 using Game.Mario;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,18 +22,21 @@ namespace Game
             objectList = LevelLoader.Load(filename, game);
             currentFileName = filename;
             currentGame = game;
-            camera = new Camera();
+            camera = new Camera(GetMario().VectorCoordinates);
         }
 
         public static void Update()
         {
             for (int i = objectList.Count - 1; i >= 0; i--)
             {
+                    //if(!camera.IsLeftOfCamera(objectList[i].VectorCoordinates))
                     objectList[i].Update();
             }
 
             CollisionManager.Update(objectList);
-            camera.AdjustCameraPosition(GetMario().VectorCoordinates);
+
+            GetMario().VectorCoordinates = camera.Update(GetMario().VectorCoordinates);
+            //camera.Update(GetMario().VectorCoordinates);
         }
 
         public static void Draw()
