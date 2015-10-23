@@ -29,20 +29,22 @@ namespace Game
         {
             for (int i = objectList.Count - 1; i >= 0; i--)
             {
-                    //if(!camera.IsLeftOfCamera(objectList[i].VectorCoordinates))
+                if(camera.IsWithinUpdateZone(objectList[i].VectorCoordinates))
                     objectList[i].Update();
             }
 
             CollisionManager.Update(objectList);
 
-            GetMario().VectorCoordinates = camera.Update(GetMario().VectorCoordinates);
-            //camera.Update(GetMario().VectorCoordinates);
+            camera.Update(GetMario());
         }
 
         public static void Draw()
         {
             foreach (IGameObject gameObject in objectList)
-                gameObject.Draw(camera); 
+            {
+                if (camera.IsWithinUpdateZone(gameObject.VectorCoordinates))
+                    gameObject.Draw(camera);
+            }
         }
 
         public static IMario GetMario()

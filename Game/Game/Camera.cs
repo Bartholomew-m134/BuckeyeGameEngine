@@ -23,22 +23,16 @@ namespace Game
             prevPlayerLocation = initialPlayerLocation;
         }
 
-        public Camera(Vector2 cameraDimension, Vector2 initialPlayerLocation)
+        public void Update(IGameObject player)
         {
-            dimension = cameraDimension;
-            leftScrollingDisabled = true;
-            verticalScrollingDisabled = true;
-            prevPlayerLocation = initialPlayerLocation;
-        }
+            Vector2 playerLocation = player.VectorCoordinates;
 
-        public Vector2 Update(Vector2 playerLocation)
-        {
             AdjustCameraPosition(playerLocation);
 
             if (IsLeftOfCamera(playerLocation))
                 playerLocation.X += cameraLocation.X - playerLocation.X;
             
-            return playerLocation;
+            player.VectorCoordinates = playerLocation;
         }
 
         public Vector2 GetAdjustedPosition(Vector2 position)
@@ -46,32 +40,17 @@ namespace Game
             return new Vector2(position.X - cameraLocation.X, position.Y - cameraLocation.Y);
         }
 
-        public void AdjustCameraPosition(Vector2 playerLocation)
-        {
-            Vector2 difference = Vector2.Subtract(playerLocation, prevPlayerLocation);
-
-            if (verticalScrollingDisabled)
-                difference.Y = 0;
-
-            if (leftScrollingDisabled)
-            {
-                if (difference.X < 0)
-                    difference.X = 0;
-
-                if (playerLocation.X > cameraLocation.X + dimension.X / 2)
-                    cameraLocation = Vector2.Add(cameraLocation, difference);
-            }
-            else
-            {
-                cameraLocation = Vector2.Add(cameraLocation, difference);
-            }
-
-            prevPlayerLocation = playerLocation;
-        }
-
         public bool IsWithinBounds(Vector2 position)
         {
             return !(IsLeftOfCamera(position) || IsRightOfCamera(position) || IsAboveCamera(position) || IsBelowCamera(position));
+        }
+
+        public bool IsWithinUpdateZone(Vector2 position)
+        {
+            float rightBound = cameraLocation.X + dimension.X * 2;
+            float leftBound = cameraLocation.X - dimension.X * 2;
+
+            return leftBound < position.X && position.X < rightBound;
         }
 
         public bool IsLeftOfCamera(Vector2 position)
@@ -106,9 +85,27 @@ namespace Game
             set { verticalScrollingDisabled = value; }
         }
 
-        public Vector2 Position
+        private void AdjustCameraPosition(Vector2 playerLocation)
         {
-            get { return cameraLocation; }
+            Vector2 difference = Vector2.Subtract(playerLocation, prevPlayerLocation);
+
+            if (verticalScrollingDisabled)
+                difference.Y = 0;
+
+            if (leftScrollingDisabled)
+            {
+                if (difference.X < 0)
+                    difference.X = 0;
+
+                if (playerLocation.X > cameraLocation.X + dimension.X / 2)
+                    cameraLocation = Vector2.Add(cameraLocation, difference);
+            }
+            else
+            {
+                cameraLocation = Vector2.Add(cameraLocation, difference);
+            }
+
+            prevPlayerLocation = playerLocation;
         }
     }
 }

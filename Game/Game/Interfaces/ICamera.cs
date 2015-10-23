@@ -8,9 +8,13 @@ namespace Game.Interfaces
 {
     public interface ICamera
     {
+        void Update(IGameObject player);
+
         Vector2 GetAdjustedPosition(Vector2 position);
 
         bool IsWithinBounds(Vector2 position);
+
+        bool IsWithinUpdateZone(Vector2 position);
 
         bool IsLeftOfCamera(Vector2 position);
       
@@ -19,8 +23,6 @@ namespace Game.Interfaces
         bool IsAboveCamera(Vector2 position);
         
         bool IsBelowCamera(Vector2 position);        
-
-        void AdjustCameraPosition(Vector2 playerLocation);
 
         bool LeftScrollingDisabled
         {
@@ -32,11 +34,6 @@ namespace Game.Interfaces
         {
             get;
             set;
-        }
-
-        Vector2 Position
-        {
-            get;
         }
     }
 }
