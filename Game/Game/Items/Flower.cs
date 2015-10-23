@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.Utilities;
 
 namespace Game.Items
 {
@@ -13,11 +14,13 @@ namespace Game.Items
         private Game1 myGame;
         private ISprite flowerSprite;
         private Vector2 location;
+        private ObjectPhysics physics;
 
         public Flower(Game1 game)
         {
             myGame = game;
             flowerSprite = ItemsSpriteFactory.CreateFlowerSprite();
+            physics = new ObjectPhysics();
         }
 
         public void Update()
@@ -25,8 +28,9 @@ namespace Game.Items
             flowerSprite.Update();
         }
 
-        public void Draw() {
-            flowerSprite.Draw(myGame.spriteBatch, location);
+        public void Draw(ICamera camera)
+        {
+            flowerSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
         public void Disappear() {
@@ -39,10 +43,15 @@ namespace Game.Items
             set { location = value; }
         }
 
-        public ISprite GetSetSprite
+        public ISprite Sprite
         {
             get { return flowerSprite; }
             set { flowerSprite = value; }
+        }
+
+        public ObjectPhysics Physics
+        {
+            get { return physics; }
         }
 
     }

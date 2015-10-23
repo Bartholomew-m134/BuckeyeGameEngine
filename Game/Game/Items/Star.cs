@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.Utilities;
 
 namespace Game.Items
 {
@@ -13,11 +14,13 @@ namespace Game.Items
         private Game1 myGame;
         private ISprite starSprite;
         private Vector2 location;
+        private ObjectPhysics physics;
 
         public Star(Game1 game)
         {
             myGame = game;
             starSprite = ItemsSpriteFactory.CreateStarSprite();
+            physics = new ObjectPhysics();
         }
 
         public void Update()
@@ -25,9 +28,11 @@ namespace Game.Items
             starSprite.Update();
         }
 
-        public void Draw() {
-            starSprite.Draw(myGame.spriteBatch, location);
+        public void Draw(ICamera camera)
+        {
+            starSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
+
         public void Disappear() {
             location.Y -= 2000;
         }
@@ -38,10 +43,15 @@ namespace Game.Items
             set { location = value; }
         }
 
-        public ISprite GetSetSprite
+        public ISprite Sprite
         {
             get { return starSprite; }
             set { starSprite = value; }
+        }
+
+        public ObjectPhysics Physics
+        {
+            get { return physics; }
         }
 
     }

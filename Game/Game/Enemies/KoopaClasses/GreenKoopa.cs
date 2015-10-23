@@ -6,6 +6,7 @@ using Game.Enemies.KoopaClasses.KoopaStates;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
+using Game.Utilities;
 
 namespace Game.Enemies.KoopaClasses
 {
@@ -17,11 +18,13 @@ namespace Game.Enemies.KoopaClasses
         private Vector2 location;
         private bool canDealDamage = true;
         private int inShellTimer = 0;
+        private ObjectPhysics physics;
 
         public GreenKoopa(Game1 game)
         {
             myGame = game;
             state = new GreenKoopaWalkingLeftState(this);
+            physics = new ObjectPhysics();
         }
 
         public void IsHit()
@@ -45,9 +48,9 @@ namespace Game.Enemies.KoopaClasses
             set { canDealDamage = value; }
         }
 
-        public void Draw()
+        public void Draw(ICamera camera)
         {
-            sprite.Draw(myGame.spriteBatch, location);
+            sprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
         public void Update()
@@ -75,10 +78,15 @@ namespace Game.Enemies.KoopaClasses
             set { location = value; }
         }
 
-        public ISprite GetSetSprite
+        public ISprite Sprite
         {
             get { return sprite; }
             set { sprite = value; }
+        }
+
+        public ObjectPhysics Physics
+        {
+            get {return physics;}
         }
     }
 }

@@ -25,8 +25,8 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
             MarioInstance expectedMario = new MarioInstance(game);
             expectedMario.VectorCoordinates = new Vector2(-1, 0);
 
-            testMario.GetSetMarioState = new FireRightIdleState(testMario);
-            expectedMario.GetSetMarioState = new FireRightIdleState(expectedMario);
+            testMario.MarioState = new FireRightIdleState(testMario);
+            expectedMario.MarioState = new FireRightIdleState(expectedMario);
 
             expectedMario.Damage();
 
@@ -39,8 +39,8 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
 
             collisionHandler.HandleCollision();
 
-            bool testState = testMario.GetSetMarioState is NormalRightIdleState;
-            bool expectedState = expectedMario.GetSetMarioState is NormalRightIdleState;
+            bool testState = testMario.MarioState is NormalRightIdleState;
+            bool expectedState = expectedMario.MarioState is NormalRightIdleState;
             Vector2 testLocation = testMario.VectorCoordinates;
             Vector2 expectedLocation = expectedMario.VectorCoordinates;
 
@@ -56,8 +56,8 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
             IMario expectedMario = new MarioInstance(game);
             expectedMario.VectorCoordinates = new Vector2(16, 0);
 
-            testMario.GetSetMarioState = new FireRightIdleState(testMario);
-            expectedMario.GetSetMarioState = new FireRightIdleState(expectedMario);
+            testMario.MarioState = new FireRightIdleState(testMario);
+            expectedMario.MarioState = new FireRightIdleState(expectedMario);
 
             expectedMario.Damage();
 
@@ -69,8 +69,8 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
 
             collisionHandler.HandleCollision();
 
-            bool testState = testMario.GetSetMarioState is NormalRightIdleState;
-            bool expectedState = expectedMario.GetSetMarioState is NormalRightIdleState;
+            bool testState = testMario.MarioState is NormalRightIdleState;
+            bool expectedState = expectedMario.MarioState is NormalRightIdleState;
             Vector2 testLocation = testMario.VectorCoordinates;
             Vector2 expectedLocation = expectedMario.VectorCoordinates;
 
@@ -86,8 +86,8 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
             IMario expectedMario = new MarioInstance(game);
             expectedMario.VectorCoordinates = new Vector2(0, 16);
 
-            testMario.GetSetMarioState = new FireRightIdleState(testMario);
-            expectedMario.GetSetMarioState = new FireRightIdleState(expectedMario);
+            testMario.MarioState = new FireRightIdleState(testMario);
+            expectedMario.MarioState = new FireRightIdleState(expectedMario);
 
             expectedMario.Damage();
 
@@ -99,8 +99,8 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
 
             collisionHandler.HandleCollision();
 
-            bool testState = testMario.GetSetMarioState is NormalRightIdleState;
-            bool expectedState = expectedMario.GetSetMarioState is NormalRightIdleState;
+            bool testState = testMario.MarioState is NormalRightIdleState;
+            bool expectedState = expectedMario.MarioState is NormalRightIdleState;
             Vector2 testLocation = testMario.VectorCoordinates;
             Vector2 expectedLocation = expectedMario.VectorCoordinates;
 
@@ -113,7 +113,7 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
         {
             IMario testMario = new MarioInstance(game);
 
-            testMario.GetSetMarioState = new FireRightIdleState(testMario);
+            testMario.MarioState = new FireRightIdleState(testMario);
 
             Goomba testGoomba = new Goomba(game);
             testGoomba.VectorCoordinates = new Vector2(0, 30);

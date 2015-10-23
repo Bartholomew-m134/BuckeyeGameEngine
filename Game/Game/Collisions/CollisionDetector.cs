@@ -18,8 +18,8 @@ namespace Game.Collisions
             Rectangle hitBoxB;
             Rectangle collisionRectangle;
 
-            hitBoxA = new Rectangle((int)objectA.VectorCoordinates.X, (int)objectA.VectorCoordinates.Y, (int)objectA.GetSetSprite.SpriteDimensions.X, (int)objectA.GetSetSprite.SpriteDimensions.Y);
-            hitBoxB = new Rectangle((int)objectB.VectorCoordinates.X, (int)objectB.VectorCoordinates.Y, (int)objectB.GetSetSprite.SpriteDimensions.X, (int)objectB.GetSetSprite.SpriteDimensions.Y);
+            hitBoxA = new Rectangle((int)objectA.VectorCoordinates.X, (int)objectA.VectorCoordinates.Y, (int)objectA.Sprite.SpriteDimensions.X, (int)objectA.Sprite.SpriteDimensions.Y);
+            hitBoxB = new Rectangle((int)objectB.VectorCoordinates.X, (int)objectB.VectorCoordinates.Y, (int)objectB.Sprite.SpriteDimensions.X, (int)objectB.Sprite.SpriteDimensions.Y);
             
             collisionRectangle = Rectangle.Intersect(hitBoxA, hitBoxB);
 
@@ -28,11 +28,11 @@ namespace Game.Collisions
                 
                 collisionSide = null;
             }
-            else if ((collisionRectangle.Width > collisionRectangle.Height) && (hitBoxA.Bottom < hitBoxB.Bottom))
+            else if ((collisionRectangle.Width >= collisionRectangle.Height) && (hitBoxA.Bottom < hitBoxB.Bottom))
             {
                 collisionSide = new TopSideCollision();
             }
-            else if (collisionRectangle.Width > collisionRectangle.Height)
+            else if (collisionRectangle.Width >= collisionRectangle.Height)
             {
                 collisionSide = new BottomSideCollision();
             }

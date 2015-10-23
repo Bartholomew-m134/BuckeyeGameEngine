@@ -42,6 +42,8 @@ namespace Game.Interfaces
 
          bool IsBig();
 
+         bool IsJumping();
+
          void ToIdle();
     }
 }

@@ -15,12 +15,12 @@ namespace Game.Blocks.BlockStates
         public HiddenBlockState(IBlock block)
         {
             this.block = block;
-            block.GetSetSprite = TileSpriteFactory.CreateHiddenBlockSprite();
+            block.Sprite = TileSpriteFactory.CreateHiddenBlockSprite();
         }
 
         public void Update()
         {
-            block.GetSetSprite.Update();
+            block.Sprite.Update();
         }
         public void Disappear()
         {

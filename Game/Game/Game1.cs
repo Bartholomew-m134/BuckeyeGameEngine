@@ -55,7 +55,7 @@ namespace Game
 
         protected override void Update(GameTime gameTime)
         {
-            if (delay == 5)
+            if (delay == 4)
             {
                 foreach (IController controller in controllerList)
                     controller.Update();

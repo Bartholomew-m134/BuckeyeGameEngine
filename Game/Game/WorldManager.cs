@@ -1,6 +1,7 @@
 ﻿using Game.Collisions;
 using Game.Interfaces;
 using Game.Mario;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,28 +15,36 @@ namespace Game
         private static List<IGameObject> objectList;
         private static string currentFileName;
         private static Game1 currentGame;
+        private static Camera camera;
 
         public static void LoadListFromFile(string filename, Game1 game)
         {
             objectList = LevelLoader.Load(filename, game);
             currentFileName = filename;
             currentGame = game;
+            camera = new Camera(GetMario().VectorCoordinates);
         }
 
         public static void Update()
         {
             for (int i = objectList.Count - 1; i >= 0; i--)
             {
+                if(camera.IsWithinUpdateZone(objectList[i].VectorCoordinates))
                     objectList[i].Update();
             }
 
             CollisionManager.Update(objectList);
+
+            camera.Update(GetMario());
         }
 
         public static void Draw()
         {
             foreach (IGameObject gameObject in objectList)
-                gameObject.Draw(); 
+            {
+                if (camera.IsWithinUpdateZone(gameObject.VectorCoordinates))
+                    gameObject.Draw(camera);
+            }
         }
 
         public static IMario GetMario()

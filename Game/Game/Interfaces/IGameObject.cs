@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
+using Game.Utilities;
 
 namespace Game.Interfaces
 {
@@ -11,7 +12,7 @@ namespace Game.Interfaces
     {
         void Update();
 
-        void Draw();
+        void Draw(ICamera camera);
 
         Vector2 VectorCoordinates
         {
@@ -19,10 +20,15 @@ namespace Game.Interfaces
             set;
         }
 
-        ISprite GetSetSprite
+        ISprite Sprite
         {
             get;
             set;
+        }
+
+        ObjectPhysics Physics
+        {
+            get;
         }
 
     }

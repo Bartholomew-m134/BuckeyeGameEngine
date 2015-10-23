@@ -15,12 +15,12 @@ namespace Game.Blocks.BlockStates
         public QuestionBlockState(IBlock block)
         {
             this.block = block;
-            block.GetSetSprite = TileSpriteFactory.CreateQuestionBlockSprite();
+            block.Sprite = TileSpriteFactory.CreateQuestionBlockSprite();
         }
 
         public void Update()
         {
-            block.GetSetSprite.Update();
+            block.Sprite.Update();
         }
 
         public void Disappear()

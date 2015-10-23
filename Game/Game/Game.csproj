@@ -94,6 +94,7 @@
     <Compile Include="Blocks\BlockSprites\SolidBlockSprite.cs" />
     <Compile Include="Blocks\BlockSprites\UsedBlockSprite.cs" />
     <Compile Include="Blocks\BlockStates\BrickDebrisState.cs" />
+    <Compile Include="Camera.cs" />
     <Compile Include="Collisions\CollisionManager.cs" />
     <Compile Include="Interfaces\IBlock.cs" />
     <Compile Include="Collisions\BlockCollisionHandling\MarioBlockCollisionHandler.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="Collisions\EnemyCollisionHandling\EnemyPipeCollisionHandler.cs" />
     <Compile Include="Collisions\EnemyCollisionHandling\MarioEnemyCollisionHandler.cs" />
     <Compile Include="Interfaces\IBlockSprite.cs" />
+    <Compile Include="Interfaces\ICamera.cs" />
     <Compile Include="Interfaces\ICollisionSide.cs" />
     <Compile Include="Collisions\ItemCollisionHandling\ItemBlockCollisionHandler.cs" />
     <Compile Include="Collisions\ItemCollisionHandling\MarioItemCollisionHandler.cs" />
@@ -234,6 +236,7 @@
     <Compile Include="Mario\MarioStates\SmallRightIdleState.cs" />
     <Compile Include="Mario\MarioStates\SmallRightJumpingState.cs" />
     <Compile Include="Mario\MarioStates\SmallRightRunningState.cs" />
+    <Compile Include="Utilities\ObjectPhysics.cs" />
     <Compile Include="WorldManager.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -293,9 +296,7 @@
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Utilities\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
   <!--

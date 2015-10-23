@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.Utilities;
 
 namespace Game.Background_Elements
 {
@@ -27,11 +28,10 @@ namespace Game.Background_Elements
         {
             tripleBushSprite.Update();
         }
-       
-        public void Draw() {
-            
-                tripleBushSprite.Draw(myGame.spriteBatch, location);
-            
+
+        public void Draw(ICamera camera)
+        {
+            tripleBushSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
 
@@ -41,10 +41,15 @@ namespace Game.Background_Elements
             set { location = value; }
         }
 
-        public ISprite GetSetSprite
+        public ISprite Sprite
         {
             get { return tripleBushSprite; }
             set { tripleBushSprite = value; }
+        }
+
+        public ObjectPhysics Physics
+        {
+            get { return null; }
         }
     }
 }

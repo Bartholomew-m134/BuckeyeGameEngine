@@ -34,8 +34,8 @@ namespace CollisionDetectionTests
 
             collisionHandler.HandleCollision();
 
-            bool testState = testMario.GetSetMarioState is FireRightIdleState;
-            bool expectedState = expectedMario.GetSetMarioState is FireRightIdleState;
+            bool testState = testMario.MarioState is FireRightIdleState;
+            bool expectedState = expectedMario.MarioState is FireRightIdleState;
 
             Vector2 testLocation = testMario.VectorCoordinates;
             Vector2 expectedLocation = expectedMario.VectorCoordinates;
@@ -62,8 +62,8 @@ namespace CollisionDetectionTests
 
             collisionHandler.HandleCollision();
 
-            bool testState = testMario.GetSetMarioState is FireRightIdleState;
-            bool expectedState = expectedMario.GetSetMarioState is FireRightIdleState;
+            bool testState = testMario.MarioState is FireRightIdleState;
+            bool expectedState = expectedMario.MarioState is FireRightIdleState;
 
             Vector2 testLocation = testMario.VectorCoordinates;
             Vector2 expectedLocation = expectedMario.VectorCoordinates;
@@ -90,8 +90,8 @@ namespace CollisionDetectionTests
 
             collisionHandler.HandleCollision();
 
-            bool testState = testMario.GetSetMarioState is FireRightIdleState;
-            bool expectedState = expectedMario.GetSetMarioState is FireRightIdleState;
+            bool testState = testMario.MarioState is FireRightIdleState;
+            bool expectedState = expectedMario.MarioState is FireRightIdleState;
 
             Vector2 testLocation = testMario.VectorCoordinates;
             Vector2 expectedLocation = expectedMario.VectorCoordinates;
@@ -118,8 +118,8 @@ namespace CollisionDetectionTests
 
             collisionHandler.HandleCollision();
 
-            bool testState = testMario.GetSetMarioState is FireRightIdleState;
-            bool expectedState = expectedMario.GetSetMarioState is FireRightIdleState;
+            bool testState = testMario.MarioState is FireRightIdleState;
+            bool expectedState = expectedMario.MarioState is FireRightIdleState;
 
             Vector2 testLocation = testMario.VectorCoordinates;
             Vector2 expectedLocation = expectedMario.VectorCoordinates;

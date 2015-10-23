@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.Utilities;
 
 namespace Game.Background_Elements
 {
@@ -25,11 +26,10 @@ namespace Game.Background_Elements
         {
             singleBushSprite.Update();
         }
-       
-        public void Draw() {
-            
-                singleBushSprite.Draw(myGame.spriteBatch, location);
-            
+
+        public void Draw(ICamera camera)
+        {
+            singleBushSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
         public Vector2 VectorCoordinates
@@ -38,10 +38,15 @@ namespace Game.Background_Elements
             set { location = value; }
         }
 
-        public ISprite GetSetSprite
+        public ISprite Sprite
         {
             get { return singleBushSprite; }
             set { singleBushSprite = value; }
+        }
+
+        public ObjectPhysics Physics
+        {
+            get { return null; }
         }
     }
   }

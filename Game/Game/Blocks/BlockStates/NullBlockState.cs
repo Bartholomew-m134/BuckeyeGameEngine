@@ -13,7 +13,7 @@ namespace Game.Blocks.BlockStates
 
         public NullBlockState(IBlock block)
         {
-            block.GetSetSprite = TileSpriteFactory.CreateHiddenBlockSprite();
+            block.Sprite = TileSpriteFactory.CreateHiddenBlockSprite();
         }
 
         public void Update()

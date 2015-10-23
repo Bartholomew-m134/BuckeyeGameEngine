@@ -34,7 +34,7 @@ namespace Game.Mario
 
         void Star();
 
-        IMarioState GetSetMarioState
+        IMarioState MarioState
         {
             get;
             set;
@@ -48,6 +48,8 @@ namespace Game.Mario
         bool IsBig();
 
         bool IsStar();
+
+        bool IsJumping();
 
         void ToIdle();
 

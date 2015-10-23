@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
 using Game.Mario.MarioStates;
+using Game.Utilities;
 
 namespace Game.Mario
 {
@@ -14,24 +15,26 @@ namespace Game.Mario
         private IMarioSprite sprite;
         private Vector2 location;
         private Game1 myGame;
-        
+        private ObjectPhysics physics;
 
         public MarioInstance(Game1 game)
         {
 
             state = new SmallRightIdleState(this);
             myGame = game;
+            physics = new ObjectPhysics();
   
         }
 
         public void Update()
         {
             state.Update();
+            location = physics.Update(location);
         }
 
-        public void Draw() 
+        public void Draw(ICamera camera)
         {
-            sprite.Draw(myGame.spriteBatch, location);
+            sprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
         public void Left()
@@ -83,7 +86,7 @@ namespace Game.Mario
 
         public void Star()
         {
-            //state.Star();
+            
             new StarMario(this, myGame);
         }
 
@@ -105,13 +108,13 @@ namespace Game.Mario
             set { location = value; }
         }
 
-        public ISprite GetSetSprite
+        public ISprite Sprite
         {
             get { return (ISprite)sprite; }
             set { sprite = (IMarioSprite)value; }
         }
 
-        public IMarioState GetSetMarioState
+        public IMarioState MarioState
         {
             get { return state; }
             set { state = value; }
@@ -128,9 +131,25 @@ namespace Game.Mario
             return false;
         }
 
+        public bool IsJumping()
+        {
+            return state.IsJumping();
+        }
+
         public void ToIdle()
         {
+            Vector2 velocity = this.Physics.Velocity;
+            Vector2 acceleration = this.Physics.Acceleration;
+            velocity.X = 0;
+            acceleration.X = 0;
+            this.Physics.Acceleration = acceleration;
+            this.Physics.Velocity = velocity;
             state.ToIdle();
+        }
+
+        public ObjectPhysics Physics
+        {
+            get { return physics; }
         }
     }
 }

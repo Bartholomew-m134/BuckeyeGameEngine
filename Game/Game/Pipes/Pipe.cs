@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.Utilities;
 
 namespace Game.Pipes
 {
@@ -26,8 +27,9 @@ namespace Game.Pipes
             pipeSprite.Update();
         }
 
-        public void Draw() {
-            pipeSprite.Draw(myGame.spriteBatch, location);
+        public void Draw(ICamera camera)
+        {
+            pipeSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
         public Vector2 VectorCoordinates
@@ -36,10 +38,15 @@ namespace Game.Pipes
             set { location = value; }
         }
 
-        public ISprite GetSetSprite
+        public ISprite Sprite
         {
             get { return pipeSprite; }
             set { pipeSprite = value; }
+        }
+
+        public ObjectPhysics Physics
+        {
+            get { return null; }
         }
     }
 

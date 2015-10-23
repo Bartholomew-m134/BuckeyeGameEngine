@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.Utilities;
 
 namespace Game.Blocks
 {
@@ -32,7 +33,7 @@ namespace Game.Blocks
             blockState.Update();
         }
 
-        public void Draw()
+        public void Draw(ICamera camera)
         {
             if (isBumped && (bumpTimer >0))
             {
@@ -69,7 +70,7 @@ namespace Game.Blocks
             set { location = value; }
         }
 
-        public ISprite GetSetSprite
+        public ISprite Sprite
         {
             get { return (ISprite)sprite; }
             set { sprite = (IBlockSprite)value; }
@@ -104,6 +105,11 @@ namespace Game.Blocks
                     blockState = new NullBlockState(this);
                     break;
             }
+        }
+
+        public ObjectPhysics Physics
+        {
+            get { return null; }
         }
     }
 }

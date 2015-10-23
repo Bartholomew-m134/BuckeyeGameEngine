@@ -15,12 +15,12 @@ namespace Game.Blocks.BlockStates
         public BreakingBlockState(IBlock block)
         {
             this.block = block;
-            block.GetSetSprite = TileSpriteFactory.CreateBreakingBlockSprite();
+            block.Sprite = TileSpriteFactory.CreateBreakingBlockSprite();
         }
 
         public void Update()
         {
-            block.GetSetSprite.Update();
+            block.Sprite.Update();
         }
 
         public void Disappear()

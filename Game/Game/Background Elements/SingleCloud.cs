@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.Utilities;
 
 namespace Game.Background_Elements
 {
@@ -26,11 +27,10 @@ namespace Game.Background_Elements
         {
             singleCloudSprite.Update();
         }
-       
-        public void Draw() {
-            
-                singleCloudSprite.Draw(myGame.spriteBatch, location);
-            
+
+        public void Draw(ICamera camera)
+        {
+            singleCloudSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
 
@@ -40,10 +40,15 @@ namespace Game.Background_Elements
             set { location = value; }
         }
 
-        public ISprite GetSetSprite
+        public ISprite Sprite
         {
             get { return singleCloudSprite; }
             set { singleCloudSprite = value; }
+        }
+
+        public ObjectPhysics Physics
+        {
+            get { return null; }
         }
     }
 }
