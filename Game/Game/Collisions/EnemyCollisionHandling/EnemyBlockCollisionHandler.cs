@@ -2,11 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Game.Enemies;
-using Game.Enemies.GoombaClasses;
-using Game.Enemies.KoopaClasses;
 using Game.Interfaces;
-using Game.Blocks;
 
 namespace Game.Collisions.EnemyCollisionHandling
 {
