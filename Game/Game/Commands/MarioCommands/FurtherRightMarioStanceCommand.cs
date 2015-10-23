@@ -19,7 +19,10 @@ namespace Game.Commands.MarioCommands
 
         public void Release()
         {
-            WorldManager.GetMario().ToIdle();
+            if (WorldManager.GetMario().IsJumping() == false)
+            {
+                WorldManager.GetMario().ToIdle();
+            }
         }
     }
 }

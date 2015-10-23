@@ -55,7 +55,8 @@ namespace Game.Collisions.BlockCollisionHandling
         }
         private void HandleTopSide()
         {
-            if (!(collidingBlock.State is HiddenBlockState)){
+            if (!(collidingBlock.State is HiddenBlockState) && !(collidingBlock.State is BrickDebrisState))
+            {
                 collision.ResolveOverlap(collidingMario, collisionSide);
             }
             if (collidingMario.IsJumping())
@@ -69,24 +70,31 @@ namespace Game.Collisions.BlockCollisionHandling
         {
             if (collidingBlock.State is HiddenBlockState && collidingMario.Physics.Velocity.Y <= 0){
                 collidingBlock.GetUsed();
+                collidingBlock.isBumped = true;
                 collision.ResolveOverlap(collidingMario, collisionSide);
             }
             else if (collidingBlock.State is BrickBlockState && collidingMario.IsBig())
             {
                 collidingBlock.Disappear();
             }
+            else if (collidingBlock.State is BrickBlockState && !(collidingMario.IsBig()))
+            {
+                collidingBlock.isBumped = true;
+                collision.ResolveOverlap(collidingMario, collisionSide);
+            } 
             else if (collidingBlock.State is QuestionBlockState)
             {
                 collidingBlock.GetUsed();
+                collidingBlock.isBumped = true;
                 collision.ResolveOverlap(collidingMario, collisionSide);
             } 
-            else {
+            else if (!(collidingBlock.State is BrickDebrisState)){
                 collision.ResolveOverlap(collidingMario, collisionSide);
             }
         }
         private void HandleRightSide()
         {
-            if (!(collidingBlock.State is HiddenBlockState))
+            if (!(collidingBlock.State is HiddenBlockState) && !(collidingBlock.State is BrickDebrisState))
             {
                 collision.ResolveOverlap(collidingMario, collisionSide);
             }
@@ -94,7 +102,7 @@ namespace Game.Collisions.BlockCollisionHandling
         }
         private void HandleLeftSide()
         {
-            if (!(collidingBlock.State is HiddenBlockState))
+            if (!(collidingBlock.State is HiddenBlockState) && !(collidingBlock.State is BrickDebrisState))
             {
                 collision.ResolveOverlap(collidingMario, collisionSide);
             }

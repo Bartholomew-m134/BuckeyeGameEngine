@@ -20,10 +20,10 @@ namespace Game.Mario.MarioStates
             mario.Sprite = SpriteFactories.MarioSpriteFactory.CreateSmallLeftJumpingSprite();
             if (!mario.MarioState.IsJumping())
             {
-                Vector2 velocity = this.mario.Physics.Velocity;
-                velocity.Y = -11;
-                this.mario.Physics.Velocity = velocity;
-            }
+            Vector2 velocity = this.mario.Physics.Velocity;
+            velocity.Y = -11;
+            this.mario.Physics.Velocity = velocity;
+        }
         }
         public void Update()
         {
@@ -71,7 +71,6 @@ namespace Game.Mario.MarioStates
                 acceleration.Y = 1;
                 mario.Physics.Acceleration = acceleration;
             }
-            
         }
 
         public void Flower()

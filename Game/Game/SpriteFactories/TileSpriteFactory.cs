@@ -13,10 +13,12 @@ namespace Game.SpriteFactories
     public static class TileSpriteFactory
     {
         private static Texture2D tileSpriteSheet;
+        private static Texture2D brickDebrisSpriteSheet;
 
         public static void Load(ContentManager content)
         {
             tileSpriteSheet = content.Load<Texture2D>("MarioTilesSpriteSheet");
+            brickDebrisSpriteSheet = content.Load<Texture2D>("brickdebrissprite");
         }
 
         public static void Unload()
@@ -32,6 +34,10 @@ namespace Game.SpriteFactories
         public static ISprite CreateBrickBlockSprite()
         {
             return new BrickBlockSprite(tileSpriteSheet);
+        }
+        public static ISprite CreateBrickDebrisSprite()
+        {
+            return new BrickDebrisSprite(brickDebrisSpriteSheet);
         }
 
         public static ISprite CreateUsedBlockSprite()
