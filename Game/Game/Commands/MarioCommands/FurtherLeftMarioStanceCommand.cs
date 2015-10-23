@@ -23,6 +23,9 @@ namespace Game.Commands.MarioCommands
             {
                 WorldManager.GetMario().ToIdle();
             }
+            else {
+                WorldManager.GetMario().Physics.ResetX();
+            }
         }
     }
 }
