@@ -18,7 +18,7 @@ namespace Game
         public Camera(Vector2 initialPlayerLocation)
         {
             dimension = new Vector2(800,480);
-            leftScrollingDisabled = false;
+            leftScrollingDisabled = true;
             verticalScrollingDisabled = true;
             prevPlayerLocation = initialPlayerLocation;
         }
