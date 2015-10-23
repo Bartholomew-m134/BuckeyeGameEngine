@@ -10,8 +10,8 @@ namespace Game.Utilities
     {
         private Vector2 velocity;
         private Vector2 acceleration;
-        private Vector2 velocityMaximum = new Vector2(5, 5);
-        private Vector2 velocityMinimum = new Vector2(-5, -11);
+        private Vector2 velocityMaximum = new Vector2(10, 6);
+        private Vector2 velocityMinimum = new Vector2(-10, -11);
         private int gravity = 1;
         public ObjectPhysics()
         {
