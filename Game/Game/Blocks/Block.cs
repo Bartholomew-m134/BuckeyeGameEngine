@@ -14,12 +14,16 @@ namespace Game.Blocks
         public enum Type {NullBlock, BrickBlock, HiddenBlock, QuestionBlock, SolidBlock, BreakingBlock};
         
         private IBlockState blockState;
-        private ISprite sprite;
+        private IBlockSprite sprite;
         private Game1 game;
         private Vector2 location;
+        public bool isBumped;
+        private int bumpTimer;
 
         public Block(Type blockType, Game1 game)
         {
+            isBumped = false;
+            bumpTimer = 20;
             this.game = game;
             SetInitialState(blockType);           
         }
@@ -31,13 +35,28 @@ namespace Game.Blocks
 
         public void Draw(ICamera camera)
         {
-            sprite.Draw(game.spriteBatch, camera.GetAdjustedPosition(location));
+            if (isBumped && (bumpTimer >0))
+            {
+                BumpDraw(camera);
+                bumpTimer--;
+            }
+            else
+            {
+                sprite.Draw(game.spriteBatch, camera.GetAdjustedPosition(location));
+                bumpTimer = 20;
+                isBumped = false;
+            }
+        }
+
+        public void BumpDraw(ICamera camera)
+        {
+            sprite.BumpDraw(game.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
         public void Disappear()
         {
             blockState.Disappear();
-            WorldManager.FreeObject(this);
+            //WorldManager.FreeObject(this);
         }
 
         public void GetUsed()
@@ -53,8 +72,8 @@ namespace Game.Blocks
 
         public ISprite Sprite
         {
-            get { return sprite; }
-            set { sprite = value; }
+            get { return (ISprite)sprite; }
+            set { sprite = (IBlockSprite)value; }
         }
 
         public IBlockState State

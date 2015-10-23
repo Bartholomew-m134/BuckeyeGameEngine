@@ -8,14 +8,15 @@ using System.Text;
 
 namespace Game.Blocks.BlockStates
 {
-    public class BrickBlockState : IBlockState
+    class BrickDebrisState : IBlockState
     {
+
         private IBlock block;
 
-        public BrickBlockState(IBlock block)
+        public BrickDebrisState(IBlock block)
         {
             this.block = block;
-            block.Sprite = TileSpriteFactory.CreateBrickBlockSprite();
+            block.Sprite = TileSpriteFactory.CreateBrickDebrisSprite();
         }
 
         public void Update()
@@ -25,12 +26,13 @@ namespace Game.Blocks.BlockStates
 
         public void Disappear()
         {
-            block.State = new BrickDebrisState(block);
+
         }
 
         public void GetUsed()
         {
             
         }
+
     }
 }
