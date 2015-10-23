@@ -28,11 +28,11 @@ namespace Game.Collisions
                 
                 collisionSide = null;
             }
-            else if ((collisionRectangle.Width > collisionRectangle.Height) && (hitBoxA.Bottom < hitBoxB.Bottom))
+            else if ((collisionRectangle.Width >= collisionRectangle.Height) && (hitBoxA.Bottom < hitBoxB.Bottom))
             {
                 collisionSide = new TopSideCollision();
             }
-            else if (collisionRectangle.Width > collisionRectangle.Height)
+            else if (collisionRectangle.Width >= collisionRectangle.Height)
             {
                 collisionSide = new BottomSideCollision();
             }
