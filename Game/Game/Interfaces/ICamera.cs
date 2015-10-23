@@ -20,12 +20,23 @@ namespace Game.Interfaces
         
         bool IsBelowCamera(Vector2 position);        
 
-        void AdjustCameraPosition(Vector2 position);
+        void AdjustCameraPosition(Vector2 playerLocation);
 
         bool LeftScrollingDisabled
         {
             get;
             set;
+        }
+
+        bool VerticalScrollingDisabled
+        {
+            get;
+            set;
+        }
+
+        Vector2 Position
+        {
+            get;
         }
     }
 }
