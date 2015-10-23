@@ -15,12 +15,17 @@ namespace Game.Commands.MarioCommands
 
         public void Execute()
         {
-            WorldManager.GetMario().Jump();
+
+                WorldManager.GetMario().Jump();
+            
         }
 
         public void Release()
         {
-            WorldManager.GetMario().Physics.ResetY();
+            if (WorldManager.GetMario().Physics.Velocity.Y < 0)
+            {
+                WorldManager.GetMario().Physics.ResetY();
+            }
         }
     }
 }

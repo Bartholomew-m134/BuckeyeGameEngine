@@ -23,7 +23,7 @@ namespace Game.Mario.MarioStates
             Vector2 velocity = this.mario.Physics.Velocity;
             velocity.Y = -11;
             this.mario.Physics.Velocity = velocity;
-        }
+            }
         }
         public void Update()
         {
