@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Game.Blocks.BlockSprites
 {
-    public class HiddenBlockSprite : ISprite
+    public class HiddenBlockSprite : IBlockSprite
     {
         private Texture2D spriteSheet;
         private int width;
@@ -38,6 +38,11 @@ namespace Game.Blocks.BlockSprites
             spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
+        }
+
+        public void BumpDraw(SpriteBatch spriteBatch, Vector2 location)
+        {
+
         }
 
         public Vector2 SpriteDimensions
