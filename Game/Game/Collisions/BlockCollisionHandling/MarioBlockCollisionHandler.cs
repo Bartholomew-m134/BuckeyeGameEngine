@@ -91,6 +91,7 @@ namespace Game.Collisions.BlockCollisionHandling
             else if (!(collidingBlock.State is BrickDebrisState)){
                 collision.ResolveOverlap(collidingMario, collisionSide);
             }
+            collidingMario.Physics.ResetY();
         }
         private void HandleRightSide()
         {
