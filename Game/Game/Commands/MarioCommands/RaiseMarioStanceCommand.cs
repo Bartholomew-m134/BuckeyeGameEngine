@@ -22,8 +22,8 @@ namespace Game.Commands.MarioCommands
         {
             Vector2 velocity = WorldManager.GetMario().Physics.Velocity;
             Vector2 acceleration = WorldManager.GetMario().Physics.Acceleration;
-            velocity.Y = 5;
-            acceleration.Y = 0;
+            velocity.Y = 0;
+            acceleration.Y = 1;
             WorldManager.GetMario().Physics.Velocity = velocity;
             WorldManager.GetMario().Physics.Acceleration = acceleration;
         }

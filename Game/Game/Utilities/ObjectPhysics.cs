@@ -14,9 +14,9 @@ namespace Game.Utilities
         private Vector2 velocityMinimum = new Vector2(-5, -11);
         public ObjectPhysics()
         {
-            int gravity = 5;
-            velocity = new Vector2(0, gravity);
-            acceleration = new Vector2(0, 0);
+            int gravity = 1;
+            velocity = new Vector2(0, 0);
+            acceleration = new Vector2(0, gravity);
         }
         
         public Vector2 Update(Vector2 coordinates)
@@ -59,9 +59,9 @@ namespace Game.Utilities
 
         public void ResetPhysics()
         {
-            int gravity = 5;
-            velocity = new Vector2(0, gravity);
-            acceleration = new Vector2(0, 0);
+            int gravity = 1;
+            velocity = new Vector2(0, 0);
+            acceleration = new Vector2(0, gravity);
         }
     }
 }
