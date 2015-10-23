@@ -35,8 +35,8 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
 
             collisionHandler.HandleCollision();
 
-            bool testState = testMario.GetSetMarioState is DeadMarioState;
-            bool expectedState = expectedMario.GetSetMarioState is DeadMarioState;
+            bool testState = testMario.MarioState is DeadMarioState;
+            bool expectedState = expectedMario.MarioState is DeadMarioState;
             Vector2 testLocation = testMario.VectorCoordinates;
             Vector2 expectedLocation = expectedMario.VectorCoordinates;
 
@@ -61,8 +61,8 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
 
             collisionHandler.HandleCollision();
 
-            bool testState = testMario.GetSetMarioState is DeadMarioState;
-            bool expectedState = expectedMario.GetSetMarioState is DeadMarioState;
+            bool testState = testMario.MarioState is DeadMarioState;
+            bool expectedState = expectedMario.MarioState is DeadMarioState;
             Vector2 testLocation = testMario.VectorCoordinates;
             Vector2 expectedLocation = expectedMario.VectorCoordinates;
 
@@ -87,8 +87,8 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
 
             collisionHandler.HandleCollision();
 
-            bool testState = testMario.GetSetMarioState is DeadMarioState;
-            bool expectedState = expectedMario.GetSetMarioState is DeadMarioState;
+            bool testState = testMario.MarioState is DeadMarioState;
+            bool expectedState = expectedMario.MarioState is DeadMarioState;
             Vector2 testLocation = testMario.VectorCoordinates;
             Vector2 expectedLocation = expectedMario.VectorCoordinates;
 

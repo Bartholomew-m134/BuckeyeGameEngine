@@ -38,7 +38,7 @@ namespace Game.Mario
 
         public void Draw(ICamera camera)
         {
-            ((IMarioSprite)mario.GetSetSprite).StarDraw(myGame.spriteBatch, camera.GetAdjustedPosition(mario.VectorCoordinates));
+            ((IMarioSprite)mario.Sprite).StarDraw(myGame.spriteBatch, camera.GetAdjustedPosition(mario.VectorCoordinates));
         }
 
         public void Left()
@@ -97,26 +97,31 @@ namespace Game.Mario
             set { mario.VectorCoordinates = value; }
         }
 
-        public ISprite GetSetSprite
+        public ISprite Sprite
         {
-            get { return mario.GetSetSprite; }
-            set { mario.GetSetSprite = (IMarioSprite)value; }
+            get { return mario.Sprite; }
+            set { mario.Sprite = (IMarioSprite)value; }
         }
 
-        public IMarioState GetSetMarioState
+        public IMarioState MarioState
         {
-            get { return mario.GetSetMarioState; }
-            set { mario.GetSetMarioState = value; }
+            get { return mario.MarioState; }
+            set { mario.MarioState = value; }
         }
 
         public bool IsBig()
         {
-            return mario.GetSetMarioState.IsBig();
+            return mario.MarioState.IsBig();
         }
 
         public bool IsStar()
         {
             return true;
+        }
+
+        public bool IsJumping()
+        {
+            return mario.MarioState.IsJumping();
         }
 
         public void ToIdle()

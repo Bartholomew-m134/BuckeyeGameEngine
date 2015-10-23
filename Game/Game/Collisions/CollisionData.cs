@@ -23,8 +23,8 @@ namespace Game.Collisions
             int xCoordinate = (int)overlappingObject.VectorCoordinates.X;
             int yCoordinate = (int)overlappingObject.VectorCoordinates.Y;
 
-            Rectangle hitBoxA = new Rectangle((int)gameObjectA.VectorCoordinates.X, (int)gameObjectA.VectorCoordinates.Y, (int)gameObjectA.GetSetSprite.SpriteDimensions.X, (int)gameObjectA.GetSetSprite.SpriteDimensions.Y);
-            Rectangle hitBoxB = new Rectangle((int)gameObjectB.VectorCoordinates.X, (int)gameObjectB.VectorCoordinates.Y, (int)gameObjectB.GetSetSprite.SpriteDimensions.X, (int)gameObjectB.GetSetSprite.SpriteDimensions.Y);
+            Rectangle hitBoxA = new Rectangle((int)gameObjectA.VectorCoordinates.X, (int)gameObjectA.VectorCoordinates.Y, (int)gameObjectA.Sprite.SpriteDimensions.X, (int)gameObjectA.Sprite.SpriteDimensions.Y);
+            Rectangle hitBoxB = new Rectangle((int)gameObjectB.VectorCoordinates.X, (int)gameObjectB.VectorCoordinates.Y, (int)gameObjectB.Sprite.SpriteDimensions.X, (int)gameObjectB.Sprite.SpriteDimensions.Y);
 
             Rectangle collisionRectangle = Rectangle.Intersect(hitBoxA, hitBoxB);   
             

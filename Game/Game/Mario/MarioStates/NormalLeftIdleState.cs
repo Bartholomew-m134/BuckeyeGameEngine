@@ -17,21 +17,21 @@ namespace Game.Mario.MarioStates
         public NormalLeftIdleState(IMario mario)
         {
             this.mario = mario;
-            mario.GetSetSprite = SpriteFactories.MarioSpriteFactory.CreateNormalLeftIdleSprite();
+            mario.Sprite = SpriteFactories.MarioSpriteFactory.CreateNormalLeftIdleSprite();
         }
         public void Update()
         {
-            mario.GetSetSprite.Update();
+            mario.Sprite.Update();
         }
 
         public void Left()
         {
-            mario.GetSetMarioState = new NormalLeftRunningState(mario);
+            mario.MarioState = new NormalLeftRunningState(mario);
         }
 
         public void Right()
         {
-            mario.GetSetMarioState = new NormalRightIdleState(mario);
+            mario.MarioState = new NormalRightIdleState(mario);
         }
 
         public void Up()
@@ -41,7 +41,7 @@ namespace Game.Mario.MarioStates
 
         public void Down()
         {
-            mario.GetSetMarioState = new NormalLeftCrouchingState(mario);
+            mario.MarioState = new NormalLeftCrouchingState(mario);
         }
 
         public void Land()
@@ -51,12 +51,12 @@ namespace Game.Mario.MarioStates
 
         public void Jump()
         {
-            mario.GetSetMarioState = new NormalLeftJumpingState(mario);
+            mario.MarioState = new NormalLeftJumpingState(mario);
         }
 
         public void Flower()
         {
-            mario.GetSetMarioState = new FireLeftIdleState(mario);
+            mario.MarioState = new FireLeftIdleState(mario);
 
         }
 
@@ -72,12 +72,12 @@ namespace Game.Mario.MarioStates
 
         public void Damage()
         {
-            mario.GetSetMarioState = new SmallLeftIdleState(mario);
+            mario.MarioState = new SmallLeftIdleState(mario);
         }
 
         public void Die()
         {
-            mario.GetSetMarioState = new DeadMarioState(mario);
+            mario.MarioState = new DeadMarioState(mario);
         }
         public bool IsBig()
         {
@@ -86,6 +86,11 @@ namespace Game.Mario.MarioStates
 
         public void ToIdle()
         {
+        }
+
+        public bool IsJumping()
+        {
+            return false;
         }
     }
 }

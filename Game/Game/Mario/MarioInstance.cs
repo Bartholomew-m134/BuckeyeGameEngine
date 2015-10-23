@@ -108,13 +108,13 @@ namespace Game.Mario
             set { location = value; }
         }
 
-        public ISprite GetSetSprite
+        public ISprite Sprite
         {
             get { return (ISprite)sprite; }
             set { sprite = (IMarioSprite)value; }
         }
 
-        public IMarioState GetSetMarioState
+        public IMarioState MarioState
         {
             get { return state; }
             set { state = value; }
@@ -131,14 +131,19 @@ namespace Game.Mario
             return false;
         }
 
+        public bool IsJumping()
+        {
+            return state.IsJumping();
+        }
+
         public void ToIdle()
         {
-            Vector2 velocity = this.Physics.GetSetVelocity;
-            Vector2 acceleration = this.Physics.GetSetAcceleration;
+            Vector2 velocity = this.Physics.Velocity;
+            Vector2 acceleration = this.Physics.Acceleration;
             velocity.X = 0;
             acceleration.X = 0;
-            this.Physics.GetSetAcceleration = acceleration;
-            this.Physics.GetSetVelocity = velocity;
+            this.Physics.Acceleration = acceleration;
+            this.Physics.Velocity = velocity;
             state.ToIdle();
         }
 

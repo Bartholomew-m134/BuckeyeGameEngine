@@ -34,8 +34,8 @@ namespace CollisionDetectionTests
 
             collisionHandler.HandleCollision();
 
-            bool testState = testMario.GetSetMarioState is NormalRightIdleState;
-            bool expectedState = expectedMario.GetSetMarioState is NormalRightIdleState;
+            bool testState = testMario.MarioState is NormalRightIdleState;
+            bool expectedState = expectedMario.MarioState is NormalRightIdleState;
             Vector2 testLocation = testMario.VectorCoordinates;
             Vector2 expectedLocation = expectedMario.VectorCoordinates;
 
@@ -61,8 +61,8 @@ namespace CollisionDetectionTests
 
             collisionHandler.HandleCollision();
 
-            bool testState = testMario.GetSetMarioState is NormalRightIdleState;
-            bool expectedState = expectedMario.GetSetMarioState is NormalRightIdleState;
+            bool testState = testMario.MarioState is NormalRightIdleState;
+            bool expectedState = expectedMario.MarioState is NormalRightIdleState;
             Vector2 testLocation = testMario.VectorCoordinates;
             Vector2 expectedLocation = expectedMario.VectorCoordinates;
 
@@ -88,8 +88,8 @@ namespace CollisionDetectionTests
 
             collisionHandler.HandleCollision();
 
-            bool testState = testMario.GetSetMarioState is NormalRightIdleState;
-            bool expectedState = expectedMario.GetSetMarioState is NormalRightIdleState;
+            bool testState = testMario.MarioState is NormalRightIdleState;
+            bool expectedState = expectedMario.MarioState is NormalRightIdleState;
             Vector2 testLocation = testMario.VectorCoordinates;
             Vector2 expectedLocation = expectedMario.VectorCoordinates;
 
@@ -115,8 +115,8 @@ namespace CollisionDetectionTests
 
             collisionHandler.HandleCollision();
 
-            bool testState = testMario.GetSetMarioState is NormalRightIdleState;
-            bool expectedState = expectedMario.GetSetMarioState is NormalRightIdleState;
+            bool testState = testMario.MarioState is NormalRightIdleState;
+            bool expectedState = expectedMario.MarioState is NormalRightIdleState;
             Vector2 testLocation = testMario.VectorCoordinates;
             Vector2 expectedLocation = expectedMario.VectorCoordinates;
 

@@ -38,7 +38,7 @@ namespace Game.Background_Elements
             set { location = value; }
         }
 
-        public ISprite GetSetSprite
+        public ISprite Sprite
         {
             get { return tripleCloudSprite; }
             set { tripleCloudSprite = value; }

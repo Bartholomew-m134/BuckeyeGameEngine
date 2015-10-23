@@ -16,11 +16,11 @@ namespace Game.Mario.MarioStates
         public DeadMarioState(IMario mario)
         {
             this.mario = mario;
-            mario.GetSetSprite = SpriteFactories.MarioSpriteFactory.CreateDeadSprite();
+            mario.Sprite = SpriteFactories.MarioSpriteFactory.CreateDeadSprite();
         }
 
         public void Update() {
-            mario.GetSetSprite.Update();
+            mario.Sprite.Update();
         }
 
         public void Left()
@@ -82,6 +82,11 @@ namespace Game.Mario.MarioStates
         public void ToIdle()
         {
 
+        }
+
+        public bool IsJumping()
+        {
+            return false;
         }
     }
 }

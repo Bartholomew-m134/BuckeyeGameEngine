@@ -78,7 +78,7 @@ namespace Game.Enemies.KoopaClasses
             set { location = value; }
         }
 
-        public ISprite GetSetSprite
+        public ISprite Sprite
         {
             get { return sprite; }
             set { sprite = value; }

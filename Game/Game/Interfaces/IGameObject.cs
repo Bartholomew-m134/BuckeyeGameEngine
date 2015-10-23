@@ -20,7 +20,7 @@ namespace Game.Interfaces
             set;
         }
 
-        ISprite GetSetSprite
+        ISprite Sprite
         {
             get;
             set;

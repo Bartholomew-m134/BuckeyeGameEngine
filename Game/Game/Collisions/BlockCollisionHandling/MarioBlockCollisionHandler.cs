@@ -7,6 +7,7 @@ using Game.Blocks;
 using Game.Blocks.BlockStates;
 using System.Diagnostics;
 using Game.Interfaces;
+using Game.Mario.MarioStates;
 
 namespace Game.Collisions.BlockCollisionHandling
 {
@@ -56,6 +57,11 @@ namespace Game.Collisions.BlockCollisionHandling
         {
             if (!(collidingBlock.State is HiddenBlockState)){
                 collision.ResolveOverlap(collidingMario, collisionSide);
+            }
+            if (collidingMario.IsJumping())
+            {
+                collidingMario.Physics.ResetPhysics();
+                collidingMario.MarioState.ToIdle();
             }
 
         }

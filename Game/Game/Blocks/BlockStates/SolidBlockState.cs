@@ -15,12 +15,12 @@ namespace Game.Blocks.BlockStates
         public SolidBlockState(IBlock block)
         {
             this.block = block;
-            block.GetSetSprite = TileSpriteFactory.CreateSolidBlockSprite();
+            block.Sprite = TileSpriteFactory.CreateSolidBlockSprite();
         }
 
         public void Update()
         {
-            block.GetSetSprite.Update();
+            block.Sprite.Update();
         }
 
         public void Disappear()

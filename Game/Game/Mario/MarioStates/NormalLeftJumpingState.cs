@@ -17,29 +17,29 @@ namespace Game.Mario.MarioStates
         public NormalLeftJumpingState(IMario mario)
         {
             this.mario = mario;
-            mario.GetSetSprite = SpriteFactories.MarioSpriteFactory.CreateNormalLeftJumpingSprite();
-            Vector2 velocity = this.mario.Physics.GetSetVelocity;
+            mario.Sprite = SpriteFactories.MarioSpriteFactory.CreateNormalLeftJumpingSprite();
+            Vector2 velocity = this.mario.Physics.Velocity;
             velocity.Y = -11;
-            this.mario.Physics.GetSetVelocity = velocity;
+            this.mario.Physics.Velocity = velocity;
         }
 
         public void Update()
         {
-            mario.GetSetSprite.Update();
+            mario.Sprite.Update();
         }
         public void Left()
         {
             
-            Vector2 acceleration = mario.Physics.GetSetAcceleration;
+            Vector2 acceleration = mario.Physics.Acceleration;
             acceleration.X = -2;
-            mario.Physics.GetSetAcceleration = acceleration;
+            mario.Physics.Acceleration = acceleration;
         }
 
         public void Right()
         {
-            Vector2 acceleration = mario.Physics.GetSetAcceleration;
+            Vector2 acceleration = mario.Physics.Acceleration;
             acceleration.X = 2;
-            mario.Physics.GetSetAcceleration = acceleration;
+            mario.Physics.Acceleration = acceleration;
         }
 
         public void Up()
@@ -59,26 +59,26 @@ namespace Game.Mario.MarioStates
 
         public void Jump()
         {
-            Vector2 velocity = mario.Physics.GetSetVelocity;
-            Vector2 acceleration = mario.Physics.GetSetAcceleration;
+            Vector2 velocity = mario.Physics.Velocity;
+            Vector2 acceleration = mario.Physics.Acceleration;
 
             if (velocity.Y < 0)
             {
                 acceleration.Y = 1;
-                mario.Physics.GetSetAcceleration = acceleration;
+                mario.Physics.Acceleration = acceleration;
             }
             else
             {
                 velocity.Y = 5;
                 acceleration.Y = 0;
-                mario.Physics.GetSetVelocity = velocity;
-                mario.Physics.GetSetAcceleration = acceleration;
+                mario.Physics.Velocity = velocity;
+                mario.Physics.Acceleration = acceleration;
             }
         }
 
         public void Flower()
         {
-            mario.GetSetMarioState = new FireLeftJumpingState(mario);
+            mario.MarioState = new FireLeftJumpingState(mario);
         }
 
         public void Mushroom()
@@ -93,12 +93,12 @@ namespace Game.Mario.MarioStates
 
         public void Damage()
         {
-            mario.GetSetMarioState = new SmallLeftJumpingState(mario);
+            mario.MarioState = new SmallLeftJumpingState(mario);
         }
 
         public void Die()
         {
-            mario.GetSetMarioState = new DeadMarioState(mario);
+            mario.MarioState = new DeadMarioState(mario);
         }
         public bool IsBig()
         {
@@ -107,7 +107,12 @@ namespace Game.Mario.MarioStates
 
         public void ToIdle()
         {
+            mario.MarioState = new NormalLeftIdleState(mario);
+        }
 
+        public bool IsJumping()
+        {
+            return true;
         }
     }
 }

@@ -42,7 +42,7 @@ namespace Game.Items
             set { location = value; }
         }
 
-        public ISprite GetSetSprite
+        public ISprite Sprite
         {
             get { return redMushroomSprite; }
             set { redMushroomSprite = value; }

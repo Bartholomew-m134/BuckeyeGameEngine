@@ -20,12 +20,12 @@ namespace Game.Commands.MarioCommands
 
         public void Release()
         {
-            Vector2 velocity = WorldManager.GetMario().Physics.GetSetVelocity;
-            Vector2 acceleration = WorldManager.GetMario().Physics.GetSetAcceleration;
+            Vector2 velocity = WorldManager.GetMario().Physics.Velocity;
+            Vector2 acceleration = WorldManager.GetMario().Physics.Acceleration;
             velocity.Y = 5;
             acceleration.Y = 0;
-            WorldManager.GetMario().Physics.GetSetVelocity = velocity;
-            WorldManager.GetMario().Physics.GetSetAcceleration = acceleration;
+            WorldManager.GetMario().Physics.Velocity = velocity;
+            WorldManager.GetMario().Physics.Acceleration = acceleration;
         }
     }
 }

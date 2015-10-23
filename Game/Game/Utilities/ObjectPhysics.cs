@@ -45,17 +45,23 @@ namespace Game.Utilities
            
         }
 
-        public Vector2 GetSetVelocity
+        public Vector2 Velocity
         {
             get { return velocity; }
             set { velocity = value; }
         }
 
-        public Vector2 GetSetAcceleration
+        public Vector2 Acceleration
         {
             get { return acceleration; }
             set { acceleration = value; }
         }
 
+        public void ResetPhysics()
+        {
+            int gravity = 5;
+            velocity = new Vector2(0, gravity);
+            acceleration = new Vector2(0, 0);
+        }
     }
 }

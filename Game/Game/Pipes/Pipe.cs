@@ -38,7 +38,7 @@ namespace Game.Pipes
             set { location = value; }
         }
 
-        public ISprite GetSetSprite
+        public ISprite Sprite
         {
             get { return pipeSprite; }
             set { pipeSprite = value; }
