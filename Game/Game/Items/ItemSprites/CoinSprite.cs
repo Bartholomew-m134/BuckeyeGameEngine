@@ -9,7 +9,7 @@ using Game.Interfaces;
 
 namespace Game.Items.ItemSprites
 {
-    public class CoinSprite : ISprite
+    public class CoinSprite : IItemSprite
     {
 
         private Texture2D Texture { get; set; }
@@ -20,12 +20,16 @@ namespace Game.Items.ItemSprites
         private int sourceX = 127;
         private int sourceY = 94;
         private int distanceBetweenSprites = 30;
+        private int riseY;
+        private bool isRisingUpward;
 
         public CoinSprite(Texture2D texture)
         {
             Texture = texture;
             currentFrame = 0;
             totalFrames = 4;
+            riseY = 0;
+            isRisingUpward = true;
 
         }
 
@@ -36,6 +40,15 @@ namespace Game.Items.ItemSprites
                     currentFrame = 0;
 
                 }
+                if ((riseY < 20) && (isRisingUpward))
+                {
+                    riseY += 6;
+                }
+                else
+                {
+                    isRisingUpward = false;
+                    riseY -= 6;
+                } 
 
         }
 
@@ -52,6 +65,22 @@ namespace Game.Items.ItemSprites
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
 
+        }
+
+        public void RiseDraw(SpriteBatch spriteBatch, Vector2 location)
+        {
+            sourceX = 127 + distanceBetweenSprites * currentFrame;
+            Rectangle sourceRectangle = new Rectangle(sourceX, sourceY, width, height);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
+
+            if (riseY < 0)
+            {
+                destinationRectangle.Y -= riseY*-1;
+            }
+            Console.WriteLine(destinationRectangle.Y);
+            spriteBatch.Begin();
+            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.End();
         }
 
         public Vector2 SpriteDimensions

@@ -70,19 +70,20 @@ namespace Game
                 foreach(string objectName in line)
                 {
                     IGameObject gameObject = null;
+                    IGameObject objectsItem = null;
 
                     if (objectName.Equals("Mario"))
                         gameObject = new MarioInstance(game);
                     else if (objectName.Equals("Coin"))
-                        gameObject = new Coin(game);
+                        gameObject = new Coin(false, game);
                     else if (objectName.Equals("Flower"))
-                        gameObject = new Flower(game);
+                        gameObject = new Flower(false, game);
                     else if (objectName.Equals("GreenMush"))
-                        gameObject = new GreenMushroom(game);
+                        gameObject = new GreenMushroom(false, game);
                     else if (objectName.Equals("RedMush"))
-                        gameObject = new RedMushroom(game);
+                        gameObject = new RedMushroom(false, game);
                     else if (objectName.Equals("Star"))
-                        gameObject = new Star(game);
+                        gameObject = new Star(false, game);
                     else if (objectName.Equals("Koopa"))
                         gameObject = new GreenKoopa(game);
                     else if (objectName.Equals("Goomba"))
@@ -91,10 +92,16 @@ namespace Game
                         gameObject = new Pipe(game);
                     else if (objectName.Equals("SolidBlock"))
                         gameObject = new Block(Block.Type.SolidBlock, game);
-                    else if (objectName.Equals("InvisBlock"))
+                    else if (objectName.Equals("InvisCoinBlock"))
+                    {
+                        objectsItem = new Coin(true, game);
                         gameObject = new Block(Block.Type.HiddenBlock, game);
-                    else if (objectName.Equals("QuestionBlock"))
+                    }
+                    else if (objectName.Equals("QuestionRedMushBlock"))
+                    {
+                        objectsItem = new RedMushroom(true, game);
                         gameObject = new Block(Block.Type.QuestionBlock, game);
+                    }
                     else if (objectName.Equals("BrickBlock"))
                         gameObject = new Block(Block.Type.BrickBlock, game);
                     else if (objectName.Equals("BreakingBlock"))
@@ -114,10 +121,17 @@ namespace Game
                     else if (objectName.Equals("TripleCloud"))
                         gameObject = new TripleCloud(game);
 
+                    if (objectsItem != null)
+                    {
+                        objectsItem.VectorCoordinates = location + new Vector2(0, -objectsItem.Sprite.SpriteDimensions.Y + 1);
+                        gameObjects.Add(objectsItem);
+                    }
+
                     if(gameObject != null){
                         gameObject.VectorCoordinates = location;  
                         gameObjects.Add(gameObject);   
                     }
+                    
                     location.X += 16;
                 }
 

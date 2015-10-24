@@ -56,7 +56,8 @@ namespace Game.Collisions
             }
             else if ((collision.GameObjectA is IItem && collision.GameObjectB is IBlock) || (collision.GameObjectA is IBlock && collision.GameObjectB is IItem))
             {
-
+                ItemBlockCollisionHandler collisionHandler = new ItemBlockCollisionHandler(collision);
+                collisionHandler.HandleCollision();
             }
             else if ((collision.GameObjectA is IItem && collision.GameObjectB is IPipe) || (collision.GameObjectA is IPipe && collision.GameObjectB is IItem))
             {

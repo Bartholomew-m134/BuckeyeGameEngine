@@ -9,7 +9,7 @@ using Game.Interfaces;
 
 namespace Game.Items.ItemSprites
 {
-    public class GreenMushroomSprite: ISprite
+    public class GreenMushroomSprite : IItemSprite
     {
         private Texture2D Texture { get; set; }
         private int width = 17;
@@ -39,6 +39,9 @@ namespace Game.Items.ItemSprites
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
 
+        }
+        public void RiseDraw(SpriteBatch spriteBatch, Vector2 location)
+        {
         }
 
         public Vector2 SpriteDimensions

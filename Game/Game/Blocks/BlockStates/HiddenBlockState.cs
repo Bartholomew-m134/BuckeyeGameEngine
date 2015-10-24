@@ -14,6 +14,7 @@ namespace Game.Blocks.BlockStates
 
         public HiddenBlockState(IBlock block)
         {
+            
             this.block = block;
             block.Sprite = TileSpriteFactory.CreateHiddenBlockSprite();
         }

@@ -15,9 +15,12 @@ namespace Game.Items
         private ISprite redMushroomSprite;
         private Vector2 location;
         private ObjectPhysics physics;
+        private bool isInsideBlock;
 
-        public RedMushroom(Game1 game)
+
+        public RedMushroom(bool isInsideBlock, Game1 game)
         {
+            this.isInsideBlock = isInsideBlock;
             myGame = game;
             redMushroomSprite = ItemsSpriteFactory.CreateRedMushroomSprite();
             physics = new ObjectPhysics();
@@ -51,6 +54,11 @@ namespace Game.Items
         public ObjectPhysics Physics
         {
             get { return physics; }
+        }
+        public bool IsInsideBlock
+        {
+            get { return isInsideBlock; }
+            set { isInsideBlock = value; }
         }
 
     }

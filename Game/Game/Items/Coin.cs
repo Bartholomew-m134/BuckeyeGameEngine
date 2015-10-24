@@ -12,15 +12,19 @@ namespace Game.Items
     public class Coin : IItem
     {
         private Game1 myGame;
-        private ISprite coinSprite;
+        private IItemSprite coinSprite;
         private Vector2 location;
         private ObjectPhysics physics;
+        private bool isInsideBlock;
+        private int riseTimer;
 
-        public Coin(Game1 game)
+        public Coin(bool isInsideBlock, Game1 game)
         {
+            this.isInsideBlock = isInsideBlock;
             myGame = game;
             coinSprite = ItemsSpriteFactory.CreateCoinSprite();
             physics = new ObjectPhysics();
+            riseTimer = 100;
         }
 
         public void Update()
@@ -30,7 +34,15 @@ namespace Game.Items
 
         public void Draw(ICamera camera)
         {
-            coinSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
+            if (!isInsideBlock && riseTimer >0)
+            {
+                coinSprite.RiseDraw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
+                riseTimer--;
+            }
+            else
+            {
+                //coinSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
+            }
         }
 
         public void Disappear() {
@@ -45,13 +57,18 @@ namespace Game.Items
 
         public ISprite Sprite
         {
-            get { return coinSprite; }
-            set { coinSprite = value; }
+            get { return (ISprite)coinSprite; }
+            set { coinSprite = (IItemSprite)value; }
         }
 
         public ObjectPhysics Physics
         {
             get { return physics; }
+        }
+
+        public bool IsInsideBlock {
+            get { return isInsideBlock; }
+            set { isInsideBlock = value; }
         }
     }
 }

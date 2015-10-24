@@ -9,7 +9,7 @@ using Game.Interfaces;
 
 namespace Game.Items.ItemSprites
 {
-    public class StarSprite:ISprite
+    public class StarSprite : IItemSprite
     {
         private Texture2D Texture { get; set; }
         private int currentFrame;
@@ -52,7 +52,9 @@ namespace Game.Items.ItemSprites
             spriteBatch.End();
 
         }
-
+        public void RiseDraw(SpriteBatch spriteBatch, Vector2 location)
+        {
+        }
         public Vector2 SpriteDimensions
         {
             get { return new Vector2(width, height); }

@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 using Game.Interfaces;
 namespace Game.Items.ItemSprites
 {
-    public class RedMushroomSprite: ISprite
+    public class RedMushroomSprite : IItemSprite
     {
         private Texture2D Texture { get; set; }
 
@@ -41,7 +41,9 @@ namespace Game.Items.ItemSprites
             spriteBatch.End();
 
         }
-
+        public void RiseDraw(SpriteBatch spriteBatch, Vector2 location)
+        {
+        }
         public Vector2 SpriteDimensions
         {
             get { return new Vector2(width, height); }

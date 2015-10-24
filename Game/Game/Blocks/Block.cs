@@ -48,7 +48,7 @@ namespace Game.Blocks
             }
         }
 
-        public void BumpDraw(ICamera camera)
+        private void BumpDraw(ICamera camera)
         {
             sprite.BumpDraw(game.spriteBatch, camera.GetAdjustedPosition(location));
         }
