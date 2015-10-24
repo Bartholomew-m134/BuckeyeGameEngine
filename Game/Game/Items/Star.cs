@@ -24,20 +24,33 @@ namespace Game.Items
             myGame = game;
             starSprite = ItemsSpriteFactory.CreateStarSprite();
             physics = new ObjectPhysics();
+            physics.Acceleration = Vector2.Zero;
         }
 
         public void Update()
         {
             starSprite.Update();
+            location = physics.Update(location);
         }
 
         public void Draw(ICamera camera)
         {
-            starSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
+            if (!isInsideBlock)
+                starSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
         public void Disappear() {
             location.Y -= 2000;
+        }
+
+        public void Release()
+        {
+            if (isInsideBlock)
+            {
+                isInsideBlock = false;
+                physics.ResetPhysics();
+                physics.Velocity = new Vector2(0, -1);
+            }
         }
 
         public Vector2 VectorCoordinates
@@ -60,11 +73,6 @@ namespace Game.Items
         {
             get { return isInsideBlock; }
             set { isInsideBlock = value; }
-        }
-
-        public void Release()
-        {
-
         }
     }
 }

@@ -19,8 +19,8 @@ namespace Game.Blocks.BlockSprites
         public QuestionBlockSprite(Texture2D spriteSheet)
         {
             this.spriteSheet = spriteSheet;
-            width = 15;
-            height = 15;
+            width = 16;
+            height = 16;
             sheetXLocation = 368;
             sheetYLocation = 0;
         }
