@@ -10,13 +10,14 @@ namespace Game.Utilities
     {
         private Vector2 velocity;
         private Vector2 acceleration;
-        private Vector2 velocityMaximum = new Vector2(5, 5);
-        private Vector2 velocityMinimum = new Vector2(-5, -11);
+        private Vector2 velocityMaximum = new Vector2(10, 6);
+        private Vector2 velocityMinimum = new Vector2(-10, -11);
+        private int gravity = 1;
         public ObjectPhysics()
         {
-            int gravity = 5;
-            velocity = new Vector2(0, gravity);
-            acceleration = new Vector2(0, 0);
+            
+            velocity = new Vector2(0, 0);
+            acceleration = new Vector2(0, gravity);
         }
         
         public Vector2 Update(Vector2 coordinates)
@@ -57,11 +58,32 @@ namespace Game.Utilities
             set { acceleration = value; }
         }
 
+        public void ResetY() {
+            acceleration.Y = gravity;
+            velocity.Y = 0;
+        }
+
+        public void ResetX()
+        {
+            acceleration.X = 0;
+            velocity.X = 0;
+        }
+
         public void ResetPhysics()
         {
-            int gravity = 5;
-            velocity = new Vector2(0, gravity);
-            acceleration = new Vector2(0, 0);
+            ResetX();
+            ResetY();
+        }
+
+        public void DampenRight() {
+            acceleration.X = 0;
+            velocity.X -= 2;
+        }
+
+        public void DampenLeft()
+        {
+            acceleration.X = 0;
+            velocity.X += 2;
         }
     }
 }

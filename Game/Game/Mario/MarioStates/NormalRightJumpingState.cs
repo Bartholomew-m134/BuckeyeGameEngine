@@ -18,19 +18,22 @@ namespace Game.Mario.MarioStates
         {
             this.mario = mario;
             mario.Sprite = SpriteFactories.MarioSpriteFactory.CreateNormalRightJumpingSprite();
-            Vector2 velocity = this.mario.Physics.Velocity;
-            velocity.Y = -11;
-            this.mario.Physics.Velocity = velocity;
+            if (!mario.MarioState.IsJumping())
+            {
+                Vector2 velocity = this.mario.Physics.Velocity;
+                velocity.Y = -11;
+                this.mario.Physics.Velocity = velocity;
+            }
         }
         public void Update()
-        {
+        {   
             mario.Sprite.Update();
         }
 
         public void Left()
         {
             Vector2 acceleration = mario.Physics.Acceleration;
-            acceleration.X = 2;
+            acceleration.X = -2;
             mario.Physics.Acceleration = acceleration;
         }
 
@@ -65,13 +68,6 @@ namespace Game.Mario.MarioStates
             if (velocity.Y < 0)
             {
                 acceleration.Y = 1;
-                mario.Physics.Acceleration = acceleration;
-            }
-            else
-            {
-                velocity.Y = 5;
-                acceleration.Y = 0;
-                mario.Physics.Velocity = velocity;
                 mario.Physics.Acceleration = acceleration;
             }
         }

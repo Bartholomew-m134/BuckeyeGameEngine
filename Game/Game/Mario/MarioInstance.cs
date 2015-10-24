@@ -138,12 +138,6 @@ namespace Game.Mario
 
         public void ToIdle()
         {
-            Vector2 velocity = this.Physics.Velocity;
-            Vector2 acceleration = this.Physics.Acceleration;
-            velocity.X = 0;
-            acceleration.X = 0;
-            this.Physics.Acceleration = acceleration;
-            this.Physics.Velocity = velocity;
             state.ToIdle();
         }
 

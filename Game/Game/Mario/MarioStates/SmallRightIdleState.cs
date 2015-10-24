@@ -21,6 +21,12 @@ namespace Game.Mario.MarioStates
         }
         public void Update()
         {
+
+            if (mario.Physics.Velocity.X > 0)
+            {
+                mario.Physics.DampenRight();
+            }
+            
             mario.Sprite.Update();
         }
 
@@ -51,6 +57,7 @@ namespace Game.Mario.MarioStates
 
         public void Jump()
         {
+
             mario.MarioState = new SmallRightJumpingState(mario);
         }
 

@@ -15,17 +15,18 @@ namespace Game.Commands.MarioCommands
 
         public void Execute()
         {
-            WorldManager.GetMario().Jump();
+            if (WorldManager.GetMario().Physics.Velocity.Y < 2)
+            {
+                WorldManager.GetMario().Jump();
+            }
         }
 
         public void Release()
         {
-            Vector2 velocity = WorldManager.GetMario().Physics.Velocity;
-            Vector2 acceleration = WorldManager.GetMario().Physics.Acceleration;
-            velocity.Y = 5;
-            acceleration.Y = 0;
-            WorldManager.GetMario().Physics.Velocity = velocity;
-            WorldManager.GetMario().Physics.Acceleration = acceleration;
+            if (WorldManager.GetMario().Physics.Velocity.Y < 0)
+            {
+                WorldManager.GetMario().Physics.ResetY();
+            }
         }
     }
 }
