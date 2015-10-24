@@ -61,8 +61,8 @@ namespace Game.Blocks
 
         public void Disappear()
         {
-            location.Y += 2000;
-            //blockState.Disappear();
+            blockState.Disappear();
+            //location.Y += 2000;
             //WorldManager.FreeObject(this);
         }
 
