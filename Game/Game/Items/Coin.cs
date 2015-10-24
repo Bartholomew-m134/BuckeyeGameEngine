@@ -40,7 +40,11 @@ namespace Game.Items
                 coinSprite.RiseDraw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
                 riseTimer--;
             }
-            else if(!isInsideBlock && riseTimer > 0)
+            else if (!isInsideBlock && riseTimer <= 0)
+            {
+                isInsideBlock = true;
+            }
+            else 
             {
                 coinSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
             }
