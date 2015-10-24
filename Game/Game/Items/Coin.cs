@@ -36,12 +36,22 @@ namespace Game.Items
 
         public void Draw(ICamera camera)
         {
-            if (!isInsideBlock || (isReleased && physics.Velocity.Y < 0))
+            if (!isInsideBlock || (isReleased && physics.Velocity.Y < 3))
                 coinSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
         public void Disappear() {
-            location.Y -= 2000;
+            location.Y += 2000;
+        }
+
+        public void Release()
+        {
+            if (isInsideBlock && !isReleased)
+            {
+                isReleased = true;
+                physics.ResetPhysics();
+                physics.Velocity = new Vector2(0, -7);
+            }
         }
 
         public Vector2 VectorCoordinates
@@ -64,16 +74,6 @@ namespace Game.Items
         public bool IsInsideBlock {
             get { return isInsideBlock; }
             set { isInsideBlock = value; }
-        }
-
-        public void Release()
-        {
-            if (isInsideBlock && !isReleased)
-            {
-                isReleased = true;
-                physics.ResetPhysics();
-                physics.Velocity = new Vector2(0, -7);
-            }
         }
     }
 }

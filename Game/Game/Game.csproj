@@ -106,7 +106,6 @@
     <Compile Include="Collisions\EnemyCollisionHandling\EnemyEnemyCollisionHandler.cs" />
     <Compile Include="Collisions\EnemyCollisionHandling\EnemyPipeCollisionHandler.cs" />
     <Compile Include="Collisions\EnemyCollisionHandling\MarioEnemyCollisionHandler.cs" />
-    <Compile Include="Interfaces\IBlockSprite.cs" />
     <Compile Include="Interfaces\ICamera.cs" />
     <Compile Include="Interfaces\ICollisionSide.cs" />
     <Compile Include="Collisions\ItemCollisionHandling\ItemBlockCollisionHandler.cs" />

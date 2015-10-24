@@ -40,7 +40,7 @@ namespace Game.Items
         }
 
         public void Disappear() {
-            location.Y -= 2000;
+            location.Y += 2000;
         }
 
         public void Release()

@@ -70,7 +70,7 @@ namespace Game.Collisions.BlockCollisionHandling
         {
             if (collidingBlock.State is HiddenBlockState && collidingMario.Physics.Velocity.Y <= 0){
                 collidingBlock.GetUsed();
-                collidingBlock.isBumped = true;
+                collidingBlock.Bump();
                 collision.ResolveOverlap(collidingMario, collisionSide);
             }
             else if (collidingBlock.State is BrickBlockState && collidingMario.IsBig())
@@ -79,13 +79,13 @@ namespace Game.Collisions.BlockCollisionHandling
             }
             else if (collidingBlock.State is BrickBlockState && !(collidingMario.IsBig()))
             {
-                collidingBlock.isBumped = true;
+                collidingBlock.Bump();
                 collision.ResolveOverlap(collidingMario, collisionSide);
             } 
             else if (collidingBlock.State is QuestionBlockState)
             {
                 collidingBlock.GetUsed();
-                collidingBlock.isBumped = true;
+                collidingBlock.Bump();
                 collision.ResolveOverlap(collidingMario, collisionSide);
             } 
             else if (!(collidingBlock.State is BrickDebrisState)){

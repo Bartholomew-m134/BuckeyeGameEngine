@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 namespace Game.Blocks.BlockSprites
 {
-    class BrickDebrisSprite : IBlockSprite
+    class BrickDebrisSprite : ISprite
     {
         private Texture2D spriteSheet;
         private int width;
@@ -105,11 +105,6 @@ namespace Game.Blocks.BlockSprites
                 spriteBatch.End();
             }
             
-        }
-
-        public void BumpDraw(SpriteBatch spriteBatch, Vector2 location)
-        {
-
         }
 
         public Vector2 SpriteDimensions

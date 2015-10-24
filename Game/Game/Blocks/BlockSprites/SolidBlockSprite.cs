@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Game.Blocks.BlockSprites
 {
-    public class SolidBlockSprite : IBlockSprite
+    public class SolidBlockSprite : ISprite
     {
         private Texture2D spriteSheet;
         private int width;
@@ -37,11 +37,6 @@ namespace Game.Blocks.BlockSprites
             spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
-        }
-
-        public void BumpDraw(SpriteBatch spriteBatch, Vector2 location)
-        {
-
         }
 
         public Vector2 SpriteDimensions

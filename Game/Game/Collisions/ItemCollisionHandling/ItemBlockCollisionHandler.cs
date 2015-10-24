@@ -1,4 +1,5 @@
 ﻿using Game.Blocks;
+using Game.Blocks.BlockStates;
 using Game.Interfaces;
 using Game.Items;
 using System;
@@ -33,16 +34,11 @@ namespace Game.Collisions.ItemCollisionHandling
         }
         public void HandleCollision()
         {
-            if (collidingBlock.isBumped && side is BottomSideCollision)
-            {
-                collidingItem.Release();
-            }
-            else if (!collidingItem.IsInsideBlock)
-            {
+            if(!(collidingBlock.State is HiddenBlockState))
                 collision.ResolveOverlap(collidingItem, collision.CollisionSide);
 
-            }
-
+            if (collidingBlock.isBumped && side is BottomSideCollision)          
+                collidingItem.Release();
         }
     }
 }

@@ -40,7 +40,7 @@ namespace Game.Items
         }
 
         public void Disappear() {
-            location.Y -= 2000;
+            location.Y += 2000;
         }
 
         public void Release()
@@ -49,7 +49,7 @@ namespace Game.Items
             {
                 isInsideBlock = false;
                 physics.ResetPhysics();
-                physics.Velocity = new Vector2(3,-1);
+                physics.Velocity = new Vector2(3, -1);
             }
         }
 

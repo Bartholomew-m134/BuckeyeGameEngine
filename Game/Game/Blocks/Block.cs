@@ -14,48 +14,55 @@ namespace Game.Blocks
         public enum Type {NullBlock, BrickBlock, HiddenBlock, QuestionBlock, SolidBlock, BreakingBlock};
         
         private IBlockState blockState;
-        private IBlockSprite sprite;
+        private ISprite sprite;
         private Game1 game;
         private Vector2 location;
         public bool isBumped;
-        private int bumpTimer;
+        private ObjectPhysics physics;
 
         public Block(Type blockType, Game1 game)
         {
             isBumped = false;
-            bumpTimer = 20;
             this.game = game;
-            SetInitialState(blockType);           
+            SetInitialState(blockType);
+            physics = new ObjectPhysics();
+            physics.Acceleration = Vector2.Zero;
         }
 
         public void Update()
         {
             blockState.Update();
+
+            if (physics.Velocity.Y == 3)
+            {
+                isBumped = false;
+                physics.ResetPhysics();
+                physics.Acceleration = Vector2.Zero;
+            }
+
+            if(isBumped)
+                location = physics.Update(location);
         }
 
         public void Draw(ICamera camera)
-        {
-            if (isBumped && (bumpTimer >0))
-            {
-                BumpDraw(camera);
-                bumpTimer--;
-            }
-            else
-            {
-                sprite.Draw(game.spriteBatch, camera.GetAdjustedPosition(location));
-                bumpTimer = 20;
-                isBumped = false;
-            }
+        {    
+            sprite.Draw(game.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
-        private void BumpDraw(ICamera camera)
+        public void Bump()
         {
-            sprite.BumpDraw(game.spriteBatch, camera.GetAdjustedPosition(location));
+            if (!isBumped)
+            {
+                isBumped = true;
+                physics.ResetPhysics();
+                physics.Velocity = new Vector2(0,-3);
+            }
         }
 
         public void Disappear()
         {
-            blockState.Disappear();
+            location.Y += 2000;
+            //blockState.Disappear();
             //WorldManager.FreeObject(this);
         }
 
@@ -72,8 +79,8 @@ namespace Game.Blocks
 
         public ISprite Sprite
         {
-            get { return (ISprite)sprite; }
-            set { sprite = (IBlockSprite)value; }
+            get { return sprite; }
+            set { sprite = value; }
         }
 
         public IBlockState State
