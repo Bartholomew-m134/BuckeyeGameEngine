@@ -29,23 +29,31 @@ namespace Game.Collisions.ItemCollisionHandling
         }
 
         public void HandleCollision() {
-            if (collidingItem is Coin) {
-                collidingItem.Disappear();
-            }
-            else if (collidingItem is Flower) {
-                collidingItem.Disappear();
-                collidingMario.Flower();
-            }
-            else if (collidingItem is GreenMushroom) {
-                collidingItem.Disappear();
-            }
-            else if (collidingItem is RedMushroom) {
-                collidingItem.Disappear();
-                collidingMario.Mushroom();
-            }
-            else if (collidingItem is Star) {
-                collidingItem.Disappear();
-                collidingMario.Star();
+            if (!collidingItem.IsInsideBlock)
+            {
+                if (collidingItem is Coin)
+                {
+                    collidingItem.Disappear();
+                }
+                else if (collidingItem is Flower)
+                {
+                    collidingItem.Disappear();
+                    collidingMario.Flower();
+                }
+                else if (collidingItem is GreenMushroom)
+                {
+                    collidingItem.Disappear();
+                }
+                else if (collidingItem is RedMushroom)
+                {
+                    collidingItem.Disappear();
+                    collidingMario.Mushroom();
+                }
+                else if (collidingItem is Star)
+                {
+                    collidingItem.Disappear();
+                    collidingMario.Star();
+                }
             }
         }
         

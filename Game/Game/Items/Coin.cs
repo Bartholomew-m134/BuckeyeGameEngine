@@ -24,7 +24,7 @@ namespace Game.Items
             myGame = game;
             coinSprite = ItemsSpriteFactory.CreateCoinSprite();
             physics = new ObjectPhysics();
-            riseTimer = 100;
+            riseTimer = 60;
         }
 
         public void Update()
@@ -36,12 +36,13 @@ namespace Game.Items
         {
             if (!isInsideBlock && riseTimer >0)
             {
+                Console.WriteLine("RiseDraw");
                 coinSprite.RiseDraw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
                 riseTimer--;
             }
-            else
+            else if(!isInsideBlock && riseTimer > 0)
             {
-                //coinSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
+                coinSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
             }
         }
 

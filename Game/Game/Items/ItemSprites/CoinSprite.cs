@@ -22,6 +22,7 @@ namespace Game.Items.ItemSprites
         private int distanceBetweenSprites = 30;
         private int riseY;
         private bool isRisingUpward;
+        private bool isReleased;
 
         public CoinSprite(Texture2D texture)
         {
@@ -30,36 +31,39 @@ namespace Game.Items.ItemSprites
             totalFrames = 4;
             riseY = 0;
             isRisingUpward = true;
-
+            isReleased = false;
         }
 
         public void Update() {
-                currentFrame++;
-                if (currentFrame == totalFrames)
-                {
-                    currentFrame = 0;
+            currentFrame++;
+            if (currentFrame == totalFrames)
+            {
+                currentFrame = 0;
+            }
 
-                }
-                if ((riseY < 20) && (isRisingUpward))
+            if(isReleased)
+            {
+                if ((riseY < 30) && (isRisingUpward))
                 {
-                    riseY += 6;
+                   riseY += 7;
                 }
                 else
                 {
                     isRisingUpward = false;
-                    riseY -= 6;
-                } 
-
+                    riseY -= 7;
+                }
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location) {
             
             sourceX = 127 + distanceBetweenSprites*currentFrame;
-       
-            
 
             Rectangle sourceRectangle = new Rectangle(sourceX, sourceY, width, height);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
+
+            isReleased = false;
+            riseY = 0;
 
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
@@ -73,11 +77,12 @@ namespace Game.Items.ItemSprites
             Rectangle sourceRectangle = new Rectangle(sourceX, sourceY, width, height);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
 
-            if (riseY < 0)
+            isReleased = true;
+            if (riseY > 0)
             {
-                destinationRectangle.Y -= riseY*-1;
+                destinationRectangle.Y -= riseY;
             }
-            Console.WriteLine(destinationRectangle.Y);
+            
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();

@@ -37,6 +37,7 @@ namespace Game.Collisions.ItemCollisionHandling
             else if (!collidingItem.IsInsideBlock)
             {
                 collision.ResolveOverlap(collidingItem, collision.CollisionSide);
+
             }
 
         }
