@@ -12,10 +12,12 @@ namespace Game.Collisions.ItemCollisionHandling
     {
         private Block collidingBlock;
         private IItem collidingItem;
+        private ICollisionSide side;
         private CollisionData collision;
 
         public ItemBlockCollisionHandler(CollisionData collision) {
             this.collision = collision;
+            side = collision.CollisionSide;
             if (collision.GameObjectA is IBlock)
             {
                 collidingBlock = (Block)collision.GameObjectA;
@@ -25,12 +27,13 @@ namespace Game.Collisions.ItemCollisionHandling
             {
                 collidingBlock = (Block)collision.GameObjectB;
                 collidingItem = (IItem)collision.GameObjectA;
+                side = side.FlipSide();
             }
 
         }
         public void HandleCollision()
         {
-            if (collidingBlock.isBumped)
+            if (collidingBlock.isBumped && side is BottomSideCollision)
             {
                 collidingItem.IsInsideBlock = false;
             }
