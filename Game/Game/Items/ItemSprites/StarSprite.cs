@@ -9,7 +9,7 @@ using Game.Interfaces;
 
 namespace Game.Items.ItemSprites
 {
-    public class StarSprite : IItemSprite
+    public class StarSprite : ISprite
     {
         private Texture2D Texture { get; set; }
         private int currentFrame;
@@ -25,25 +25,21 @@ namespace Game.Items.ItemSprites
             Texture = texture;
             currentFrame = 0;
             totalFrames = 4;
-
         }
 
         public void Update()
         {
+            currentFrame++;
+            if (currentFrame == totalFrames)
+            {
+                currentFrame = 0;
 
-                currentFrame++;
-                if (currentFrame == totalFrames)
-                {
-                    currentFrame = 0;
-
-                }
-
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location) {
             sourceX = 3 + distanceBetweenSprites * currentFrame;
             
-
             Rectangle sourceRectangle = new Rectangle(sourceX, sourceY, width, height);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
 
@@ -52,14 +48,10 @@ namespace Game.Items.ItemSprites
             spriteBatch.End();
 
         }
-        public void RiseDraw(SpriteBatch spriteBatch, Vector2 location)
-        {
-        }
+ 
         public Vector2 SpriteDimensions
         {
             get { return new Vector2(width, height); }
         }
-
     }
-
 }

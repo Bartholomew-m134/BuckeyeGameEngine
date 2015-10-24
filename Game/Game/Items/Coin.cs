@@ -12,39 +12,31 @@ namespace Game.Items
     public class Coin : IItem
     {
         private Game1 myGame;
-        private IItemSprite coinSprite;
+        private ISprite coinSprite;
         private Vector2 location;
         private ObjectPhysics physics;
         private bool isInsideBlock;
-        private int riseTimer;
+        private bool isReleased;
 
         public Coin(bool isInsideBlock, Game1 game)
         {
             this.isInsideBlock = isInsideBlock;
+            isReleased = false;
             myGame = game;
             coinSprite = ItemsSpriteFactory.CreateCoinSprite();
             physics = new ObjectPhysics();
-            riseTimer = 60;
+            physics.Acceleration = Vector2.Zero;
         }
 
         public void Update()
         {
             coinSprite.Update();
+            location = physics.Update(location);
         }
 
         public void Draw(ICamera camera)
         {
-            if (!isInsideBlock && riseTimer >0)
-            {
-                Console.WriteLine("RiseDraw");
-                coinSprite.RiseDraw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
-                riseTimer--;
-            }
-            else if (!isInsideBlock && riseTimer <= 0)
-            {
-                isInsideBlock = true;
-            }
-            else 
+            if (!isInsideBlock || (isReleased && physics.Velocity.Y <= 0))
             {
                 coinSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
             }
@@ -62,8 +54,8 @@ namespace Game.Items
 
         public ISprite Sprite
         {
-            get { return (ISprite)coinSprite; }
-            set { coinSprite = (IItemSprite)value; }
+            get { return coinSprite; }
+            set { coinSprite = value; }
         }
 
         public ObjectPhysics Physics
@@ -74,6 +66,16 @@ namespace Game.Items
         public bool IsInsideBlock {
             get { return isInsideBlock; }
             set { isInsideBlock = value; }
+        }
+
+        public void Release()
+        {
+            if (isInsideBlock && !isReleased)
+            {
+                isReleased = true;
+                physics.ResetPhysics();
+                physics.Velocity = new Vector2(0, -7);
+            }
         }
     }
 }

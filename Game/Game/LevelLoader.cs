@@ -102,6 +102,11 @@ namespace Game
                         objectsItem = new RedMushroom(true, game);
                         gameObject = new Block(Block.Type.QuestionBlock, game);
                     }
+                    else if (objectName.Equals("QuestionGreenMushBlock"))
+                    {
+                        objectsItem = new GreenMushroom(true, game);
+                        gameObject = new Block(Block.Type.QuestionBlock, game);
+                    }
                     else if (objectName.Equals("BrickBlock"))
                         gameObject = new Block(Block.Type.BrickBlock, game);
                     else if (objectName.Equals("BreakingBlock"))

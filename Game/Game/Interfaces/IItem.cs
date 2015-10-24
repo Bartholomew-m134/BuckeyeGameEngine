@@ -9,8 +9,9 @@ namespace Game.Interfaces
     public interface IItem : IGameObject
     {
         bool IsInsideBlock { get; set; }
+
         void Disappear();
 
-
+        void Release();
     }
 }

@@ -62,5 +62,9 @@ namespace Game.Items
             set { isInsideBlock = value; }
         }
 
+        public void Release()
+        {
+
+        }
     }
 }

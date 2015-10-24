@@ -9,7 +9,7 @@ using Game.Interfaces;
 
 namespace Game.Items.ItemSprites
 {
-    public class FlowerSprite : IItemSprite
+    public class FlowerSprite : ISprite
     {
         private Texture2D Texture { get; set; }
         private int currentFrame;
@@ -29,29 +29,24 @@ namespace Game.Items.ItemSprites
 
         public void Update()
         {
-                currentFrame++;
-                if (currentFrame == totalFrames)
-                {
-                    currentFrame = 0;
+            currentFrame++;
+            if (currentFrame == totalFrames)
+            {
+                currentFrame = 0;
 
-                }
-
+            }
         }
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 location) {
+        public void Draw(SpriteBatch spriteBatch, Vector2 location) 
+        {
             sourceX = 3 + distanceBetweenSprites * currentFrame;
             
-
             Rectangle sourceRectangle = new Rectangle(sourceX, sourceY, width, height);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
 
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
-
-        }
-        public void RiseDraw(SpriteBatch spriteBatch, Vector2 location)
-        {
         }
 
         public Vector2 SpriteDimensions

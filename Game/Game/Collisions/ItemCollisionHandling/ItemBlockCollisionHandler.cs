@@ -35,7 +35,8 @@ namespace Game.Collisions.ItemCollisionHandling
         {
             if (collidingBlock.isBumped && side is BottomSideCollision)
             {
-                collidingItem.IsInsideBlock = false;
+                //collidingItem.IsInsideBlock = false;
+                collidingItem.Release();
             }
             else if (!collidingItem.IsInsideBlock)
             {
