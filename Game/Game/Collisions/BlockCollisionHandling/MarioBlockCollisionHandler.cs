@@ -60,9 +60,9 @@ namespace Game.Collisions.BlockCollisionHandling
                 collision.ResolveOverlap(collidingMario, collisionSide);
                 if (collidingMario.IsJumping())
                 {
-                    collidingMario.Physics.ResetPhysics();
                     collidingMario.MarioState.ToIdle();
                 }
+                collidingMario.Physics.ResetY();
             }
 
         }

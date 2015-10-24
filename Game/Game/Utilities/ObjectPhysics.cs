@@ -74,5 +74,16 @@ namespace Game.Utilities
             ResetX();
             ResetY();
         }
+
+        public void DampenRight() {
+            acceleration.X = 0;
+            velocity.X -= 2;
+        }
+
+        public void DampenLeft()
+        {
+            acceleration.X = 0;
+            velocity.X += 2;
+        }
     }
 }
