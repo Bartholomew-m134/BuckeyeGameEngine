@@ -36,10 +36,8 @@ namespace Game.Items
 
         public void Draw(ICamera camera)
         {
-            if (!isInsideBlock || (isReleased && physics.Velocity.Y <= 0))
-            {
+            if (!isInsideBlock || (isReleased && physics.Velocity.Y < 0))
                 coinSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
-            }
         }
 
         public void Disappear() {
