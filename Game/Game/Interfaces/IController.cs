@@ -8,5 +8,7 @@ namespace Game.Interfaces
     public interface IController
     {
         void Update();
+
+        void ClearControls();
     }
 }

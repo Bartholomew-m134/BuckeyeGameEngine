@@ -20,15 +20,18 @@ namespace Game
             buttonMappings = new Dictionary<Buttons, ICommand>();
             prevState = GamePad.GetState(PlayerIndex.One);
 
-            RegisterCommand(Buttons.LeftThumbstickUp, new RaiseMarioStanceCommand());
             RegisterCommand(Buttons.LeftThumbstickDown, new LowerMarioStanceCommand());
             RegisterCommand(Buttons.LeftThumbstickLeft, new FurtherLeftMarioStanceCommand());
             RegisterCommand(Buttons.LeftThumbstickRight, new FurtherRightMarioStanceCommand());
+
+            RegisterCommand(Buttons.A, new RaiseMarioStanceCommand());
+            RegisterCommand(Buttons.B, new MarioFireBallCommand());
         }
 
         public void RegisterCommand(Buttons button, ICommand command)
         {
-            buttonMappings.Add(button, command);
+            if(!buttonMappings.ContainsKey(button))
+                buttonMappings.Add(button, command);
         }
 
         public void Update()
@@ -71,6 +74,11 @@ namespace Game
             }
 
             prevState = currentState;
+        }
+
+        public void ClearControls()
+        {
+            buttonMappings.Clear();
         }
     }
 }

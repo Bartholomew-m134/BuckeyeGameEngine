@@ -20,21 +20,25 @@ namespace Game
             prevPressedKeys = Keyboard.GetState().GetPressedKeys();
 
             RegisterCommand(Keys.Up, new RaiseMarioStanceCommand());
-            RegisterCommand(Keys.W, new RaiseMarioStanceCommand());
-            RegisterCommand(Keys.Down, new LowerMarioStanceCommand());
-            RegisterCommand(Keys.S, new LowerMarioStanceCommand());
-
             RegisterCommand(Keys.Left, new FurtherLeftMarioStanceCommand());
-            RegisterCommand(Keys.A, new FurtherLeftMarioStanceCommand());
+            RegisterCommand(Keys.Down, new LowerMarioStanceCommand());
             RegisterCommand(Keys.Right, new FurtherRightMarioStanceCommand());
+
+            RegisterCommand(Keys.W, new RaiseMarioStanceCommand());
+            RegisterCommand(Keys.A, new FurtherLeftMarioStanceCommand());
+            RegisterCommand(Keys.S, new LowerMarioStanceCommand());
             RegisterCommand(Keys.D, new FurtherRightMarioStanceCommand());
+
+            RegisterCommand(Keys.Z, new RaiseMarioStanceCommand());
+            RegisterCommand(Keys.X, new MarioFireBallCommand());
 
             RegisterCommand(Keys.R, new ResetToDefaultCommand());
         }
 
         public void RegisterCommand(Keys key, ICommand command)
         {
-            keyMappings.Add(key, command);
+            if(!keyMappings.ContainsKey(key))
+                keyMappings.Add(key, command);
         }
 
         public void Update()
@@ -54,6 +58,11 @@ namespace Game
             }
 
             prevPressedKeys = pressedKeys;
+        }
+
+        public void ClearControls()
+        {
+            keyMappings.Clear();
         }
     }
 }
