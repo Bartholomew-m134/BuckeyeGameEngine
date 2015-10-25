@@ -16,6 +16,7 @@ namespace Game
         private static string currentFileName;
         private static Game1 currentGame;
         private static Camera camera;
+        private static System.Diagnostics.Stopwatch timer;
 
         public static void LoadListFromFile(string filename, Game1 game)
         {
@@ -23,19 +24,33 @@ namespace Game
             currentFileName = filename;
             currentGame = game;
             camera = new Camera(GetMario().VectorCoordinates);
+            timer = new System.Diagnostics.Stopwatch();
+
         }
 
         public static void Update()
         {
             for (int i = objectList.Count - 1; i >= 0; i--)
             {
-                if(camera.IsWithinUpdateZone(objectList[i].VectorCoordinates))
+                if (camera.IsWithinUpdateZone(objectList[i].VectorCoordinates))
                     objectList[i].Update();
+                else if (camera.IsLeftOfCamera(objectList[i].VectorCoordinates) && camera.LeftScrollingDisabled)
+                    FreeObject(objectList[i]);
             }
 
             CollisionManager.Update(objectList);
 
             camera.Update(GetMario());
+
+            if (GetMario().MarioState is Mario.MarioStates.DeadMarioState)
+            {
+                timer.Start();
+                if (timer.ElapsedMilliseconds > 1500)
+                {
+                    timer.Reset();
+                    ResetToDefault();                   
+                }
+            }
         }
 
         public static void Draw()
