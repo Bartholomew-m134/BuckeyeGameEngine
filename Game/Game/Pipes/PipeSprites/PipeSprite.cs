@@ -11,10 +11,10 @@ namespace Game.Pipes.PipeSprites
 {
     class PipeSprite : ISprite
     {
-        private int width = 32;
-        private int height = 32;
-        private int sourceX = 0;
-        private int sourceY = 128;
+        private int width;
+        private int height;
+        private int sourceX;
+        private int sourceY;
         private Texture2D Texture { get; set; }
 
         public PipeSprite(Texture2D texture)
@@ -23,8 +23,8 @@ namespace Game.Pipes.PipeSprites
 
             width = 32;
             height = 32;
-            sourceX = 0;
-            sourceY = 128;
+            sourceX = 309;
+            sourceY = 417;
 
         }
 

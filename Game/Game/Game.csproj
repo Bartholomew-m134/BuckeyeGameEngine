@@ -190,10 +190,12 @@
     <Compile Include="Mario\MarioSprites\SmallRightRunningMarioSprite.cs" />
     <Compile Include="Mario\StarMario.cs" />
     <Compile Include="Interfaces\IPipe.cs" />
+    <Compile Include="Pipes\DoublePipe.cs" />
     <Compile Include="Pipes\Pipe.cs" />
-    <Compile Include="Pipes\PipeShaft.cs" />
-    <Compile Include="Pipes\PipeSprites\PipeShaftSprite.cs" />
+    <Compile Include="Pipes\PipeSprites\DoublePipeSprite.cs" />
     <Compile Include="Pipes\PipeSprites\PipeSprite.cs" />
+    <Compile Include="Pipes\PipeSprites\TriplePipeSprite.cs" />
+    <Compile Include="Pipes\TriplePipe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />

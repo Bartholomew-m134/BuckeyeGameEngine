@@ -14,11 +14,13 @@ namespace Game.SpriteFactories
     {
         private static Texture2D tileSpriteSheet;
         private static Texture2D brickDebrisSpriteSheet;
+        private static Texture2D scenerySpriteSheet;
 
         public static void Load(ContentManager content)
         {
             tileSpriteSheet = content.Load<Texture2D>("MarioTilesSpriteSheet");
             brickDebrisSpriteSheet = content.Load<Texture2D>("brickdebrissprite");
+            scenerySpriteSheet = content.Load<Texture2D>("ScenarySpriteSheet");
         }
 
         public static void Unload()
@@ -62,12 +64,15 @@ namespace Game.SpriteFactories
 
         public static ISprite CreatePipeSprite()
         {
-            return new PipeSprite(tileSpriteSheet);
+            return new PipeSprite(scenerySpriteSheet);
         }
-
-        public static ISprite CreatePipeShaftSprite()
+        public static ISprite CreateDoublePipeSprite()
         {
-            return new PipeShaftSprite(tileSpriteSheet);
+            return new DoublePipeSprite(scenerySpriteSheet);
+        }
+        public static ISprite CreateTriplePipeSprite()
+        {
+            return new TriplePipeSprite(scenerySpriteSheet);
         }
     }
 }

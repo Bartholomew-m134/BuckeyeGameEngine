@@ -138,8 +138,10 @@ namespace Game
                         gameObject = new Block(Block.Type.BreakingBlock, game);
                     else if (objectName.Equals("Pipe"))
                         gameObject = new Pipe(game);
-                    else if (objectName.Equals("PipeShaft"))
-                        gameObject = new PipeShaft(game);
+                    else if (objectName.Equals("DoublePipe"))
+                        gameObject = new DoublePipe(game);
+                    else if (objectName.Equals("TriplePipe"))
+                        gameObject = new TriplePipe(game);
                     else if (objectName.Equals("BigHill"))
                         gameObject = new BigHill(game);
                     else if (objectName.Equals("Bush"))
