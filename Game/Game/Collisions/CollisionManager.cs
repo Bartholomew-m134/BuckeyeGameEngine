@@ -16,7 +16,7 @@ namespace Game.Collisions
             collisionList = new List<CollisionData>();
 
             GetCollisionList(gameObjects);
-            HandleAllCollisions();
+            //HandleAllCollisions();
         }
 
         private static void HandleAllCollisions()
@@ -36,7 +36,10 @@ namespace Game.Collisions
                     ICollisionSide side = CollisionDetector.DetectCollision(gameObjects[i], gameObjects[j]);
 
                     if (side != null)
-                        collisionList.Add(new CollisionData(gameObjects[i], gameObjects[j], side));                  
+                    {
+                        //collisionList.Add(new CollisionData(gameObjects[i], gameObjects[j], side));
+                        CollisionSelector.HandleCollision(new CollisionData(gameObjects[i], gameObjects[j], side));
+                    }
                 }
             }
         }
