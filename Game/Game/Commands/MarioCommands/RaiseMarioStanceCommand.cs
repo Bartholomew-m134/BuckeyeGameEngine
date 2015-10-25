@@ -15,14 +15,12 @@ namespace Game.Commands.MarioCommands
 
         public void Execute()
         {
-            
-                WorldManager.GetMario().Jump();
-            
+   
         }
 
         public void Hold()
         {
-
+            WorldManager.GetMario().Jump();
         }
 
         public void Release()
