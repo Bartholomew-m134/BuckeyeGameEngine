@@ -54,7 +54,12 @@ namespace Game.Mario.MarioStates
 
         public void Jump()
         {
-            mario.MarioState = new FireRightJumpingState(mario);
+           
+             mario.MarioState = new FireRightJumpingState(mario);
+        }
+
+        public void StopJumping()
+        {
         }
 
         public void Flower()

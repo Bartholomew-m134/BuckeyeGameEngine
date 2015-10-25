@@ -15,18 +15,14 @@ namespace Game.Commands.MarioCommands
 
         public void Execute()
         {
-            if (WorldManager.GetMario().Physics.Velocity.Y < 2)
-            {
+            
                 WorldManager.GetMario().Jump();
-            }
+            
         }
 
         public void Release()
         {
-            if (WorldManager.GetMario().Physics.Velocity.Y < 0)
-            {
-                WorldManager.GetMario().Physics.ResetY();
-            }
+            WorldManager.GetMario().StopJumping();
         }
     }
 }

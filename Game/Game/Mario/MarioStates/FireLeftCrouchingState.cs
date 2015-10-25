@@ -55,6 +55,10 @@ namespace Game.Mario.MarioStates
             mario.VectorCoordinates += new Vector2(0, -10);
         }
 
+        public void StopJumping()
+        {
+        }
+
         public void Flower()
         {
 

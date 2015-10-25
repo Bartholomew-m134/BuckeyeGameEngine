@@ -65,6 +65,14 @@ namespace Game.Mario.MarioStates
             
         }
 
+        public void StopJumping()
+        {
+            if (mario.Physics.Velocity.Y < 0)
+            {
+                mario.Physics.ResetY();
+            }
+        }
+
         public void Flower()
         {
             mario.MarioState = new FireRightJumpingState(mario);

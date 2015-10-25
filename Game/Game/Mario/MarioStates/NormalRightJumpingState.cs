@@ -62,13 +62,14 @@ namespace Game.Mario.MarioStates
 
         public void Jump()
         {
-            Vector2 velocity = mario.Physics.Velocity;
-            Vector2 acceleration = mario.Physics.Acceleration;
+            
+        }
 
-            if (velocity.Y < 0)
+        public void StopJumping()
+        {
+            if (mario.Physics.Velocity.Y < 0)
             {
-                acceleration.Y = 1;
-                mario.Physics.Acceleration = acceleration;
+                mario.Physics.ResetY();
             }
         }
 

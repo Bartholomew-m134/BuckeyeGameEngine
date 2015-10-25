@@ -52,6 +52,9 @@ namespace Game.Mario.MarioStates
         {
 
         }
+        public void StopJumping()
+        {
+        }
 
         public void Flower()
         {

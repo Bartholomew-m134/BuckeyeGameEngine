@@ -69,9 +69,13 @@ namespace Game.Mario
 
         public void Jump()
         {
-            state.Jump();
+            if (Physics.Velocity.Y < 2)
+             state.Jump();
         }
 
+        public void StopJumping() {
+            state.StopJumping();
+        }
 
         public void Flower()
         {
