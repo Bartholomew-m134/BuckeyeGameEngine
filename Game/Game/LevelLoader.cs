@@ -97,6 +97,11 @@ namespace Game
                         objectsItem = new Coin(true, game);
                         gameObject = new Block(Block.Type.HiddenBlock, game);
                     }
+                    else if (objectName.Equals("InvisGreenMushBlock"))
+                    {
+                        objectsItem = new GreenMushroom(true, game);
+                        gameObject = new Block(Block.Type.HiddenBlock, game);
+                    }
                     else if (objectName.Equals("QuestionRedMushBlock"))
                     {
                         objectsItem = new RedMushroom(true, game);
@@ -123,6 +128,8 @@ namespace Game
                         gameObject = new Block(Block.Type.BreakingBlock, game);
                     else if (objectName.Equals("Pipe"))
                         gameObject = new Pipe(game);
+                    else if (objectName.Equals("PipeShaft"))
+                        gameObject = new PipeShaft(game);
                     else if (objectName.Equals("BigHill"))
                         gameObject = new BigHill(game);
                     else if (objectName.Equals("Bush"))

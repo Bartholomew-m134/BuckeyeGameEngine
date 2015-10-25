@@ -194,6 +194,8 @@
     <Compile Include="Mario\StarMario.cs" />
     <Compile Include="Interfaces\IPipe.cs" />
     <Compile Include="Pipes\Pipe.cs" />
+    <Compile Include="Pipes\PipeShaft.cs" />
+    <Compile Include="Pipes\PipeSprites\PipeShaftSprite.cs" />
     <Compile Include="Pipes\PipeSprites\PipeSprite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />

@@ -64,5 +64,10 @@ namespace Game.SpriteFactories
         {
             return new PipeSprite(tileSpriteSheet);
         }
+
+        public static ISprite CreatePipeShaftSprite()
+        {
+            return new PipeShaftSprite(tileSpriteSheet);
+        }
     }
 }
