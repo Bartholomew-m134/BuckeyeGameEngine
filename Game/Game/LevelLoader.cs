@@ -138,7 +138,7 @@ namespace Game
 
                     if (objectsItem != null)
                     {
-                        objectsItem.VectorCoordinates = location + new Vector2(0, -objectsItem.Sprite.SpriteDimensions.Y + 1);
+                        objectsItem.VectorCoordinates = location + new Vector2(0, -objectsItem.Sprite.SpriteDimensions.Y);
                         gameObjects.Add(objectsItem);
                     }
 

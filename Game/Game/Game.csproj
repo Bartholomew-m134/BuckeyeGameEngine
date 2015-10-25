@@ -96,7 +96,7 @@
     <Compile Include="Blocks\BlockStates\BrickDebrisState.cs" />
     <Compile Include="Camera.cs" />
     <Compile Include="Collisions\CollisionManager.cs" />
-    <Compile Include="Commands\MarioCommands\MarioFireBallCommand.cs" />
+    <Compile Include="Commands\MarioCommands\MarioRunFireBallCommand.cs" />
     <Compile Include="Interfaces\IBlock.cs" />
     <Compile Include="Collisions\BlockCollisionHandling\MarioBlockCollisionHandler.cs" />
     <Compile Include="Collisions\BottomSideCollision.cs" />
@@ -120,10 +120,6 @@
     <Compile Include="Commands\MarioCommands\FurtherRightMarioStanceCommand.cs" />
     <Compile Include="Commands\MarioCommands\RaiseMarioStanceCommand.cs" />
     <Compile Include="Commands\MarioCommands\LowerMarioStanceCommand.cs" />
-    <Compile Include="Commands\MarioCommands\SwitchToBigMarioCommand.cs" />
-    <Compile Include="Commands\MarioCommands\SwitchToDeadMarioCommand.cs" />
-    <Compile Include="Commands\MarioCommands\SwitchToFireMarioCommand.cs" />
-    <Compile Include="Commands\MarioCommands\SwitchToSmallMarioCommand.cs" />
     <Compile Include="Commands\ResetToDefaultCommand.cs" />
     <Compile Include="Interfaces\IController.cs" />
     <Compile Include="Controllers\GamePadController.cs" />

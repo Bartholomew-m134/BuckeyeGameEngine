@@ -20,6 +20,11 @@ namespace Game.Commands.MarioCommands
             
         }
 
+        public void Hold()
+        {
+
+        }
+
         public void Release()
         {
             WorldManager.GetMario().StopJumping();
