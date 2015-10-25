@@ -9,16 +9,16 @@ using Game.Utilities;
 
 namespace Game.Pipes
 {
-    public class PipeShaft : IPipe
+    public class DoublePipe : IPipe
     {
         private Game1 myGame;
         private ISprite pipeSprite;
         private Vector2 location;
 
-        public PipeShaft(Game1 game)
+        public DoublePipe(Game1 game)
         {
             myGame = game;
-            pipeSprite = TileSpriteFactory.CreatePipeShaftSprite();
+            pipeSprite = TileSpriteFactory.CreateDoublePipeSprite();
 
         }
 
