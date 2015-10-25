@@ -97,6 +97,11 @@ namespace Game
                         objectsItem = new Coin(true, game);
                         gameObject = new Block(Block.Type.HiddenBlock, game);
                     }
+                    else if (objectName.Equals("QuestionCoinBlock"))
+                    {
+                        objectsItem = new Coin(true, game);
+                        gameObject = new Block(Block.Type.QuestionBlock, game);
+                    }
                     else if (objectName.Equals("QuestionRedMushBlock"))
                     {
                         objectsItem = new RedMushroom(true, game);
