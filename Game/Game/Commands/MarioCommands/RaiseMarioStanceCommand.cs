@@ -21,6 +21,11 @@ namespace Game.Commands.MarioCommands
             }
         }
 
+        public void Hold()
+        {
+
+        }
+
         public void Release()
         {
             if (WorldManager.GetMario().Physics.Velocity.Y < 0)

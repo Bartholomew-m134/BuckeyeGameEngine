@@ -6,20 +6,26 @@ using System.Text;
 
 namespace Game.Commands.MarioCommands
 {
-    public class SwitchToSmallMarioCommand : ICommand
+    class MarioRunFireBallCommand : ICommand
     {
-        public SwitchToSmallMarioCommand()
+        public MarioRunFireBallCommand()
         {
+
         }
 
         public void Execute()
         {
-            WorldManager.GetMario().Damage();
+            //WorldManager.GetMario().FireBall();
+        }
+
+        public void Hold()
+        {
+            //RunMario
         }
 
         public void Release()
         {
-
+            //StopRun
         }
     }
 }

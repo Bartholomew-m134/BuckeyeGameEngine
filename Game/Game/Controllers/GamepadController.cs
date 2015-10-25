@@ -25,7 +25,7 @@ namespace Game
             RegisterCommand(Buttons.LeftThumbstickRight, new FurtherRightMarioStanceCommand());
 
             RegisterCommand(Buttons.A, new RaiseMarioStanceCommand());
-            RegisterCommand(Buttons.B, new MarioFireBallCommand());
+            RegisterCommand(Buttons.B, new MarioRunFireBallCommand());
         }
 
         public void RegisterCommand(Buttons button, ICommand command)
