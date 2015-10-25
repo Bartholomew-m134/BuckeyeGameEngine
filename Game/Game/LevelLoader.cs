@@ -132,6 +132,11 @@ namespace Game
                         objectsItem = new Star(true, game);
                         gameObject = new Block(Block.Type.QuestionBlock, game);
                     }
+                    else if (objectName.Equals("BrickStarBlock"))
+                    {
+                        objectsItem = new Star(true, game);
+                        gameObject = new Block(Block.Type.BrickBlock, game);
+                    }
                     else if (objectName.Equals("BrickBlock"))
                         gameObject = new Block(Block.Type.BrickBlock, game);
                     else if (objectName.Equals("BreakingBlock"))
