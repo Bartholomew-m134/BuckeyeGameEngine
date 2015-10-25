@@ -19,10 +19,7 @@ namespace Game.Blocks.BlockSprites
         private Vector2 topRightDestination;
         private Vector2 bottomLeftDestination;
         private Vector2 bottomRightDestination;
-        private int xMovement;
-        private int yMovement;
-        private int debrisHeightCheck;
-        private bool goingUp;
+        private Vector2 adjustment;
 
         public BrickDebrisSprite(Texture2D spriteSheet)
         {
@@ -31,72 +28,34 @@ namespace Game.Blocks.BlockSprites
             height = 8;
             sheetXLocation = 304;
             sheetYLocation = 112;
-            xMovement = 1;
-            yMovement = 3;
-            debrisHeightCheck = 0;
-            timer = 0;
-            goingUp = true;
-
-            topLeftDestination.X = 0;
-            topLeftDestination.Y = 0;
-
-            topRightDestination.X = 0;
-            topRightDestination.Y = 0;
-
-            bottomLeftDestination.X = 0;
-            bottomLeftDestination.Y = 0;
-
-            bottomRightDestination.X = 0;
-            bottomRightDestination.Y = 0;
-
         }
 
         public void Update()
         {
-           if (debrisHeightCheck > 4 && goingUp){
-                yMovement = yMovement * -1;
-                debrisHeightCheck = 0;
-                goingUp = false;
-            }
-           else
-           {
-               topLeftDestination.X -= xMovement;
-               topLeftDestination.Y -= yMovement * 2;
-
-               topRightDestination.X += xMovement;
-               topRightDestination.Y -= yMovement * 2;
-
-               bottomLeftDestination.X += xMovement;
-               bottomLeftDestination.Y -= yMovement * 2;
-
-               bottomRightDestination.X -= xMovement;
-               bottomRightDestination.Y -= yMovement * 2;
-           }
-            debrisHeightCheck += 1;
+            if (timer < 10)
+                adjustment += new Vector2(1, 6);
+            else
+                adjustment += new Vector2(1, -6);
             timer++;
-            
         }
 
         public void Draw(SpriteBatch spriteBatch, Microsoft.Xna.Framework.Vector2 location)
         {
             Rectangle sourceRectangle = new Rectangle(sheetXLocation, sheetYLocation, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
 
-            if(topLeftDestination.X ==0){
-                topLeftDestination.X = destinationRectangle.X;
-                topLeftDestination.Y = destinationRectangle.Y;
+            topLeftDestination.X = location.X - adjustment.X;
+            topLeftDestination.Y = location.Y - adjustment.Y;
 
-                topRightDestination.X = destinationRectangle.X + 8;
-                topRightDestination.Y = destinationRectangle.Y;
+            topRightDestination.X = location.X + adjustment.X + 8;
+            topRightDestination.Y = location.Y - adjustment.Y;
 
-                bottomLeftDestination.X = destinationRectangle.X;
-                bottomLeftDestination.Y = destinationRectangle.Y + 8;
+            bottomLeftDestination.X = location.X + adjustment.X;
+            bottomLeftDestination.Y = location.Y - adjustment.Y + 8;
 
-                bottomRightDestination.X = destinationRectangle.X + 8;
-                bottomRightDestination.Y = destinationRectangle.Y + 8;
-             }
+            bottomRightDestination.X = location.X - adjustment.X + 8;
+            bottomRightDestination.Y = location.Y - adjustment.Y + 8;
 
-            if (timer <100){
+            if (timer <75){
                 spriteBatch.Begin();
                 spriteBatch.Draw(spriteSheet, topLeftDestination, sourceRectangle, Color.White);
                 spriteBatch.Draw(spriteSheet, topRightDestination, sourceRectangle, Color.White);
