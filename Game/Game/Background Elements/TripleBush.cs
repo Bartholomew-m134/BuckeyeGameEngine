@@ -9,7 +9,7 @@ using Game.Utilities;
 
 namespace Game.Background_Elements
 {
-    class TripleBush:IGameObject
+    class TripleBush : IScenery
     {
 
         private Game1 myGame;

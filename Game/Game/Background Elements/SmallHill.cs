@@ -9,7 +9,7 @@ using Game.Utilities;
 
 namespace Game.Background_Elements
 {
-    class SmallHill:IGameObject
+    class SmallHill : IScenery
     {
         private Game1 myGame;
         private ISprite smallHillSprite;

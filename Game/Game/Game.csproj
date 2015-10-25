@@ -149,6 +149,7 @@
     <Compile Include="Enemies\KoopaClasses\KoopaStates\IKoopaState.cs" />
     <Compile Include="Interfaces\IGameObject.cs" />
     <Compile Include="Interfaces\IMarioSprite.cs" />
+    <Compile Include="Interfaces\IScenery.cs" />
     <Compile Include="Interfaces\ISprite.cs" />
     <Compile Include="Items\Coin.cs" />
     <Compile Include="Items\Flower.cs" />

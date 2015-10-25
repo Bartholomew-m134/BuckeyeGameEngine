@@ -189,7 +189,20 @@ namespace Game
                 }
             }
 
-            return gameObjects;
+            for (int index = 0; index < gameObjects.Count; index++)
+            {
+                if (gameObjects[index] is IMario)
+                {
+                    IGameObject mario = gameObjects[index];
+                    gameObjects.RemoveAt(index);
+                    gameObjects.Add(mario);
+                    break;
+                }
+
+                //if(gameObjects[index] is IScenery)
+            }
+
+                return gameObjects;
         }
     }
 }
