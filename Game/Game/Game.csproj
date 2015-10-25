@@ -74,12 +74,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Background Elements\BackgroundElementSprites\BigHillSprite.cs" />
+    <Compile Include="Background Elements\BackgroundElementSprites\CastleSprite.cs" />
     <Compile Include="Background Elements\BackgroundElementSprites\SingleBushSprite.cs" />
     <Compile Include="Background Elements\BackgroundElementSprites\SingleCloudSprite.cs" />
     <Compile Include="Background Elements\BackgroundElementSprites\SmallHillSprite.cs" />
     <Compile Include="Background Elements\BackgroundElementSprites\TripleBushSprite.cs" />
     <Compile Include="Background Elements\BackgroundElementSprites\TripleCloudSprite.cs" />
     <Compile Include="Background Elements\BigHill.cs" />
+    <Compile Include="Background Elements\Castle.cs" />
     <Compile Include="Background Elements\SingleBush.cs" />
     <Compile Include="Background Elements\SingleCloud.cs" />
     <Compile Include="Background Elements\SmallHill.cs" />

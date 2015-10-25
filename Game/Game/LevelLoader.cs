@@ -90,6 +90,8 @@ namespace Game
                         gameObject = new Goomba(game);
                     else if (objectName.Equals("Pipe"))
                         gameObject = new Pipe(game);
+                    else if (objectName.Equals("Castle"))
+                        gameObject = new Castle(game);
                     else if (objectName.Equals("SolidBlock"))
                         gameObject = new Block(Block.Type.SolidBlock, game);
                     else if (objectName.Equals("InvisCoinBlock"))
