@@ -30,7 +30,7 @@ namespace Game
             RegisterCommand(Keys.D, new FurtherRightMarioStanceCommand());
 
             RegisterCommand(Keys.Z, new RaiseMarioStanceCommand());
-            RegisterCommand(Keys.X, new MarioFireBallCommand());
+            RegisterCommand(Keys.X, new MarioRunFireBallCommand());
 
             RegisterCommand(Keys.R, new ResetToDefaultCommand());
         }
@@ -47,14 +47,16 @@ namespace Game
                     
             foreach (Keys key in pressedKeys)
             {
-                if (keyMappings.ContainsKey(key))
-                    keyMappings[key].Execute();               
+                if (keyMappings.ContainsKey(key) && prevPressedKeys.Contains(key))
+                    keyMappings[key].Hold();
+                else if (keyMappings.ContainsKey(key))
+                    keyMappings[key].Execute();
             }
 
             foreach (Keys key in prevPressedKeys)
             {
                 if (keyMappings.ContainsKey(key) && !pressedKeys.Contains(key))
-                    keyMappings[key].Release();
+                    keyMappings[key].Release();                  
             }
 
             prevPressedKeys = pressedKeys;

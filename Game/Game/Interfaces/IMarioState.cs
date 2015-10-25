@@ -26,6 +26,7 @@ namespace Game.Interfaces
 
          void Jump();
 
+         void StopJumping();
 
          void Flower();
 

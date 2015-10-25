@@ -36,7 +36,8 @@ namespace Game.Collisions.EnemyCollisionHandling
 
         public void HandleCollision()
         {
-            collision.ResolveOverlap(mario, side);
+            if(enemy.CanDealDamage)
+                collision.ResolveOverlap(mario, side);
 
             if (!mario.IsStar() && side is TopSideCollision)
             {

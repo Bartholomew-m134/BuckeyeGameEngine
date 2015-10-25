@@ -9,6 +9,8 @@ namespace Game.Interfaces
     {
         void Execute();
 
+        void Hold();
+
         void Release();
     }
 }

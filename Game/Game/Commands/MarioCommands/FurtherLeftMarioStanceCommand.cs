@@ -14,6 +14,11 @@ namespace Game.Commands.MarioCommands
 
         public void Execute()
         {
+            
+        }
+
+        public void Hold()
+        {
             WorldManager.GetMario().Left();
         }
 

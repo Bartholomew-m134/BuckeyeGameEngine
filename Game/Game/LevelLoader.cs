@@ -102,6 +102,11 @@ namespace Game
                         objectsItem = new GreenMushroom(true, game);
                         gameObject = new Block(Block.Type.HiddenBlock, game);
                     }
+                    else if (objectName.Equals("QuestionCoinBlock"))
+                    {
+                        objectsItem = new Coin(true, game);
+                        gameObject = new Block(Block.Type.QuestionBlock, game);
+                    }
                     else if (objectName.Equals("QuestionRedMushBlock"))
                     {
                         objectsItem = new RedMushroom(true, game);
@@ -145,7 +150,7 @@ namespace Game
 
                     if (objectsItem != null)
                     {
-                        objectsItem.VectorCoordinates = location + new Vector2(0, -objectsItem.Sprite.SpriteDimensions.Y + 1);
+                        objectsItem.VectorCoordinates = location + new Vector2(0, -objectsItem.Sprite.SpriteDimensions.Y);
                         gameObjects.Add(objectsItem);
                     }
 
