@@ -9,7 +9,7 @@ using Game.Utilities;
 
 namespace Game.Background_Elements
 {
-    class BigHill:IGameObject
+    class BigHill : IScenery
     {
 
         private Game1 myGame;

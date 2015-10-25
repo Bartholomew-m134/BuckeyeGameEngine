@@ -9,7 +9,7 @@ using Game.Utilities;
 
 namespace Game.Background_Elements
 {
-    class SingleCloud:IGameObject
+    class SingleCloud : IScenery
     {
         private Game1 myGame;
         private ISprite singleCloudSprite;
