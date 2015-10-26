@@ -15,9 +15,11 @@ namespace Game.FlagPoles
         private Game1 myGame;
         private ISprite invisibleFlagPoleSprite;
         private Vector2 location;
+        public bool hasBeenActivatedOnce;
 
         public InvisibleFlagPoleBarrier(Game1 game)
         {
+            hasBeenActivatedOnce = false;
             myGame = game;
             invisibleFlagPoleSprite = TileSpriteFactory.CreateInvisibleFlagPoleSprite();
             isActive = false;
@@ -55,6 +57,11 @@ namespace Game.FlagPoles
         {
             get { return isActive; }
             set { isActive = value; }
+        }
+        public bool HasBeenActivatedOnce
+        {
+            get { return hasBeenActivatedOnce; }
+            set { hasBeenActivatedOnce = value; }
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Game.FlagPoles
     class FlagPole : IFlagPole
     {
         public bool isActive;
-        private bool hasBeenActivatedOnce;
+        public bool hasBeenActivatedOnce;
         private Game1 myGame;
         private ISprite flagPoleSprite;
         private Vector2 location;
@@ -60,6 +60,12 @@ namespace Game.FlagPoles
         public bool IsActive{
             get {return isActive;}
             set {isActive = value;}
+        }
+
+        public bool HasBeenActivatedOnce
+        {
+            get { return hasBeenActivatedOnce; }
+            set { hasBeenActivatedOnce = value; }
         }
     }
 }

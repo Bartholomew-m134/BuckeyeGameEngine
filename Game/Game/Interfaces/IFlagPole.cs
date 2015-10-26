@@ -12,5 +12,11 @@ namespace Game.Interfaces
             get;
             set;
         }
+
+        bool HasBeenActivatedOnce
+        {
+            get;
+            set;
+        }
     }
 }

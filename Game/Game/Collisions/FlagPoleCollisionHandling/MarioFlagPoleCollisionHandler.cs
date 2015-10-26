@@ -31,11 +31,15 @@ namespace Game.Collisions.FlagPoleCollisionHandling
         }
         public void HandleCollision()
         {
-            if(collidingFlagPole is InvisibleFlagPoleBarrier){
-                collision.ResolveOverlap(collidingMario, collision.CollisionSide);
+            if(collidingFlagPole is InvisibleFlagPoleBarrier && collision.CollisionSide is LeftSideCollision){
+                collidingMario.PoleSlide();
+                collision.ResolveOverlap(collidingMario, collision.CollisionSide);;
             }
             collidingFlagPole.IsActive = true;
-            collidingMario.PoleSlide();
+            if(collision.CollisionSide is BottomSideCollision){
+               
+            }
+            
         }
     }
 }
