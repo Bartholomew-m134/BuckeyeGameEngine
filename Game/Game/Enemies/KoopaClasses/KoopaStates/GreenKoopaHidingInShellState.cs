@@ -12,7 +12,9 @@ namespace Game.Enemies.KoopaClasses.KoopaStates
         public GreenKoopaHidingInShellState(GreenKoopa greenKoopa)
         {
             this.greenKoopa = greenKoopa;
+            float prevHeight = greenKoopa.Sprite.SpriteDimensions.Y;
             this.greenKoopa.Sprite = Game.SpriteFactories.EnemySpriteFactory.CreateGreenKoopaHidingInShellSprite();
+            greenKoopa.VectorCoordinates += new Microsoft.Xna.Framework.Vector2(0, prevHeight - greenKoopa.Sprite.SpriteDimensions.Y);
         }
 
         public void KoopaEmergingFromShell()
