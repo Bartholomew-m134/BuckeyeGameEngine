@@ -228,7 +228,6 @@
     <Compile Include="Mario\MarioStates\FireRightIdleState.cs" />
     <Compile Include="Mario\MarioStates\FireRightJumpingState.cs" />
     <Compile Include="Mario\MarioStates\FireRightRunningState.cs" />
-    <Compile Include="Interfaces\IMarioState.cs" />
     <Compile Include="Mario\MarioStates\NormalLeftCrouchingState.cs" />
     <Compile Include="Mario\MarioStates\NormalLeftIdleState.cs" />
     <Compile Include="Mario\MarioStates\NormalLeftJumpingState.cs" />
@@ -243,6 +242,29 @@
     <Compile Include="Mario\MarioStates\SmallRightIdleState.cs" />
     <Compile Include="Mario\MarioStates\SmallRightJumpingState.cs" />
     <Compile Include="Mario\MarioStates\SmallRightRunningState.cs" />
+    <Compile Include="Interfaces\IPipe.cs" />
+    <Compile Include="Mario\StarMario.cs" />
+    <Compile Include="Pipes\Pipe.cs" />
+    <Compile Include="Pipes\PipeShaft.cs" />
+    <Compile Include="Pipes\PipeSprites\PipeShaftSprite.cs" />
+    <Compile Include="Pipes\PipeSprites\PipeSprite.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Game1.cs" />
+    <Compile Include="SpriteFactories\BackgroundElementsSpriteFactory.cs" />
+    <Compile Include="SpriteFactories\TileSpriteFactory.cs" />
+    <Compile Include="SpriteFactories\EnemySpriteFactory.cs" />
+    <Compile Include="SpriteFactories\ItemsSpriteFactory.cs" />
+    <Compile Include="SpriteFactories\MarioSpriteFactory.cs" />
+    <Compile Include="Blocks\BlockStates\BreakingBlockState.cs" />
+    <Compile Include="Blocks\BlockStates\BrickBlockState.cs" />
+    <Compile Include="Blocks\BlockStates\HiddenBlockState.cs" />
+    <Compile Include="Interfaces\IBlockState.cs" />
+    <Compile Include="Blocks\BlockStates\NullBlockState.cs" />
+    <Compile Include="Blocks\BlockStates\QuestionBlockState.cs" />
+    <Compile Include="Blocks\BlockStates\SolidBlockState.cs" />
+    <Compile Include="Blocks\BlockStates\UsedBlockState.cs" />
+    <Compile Include="Interfaces\IMarioState.cs" />
     <Compile Include="Utilities\ObjectPhysics.cs" />
     <Compile Include="WorldManager.cs" />
   </ItemGroup>
