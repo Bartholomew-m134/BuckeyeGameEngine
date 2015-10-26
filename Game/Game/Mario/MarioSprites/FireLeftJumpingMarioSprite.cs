@@ -21,7 +21,7 @@ namespace Game.Mario.MarioSprites
         public FireLeftJumpingMarioSprite(Texture2D spriteSheet)
         {
             this.spriteSheet = spriteSheet;
-            width = 15;
+            width = 16;
             height = 31;
             sheetXLocation = 27;
             sheetYLocation = 122;

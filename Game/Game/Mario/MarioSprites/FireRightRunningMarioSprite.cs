@@ -38,13 +38,13 @@ namespace Game.Mario.MarioSprites
             fireRightRunningSpriteDimensions = new ArrayList();
             fireRightRunningSpriteLocations = new ArrayList();
 
-            firstFireRightRunningSpriteDimensions.X = 15;
+            firstFireRightRunningSpriteDimensions.X = 16;
             firstFireRightRunningSpriteDimensions.Y = 31;
 
-            secondFireRightRunningSpriteDimensions.X = 13;
+            secondFireRightRunningSpriteDimensions.X = 16;
             secondFireRightRunningSpriteDimensions.Y = 30;
 
-            thirdFireRightRunningSpriteDimensions.X = 15;
+            thirdFireRightRunningSpriteDimensions.X = 16;
             thirdFireRightRunningSpriteDimensions.Y = 29;
 
             firstFireRightRunningSpriteLocation.X = 237;

@@ -20,7 +20,7 @@ namespace Game.Mario.MarioSprites
         public FireLeftIdleMarioSprite(Texture2D spriteSheet)
         {
             this.spriteSheet = spriteSheet;
-            width = 15;
+            width = 16;
             height = 31;
             sheetXLocation = 180;
             sheetYLocation = 122;

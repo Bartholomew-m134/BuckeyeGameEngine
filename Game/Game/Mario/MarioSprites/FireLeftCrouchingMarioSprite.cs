@@ -21,7 +21,7 @@ namespace Game.Mario.MarioSprites
         public FireLeftCrouchingMarioSprite(Texture2D spriteSheet)
         {
             this.spriteSheet = spriteSheet;
-            width = 15;
+            width = 16;
             height = 21;
             sheetXLocation = 0;
             sheetYLocation = 127;

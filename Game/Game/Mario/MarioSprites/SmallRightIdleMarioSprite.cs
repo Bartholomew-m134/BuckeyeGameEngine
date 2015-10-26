@@ -21,7 +21,7 @@ namespace Game.Mario.MarioSprites
         {
             toggle = 0;
             this.spriteSheet = spriteSheet;
-            width = 12;
+            width = 16;
             height = 15;
             sheetXLocation = 211;
             sheetYLocation = 0;

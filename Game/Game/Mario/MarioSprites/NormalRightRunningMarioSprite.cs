@@ -39,13 +39,13 @@ namespace Game.Mario.MarioSprites
             normalRightRunningSpriteDimensions = new ArrayList();
             normalRightRunningSpriteLocations = new ArrayList();
 
-            firstNormalRightRunningSpriteDimensions.X = 15;
+            firstNormalRightRunningSpriteDimensions.X = 16;
             firstNormalRightRunningSpriteDimensions.Y = 31;
 
-            secondNormalRightRunningSpriteDimensions.X = 13;
+            secondNormalRightRunningSpriteDimensions.X = 16;
             secondNormalRightRunningSpriteDimensions.Y = 30;
 
-            thirdNormalRightRunningSpriteDimensions.X = 15;
+            thirdNormalRightRunningSpriteDimensions.X = 16;
             thirdNormalRightRunningSpriteDimensions.Y = 29;
 
             firstNormalRightRunningSpriteLocation.X = 239;

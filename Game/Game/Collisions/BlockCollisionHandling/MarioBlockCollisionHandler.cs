@@ -63,6 +63,7 @@ namespace Game.Collisions.BlockCollisionHandling
                     collidingMario.MarioState.ToIdle();
                 }
                 collidingMario.Physics.ResetY();
+                
             }
 
         }
@@ -92,7 +93,7 @@ namespace Game.Collisions.BlockCollisionHandling
             else if (!(collidingBlock.State is BrickDebrisState)){
                 collision.ResolveOverlap(collidingMario, collisionSide);
             }
-
+           
             if(!(collidingBlock.State is NullBlockState || collidingBlock.State is BrickDebrisState))
                 collidingMario.Physics.ResetY();
         }
@@ -101,6 +102,7 @@ namespace Game.Collisions.BlockCollisionHandling
             if (!(collidingBlock.State is HiddenBlockState) && !(collidingBlock.State is BrickDebrisState))
             {
                 collision.ResolveOverlap(collidingMario, collisionSide);
+               
             }
 
         }
@@ -109,6 +111,7 @@ namespace Game.Collisions.BlockCollisionHandling
             if (!(collidingBlock.State is HiddenBlockState) && !(collidingBlock.State is BrickDebrisState))
             {
                 collision.ResolveOverlap(collidingMario, collisionSide);
+                
             }
         }
     }

@@ -28,8 +28,9 @@ namespace Game.Mario
 
         public void Update()
         {
-            state.Update();
             location = physics.Update(location);
+            state.Update();
+          
         }
 
         public void Draw(ICamera camera)

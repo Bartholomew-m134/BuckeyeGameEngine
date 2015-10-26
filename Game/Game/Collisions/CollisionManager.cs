@@ -38,20 +38,21 @@ namespace Game.Collisions
 
                     if (side != null)
                     {
-                        objectCollisionList.Add(new CollisionData(gameObjects[i], gameObjects[j], side));
-                        //CollisionSelector.HandleCollision(new CollisionData(gameObjects[i], gameObjects[j], side));
+                        //objectCollisionList.Add(new CollisionData(gameObjects[i], gameObjects[j], side));
+                        CollisionSelector.HandleCollision(new CollisionData(gameObjects[i], gameObjects[j], side));
                        
                     }
                 }
-                objectCollisionList.Sort();
                 
-                   if(objectCollisionList.Count > 2)
+                /*objectCollisionList.Sort();
+                
+                   if(objectCollisionList.Count > 3)
                     objectCollisionList.RemoveAt(objectCollisionList.Count-1);
 
                    foreach (CollisionData collision in objectCollisionList) {
                        CollisionSelector.HandleCollision(collision);
                    }
-                
+                */
                     
             }
         }

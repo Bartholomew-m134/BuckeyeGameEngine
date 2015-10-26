@@ -38,13 +38,13 @@ namespace Game.Mario.MarioSprites
             smallLeftRunningSpriteDimensions = new ArrayList();
             smallLeftRunningSpriteLocations = new ArrayList();
 
-            firstSmallLeftRunningSpriteDimensions.X = 13;
+            firstSmallLeftRunningSpriteDimensions.X = 16;
             firstSmallLeftRunningSpriteDimensions.Y = 14;
 
-            secondSmallLeftRunningSpriteDimensions.X = 11;
+            secondSmallLeftRunningSpriteDimensions.X = 16;
             secondSmallLeftRunningSpriteDimensions.Y = 15;
 
-            thirdSmallLeftRunningSpriteDimensions.X = 15;
+            thirdSmallLeftRunningSpriteDimensions.X = 16;
             thirdSmallLeftRunningSpriteDimensions.Y = 15;
 
             firstSmallLeftRunningSpriteLocation.X = 150;
