@@ -9,7 +9,7 @@ using Game.Interfaces;
 
 namespace Game.Pipes.PipeSprites
 {
-    class PipeSprite : ISprite
+    class DoublePipeSprite : ISprite
     {
         private int width;
         private int height;
@@ -17,14 +17,14 @@ namespace Game.Pipes.PipeSprites
         private int sourceY;
         private Texture2D Texture { get; set; }
 
-        public PipeSprite(Texture2D texture)
+        public DoublePipeSprite(Texture2D texture)
         {
             Texture = texture;
 
             width = 32;
-            height = 32;
-            sourceX = 309;
-            sourceY = 417;
+            height = 48;
+            sourceX = 271;
+            sourceY = 401;
 
         }
 

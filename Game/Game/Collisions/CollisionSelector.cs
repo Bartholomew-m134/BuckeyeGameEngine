@@ -13,6 +13,7 @@ using Game.Collisions.BlockCollisionHandling;
 using Game.Collisions.ItemCollisionHandling;
 using Game.Collisions.PipeCollisionHandling;
 using Game.Interfaces;
+using Game.Collisions.FlagPoleCollisionHandling;
 
 namespace Game.Collisions
 {
@@ -62,6 +63,11 @@ namespace Game.Collisions
             else if ((collision.GameObjectA is IItem && collision.GameObjectB is IPipe) || (collision.GameObjectA is IPipe && collision.GameObjectB is IItem))
             {
 
+            }
+            else if ((collision.GameObjectA is IMario && collision.GameObjectB is IFlagPole) || (collision.GameObjectA is IFlagPole && collision.GameObjectB is IMario))
+            {
+                MarioFlagPoleCollisionHandler collisionHandler = new MarioFlagPoleCollisionHandler(collision);
+                collisionHandler.HandleCollision();
             }
         }
     }

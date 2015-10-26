@@ -52,5 +52,9 @@ namespace Game.SpriteFactories
         {
             return new TripleBushSprite(backgroundElementsSpriteSheet);
         }
+        public static ISprite CreateCastleSprite()
+        {
+            return new CastleSprite(backgroundElementsSpriteSheet);
+        }
     }
 }

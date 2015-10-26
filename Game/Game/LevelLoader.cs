@@ -13,6 +13,7 @@ using System.IO;
 using Game.Background_Elements;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
+using Game.FlagPoles;
 
 namespace Game
 {
@@ -90,6 +91,10 @@ namespace Game
                         gameObject = new Goomba(game);
                     else if (objectName.Equals("Pipe"))
                         gameObject = new Pipe(game);
+                    else if (objectName.Equals("Castle"))
+                        gameObject = new Castle(game);
+                    else if (objectName.Equals("FlagPole"))
+                        gameObject = new FlagPole(game);
                     else if (objectName.Equals("SolidBlock"))
                         gameObject = new Block(Block.Type.SolidBlock, game);
                     else if (objectName.Equals("InvisCoinBlock"))
@@ -132,14 +137,21 @@ namespace Game
                         objectsItem = new Star(true, game);
                         gameObject = new Block(Block.Type.QuestionBlock, game);
                     }
+                    else if (objectName.Equals("BrickStarBlock"))
+                    {
+                        objectsItem = new Star(true, game);
+                        gameObject = new Block(Block.Type.BrickBlock, game);
+                    }
                     else if (objectName.Equals("BrickBlock"))
                         gameObject = new Block(Block.Type.BrickBlock, game);
                     else if (objectName.Equals("BreakingBlock"))
                         gameObject = new Block(Block.Type.BreakingBlock, game);
                     else if (objectName.Equals("Pipe"))
                         gameObject = new Pipe(game);
-                    else if (objectName.Equals("PipeShaft"))
-                        gameObject = new PipeShaft(game);
+                    else if (objectName.Equals("DoublePipe"))
+                        gameObject = new DoublePipe(game);
+                    else if (objectName.Equals("TriplePipe"))
+                        gameObject = new TriplePipe(game);
                     else if (objectName.Equals("BigHill"))
                         gameObject = new BigHill(game);
                     else if (objectName.Equals("Bush"))
@@ -182,7 +194,24 @@ namespace Game
                 }
             }
 
-            return gameObjects;
+            for (int index = 0; index < gameObjects.Count; index++)
+            {
+                if (gameObjects[index] is IMario)
+                {
+                    IGameObject mario = gameObjects[index];
+                    gameObjects.RemoveAt(index);
+                    gameObjects.Add(mario);
+                }
+
+                if (gameObjects[index] is IScenery)
+                {
+                    IGameObject scenery = gameObjects[index];
+                    gameObjects.RemoveAt(index);
+                    gameObjects.Insert(0, scenery);
+                }
+            }
+
+                return gameObjects;
         }
     }
 }

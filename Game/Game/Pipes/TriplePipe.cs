@@ -7,32 +7,30 @@ using System.Linq;
 using System.Text;
 using Game.Utilities;
 
-namespace Game.Background_Elements
+namespace Game.Pipes
 {
-    class SmallHill : IScenery
+    public class TriplePipe : IPipe
     {
         private Game1 myGame;
-        private ISprite smallHillSprite;
+        private ISprite pipeSprite;
         private Vector2 location;
 
-
-        public SmallHill(Game1 game)
+        public TriplePipe(Game1 game)
         {
             myGame = game;
-            smallHillSprite = BackgroundElementsSpriteFactory.CreateSmallHillSprite();
+            pipeSprite = TileSpriteFactory.CreateTriplePipeSprite();
 
         }
 
         public void Update()
         {
-            smallHillSprite.Update();
+            pipeSprite.Update();
         }
 
         public void Draw(ICamera camera)
         {
-            smallHillSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
+            pipeSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
-
 
         public Vector2 VectorCoordinates
         {
@@ -42,8 +40,8 @@ namespace Game.Background_Elements
 
         public ISprite Sprite
         {
-            get { return smallHillSprite; }
-            set { smallHillSprite = value; }
+            get { return pipeSprite; }
+            set { pipeSprite = value; }
         }
 
         public ObjectPhysics Physics
@@ -51,5 +49,6 @@ namespace Game.Background_Elements
             get { return null; }
         }
     }
- }
 
+
+}

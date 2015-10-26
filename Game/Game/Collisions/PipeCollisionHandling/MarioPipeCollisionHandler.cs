@@ -40,6 +40,7 @@ namespace Game.Collisions.PipeCollisionHandling
             {
                 mario.MarioState.ToIdle();
             }
+
         }
     }
 }

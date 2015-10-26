@@ -9,7 +9,7 @@ using Game.Utilities;
 
 namespace Game.Background_Elements
 {
-    class TripleCloud:IGameObject
+    class TripleCloud : IScenery
     {
         private Game1 myGame;
         private ISprite tripleCloudSprite;

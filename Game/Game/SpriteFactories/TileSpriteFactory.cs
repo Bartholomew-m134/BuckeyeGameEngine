@@ -1,4 +1,5 @@
 ﻿using Game.Blocks.BlockSprites;
+using Game.FlagPoles.FlagPoleSprites;
 using Game.Interfaces;
 using Game.Pipes.PipeSprites;
 using Microsoft.Xna.Framework.Content;
@@ -14,11 +15,13 @@ namespace Game.SpriteFactories
     {
         private static Texture2D tileSpriteSheet;
         private static Texture2D brickDebrisSpriteSheet;
+        private static Texture2D scenerySpriteSheet;
 
         public static void Load(ContentManager content)
         {
             tileSpriteSheet = content.Load<Texture2D>("MarioTilesSpriteSheet");
             brickDebrisSpriteSheet = content.Load<Texture2D>("brickdebrissprite");
+            scenerySpriteSheet = content.Load<Texture2D>("ScenarySpriteSheet");
         }
 
         public static void Unload()
@@ -62,12 +65,23 @@ namespace Game.SpriteFactories
 
         public static ISprite CreatePipeSprite()
         {
-            return new PipeSprite(tileSpriteSheet);
+            return new PipeSprite(scenerySpriteSheet);
         }
-
-        public static ISprite CreatePipeShaftSprite()
+        public static ISprite CreateDoublePipeSprite()
         {
-            return new PipeShaftSprite(tileSpriteSheet);
+            return new DoublePipeSprite(scenerySpriteSheet);
+        }
+        public static ISprite CreateTriplePipeSprite()
+        {
+            return new TriplePipeSprite(scenerySpriteSheet);
+        }
+        public static ISprite CreateActiveFlagPoleSprite()
+        {
+            return new ActiveFlagPoleSprite(scenerySpriteSheet);
+        }
+        public static ISprite CreateInactiveFlagPoleSprite()
+        {
+            return new InactiveFlagPoleSprite(scenerySpriteSheet);
         }
     }
 }
