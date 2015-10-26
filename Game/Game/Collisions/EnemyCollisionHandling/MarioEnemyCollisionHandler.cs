@@ -7,6 +7,7 @@ using Game.Enemies;
 using Game.Enemies.GoombaClasses;
 using Game.Enemies.KoopaClasses;
 using Game.Interfaces;
+using Microsoft.Xna.Framework;
 
 namespace Game.Collisions.EnemyCollisionHandling
 {
@@ -43,6 +44,8 @@ namespace Game.Collisions.EnemyCollisionHandling
             {
                 enemy.CanDealDamage = false;
                 enemy.IsHit();
+                mario.Physics.Velocity = new Vector2(mario.Physics.Velocity.X, -5);
+                mario.Physics.Acceleration = new Vector2(mario.Physics.Acceleration.X, 1);
             }
             else if(!mario.IsStar())
             {

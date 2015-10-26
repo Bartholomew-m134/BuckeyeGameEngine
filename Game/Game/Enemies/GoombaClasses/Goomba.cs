@@ -18,6 +18,7 @@ namespace Game.Enemies.GoombaClasses
         private Vector2 location;
         private bool canDealDamage = true;
         private ObjectPhysics physics;
+        private int deathTimer = 0;
 
         public Goomba(Game1 game)
         {
@@ -54,6 +55,17 @@ namespace Game.Enemies.GoombaClasses
 
         public void Update()
         {
+            if (state is GoombaSmashedState && deathTimer == 3)
+            {
+                location.Y += 2000;
+                deathTimer = 0;
+                state = new GoombaWalkingLeftState(this);
+            }
+            else if (state is GoombaSmashedState)
+            {
+                deathTimer++;
+            }
+
             sprite.Update();
         }
 
