@@ -138,5 +138,13 @@ namespace Game.SpriteFactories
         {
             return new SmallRightRunningMarioSprite(marioSpriteSheet);
         }
+        public static ISprite CreateNormalFlagPoleSlidingSprite()
+        {
+            return new NormalFlagPoleSlidingSprite(marioSpriteSheet);
+        }
+        public static ISprite CreateFireFlagPoleSlidingSprite()
+        {
+            return new FireFlagPoleSlidingSprite(marioSpriteSheet);
+        }
     }
 }
