@@ -13,5 +13,7 @@ namespace Game.Interfaces
         void Disappear();
 
         void Release();
+
+        void ReverseDirection();
     }
 }

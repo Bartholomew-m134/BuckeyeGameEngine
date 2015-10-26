@@ -19,6 +19,7 @@ namespace Game.Collisions
             Rectangle previousHitBoxB;
             Rectangle hitBoxB;
             Rectangle collisionRectangle;
+
             Vector2 objectAOldCoordinates;
             Vector2 objectBOldCoordinates;
 
@@ -39,59 +40,58 @@ namespace Game.Collisions
             hitBoxB = new Rectangle((int)objectB.VectorCoordinates.X, (int)objectB.VectorCoordinates.Y, (int)objectB.Sprite.SpriteDimensions.X, (int)objectB.Sprite.SpriteDimensions.Y);
 
             collisionRectangle = Rectangle.Intersect(hitBoxA, hitBoxB);
+            
 
-            if (collisionRectangle.IsEmpty)
+            if (collisionRectangle.IsEmpty || objectA is IScenery || objectB is IScenery)
             {
-
                 collisionSide = null;
-            }
+            }       
             else if (isTopLeftCorner(hitBoxA, hitBoxB))
             {
 
-                if (previousHitBoxA.Bottom <= previousHitBoxB.Top)
+                if ((previousHitBoxA.Right <= previousHitBoxB.Left) && (previousHitBoxA.Bottom > previousHitBoxB.Top))
                 {
-                    collisionSide = new TopSideCollision();
+                    collisionSide = new LeftSideCollision();
                 }
                 else
                 {
-                    collisionSide = new LeftSideCollision();
+                    collisionSide = new TopSideCollision();
                 }
             }
             else if (isTopRightCorner(hitBoxA, hitBoxB))
             {
 
-                if (previousHitBoxA.Bottom <= previousHitBoxB.Top)
+                if ((previousHitBoxA.Left >= previousHitBoxB.Right) && (previousHitBoxA.Bottom > previousHitBoxB.Top))
                 {
-                    collisionSide = new TopSideCollision();
+                    collisionSide = new RightSideCollision();
                 }
                 else
                 {
-                    collisionSide = new RightSideCollision();
+                    collisionSide = new TopSideCollision();
                 }
             }
             else if (isBottomLeftCorner(hitBoxA, hitBoxB))
             {
 
-                if (previousHitBoxA.Top >= previousHitBoxB.Bottom)
+                if ((previousHitBoxA.Right <= previousHitBoxB.Left) && (previousHitBoxA.Top < previousHitBoxB.Bottom))
                 {
-                    collisionSide = new BottomSideCollision();
+                    collisionSide = new LeftSideCollision();
                 }
                 else
-                {
-                    
-                    collisionSide = new LeftSideCollision();
+                {                   
+                    collisionSide = new BottomSideCollision();
                 }
             }
             else if (isBottomRightCorner(hitBoxA, hitBoxB))
             {
 
-                if (previousHitBoxA.Top > previousHitBoxB.Bottom)
+                if ((previousHitBoxA.Left >= previousHitBoxB.Right) && (previousHitBoxA.Top < previousHitBoxB.Bottom))
                 {
-                    collisionSide = new BottomSideCollision();
+                    collisionSide = new RightSideCollision();
                 }
                 else
                 {
-                    collisionSide = new RightSideCollision();
+                    collisionSide = new BottomSideCollision();
                 }
             }
             else
@@ -99,16 +99,17 @@ namespace Game.Collisions
                 collisionSide = new TopSideCollision();
             }
 
-
-            /*else if ((collisionRectangle.Width >= collisionRectangle.Height) && (previousHitBoxA.Bottom < hitBoxB.Top))
+          
+        /* Previous Implementation
+            else if ( && (hitBoxA.Bottom < hitBoxB.Bottom))
             {
                 collisionSide = new TopSideCollision();
             }
-            else if ((collisionRectangle.Width >= collisionRectangle.Height) && (previousHitBoxA.Top > hitBoxA.Bottom))
+            else if ((collisionRectangle.Width >= collisionRectangle.Height) && (hitBoxA.Bottom > hitBoxB.Bottom))
             {
                 collisionSide = new BottomSideCollision();
             }
-            else if ((collisionRectangle.Height >= collisionRectangle.Width) && (previousHitBoxA.Right < hitBoxB.Left))
+            else if ((collisionRectangle.Height >= collisionRectangle.Width) && (hitBoxA.Right < hitBoxB.Right))
             {
                 collisionSide = new LeftSideCollision();
             }
@@ -116,7 +117,11 @@ namespace Game.Collisions
             {
                 collisionSide = new RightSideCollision();
             }
-             */
+             
+            */
+
+
+             
 
             return collisionSide;
         }
@@ -132,6 +137,8 @@ namespace Game.Collisions
 
             return ((hitBoxA.X > hitBoxB.X) && (hitBoxA.Y <= hitBoxB.Y));
         }
+
+
 
         private static bool isBottomLeftCorner(Rectangle hitBoxA, Rectangle hitBoxB)
         {

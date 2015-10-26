@@ -19,26 +19,35 @@ namespace Game.Collisions.ItemCollisionHandling
         public ItemBlockCollisionHandler(CollisionData collision) {
             this.collision = collision;
             side = collision.CollisionSide;
-            if (collision.GameObjectA is IBlock)
-            {
-                collidingBlock = (Block)collision.GameObjectA;
-                collidingItem = (IItem)collision.GameObjectB;
+            if (collision.GameObjectA is IItem)
+            {             
+                collidingItem = (IItem)collision.GameObjectA;
+                collidingBlock = (Block)collision.GameObjectB;        
             }
             else
             {
-                collidingBlock = (Block)collision.GameObjectB;
-                collidingItem = (IItem)collision.GameObjectA;
+                collidingBlock = (Block)collision.GameObjectA;
+                collidingItem = (IItem)collision.GameObjectB;
                 side = side.FlipSide();
             }
 
         }
         public void HandleCollision()
         {
-            if(!collidingItem.IsInsideBlock && !(collidingBlock.State is HiddenBlockState))
-                collision.ResolveOverlap(collidingItem, collision.CollisionSide);
 
-            if (collidingBlock.isBumped && side is BottomSideCollision)          
+            if (collidingBlock.isBumped && side is TopSideCollision && collidingItem.VectorCoordinates.X == collidingBlock.VectorCoordinates.X)           
                 collidingItem.Release();
+            
+            if (!collidingItem.IsInsideBlock && (side is TopSideCollision || side is BottomSideCollision) &&  !(collidingBlock.State is HiddenBlockState))
+            {
+                collision.ResolveOverlap(collidingItem, side);
+                collidingItem.Physics.ResetY();
+            }
+            else if (!collidingItem.IsInsideBlock &&  !(collidingBlock.State is HiddenBlockState))
+            {
+                collision.ResolveOverlap(collidingItem, side);
+                collidingItem.ReverseDirection();
+            }
         }
     }
 }

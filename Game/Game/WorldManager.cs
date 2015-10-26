@@ -44,7 +44,7 @@ namespace Game
                     FreeObject(objectList[i]);
             }
 
-            CollisionManager.Update(objectWithinZoneList, camera);
+            CollisionManager.Update(objectWithinZoneList);
 
             objectWithinZoneList.Clear();
 

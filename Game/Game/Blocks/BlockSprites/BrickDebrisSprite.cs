@@ -32,7 +32,7 @@ namespace Game.Blocks.BlockSprites
 
         public void Update()
         {
-            if (timer < 10)
+            if (timer < 5)
                 adjustment += new Vector2(1, 6);
             else
                 adjustment += new Vector2(1, -6);
