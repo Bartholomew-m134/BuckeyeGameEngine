@@ -47,8 +47,8 @@ namespace Game
 
         public bool IsWithinUpdateZone(Vector2 position)
         {
-            float rightBound = cameraLocation.X + dimension.X * 2;
-            float leftBound = cameraLocation.X - dimension.X * 2;
+            float rightBound = cameraLocation.X + (int)(dimension.X * 1.5);
+            float leftBound = cameraLocation.X - (int)(dimension.X * 0.5);
 
             return leftBound < position.X && position.X < rightBound;
         }

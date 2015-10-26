@@ -13,6 +13,8 @@ namespace Game
     public static class WorldManager
     {
         private static List<IGameObject> objectList;
+        private static List<IGameObject> objectWithinZoneList;
+
         private static string currentFileName;
         private static Game1 currentGame;
         private static Camera camera;
@@ -21,6 +23,7 @@ namespace Game
         public static void LoadListFromFile(string filename, Game1 game)
         {
             objectList = LevelLoader.Load(filename, game);
+            objectWithinZoneList = new List<IGameObject>();
             currentFileName = filename;
             currentGame = game;
             camera = new Camera(GetMario().VectorCoordinates);
@@ -33,12 +36,17 @@ namespace Game
             for (int i = objectList.Count - 1; i >= 0; i--)
             {
                 if (camera.IsWithinUpdateZone(objectList[i].VectorCoordinates))
+                {
                     objectList[i].Update();
+                    objectWithinZoneList.Add(objectList[i]);
+                }
                 else if (camera.IsLeftOfCamera(objectList[i].VectorCoordinates) && camera.LeftScrollingDisabled)
                     FreeObject(objectList[i]);
             }
 
-            CollisionManager.Update(objectList);
+            CollisionManager.Update(objectWithinZoneList, camera);
+
+            objectWithinZoneList.Clear();
 
             camera.Update(GetMario());
 

@@ -11,11 +11,11 @@ namespace Game.Collisions
 
         private static List<CollisionData> collisionList;
 
-        public static void Update(List<IGameObject> gameObjects)
+        public static void Update(List<IGameObject> gameObjects, Camera camera)
         {
             collisionList = new List<CollisionData>();
 
-            GetCollisionList(gameObjects);
+            GetCollisionList(gameObjects, camera);
             //HandleAllCollisions();
         }
 
@@ -27,7 +27,7 @@ namespace Game.Collisions
             }
         }
 
-        private static void GetCollisionList(List<IGameObject> gameObjects)
+        private static void GetCollisionList(List<IGameObject> gameObjects, Camera camera)
         {
             for (int i = 0; i < gameObjects.Count; i++)
             {
@@ -35,7 +35,7 @@ namespace Game.Collisions
                 {
                     ICollisionSide side = CollisionDetector.DetectCollision(gameObjects[i], gameObjects[j]);
 
-                    if (side != null)
+                    if (side != null && camera.IsWithinUpdateZone(gameObjects[i].VectorCoordinates))
                     {
                         //collisionList.Add(new CollisionData(gameObjects[i], gameObjects[j], side));
                         CollisionSelector.HandleCollision(new CollisionData(gameObjects[i], gameObjects[j], side));
