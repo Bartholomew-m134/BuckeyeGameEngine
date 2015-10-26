@@ -7,13 +7,15 @@ using System.Text;
 
 namespace Game.Collisions
 {
-    public class CollisionData
+    public class CollisionData:IComparable
     {
         private IGameObject gameObjectA;
         private IGameObject gameObjectB;
         private ICollisionSide collisionSide;
+        private Rectangle collisionRectangle;
 
         public CollisionData(IGameObject objectA, IGameObject objectB, ICollisionSide side) {
+            collisionRectangle = new Rectangle();
             gameObjectA = objectA;
             gameObjectB = objectB;
             collisionSide = side;
@@ -26,7 +28,7 @@ namespace Game.Collisions
             Rectangle hitBoxA = new Rectangle((int)gameObjectA.VectorCoordinates.X, (int)gameObjectA.VectorCoordinates.Y, (int)gameObjectA.Sprite.SpriteDimensions.X, (int)gameObjectA.Sprite.SpriteDimensions.Y);
             Rectangle hitBoxB = new Rectangle((int)gameObjectB.VectorCoordinates.X, (int)gameObjectB.VectorCoordinates.Y, (int)gameObjectB.Sprite.SpriteDimensions.X, (int)gameObjectB.Sprite.SpriteDimensions.Y);
 
-            Rectangle collisionRectangle = Rectangle.Intersect(hitBoxA, hitBoxB);   
+            collisionRectangle = Rectangle.Intersect(hitBoxA, hitBoxB);   
             
             if (side is LeftSideCollision) {
                 xCoordinate -= collisionRectangle.Width;
@@ -52,6 +54,10 @@ namespace Game.Collisions
             }
         }
 
+        public int OverlapArea() {
+            return collisionRectangle.X * collisionRectangle.Y;
+        }
+
         public IGameObject GameObjectA 
         {
             get { return gameObjectA; }
@@ -65,6 +71,11 @@ namespace Game.Collisions
         public ICollisionSide CollisionSide
         {
             get { return collisionSide; }
+        }
+
+         int IComparable.CompareTo(object obj) {
+            CollisionData collision = (CollisionData)obj;
+            return this.OverlapArea() - collision.OverlapArea();
         }
     }
 }

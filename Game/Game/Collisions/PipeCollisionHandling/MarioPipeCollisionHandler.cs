@@ -35,9 +35,7 @@ namespace Game.Collisions.PipeCollisionHandling
 
         public void HandleCollision()
         {
-            if (side is BottomSideCollision) {
-                side = new LeftSideCollision();
-            }
+            
 
             collision.ResolveOverlap(mario, side);
             if (side is TopSideCollision)
