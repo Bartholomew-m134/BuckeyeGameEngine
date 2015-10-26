@@ -44,7 +44,8 @@ namespace Game.Collisions
             }
             else if (collision.GameObjectA is IEnemy && collision.GameObjectB is IEnemy)
             {
-
+                EnemyEnemyCollisionHandler collisionHandler = new EnemyEnemyCollisionHandler(collision);
+                collisionHandler.HandleCollision();
             }
             else if ((collision.GameObjectA is IEnemy && collision.GameObjectB is IBlock) || (collision.GameObjectA is IBlock && collision.GameObjectB is IEnemy))
             {
@@ -53,7 +54,8 @@ namespace Game.Collisions
             }
             else if ((collision.GameObjectA is IEnemy && collision.GameObjectB is IPipe) || (collision.GameObjectA is IPipe && collision.GameObjectB is IEnemy))
             {
-
+                EnemyPipeCollisionHandler collisionHandler = new EnemyPipeCollisionHandler(collision);
+                collisionHandler.HandleCollision();
             }
             else if ((collision.GameObjectA is IItem && collision.GameObjectB is IBlock) || (collision.GameObjectA is IBlock && collision.GameObjectB is IItem))
             {
