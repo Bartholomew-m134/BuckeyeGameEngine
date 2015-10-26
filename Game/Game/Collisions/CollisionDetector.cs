@@ -73,6 +73,7 @@ namespace Game.Collisions
                 }
                 else
                 {
+                    Console.WriteLine("");
                     collisionSide = new TopSideCollision();
                 }
             }

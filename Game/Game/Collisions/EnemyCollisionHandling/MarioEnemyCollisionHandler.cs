@@ -42,6 +42,7 @@ namespace Game.Collisions.EnemyCollisionHandling
 
             if (!mario.IsStar() && side is TopSideCollision)
             {
+                Console.WriteLine("Top");
                 enemy.CanDealDamage = false;
                 enemy.IsHit();
                 mario.Physics.Velocity = new Vector2(mario.Physics.Velocity.X, -5);
@@ -52,6 +53,7 @@ namespace Game.Collisions.EnemyCollisionHandling
                 if (enemy.CanDealDamage)
                 {
                     mario.Damage();
+                    Console.WriteLine("Damage");
                 }
             }
             else
