@@ -68,7 +68,8 @@ namespace Game.Collisions.BlockCollisionHandling
         }
         private void HandleBottomSide()
         {
-            if (collidingBlock.State is HiddenBlockState && collidingMario.Physics.Velocity.Y <= 0){
+            if (collidingBlock.State is HiddenBlockState && collidingMario.Physics.Velocity.Y <= 0)
+            {
                 collidingBlock.GetUsed();
                 collidingBlock.Bump();
                 collision.ResolveOverlap(collidingMario, collisionSide);

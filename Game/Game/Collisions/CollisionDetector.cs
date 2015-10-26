@@ -42,13 +42,10 @@ namespace Game.Collisions
             collisionRectangle = Rectangle.Intersect(hitBoxA, hitBoxB);
             
 
-            if (collisionRectangle.IsEmpty)
+            if (collisionRectangle.IsEmpty || objectA is IScenery || objectB is IScenery)
             {
-
                 collisionSide = null;
-            }
-
-               
+            }       
             else if (isTopLeftCorner(hitBoxA, hitBoxB))
             {
 
@@ -81,8 +78,7 @@ namespace Game.Collisions
                     collisionSide = new LeftSideCollision();
                 }
                 else
-                {
-                    
+                {                   
                     collisionSide = new BottomSideCollision();
                 }
             }
@@ -104,7 +100,7 @@ namespace Game.Collisions
             }
 
           
-        /*
+        /* Previous Implementation
             else if ( && (hitBoxA.Bottom < hitBoxB.Bottom))
             {
                 collisionSide = new TopSideCollision();

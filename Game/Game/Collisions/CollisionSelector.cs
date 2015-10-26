@@ -62,7 +62,8 @@ namespace Game.Collisions
             }
             else if ((collision.GameObjectA is IItem && collision.GameObjectB is IPipe) || (collision.GameObjectA is IPipe && collision.GameObjectB is IItem))
             {
-
+                ItemPipeCollisionHandler collisionHandler = new ItemPipeCollisionHandler(collision);
+                collisionHandler.HandleCollision();
             }
             else if ((collision.GameObjectA is IMario && collision.GameObjectB is IFlagPole) || (collision.GameObjectA is IFlagPole && collision.GameObjectB is IMario))
             {

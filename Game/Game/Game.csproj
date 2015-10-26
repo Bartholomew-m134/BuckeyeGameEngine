@@ -99,6 +99,7 @@
     <Compile Include="Camera.cs" />
     <Compile Include="Collisions\CollisionManager.cs" />
     <Compile Include="Collisions\FlagPoleCollisionHandling\MarioFlagPoleCollisionHandler.cs" />
+    <Compile Include="Collisions\ItemCollisionHandling\ItemPipeCollisionHandler.cs" />
     <Compile Include="Commands\MarioCommands\MarioRunFireBallCommand.cs" />
     <Compile Include="FlagPoles\FlagPole.cs" />
     <Compile Include="FlagPoles\FlagPoleSprites\ActiveFlagPoleSprite.cs" />

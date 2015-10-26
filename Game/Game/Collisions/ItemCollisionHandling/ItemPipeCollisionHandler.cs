@@ -9,24 +9,25 @@ using System.Text;
 
 namespace Game.Collisions.ItemCollisionHandling
 {
-    public class ItemBlockCollisionHandler
+    public class ItemPipeCollisionHandler
     {
-        private Block collidingBlock;
+        private IPipe collidingPipe;
         private IItem collidingItem;
         private ICollisionSide side;
         private CollisionData collision;
 
-        public ItemBlockCollisionHandler(CollisionData collision) {
+        public ItemPipeCollisionHandler(CollisionData collision)
+        {
             this.collision = collision;
             side = collision.CollisionSide;
             if (collision.GameObjectA is IItem)
-            {             
+            {
                 collidingItem = (IItem)collision.GameObjectA;
-                collidingBlock = (Block)collision.GameObjectB;        
+                collidingPipe = (IPipe)collision.GameObjectB;
             }
             else
             {
-                collidingBlock = (Block)collision.GameObjectA;
+                collidingPipe = (IPipe)collision.GameObjectA;
                 collidingItem = (IItem)collision.GameObjectB;
                 side = side.FlipSide();
             }
@@ -34,16 +35,10 @@ namespace Game.Collisions.ItemCollisionHandling
         }
         public void HandleCollision()
         {
-
-            if (collidingBlock.isBumped && side is TopSideCollision && collidingItem.VectorCoordinates.X == collidingBlock.VectorCoordinates.X)
-            {
-                collidingItem.Release();
-                Console.WriteLine("Released");
-            }
-            if (!collidingItem.IsInsideBlock && !(collidingBlock.State is HiddenBlockState))
+            if (!collidingItem.IsInsideBlock)
             {
                 collision.ResolveOverlap(collidingItem, side);
-                collidingItem.Physics.ResetY();
+                collidingItem.Physics.Velocity *= new Microsoft.Xna.Framework.Vector2(-1,1);
             }
         }
     }

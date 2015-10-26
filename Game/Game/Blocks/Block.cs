@@ -33,7 +33,7 @@ namespace Game.Blocks
         {
             blockState.Update();
 
-            if (isBumped && physics.Velocity.Y == 3)
+            if (isBumped && physics.Velocity.Y == 2)
             {
                 isBumped = false;
                 physics.ResetPhysics();
@@ -55,7 +55,7 @@ namespace Game.Blocks
             {
                 isBumped = true;
                 physics.ResetPhysics();
-                physics.Velocity = new Vector2(0,-3);
+                physics.Velocity = new Vector2(0,-2);
             }
         }
 

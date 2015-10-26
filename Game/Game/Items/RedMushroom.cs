@@ -51,6 +51,7 @@ namespace Game.Items
                 isInsideBlock = false;
                 
                 physics.ResetPhysics();
+                physics.Acceleration = Vector2.Zero;
                 physics.Velocity = new Vector2(3, -1);
             }
         }
