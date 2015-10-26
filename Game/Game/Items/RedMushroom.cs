@@ -56,6 +56,11 @@ namespace Game.Items
             }
         }
 
+        public void ReverseDirection()
+        {
+            physics.Velocity *= new Vector2(-1, 1);
+        }
+
         public Vector2 VectorCoordinates
         {
             get { return location; }

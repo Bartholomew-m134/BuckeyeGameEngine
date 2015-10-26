@@ -35,15 +35,18 @@ namespace Game.Collisions.ItemCollisionHandling
         public void HandleCollision()
         {
 
-            if (collidingBlock.isBumped && side is TopSideCollision && collidingItem.VectorCoordinates.X == collidingBlock.VectorCoordinates.X)
-            {
+            if (collidingBlock.isBumped && side is TopSideCollision && collidingItem.VectorCoordinates.X == collidingBlock.VectorCoordinates.X)           
                 collidingItem.Release();
-                Console.WriteLine("Released");
-            }
-            if (!collidingItem.IsInsideBlock && !(collidingBlock.State is HiddenBlockState))
+            
+            if (!collidingItem.IsInsideBlock && (side is TopSideCollision || side is BottomSideCollision) &&  !(collidingBlock.State is HiddenBlockState))
             {
                 collision.ResolveOverlap(collidingItem, side);
                 collidingItem.Physics.ResetY();
+            }
+            else if (!collidingItem.IsInsideBlock &&  !(collidingBlock.State is HiddenBlockState))
+            {
+                collision.ResolveOverlap(collidingItem, side);
+                collidingItem.ReverseDirection();
             }
         }
     }

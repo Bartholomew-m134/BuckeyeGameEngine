@@ -54,6 +54,11 @@ namespace Game.Items
             }
         }
 
+        public void ReverseDirection()
+        {
+            
+        }
+
         public Vector2 VectorCoordinates
         {
             get { return location; }
