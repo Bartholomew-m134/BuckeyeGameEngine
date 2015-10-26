@@ -31,16 +31,28 @@ namespace Game.Collisions
         {
             for (int i = 0; i < gameObjects.Count; i++)
             {
+                List<CollisionData> objectCollisionList = new List<CollisionData>();
                 for (int j = i + 1; j < gameObjects.Count; j++)
                 {
                     ICollisionSide side = CollisionDetector.DetectCollision(gameObjects[i], gameObjects[j]);
 
                     if (side != null)
                     {
-                        //collisionList.Add(new CollisionData(gameObjects[i], gameObjects[j], side));
-                        CollisionSelector.HandleCollision(new CollisionData(gameObjects[i], gameObjects[j], side));
+                        objectCollisionList.Add(new CollisionData(gameObjects[i], gameObjects[j], side));
+                        //CollisionSelector.HandleCollision(new CollisionData(gameObjects[i], gameObjects[j], side));
+                       
                     }
                 }
+                objectCollisionList.Sort();
+                
+                   if(objectCollisionList.Count > 2)
+                    objectCollisionList.RemoveAt(objectCollisionList.Count-1);
+
+                   foreach (CollisionData collision in objectCollisionList) {
+                       CollisionSelector.HandleCollision(collision);
+                   }
+                
+                    
             }
         }
     }
