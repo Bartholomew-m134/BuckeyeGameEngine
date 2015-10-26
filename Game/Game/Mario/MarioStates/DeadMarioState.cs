@@ -59,6 +59,9 @@ namespace Game.Mario.MarioStates
         public void Flower()
         {
         }
+        public void PoleSlide()
+        {
+        }
 
         public void Mushroom()
         {

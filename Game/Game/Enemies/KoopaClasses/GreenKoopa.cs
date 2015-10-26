@@ -67,6 +67,7 @@ namespace Game.Enemies.KoopaClasses
             else if (inShellTimer == 45 && state is GreenKoopaEmergingFromShellState)
             {
                 state.KoopaChangeDirection();
+                canDealDamage = true;
                 inShellTimer = 0;
             }
             sprite.Update();

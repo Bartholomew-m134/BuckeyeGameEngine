@@ -83,5 +83,9 @@ namespace Game.SpriteFactories
         {
             return new InactiveFlagPoleSprite(scenerySpriteSheet);
         }
+        public static ISprite CreateInvisibleFlagPoleSprite()
+        {
+            return new InvisibleFlagPoleBarrierSprite(scenerySpriteSheet);
+        }
     }
 }

@@ -70,6 +70,10 @@ namespace Game.Mario.MarioStates
             mario.MarioState = new FireRightIdleState(mario);
             mario.VectorCoordinates += new Vector2(0, -16);
         }
+        public void PoleSlide()
+        {
+            mario.MarioState = new SmallFlagPoleSlidingState(mario);
+        }
 
         public void Mushroom()
         {

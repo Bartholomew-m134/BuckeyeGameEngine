@@ -14,6 +14,7 @@ namespace Game.FlagPoles.FlagPoleSprites
         private Texture2D Texture { get; set; }
         private int width;
         private int height;
+        private int delayCounter;
 
         private Vector2 firstFlagFrame;
         private Vector2 secondFlagFrame;
@@ -28,9 +29,10 @@ namespace Game.FlagPoles.FlagPoleSprites
         {
             Texture = texture;
             flagPoleSources = new ArrayList();
-            currentSourceCoordinates.X = 0;
-            currentSourceCoordinates.Y = 0;
+            currentSourceCoordinates.X = 248;
+            currentSourceCoordinates.Y = 586;
             currentSourceFrame = 0;
+            delayCounter = 0;
 
             firstFlagFrame.X = 248;
             firstFlagFrame.Y = 586;
@@ -59,13 +61,15 @@ namespace Game.FlagPoles.FlagPoleSprites
 
         public void Update()
         {
-            
+            if(delayCounter ==4){
                 if (currentSourceFrame < 5)
                 {
                     currentSourceCoordinates = (Vector2)flagPoleSources[currentSourceFrame];
                     currentSourceFrame++;
                 }
-                
+                delayCounter=0;
+            }
+            delayCounter++;
 
         }
 

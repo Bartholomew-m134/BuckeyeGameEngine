@@ -6,14 +6,14 @@ using System.Text;
 
 namespace Game.Mario.MarioStates
 {
-    class FireFlagPoleSlidingState : IMarioState
+    class SmallFlagPoleSlidingState : IMarioState
     {
          private IMario mario;
 
-            public FireFlagPoleSlidingState(IMario mario)
+            public SmallFlagPoleSlidingState(IMario mario)
             {
                 this.mario = mario;
-                mario.Sprite = SpriteFactories.MarioSpriteFactory.CreateFireFlagPoleSlidingSprite();
+                mario.Sprite = SpriteFactories.MarioSpriteFactory.CreateSmallFlagPoleSlidingSprite();
             }
             public void Update()
             {
@@ -27,7 +27,7 @@ namespace Game.Mario.MarioStates
 
             public void Right()
             {
-                mario.MarioState = new FireRightIdleState(mario);
+                mario.MarioState = new SmallRightIdleState(mario);
             }
 
             public void Up()
@@ -58,6 +58,10 @@ namespace Game.Mario.MarioStates
             {
 
             }
+            public void PoleSlide()
+            {
+                
+            }
 
             public void Mushroom()
             {
@@ -66,11 +70,6 @@ namespace Game.Mario.MarioStates
             public void Star()
             {
                 
-            }
-
-            public void PoleSlide()
-            {
-
             }
 
             public void Damage()

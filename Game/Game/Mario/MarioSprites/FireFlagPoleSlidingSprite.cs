@@ -14,25 +14,44 @@ namespace Game.Mario.MarioSprites
         private Texture2D spriteSheet;
         private int width;
         private int height;
-        private int sheetXLocation;
-        private int sheetYLocation;
+        private Vector2 firstFrameSourceLocation;
+        private Vector2 secondFrameSourceLocation;
+        private Vector2 currentSourceLocation;
+        private int frameCounter;
         public FireFlagPoleSlidingSprite(Texture2D spriteSheet)
         {
             toggle = 0;
+            frameCounter = 0;
             this.spriteSheet = spriteSheet;
-            width = 15;
-            height = 31;
-            sheetXLocation = 209;
-            sheetYLocation = 52;
+            width = 14;
+            height = 30;
+
+            firstFrameSourceLocation.X = 363;
+            firstFrameSourceLocation.Y = 159;
+
+            secondFrameSourceLocation.X = 390;
+            secondFrameSourceLocation.Y = 158;
+
+            currentSourceLocation.X = 363;
+            currentSourceLocation.Y = 159;
         }
         public void Update()
         {
-
+            if (frameCounter ==0){
+                currentSourceLocation.X = 363;
+                currentSourceLocation.Y = 159;
+                frameCounter = 1;
+            }
+            else{
+                secondFrameSourceLocation.X = 390;
+                secondFrameSourceLocation.Y = 158;
+                frameCounter = 0;
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle(sheetXLocation, sheetYLocation, width, height);
+            Rectangle sourceRectangle = new Rectangle((int)currentSourceLocation.X, (int)currentSourceLocation.Y, width, height);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
 
             spriteBatch.Begin();
@@ -42,7 +61,7 @@ namespace Game.Mario.MarioSprites
 
         public void StarDraw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle(sheetXLocation, sheetYLocation, width, height);
+            Rectangle sourceRectangle = new Rectangle((int)currentSourceLocation.X, (int)currentSourceLocation.Y, width, height);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
 
             if (toggle < 5)

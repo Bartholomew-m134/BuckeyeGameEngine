@@ -1,42 +1,38 @@
 ﻿using Game.Interfaces;
 using Game.SpriteFactories;
+using Game.Utilities;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Game.Utilities;
 
 namespace Game.FlagPoles
 {
-    class FlagPole : IFlagPole
+    class InvisibleFlagPoleBarrier : IFlagPole
     {
         public bool isActive;
-        public bool hasBeenActivatedOnce;
         private Game1 myGame;
-        private ISprite flagPoleSprite;
+        private ISprite invisibleFlagPoleSprite;
         private Vector2 location;
+        public bool hasBeenActivatedOnce;
 
-        public FlagPole(Game1 game)
+        public InvisibleFlagPoleBarrier(Game1 game)
         {
-            myGame = game;
-            flagPoleSprite = TileSpriteFactory.CreateInactiveFlagPoleSprite();
-            isActive = false;
             hasBeenActivatedOnce = false;
+            myGame = game;
+            invisibleFlagPoleSprite = TileSpriteFactory.CreateInvisibleFlagPoleSprite();
+            isActive = false;
         }
 
         public void Update()
         {
-            if(this.isActive && !hasBeenActivatedOnce){
-                flagPoleSprite = TileSpriteFactory.CreateActiveFlagPoleSprite();
-                hasBeenActivatedOnce = true;
-            }
-            flagPoleSprite.Update();
+            invisibleFlagPoleSprite.Update();
         }
 
         public void Draw(ICamera camera)
         {
-            flagPoleSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
+            invisibleFlagPoleSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
 
@@ -48,8 +44,8 @@ namespace Game.FlagPoles
 
         public ISprite Sprite
         {
-            get { return flagPoleSprite; }
-            set { flagPoleSprite = value; }
+            get { return invisibleFlagPoleSprite; }
+            set { invisibleFlagPoleSprite = value; }
         }
 
         public ObjectPhysics Physics
@@ -57,11 +53,11 @@ namespace Game.FlagPoles
             get { return null; }
         }
 
-        public bool IsActive{
-            get {return isActive;}
-            set {isActive = value;}
+        public bool IsActive
+        {
+            get { return isActive; }
+            set { isActive = value; }
         }
-
         public bool HasBeenActivatedOnce
         {
             get { return hasBeenActivatedOnce; }

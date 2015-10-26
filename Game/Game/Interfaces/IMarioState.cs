@@ -46,5 +46,7 @@ namespace Game.Interfaces
          bool IsJumping();
 
          void ToIdle();
+
+         void PoleSlide();
     }
 }

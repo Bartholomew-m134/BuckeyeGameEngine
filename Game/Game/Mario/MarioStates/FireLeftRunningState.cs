@@ -31,6 +31,10 @@ namespace Game.Mario.MarioStates
             acceleration.X = -2;
             mario.Physics.Acceleration = acceleration;
         }
+        public void PoleSlide()
+        {
+            mario.MarioState = new FireFlagPoleSlidingState(mario);
+        }
 
         public void Right()
         {

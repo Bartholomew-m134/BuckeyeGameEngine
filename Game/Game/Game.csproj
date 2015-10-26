@@ -104,6 +104,8 @@
     <Compile Include="FlagPoles\FlagPole.cs" />
     <Compile Include="FlagPoles\FlagPoleSprites\ActiveFlagPoleSprite.cs" />
     <Compile Include="FlagPoles\FlagPoleSprites\InactiveFlagPoleSprite.cs" />
+    <Compile Include="FlagPoles\InvisibleFlagPoleBarrier.cs" />
+    <Compile Include="FlagPoles\FlagPoleSprites\InvisibleFlagPoleBarrierSprite.cs" />
     <Compile Include="Interfaces\IBlock.cs" />
     <Compile Include="Collisions\BlockCollisionHandling\MarioBlockCollisionHandler.cs" />
     <Compile Include="Collisions\BottomSideCollision.cs" />
@@ -192,6 +194,7 @@
     <Compile Include="Mario\MarioSprites\NormalRightIdleMarioSprite.cs" />
     <Compile Include="Mario\MarioSprites\NormalRightJumpingMarioSprite.cs" />
     <Compile Include="Mario\MarioSprites\NormalRightRunningMarioSprite.cs" />
+    <Compile Include="Mario\MarioSprites\SmallFlagPoleSlidingSprite.cs" />
     <Compile Include="Mario\MarioSprites\SmallLeftIdleMarioSprite.cs" />
     <Compile Include="Mario\MarioSprites\SmallLeftJumpingMarioSprite.cs" />
     <Compile Include="Mario\MarioSprites\SmallLeftRunningMarioSprite.cs" />
@@ -200,6 +203,7 @@
     <Compile Include="Mario\MarioSprites\SmallRightRunningMarioSprite.cs" />
     <Compile Include="Mario\MarioStates\FireFlagPoleSlidingState.cs" />
     <Compile Include="Mario\MarioStates\NormalFlagPoleSlidingState.cs" />
+    <Compile Include="Mario\MarioStates\SmallFlagPoleSlidingState.cs" />
     <Compile Include="Mario\StarMario.cs" />
     <Compile Include="Interfaces\IPipe.cs" />
     <Compile Include="Pipes\DoublePipe.cs" />

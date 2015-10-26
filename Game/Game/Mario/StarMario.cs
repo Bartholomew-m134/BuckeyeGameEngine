@@ -94,7 +94,10 @@ namespace Game.Mario
         public void Die()
         {
         }
-
+        public void PoleSlide()
+        {
+            mario.PoleSlide();
+        }
 
         public Vector2 VectorCoordinates
         {

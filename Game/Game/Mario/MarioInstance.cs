@@ -95,6 +95,10 @@ namespace Game.Mario
             new StarMario(this, myGame);
         }
 
+        public void PoleSlide()
+        {
+            state.PoleSlide();
+        }
 
         public void Damage()
         {
