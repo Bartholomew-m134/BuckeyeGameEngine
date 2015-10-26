@@ -30,7 +30,7 @@ namespace Game.Mario.MarioStates
 
             public void Right()
             {
-
+                mario.MarioState = new NormalRightIdleState(mario);
             }
 
             public void Up()
@@ -60,6 +60,10 @@ namespace Game.Mario.MarioStates
             public void Flower()
             {
 
+            }
+            public void PoleSlide()
+            {
+                
             }
 
             public void Mushroom()

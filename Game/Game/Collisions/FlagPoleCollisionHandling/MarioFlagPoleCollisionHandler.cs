@@ -19,19 +19,23 @@ namespace Game.Collisions.FlagPoleCollisionHandling
             this.collision = collision;
             if (collision.GameObjectA is IFlagPole)
             {
-                collidingFlagPole = (FlagPole)collision.GameObjectA;
+                collidingFlagPole = (IFlagPole)collision.GameObjectA;
                 collidingMario = (IMario)collision.GameObjectB;
             }
             else
             {
-                collidingFlagPole = (FlagPole)collision.GameObjectB;
+                collidingFlagPole = (IFlagPole)collision.GameObjectB;
                 collidingMario = (IMario)collision.GameObjectA;
             }
 
         }
         public void HandleCollision()
         {
+            if(collidingFlagPole is InvisibleFlagPoleBarrier){
+                collision.ResolveOverlap(collidingMario, collision.CollisionSide);
+            }
             collidingFlagPole.IsActive = true;
+            collidingMario.PoleSlide();
         }
     }
 }

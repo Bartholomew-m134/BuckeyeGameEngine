@@ -66,6 +66,10 @@ namespace Game.Mario.MarioStates
         {
             mario.MarioState = new FireRightRunningState(mario);
         }
+        public void PoleSlide()
+        {
+            mario.MarioState = new NormalFlagPoleSlidingState(mario);
+        }
 
         public void Mushroom()
         {

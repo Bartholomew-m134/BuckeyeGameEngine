@@ -34,6 +34,10 @@ namespace Game.Mario.MarioStates
         {
             mario.MarioState = new FireLeftRunningState(mario);
         }
+        public void PoleSlide()
+        {
+            mario.MarioState = new FireFlagPoleSlidingState(mario);
+        }
 
         public void Right()
         {

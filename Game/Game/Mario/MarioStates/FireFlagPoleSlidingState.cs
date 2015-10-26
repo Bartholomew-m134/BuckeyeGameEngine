@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Game.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace Game.Mario.MarioStates
 {
-    class FireFlagPoleSlidingState
+    class FireFlagPoleSlidingState : IMarioState
     {
          private IMario mario;
 
@@ -26,7 +27,7 @@ namespace Game.Mario.MarioStates
 
             public void Right()
             {
-
+                mario.MarioState = new FireRightIdleState(mario);
             }
 
             public void Up()
@@ -65,6 +66,11 @@ namespace Game.Mario.MarioStates
             public void Star()
             {
                 
+            }
+
+            public void PoleSlide()
+            {
+
             }
 
             public void Damage()

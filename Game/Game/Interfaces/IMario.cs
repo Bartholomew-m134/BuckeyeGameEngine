@@ -35,6 +35,8 @@ namespace Game.Mario
 
         void Star();
 
+        void PoleSlide();
+
         IMarioState MarioState
         {
             get;
