@@ -201,10 +201,14 @@ namespace Game
                     IGameObject mario = gameObjects[index];
                     gameObjects.RemoveAt(index);
                     gameObjects.Add(mario);
-                    break;
                 }
 
-                //if(gameObjects[index] is IScenery)
+                if (gameObjects[index] is IScenery)
+                {
+                    IGameObject scenery = gameObjects[index];
+                    gameObjects.RemoveAt(index);
+                    gameObjects.Insert(0, scenery);
+                }
             }
 
                 return gameObjects;
