@@ -26,11 +26,11 @@ namespace Game.Collisions
             if (objectA.Physics != null)
             {
                 objectAOldCoordinates = objectA.Physics.OldCoordinates;
-
+                /*
                 if (objectA.Physics.Velocity.Y > 0) {
                     objectAOldCoordinates.Y--;
                 }
-
+                */
                 
 
                 
@@ -42,11 +42,12 @@ namespace Game.Collisions
             if (objectB.Physics != null)
             {
                 objectBOldCoordinates = objectB.Physics.OldCoordinates;
-
+                /*
                 if (objectB.Physics.Velocity.Y > 0)
                 {
                     objectBOldCoordinates.Y--;
                 }
+                 * */
             }
             else
                 objectBOldCoordinates = objectB.VectorCoordinates;
