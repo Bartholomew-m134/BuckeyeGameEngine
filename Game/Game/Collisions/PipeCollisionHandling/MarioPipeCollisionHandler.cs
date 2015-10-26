@@ -35,11 +35,21 @@ namespace Game.Collisions.PipeCollisionHandling
 
         public void HandleCollision()
         {
-            collision.ResolveOverlap(mario, side);
-            if (side is TopSideCollision && mario.IsJumping())
-            {
-                mario.MarioState.ToIdle();
+            if (side is BottomSideCollision) {
+                side = new LeftSideCollision();
             }
+
+            collision.ResolveOverlap(mario, side);
+            if (side is TopSideCollision)
+            {
+                mario.Physics.ResetY();
+                if (mario.IsJumping())
+                    mario.MarioState.ToIdle();
+            }
+            else
+                mario.Physics.ResetX();
+
+            
 
         }
     }

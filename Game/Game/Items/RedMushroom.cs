@@ -25,6 +25,7 @@ namespace Game.Items
             redMushroomSprite = ItemsSpriteFactory.CreateRedMushroomSprite();
             physics = new ObjectPhysics();
             physics.Acceleration = Vector2.Zero;
+           
         }
 
         public void Update()
@@ -48,6 +49,7 @@ namespace Game.Items
             if (isInsideBlock)
             {
                 isInsideBlock = false;
+                
                 physics.ResetPhysics();
                 physics.Velocity = new Vector2(3, -1);
             }

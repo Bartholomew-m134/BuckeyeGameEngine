@@ -34,9 +34,11 @@ namespace Game.Collisions.ItemCollisionHandling
         }
         public void HandleCollision()
         {
-            if(!collidingItem.IsInsideBlock && !(collidingBlock.State is HiddenBlockState))
-                collision.ResolveOverlap(collidingItem, collision.CollisionSide);
-
+            if (!collidingItem.IsInsideBlock && !(collidingBlock.State is HiddenBlockState))
+            {
+                collision.ResolveOverlap(collidingItem, side);
+                collidingItem.Physics.ResetY();
+            }
             if (collidingBlock.isBumped && side is BottomSideCollision)          
                 collidingItem.Release();
         }
