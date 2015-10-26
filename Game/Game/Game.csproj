@@ -98,7 +98,11 @@
     <Compile Include="Blocks\BlockStates\BrickDebrisState.cs" />
     <Compile Include="Camera.cs" />
     <Compile Include="Collisions\CollisionManager.cs" />
+    <Compile Include="Collisions\FlagPoleCollisionHandling\MarioFlagPoleCollisionHandler.cs" />
     <Compile Include="Commands\MarioCommands\MarioRunFireBallCommand.cs" />
+    <Compile Include="FlagPoles\FlagPole.cs" />
+    <Compile Include="FlagPoles\FlagPoleSprites\ActiveFlagPoleSprite.cs" />
+    <Compile Include="FlagPoles\FlagPoleSprites\InactiveFlagPoleSprite.cs" />
     <Compile Include="Interfaces\IBlock.cs" />
     <Compile Include="Collisions\BlockCollisionHandling\MarioBlockCollisionHandler.cs" />
     <Compile Include="Collisions\BottomSideCollision.cs" />
@@ -149,6 +153,7 @@
     <Compile Include="Enemies\KoopaClasses\KoopaStates\GreenKoopaWalkingLeftState.cs" />
     <Compile Include="Enemies\KoopaClasses\KoopaStates\GreenKoopaWalkingRightState.cs" />
     <Compile Include="Enemies\KoopaClasses\KoopaStates\IKoopaState.cs" />
+    <Compile Include="Interfaces\IFlagPole.cs" />
     <Compile Include="Interfaces\IGameObject.cs" />
     <Compile Include="Interfaces\IMarioSprite.cs" />
     <Compile Include="Interfaces\IScenery.cs" />

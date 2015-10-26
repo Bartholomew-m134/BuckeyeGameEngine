@@ -1,4 +1,5 @@
 ﻿using Game.Blocks.BlockSprites;
+using Game.FlagPoles.FlagPoleSprites;
 using Game.Interfaces;
 using Game.Pipes.PipeSprites;
 using Microsoft.Xna.Framework.Content;
@@ -73,6 +74,14 @@ namespace Game.SpriteFactories
         public static ISprite CreateTriplePipeSprite()
         {
             return new TriplePipeSprite(scenerySpriteSheet);
+        }
+        public static ISprite CreateActiveFlagPoleSprite()
+        {
+            return new ActiveFlagPoleSprite(scenerySpriteSheet);
+        }
+        public static ISprite CreateInactiveFlagPoleSprite()
+        {
+            return new InactiveFlagPoleSprite(scenerySpriteSheet);
         }
     }
 }

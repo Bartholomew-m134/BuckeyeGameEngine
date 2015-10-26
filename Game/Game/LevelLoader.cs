@@ -13,6 +13,7 @@ using System.IO;
 using Game.Background_Elements;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
+using Game.FlagPoles;
 
 namespace Game
 {
@@ -92,6 +93,8 @@ namespace Game
                         gameObject = new Pipe(game);
                     else if (objectName.Equals("Castle"))
                         gameObject = new Castle(game);
+                    else if (objectName.Equals("FlagPole"))
+                        gameObject = new FlagPole(game);
                     else if (objectName.Equals("SolidBlock"))
                         gameObject = new Block(Block.Type.SolidBlock, game);
                     else if (objectName.Equals("InvisCoinBlock"))
