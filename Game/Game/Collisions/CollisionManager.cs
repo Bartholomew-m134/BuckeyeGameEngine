@@ -29,6 +29,7 @@ namespace Game.Collisions
 
         private static void GetCollisionList(List<IGameObject> gameObjects)
         {
+            gameObjects.Reverse();
             for (int i = 0; i < gameObjects.Count; i++)
             {
                 List<CollisionData> objectCollisionList = new List<CollisionData>();

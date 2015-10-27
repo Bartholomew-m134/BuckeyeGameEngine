@@ -33,7 +33,7 @@ namespace Game.Mario.MarioStates
         public void Left()
         {
             Vector2 acceleration = mario.Physics.Acceleration;
-            acceleration.X = -2;
+            acceleration.X = -1;
             mario.Physics.Acceleration = acceleration;
         }
 
@@ -41,7 +41,7 @@ namespace Game.Mario.MarioStates
         {
             
             Vector2 acceleration = mario.Physics.Acceleration;
-            acceleration.X = 2;
+            acceleration.X = 1;
             mario.Physics.Acceleration = acceleration;
         }
 
