@@ -1,6 +1,7 @@
 ﻿using Game.Interfaces;
 using Game.Items;
 using Game.Mario;
+using Game.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,7 @@ namespace Game.Collisions.ItemCollisionHandling
                 if (collidingItem is Coin)
                 {
                     collidingItem.Disappear();
+                    
                 }
                 else if (collidingItem is Flower)
                 {
