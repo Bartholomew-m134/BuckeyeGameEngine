@@ -83,7 +83,9 @@ namespace Game.Mario
 
         public void Mushroom()
         {
+            Vector2 previousVector = sprite.SpriteDimensions;
             state.Mushroom();
+            location += sprite.SpriteDimensions - previousVector/2;
         }
 
         public void Star()

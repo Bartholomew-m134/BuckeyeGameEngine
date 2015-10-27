@@ -174,8 +174,12 @@ namespace Game
                     }
 
                     if(gameObject != null){
-                        gameObject.VectorCoordinates = location;  
-                        gameObjects.Add(gameObject);   
+                        gameObject.VectorCoordinates = location + new Vector2(0, -gameObject.Sprite.SpriteDimensions.Y + 16);
+
+                        if (gameObject is IFlagPole)
+                            gameObject.VectorCoordinates += new Vector2(0,16);
+
+                        gameObjects.Add(gameObject);
                     }
                     
                     location.X += 16;

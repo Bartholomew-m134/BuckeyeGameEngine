@@ -24,12 +24,26 @@ namespace Game.Collisions
             Vector2 objectBOldCoordinates;
 
             if (objectA.Physics != null)
+            {
                 objectAOldCoordinates = objectA.Physics.OldCoordinates;
+
+                if (objectA.Physics.Velocity.Y > 0)
+                {
+                    objectAOldCoordinates.Y--;
+                }
+            }
             else
                 objectAOldCoordinates = objectA.VectorCoordinates;
 
             if (objectB.Physics != null)
+            {
                 objectBOldCoordinates = objectB.Physics.OldCoordinates;
+
+                if (objectB.Physics.Velocity.Y > 0)
+                {
+                    objectBOldCoordinates.Y--;
+                }
+            }
             else
                 objectBOldCoordinates = objectB.VectorCoordinates;
 
@@ -56,7 +70,11 @@ namespace Game.Collisions
             else if (isTopRightCorner(hitBoxA, hitBoxB))
             {
                 if ((previousHitBoxA.Left >= previousHitBoxB.Right) && (previousHitBoxA.Bottom > previousHitBoxB.Top))
+                {
                     collisionSide = new RightSideCollision();
+                    if (objectA is IEnemy && objectB is IBlock || objectB is IEnemy && objectA is IBlock)
+                    Console.WriteLine("Right");
+                }
                 else
                     collisionSide = new TopSideCollision();
             }
@@ -70,7 +88,10 @@ namespace Game.Collisions
             else if (isBottomRightCorner(hitBoxA, hitBoxB))
             {
                 if ((previousHitBoxA.Left >= previousHitBoxB.Right) && (previousHitBoxA.Top < previousHitBoxB.Bottom))
+                {
                     collisionSide = new RightSideCollision();
+                    Console.WriteLine("Right");
+                }
                 else
                     collisionSide = new BottomSideCollision();
             }
