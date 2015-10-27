@@ -74,7 +74,6 @@ namespace Game.Collisions
                 }
                 else
                 {
-                    Console.WriteLine("");
                     collisionSide = new TopSideCollision();
                 }
             }
@@ -100,12 +99,6 @@ namespace Game.Collisions
                 else
                 {                   
                     collisionSide = new BottomSideCollision();
-                    Console.WriteLine(previousHitBoxA.Right);
-                    Console.WriteLine(previousHitBoxB.Left);
-                    Console.WriteLine(previousHitBoxA.Top);
-                    Console.WriteLine(previousHitBoxA.Bottom);
-                    Console.WriteLine(objectAOldCoordinates);
-                    Console.WriteLine(objectA.VectorCoordinates);
                 }
             }
             else if (isBottomRightCorner(hitBoxA, hitBoxB))
@@ -117,6 +110,8 @@ namespace Game.Collisions
                 }
                 else
                 {
+                    if (objectA is IEnemy || objectB is IEnemy)
+                        Console.WriteLine("BottomRightSide");
                     collisionSide = new BottomSideCollision();
                 }
             }
