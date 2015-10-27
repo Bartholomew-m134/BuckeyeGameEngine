@@ -78,15 +78,19 @@ namespace Game.Utilities
 
         public void DampenRight() {
             acceleration.X = 0;
-            if(velocity.X > 0)
+            if (velocity.X >= 2)
                 velocity.X -= 2;
+            else if (velocity.X > 0)
+                velocity.X -= 1;
         }
 
         public void DampenLeft()
         {
             acceleration.X = 0;
-            if(velocity.X < 0)
+            if (velocity.X <= -2)
                 velocity.X += 2;
+            else if (velocity.X < 0)
+                velocity.X += 1;
         }
     }
 }
