@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Game.Interfaces;
+using Game.Enemies.KoopaClasses;
+using Microsoft.Xna.Framework;
+using Game.Blocks;
 
 namespace Game.Collisions.EnemyCollisionHandling
 {
@@ -35,9 +38,26 @@ namespace Game.Collisions.EnemyCollisionHandling
         {
             if(!enemy.IsFlipped)
                 collision.ResolveOverlap(enemy, side);
-            if (side is LeftSideCollision || side is RightSideCollision)
+            if (side is LeftSideCollision)
             {
                 enemy.ShiftDirection();
+                if (enemy is GreenKoopa && ((GreenKoopa)enemy).IsWeaponized)
+                {
+                    enemy.Physics.Velocity = new Vector2(-6, enemy.Physics.Velocity.Y);
+                }
+            }
+            else if (side is RightSideCollision)
+            {
+                enemy.ShiftDirection();
+                if (enemy is GreenKoopa && ((GreenKoopa)enemy).IsWeaponized)
+                {
+                    enemy.Physics.Velocity = new Vector2(6, enemy.Physics.Velocity.Y);
+                }
+            }
+            else if (side is TopSideCollision && ((Block)block).isBumped)
+            {
+                enemy.CanDealDamage = false;
+                enemy.Flipped();
             }
         }
     }

@@ -3,25 +3,46 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Game.Interfaces;
+using Game.Enemies.KoopaClasses;
+using Game.Enemies.GoombaClasses;
 
 namespace Game.Collisions.EnemyCollisionHandling
 {
     class EnemyEnemyCollisionHandler
     {
         private CollisionData collision;
+        private IEnemy enemyA;
+        private IEnemy enemyB;
+        private ICollisionSide side;
 
         public EnemyEnemyCollisionHandler(CollisionData collision)
         {
             this.collision = collision;
+            enemyA = (IEnemy)collision.GameObjectA;
+            enemyB = (IEnemy)collision.GameObjectB;
+            side = (ICollisionSide)collision.CollisionSide;
+        }
+
+        private bool LeftOrRightCollision()
+        {
+            return (side is LeftSideCollision || side is RightSideCollision);
         }
 
         public void HandleCollision()
         {
-            collision.ResolveOverlap(collision.GameObjectA, collision.CollisionSide);
-            if (collision.CollisionSide is LeftSideCollision || collision.CollisionSide is RightSideCollision)
+            if (enemyA.IsHit == false && enemyB.IsHit == false && LeftOrRightCollision())
             {
-                ((IEnemy)collision.GameObjectA).ShiftDirection();
-                ((IEnemy)collision.GameObjectB).ShiftDirection();
+                collision.ResolveOverlap(collision.GameObjectA, collision.CollisionSide);
+                enemyA.ShiftDirection();
+                enemyB.ShiftDirection();
+            }
+            else if (enemyA is GreenKoopa && ((GreenKoopa)enemyA).IsWeaponized)
+            {
+                enemyB.Flipped();
+            }
+            else if (enemyB is GreenKoopa && ((GreenKoopa)enemyB).IsWeaponized)
+            {
+                enemyA.Flipped();
             }
         }
     }

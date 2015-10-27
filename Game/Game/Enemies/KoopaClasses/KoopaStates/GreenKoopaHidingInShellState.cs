@@ -16,7 +16,7 @@ namespace Game.Enemies.KoopaClasses.KoopaStates
             float prevHeight = greenKoopa.Sprite.SpriteDimensions.Y;
             this.greenKoopa.Sprite = Game.SpriteFactories.EnemySpriteFactory.CreateGreenKoopaHidingInShellSprite();
             greenKoopa.VectorCoordinates += new Microsoft.Xna.Framework.Vector2(0, prevHeight - greenKoopa.Sprite.SpriteDimensions.Y);
-
+            this.greenKoopa.IsHit = true;
             Vector2 velocity = this.greenKoopa.Physics.Velocity;
             velocity.X = 0;
             this.greenKoopa.Physics.Velocity = velocity;
@@ -38,7 +38,6 @@ namespace Game.Enemies.KoopaClasses.KoopaStates
 
         public void KoopaChangeDirection()
         {
-            //greenKoopa.state = new GreenKoopaWalkingLeftState(greenKoopa);
         }
     }
 }

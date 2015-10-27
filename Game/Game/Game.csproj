@@ -101,6 +101,7 @@
     <Compile Include="Collisions\FlagPoleCollisionHandling\MarioFlagPoleCollisionHandler.cs" />
     <Compile Include="Collisions\ItemCollisionHandling\ItemPipeCollisionHandler.cs" />
     <Compile Include="Commands\MarioCommands\MarioRunFireBallCommand.cs" />
+    <Compile Include="Enemies\GoombaClasses\Goomba.cs" />
     <Compile Include="FlagPoles\FlagPole.cs" />
     <Compile Include="FlagPoles\FlagPoleSprites\ActiveFlagPoleSprite.cs" />
     <Compile Include="FlagPoles\FlagPoleSprites\InactiveFlagPoleSprite.cs" />
@@ -133,7 +134,6 @@
     <Compile Include="Interfaces\IController.cs" />
     <Compile Include="Controllers\GamePadController.cs" />
     <Compile Include="Controllers\KeyboardController.cs" />
-    <Compile Include="Enemies\GoombaClasses\Goomba.cs" />
     <Compile Include="Enemies\GoombaClasses\GoombaSprites\GoombaFlippedSprite.cs" />
     <Compile Include="Enemies\GoombaClasses\GoombaSprites\GoombaSmashedSprite.cs" />
     <Compile Include="Enemies\GoombaClasses\GoombaSprites\GoombaWalkingLeftSprite.cs" />

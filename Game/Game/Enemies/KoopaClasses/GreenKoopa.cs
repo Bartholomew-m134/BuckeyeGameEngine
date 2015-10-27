@@ -21,6 +21,7 @@ namespace Game.Enemies.KoopaClasses
         private ObjectPhysics physics;
         private bool isFlipped = false;
         private bool isHit = false;
+        private bool isWeaponized = false;
 
         public GreenKoopa(Game1 game)
         {
@@ -41,8 +42,6 @@ namespace Game.Enemies.KoopaClasses
 
         public void Flipped()
         {
-            physics.Velocity = new Vector2(0, -5);
-            physics.Acceleration = new Vector2(0, 1);
             state.KoopaShellFlipped();
         }
 
@@ -64,6 +63,12 @@ namespace Game.Enemies.KoopaClasses
             set { canDealDamage = value; }
         }
 
+        public bool IsWeaponized
+        {
+            get { return isWeaponized; }
+            set { isWeaponized = value; }
+        }
+
         public void Draw(ICamera camera)
         {
             sprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
@@ -71,7 +76,7 @@ namespace Game.Enemies.KoopaClasses
 
         public void Update()
         {
-            if (state is GreenKoopaHidingInShellState || state is GreenKoopaEmergingFromShellState)
+            if (!isWeaponized && (state is GreenKoopaHidingInShellState || state is GreenKoopaEmergingFromShellState))
             {
                 inShellTimer++;
             }
@@ -84,12 +89,12 @@ namespace Game.Enemies.KoopaClasses
             {
                 state.KoopaChangeDirection();
                 canDealDamage = true;
+                isHit = false;
                 inShellTimer = 0;
             }
-            if (!isHit)
-            {
-                location = physics.Update(location);
-            }
+
+            location = physics.Update(location);
+
             sprite.Update();
         }
 
