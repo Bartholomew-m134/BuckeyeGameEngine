@@ -27,6 +27,8 @@ namespace Game.Enemies.KoopaClasses
         {
             myGame = game;
             physics = new ObjectPhysics();
+            physics.VelocityMaximum = new Vector2(12, physics.VelocityMaximum.Y);
+            physics.VelocityMinimum = new Vector2(-12, physics.VelocityMinimum.Y);
             state = new GreenKoopaWalkingLeftState(this);
         }
 
