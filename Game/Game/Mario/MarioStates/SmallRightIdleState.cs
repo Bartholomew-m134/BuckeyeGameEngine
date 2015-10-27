@@ -35,7 +35,14 @@ namespace Game.Mario.MarioStates
 
         public void Left()
         {
-            mario.MarioState = new SmallLeftIdleState(mario);
+            if (mario.Physics.Velocity.X > 0)
+            {
+                mario.MarioState = new SmallLeftTwistState(mario);
+            }
+            else
+            {
+                mario.MarioState = new SmallLeftIdleState(mario);
+            }
         }
 
         public void Right()
@@ -66,6 +73,11 @@ namespace Game.Mario.MarioStates
         {
             mario.MarioState = new FireRightIdleState(mario);
             mario.VectorCoordinates += new Vector2(0, -16);
+        }
+
+        public void Fire()
+        {
+
         }
         public void PoleSlide()
         {

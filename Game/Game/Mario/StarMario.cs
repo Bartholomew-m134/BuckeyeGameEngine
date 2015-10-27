@@ -76,6 +76,11 @@ namespace Game.Mario
             mario.Flower();
         }
 
+        public void Fire()
+        {
+            mario.Fire();
+        }
+
         public void Mushroom()
         {
             mario.Mushroom();

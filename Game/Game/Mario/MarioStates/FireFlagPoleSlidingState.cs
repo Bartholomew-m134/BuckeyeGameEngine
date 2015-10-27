@@ -54,6 +54,11 @@ namespace Game.Mario.MarioStates
 
             }
 
+            public void Fire()
+            {
+
+            }
+
             public void Mushroom()
             {
             }

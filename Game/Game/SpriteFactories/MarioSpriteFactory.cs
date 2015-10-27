@@ -49,6 +49,11 @@ namespace Game.SpriteFactories
             return new FireLeftRunningMarioSprite(marioSpriteSheet);
         }
 
+        public static ISprite CreateFireLeftTwistSprite()
+        {
+            return new FireLeftTwistSprite(marioSpriteSheet);
+        }
+
         public static ISprite CreateFireRightCrouchingSprite()
         {
             return new FireRightCrouchingMarioSprite(marioSpriteSheet);
@@ -67,6 +72,11 @@ namespace Game.SpriteFactories
         public static ISprite CreateFireRightRunningSprite()
         {
             return new FireRightRunningMarioSprite(marioSpriteSheet);
+        }
+
+        public static ISprite CreateFireRightTwistSprite()
+        {
+            return new FireRightTwistSprite(marioSpriteSheet);
         }
 
         public static ISprite CreateNormalLeftCrouchingSprite()
@@ -89,6 +99,11 @@ namespace Game.SpriteFactories
             return new NormalLeftRunningMarioSprite(marioSpriteSheet);
         }
 
+        public static ISprite CreateNormalLeftTwistSprite()
+        {
+            return new NormalLeftTwistSprite(marioSpriteSheet);
+        }
+
         public static ISprite CreateNormalRightCrouchingSprite()
         {
             return new NormalRightCrouchingMarioSprite(marioSpriteSheet);
@@ -109,6 +124,11 @@ namespace Game.SpriteFactories
             return new NormalRightRunningMarioSprite(marioSpriteSheet);
         }
 
+        public static ISprite CreateNormalRightTwistSprite()
+        {
+            return new NormalRightTwistSprite(marioSpriteSheet);
+        }
+
         public static ISprite CreateSmallLeftIdleSprite()
         {
             return new SmallLeftIdleMarioSprite(marioSpriteSheet);
@@ -122,6 +142,11 @@ namespace Game.SpriteFactories
         public static ISprite CreateSmallLeftRunningSprite()
         {
             return new SmallLeftRunningMarioSprite(marioSpriteSheet);
+        }
+
+        public static ISprite CreateSmallLeftTwistSprite()
+        {
+            return new SmallLeftTwistSprite(marioSpriteSheet);
         }
 
         public static ISprite CreateSmallRightIdleSprite()
@@ -138,6 +163,12 @@ namespace Game.SpriteFactories
         {
             return new SmallRightRunningMarioSprite(marioSpriteSheet);
         }
+
+        public static ISprite CreateSmallRightTwistSprite()
+        {
+            return new SmallRightTwistSprite(marioSpriteSheet);
+        }
+
         public static ISprite CreateNormalFlagPoleSlidingSprite()
         {
             return new NormalFlagPoleSlidingSprite(marioSpriteSheet);

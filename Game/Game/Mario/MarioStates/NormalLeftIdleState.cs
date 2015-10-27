@@ -41,7 +41,14 @@ namespace Game.Mario.MarioStates
 
         public void Right()
         {
-            mario.MarioState = new NormalRightIdleState(mario);
+            if (mario.Physics.Velocity.X < 0)
+            {
+                mario.MarioState = new NormalRightTwistState(mario);
+            }
+            else
+            {
+                mario.MarioState = new NormalRightIdleState(mario);
+            }
         }
 
         public void Up()
@@ -67,6 +74,11 @@ namespace Game.Mario.MarioStates
         public void Flower()
         {
             mario.MarioState = new FireLeftIdleState(mario);
+
+        }
+
+        public void Fire()
+        {
 
         }
         public void PoleSlide()

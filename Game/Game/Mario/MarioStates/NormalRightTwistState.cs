@@ -3,56 +3,44 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Game.Mario;
-using Game.Interfaces;
 using Microsoft.Xna.Framework;
+using Game.Interfaces;
 using Game.Utilities;
 
 namespace Game.Mario.MarioStates
 {
-    public class FireLeftIdleState : IMarioState
+    public class NormalRightTwistState : IMarioState
     {
 
         private IMario mario;
 
-        public FireLeftIdleState(IMario mario)
+        public NormalRightTwistState(IMario mario)
         {
             this.mario = mario;
-            mario.Sprite = SpriteFactories.MarioSpriteFactory.CreateFireLeftIdleSprite();
+            mario.Sprite = SpriteFactories.MarioSpriteFactory.CreateNormalRightTwistSprite();
         }
+
         public void Update()
         {
+            mario.Sprite.Update();
 
             if (mario.Physics.Velocity.X < 0)
             {
                 mario.Physics.DampenLeft();
             }
-            else if (mario.Physics.Velocity.X > 0)
+            else if (mario.Physics.Velocity.X >= 0)
             {
-                mario.Physics.DampenRight();
+                mario.MarioState = new NormalRightIdleState(mario);
             }
-
-            mario.Sprite.Update();
         }
-
         public void Left()
         {
-            mario.MarioState = new FireLeftRunningState(mario);
-        }
-        public void PoleSlide()
-        {
-            mario.MarioState = new FireFlagPoleSlidingState(mario);
+            mario.MarioState = new NormalLeftIdleState(mario);
         }
 
         public void Right()
         {
-            if (mario.Physics.Velocity.X < 0)
-            {
-                mario.MarioState = new FireRightTwistState(mario);
-            }
-            else
-            {
-                mario.MarioState = new FireRightIdleState(mario);
-            }
+            
         }
 
         public void Up()
@@ -62,13 +50,13 @@ namespace Game.Mario.MarioStates
 
         public void Down()
         {
-            mario.MarioState = new FireLeftCrouchingState(mario);
+            mario.MarioState = new NormalLeftCrouchingState(mario);
         }
 
         public void Jump()
         {
-            
-                mario.MarioState = new FireLeftJumpingState(mario);
+
+            mario.MarioState = new NormalLeftJumpingState(mario);
         }
 
         public void StopJumping()
@@ -77,6 +65,7 @@ namespace Game.Mario.MarioStates
 
         public void Flower()
         {
+            mario.MarioState = new FireLeftTwistState(mario);
 
         }
 
@@ -84,10 +73,16 @@ namespace Game.Mario.MarioStates
         {
 
         }
+        public void PoleSlide()
+        {
+            mario.MarioState = new NormalFlagPoleSlidingState(mario);
+        }
 
         public void Mushroom()
         {
+
         }
+
         public void Star()
         {
 
@@ -95,7 +90,7 @@ namespace Game.Mario.MarioStates
 
         public void Damage()
         {
-            mario.MarioState = new NormalLeftIdleState(mario);
+            mario.MarioState = new SmallLeftTwistState(mario);
         }
 
         public void Die()

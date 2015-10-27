@@ -54,6 +54,11 @@ namespace Game.Mario.MarioStates
         public void Flower()
         {
         }
+
+        public void Fire()
+        {
+
+        }
         public void PoleSlide()
         {
         }

@@ -27,6 +27,7 @@ namespace Game.Interfaces
 
          void Flower();
 
+         void Fire();
 
          void Mushroom();
 

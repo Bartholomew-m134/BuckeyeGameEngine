@@ -34,7 +34,7 @@ namespace Game.Mario.MarioStates
 
         public void Right()
         {
-            mario.MarioState = new NormalLeftIdleState(mario);
+            mario.MarioState = new NormalRightTwistState(mario);
         }
 
         public void Up()
@@ -60,6 +60,11 @@ namespace Game.Mario.MarioStates
         public void Flower()
         {
             mario.MarioState = new FireLeftRunningState(mario);
+        }
+
+        public void Fire()
+        {
+
         }
         public void PoleSlide()
         {
@@ -91,7 +96,7 @@ namespace Game.Mario.MarioStates
 
         public void ToIdle()
         {
-            mario.Right();
+            mario.MarioState = new NormalLeftIdleState(mario);
         }
 
         public bool IsJumping()

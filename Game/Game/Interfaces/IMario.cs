@@ -26,6 +26,7 @@ namespace Game.Mario
 
         void Flower();
 
+        void Fire();
 
         void Mushroom();
 
