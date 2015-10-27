@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Game
 {
-    public static class FireBallConstructor
+    public class FireBallConstructor
     {
         public static void ReleaseRightFireBall(Vector2 location, Game1 game)
         {
