@@ -42,6 +42,7 @@ namespace Game.Collisions.EnemyCollisionHandling
                 collision.ResolveOverlap(mario, side);
                 enemy.CanDealDamage = false;
                 enemy.Hit();
+
                 mario.Physics.Velocity = new Vector2(mario.Physics.Velocity.X, -5);
                 mario.Physics.Acceleration = new Vector2(mario.Physics.Acceleration.X, 1);
             }
@@ -50,7 +51,7 @@ namespace Game.Collisions.EnemyCollisionHandling
                 collision.ResolveOverlap(mario, side);
                 mario.Damage();
             }
-            else
+            else if(mario.IsStar())
             {
                 enemy.CanDealDamage = false;
                 enemy.Flipped();

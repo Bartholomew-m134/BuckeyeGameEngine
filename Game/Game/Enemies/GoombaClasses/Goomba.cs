@@ -41,6 +41,8 @@ namespace Game.Enemies.GoombaClasses
 
         public void Flipped()
         {
+            physics.Velocity = new Vector2(0, -5);
+            physics.Acceleration = new Vector2(0, 1);
             state.FlipGoomba();
         }
 
@@ -79,7 +81,10 @@ namespace Game.Enemies.GoombaClasses
             {
                 deathTimer++;
             }
-            location = physics.Update(location);
+            if (!isHit)
+            {
+                location = physics.Update(location);
+            }
             sprite.Update();
         }
 

@@ -12,6 +12,7 @@ namespace Game.Enemies.GoombaClasses.GoombaStates
         public GoombaSmashedState(Goomba goomba)
         {
             this.goomba = goomba;
+            this.goomba.IsHit = true;
             float prevHeight = goomba.Sprite.SpriteDimensions.Y;
             this.goomba.Sprite = Game.SpriteFactories.EnemySpriteFactory.CreateGoombaSmashedSprite();
             goomba.VectorCoordinates += new Microsoft.Xna.Framework.Vector2(0,prevHeight - goomba.Sprite.SpriteDimensions.Y);
