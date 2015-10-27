@@ -109,7 +109,10 @@ namespace Game.Mario
 
         public void Die()
         {
+            Console.WriteLine("seen dead");
+            ScoreController.ResetScore();
             state.Die();
+       
         }
 
         public Vector2 VectorCoordinates
