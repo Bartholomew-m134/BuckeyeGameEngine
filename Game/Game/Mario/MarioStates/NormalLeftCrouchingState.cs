@@ -21,6 +21,15 @@ namespace Game.Mario.MarioStates
         public void Update()
         {
             mario.Sprite.Update();
+
+            if (mario.Physics.Velocity.X > 0)
+            {
+                mario.Physics.DampenRight();
+            }
+            else if (mario.Physics.Velocity.X < 0)
+            {
+                mario.Physics.DampenLeft();
+            }
         }
 
         public void Left()
