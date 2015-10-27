@@ -67,12 +67,12 @@ namespace Game.Collisions.EnemyCollisionHandling
             if (((GreenKoopa)enemy).IsHit && side is LeftSideCollision && enemy.Physics.Velocity.X == 0)
             {
                 ((GreenKoopa)enemy).IsWeaponized = true;
-                enemy.Physics.Velocity = new Vector2(6, enemy.Physics.Velocity.Y);
+                enemy.Physics.Velocity = new Vector2(8, enemy.Physics.Velocity.Y);
             }
             else if (((GreenKoopa)enemy).IsHit && side is RightSideCollision && enemy.Physics.Velocity.X == 0)
             {
                 ((GreenKoopa)enemy).IsWeaponized = true;
-                enemy.Physics.Velocity = new Vector2(-6, enemy.Physics.Velocity.Y);
+                enemy.Physics.Velocity = new Vector2(-8, enemy.Physics.Velocity.Y);
             }
             else if (((GreenKoopa)enemy).IsHit && side is TopSideCollision)
             {
@@ -83,12 +83,12 @@ namespace Game.Collisions.EnemyCollisionHandling
             }
             else if (enemy.Physics.Velocity.X > 0)
             {
-                enemy.Physics.Velocity = new Vector2(-6, enemy.Physics.Velocity.Y);
+                enemy.Physics.Velocity = new Vector2(-8, enemy.Physics.Velocity.Y);
                 mario.Damage();
             }
             else if (enemy.Physics.Velocity.X < 0)
             {
-                enemy.Physics.Velocity = new Vector2(6, enemy.Physics.Velocity.Y);
+                enemy.Physics.Velocity = new Vector2(8, enemy.Physics.Velocity.Y);
                 mario.Damage();
             }
         }

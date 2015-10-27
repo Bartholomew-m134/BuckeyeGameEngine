@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Game.Interfaces;
 using Game.Enemies.KoopaClasses;
+using Game.Enemies.KoopaClasses.KoopaStates;
 using Game.Enemies.GoombaClasses;
 
 namespace Game.Collisions.EnemyCollisionHandling
@@ -43,6 +44,17 @@ namespace Game.Collisions.EnemyCollisionHandling
             else if (enemyB is GreenKoopa && ((GreenKoopa)enemyB).IsWeaponized)
             {
                 enemyA.Flipped();
+            }
+            else if (enemyA.IsHit)
+            {
+                collision.ResolveOverlap(collision.GameObjectA, collision.CollisionSide);
+
+                enemyB.ShiftDirection();
+            }
+            else if (enemyB.IsHit)
+            {
+                collision.ResolveOverlap(collision.GameObjectA, collision.CollisionSide);
+                enemyA.ShiftDirection();
             }
         }
     }
