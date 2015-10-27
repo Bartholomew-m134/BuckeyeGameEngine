@@ -21,9 +21,6 @@ namespace Game.Interfaces
          void Down();
 
 
-         void Land();
-
-
          void Jump();
 
          void StopJumping();

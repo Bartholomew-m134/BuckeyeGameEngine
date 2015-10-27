@@ -61,11 +61,6 @@ namespace Game.Mario
             mario.Down();
         }
 
-        public void Land()
-        {
-            mario.Land();
-        }
-
         public void Jump()
         {
             mario.Jump();

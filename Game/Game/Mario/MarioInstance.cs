@@ -29,8 +29,7 @@ namespace Game.Mario
         public void Update()
         {
             location = physics.Update(location);
-            state.Update();
-          
+            state.Update();    
         }
 
         public void Draw(ICamera camera)
@@ -60,13 +59,6 @@ namespace Game.Mario
         {
             state.Down();
         }
-
-
-        public void Land()
-        {
-            state.Land();
-        }
-
 
         public void Jump()
         {
