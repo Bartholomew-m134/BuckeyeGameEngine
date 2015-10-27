@@ -11,7 +11,7 @@ namespace Game.Utilities
         private Vector2 velocity;
         private Vector2 acceleration;
         private Vector2 oldCoordinates;
-        private Vector2 velocityMaximum = new Vector2(6, 12);
+        private Vector2 velocityMaximum = new Vector2(8, 12);
         private Vector2 velocityMinimum = new Vector2(-8, -12);
         private const int gravity = 1;
 
