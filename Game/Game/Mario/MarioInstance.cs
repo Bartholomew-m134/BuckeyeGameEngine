@@ -106,12 +106,6 @@ namespace Game.Mario
             state.Damage();
         }
 
-
-        public void Die()
-        {
-            state.Die();
-        }
-
         public Vector2 VectorCoordinates
         {
             get { return location; }

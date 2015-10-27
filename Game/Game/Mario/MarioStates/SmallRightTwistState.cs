@@ -90,13 +90,9 @@ namespace Game.Mario.MarioStates
 
         public void Damage()
         {
-            mario.Die();
-        }
-
-        public void Die()
-        {
             mario.MarioState = new DeadMarioState(mario);
         }
+
         public bool IsBig()
         {
             return false;

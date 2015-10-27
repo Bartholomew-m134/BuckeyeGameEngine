@@ -33,11 +33,7 @@ namespace Game.Interfaces
 
          void Star();
 
-
          void Damage();
-
-
-         void Die();
 
          bool IsBig();
 

@@ -93,10 +93,6 @@ namespace Game.Mario.MarioStates
             mario.MarioState = new SmallLeftTwistState(mario);
         }
 
-        public void Die()
-        {
-            mario.MarioState = new DeadMarioState(mario);
-        }
         public bool IsBig()
         {
             return true;
