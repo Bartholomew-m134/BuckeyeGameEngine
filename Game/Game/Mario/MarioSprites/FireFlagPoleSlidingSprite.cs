@@ -27,7 +27,7 @@ namespace Game.Mario.MarioSprites
             height = 30;
 
             currentSourceLocation.X = 363;
-            currentSourceLocation.Y = 159;
+            currentSourceLocation.Y = 158;
         }
         public void Update()
         {

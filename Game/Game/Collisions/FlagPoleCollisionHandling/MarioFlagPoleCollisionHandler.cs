@@ -31,9 +31,7 @@ namespace Game.Collisions.FlagPoleCollisionHandling
         }
         public void HandleCollision()
         {
-            if(collidingFlagPole is InvisibleFlagPoleBarrier && collision.CollisionSide is LeftSideCollision){
-                
-                collision.ResolveOverlap(collidingMario, collision.CollisionSide);
+            if(collidingFlagPole is InvisibleFlagPoleBarrier && collision.CollisionSide is RightSideCollision){
                 collidingMario.PoleSlide();
             }
             else if (collidingFlagPole is FlagPole)
