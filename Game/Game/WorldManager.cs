@@ -86,6 +86,11 @@ namespace Game
             objectList.Remove(referenceObject);
         }
 
+        public static void CreateNewObject(IGameObject newObject)
+        {
+            objectList.Add(newObject);
+        }
+
         public static void ResetToDefault()
         {
             LoadListFromFile(currentFileName, currentGame);
