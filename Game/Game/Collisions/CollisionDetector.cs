@@ -98,12 +98,7 @@ namespace Game.Collisions
                 else
                 {                   
                     collisionSide = new BottomSideCollision();
-                    Console.WriteLine(previousHitBoxA.Right);
-                    Console.WriteLine(previousHitBoxB.Left);
-                    Console.WriteLine(previousHitBoxA.Top);
-                    Console.WriteLine(previousHitBoxA.Bottom);
-                    Console.WriteLine(objectAOldCoordinates);
-                    Console.WriteLine(objectA.VectorCoordinates);
+                   
                 }
             }
             else if (isBottomRightCorner(hitBoxA, hitBoxB))

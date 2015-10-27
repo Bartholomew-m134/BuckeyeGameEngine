@@ -27,7 +27,6 @@ namespace Game.Mario.MarioStates
 
             public void Right()
             {
-                mario.MarioState = new SmallRightIdleState(mario);
             }
 
             public void Up()
@@ -60,7 +59,7 @@ namespace Game.Mario.MarioStates
             }
             public void PoleSlide()
             {
-                
+                mario.MarioState = new SmallFlagPoleSlidingState(mario);
             }
 
             public void Mushroom()
@@ -88,7 +87,7 @@ namespace Game.Mario.MarioStates
 
             public void ToIdle()
             {
-                mario.Right();
+
             }
 
             public bool IsJumping()

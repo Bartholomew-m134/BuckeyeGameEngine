@@ -97,6 +97,8 @@ namespace Game.Mario
 
         public void PoleSlide()
         {
+            Physics.ResetX();
+            Physics.ResetY();
             state.PoleSlide();
         }
 
