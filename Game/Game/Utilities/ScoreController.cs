@@ -13,5 +13,9 @@ namespace Game.Utilities
         {
             score+=value;
         }
+        public static void ResetScore()
+        {
+            score = 0;
+        }
     }
 }

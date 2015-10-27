@@ -24,6 +24,10 @@ namespace Game.Mario
 
         void StopJumping();
 
+        void Run();
+
+        void StopRunning();
+
         void Flower();
 
         void Fire();

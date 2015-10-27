@@ -101,5 +101,18 @@ namespace Game.Mario.MarioStates
         {
             return false;
         }
+
+        public void Run()
+        {
+            mario.Physics.VelocityMaximum = new Vector2(10, mario.Physics.VelocityMaximum.Y);
+            mario.Physics.VelocityMinimum = new Vector2(-10, mario.Physics.VelocityMinimum.Y);
+
+        }
+
+        public void StopRunning()
+        {
+            mario.Physics.VelocityMaximum = new Vector2(6, mario.Physics.VelocityMaximum.Y);
+            mario.Physics.VelocityMinimum = new Vector2(-6, mario.Physics.VelocityMinimum.Y);
+        }
     }
 }
