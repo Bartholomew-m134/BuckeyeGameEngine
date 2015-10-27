@@ -26,14 +26,6 @@ namespace Game.Collisions
             if (objectA.Physics != null)
             {
                 objectAOldCoordinates = objectA.Physics.OldCoordinates;
-                /*
-                if (objectA.Physics.Velocity.Y > 0) {
-                    objectAOldCoordinates.Y--;
-                }
-                */
-                
-
-                
                 
             }
             else
@@ -42,12 +34,7 @@ namespace Game.Collisions
             if (objectB.Physics != null)
             {
                 objectBOldCoordinates = objectB.Physics.OldCoordinates;
-                /*
-                if (objectB.Physics.Velocity.Y > 0)
-                {
-                    objectBOldCoordinates.Y--;
-                }
-                 * */
+               
             }
             else
                 objectBOldCoordinates = objectB.VectorCoordinates;
@@ -111,8 +98,7 @@ namespace Game.Collisions
                 }
                 else
                 {
-                    if (objectA is IEnemy || objectB is IEnemy)
-                        Console.WriteLine("BottomRightSide");
+                   
                     collisionSide = new BottomSideCollision();
                 }
             }
@@ -120,30 +106,6 @@ namespace Game.Collisions
             {
                 collisionSide = new TopSideCollision();
             }
-
-          
-        /* Previous Implementation
-            else if ( && (hitBoxA.Bottom < hitBoxB.Bottom))
-            {
-                collisionSide = new TopSideCollision();
-            }
-            else if ((collisionRectangle.Width >= collisionRectangle.Height) && (hitBoxA.Bottom > hitBoxB.Bottom))
-            {
-                collisionSide = new BottomSideCollision();
-            }
-            else if ((collisionRectangle.Height >= collisionRectangle.Width) && (hitBoxA.Right < hitBoxB.Right))
-            {
-                collisionSide = new LeftSideCollision();
-            }
-            else
-            {
-                collisionSide = new RightSideCollision();
-            }
-             
-            */
-
-
-             
 
             return collisionSide;
         }
