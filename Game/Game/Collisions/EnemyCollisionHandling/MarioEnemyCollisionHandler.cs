@@ -6,6 +6,7 @@ using Game.Mario;
 using Game.Enemies;
 using Game.Enemies.GoombaClasses;
 using Game.Enemies.KoopaClasses;
+using Game.Enemies.KoopaClasses.KoopaStates;
 using Game.Interfaces;
 using Microsoft.Xna.Framework;
 
@@ -59,6 +60,10 @@ namespace Game.Collisions.EnemyCollisionHandling
         public void WeaponizedKoopa()
         {
             collision.ResolveOverlap(mario, side);
+            if (((GreenKoopa)enemy).state is GreenKoopaEmergingFromShellState)
+            {
+                ((GreenKoopa)enemy).state = new GreenKoopaHidingInShellState((GreenKoopa)enemy);
+            }
             if (((GreenKoopa)enemy).IsHit && side is LeftSideCollision && enemy.Physics.Velocity.X == 0)
             {
                 ((GreenKoopa)enemy).IsWeaponized = true;
