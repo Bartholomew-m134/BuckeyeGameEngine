@@ -27,6 +27,8 @@ namespace Game.Enemies.GoombaClasses
             myGame = game;
             state = new GoombaWalkingLeftState(this);
             physics = new ObjectPhysics();
+            physics.Velocity = new Vector2(-3,0);
+            physics.ResetY();
         }
 
         public void Hit()
