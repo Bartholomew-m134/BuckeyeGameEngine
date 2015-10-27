@@ -11,8 +11,8 @@ namespace Game.Utilities
         private Vector2 velocity;
         private Vector2 acceleration;
         private Vector2 oldCoordinates;
-        private Vector2 velocityMaximum = new Vector2(8, 12);
-        private Vector2 velocityMinimum = new Vector2(-8, -12);
+        private Vector2 velocityMaximum = new Vector2(6, 12);
+        private Vector2 velocityMinimum = new Vector2(-6, -12);
         private const int gravity = 1;
 
         public ObjectPhysics()
@@ -57,6 +57,18 @@ namespace Game.Utilities
         {
             get { return acceleration; }
             set { acceleration = value; }
+        }
+
+        public Vector2 VelocityMaximum
+        {
+            get { return velocityMaximum; }
+            set { velocityMaximum = value; }
+        }
+
+        public Vector2 VelocityMinimum
+        {
+            get { return velocityMinimum; }
+            set { velocityMinimum = value; }
         }
 
         public void ResetY() {
