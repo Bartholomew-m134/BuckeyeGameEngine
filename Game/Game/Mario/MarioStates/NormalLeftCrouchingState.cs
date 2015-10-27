@@ -44,10 +44,6 @@ namespace Game.Mario.MarioStates
         {
         }
 
-        public void Land()
-        {
-
-        }
 
         public void Jump()
         {
@@ -75,7 +71,7 @@ namespace Game.Mario.MarioStates
 
         public void Star()
         {
-            //mario = new StarMario(mario);
+            
         }
 
         public void Damage()

@@ -15,19 +15,10 @@ namespace Game.Collisions
         {
             collisionList = new List<CollisionData>();
 
-            GetCollisionList(gameObjects);
-            //HandleAllCollisions();
+            HandleCollisionsInOrder(gameObjects);
         }
 
-        private static void HandleAllCollisions()
-        {
-            foreach (CollisionData collision in collisionList)
-            {
-                CollisionSelector.HandleCollision(collision);
-            }
-        }
-
-        private static void GetCollisionList(List<IGameObject> gameObjects)
+        private static void HandleCollisionsInOrder(List<IGameObject> gameObjects)
         {
             gameObjects.Reverse();
             for (int i = 0; i < gameObjects.Count; i++)
@@ -38,23 +29,8 @@ namespace Game.Collisions
                     ICollisionSide side = CollisionDetector.DetectCollision(gameObjects[i], gameObjects[j]);
 
                     if (side != null)
-                    {
-                        //objectCollisionList.Add(new CollisionData(gameObjects[i], gameObjects[j], side));
                         CollisionSelector.HandleCollision(new CollisionData(gameObjects[i], gameObjects[j], side));
-                       
-                    }
-                }
-                
-                /*objectCollisionList.Sort();
-                
-                   if(objectCollisionList.Count > 3)
-                    objectCollisionList.RemoveAt(objectCollisionList.Count-1);
-
-                   foreach (CollisionData collision in objectCollisionList) {
-                       CollisionSelector.HandleCollision(collision);
-                   }
-                */
-                    
+                }  
             }
         }
     }

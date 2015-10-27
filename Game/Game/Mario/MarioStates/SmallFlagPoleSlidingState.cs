@@ -39,10 +39,6 @@ namespace Game.Mario.MarioStates
                 
             }
 
-            public void Land()
-            {
-
-            }
 
             public void Jump()
             {

@@ -50,11 +50,6 @@ namespace Game.Mario.MarioStates
             mario.MarioState = new NormalLeftCrouchingState(mario);
         }
 
-        public void Land()
-        {
-
-        }
-
         public void Jump()
         {
            
@@ -82,7 +77,7 @@ namespace Game.Mario.MarioStates
 
         public void Star()
         {
-            //mario = new StarMario(mario);
+            
         }
 
         public void Damage()

@@ -20,10 +20,6 @@ namespace Game.Mario
 
         void Down();
 
-
-        void Land();
-
-
         void Jump();
 
         void StopJumping();

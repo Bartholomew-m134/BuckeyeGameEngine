@@ -47,15 +47,9 @@ namespace Game.Mario.MarioStates
             
         }
 
-        public void Land()
-        {
-
-        }
-
         public void Jump()
-        {
-         
-                mario.MarioState = new SmallLeftJumpingState(mario);
+        {      
+            mario.MarioState = new SmallLeftJumpingState(mario);
         }
 
         public void StopJumping()

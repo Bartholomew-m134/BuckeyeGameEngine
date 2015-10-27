@@ -59,8 +59,6 @@ namespace Game.Utilities
             set { acceleration = value; }
         }
 
-   
-
         public void ResetY() {
             acceleration.Y = gravity;
             velocity.Y = 0;

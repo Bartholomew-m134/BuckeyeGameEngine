@@ -29,8 +29,7 @@ namespace Game.Collisions
             else if ((collision.GameObjectA is IMario && collision.GameObjectB is IBlock) || (collision.GameObjectA is IBlock && collision.GameObjectB is IMario))
             {
                 MarioBlockCollisionHandler collisionHandler = new MarioBlockCollisionHandler(collision);
-                collisionHandler.HandleCollision();
-      
+                collisionHandler.HandleCollision();   
             }
             else if ((collision.GameObjectA is IMario && collision.GameObjectB is IItem) || (collision.GameObjectA is IItem && collision.GameObjectB is IMario))
             {

@@ -44,11 +44,6 @@ namespace Game.Mario.MarioStates
         {
         }
 
-        public void Land()
-        {
-
-        }
-
         public void Jump()
         {
             mario.MarioState = new FireLeftIdleState(mario);
@@ -74,8 +69,6 @@ namespace Game.Mario.MarioStates
         
        public void Star()
         {
-
-            //mario = new StarMario(mario);
 
         }
 

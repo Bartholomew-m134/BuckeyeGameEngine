@@ -47,11 +47,6 @@ namespace Game.Mario.MarioStates
             mario.MarioState = new FireRightCrouchingState(mario);
         }
 
-        public void Land()
-        {
-
-        }
-
         public void Jump()
         {
            

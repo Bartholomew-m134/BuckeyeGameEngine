@@ -20,9 +20,9 @@ namespace Game.Mario.MarioStates
             mario.Sprite = SpriteFactories.MarioSpriteFactory.CreateSmallLeftJumpingSprite();
             if (!mario.MarioState.IsJumping())
             {
-            Vector2 velocity = this.mario.Physics.Velocity;
-            velocity.Y = -12;
-            this.mario.Physics.Velocity = velocity;
+                Vector2 velocity = this.mario.Physics.Velocity;
+                velocity.Y = -12;
+                this.mario.Physics.Velocity = velocity;
             }
         }
         public void Update()
@@ -31,8 +31,7 @@ namespace Game.Mario.MarioStates
         }
 
         public void Left()
-        {
-          
+        {        
             Vector2 acceleration = mario.Physics.Acceleration;
             acceleration.X = -1;
             mario.Physics.Acceleration = acceleration;
@@ -51,11 +50,6 @@ namespace Game.Mario.MarioStates
         }
 
         public void Down()
-        {
-            
-        }
-
-        public void Land()
         {
             
         }
@@ -91,7 +85,7 @@ namespace Game.Mario.MarioStates
 
         public void Star()
         {
-            //mario = new StarMario(mario);
+            
         }
 
         public void Damage()

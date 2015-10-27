@@ -51,10 +51,6 @@ namespace Game.Mario.MarioStates
             mario.MarioState = new FireLeftCrouchingState(mario);
         }
 
-        public void Land()
-        {
-
-        }
 
         public void StopJumping()
         {
@@ -78,7 +74,7 @@ namespace Game.Mario.MarioStates
 
         public void Star()
         {
-            //mario = new StarMario(mario);
+            
         }
 
         public void Damage()

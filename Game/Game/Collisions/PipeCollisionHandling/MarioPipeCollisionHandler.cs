@@ -46,14 +46,6 @@ namespace Game.Collisions.PipeCollisionHandling
             }
             else
                 mario.Physics.ResetX();
-
-            //if (side is LeftSideCollision)
-                
-            //else if (side is BottomSideCollision)
-                
-
-            
-
         }
     }
 }

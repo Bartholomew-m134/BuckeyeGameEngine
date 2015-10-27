@@ -38,8 +38,7 @@ namespace Game.Mario.MarioStates
         }
 
         public void Right()
-        {
-            
+        {      
             Vector2 acceleration = mario.Physics.Acceleration;
             acceleration.X = 1;
             mario.Physics.Acceleration = acceleration;
@@ -51,11 +50,6 @@ namespace Game.Mario.MarioStates
         }
 
         public void Down()
-        {
-            
-        }
-
-        public void Land()
         {
             
         }
@@ -90,7 +84,7 @@ namespace Game.Mario.MarioStates
 
         public void Star()
         {
-            //mario = new StarMario(mario);
+            
         }
 
         public void Damage()

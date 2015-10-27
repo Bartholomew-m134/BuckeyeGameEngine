@@ -37,13 +37,11 @@ namespace Game.Collisions.ItemCollisionHandling
         {
             if (!collidingItem.IsInsideBlock && (side is LeftSideCollision || side is RightSideCollision))
             {
-                Console.WriteLine("Left");
                 collision.ResolveOverlap(collidingItem, side);
                 collidingItem.ReverseDirection();
             }
             else if (!collidingItem.IsInsideBlock)
             {
-                Console.WriteLine("Other");
                 collision.ResolveOverlap(collidingItem, side);
                 collidingItem.Physics.ResetPhysics();
             }
