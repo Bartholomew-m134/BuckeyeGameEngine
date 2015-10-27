@@ -56,7 +56,11 @@ namespace Game.Collisions
             else if (isTopRightCorner(hitBoxA, hitBoxB))
             {
                 if ((previousHitBoxA.Left >= previousHitBoxB.Right) && (previousHitBoxA.Bottom > previousHitBoxB.Top))
+                {
                     collisionSide = new RightSideCollision();
+                    if (objectA is IEnemy && objectB is IBlock || objectB is IEnemy && objectA is IBlock)
+                    Console.WriteLine("Right");
+                }
                 else
                     collisionSide = new TopSideCollision();
             }
@@ -70,7 +74,10 @@ namespace Game.Collisions
             else if (isBottomRightCorner(hitBoxA, hitBoxB))
             {
                 if ((previousHitBoxA.Left >= previousHitBoxB.Right) && (previousHitBoxA.Top < previousHitBoxB.Bottom))
+                {
                     collisionSide = new RightSideCollision();
+                    Console.WriteLine("Right");
+                }
                 else
                     collisionSide = new BottomSideCollision();
             }
