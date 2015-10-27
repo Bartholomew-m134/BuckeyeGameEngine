@@ -19,6 +19,8 @@ namespace Game.Enemies.GoombaClasses
         private bool canDealDamage = true;
         private ObjectPhysics physics;
         private int deathTimer = 0;
+        private bool isFlipped = false;
+        private bool isHit = false;
 
         public Goomba(Game1 game)
         {
@@ -27,7 +29,7 @@ namespace Game.Enemies.GoombaClasses
             physics = new ObjectPhysics();
         }
 
-        public void IsHit()
+        public void Hit()
         {
             state.SmashGoomba();
         }
@@ -40,6 +42,18 @@ namespace Game.Enemies.GoombaClasses
         public void Flipped()
         {
             state.FlipGoomba();
+        }
+
+        public bool IsFlipped
+        {
+            get { return isFlipped; }
+            set { isFlipped = value; }
+        }
+
+        public bool IsHit
+        {
+            get { return isHit; }
+            set { isHit = value; }
         }
 
         public bool CanDealDamage
@@ -65,7 +79,7 @@ namespace Game.Enemies.GoombaClasses
             {
                 deathTimer++;
             }
-
+            location = physics.Update(location);
             sprite.Update();
         }
 

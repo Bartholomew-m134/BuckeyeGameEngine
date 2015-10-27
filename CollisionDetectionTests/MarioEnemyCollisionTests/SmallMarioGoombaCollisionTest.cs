@@ -104,7 +104,7 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
             Goomba testGoomba = new Goomba(game);
             testGoomba.VectorCoordinates = new Vector2(0, 14);
             Goomba expectedGoomba = new Goomba(game);
-            expectedGoomba.IsHit();
+            expectedGoomba.Hit();
 
             ICollisionSide side = new TopSideCollision();
             CollisionData collision = new CollisionData(testMario, testGoomba, side);

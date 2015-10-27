@@ -11,6 +11,7 @@ namespace Game.Enemies.GoombaClasses.GoombaStates
         public GoombaFlippedState(Goomba goomba)
         {
             this.goomba = goomba;
+            this.goomba.IsFlipped = true;
             this.goomba.Sprite = Game.SpriteFactories.EnemySpriteFactory.CreateGoombaFlippedSprite();
         }
         public void SmashGoomba()

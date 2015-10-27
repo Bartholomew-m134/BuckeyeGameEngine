@@ -33,7 +33,8 @@ namespace Game.Collisions.EnemyCollisionHandling
 
         public void HandleCollision()
         {
-            collision.ResolveOverlap(enemy, side);
+            if(!enemy.IsFlipped)
+                collision.ResolveOverlap(enemy, side);
             if (side is LeftSideCollision || side is RightSideCollision)
             {
                 enemy.ShiftDirection();

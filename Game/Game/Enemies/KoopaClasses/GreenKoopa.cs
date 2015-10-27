@@ -19,6 +19,8 @@ namespace Game.Enemies.KoopaClasses
         private bool canDealDamage = true;
         private int inShellTimer = 0;
         private ObjectPhysics physics;
+        private bool isFlipped = false;
+        private bool isHit = false;
 
         public GreenKoopa(Game1 game)
         {
@@ -27,7 +29,7 @@ namespace Game.Enemies.KoopaClasses
             physics = new ObjectPhysics();
         }
 
-        public void IsHit()
+        public void Hit()
         {
             state.KoopaHidingInShell();
         }
@@ -40,6 +42,18 @@ namespace Game.Enemies.KoopaClasses
         public void Flipped()
         {
             state.KoopaShellFlipped();
+        }
+
+        public bool IsFlipped
+        {
+            get { return isFlipped; }
+            set { isFlipped = value; }
+        }
+
+        public bool IsHit
+        {
+            get { return isHit; }
+            set { isHit = value; }
         }
 
         public bool CanDealDamage
@@ -70,6 +84,7 @@ namespace Game.Enemies.KoopaClasses
                 canDealDamage = true;
                 inShellTimer = 0;
             }
+            location = physics.Update(location);
             sprite.Update();
         }
 

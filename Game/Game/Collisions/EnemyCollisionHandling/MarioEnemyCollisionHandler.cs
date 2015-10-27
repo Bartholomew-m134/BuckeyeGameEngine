@@ -37,22 +37,18 @@ namespace Game.Collisions.EnemyCollisionHandling
 
         public void HandleCollision()
         {
-            if(enemy.CanDealDamage)
-                collision.ResolveOverlap(mario, side);
-
             if (!mario.IsStar() && side is TopSideCollision)
             {
+                collision.ResolveOverlap(mario, side);
                 enemy.CanDealDamage = false;
-                enemy.IsHit();
+                enemy.Hit();
                 mario.Physics.Velocity = new Vector2(mario.Physics.Velocity.X, -5);
                 mario.Physics.Acceleration = new Vector2(mario.Physics.Acceleration.X, 1);
             }
-            else if(!mario.IsStar())
+            else if(!mario.IsStar() && enemy.CanDealDamage)
             {
-                if (enemy.CanDealDamage)
-                {
-                    mario.Damage();
-                }
+                collision.ResolveOverlap(mario, side);
+                mario.Damage();
             }
             else
             {

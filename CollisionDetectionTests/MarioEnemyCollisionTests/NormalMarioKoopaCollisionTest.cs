@@ -117,7 +117,7 @@ namespace CollisionDetectionTests.MarioEnemyCollisionTests
             GreenKoopa testGreenKoopa = new GreenKoopa(game);
             testGreenKoopa.VectorCoordinates = new Vector2(0, 30);
             GreenKoopa expectedGreenKoopa = new GreenKoopa(game);
-            expectedGreenKoopa.IsHit();
+            expectedGreenKoopa.Hit();
 
             ICollisionSide side = new TopSideCollision();
             CollisionData collision = new CollisionData(testMario, testGreenKoopa, side);

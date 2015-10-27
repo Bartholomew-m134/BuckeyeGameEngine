@@ -8,12 +8,23 @@ namespace Game.Interfaces
 {
     public interface IEnemy : IGameObject
     {
-        void IsHit();
+        void Hit();
 
         void ShiftDirection();
 
         void Flipped();
 
+        bool IsFlipped
+        {
+            get;
+            set;
+        }
+
+        bool IsHit
+        {
+            get;
+            set;
+        }
 
         bool CanDealDamage
         {
