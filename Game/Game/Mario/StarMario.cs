@@ -71,6 +71,16 @@ namespace Game.Mario
             mario.StopJumping();
         }
 
+        public void Run() 
+        {
+            mario.Run();
+        }
+
+        public void StopRunning() 
+        {
+            mario.StopJumping();
+        }
+
         public void Flower()
         {
             mario.Flower();

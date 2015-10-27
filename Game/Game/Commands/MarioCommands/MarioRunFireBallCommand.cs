@@ -20,12 +20,12 @@ namespace Game.Commands.MarioCommands
 
         public void Hold()
         {
-            //RunMario
+            WorldManager.GetMario().Run();
         }
 
         public void Release()
         {
-            //StopRun
+            WorldManager.GetMario().StopRunning();
         }
     }
 }

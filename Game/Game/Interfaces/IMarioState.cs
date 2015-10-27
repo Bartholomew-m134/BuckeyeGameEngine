@@ -25,6 +25,10 @@ namespace Game.Interfaces
 
          void StopJumping();
 
+         void Run();
+
+         void StopRunning();
+
          void Flower();
 
          void Fire();
