@@ -41,6 +41,8 @@ namespace Game.Enemies.KoopaClasses
 
         public void Flipped()
         {
+            physics.Velocity = new Vector2(0, -5);
+            physics.Acceleration = new Vector2(0, 1);
             state.KoopaShellFlipped();
         }
 
@@ -84,7 +86,10 @@ namespace Game.Enemies.KoopaClasses
                 canDealDamage = true;
                 inShellTimer = 0;
             }
-            location = physics.Update(location);
+            if (!isHit)
+            {
+                location = physics.Update(location);
+            }
             sprite.Update();
         }
 

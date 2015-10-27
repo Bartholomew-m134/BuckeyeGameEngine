@@ -77,6 +77,7 @@ namespace Game.Collisions.BlockCollisionHandling
             }
             else if (collidingBlock.State is BrickBlockState && collidingMario.IsBig())
             {
+                collidingBlock.Bump();
                 collidingBlock.Disappear();
             }
             else if (collidingBlock.State is BrickBlockState && !(collidingMario.IsBig()))
