@@ -81,10 +81,6 @@ namespace Game.Mario.MarioStates
                 
             }
 
-            public void Die()
-            {
-                
-            }
             public bool IsBig()
             {
                 return true;

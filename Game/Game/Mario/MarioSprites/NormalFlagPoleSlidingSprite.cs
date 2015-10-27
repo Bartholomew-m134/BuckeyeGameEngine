@@ -15,8 +15,6 @@ namespace Game.Mario.MarioSprites
         private Texture2D spriteSheet;
         private int width;
         private int height;
-        private Vector2 firstFrameSourceLocation;
-        private Vector2 secondFrameSourceLocation;
         private Vector2 currentSourceLocation;
         private int frameCounter;
         public NormalFlagPoleSlidingSprite(Texture2D spriteSheet)

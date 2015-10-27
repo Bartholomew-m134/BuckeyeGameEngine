@@ -101,9 +101,6 @@ namespace Game.Mario
             timer = 1000;
         }
 
-        public void Die()
-        {
-        }
         public void PoleSlide()
         {
             mario.PoleSlide();

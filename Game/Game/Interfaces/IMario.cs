@@ -46,9 +46,6 @@ namespace Game.Mario
 
         void Damage();
 
-
-        void Die();
-
         bool IsBig();
 
         bool IsStar();

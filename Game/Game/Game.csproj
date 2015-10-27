@@ -102,6 +102,7 @@
     <Compile Include="Collisions\ItemCollisionHandling\ItemPipeCollisionHandler.cs" />
     <Compile Include="Commands\MarioCommands\MarioRunFireBallCommand.cs" />
     <Compile Include="Enemies\GoombaClasses\Goomba.cs" />
+    <Compile Include="FireBallConstructor.cs" />
     <Compile Include="FlagPoles\FlagPole.cs" />
     <Compile Include="FlagPoles\FlagPoleSprites\ActiveFlagPoleSprite.cs" />
     <Compile Include="FlagPoles\FlagPoleSprites\InactiveFlagPoleSprite.cs" />

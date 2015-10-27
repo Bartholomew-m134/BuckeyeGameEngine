@@ -88,6 +88,11 @@ namespace Game
                 ResetToDefault();
         }
 
+        public static void CreateNewObject(IGameObject newObject)
+        {
+            objectList.Add(newObject);
+        }
+
         public static void ResetToDefault()
         {
             LoadListFromFile(currentFileName, currentGame);
