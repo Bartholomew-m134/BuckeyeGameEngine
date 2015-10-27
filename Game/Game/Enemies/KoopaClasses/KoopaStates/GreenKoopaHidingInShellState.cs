@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,10 @@ namespace Game.Enemies.KoopaClasses.KoopaStates
             float prevHeight = greenKoopa.Sprite.SpriteDimensions.Y;
             this.greenKoopa.Sprite = Game.SpriteFactories.EnemySpriteFactory.CreateGreenKoopaHidingInShellSprite();
             greenKoopa.VectorCoordinates += new Microsoft.Xna.Framework.Vector2(0, prevHeight - greenKoopa.Sprite.SpriteDimensions.Y);
+
+            Vector2 velocity = this.greenKoopa.Physics.Velocity;
+            velocity.X = 0;
+            this.greenKoopa.Physics.Velocity = velocity;
         }
 
         public void KoopaEmergingFromShell()
@@ -33,7 +38,7 @@ namespace Game.Enemies.KoopaClasses.KoopaStates
 
         public void KoopaChangeDirection()
         {
-            greenKoopa.state = new GreenKoopaWalkingLeftState(greenKoopa);
+            //greenKoopa.state = new GreenKoopaWalkingLeftState(greenKoopa);
         }
     }
 }

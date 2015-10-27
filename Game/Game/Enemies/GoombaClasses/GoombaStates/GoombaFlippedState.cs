@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ namespace Game.Enemies.GoombaClasses.GoombaStates
 {
     public class GoombaFlippedState : IGoombaState
     {
-        private Goomba goomba;
+        private Goomba goomba; 
         public GoombaFlippedState(Goomba goomba)
         {
             this.goomba = goomba;

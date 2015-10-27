@@ -51,7 +51,7 @@ namespace Game.Collisions.EnemyCollisionHandling
                 collision.ResolveOverlap(mario, side);
                 mario.Damage();
             }
-            else if(mario.IsStar())
+            else if (mario.IsStar())
             {
                 enemy.CanDealDamage = false;
                 enemy.Flipped();

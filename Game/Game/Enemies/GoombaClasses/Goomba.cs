@@ -25,10 +25,10 @@ namespace Game.Enemies.GoombaClasses
         public Goomba(Game1 game)
         {
             myGame = game;
-            state = new GoombaWalkingLeftState(this);
             physics = new ObjectPhysics();
-            physics.Velocity = new Vector2(-3,0);
+            physics.Velocity = new Vector2(-2,0);
             physics.ResetY();
+            state = new GoombaWalkingLeftState(this);
         }
 
         public void Hit()

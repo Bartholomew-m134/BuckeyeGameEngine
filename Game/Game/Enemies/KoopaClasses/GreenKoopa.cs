@@ -25,8 +25,8 @@ namespace Game.Enemies.KoopaClasses
         public GreenKoopa(Game1 game)
         {
             myGame = game;
-            state = new GreenKoopaWalkingLeftState(this);
             physics = new ObjectPhysics();
+            state = new GreenKoopaWalkingLeftState(this);
         }
 
         public void Hit()

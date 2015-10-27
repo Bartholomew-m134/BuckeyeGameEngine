@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,10 @@ namespace Game.Enemies.KoopaClasses.KoopaStates
         {
             this.greenKoopa = greenKoopa;
             this.greenKoopa.Sprite = Game.SpriteFactories.EnemySpriteFactory.CreateGreenKoopaWalkingLeftSprite();
+
+            Vector2 velocity = this.greenKoopa.Physics.Velocity;
+            velocity.X = -2;
+            this.greenKoopa.Physics.Velocity = velocity;
         }
 
         public void KoopaEmergingFromShell()

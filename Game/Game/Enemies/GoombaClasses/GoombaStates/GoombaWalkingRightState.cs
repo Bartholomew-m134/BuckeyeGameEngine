@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,10 @@ namespace Game.Enemies.GoombaClasses.GoombaStates
         {
             this.goomba = goomba;
             this.goomba.Sprite = Game.SpriteFactories.EnemySpriteFactory.CreateGoombaWalkingRightSprite();
+
+            Vector2 velocity = this.goomba.Physics.Velocity;
+            velocity.X = 2;
+            this.goomba.Physics.Velocity = velocity;
         }
         public void SmashGoomba()
         {
