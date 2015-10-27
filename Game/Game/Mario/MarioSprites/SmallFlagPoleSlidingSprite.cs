@@ -14,39 +14,35 @@ namespace Game.Mario.MarioSprites
         private Texture2D spriteSheet;
         private int width;
         private int height;
-        private Vector2 firstFrameSourceLocation;
-        private Vector2 secondFrameSourceLocation;
         private Vector2 currentSourceLocation;
         private int frameCounter;
+        private int delayCounter;
         public SmallFlagPoleSlidingSprite(Texture2D spriteSheet)
         {
             toggle = 0;
             frameCounter = 0;
+            delayCounter = 0;
             this.spriteSheet = spriteSheet;
             width = 14;
             height = 16;
-
-            firstFrameSourceLocation.X = 331;
-            firstFrameSourceLocation.Y = 30;
-
-            secondFrameSourceLocation.X = 361;
-            secondFrameSourceLocation.Y = 30;
-
             currentSourceLocation.X = 331;
             currentSourceLocation.Y = 30;
         }
         public void Update()
         {
-            if (frameCounter ==0){
+            if (frameCounter ==0 && delayCounter ==2){
                 currentSourceLocation.X = 331;
                 currentSourceLocation.Y = 30;
                 frameCounter = 1;
+                delayCounter = 0;
             }
-            else{
-                secondFrameSourceLocation.X = 361;
-                secondFrameSourceLocation.Y = 30;
+            else if (delayCounter == 2){
+                currentSourceLocation.X = 361;
+                currentSourceLocation.Y = 30;
                 frameCounter = 0;
+                delayCounter = 0;
             }
+            delayCounter++;
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

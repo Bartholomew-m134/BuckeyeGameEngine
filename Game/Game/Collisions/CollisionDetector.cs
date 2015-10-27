@@ -99,6 +99,7 @@ namespace Game.Collisions
                 else
                 {                   
                     collisionSide = new BottomSideCollision();
+                   
                 }
             }
             else if (isBottomRightCorner(hitBoxA, hitBoxB))

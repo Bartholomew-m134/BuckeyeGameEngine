@@ -32,12 +32,13 @@ namespace Game.Collisions.FlagPoleCollisionHandling
         public void HandleCollision()
         {
             if(collidingFlagPole is InvisibleFlagPoleBarrier && collision.CollisionSide is LeftSideCollision){
+                
+                collision.ResolveOverlap(collidingMario, collision.CollisionSide);
                 collidingMario.PoleSlide();
-                collision.ResolveOverlap(collidingMario, collision.CollisionSide);;
             }
-            collidingFlagPole.IsActive = true;
-            if(collision.CollisionSide is BottomSideCollision){
-               
+            else if (collidingFlagPole is FlagPole)
+            {
+                collidingFlagPole.IsActive = true;
             }
             
         }

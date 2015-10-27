@@ -27,7 +27,7 @@ namespace Game.Mario.MarioStates
 
             public void Right()
             {
-                mario.MarioState = new FireRightIdleState(mario);
+
             }
 
             public void Up()
@@ -70,7 +70,7 @@ namespace Game.Mario.MarioStates
 
             public void PoleSlide()
             {
-
+                mario.MarioState = new FireFlagPoleSlidingState(mario);
             }
 
             public void Damage()
