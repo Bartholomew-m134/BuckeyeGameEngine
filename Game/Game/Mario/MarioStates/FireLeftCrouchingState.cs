@@ -40,8 +40,16 @@ namespace Game.Mario.MarioStates
 
         public void Right()
         {
-            mario.MarioState = new FireRightRunningState(mario);
             mario.VectorCoordinates += new Vector2(0, -10);
+
+            if (mario.Physics.Velocity.X < 0)
+            {
+                mario.MarioState = new FireRightTwistState(mario);
+            }
+            else
+            {
+                mario.MarioState = new FireRightIdleState(mario);
+            }
         }
 
         public void Up()
@@ -64,6 +72,11 @@ namespace Game.Mario.MarioStates
         }
 
         public void Flower()
+        {
+
+        }
+
+        public void Fire()
         {
 
         }

@@ -24,12 +24,26 @@ namespace Game.Collisions
             Vector2 objectBOldCoordinates;
 
             if (objectA.Physics != null)
+            {
                 objectAOldCoordinates = objectA.Physics.OldCoordinates;
+
+                if (objectA.Physics.Velocity.Y > 0)
+                {
+                    objectAOldCoordinates.Y--;
+                }
+            }
             else
                 objectAOldCoordinates = objectA.VectorCoordinates;
 
             if (objectB.Physics != null)
+            {
                 objectBOldCoordinates = objectB.Physics.OldCoordinates;
+
+                if (objectB.Physics.Velocity.Y > 0)
+                {
+                    objectBOldCoordinates.Y--;
+                }
+            }
             else
                 objectBOldCoordinates = objectB.VectorCoordinates;
 

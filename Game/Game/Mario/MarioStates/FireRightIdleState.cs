@@ -34,7 +34,14 @@ namespace Game.Mario.MarioStates
 
         public void Left()
         {
-            mario.MarioState = new FireLeftIdleState(mario);
+            if (mario.Physics.Velocity.X > 0)
+            {
+                mario.MarioState = new FireLeftTwistState(mario);
+            }
+            else
+            {
+                mario.MarioState = new FireLeftIdleState(mario);
+            }
         }
 
         public void Right()
@@ -63,6 +70,11 @@ namespace Game.Mario.MarioStates
         }
 
         public void Flower()
+        {
+
+        }
+
+        public void Fire()
         {
 
         }
