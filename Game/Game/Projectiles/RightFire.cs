@@ -52,12 +52,17 @@ namespace Game.Projectiles
             physics.Acceleration = Vector2.Zero;
             physics.Velocity = Vector2.Zero;
             isExploded = true;
-            factory.ReturnFireBall();
+            ReturnObject();
         }
 
         public void Bounce()
         {
             physics.Velocity = new Vector2(physics.Velocity.X, -3);
+        }
+
+        public void ReturnObject()
+        {
+            factory.ReturnFireBall();
         }
 
         public Vector2 VectorCoordinates

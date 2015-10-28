@@ -54,12 +54,17 @@ namespace Game.Projectiles
             physics.Velocity = Vector2.Zero;
             location.Y += 2000;
             isExploded = true;
-            factory.ReturnFireBall();
+            ReturnObject();
         }
 
         public void Bounce()
         {
             physics.Velocity = new Vector2(physics.Velocity.X, -3);
+        }
+
+        public void ReturnObject()
+        {
+            factory.ReturnFireBall();
         }
 
         public Vector2 VectorCoordinates

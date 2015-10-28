@@ -84,6 +84,8 @@ namespace Game
         public static void FreeObject(IGameObject referenceObject)
         {
             objectList.Remove(referenceObject);
+            if (referenceObject is IProjectile)
+                ((IProjectile)referenceObject).ReturnObject();
             if (referenceObject is IMario)
                 ResetToDefault();
         }

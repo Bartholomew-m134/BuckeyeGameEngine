@@ -12,5 +12,8 @@ namespace Game.Interfaces
         void Explode();
 
         void Bounce();
+
+        void ReturnObject();
+
     }
 }
