@@ -43,6 +43,8 @@ namespace Game.Interfaces
 
          bool IsFire();
 
+         bool IsRight();
+
          bool IsJumping();
 
          void ToIdle();

@@ -112,6 +112,11 @@ namespace Game.Mario.MarioStates
             return false;
         }
 
+        public bool IsRight()
+        {
+            return true;
+        }
+
         public void ToIdle()
         {
 

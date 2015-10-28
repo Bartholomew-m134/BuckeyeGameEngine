@@ -82,7 +82,7 @@ namespace Game.Mario.MarioStates
 
         public void Fire()
         {
-
+  
         }
 
         public void Mushroom()
@@ -108,6 +108,10 @@ namespace Game.Mario.MarioStates
             return true;
         }
 
+        public bool IsRight()
+        {
+            return false;
+        }
         public void ToIdle()
         {
         }

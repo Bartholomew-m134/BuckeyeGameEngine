@@ -21,7 +21,7 @@ namespace Game.Projectiles
             myGame = game;
             FireSprite = ProjectileSpriteFactory.CreateFireSprite();
             physics = new ObjectPhysics();
-            physics.Velocity = new Vector2(11, physics.Velocity.Y);
+            physics.Velocity = new Vector2(15, physics.Velocity.Y);
         }
 
         public void Update()

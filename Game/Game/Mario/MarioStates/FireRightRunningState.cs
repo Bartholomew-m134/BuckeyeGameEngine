@@ -95,6 +95,11 @@ namespace Game.Mario.MarioStates
             return true;
         }
 
+        public bool IsRight()
+        {
+            return true;
+        }
+
         public void ToIdle()
         {
             mario.Left();
