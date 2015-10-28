@@ -14,12 +14,13 @@ namespace Game.Mario
         private IMario mario;
         private Game1 myGame;
         private int timer = 200;
-
+        private FireBallFactory factory;
         public StarMario(IMario mario, Game1 game)
         {
             this.mario = mario;
             this.myGame = game;
             WorldManager.SetMario(this);
+            factory = new FireBallFactory(game);
         }
 
         public void Damage()
@@ -91,7 +92,19 @@ namespace Game.Mario
 
         public void ThrowFireball()
         {
-            mario.ThrowFireball();
+            if (this.IsFireMario())
+            {
+                if (mario.MarioState.IsRight())
+                {
+                    factory.ReleaseRightFireBall(new Vector2(mario.VectorCoordinates.X + mario.Sprite.SpriteDimensions.X, mario.VectorCoordinates.Y));
+                    new FireThrowRightMario(this, myGame);
+                }
+                else
+                {
+                    factory.ReleaseLeftFireBall(mario.VectorCoordinates);
+                    new FireThrowLeftMario(this, myGame);
+                }
+            }
         }
 
         public void Mushroom()
