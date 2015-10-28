@@ -29,5 +29,10 @@ namespace Game.SpriteFactories
         {
             return new FireSprite(enemiesSpriteSheet);
         }
+
+        public static ISprite CreateExplodingFireSprite()
+        {
+            return new ExplodingFireSprite(enemiesSpriteSheet);
+        }
     }
 }

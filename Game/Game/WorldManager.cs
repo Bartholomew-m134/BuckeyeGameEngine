@@ -84,13 +84,20 @@ namespace Game
         public static void FreeObject(IGameObject referenceObject)
         {
             objectList.Remove(referenceObject);
+            if (referenceObject is IProjectile)
+                ((IProjectile)referenceObject).ReturnObject();
             if (referenceObject is IMario)
                 ResetToDefault();
         }
 
         public static void CreateNewObject(IGameObject newObject)
         {
-            objectList.Add(newObject);
+            int index = 0;
+            while (objectList[index] is IScenery)
+                index++;
+
+            objectList.Insert(index, newObject);
+            
         }
 
         public static void ResetToDefault()

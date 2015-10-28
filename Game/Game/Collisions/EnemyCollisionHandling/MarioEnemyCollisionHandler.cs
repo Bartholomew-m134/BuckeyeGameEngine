@@ -42,10 +42,8 @@ namespace Game.Collisions.EnemyCollisionHandling
         public void HandleCollision()
         {
             HandleScore();
-            if (!(mario.MarioState is DeadMarioState))
+            if (!(mario.MarioState is DeadMarioState) && !mario.IsStar() && enemy is GreenKoopa && ((GreenKoopa)enemy).IsHit)
             {
-                if (!mario.IsStar() && enemy is GreenKoopa && ((GreenKoopa)enemy).IsHit)
-                {
                 WeaponizedKoopa();
             }
             else if (!mario.IsStar() && side is TopSideCollision && !enemy.IsFlipped)
@@ -63,26 +61,23 @@ namespace Game.Collisions.EnemyCollisionHandling
                 enemy.Flipped();
             }
         }
-        }
 
         public void WeaponizedKoopa()
         {
             collision.ResolveOverlap(mario, side);
             if (((GreenKoopa)enemy).state is GreenKoopaEmergingFromShellState)
-            {
                 ((GreenKoopa)enemy).state = new GreenKoopaHidingInShellState((GreenKoopa)enemy);
-            }
-            if (((GreenKoopa)enemy).IsHit && side is LeftSideCollision && enemy.Physics.Velocity.X == 0)
+            if (side is LeftSideCollision && enemy.Physics.Velocity.X == 0)
             {
                 ((GreenKoopa)enemy).IsWeaponized = true;
                 enemy.Physics.Velocity = new Vector2(11, enemy.Physics.Velocity.Y);
             }
-            else if (((GreenKoopa)enemy).IsHit && side is RightSideCollision && enemy.Physics.Velocity.X == 0)
+            else if (side is RightSideCollision && enemy.Physics.Velocity.X == 0)
             {
                 ((GreenKoopa)enemy).IsWeaponized = true;
                 enemy.Physics.Velocity = new Vector2(-11, enemy.Physics.Velocity.Y);
             }
-            else if (((GreenKoopa)enemy).IsHit && side is TopSideCollision)
+            else if (side is TopSideCollision)
             {
                 ((GreenKoopa)enemy).IsWeaponized = false;
                 enemy.Physics.ResetPhysics();
@@ -101,7 +96,7 @@ namespace Game.Collisions.EnemyCollisionHandling
             }
         }
 
-        public void MarioEnemyTopSide()
+        private void MarioEnemyTopSide()
         {
             collision.ResolveOverlap(mario, side);
             enemy.CanDealDamage = false;
