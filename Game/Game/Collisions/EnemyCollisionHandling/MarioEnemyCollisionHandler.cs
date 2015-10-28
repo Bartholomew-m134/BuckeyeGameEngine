@@ -43,23 +43,23 @@ namespace Game.Collisions.EnemyCollisionHandling
             {
                 if (!mario.IsStar() && enemy is GreenKoopa && ((GreenKoopa)enemy).IsHit)
                 {
-                WeaponizedKoopa();
-            }
-            else if (!mario.IsStar() && side is TopSideCollision && !enemy.IsFlipped)
-            {
-                MarioEnemyTopSide();
-            }
+                    WeaponizedKoopa();
+                }
+                else if (!mario.IsStar() && side is TopSideCollision && !enemy.IsFlipped)
+                {
+                    MarioEnemyTopSide();
+                }
                 else if (!mario.IsStar() && enemy.CanDealDamage)
-            {
-                collision.ResolveOverlap(mario, side);
-                mario.Damage();
+                {
+                    collision.ResolveOverlap(mario, side);
+                    mario.Damage();
+                }
+                else if (mario.IsStar())
+                {
+                    enemy.CanDealDamage = false;
+                    enemy.Flipped();
+                }
             }
-            else if (mario.IsStar())
-            {
-                enemy.CanDealDamage = false;
-                enemy.Flipped();
-            }
-        }
         }
 
         public void WeaponizedKoopa()

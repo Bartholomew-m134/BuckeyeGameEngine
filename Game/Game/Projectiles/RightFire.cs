@@ -7,7 +7,7 @@ using Game.SpriteFactories;
 using Game.Interfaces;
 using Game.Utilities;
 
-namespace Game.Items
+namespace Game.Projectiles
 {
     public class RightFire : IProjectile
     {
@@ -21,7 +21,7 @@ namespace Game.Items
             myGame = game;
             FireSprite = ProjectileSpriteFactory.CreateFireSprite();
             physics = new ObjectPhysics();
-            physics.Velocity = new Vector2(10, physics.Velocity.Y);
+            physics.Velocity = new Vector2(11, physics.Velocity.Y);
         }
 
         public void Update()

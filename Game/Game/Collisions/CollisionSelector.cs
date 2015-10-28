@@ -56,6 +56,11 @@ namespace Game.Collisions
                 EnemyPipeCollisionHandler collisionHandler = new EnemyPipeCollisionHandler(collision);
                 collisionHandler.HandleCollision();
             }
+            else if ((collision.GameObjectA is IEnemy && collision.GameObjectB is IProjectile) || (collision.GameObjectA is IProjectile && collision.GameObjectB is IEnemy))
+            {
+                EnemyFireballCollisionHandler collisionHandler = new EnemyFireballCollisionHandler(collision);
+                collisionHandler.HandleCollision();
+            }
             else if ((collision.GameObjectA is IItem && collision.GameObjectB is IBlock) || (collision.GameObjectA is IBlock && collision.GameObjectB is IItem))
             {
                 ItemBlockCollisionHandler collisionHandler = new ItemBlockCollisionHandler(collision);
@@ -64,6 +69,11 @@ namespace Game.Collisions
             else if ((collision.GameObjectA is IItem && collision.GameObjectB is IPipe) || (collision.GameObjectA is IPipe && collision.GameObjectB is IItem))
             {
                 ItemPipeCollisionHandler collisionHandler = new ItemPipeCollisionHandler(collision);
+                collisionHandler.HandleCollision();
+            }
+            else if ((collision.GameObjectA is IBlock && collision.GameObjectB is IProjectile) || (collision.GameObjectA is IProjectile && collision.GameObjectB is IBlock))
+            {
+                BlockFireballCollisionHandler collisionHandler = new BlockFireballCollisionHandler(collision);
                 collisionHandler.HandleCollision();
             }
             else if ((collision.GameObjectA is IMario && collision.GameObjectB is IFlagPole) || (collision.GameObjectA is IFlagPole && collision.GameObjectB is IMario))

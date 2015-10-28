@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 using Game.Interfaces;
 using System.Collections;
 
-namespace Game.Items.ItemSprites
+namespace Game.Projectiles.ProjectileSprites
 {
     public class FireSprite : ISprite
     {
