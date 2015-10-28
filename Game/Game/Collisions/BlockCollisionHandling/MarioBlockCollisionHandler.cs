@@ -8,6 +8,7 @@ using Game.Blocks.BlockStates;
 using System.Diagnostics;
 using Game.Interfaces;
 using Game.Mario.MarioStates;
+using Game.Utilities;
 
 namespace Game.Collisions.BlockCollisionHandling
 {
@@ -77,6 +78,8 @@ namespace Game.Collisions.BlockCollisionHandling
             }
             else if (collidingBlock.State is BrickBlockState && collidingMario.IsBig())
             {
+                ScoreManager.IncreaseScore(50);
+                ScoreManager.location = collidingBlock.VectorCoordinates;
                 collidingBlock.Bump();
                 collidingBlock.Disappear();
             }

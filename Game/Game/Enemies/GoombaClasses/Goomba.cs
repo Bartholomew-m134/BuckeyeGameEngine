@@ -31,6 +31,7 @@ namespace Game.Enemies.GoombaClasses
 
         public void Hit()
         {
+            ScoreManager.IncreaseScore(100);
             state.SmashGoomba();
         }
 
@@ -41,7 +42,6 @@ namespace Game.Enemies.GoombaClasses
 
         public void Flipped()
         {
-            
             state.FlipGoomba();
         }
 

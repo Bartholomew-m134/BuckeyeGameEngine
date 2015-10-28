@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Game.SpriteFactories;
 using Game.Interfaces;
+using Game.Utilities;
 
 namespace Game
 {
@@ -61,6 +62,7 @@ namespace Game
                     controller.Update();
 
                 WorldManager.Update();
+                ScoreManager.Update();
                 base.Update(gameTime);
                 delay = 0;
             }
@@ -75,6 +77,7 @@ namespace Game
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             WorldManager.Draw();
+            ScoreManager.DrawScore(spriteBatch);
             base.Draw(gameTime);
         }
     }

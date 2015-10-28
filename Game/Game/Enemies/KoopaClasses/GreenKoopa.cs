@@ -34,6 +34,7 @@ namespace Game.Enemies.KoopaClasses
 
         public void Hit()
         {
+            ScoreManager.IncreaseScore(100);
             state.KoopaHidingInShell();
         }
 
@@ -44,6 +45,7 @@ namespace Game.Enemies.KoopaClasses
 
         public void Flipped()
         {
+            ScoreManager.IncreaseScore(200);
             state.KoopaShellFlipped();
         }
 

@@ -40,7 +40,9 @@ namespace Game.Items
         }
 
         public void Disappear() {
+            ScoreManager.location = location;
             location.Y += 2000;
+            ScoreManager.IncreaseScore(1000);
         }
 
         public void Release()

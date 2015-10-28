@@ -8,33 +8,31 @@ using System.Text;
 
 namespace Game.FlagPoles.FlagPoleSprites
 {
-    public class InactiveFlagPoleSprite : ISprite
+    public class TopOfPoleSprite : ISprite
     {
         private Texture2D Texture { get; set; }
         private int width;
         private int height;
-        private int sourceX ;
+        private int sourceX;
         private int sourceY;
-        public InactiveFlagPoleSprite(Texture2D texture)
+        public TopOfPoleSprite(Texture2D texture)
         {
             Texture = texture;
-            width = 25;
-            height = 176;
-            sourceX = 248;
-            sourceY = 586;
+            width = 16;
+            height = 16;
+            sourceX = 320;
+            sourceY = 340;
 
         }
 
-        public void Update()
-        {
-
-
+        public void Update() { 
+        
+        
         }
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
-        {
-
-
+        public void Draw(SpriteBatch spriteBatch, Vector2 location) {
+            
+            
 
             Rectangle sourceRectangle = new Rectangle(sourceX, sourceY, width, height);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);

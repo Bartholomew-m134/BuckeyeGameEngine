@@ -12,10 +12,13 @@ namespace Game.SpriteFactories
     public static class BackgroundElementsSpriteFactory
     {
         private static Texture2D backgroundElementsSpriteSheet;
+        private static SpriteFont spriteFont;
 
         public static void Load(ContentManager content)
         {
             backgroundElementsSpriteSheet = content.Load<Texture2D>("ScenarySpriteSheet");
+            spriteFont = content.Load<SpriteFont>("ScoreFont");
+
 
         }
 
@@ -55,6 +58,10 @@ namespace Game.SpriteFactories
         public static ISprite CreateCastleSprite()
         {
             return new CastleSprite(backgroundElementsSpriteSheet);
+        }
+        public static SpriteFont CreateScoreFont()
+        {
+            return spriteFont;
         }
     }
 }

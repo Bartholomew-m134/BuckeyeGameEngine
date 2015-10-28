@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Game.Utilities;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,8 @@ namespace Game.Enemies.GoombaClasses.GoombaStates
         }
         public void FlipGoomba()
         {
+            ScoreManager.location = this.goomba.VectorCoordinates;
+            ScoreManager.IncreaseScore(100);
             goomba.state = new GoombaFlippedState(goomba);
         }
     }

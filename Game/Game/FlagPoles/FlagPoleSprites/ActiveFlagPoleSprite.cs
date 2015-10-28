@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Game.FlagPoles.FlagPoleSprites
 {
-    class ActiveFlagPoleSprite : ISprite
+    public class ActiveFlagPoleSprite : ISprite
     {
         private Texture2D Texture { get; set; }
         private int width;

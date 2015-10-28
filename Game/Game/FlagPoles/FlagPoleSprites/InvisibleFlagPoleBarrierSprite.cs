@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Game.FlagPoles.FlagPoleSprites
 {
-    class InvisibleFlagPoleBarrierSprite : ISprite
+    public class InvisibleFlagPoleBarrierSprite : ISprite
     {
         private Texture2D Texture { get; set; }
         private int width;

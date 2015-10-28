@@ -2,6 +2,7 @@
 using Game.Interfaces;
 using Game.Mario;
 using Game.Mario.MarioStates;
+using Game.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,7 +40,11 @@ namespace Game.Collisions.FlagPoleCollisionHandling
             {
                 collidingFlagPole.IsActive = true;
             }
-            
+            if (collidingFlagPole is TopOfPole && ScoreManager.flagTopBeenHit == false){
+                ScoreManager.IncreaseScore(3000);
+                ScoreManager.location = collidingFlagPole.VectorCoordinates;
+                ScoreManager.flagTopBeenHit = true;
+            }
         }
     }
 }

@@ -95,6 +95,8 @@ namespace Game
                         gameObject = new Castle(game);
                     else if (objectName.Equals("FlagPole"))
                         gameObject = new FlagPole(game);
+                    else if (objectName.Equals("TopOfPole"))
+                        gameObject = new TopOfPole(game);
                     else if (objectName.Equals("FlagPoleBarrier"))
                         gameObject = new InvisibleFlagPoleBarrier(game);
                     else if (objectName.Equals("SolidBlock"))

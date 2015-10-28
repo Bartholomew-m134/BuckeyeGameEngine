@@ -96,6 +96,7 @@ namespace Game.Mario.MarioStates
 
         public void Damage()
         {
+            ScoreManager.ResetScore();
             mario.MarioState = new DeadMarioState(mario);
         }
 
