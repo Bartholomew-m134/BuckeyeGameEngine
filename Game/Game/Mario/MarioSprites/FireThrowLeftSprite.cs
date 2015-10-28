@@ -9,7 +9,7 @@ using Game.Interfaces;
 
 namespace Game.Mario.MarioSprites
 {
-    public class FireThrowSprite : IMarioSprite
+    public class FireThrowLeftSprite : IMarioSprite
     {
         private int toggle;
         private Texture2D spriteSheet;
@@ -17,13 +17,13 @@ namespace Game.Mario.MarioSprites
         private int height;
         private int sheetXLocation;
         private int sheetYLocation;
-        public FireThrowSprite(Texture2D spriteSheet)
+        public FireThrowLeftSprite(Texture2D spriteSheet)
         {
             toggle = 0;
             this.spriteSheet = spriteSheet;
             width = 16;
             height = 31;
-            sheetXLocation = 209;
+            sheetXLocation = 77;
             sheetYLocation = 122;
         }
         public void Update()

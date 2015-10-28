@@ -7,20 +7,24 @@ using System.Diagnostics;
 using Game.Interfaces;
 using Game.Utilities;
 using Microsoft.Xna.Framework.Graphics;
+using Game.Mario.MarioSprites;
+using Game.SpriteFactories;
 
 namespace Game.Mario
 {
-    public class FireThrowMario : IMario
+    public class FireThrowLeftMario : IMario
     {
         private IMario mario;
         private Game1 myGame;
         private int timer = 5;
+        ISprite sprite;
 
-        public FireThrowMario(IMario mario, Game1 game)
+        public FireThrowLeftMario(IMario mario, Game1 game)
         {
             this.mario = mario;
             this.myGame = game;
             WorldManager.SetMario(this);
+            sprite = MarioSpriteFactory.CreateFireThrowLeft();
         }
 
         public void Damage()
@@ -30,6 +34,7 @@ namespace Game.Mario
 
         public void Update()
         {
+
             timer--;
             if (timer == 0)
             {
@@ -40,17 +45,8 @@ namespace Game.Mario
 
         public void Draw(ICamera camera)
         {
-            Vector2 location = camera.GetAdjustedPosition(mario.VectorCoordinates);
-
-            private static Texture2D spriteSheet = content.Load<Texture2D>("MarioSpriteSheet");
-
-
-            Rectangle sourceRectangle = new Rectangle(sheetXLocation, sheetYLocation, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
-
-            myGame.spriteBatch.Begin();
-            myGame.spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
-            myGame.spriteBatch.End();
+            Vector2 location = mario.VectorCoordinates;
+            sprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
         public void Left()

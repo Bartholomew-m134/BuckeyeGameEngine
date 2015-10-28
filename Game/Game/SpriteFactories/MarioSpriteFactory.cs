@@ -79,9 +79,14 @@ namespace Game.SpriteFactories
             return new FireRightTwistSprite(marioSpriteSheet);
         }
 
-        public static ISprite CreateFireThrow()
+        public static ISprite CreateFireThrowRight()
         {
-            return new FireThrowSprite(marioSpriteSheet);
+            return new FireThrowRightSprite(marioSpriteSheet);
+        }
+
+        public static ISprite CreateFireThrowLeft()
+        {
+            return new FireThrowLeftSprite(marioSpriteSheet);
         }
 
         public static ISprite CreateNormalLeftCrouchingSprite()

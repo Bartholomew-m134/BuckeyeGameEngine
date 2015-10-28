@@ -105,6 +105,11 @@ namespace Game.Mario.MarioStates
             return true;
         }
 
+        public bool IsRight()
+        {
+            return false;
+        }
+
         public void ToIdle()
         {
             mario.MarioState = new FireLeftIdleState(mario);

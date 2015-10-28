@@ -92,8 +92,15 @@ namespace Game.Mario
 
         public void Fire()
         {
-            state.Fire();
-            factory.ReleaseRightFireBall(location);
+            if (state.IsRight()) { 
+                factory.ReleaseRightFireBall(location);
+                new FireThrowRightMario(this, myGame); 
+            }
+            else
+            {
+                factory.ReleaseLeftFireBall(location);
+                new FireThrowLeftMario(this, myGame);
+            }
         }
 
 
