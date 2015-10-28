@@ -1,0 +1,10 @@
+﻿Author:							John Cramer
+Date :							10/28/15
+Sprint:							4
+Reviewed file:					HurtMario.cs
+File Author:					Jackson Luken
+Minutes to complete:			5
+Code Readability:
+		For the most part the code is readable, however certain methods such as the draw function are difficult
+		to understand without understanding of other parts of the code. Also the class could probably have a more
+		specific name, such as DamageTransistionMarioDecorator.

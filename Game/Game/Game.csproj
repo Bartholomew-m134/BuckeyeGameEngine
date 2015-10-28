@@ -309,6 +309,7 @@
     <Content Include="CodeReviews\Sprint 3\WorldManagerCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 3\WorldManagerReadability.txt" />
     <Content Include="CodeReviews\Sprint 4\BrickDebrisSpriteCodeReadability.txt" />
+    <Content Include="CodeReviews\Sprint 4\HurtMarioReadability.txt" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
