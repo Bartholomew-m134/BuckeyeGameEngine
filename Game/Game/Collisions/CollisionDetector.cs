@@ -64,13 +64,7 @@ namespace Game.Collisions
             {
                 if ((previousHitBoxA.Right <= previousHitBoxB.Left) && (previousHitBoxA.Bottom > previousHitBoxB.Top))
                 {
-                    Console.WriteLine(previousHitBoxA.Right);
-                    Console.WriteLine(previousHitBoxA.Bottom);
-                    Console.WriteLine(previousHitBoxB.Top);
-                    Console.WriteLine(previousHitBoxB.Left);
-                    Console.WriteLine("Left side");
-                    Console.WriteLine(objectAOldCoordinates);
-                    Console.WriteLine(objectBOldCoordinates);
+                   
                     collisionSide = new LeftSideCollision();
                 }
                 else
@@ -80,11 +74,7 @@ namespace Game.Collisions
             {
                 if ((previousHitBoxA.Left >= previousHitBoxB.Right) && (previousHitBoxA.Bottom > previousHitBoxB.Top))
                 {
-                    Console.WriteLine(previousHitBoxA.Left);
-                    Console.WriteLine(previousHitBoxA.Bottom);
-                    Console.WriteLine(previousHitBoxB.Top);
-                    Console.WriteLine(previousHitBoxB.Right);
-                    Console.WriteLine("Right side");
+                    
                     collisionSide = new RightSideCollision();
                     
                 }

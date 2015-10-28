@@ -33,6 +33,7 @@ namespace Game.Collisions.EnemyCollisionHandling
         {
             enemy.CanDealDamage = false;
             enemy.Flipped();
+            fireball.Explode();
         }
     }
 }

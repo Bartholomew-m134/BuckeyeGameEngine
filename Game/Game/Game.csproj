@@ -182,6 +182,7 @@
     <Compile Include="Items\ItemSprites\CoinSprite.cs" />
     <Compile Include="Items\ItemSprites\FlowerSprite.cs" />
     <Compile Include="Items\ItemSprites\GreenMushroomSprite.cs" />
+    <Compile Include="Projectiles\ProjectileSprites\ExplodingFireSprite.cs" />
     <Compile Include="Projectiles\ProjectileSprites\FireSprite.cs" />
     <Compile Include="Items\ItemSprites\RedMushroomSprite.cs" />
     <Compile Include="Items\ItemSprites\StarSprite.cs" />

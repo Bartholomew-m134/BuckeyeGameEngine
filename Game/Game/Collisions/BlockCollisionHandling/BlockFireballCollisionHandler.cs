@@ -22,10 +22,12 @@ namespace Game.Collisions.BlockCollisionHandling
             if (collision.GameObjectA is IProjectile)
             {
                 fireball = (IProjectile)collision.GameObjectA;
+                
             }
             else
             {
                 fireball = (IProjectile)collision.GameObjectB;
+
                 this.side.FlipSide();
             }
         }
@@ -33,11 +35,12 @@ namespace Game.Collisions.BlockCollisionHandling
         public void HandleCollision()
         {
             collision.ResolveOverlap(fireball, side);
+
             if (side is TopSideCollision)
-            {
-                collision.ResolveOverlap(fireball, side);
-                fireball.Physics.Velocity = new Vector2(11, -5);
-            }
+                fireball.Bounce();
+            else
+                fireball.Explode();
+            
         }
     }
 }

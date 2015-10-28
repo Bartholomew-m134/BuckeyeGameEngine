@@ -15,19 +15,27 @@ namespace Game.Projectiles
         private ISprite FireSprite;
         private Vector2 location;
         private ObjectPhysics physics;
-
+        private bool isExploded;
         public RightFire(Game1 game)
         {
             myGame = game;
             FireSprite = ProjectileSpriteFactory.CreateFireSprite();
             physics = new ObjectPhysics();
-            physics.Velocity = new Vector2(15, physics.Velocity.Y);
+            physics.Velocity = new Vector2(10, physics.Velocity.Y);
+            physics.VelocityMaximum = new Vector2(10, physics.VelocityMaximum.Y);
+            isExploded = false;
         }
 
         public void Update()
         {
-            FireSprite.Update();
-            location = physics.Update(location);
+            if (!isExploded)
+            {
+                FireSprite.Update();
+                location = physics.Update(location);
+            }
+            else {
+                location.Y = 2000;
+            }
         }
 
         public void Draw(ICamera camera)
@@ -37,14 +45,15 @@ namespace Game.Projectiles
 
         public void Explode()
         {
-            location.Y += 2000;
+            FireSprite = ProjectileSpriteFactory.CreateExplodingFireSprite();
             physics.Acceleration = Vector2.Zero;
             physics.Velocity = Vector2.Zero;
+            isExploded = true;
         }
 
         public void Bounce()
         {
-            physics.Velocity = new Vector2(physics.Velocity.X, -physics.Velocity.Y);
+            physics.Velocity = new Vector2(physics.Velocity.X, -3);
         }
 
         public Vector2 VectorCoordinates
