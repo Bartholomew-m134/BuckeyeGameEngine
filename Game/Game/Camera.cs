@@ -49,8 +49,9 @@ namespace Game
         {
             float rightBound = cameraLocation.X + (int)(dimension.X * 1.25);
             float leftBound = cameraLocation.X - (int)(dimension.X * 0.1);
+            float lowerBound = cameraLocation.Y + (int)(dimension.Y * 1.25);
 
-            return leftBound < position.X && position.X < rightBound;
+            return leftBound < position.X && position.X < rightBound && position.Y < lowerBound;
         }
 
         public bool IsLeftOfCamera(Vector2 position)

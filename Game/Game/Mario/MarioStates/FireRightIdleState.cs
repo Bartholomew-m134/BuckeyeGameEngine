@@ -97,11 +97,17 @@ namespace Game.Mario.MarioStates
             mario.MarioState = new NormalRightIdleState(mario);
         }
 
-        public void Die()
-        {
-            mario.MarioState = new DeadMarioState(mario);
-        }
         public bool IsBig()
+        {
+            return true;
+        }
+
+        public bool IsFire()
+        {
+            return true;
+        }
+
+        public bool IsRight()
         {
             return true;
         }

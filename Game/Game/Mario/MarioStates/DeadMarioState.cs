@@ -18,6 +18,8 @@ namespace Game.Mario.MarioStates
         {
             this.mario = mario;
             mario.Sprite = SpriteFactories.MarioSpriteFactory.CreateDeadSprite();
+            mario.Physics.ResetPhysics();
+            mario.Physics.Velocity = new Vector2(0, -9);
         }
 
         public void Update() {
@@ -77,13 +79,19 @@ namespace Game.Mario.MarioStates
         {
         }
 
-        public void Die()
-        {
-            
-        }
         public bool IsBig()
         {
             return false;
+        }
+
+        public bool IsFire()
+        {
+            return false;
+        }
+
+        public bool IsRight()
+        {
+            return true;
         }
 
         public void ToIdle()

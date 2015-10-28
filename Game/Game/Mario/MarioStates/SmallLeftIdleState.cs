@@ -84,10 +84,11 @@ namespace Game.Mario.MarioStates
             mario.MarioState = new SmallFlagPoleSlidingState(mario);
         }
 
+        
         public void Mushroom()
         {
-            mario.MarioState = new NormalLeftIdleState(mario);
-            mario.VectorCoordinates += new Vector2(0, -16);
+                mario.MarioState = new NormalLeftIdleState(mario);
+                mario.VectorCoordinates += new Vector2(0, -16);
         }
 
         public void Star()
@@ -101,11 +102,17 @@ namespace Game.Mario.MarioStates
             mario.MarioState = new DeadMarioState(mario);
         }
 
-        public void Die()
-        {
-            mario.MarioState = new DeadMarioState(mario);
-        }
         public bool IsBig()
+        {
+            return false;
+        }
+
+        public bool IsFire()
+        {
+            return false;
+        }
+
+        public bool IsRight()
         {
             return false;
         }

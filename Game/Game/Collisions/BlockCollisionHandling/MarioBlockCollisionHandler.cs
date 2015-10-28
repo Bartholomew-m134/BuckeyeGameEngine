@@ -39,18 +39,25 @@ namespace Game.Collisions.BlockCollisionHandling
 
         public void HandleCollision()
         {
-           
-            if (collisionSide is RightSideCollision){
-                HandleRightSide();
-            }
-            else if(collisionSide is LeftSideCollision){
-                HandleLeftSide();
-            }
-            else if (collisionSide is TopSideCollision){
-                HandleTopSide();
-            }
-            else{
-                HandleBottomSide();
+            if (!(collidingMario.MarioState is DeadMarioState))
+            {
+
+                if (collisionSide is RightSideCollision)
+                {
+                    HandleRightSide();
+                }
+                else if (collisionSide is LeftSideCollision)
+                {
+                    HandleLeftSide();
+                }
+                else if (collisionSide is TopSideCollision)
+                {
+                    HandleTopSide();
+                }
+                else
+                {
+                    HandleBottomSide();
+                }
             }
             
         }

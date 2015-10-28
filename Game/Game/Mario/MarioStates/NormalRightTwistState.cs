@@ -90,14 +90,21 @@ namespace Game.Mario.MarioStates
 
         public void Damage()
         {
-            mario.MarioState = new SmallLeftTwistState(mario);
+            mario.MarioState = new SmallRightTwistState(mario);
+            mario.VectorCoordinates += new Vector2(0, 16);
         }
 
-        public void Die()
-        {
-            mario.MarioState = new DeadMarioState(mario);
-        }
         public bool IsBig()
+        {
+            return true;
+        }
+
+        public bool IsFire()
+        {
+            return false;
+        }
+
+        public bool IsRight()
         {
             return true;
         }

@@ -44,6 +44,7 @@ namespace Game
             EnemySpriteFactory.Load(Content);
             MarioSpriteFactory.Load(Content);
             TileSpriteFactory.Load(Content);
+            ProjectileSpriteFactory.Load(Content);
             BackgroundElementsSpriteFactory.Load(Content);
 
             WorldManager.LoadListFromFile("World1-1", this);

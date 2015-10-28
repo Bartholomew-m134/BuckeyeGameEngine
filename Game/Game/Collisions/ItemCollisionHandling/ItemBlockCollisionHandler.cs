@@ -40,8 +40,17 @@ namespace Game.Collisions.ItemCollisionHandling
 
             if (!collidingItem.IsInsideBlock && (side is TopSideCollision || side is BottomSideCollision) && !(collidingBlock.State is HiddenBlockState) && !(collidingBlock.State is BrickDebrisState))
             {
-                collision.ResolveOverlap(collidingItem, side);
-                collidingItem.Physics.ResetY();
+                if (!(collidingItem is Star))
+                {
+                    collision.ResolveOverlap(collidingItem, side);
+                    collidingItem.Physics.ResetY();
+                }
+                else 
+                {
+                    if (side is TopSideCollision)
+                        collidingItem.Physics.Velocity = new Microsoft.Xna.Framework.Vector2(collidingItem.Physics.Velocity.X, -8);
+                    
+                }
             }
             else if (!collidingItem.IsInsideBlock &&  !(collidingBlock.State is HiddenBlockState) && !(collidingBlock.State is BrickDebrisState))
             {

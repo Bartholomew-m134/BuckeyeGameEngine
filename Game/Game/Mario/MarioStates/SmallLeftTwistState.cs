@@ -81,6 +81,7 @@ namespace Game.Mario.MarioStates
         public void Mushroom()
         {
             mario.MarioState = new NormalLeftTwistState(mario);
+            mario.VectorCoordinates += new Vector2(0, -16);
         }
 
         public void Star()
@@ -91,14 +92,22 @@ namespace Game.Mario.MarioStates
         public void Damage()
         {
             ScoreManager.ResetScore();
-            mario.Die();
-        }
-
-        public void Die()
-        {
             mario.MarioState = new DeadMarioState(mario);
         }
+
         public bool IsBig()
+        {
+            return false;
+            
+            
+        }
+
+        public bool IsFire()
+        {
+            return false;
+        }
+
+        public bool IsRight()
         {
             return false;
         }

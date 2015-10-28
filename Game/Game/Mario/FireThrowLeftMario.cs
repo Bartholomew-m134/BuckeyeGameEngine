@@ -6,28 +6,35 @@ using Microsoft.Xna.Framework;
 using System.Diagnostics;
 using Game.Interfaces;
 using Game.Utilities;
+using Microsoft.Xna.Framework.Graphics;
+using Game.Mario.MarioSprites;
+using Game.SpriteFactories;
 
 namespace Game.Mario
 {
-    public class StarMario : IMario
+    public class FireThrowLeftMario : IMario
     {
         private IMario mario;
         private Game1 myGame;
-        private int timer = 200;
+        private int timer = 5;
+        ISprite sprite;
 
-        public StarMario(IMario mario, Game1 game)
+        public FireThrowLeftMario(IMario mario, Game1 game)
         {
             this.mario = mario;
             this.myGame = game;
             WorldManager.SetMario(this);
+            sprite = MarioSpriteFactory.CreateFireThrowLeft();
         }
 
         public void Damage()
         {
+            mario.Damage();
         }
 
         public void Update()
         {
+
             timer--;
             if (timer == 0)
             {
@@ -38,7 +45,8 @@ namespace Game.Mario
 
         public void Draw(ICamera camera)
         {
-            ((IMarioSprite)mario.Sprite).StarDraw(myGame.spriteBatch, camera.GetAdjustedPosition(mario.VectorCoordinates));
+            Vector2 location = mario.VectorCoordinates;
+            sprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
         public void Left()
@@ -71,12 +79,12 @@ namespace Game.Mario
             mario.StopJumping();
         }
 
-        public void Run() 
+        public void Run()
         {
             mario.Run();
         }
 
-        public void StopRunning() 
+        public void StopRunning()
         {
             mario.StopJumping();
         }
@@ -98,7 +106,7 @@ namespace Game.Mario
 
         public void Star()
         {
-            timer = 1000;
+
         }
 
         public void PoleSlide()
@@ -156,7 +164,6 @@ namespace Game.Mario
         {
             get { return ((MarioInstance)mario).Physics; }
         }
-
 
         public bool isHurt()
         {

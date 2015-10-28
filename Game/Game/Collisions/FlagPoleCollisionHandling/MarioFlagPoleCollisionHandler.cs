@@ -33,12 +33,16 @@ namespace Game.Collisions.FlagPoleCollisionHandling
         }
         public void HandleCollision()
         {
-            if(collidingFlagPole is InvisibleFlagPoleBarrier && collision.CollisionSide is RightSideCollision){
-                collidingMario.PoleSlide();
-            }
-            else if (collidingFlagPole is FlagPole)
+            if (!(collidingMario.MarioState is DeadMarioState))
             {
-                collidingFlagPole.IsActive = true;
+                if (collidingFlagPole is InvisibleFlagPoleBarrier && collision.CollisionSide is RightSideCollision)
+                {
+                    collidingMario.PoleSlide();
+                }
+                else if (collidingFlagPole is FlagPole)
+                {
+                    collidingFlagPole.IsActive = true;
+                }
             }
             if (collidingFlagPole is TopOfPole && ScoreManager.flagTopBeenHit == false){
                 ScoreManager.IncreaseScore(3000);

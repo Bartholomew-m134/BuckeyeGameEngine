@@ -1,25 +1,25 @@
-﻿using System;
+﻿using Game.Interfaces;
+using Game.Utilities;
+using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Microsoft.Xna.Framework;
-using System.Diagnostics;
-using Game.Interfaces;
-using Game.Utilities;
 
 namespace Game.Mario
 {
-    public class StarMario : IMario
+    public class GrowMario : IMario
     {
-        private IMario mario;
+         private IMario mario;
         private Game1 myGame;
-        private int timer = 200;
+        private int frame;
 
-        public StarMario(IMario mario, Game1 game)
+        public GrowMario(IMario mario, Game1 game)
         {
             this.mario = mario;
             this.myGame = game;
             WorldManager.SetMario(this);
+            frame = 0;
         }
 
         public void Damage()
@@ -28,42 +28,53 @@ namespace Game.Mario
 
         public void Update()
         {
-            timer--;
-            if (timer == 0)
+            
+            if (frame == 18)
             {
                 WorldManager.SetMario(this.mario);
             }
+            else if (frame % 2 == 0 && frame % 4 == 0)
+            {
+                mario.MarioState.Mushroom();
+            }
+            else if (frame % 2 == 0 && frame % 4 != 0)
+            {
+                mario.MarioState.Damage();
+            }
             mario.Update();
+
+            frame++;
+            
         }
 
         public void Draw(ICamera camera)
         {
-            ((IMarioSprite)mario.Sprite).StarDraw(myGame.spriteBatch, camera.GetAdjustedPosition(mario.VectorCoordinates));
+            mario.Draw(camera);
         }
 
         public void Left()
         {
-            mario.Left();
+            
         }
 
         public void Right()
         {
-            mario.Right();
+            
         }
 
         public void Up()
         {
-            mario.Up();
+            
         }
 
         public void Down()
         {
-            mario.Down();
+            
         }
 
         public void Jump()
         {
-            mario.Jump();
+            
         }
 
         public void StopJumping()
@@ -71,36 +82,29 @@ namespace Game.Mario
             mario.StopJumping();
         }
 
-        public void Run() 
-        {
-            mario.Run();
-        }
-
-        public void StopRunning() 
-        {
-            mario.StopJumping();
-        }
-
         public void Flower()
         {
-            mario.Flower();
+            
         }
 
         public void Fire()
         {
-            mario.Fire();
+            
         }
 
         public void Mushroom()
         {
-            mario.Mushroom();
+            
         }
 
         public void Star()
         {
-            timer = 1000;
+            
         }
 
+        public void Die()
+        {
+        }
         public void PoleSlide()
         {
             mario.PoleSlide();
@@ -123,9 +127,10 @@ namespace Game.Mario
             get { return mario.MarioState; }
             set { mario.MarioState = value; }
         }
+
         public bool isTransitioning()
         {
-            return mario.isTransitioning();
+            return true;
         }
         public bool IsBig()
         {
@@ -139,7 +144,7 @@ namespace Game.Mario
 
         public bool IsStar()
         {
-            return true;
+            return mario.IsStar();
         }
 
         public bool IsJumping()
@@ -155,6 +160,19 @@ namespace Game.Mario
         public ObjectPhysics Physics
         {
             get { return ((MarioInstance)mario).Physics; }
+        }
+
+
+
+
+        public void Run()
+        {
+           
+        }
+
+        public void StopRunning()
+        {
+            
         }
 
 

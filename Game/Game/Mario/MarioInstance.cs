@@ -16,6 +16,7 @@ namespace Game.Mario
         private Vector2 location;
         private Game1 myGame;
         private ObjectPhysics physics;
+        private FireBallFactory factory;
 
         public MarioInstance(Game1 game)
         {
@@ -23,6 +24,7 @@ namespace Game.Mario
             state = new SmallRightIdleState(this);
             myGame = game;
             physics = new ObjectPhysics();
+            factory = new FireBallFactory(game); 
   
         }
 
@@ -82,20 +84,32 @@ namespace Game.Mario
 
         public void Flower()
         {
-            state.Flower();
+            if (!this.isFire())
+            {
+                new FireMario(this, myGame);
+        }
         }
 
         public void Fire()
         {
-            state.Fire();
+            if (state.IsRight()) { 
+                factory.ReleaseRightFireBall(location);
+                new FireThrowRightMario(this, myGame); 
+        }
+            else
+            {
+                factory.ReleaseLeftFireBall(location);
+                new FireThrowLeftMario(this, myGame);
+            }
         }
 
 
         public void Mushroom()
         {
-            Vector2 previousVector = sprite.SpriteDimensions;
-            state.Mushroom();
-            location += sprite.SpriteDimensions - previousVector/2;
+            if(!this.IsBig())
+            {
+                new GrowMario(this, myGame);
+        }
         }
 
         public void Star()
@@ -113,14 +127,15 @@ namespace Game.Mario
 
         public void Damage()
         {
+            if (this.IsBig())
+            {
             state.Damage();
+                new HurtMario(this, myGame);
         }
-
-
-        public void Die()
+            else
         {
-            state.Die();
-       
+                state.Damage();
+            }
         }
 
         public Vector2 VectorCoordinates
@@ -141,10 +156,19 @@ namespace Game.Mario
             set { state = value; }
         }
 
+        public bool isTransitioning()
+        {
+            return false;
+        }
 
         public bool IsBig()
         {
             return state.IsBig();
+        }
+
+        public bool isFire()
+        {
+            return state.IsFire();
         }
 
         public bool IsStar()
@@ -165,6 +189,12 @@ namespace Game.Mario
         public ObjectPhysics Physics
         {
             get { return physics; }
+        }
+
+
+        public bool isHurt()
+        {
+            return false;
         }
     }
 }

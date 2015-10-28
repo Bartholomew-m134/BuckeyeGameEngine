@@ -51,7 +51,7 @@ namespace Game.Items
             {
                 isInsideBlock = false;
                 physics.ResetPhysics();
-                physics.Velocity = new Vector2(0, -1);
+                physics.Velocity = new Vector2(3, -1);
             }
         }
 

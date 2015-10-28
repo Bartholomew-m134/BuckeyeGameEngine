@@ -46,12 +46,15 @@ namespace Game.Mario
 
         void Damage();
 
-
-        void Die();
+        bool isTransitioning();
 
         bool IsBig();
 
+        bool isFire();
+
         bool IsStar();
+
+        bool isHurt();
 
         bool IsJumping();
 

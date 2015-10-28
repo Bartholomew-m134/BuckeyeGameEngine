@@ -43,7 +43,7 @@ namespace Game.Collisions.EnemyCollisionHandling
                 enemy.ShiftDirection();
                 if (enemy is GreenKoopa && ((GreenKoopa)enemy).IsWeaponized)
                 {
-                    enemy.Physics.Velocity = new Vector2(-12, enemy.Physics.Velocity.Y);
+                    enemy.Physics.Velocity = new Vector2(-11, enemy.Physics.Velocity.Y);
                 }
             }
             else if (side is RightSideCollision)
@@ -51,7 +51,7 @@ namespace Game.Collisions.EnemyCollisionHandling
                 enemy.ShiftDirection();
                 if (enemy is GreenKoopa && ((GreenKoopa)enemy).IsWeaponized)
                 {
-                    enemy.Physics.Velocity = new Vector2(12, enemy.Physics.Velocity.Y);
+                    enemy.Physics.Velocity = new Vector2(11, enemy.Physics.Velocity.Y);
                 }
             }
             else if (side is TopSideCollision && ((Block)block).isBumped)

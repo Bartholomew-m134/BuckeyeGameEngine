@@ -79,11 +79,17 @@ namespace Game.Mario.MarioStates
                 
             }
 
-            public void Die()
-            {
-                
-            }
             public bool IsBig()
+            {
+                return true;
+            }
+
+            public bool IsFire()
+            {
+                return true;
+            }
+
+            public bool IsRight()
             {
                 return true;
             }

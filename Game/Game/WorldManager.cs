@@ -40,7 +40,7 @@ namespace Game
                     objectList[i].Update();
                     objectWithinZoneList.Add(objectList[i]);
                 }
-                else if (camera.IsLeftOfCamera(objectList[i].VectorCoordinates) && camera.LeftScrollingDisabled)
+                else if ((camera.IsBelowCamera(objectList[i].VectorCoordinates)||camera.IsLeftOfCamera(objectList[i].VectorCoordinates)) && camera.LeftScrollingDisabled)
                     FreeObject(objectList[i]);
             }
 
@@ -84,6 +84,13 @@ namespace Game
         public static void FreeObject(IGameObject referenceObject)
         {
             objectList.Remove(referenceObject);
+            if (referenceObject is IMario)
+                ResetToDefault();
+        }
+
+        public static void CreateNewObject(IGameObject newObject)
+        {
+            objectList.Add(newObject);
         }
 
         public static void ResetToDefault()
