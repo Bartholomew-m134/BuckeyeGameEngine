@@ -173,5 +173,11 @@ namespace Game.Mario
         {
             
         }
+
+
+        public bool isHurt()
+        {
+            return false;
+        }
     }
 }

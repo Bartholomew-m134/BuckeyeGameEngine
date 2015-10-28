@@ -183,5 +183,11 @@ namespace Game.Mario
         {
             get { return physics; }
         }
+
+
+        public bool isHurt()
+        {
+            return false;
+        }
     }
 }

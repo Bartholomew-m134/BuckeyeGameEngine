@@ -173,5 +173,11 @@ namespace Game.Mario
         {
             mario.StopRunning();
         }
+
+
+        public bool isHurt()
+        {
+            return true;
+        }
     }
 }

@@ -54,6 +54,8 @@ namespace Game.Mario
 
         bool IsStar();
 
+        bool isHurt();
+
         bool IsJumping();
 
         void ToIdle();
