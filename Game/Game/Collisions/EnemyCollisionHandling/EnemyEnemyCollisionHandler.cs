@@ -39,10 +39,12 @@ namespace Game.Collisions.EnemyCollisionHandling
             }
             else if (enemyA is GreenKoopa && ((GreenKoopa)enemyA).IsWeaponized)
             {
+                enemyB.CanDealDamage = false;
                 enemyB.Flipped();
             }
             else if (enemyB is GreenKoopa && ((GreenKoopa)enemyB).IsWeaponized)
             {
+                enemyA.CanDealDamage = false;
                 enemyA.Flipped();
             }
             else if (enemyA.IsHit)

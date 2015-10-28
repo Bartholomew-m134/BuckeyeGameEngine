@@ -24,6 +24,10 @@ namespace Game.Mario
 
         void StopJumping();
 
+        void Run();
+
+        void StopRunning();
+
         void Flower();
 
         void Fire();
@@ -41,11 +45,6 @@ namespace Game.Mario
         }
 
         void Damage();
-
-
-        void Die();
-
-        bool Transition();
 
         bool IsBig();
 

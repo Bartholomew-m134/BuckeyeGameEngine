@@ -70,6 +70,16 @@ namespace Game.Mario
             state.StopJumping();
         }
 
+        public void Run()
+        {
+            state.Run();
+        }
+
+        public void StopRunning()
+        {
+            state.StopRunning();
+        }
+
         public void Flower()
         {
             if (!this.isFire())
@@ -116,12 +126,6 @@ namespace Game.Mario
             {
                 state.Damage();
             }
-        }
-
-
-        public void Die()
-        {
-            state.Die();
         }
 
         public Vector2 VectorCoordinates

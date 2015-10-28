@@ -77,7 +77,7 @@ namespace Game.Mario.MarioStates
 
         public void Star()
         {
-            //mario = new StarMario(mario);
+            
         }
 
         public void Damage()
@@ -85,10 +85,6 @@ namespace Game.Mario.MarioStates
             mario.MarioState = new NormalRightRunningState(mario);
         }
 
-        public void Die()
-        {
-            mario.MarioState = new DeadMarioState(mario);
-        }
         public bool IsBig()
         {
             return true;
@@ -107,6 +103,19 @@ namespace Game.Mario.MarioStates
         public bool IsJumping()
         {
             return false;
+        }
+
+        public void Run()
+        {
+            mario.Physics.VelocityMaximum = new Vector2(10, mario.Physics.VelocityMaximum.Y);
+            mario.Physics.VelocityMinimum = new Vector2(-10, mario.Physics.VelocityMinimum.Y);
+
+        }
+
+        public void StopRunning()
+        {
+            mario.Physics.VelocityMaximum = new Vector2(6, mario.Physics.VelocityMaximum.Y);
+            mario.Physics.VelocityMinimum = new Vector2(-6, mario.Physics.VelocityMinimum.Y);
         }
     }
 }

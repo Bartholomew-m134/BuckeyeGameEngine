@@ -103,11 +103,6 @@ namespace Game.Mario.MarioStates
             mario.VectorCoordinates += new Vector2(0, 16);
         }
 
-        public void Die()
-        {
-            mario.MarioState = new DeadMarioState(mario);
-        }
-
         public bool IsBig()
         {
             return true;
@@ -126,6 +121,17 @@ namespace Game.Mario.MarioStates
         public bool IsJumping()
         {
             return false;
+        }
+
+        public void Run()
+        {
+
+        }
+
+        public void StopRunning()
+        {
+            mario.Physics.VelocityMaximum = new Vector2(6, mario.Physics.VelocityMaximum.Y);
+            mario.Physics.VelocityMinimum = new Vector2(-6, mario.Physics.VelocityMinimum.Y);
         }
     }
 }

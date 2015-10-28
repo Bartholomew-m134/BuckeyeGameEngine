@@ -25,6 +25,10 @@ namespace Game.Interfaces
 
          void StopJumping();
 
+         void Run();
+
+         void StopRunning();
+
          void Flower();
 
          void Fire();
@@ -33,11 +37,7 @@ namespace Game.Interfaces
 
          void Star();
 
-
          void Damage();
-
-
-         void Die();
 
          bool IsBig();
 
