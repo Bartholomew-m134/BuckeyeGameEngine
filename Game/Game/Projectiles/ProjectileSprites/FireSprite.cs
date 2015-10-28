@@ -13,7 +13,7 @@ namespace Game.Items.ItemSprites
     public class FireSprite : ISprite
     {
 
-        private Texture2D Texture { get; set; }
+        private Texture2D texture;
         private ArrayList fireSpriteLocations;
         private int currentSprite;
 
@@ -31,7 +31,7 @@ namespace Game.Items.ItemSprites
 
         public FireSprite(Texture2D texture)
         {
-            this.Texture = Texture;
+            this.texture = texture;
             currentSprite = 0;
             fireSpriteLocations = new ArrayList();
 
@@ -80,7 +80,7 @@ namespace Game.Items.ItemSprites
             destinationRectangle = new Rectangle((int)location.X, (int)location.Y, (int)fireSpriteDimensions.X, (int)fireSpriteDimensions.Y);
 
             spriteBatch.Begin();
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.Draw(texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
 
         }

@@ -16,6 +16,7 @@ namespace Game.Mario
         private Vector2 location;
         private Game1 myGame;
         private ObjectPhysics physics;
+        private FireBallFactory factory;
 
         public MarioInstance(Game1 game)
         {
@@ -23,6 +24,7 @@ namespace Game.Mario
             state = new SmallRightIdleState(this);
             myGame = game;
             physics = new ObjectPhysics();
+            factory = new FireBallFactory(game); 
   
         }
 
@@ -88,6 +90,7 @@ namespace Game.Mario
         public void Fire()
         {
             state.Fire();
+            factory.ReleaseRightFireBall(location);
         }
 
 
