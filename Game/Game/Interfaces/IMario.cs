@@ -45,7 +45,11 @@ namespace Game.Mario
 
         void Die();
 
+        bool Transition();
+
         bool IsBig();
+
+        bool isFire();
 
         bool IsStar();
 

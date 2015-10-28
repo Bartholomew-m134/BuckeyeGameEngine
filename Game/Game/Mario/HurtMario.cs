@@ -1,25 +1,25 @@
-﻿using System;
+﻿using Game.Interfaces;
+using Game.Utilities;
+using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Microsoft.Xna.Framework;
-using System.Diagnostics;
-using Game.Interfaces;
-using Game.Utilities;
 
 namespace Game.Mario
 {
-    public class StarMario : IMario
+    public class HurtMario : IMario
     {
-        private IMario mario;
+         private IMario mario;
         private Game1 myGame;
-        private int timer = 200;
+        private int frame;
 
-        public StarMario(IMario mario, Game1 game)
+        public HurtMario(IMario mario, Game1 game)
         {
             this.mario = mario;
             this.myGame = game;
             WorldManager.SetMario(this);
+            frame = 0;
         }
 
         public void Damage()
@@ -28,17 +28,27 @@ namespace Game.Mario
 
         public void Update()
         {
-            timer--;
-            if (timer == 0)
+            if (frame == 18)
             {
                 WorldManager.SetMario(this.mario);
             }
             mario.Update();
+
+            frame++;
+            
         }
 
         public void Draw(ICamera camera)
         {
-            ((IMarioSprite)mario.Sprite).StarDraw(myGame.spriteBatch, camera.GetAdjustedPosition(mario.VectorCoordinates));
+
+            if (frame % 2 == 0 && frame % 4 == 0)
+            {
+                mario.Draw(camera);
+            }
+            else if (frame % 2 == 1 && frame % 4 != 0)
+            {
+                
+            }
         }
 
         public void Left()
@@ -88,7 +98,7 @@ namespace Game.Mario
 
         public void Star()
         {
-            timer = 1000;
+            mario.Star();
         }
 
         public void Die()
@@ -116,10 +126,12 @@ namespace Game.Mario
             get { return mario.MarioState; }
             set { mario.MarioState = value; }
         }
+
         public bool Transition()
         {
             return mario.Transition();
         }
+
         public bool IsBig()
         {
             return mario.MarioState.IsBig();
@@ -132,7 +144,7 @@ namespace Game.Mario
 
         public bool IsStar()
         {
-            return true;
+            return mario.IsStar();
         }
 
         public bool IsJumping()
@@ -149,5 +161,6 @@ namespace Game.Mario
         {
             get { return ((MarioInstance)mario).Physics; }
         }
+    
     }
 }

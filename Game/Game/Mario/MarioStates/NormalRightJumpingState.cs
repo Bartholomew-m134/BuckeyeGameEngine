@@ -96,6 +96,7 @@ namespace Game.Mario.MarioStates
         public void Damage()
         {
             mario.MarioState = new SmallRightJumpingState(mario);
+            mario.VectorCoordinates += new Vector2(0, 16);
         }
 
         public void Die()
@@ -105,6 +106,11 @@ namespace Game.Mario.MarioStates
         public bool IsBig()
         {
             return true;
+        }
+
+        public bool IsFire()
+        {
+            return false;
         }
 
         public void ToIdle()

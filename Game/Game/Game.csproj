@@ -163,6 +163,9 @@
     <Compile Include="Interfaces\IScenery.cs" />
     <Compile Include="Interfaces\ISprite.cs" />
     <Compile Include="Items\Coin.cs" />
+    <Compile Include="Mario\FireMario.cs" />
+    <Compile Include="Mario\GrowMario.cs" />
+    <Compile Include="Mario\HurtMario.cs" />
     <Compile Include="Projectiles\LeftFire.cs" />
     <Compile Include="Items\Flower.cs" />
     <Compile Include="Items\GreenMushroom.cs" />
