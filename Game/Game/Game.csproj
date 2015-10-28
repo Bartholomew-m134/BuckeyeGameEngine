@@ -102,7 +102,6 @@
     <Compile Include="Collisions\ItemCollisionHandling\ItemPipeCollisionHandler.cs" />
     <Compile Include="Commands\MarioCommands\MarioRunFireBallCommand.cs" />
     <Compile Include="Enemies\GoombaClasses\Goomba.cs" />
-    <Compile Include="FireBallFactory.cs" />
     <Compile Include="FlagPoles\FlagPole.cs" />
     <Compile Include="FlagPoles\FlagPoleSprites\ActiveFlagPoleSprite.cs" />
     <Compile Include="FlagPoles\FlagPoleSprites\InactiveFlagPoleSprite.cs" />
@@ -165,8 +164,10 @@
     <Compile Include="Interfaces\ISprite.cs" />
     <Compile Include="Items\Coin.cs" />
     <Compile Include="Mario\FireMario.cs" />
+    <Compile Include="Mario\FireThrowMario.cs" />
     <Compile Include="Mario\GrowMario.cs" />
     <Compile Include="Mario\HurtMario.cs" />
+    <Compile Include="Mario\MarioSprites\FireThrowSprite.cs" />
     <Compile Include="Projectiles\LeftFire.cs" />
     <Compile Include="Items\Flower.cs" />
     <Compile Include="Items\GreenMushroom.cs" />
