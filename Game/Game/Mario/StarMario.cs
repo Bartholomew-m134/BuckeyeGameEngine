@@ -14,6 +14,7 @@ namespace Game.Mario
         private IMario mario;
         private Game1 myGame;
         private int timer = 200;
+        public static int stompKillStreak = 0;
 
         public StarMario(IMario mario, Game1 game)
         {

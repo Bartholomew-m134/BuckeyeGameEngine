@@ -22,6 +22,7 @@ namespace Game.Enemies.KoopaClasses
         private bool isFlipped = false;
         private bool isHit = false;
         private bool isWeaponized = false;
+        public int weaponizedShellKillStreak;
 
         public GreenKoopa(Game1 game)
         {
@@ -30,6 +31,7 @@ namespace Game.Enemies.KoopaClasses
             physics.VelocityMaximum = new Vector2(12, physics.VelocityMaximum.Y);
             physics.VelocityMinimum = new Vector2(-12, physics.VelocityMinimum.Y);
             state = new GreenKoopaWalkingLeftState(this);
+            weaponizedShellKillStreak = 0;
         }
 
         public void Hit()
@@ -89,6 +91,7 @@ namespace Game.Enemies.KoopaClasses
             }
             else if (inShellTimer == 45 && state is GreenKoopaEmergingFromShellState)
             {
+                weaponizedShellKillStreak = 0;
                 state.KoopaChangeDirection();
                 canDealDamage = true;
                 isHit = false;

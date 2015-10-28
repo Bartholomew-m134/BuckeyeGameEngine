@@ -19,6 +19,8 @@ namespace Game.Utilities
         private static bool hasChanged = false;
         private static int currentScoreToDraw;
         private static int drawOnScreenTimer;
+        private static int[] shellSequence;
+        private static int[] stompSequence;
         
         public static void IncreaseScore(int value)
         {
@@ -27,7 +29,6 @@ namespace Game.Utilities
             score+=value;
             if (scoreFont == null)
                 scoreFont = SpriteFactories.BackgroundElementsSpriteFactory.CreateScoreFont();
-            Console.WriteLine(score);
         }
         public static void ResetScore()
         {
@@ -56,13 +57,32 @@ namespace Game.Utilities
 
         public static int HandleShellSequence(int shellSequenceIndex)
         {
-            //not yet implemented
-            return 0;
+            shellSequence = new int[8];
+            shellSequence[0] = 500;
+            shellSequence[1] = 800;
+            shellSequence[2] = 1000;
+            shellSequence[3] = 2000;
+            shellSequence[4] = 4000;
+            shellSequence[5] = 5000;
+            shellSequence[6] = 8000;
+            
+            return shellSequence[shellSequenceIndex];
         }
         public static int HandleStompSequence(int shellSequenceIndex)
         {
-            //not yet implemented
-            return 0;
+            stompSequence = new int[11];
+            stompSequence[0] = 100;
+            stompSequence[1] = 200;
+            stompSequence[2] = 400;
+            stompSequence[3] = 500;
+            stompSequence[4] = 800;
+            stompSequence[5] = 1000;
+            stompSequence[6] = 2000;
+            stompSequence[7] = 4000;
+            stompSequence[8] = 5000;
+            stompSequence[9] = 8000;
+
+            return stompSequence[shellSequenceIndex];
         }
     }
 }

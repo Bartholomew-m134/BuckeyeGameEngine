@@ -17,6 +17,7 @@ namespace Game.Mario
         private Game1 myGame;
         private ObjectPhysics physics;
         private FireBallFactory factory;
+        public static int stompKillStreak = 0;
 
         public MarioInstance(Game1 game)
         {
@@ -24,7 +25,7 @@ namespace Game.Mario
             state = new SmallRightIdleState(this);
             myGame = game;
             physics = new ObjectPhysics();
-            factory = new FireBallFactory(game); 
+            factory = new FireBallFactory(game);
   
         }
 
