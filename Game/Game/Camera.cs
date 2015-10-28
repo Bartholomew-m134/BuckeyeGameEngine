@@ -54,6 +54,11 @@ namespace Game
             return leftBound < position.X && position.X < rightBound && position.Y < lowerBound;
         }
 
+        public void MoveToPosition(Vector2 position)
+        {
+            cameraLocation = position;
+        }
+
         public bool IsLeftOfCamera(Vector2 position)
         {
             return position.X < cameraLocation.X;

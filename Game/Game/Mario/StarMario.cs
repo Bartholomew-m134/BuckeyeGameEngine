@@ -16,11 +16,13 @@ namespace Game.Mario
         private int timer = 200;
         public static int stompKillStreak = 0;
 
+        private FireBallFactory factory;
         public StarMario(IMario mario, Game1 game)
         {
             this.mario = mario;
             this.myGame = game;
             WorldManager.SetMario(this);
+            factory = new FireBallFactory(game);
         }
 
         public void Damage()
@@ -84,17 +86,35 @@ namespace Game.Mario
 
         public void Flower()
         {
-            mario.Flower();
+            if (!this.IsFireMario())
+            {
+                new FireMario(this, myGame);
+        }
         }
 
-        public void Fire()
+        public void ThrowFireball()
         {
-            mario.Fire();
+            if (this.IsFireMario())
+            {
+                if (mario.MarioState.IsRight())
+                {
+                    factory.ReleaseRightFireBall(new Vector2(mario.VectorCoordinates.X + mario.Sprite.SpriteDimensions.X, mario.VectorCoordinates.Y));
+                    new FireThrowRightMario(this, myGame);
+                }
+                else
+                {
+                    factory.ReleaseLeftFireBall(mario.VectorCoordinates);
+                    new FireThrowLeftMario(this, myGame);
+                }
+            }
         }
 
         public void Mushroom()
         {
-            mario.Mushroom();
+            if (!this.IsBigMario())
+            {
+                new GrowMario(this, myGame);
+            }
         }
 
         public void Star()
@@ -124,21 +144,21 @@ namespace Game.Mario
             get { return mario.MarioState; }
             set { mario.MarioState = value; }
         }
-        public bool isTransitioning()
+        public bool IsTransitioning()
         {
-            return mario.isTransitioning();
+            return mario.IsTransitioning();
         }
-        public bool IsBig()
+        public bool IsBigMario()
         {
-            return mario.MarioState.IsBig();
-        }
-
-        public bool isFire()
-        {
-            return mario.MarioState.IsFire();
+            return mario.MarioState.IsBigMario();
         }
 
-        public bool IsStar()
+        public bool IsFireMario()
+        {
+            return mario.MarioState.IsFireMario();
+        }
+
+        public bool IsStarMario()
         {
             return true;
         }
@@ -159,7 +179,7 @@ namespace Game.Mario
         }
 
 
-        public bool isHurt()
+        public bool IsHurt()
         {
             return false;
         }

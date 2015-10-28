@@ -31,17 +31,15 @@ namespace Game.Interfaces
 
          void Flower();
 
-         void Fire();
-
          void Mushroom();
 
          void Star();
 
          void Damage();
 
-         bool IsBig();
+         bool IsBigMario();
 
-         bool IsFire();
+         bool IsFireMario();
 
          bool IsRight();
 

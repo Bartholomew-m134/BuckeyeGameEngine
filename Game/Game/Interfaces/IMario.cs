@@ -30,7 +30,7 @@ namespace Game.Mario
 
         void Flower();
 
-        void Fire();
+        void ThrowFireball();
 
         void Mushroom();
 
@@ -46,15 +46,15 @@ namespace Game.Mario
 
         void Damage();
 
-        bool isTransitioning();
+        bool IsTransitioning();
 
-        bool IsBig();
+        bool IsBigMario();
 
-        bool isFire();
+        bool IsFireMario();
 
-        bool IsStar();
+        bool IsStarMario();
 
-        bool isHurt();
+        bool IsHurt();
 
         bool IsJumping();
 

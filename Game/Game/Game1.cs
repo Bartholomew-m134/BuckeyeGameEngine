@@ -18,6 +18,7 @@ namespace Game
     {
         public GraphicsDeviceManager graphics;
         public SpriteBatch spriteBatch;
+        public static Camera camera;
         private List<IController> controllerList;
         private int delay;
 
@@ -48,6 +49,8 @@ namespace Game
             BackgroundElementsSpriteFactory.Load(Content);
 
             WorldManager.LoadListFromFile("World1-1", this);
+
+            camera = new Camera(WorldManager.GetMario().VectorCoordinates);
         }
 
         protected override void UnloadContent()
@@ -62,7 +65,7 @@ namespace Game
                 foreach (IController controller in controllerList)
                     controller.Update();
 
-                WorldManager.Update();
+                WorldManager.Update(camera);
                 ScoreManager.Update();
                 base.Update(gameTime);
                 delay = 0;
@@ -77,8 +80,8 @@ namespace Game
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            WorldManager.Draw();
-            ScoreManager.DrawScore(spriteBatch);
+            WorldManager.Draw(camera);
+            ScoreManager.DrawScore(spriteBatch, camera);
             base.Draw(gameTime);
         }
     }
