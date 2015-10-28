@@ -53,5 +53,16 @@ namespace Game.Utilities
                 spriteBatch.End();
             }
         }
+
+        public static int HandleShellSequence(int shellSequenceIndex)
+        {
+            //not yet implemented
+            return 0;
+        }
+        public static int HandleStompSequence(int shellSequenceIndex)
+        {
+            //not yet implemented
+            return 0;
+        }
     }
 }

@@ -42,15 +42,12 @@ namespace Game.Items
 
         public void Disappear() {
             location.Y += 2000;
-            ScoreManager.IncreaseScore(1);
         }
 
         public void Release()
         {
             if (isInsideBlock && !isReleased)
             {
-                ScoreManager.IncreaseScore(200);
-                ScoreManager.location = location;
                 isReleased = true;
                 physics.ResetPhysics();
                 physics.Velocity = new Vector2(0, -7);

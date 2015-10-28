@@ -6,6 +6,7 @@ using Game.Interfaces;
 using Game.Enemies.KoopaClasses;
 using Game.Enemies.KoopaClasses.KoopaStates;
 using Game.Enemies.GoombaClasses;
+using Game.Utilities;
 
 namespace Game.Collisions.EnemyCollisionHandling
 {
@@ -15,6 +16,7 @@ namespace Game.Collisions.EnemyCollisionHandling
         private IEnemy enemyA;
         private IEnemy enemyB;
         private ICollisionSide side;
+        private int shellSequenceIndex;
 
         public EnemyEnemyCollisionHandler(CollisionData collision)
         {
@@ -22,6 +24,7 @@ namespace Game.Collisions.EnemyCollisionHandling
             enemyA = (IEnemy)collision.GameObjectA;
             enemyB = (IEnemy)collision.GameObjectB;
             side = (ICollisionSide)collision.CollisionSide;
+            shellSequenceIndex = 0;
         }
 
         private bool LeftOrRightCollision()
@@ -31,6 +34,7 @@ namespace Game.Collisions.EnemyCollisionHandling
 
         public void HandleCollision()
         {
+            HandleScore();
             if (enemyA.IsHit == false && enemyB.IsHit == false && LeftOrRightCollision())
             {
                 collision.ResolveOverlap(collision.GameObjectA, collision.CollisionSide);
@@ -57,6 +61,19 @@ namespace Game.Collisions.EnemyCollisionHandling
             {
                 collision.ResolveOverlap(collision.GameObjectA, collision.CollisionSide);
                 enemyA.ShiftDirection();
+            }
+        }
+        private void HandleScore()
+        {
+            if (enemyA is GreenKoopa && ((GreenKoopa)enemyA).IsWeaponized)
+            {
+                ScoreManager.IncreaseScore(ScoreManager.HandleShellSequence(shellSequenceIndex));
+                ScoreManager.location = WorldManager.camera.GetAdjustedPosition(enemyB.VectorCoordinates);
+            }
+            if (enemyB is GreenKoopa && ((GreenKoopa)enemyB).IsWeaponized)
+            {
+                ScoreManager.IncreaseScore(ScoreManager.HandleShellSequence(shellSequenceIndex));
+                ScoreManager.location = WorldManager.camera.GetAdjustedPosition(enemyB.VectorCoordinates);
             }
         }
     }

@@ -17,7 +17,7 @@ namespace Game
 
         private static string currentFileName;
         private static Game1 currentGame;
-        private static Camera camera;
+        public static Camera camera;
         private static System.Diagnostics.Stopwatch timer;
 
         public static void LoadListFromFile(string filename, Game1 game)
