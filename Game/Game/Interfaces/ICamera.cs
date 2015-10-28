@@ -16,6 +16,8 @@ namespace Game.Interfaces
 
         bool IsWithinUpdateZone(Vector2 position);
 
+        void MoveToPosition(Vector2 position);
+
         bool IsLeftOfCamera(Vector2 position);
       
         bool IsRightOfCamera(Vector2 position);
