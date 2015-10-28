@@ -49,7 +49,7 @@ namespace Game.Collisions.EnemyCollisionHandling
             {
                 MarioEnemyTopSide();
             }
-                else if (!mario.IsStar() && enemy.CanDealDamage)
+                else if (!mario.IsStar() && !mario.isHurt() && enemy.CanDealDamage)
             {
                 collision.ResolveOverlap(mario, side);
                 mario.Damage();
