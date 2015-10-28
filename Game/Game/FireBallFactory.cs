@@ -25,7 +25,9 @@ namespace Game
 
         public void ReleaseLeftFireBall(Vector2 location)
         {
-            WorldManager.CreateNewObject(new LeftFire(game));
+            LeftFire fire = new LeftFire(game);
+            fire.VectorCoordinates = location;
+            WorldManager.CreateNewObject(fire);
         }
     }
 }
