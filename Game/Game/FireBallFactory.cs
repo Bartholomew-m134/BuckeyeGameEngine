@@ -10,7 +10,7 @@ namespace Game
     public class FireBallFactory
     {
         private Game1 game;
-        private static int count;
+        private int count;
 
         public FireBallFactory(Game1 game)
         {
@@ -42,7 +42,8 @@ namespace Game
 
         public void ReturnFireBall()
         {
-            count--;
+            if(count > 0)
+                count--;
         }
     }
 }

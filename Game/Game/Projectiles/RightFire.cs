@@ -16,7 +16,6 @@ namespace Game.Projectiles
         private Vector2 location;
         private ObjectPhysics physics;
         private bool isExploded;
-        public RightFire(Game1 game)
         private FireBallFactory factory;
 
         public RightFire(FireBallFactory factory, Game1 game)
@@ -34,9 +33,9 @@ namespace Game.Projectiles
         {
             if (!isExploded)
             {
-            FireSprite.Update();
-            location = physics.Update(location);
-        }
+                FireSprite.Update();
+                location = physics.Update(location);
+            }
             else {
                 location.Y = 2000;
             }
@@ -59,11 +58,6 @@ namespace Game.Projectiles
         public void Bounce()
         {
             physics.Velocity = new Vector2(physics.Velocity.X, -3);
-        }
-
-        public void ReturnObject()
-        {
-            factory.ReturnFireBall();
         }
 
         public Vector2 VectorCoordinates
