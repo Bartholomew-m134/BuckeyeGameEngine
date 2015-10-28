@@ -68,11 +68,6 @@ namespace Game.Mario.MarioStates
 
         }
 
-        public void Fire()
-        {
-
-        }
-
         public void Mushroom()
         {
         }
@@ -87,12 +82,12 @@ namespace Game.Mario.MarioStates
             mario.MarioState = new NormalLeftRunningState(mario);
         }
 
-        public bool IsBig()
+        public bool IsBigMario()
         {
             return true;
         }
 
-        public bool IsFire()
+        public bool IsFireMario()
         {
             return true;
         }

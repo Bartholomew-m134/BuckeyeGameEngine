@@ -73,10 +73,6 @@ namespace Game.Mario.MarioStates
             mario.VectorCoordinates += new Vector2(0, -16);
         }
 
-        public void Fire()
-        {
-
-        }
         public void PoleSlide()
         {
             mario.MarioState = new SmallFlagPoleSlidingState(mario);
@@ -98,12 +94,12 @@ namespace Game.Mario.MarioStates
             mario.MarioState = new DeadMarioState(mario);
         }
 
-        public bool IsBig()
+        public bool IsBigMario()
         {
             return false;
         }
 
-        public bool IsFire()
+        public bool IsFireMario()
         {
             return false;
         }

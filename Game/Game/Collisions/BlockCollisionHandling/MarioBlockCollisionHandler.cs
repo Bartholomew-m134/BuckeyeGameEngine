@@ -84,12 +84,12 @@ namespace Game.Collisions.BlockCollisionHandling
                 collidingBlock.Bump();
                 collision.ResolveOverlap(collidingMario, collisionSide);
             }
-            else if (collidingBlock.State is BrickBlockState && collidingMario.IsBig())
+            else if (collidingBlock.State is BrickBlockState && collidingMario.IsBigMario())
             {
                 collidingBlock.Bump();
                 collidingBlock.Disappear();
             }
-            else if (collidingBlock.State is BrickBlockState && !(collidingMario.IsBig()))
+            else if (collidingBlock.State is BrickBlockState && !(collidingMario.IsBigMario()))
             {
                 collidingBlock.Bump();
                 collision.ResolveOverlap(collidingMario, collisionSide);
@@ -127,7 +127,7 @@ namespace Game.Collisions.BlockCollisionHandling
 
         private void HandleScore()
         {
-            if (collidingBlock.State is BrickBlockState && collidingMario.IsBig() && collisionSide is BottomSideCollision)
+            if (collidingBlock.State is BrickBlockState && collidingMario.IsBigMario() && collisionSide is BottomSideCollision)
             {
                 ScoreManager.IncreaseScore(50);
                 ScoreManager.location = WorldManager.camera.GetAdjustedPosition(collidingBlock.VectorCoordinates);

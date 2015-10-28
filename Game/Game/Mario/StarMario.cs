@@ -86,9 +86,9 @@ namespace Game.Mario
             mario.Flower();
         }
 
-        public void Fire()
+        public void ThrowFireball()
         {
-            mario.Fire();
+            mario.ThrowFireball();
         }
 
         public void Mushroom()
@@ -123,21 +123,21 @@ namespace Game.Mario
             get { return mario.MarioState; }
             set { mario.MarioState = value; }
         }
-        public bool isTransitioning()
+        public bool IsTransitioning()
         {
-            return mario.isTransitioning();
+            return mario.IsTransitioning();
         }
-        public bool IsBig()
+        public bool IsBigMario()
         {
-            return mario.MarioState.IsBig();
-        }
-
-        public bool isFire()
-        {
-            return mario.MarioState.IsFire();
+            return mario.MarioState.IsBigMario();
         }
 
-        public bool IsStar()
+        public bool IsFireMario()
+        {
+            return mario.MarioState.IsFireMario();
+        }
+
+        public bool IsStarMario()
         {
             return true;
         }
@@ -158,7 +158,7 @@ namespace Game.Mario
         }
 
 
-        public bool isHurt()
+        public bool IsHurt()
         {
             return false;
         }

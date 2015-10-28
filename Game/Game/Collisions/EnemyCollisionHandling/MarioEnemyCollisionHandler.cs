@@ -42,20 +42,20 @@ namespace Game.Collisions.EnemyCollisionHandling
         public void HandleCollision()
         {
             HandleScore();
-            if (!(mario.MarioState is DeadMarioState) && !mario.IsStar() && enemy is GreenKoopa && ((GreenKoopa)enemy).IsHit)
+            if (!(mario.MarioState is DeadMarioState) && !mario.IsStarMario() && enemy is GreenKoopa && ((GreenKoopa)enemy).IsHit)
             {
                 WeaponizedKoopa();
             }
-            else if (!mario.IsStar() && side is TopSideCollision && !enemy.IsFlipped)
+            else if (!mario.IsStarMario() && side is TopSideCollision && !enemy.IsFlipped)
             {
                 MarioEnemyTopSide();
             }
-                else if (!mario.IsStar() && !mario.isHurt() && enemy.CanDealDamage)
+                else if (!mario.IsStarMario() && !mario.IsHurt() && enemy.CanDealDamage)
             {
                 collision.ResolveOverlap(mario, side);
                 mario.Damage();
             }
-            else if (mario.IsStar())
+            else if (mario.IsStarMario())
             {
                 enemy.CanDealDamage = false;
                 enemy.Flipped();
