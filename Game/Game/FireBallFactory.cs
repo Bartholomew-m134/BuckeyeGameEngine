@@ -9,16 +9,18 @@ namespace Game
 {
     public class FireBallFactory
     {
-        Game1 game;
+        private Game1 game;
 
-        FireBallFactory(Game1 game)
+        public FireBallFactory(Game1 game)
         {
-            this.game = new Game1();
+            this.game = game;
         }
 
         public void ReleaseRightFireBall(Vector2 location)
         {
-            WorldManager.CreateNewObject(new RightFire(game));
+            RightFire fire = new RightFire(game);
+            fire.VectorCoordinates = location;
+            WorldManager.CreateNewObject(fire);
         }
 
         public void ReleaseLeftFireBall(Vector2 location)
