@@ -130,7 +130,7 @@ namespace Game.Collisions.BlockCollisionHandling
             if (collidingBlock.State is BrickBlockState && collidingMario.IsBigMario() && collisionSide is BottomSideCollision)
             {
                 ScoreManager.IncreaseScore(50);
-                ScoreManager.location = WorldManager.camera.GetAdjustedPosition(collidingBlock.VectorCoordinates);
+                ScoreManager.location = collidingBlock.VectorCoordinates;
             }
         }
     }

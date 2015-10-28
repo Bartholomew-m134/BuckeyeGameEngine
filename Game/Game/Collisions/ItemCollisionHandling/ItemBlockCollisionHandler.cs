@@ -66,7 +66,7 @@ namespace Game.Collisions.ItemCollisionHandling
             if (collidingBlock.isBumped && side is TopSideCollision && collidingItem.VectorCoordinates.X == collidingBlock.VectorCoordinates.X && collidingItem is Coin)
             {
                 ScoreManager.IncreaseScore(200);
-                ScoreManager.location = WorldManager.camera.GetAdjustedPosition(collidingItem.VectorCoordinates);
+                ScoreManager.location = collidingItem.VectorCoordinates;
             }
         }
     }

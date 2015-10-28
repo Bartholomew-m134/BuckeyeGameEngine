@@ -95,12 +95,12 @@ namespace Game.Collisions.EnemyCollisionHandling
             if (enemyA is GreenKoopa && ((GreenKoopa)enemyA).IsWeaponized)
             {
                 ScoreManager.IncreaseScore(ScoreManager.HandleShellSequence(shellSequenceIndex));
-                ScoreManager.location = WorldManager.camera.GetAdjustedPosition(enemyB.VectorCoordinates);
+                ScoreManager.location = enemyB.VectorCoordinates;
             }
             if (enemyB is GreenKoopa && ((GreenKoopa)enemyB).IsWeaponized)
             {
                 ScoreManager.IncreaseScore(ScoreManager.HandleShellSequence(shellSequenceIndex));
-                ScoreManager.location = WorldManager.camera.GetAdjustedPosition(enemyB.VectorCoordinates);
+                ScoreManager.location = enemyB.VectorCoordinates;
             }
         }
     }
