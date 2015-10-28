@@ -11,10 +11,6 @@ namespace Game.Interfaces
 
         void Explode();
 
-        void Release(Vector2 location);
-
-        void ReverseDirection();
-
         void Bounce();
 
     }

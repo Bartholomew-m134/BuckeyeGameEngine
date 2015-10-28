@@ -12,19 +12,16 @@ namespace Game.Items
     public class LeftFire : IProjectile
     {
         private Game1 myGame;
-        private IProjectile fire;
         private ISprite FireSprite;
         private Vector2 location;
         private ObjectPhysics physics;
-        private bool isReleased;
 
         public LeftFire(Game1 game)
         {
-            isReleased = false;
             myGame = game;
             FireSprite = ProjectileSpriteFactory.CreateFireSprite();
             physics = new ObjectPhysics();
-            physics.Acceleration = Vector2.Zero;
+            physics.Velocity = new Vector2(15, physics.Velocity.Y);
         }
 
         public void Update()
@@ -35,7 +32,7 @@ namespace Game.Items
 
         public void Draw(ICamera camera)
         {
-                FireSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
+            FireSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
         public void Explode()
@@ -45,29 +42,9 @@ namespace Game.Items
             physics.Velocity = Vector2.Zero;
         }
 
-        public void Release(Vector2 location)
-        {
-            if (!isReleased)
-            {
-                isReleased = true;
-                physics.ResetPhysics();
-                physics.Velocity = new Vector2(-10, 10);
-                physics.Acceleration = new Vector2(0, 0); 
-            }
-        }
-
-        public void ReverseDirection()
-        {
-            float Y = this.physics.Velocity.Y;
-            float X = this.physics.Velocity.X;
-            this.physics.Velocity = new Vector2(-X,Y);
-        }
-
         public void Bounce()
         {
-            float X = this.physics.Velocity.X;
-            this.physics.ResetY();
-            this.physics.Velocity = new Vector2(X, -5);
+            physics.Velocity = new Vector2(physics.Velocity.X, -physics.Velocity.Y);
         }
 
         public Vector2 VectorCoordinates

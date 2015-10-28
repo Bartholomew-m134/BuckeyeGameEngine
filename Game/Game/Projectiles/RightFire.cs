@@ -15,15 +15,13 @@ namespace Game.Items
         private ISprite FireSprite;
         private Vector2 location;
         private ObjectPhysics physics;
-        private bool isReleased;
 
         public RightFire(Game1 game)
         {
-            isReleased = true;
             myGame = game;
             FireSprite = ProjectileSpriteFactory.CreateFireSprite();
             physics = new ObjectPhysics();
-            physics.Acceleration = Vector2.Zero;
+            physics.Velocity = new Vector2(15, physics.Velocity.Y);
         }
 
         public void Update()
@@ -44,29 +42,9 @@ namespace Game.Items
             physics.Velocity = Vector2.Zero;
         }
 
-        public void Release(Vector2 location)
-        {
-            if (!isReleased)
-            {
-                isReleased = true;
-                physics.ResetPhysics();
-                physics.Velocity = new Vector2(10, 10);
-                physics.Acceleration = new Vector2(0, 0);
-            }
-        }
-
-        public void ReverseDirection()
-        {
-            float Y = physics.Velocity.Y;
-            float X = physics.Velocity.X;
-            this.physics.Velocity = new Vector2(-X, Y);
-        }
-
         public void Bounce()
         {
-            float X = this.physics.Velocity.X;
-            this.physics.Velocity = new Vector2(X, -5);
-            this.physics.Acceleration = new Vector2(0, 1);
+            physics.Velocity = new Vector2(physics.Velocity.X, -physics.Velocity.Y);
         }
 
         public Vector2 VectorCoordinates
