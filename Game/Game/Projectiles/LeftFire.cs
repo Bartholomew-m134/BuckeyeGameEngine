@@ -52,13 +52,12 @@ namespace Game.Projectiles
             FireSprite = ProjectileSpriteFactory.CreateExplodingFireSprite();
             physics.Acceleration = Vector2.Zero;
             physics.Velocity = Vector2.Zero;
-            location.Y += 2000;
             isExploded = true;
         }
 
         public void Bounce()
         {
-            physics.Velocity = new Vector2(physics.Velocity.X, -3);
+            physics.Velocity = new Vector2(physics.Velocity.X, -2);
         }
 
         public void ReturnObject()
