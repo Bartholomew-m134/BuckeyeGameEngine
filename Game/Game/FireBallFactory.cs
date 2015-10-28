@@ -7,11 +7,11 @@ using System.Text;
 
 namespace Game
 {
-    public class FireBallConstructor
+    public class FireBallFactory
     {
         Game1 game;
 
-        FireBallConstructor(Game1 game)
+        FireBallFactory(Game1 game)
         {
             this.game = new Game1();
         }
