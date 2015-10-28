@@ -42,15 +42,15 @@ namespace Game.Collisions.EnemyCollisionHandling
         public void HandleCollision()
         {
             HandleScore();
-            if (!(mario.MarioState is DeadMarioState) && !mario.IsStarMario() && enemy is GreenKoopa && ((GreenKoopa)enemy).IsHit)
+            if (!MarioDeadState() && !mario.IsStarMario() && enemy is GreenKoopa && ((GreenKoopa)enemy).IsHit)
             {
                 WeaponizedKoopa();
             }
-            else if (!mario.IsStarMario() && side is TopSideCollision && !enemy.IsFlipped)
+            else if (!MarioDeadState() && !mario.IsStarMario() && side is TopSideCollision && !enemy.IsFlipped)
             {
                 MarioEnemyTopSide();
             }
-                else if (!mario.IsStarMario() && !mario.IsHurt() && enemy.CanDealDamage)
+            else if (!MarioDeadState() && !mario.IsStarMario() && !mario.IsHurt() && enemy.CanDealDamage)
             {
                 collision.ResolveOverlap(mario, side);
                 mario.Damage();
@@ -62,7 +62,12 @@ namespace Game.Collisions.EnemyCollisionHandling
             }
         }
 
-        public void WeaponizedKoopa()
+        private bool MarioDeadState()
+        {
+            return (mario.MarioState is DeadMarioState);
+        }
+
+        private void WeaponizedKoopa()
         {
             collision.ResolveOverlap(mario, side);
             if (((GreenKoopa)enemy).state is GreenKoopaEmergingFromShellState)
