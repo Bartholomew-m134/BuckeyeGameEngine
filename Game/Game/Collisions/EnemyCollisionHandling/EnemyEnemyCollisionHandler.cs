@@ -6,6 +6,7 @@ using Game.Interfaces;
 using Game.Enemies.KoopaClasses;
 using Game.Enemies.KoopaClasses.KoopaStates;
 using Game.Enemies.GoombaClasses;
+using Game.Utilities;
 
 namespace Game.Collisions.EnemyCollisionHandling
 {
@@ -15,6 +16,7 @@ namespace Game.Collisions.EnemyCollisionHandling
         private IEnemy enemyA;
         private IEnemy enemyB;
         private ICollisionSide side;
+        private int shellSequenceIndex;
 
         public EnemyEnemyCollisionHandler(CollisionData collision)
         {
@@ -22,10 +24,12 @@ namespace Game.Collisions.EnemyCollisionHandling
             enemyA = (IEnemy)collision.GameObjectA;
             enemyB = (IEnemy)collision.GameObjectB;
             side = (ICollisionSide)collision.CollisionSide;
+            shellSequenceIndex = 0;
         }
 
         public void HandleCollision()
         {
+            HandleScore();
             if (enemyA.IsHit == false && enemyB.IsHit == false && LeftOrRightCollision())
             {
                 HandleNormalLeftOrRightEnemyCollision();
@@ -60,12 +64,11 @@ namespace Game.Collisions.EnemyCollisionHandling
             return (side is TopSideCollision || side is BottomSideCollision);
         }
 
-        private void HandleNormalLeftOrRightEnemyCollision()
-        {
+        private void HandleNormalLeftOrRightEnemyCollision(){
             collision.ResolveOverlap(collision.GameObjectA, side);
-            enemyA.ShiftDirection();
-            enemyB.ShiftDirection();
-        }
+                enemyA.ShiftDirection();
+                enemyB.ShiftDirection();
+            }
         private void HandleNormalTopOrBottomEnemyCollision()
         {
             if (side is TopSideCollision)
@@ -85,6 +88,19 @@ namespace Game.Collisions.EnemyCollisionHandling
             {
                 enemyA.CanDealDamage = false;
                 enemyA.Flipped();
+            }
+        }
+        private void HandleScore()
+        {
+            if (enemyA is GreenKoopa && ((GreenKoopa)enemyA).IsWeaponized)
+            {
+                ScoreManager.IncreaseScore(ScoreManager.HandleShellSequence(shellSequenceIndex));
+                ScoreManager.location = WorldManager.camera.GetAdjustedPosition(enemyB.VectorCoordinates);
+            }
+            if (enemyB is GreenKoopa && ((GreenKoopa)enemyB).IsWeaponized)
+            {
+                ScoreManager.IncreaseScore(ScoreManager.HandleShellSequence(shellSequenceIndex));
+                ScoreManager.location = WorldManager.camera.GetAdjustedPosition(enemyB.VectorCoordinates);
             }
         }
     }

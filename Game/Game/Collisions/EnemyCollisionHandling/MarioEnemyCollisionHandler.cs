@@ -10,6 +10,8 @@ using Game.Enemies.KoopaClasses.KoopaStates;
 using Game.Interfaces;
 using Microsoft.Xna.Framework;
 using Game.Mario.MarioStates;
+using Game.Utilities;
+using Game.Enemies.GoombaClasses.GoombaStates;
 
 namespace Game.Collisions.EnemyCollisionHandling
 {
@@ -39,6 +41,7 @@ namespace Game.Collisions.EnemyCollisionHandling
 
         public void HandleCollision()
         {
+            HandleScore();
             if (!(mario.MarioState is DeadMarioState) && !mario.IsStar() && enemy is GreenKoopa && ((GreenKoopa)enemy).IsHit)
             {
                 WeaponizedKoopa();
@@ -47,7 +50,7 @@ namespace Game.Collisions.EnemyCollisionHandling
             {
                 MarioEnemyTopSide();
             }
-            else if (!mario.IsStar() && !mario.isHurt() && enemy.CanDealDamage)
+                else if (!mario.IsStar() && !mario.isHurt() && enemy.CanDealDamage)
             {
                 collision.ResolveOverlap(mario, side);
                 mario.Damage();
@@ -102,6 +105,39 @@ namespace Game.Collisions.EnemyCollisionHandling
             mario.Physics.Velocity = new Vector2(mario.Physics.Velocity.X, -2);
             mario.Physics.Acceleration = new Vector2(mario.Physics.Acceleration.X, 1);
         }
-        
+
+        private void HandleScore()
+        {
+            if (enemy is Goomba && !(mario.MarioState is DeadMarioState) && side is TopSideCollision && !(mario is HurtMario) && !(mario is GrowMario) && !(mario is StarMario))
+            {
+                if (!(((Goomba)enemy).state is GoombaFlippedState) && !(((Goomba)enemy).state is GoombaSmashedState))
+                {
+                    ScoreManager.IncreaseScore(100);
+                    ScoreManager.location = WorldManager.camera.GetAdjustedPosition(enemy.VectorCoordinates);
+                }
+            }
+            if (enemy is GreenKoopa && !(mario.MarioState is DeadMarioState) && side is TopSideCollision && !(mario is HurtMario) && !(mario is GrowMario) && !(mario is StarMario))
+            {
+                if(!(((GreenKoopa)enemy).state is GreenKoopaEmergingFromShellState) && !(((GreenKoopa)enemy).state is GreenKoopaHidingInShellState)){
+                    ScoreManager.IncreaseScore(100);
+                    ScoreManager.location = WorldManager.camera.GetAdjustedPosition(enemy.VectorCoordinates);
+                }
+            }
+            if (mario is StarMario && enemy is Goomba){
+                if (((Goomba)enemy).state is GoombaWalkingLeftState || ((Goomba)enemy).state is GoombaWalkingRightState)
+                {
+                    ScoreManager.IncreaseScore(100);
+                    ScoreManager.location = WorldManager.camera.GetAdjustedPosition(enemy.VectorCoordinates);
+                }
+            }
+            if (mario is StarMario && enemy is GreenKoopa)
+            {
+                if (((GreenKoopa)enemy).state is GreenKoopaWalkingLeftState || ((GreenKoopa)enemy).state is GreenKoopaWalkingRightState)
+                {
+                    ScoreManager.IncreaseScore(200);
+                    ScoreManager.location = WorldManager.camera.GetAdjustedPosition(enemy.VectorCoordinates);
+                }
+            }
+        }
     }
 }
