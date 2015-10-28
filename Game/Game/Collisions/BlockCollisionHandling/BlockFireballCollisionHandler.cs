@@ -36,7 +36,11 @@ namespace Game.Collisions.BlockCollisionHandling
             if (side is TopSideCollision)
             {
                 collision.ResolveOverlap(fireball, side);
-                fireball.Physics.Velocity = new Vector2(11, -5);
+                fireball.Physics.Velocity = new Vector2(fireball.Physics.Velocity.X, -5);
+            }
+            else
+            {
+                fireball.Explode();
             }
         }
     }
