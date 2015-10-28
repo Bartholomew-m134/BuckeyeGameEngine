@@ -10,6 +10,7 @@ namespace Game
     public class FireBallFactory
     {
         private Game1 game;
+        private static int count;
 
         public FireBallFactory(Game1 game)
         {
@@ -18,16 +19,30 @@ namespace Game
 
         public void ReleaseRightFireBall(Vector2 location)
         {
-            RightFire fire = new RightFire(game);
+            Console.WriteLine("FireBall " + count);
+            if(count < 5)
+            {
+            RightFire fire = new RightFire(this, game);
             fire.VectorCoordinates = location;
             WorldManager.CreateNewObject(fire);
+            count++;
+            }
         }
 
         public void ReleaseLeftFireBall(Vector2 location)
         {
-            LeftFire fire = new LeftFire(game);
-            fire.VectorCoordinates = location;
-            WorldManager.CreateNewObject(fire);
+            if (count < 5)
+            {
+                LeftFire fire = new LeftFire(this, game);
+                fire.VectorCoordinates = location;
+                WorldManager.CreateNewObject(fire);
+                count++;
+            }
+        }
+
+        public void ReturnFireBall()
+        {
+            count--;
         }
     }
 }

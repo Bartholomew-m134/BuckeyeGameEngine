@@ -15,13 +15,15 @@ namespace Game.Projectiles
         private ISprite FireSprite;
         private Vector2 location;
         private ObjectPhysics physics;
+        private FireBallFactory factory;
 
-        public RightFire(Game1 game)
+        public RightFire(FireBallFactory factory, Game1 game)
         {
             myGame = game;
             FireSprite = ProjectileSpriteFactory.CreateFireSprite();
             physics = new ObjectPhysics();
             physics.Velocity = new Vector2(15, physics.Velocity.Y);
+            this.factory = factory;
         }
 
         public void Update()
@@ -40,11 +42,17 @@ namespace Game.Projectiles
             location.Y += 2000;
             physics.Acceleration = Vector2.Zero;
             physics.Velocity = Vector2.Zero;
+            factory.ReturnFireBall();
         }
 
         public void Bounce()
         {
             physics.Velocity = new Vector2(physics.Velocity.X, -physics.Velocity.Y);
+        }
+
+        public void ReturnObject()
+        {
+            factory.ReturnFireBall();
         }
 
         public Vector2 VectorCoordinates
