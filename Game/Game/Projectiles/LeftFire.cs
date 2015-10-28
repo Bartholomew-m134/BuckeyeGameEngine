@@ -27,6 +27,7 @@ namespace Game.Projectiles
 
         public void Update()
         {
+            
             FireSprite.Update();
             location = physics.Update(location);
         }
