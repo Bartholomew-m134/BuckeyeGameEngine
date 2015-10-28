@@ -11,7 +11,7 @@ namespace Game
     {
         private Game1 game;
         private int count;
-        private const int MAXCOUNT = 5;
+        private const int MAXCOUNT = 3;
 
         public FireBallFactory(Game1 game)
         {

@@ -52,7 +52,6 @@ namespace Game.Projectiles
             physics.Acceleration = Vector2.Zero;
             physics.Velocity = Vector2.Zero;
             isExploded = true;
-            ReturnObject();
         }
 
         public void Bounce()
