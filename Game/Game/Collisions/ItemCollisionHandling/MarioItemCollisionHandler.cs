@@ -63,27 +63,27 @@ namespace Game.Collisions.ItemCollisionHandling
         {
             if(collidingItem is Coin && !collidingItem.IsInsideBlock){
                 ScoreManager.IncreaseScore(200);
-                ScoreManager.location = WorldManager.camera.GetAdjustedPosition(collidingItem.VectorCoordinates);
+                ScoreManager.location = collidingItem.VectorCoordinates;
             }
             else if (collidingItem is RedMushroom && !collidingItem.IsInsideBlock)
             {
                 ScoreManager.IncreaseScore(1000);
-                ScoreManager.location = WorldManager.camera.GetAdjustedPosition(collidingItem.VectorCoordinates);
+                ScoreManager.location = collidingItem.VectorCoordinates;
             }
             else if (collidingItem is GreenMushroom && !collidingItem.IsInsideBlock)
             {
                 ScoreManager.IncreaseScore(1000);
-                ScoreManager.location = WorldManager.camera.GetAdjustedPosition(collidingItem.VectorCoordinates);
+                ScoreManager.location = collidingItem.VectorCoordinates;
             }
             else if (collidingItem is Star && !collidingItem.IsInsideBlock)
             {
                 ScoreManager.IncreaseScore(1000);
-                ScoreManager.location = WorldManager.camera.GetAdjustedPosition(collidingItem.VectorCoordinates);
+                ScoreManager.location = collidingItem.VectorCoordinates;
             }
             else if (collidingItem is Flower && !collidingItem.IsInsideBlock)
             {
                 ScoreManager.IncreaseScore(1000);
-                ScoreManager.location = WorldManager.camera.GetAdjustedPosition(collidingItem.VectorCoordinates);
+                ScoreManager.location = collidingItem.VectorCoordinates;
             }
         }
         

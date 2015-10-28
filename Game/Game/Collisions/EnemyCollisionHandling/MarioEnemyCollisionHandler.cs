@@ -113,21 +113,21 @@ namespace Game.Collisions.EnemyCollisionHandling
                 if (!(((Goomba)enemy).state is GoombaFlippedState) && !(((Goomba)enemy).state is GoombaSmashedState))
                 {
                     ScoreManager.IncreaseScore(100);
-                    ScoreManager.location = WorldManager.camera.GetAdjustedPosition(enemy.VectorCoordinates);
+                    ScoreManager.location = enemy.VectorCoordinates;
                 }
             }
             if (enemy is GreenKoopa && !(mario.MarioState is DeadMarioState) && side is TopSideCollision && !(mario is HurtMario) && !(mario is GrowMario) && !(mario is StarMario))
             {
                 if(!(((GreenKoopa)enemy).state is GreenKoopaEmergingFromShellState) && !(((GreenKoopa)enemy).state is GreenKoopaHidingInShellState)){
                     ScoreManager.IncreaseScore(100);
-                    ScoreManager.location = WorldManager.camera.GetAdjustedPosition(enemy.VectorCoordinates);
+                    ScoreManager.location = enemy.VectorCoordinates;
                 }
             }
             if (mario is StarMario && enemy is Goomba){
                 if (((Goomba)enemy).state is GoombaWalkingLeftState || ((Goomba)enemy).state is GoombaWalkingRightState)
                 {
                     ScoreManager.IncreaseScore(100);
-                    ScoreManager.location = WorldManager.camera.GetAdjustedPosition(enemy.VectorCoordinates);
+                    ScoreManager.location = enemy.VectorCoordinates;
                 }
             }
             if (mario is StarMario && enemy is GreenKoopa)
@@ -135,7 +135,7 @@ namespace Game.Collisions.EnemyCollisionHandling
                 if (((GreenKoopa)enemy).state is GreenKoopaWalkingLeftState || ((GreenKoopa)enemy).state is GreenKoopaWalkingRightState)
                 {
                     ScoreManager.IncreaseScore(200);
-                    ScoreManager.location = WorldManager.camera.GetAdjustedPosition(enemy.VectorCoordinates);
+                    ScoreManager.location = enemy.VectorCoordinates;
                 }
             }
         }

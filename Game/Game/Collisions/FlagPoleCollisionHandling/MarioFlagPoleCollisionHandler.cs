@@ -52,7 +52,7 @@ namespace Game.Collisions.FlagPoleCollisionHandling
             if (collidingFlagPole is TopOfPole && ScoreManager.flagTopBeenHit == false)
             {
                 ScoreManager.IncreaseScore(3000);
-                ScoreManager.location = WorldManager.camera.GetAdjustedPosition(collidingFlagPole.VectorCoordinates);
+                ScoreManager.location = collidingFlagPole.VectorCoordinates;
                 ScoreManager.flagTopBeenHit = true;
             }
         }
