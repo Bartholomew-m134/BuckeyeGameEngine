@@ -159,7 +159,7 @@ namespace Game.Mario
 
         public ObjectPhysics Physics
         {
-            get { return ((MarioInstance)mario).Physics; }
+            get { return ((IMario)mario).Physics; }
         }
 
 

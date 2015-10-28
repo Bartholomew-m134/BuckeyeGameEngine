@@ -83,7 +83,10 @@ namespace Game.Mario
 
         public void Flower()
         {
-            mario.Flower();
+            if (!this.isFire())
+            {
+                new FireMario(this, myGame);
+            }
         }
 
         public void Fire()
@@ -93,7 +96,10 @@ namespace Game.Mario
 
         public void Mushroom()
         {
-            mario.Mushroom();
+            if (!this.IsBig())
+            {
+                new GrowMario(this, myGame);
+            }
         }
 
         public void Star()

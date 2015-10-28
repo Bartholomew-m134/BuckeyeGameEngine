@@ -106,7 +106,7 @@ namespace Game.Mario
 
         public void Star()
         {
-
+            mario.Star();
         }
 
         public void PoleSlide()

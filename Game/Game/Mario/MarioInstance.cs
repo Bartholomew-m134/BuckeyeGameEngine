@@ -113,7 +113,7 @@ namespace Game.Mario
             if(!this.IsBig())
             {
                 new GrowMario(this, myGame);
-        }
+            }
         }
 
         public void Star()
@@ -195,6 +195,10 @@ namespace Game.Mario
             get { return physics; }
         }
 
+        public FireBallFactory FireBallFactory
+        {
+            get { return factory; }
+        }
 
         public bool isHurt()
         {
