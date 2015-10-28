@@ -90,7 +90,12 @@ namespace Game
 
         public static void CreateNewObject(IGameObject newObject)
         {
-            objectList.Add(newObject);
+            int index = 0;
+            while (objectList[index] is IScenery)
+                index++;
+
+            objectList.Insert(index, newObject);
+            
         }
 
         public static void ResetToDefault()

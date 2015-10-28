@@ -28,7 +28,7 @@ namespace Game.Mario
 
         public void Update()
         {
-            if (frame == 18)
+            if (frame == 35)
             {
                 WorldManager.SetMario(this.mario);
             }
