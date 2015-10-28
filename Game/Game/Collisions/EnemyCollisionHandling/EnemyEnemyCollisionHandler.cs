@@ -24,20 +24,59 @@ namespace Game.Collisions.EnemyCollisionHandling
             side = (ICollisionSide)collision.CollisionSide;
         }
 
+        public void HandleCollision()
+        {
+            if (enemyA.IsHit == false && enemyB.IsHit == false && LeftOrRightCollision())
+            {
+                HandleNormalLeftOrRightEnemyCollision();
+            }
+            else if (enemyA.IsHit == false && enemyB.IsHit == false && TopOrBottomCollision())
+            {
+                HandleNormalTopOrBottomEnemyCollision();
+            }
+            else if (enemyA is GreenKoopa && ((GreenKoopa)enemyA).IsWeaponized || enemyB is GreenKoopa && ((GreenKoopa)enemyB).IsWeaponized)
+            {
+                HandleWeaponizedKoopaCollisions();
+            }
+            else if (enemyA.IsHit)
+            {
+                collision.ResolveOverlap(collision.GameObjectA, side);
+                enemyB.ShiftDirection();
+            }
+            else if (enemyB.IsHit)
+            {
+                collision.ResolveOverlap(collision.GameObjectA, side);
+                enemyA.ShiftDirection();
+            }
+        }
+
         private bool LeftOrRightCollision()
         {
             return (side is LeftSideCollision || side is RightSideCollision);
         }
 
-        public void HandleCollision()
+        private bool TopOrBottomCollision()
         {
-            if (enemyA.IsHit == false && enemyB.IsHit == false && LeftOrRightCollision())
-            {
-                collision.ResolveOverlap(collision.GameObjectA, collision.CollisionSide);
-                enemyA.ShiftDirection();
-                enemyB.ShiftDirection();
-            }
-            else if (enemyA is GreenKoopa && ((GreenKoopa)enemyA).IsWeaponized)
+            return (side is TopSideCollision || side is BottomSideCollision);
+        }
+
+        private void HandleNormalLeftOrRightEnemyCollision()
+        {
+            collision.ResolveOverlap(collision.GameObjectA, side);
+            enemyA.ShiftDirection();
+            enemyB.ShiftDirection();
+        }
+        private void HandleNormalTopOrBottomEnemyCollision()
+        {
+            if (side is TopSideCollision)
+                collision.ResolveOverlap(enemyA, side);
+            else
+                collision.ResolveOverlap(enemyB, side.FlipSide());
+        }
+
+        private void HandleWeaponizedKoopaCollisions()
+        {
+            if (enemyA is GreenKoopa && ((GreenKoopa)enemyA).IsWeaponized)
             {
                 enemyB.CanDealDamage = false;
                 enemyB.Flipped();
@@ -46,17 +85,6 @@ namespace Game.Collisions.EnemyCollisionHandling
             {
                 enemyA.CanDealDamage = false;
                 enemyA.Flipped();
-            }
-            else if (enemyA.IsHit)
-            {
-                collision.ResolveOverlap(collision.GameObjectA, collision.CollisionSide);
-
-                enemyB.ShiftDirection();
-            }
-            else if (enemyB.IsHit)
-            {
-                collision.ResolveOverlap(collision.GameObjectA, collision.CollisionSide);
-                enemyA.ShiftDirection();
             }
         }
     }
