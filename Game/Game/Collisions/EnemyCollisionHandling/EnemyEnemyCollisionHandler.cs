@@ -93,12 +93,12 @@ namespace Game.Collisions.EnemyCollisionHandling
         {
             if (enemyB is Goomba && enemyA is GreenKoopa){
                 if (((GreenKoopa)enemyA).IsWeaponized && (((Goomba)enemyB).state is GoombaWalkingLeftState || ((Goomba)enemyB).state is GoombaWalkingRightState))
-            {
-                ScoreManager.IncreaseScore(ScoreManager.HandleShellSequence(shellSequenceIndex));
-                ScoreManager.location = enemyB.VectorCoordinates;
+                {
+               
+                    ScoreManager.location = enemyB.VectorCoordinates;
                     ScoreManager.IncreaseScore(ScoreManager.HandleShellSequence(((GreenKoopa)enemyA).weaponizedShellKillStreak));
                     ((GreenKoopa)enemyA).weaponizedShellKillStreak += 1;
-                }
+               }
             }
             if (enemyA is Goomba && enemyB is GreenKoopa)
             {
@@ -108,7 +108,7 @@ namespace Game.Collisions.EnemyCollisionHandling
                     
                     ((GreenKoopa)enemyB).weaponizedShellKillStreak += 1;
                 }
-                ScoreManager.IncreaseScore(ScoreManager.HandleShellSequence(shellSequenceIndex));
+                
                 ScoreManager.location = enemyB.VectorCoordinates;
             }
             
