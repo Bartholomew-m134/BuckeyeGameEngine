@@ -5,6 +5,7 @@ using System.Text;
 using Game.Mario;
 using Game.Pipes;
 using Game.Interfaces;
+using Game.Mario.MarioStates;
 
 namespace Game.Collisions.PipeCollisionHandling
 {
@@ -35,17 +36,20 @@ namespace Game.Collisions.PipeCollisionHandling
 
         public void HandleCollision()
         {
-            
 
-            collision.ResolveOverlap(mario, side);
-            if (side is TopSideCollision)
+            if (!(mario.MarioState is DeadMarioState))
             {
-                mario.Physics.ResetY();
-                if (mario.IsJumping())
-                    mario.MarioState.ToIdle();
+                collision.ResolveOverlap(mario, side);
+                if (side is TopSideCollision)
+                {
+                    mario.Physics.ResetY();
+                    if (mario.IsJumping())
+                        mario.MarioState.ToIdle();
+                }
+                else
+                    mario.Physics.ResetX();
+
             }
-            else
-                mario.Physics.ResetX();
         }
     }
 }

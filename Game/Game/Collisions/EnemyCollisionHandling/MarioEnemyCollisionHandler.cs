@@ -9,6 +9,7 @@ using Game.Enemies.KoopaClasses;
 using Game.Enemies.KoopaClasses.KoopaStates;
 using Game.Interfaces;
 using Microsoft.Xna.Framework;
+using Game.Mario.MarioStates;
 
 namespace Game.Collisions.EnemyCollisionHandling
 {
@@ -38,22 +39,26 @@ namespace Game.Collisions.EnemyCollisionHandling
 
         public void HandleCollision()
         {
-            if(!mario.IsStar() && enemy is GreenKoopa && ((GreenKoopa)enemy).IsHit){
-                WeaponizedKoopa();
-            }
-            else if (!mario.IsStar() && side is TopSideCollision)
+            if (!(mario.MarioState is DeadMarioState))
             {
-                MarioEnemyTopSide();
-            }
-            else if(!mario.IsStar() && enemy.CanDealDamage)
-            {
-                collision.ResolveOverlap(mario, side);
-                mario.Damage();
-            }
-            else if (mario.IsStar())
-            {
-                enemy.CanDealDamage = false;
-                enemy.Flipped();
+                if (!mario.IsStar() && enemy is GreenKoopa && ((GreenKoopa)enemy).IsHit)
+                {
+                    WeaponizedKoopa();
+                }
+                else if (!mario.IsStar() && side is TopSideCollision)
+                {
+                    MarioEnemyTopSide();
+                }
+                else if (!mario.IsStar() && enemy.CanDealDamage)
+                {
+                    collision.ResolveOverlap(mario, side);
+                    mario.Damage();
+                }
+                else if (mario.IsStar())
+                {
+                    enemy.CanDealDamage = false;
+                    enemy.Flipped();
+                }
             }
         }
 
