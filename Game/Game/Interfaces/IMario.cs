@@ -48,6 +48,8 @@ namespace Game.Mario
 
         bool IsBig();
 
+        bool isFire();
+
         bool IsStar();
 
         bool IsJumping();

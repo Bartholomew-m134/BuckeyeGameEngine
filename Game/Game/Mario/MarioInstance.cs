@@ -84,7 +84,10 @@ namespace Game.Mario
 
         public void Flower()
         {
-            state.Flower();
+            if (!this.isFire())
+            {
+                new FireMario(this, myGame);
+            }
         }
 
         public void Fire()
@@ -96,9 +99,10 @@ namespace Game.Mario
 
         public void Mushroom()
         {
-            Vector2 previousVector = sprite.SpriteDimensions;
-            state.Mushroom();
-            location += sprite.SpriteDimensions - previousVector/2;
+            if(!this.IsBig())
+            {
+                new GrowMario(this, myGame);
+           }
         }
 
         public void Star()
@@ -116,7 +120,15 @@ namespace Game.Mario
 
         public void Damage()
         {
+            if (this.IsBig())
+            {
             state.Damage();
+                new HurtMario(this, myGame);
+        }
+            else
+            {
+                state.Damage();
+            }
         }
 
         public Vector2 VectorCoordinates
@@ -137,10 +149,19 @@ namespace Game.Mario
             set { state = value; }
         }
 
+        public bool Transition()
+        {
+            return false;
+        }
 
         public bool IsBig()
         {
             return state.IsBig();
+        }
+
+        public bool isFire()
+        {
+            return state.IsFire();
         }
 
         public bool IsStar()

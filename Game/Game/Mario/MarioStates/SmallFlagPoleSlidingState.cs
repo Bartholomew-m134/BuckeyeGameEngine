@@ -83,6 +83,11 @@ namespace Game.Mario.MarioStates
                 return true;
             }
 
+            public bool IsFire()
+            {
+                return false;
+            }
+
             public void ToIdle()
             {
 

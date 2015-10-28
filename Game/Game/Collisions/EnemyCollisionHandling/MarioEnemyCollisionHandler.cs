@@ -41,7 +41,7 @@ namespace Game.Collisions.EnemyCollisionHandling
             if(!mario.IsStar() && enemy is GreenKoopa && ((GreenKoopa)enemy).IsHit){
                 WeaponizedKoopa();
             }
-            else if (!mario.IsStar() && side is TopSideCollision)
+            else if (!mario.IsStar() && side is TopSideCollision && !enemy.IsFlipped)
             {
                 MarioEnemyTopSide();
             }

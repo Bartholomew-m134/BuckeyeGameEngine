@@ -19,7 +19,7 @@ namespace Game.Items
 
         public RightFire(Game1 game)
         {
-            isReleased = false;
+            isReleased = true;
             myGame = game;
             FireSprite = ProjectileSpriteFactory.CreateFireSprite();
             physics = new ObjectPhysics();
