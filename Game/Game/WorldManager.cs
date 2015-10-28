@@ -17,7 +17,6 @@ namespace Game
 
         private static string currentFileName;
         private static Game1 currentGame;
-        private static Camera camera;
         private static System.Diagnostics.Stopwatch timer;
 
         public static void LoadListFromFile(string filename, Game1 game)
@@ -26,12 +25,11 @@ namespace Game
             objectWithinZoneList = new List<IGameObject>();
             currentFileName = filename;
             currentGame = game;
-            camera = new Camera(GetMario().VectorCoordinates);
             timer = new System.Diagnostics.Stopwatch();
 
         }
 
-        public static void Update()
+        public static void Update(ICamera camera)
         {
             for (int i = objectList.Count - 1; i >= 0; i--)
             {
@@ -61,7 +59,7 @@ namespace Game
             }
         }
 
-        public static void Draw()
+        public static void Draw(ICamera camera)
         {
             foreach (IGameObject gameObject in objectList)
             {
@@ -84,6 +82,8 @@ namespace Game
         public static void FreeObject(IGameObject referenceObject)
         {
             objectList.Remove(referenceObject);
+            if (referenceObject is IProjectile)
+                ((IProjectile)referenceObject).ReturnObject();
             if (referenceObject is IMario)
                 ResetToDefault();
         }

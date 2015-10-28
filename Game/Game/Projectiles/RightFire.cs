@@ -16,7 +16,9 @@ namespace Game.Projectiles
         private Vector2 location;
         private ObjectPhysics physics;
         private bool isExploded;
-        public RightFire(Game1 game)
+        private FireBallFactory factory;
+
+        public RightFire(FireBallFactory factory, Game1 game)
         {
             myGame = game;
             FireSprite = ProjectileSpriteFactory.CreateFireSprite();
@@ -24,6 +26,7 @@ namespace Game.Projectiles
             physics.Velocity = new Vector2(10, physics.Velocity.Y);
             physics.VelocityMaximum = new Vector2(10, physics.VelocityMaximum.Y);
             isExploded = false;
+            this.factory = factory;
         }
 
         public void Update()
@@ -54,6 +57,11 @@ namespace Game.Projectiles
         public void Bounce()
         {
             physics.Velocity = new Vector2(physics.Velocity.X, -3);
+        }
+
+        public void ReturnObject()
+        {
+            factory.ReturnFireBall();
         }
 
         public Vector2 VectorCoordinates

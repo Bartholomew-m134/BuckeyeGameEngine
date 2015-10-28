@@ -44,14 +44,25 @@ namespace Game.Utilities
             if(hasChanged)
             drawOnScreenTimer++;
         }
-        public static void DrawScore(SpriteBatch spriteBatch)
+        public static void DrawScore(SpriteBatch spriteBatch, ICamera camera)
         {
             scoreString = currentScoreToDraw.ToString();
             if(hasChanged){
                 spriteBatch.Begin();
-                spriteBatch.DrawString(scoreFont, scoreString, location, Color.White);
+                spriteBatch.DrawString(scoreFont, scoreString, camera.GetAdjustedPosition(location), Color.White);
                 spriteBatch.End();
             }
+        }
+
+        public static int HandleShellSequence(int shellSequenceIndex)
+        {
+            //not yet implemented
+            return 0;
+        }
+        public static int HandleStompSequence(int shellSequenceIndex)
+        {
+            //not yet implemented
+            return 0;
         }
     }
 }

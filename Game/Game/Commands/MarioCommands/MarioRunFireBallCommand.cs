@@ -15,8 +15,8 @@ namespace Game.Commands.MarioCommands
 
         public void Execute()
         {
-            if(WorldManager.GetMario().isFire())
-                WorldManager.GetMario().Fire();
+            if(WorldManager.GetMario().IsFireMario())
+                WorldManager.GetMario().ThrowFireball();
         }
 
         public void Hold()

@@ -75,10 +75,6 @@ namespace Game.Mario.MarioStates
 
         }
 
-        public void Fire()
-        {
-
-        }
         public void PoleSlide()
         {
             mario.MarioState = new FireFlagPoleSlidingState(mario);
@@ -98,12 +94,12 @@ namespace Game.Mario.MarioStates
             mario.MarioState = new NormalRightIdleState(mario);
         }
 
-        public bool IsBig()
+        public bool IsBigMario()
         {
             return true;
         }
 
-        public bool IsFire()
+        public bool IsFireMario()
         {
             return true;
         }

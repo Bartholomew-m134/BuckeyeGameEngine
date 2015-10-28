@@ -10,6 +10,8 @@ namespace Game
     public class FireBallFactory
     {
         private Game1 game;
+        private int count;
+        private const int MAXCOUNT = 3;
 
         public FireBallFactory(Game1 game)
         {
@@ -18,16 +20,30 @@ namespace Game
 
         public void ReleaseRightFireBall(Vector2 location)
         {
-            RightFire fire = new RightFire(game);
-            fire.VectorCoordinates = location;
-            WorldManager.CreateNewObject(fire);
+            if(count < MAXCOUNT)
+            {
+                RightFire fire = new RightFire(this, game);
+                fire.VectorCoordinates = location;
+                WorldManager.CreateNewObject(fire);
+                count++;
+            }
         }
 
         public void ReleaseLeftFireBall(Vector2 location)
         {
-            LeftFire fire = new LeftFire(game);
-            fire.VectorCoordinates = location;
-            WorldManager.CreateNewObject(fire);
+            if (count < MAXCOUNT)
+            {
+                LeftFire fire = new LeftFire(this, game);
+                fire.VectorCoordinates = location;
+                WorldManager.CreateNewObject(fire);
+                count++;
+            }
+        }
+
+        public void ReturnFireBall()
+        {
+            if(count > 0)
+                count--;
         }
     }
 }

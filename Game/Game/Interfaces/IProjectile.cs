@@ -13,5 +13,7 @@ namespace Game.Interfaces
 
         void Bounce();
 
+        void ReturnObject();
+
     }
 }

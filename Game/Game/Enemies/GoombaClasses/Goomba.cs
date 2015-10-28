@@ -31,7 +31,6 @@ namespace Game.Enemies.GoombaClasses
 
         public void Hit()
         {
-            ScoreManager.IncreaseScore(100);
             state.SmashGoomba();
         }
 

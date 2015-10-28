@@ -84,15 +84,15 @@ namespace Game.Mario
 
         public void Flower()
         {
-            if (!this.isFire())
+            if (!this.IsFireMario())
             {
                 new FireMario(this, myGame);
         }
         }
 
-        public void Fire()
+        public void ThrowFireball()
         {
-            if (this.isFire())
+            if (this.IsFireMario())
             {
                 if (state.IsRight())
                 {
@@ -110,7 +110,7 @@ namespace Game.Mario
 
         public void Mushroom()
         {
-            if(!this.IsBig())
+            if(!this.IsBigMario())
             {
                 new GrowMario(this, myGame);
             }
@@ -131,7 +131,7 @@ namespace Game.Mario
 
         public void Damage()
         {
-            if (this.IsBig())
+            if (this.IsBigMario())
             {
             state.Damage();
                 new HurtMario(this, myGame);
@@ -160,22 +160,22 @@ namespace Game.Mario
             set { state = value; }
         }
 
-        public bool isTransitioning()
+        public bool IsTransitioning()
         {
             return false;
         }
 
-        public bool IsBig()
+        public bool IsBigMario()
         {
-            return state.IsBig();
+            return state.IsBigMario();
         }
 
-        public bool isFire()
+        public bool IsFireMario()
         {
-            return state.IsFire();
+            return state.IsFireMario();
         }
 
-        public bool IsStar()
+        public bool IsStarMario()
         {
             return false;
         }
@@ -200,7 +200,7 @@ namespace Game.Mario
             get { return factory; }
         }
 
-        public bool isHurt()
+        public bool IsHurt()
         {
             return false;
         }

@@ -30,6 +30,7 @@ namespace Game.Collisions.ItemCollisionHandling
         }
 
         public void HandleCollision() {
+            HandleScore();
             if (!collidingItem.IsInsideBlock)
             {
                 if (collidingItem is Coin)
@@ -56,6 +57,33 @@ namespace Game.Collisions.ItemCollisionHandling
                     collidingItem.Disappear();
                     collidingMario.Star();
                 }
+            }
+        }
+        public void HandleScore()
+        {
+            if(collidingItem is Coin && !collidingItem.IsInsideBlock){
+                ScoreManager.IncreaseScore(200);
+                ScoreManager.location = collidingItem.VectorCoordinates;
+            }
+            else if (collidingItem is RedMushroom && !collidingItem.IsInsideBlock)
+            {
+                ScoreManager.IncreaseScore(1000);
+                ScoreManager.location = collidingItem.VectorCoordinates;
+            }
+            else if (collidingItem is GreenMushroom && !collidingItem.IsInsideBlock)
+            {
+                ScoreManager.IncreaseScore(1000);
+                ScoreManager.location = collidingItem.VectorCoordinates;
+            }
+            else if (collidingItem is Star && !collidingItem.IsInsideBlock)
+            {
+                ScoreManager.IncreaseScore(1000);
+                ScoreManager.location = collidingItem.VectorCoordinates;
+            }
+            else if (collidingItem is Flower && !collidingItem.IsInsideBlock)
+            {
+                ScoreManager.IncreaseScore(1000);
+                ScoreManager.location = collidingItem.VectorCoordinates;
             }
         }
         

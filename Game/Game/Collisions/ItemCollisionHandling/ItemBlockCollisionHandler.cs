@@ -2,6 +2,7 @@
 using Game.Blocks.BlockStates;
 using Game.Interfaces;
 using Game.Items;
+using Game.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +35,7 @@ namespace Game.Collisions.ItemCollisionHandling
         }
         public void HandleCollision()
         {
-
+            HandleScore();
             if (collidingBlock.isBumped && side is TopSideCollision && collidingItem.VectorCoordinates.X == collidingBlock.VectorCoordinates.X)           
                 collidingItem.Release();
 
@@ -58,6 +59,15 @@ namespace Game.Collisions.ItemCollisionHandling
                 collidingItem.ReverseDirection();
             }
             
+        }
+
+        public void HandleScore()
+        {
+            if (collidingBlock.isBumped && side is TopSideCollision && collidingItem.VectorCoordinates.X == collidingBlock.VectorCoordinates.X && collidingItem is Coin)
+            {
+                ScoreManager.IncreaseScore(200);
+                ScoreManager.location = collidingItem.VectorCoordinates;
+            }
         }
     }
 }
