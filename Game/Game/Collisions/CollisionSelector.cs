@@ -78,7 +78,7 @@ namespace Game.Collisions
             }
             else if ((collision.GameObjectA is IPipe && collision.GameObjectB is IProjectile) || (collision.GameObjectA is IProjectile && collision.GameObjectB is IPipe))
             {
-                BlockFireballCollisionHandler collisionHandler = new BlockFireballCollisionHandler(collision);
+                PipeFireballCollisionHandler collisionHandler = new PipeFireballCollisionHandler(collision);
                 collisionHandler.HandleCollision();
             }
             else if ((collision.GameObjectA is IMario && collision.GameObjectB is IFlagPole) || (collision.GameObjectA is IFlagPole && collision.GameObjectB is IMario))
