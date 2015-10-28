@@ -64,7 +64,7 @@ namespace Game.Collisions.EnemyCollisionHandling
             return (side is TopSideCollision || side is BottomSideCollision);
         }
 
-        private void HandleNormalLeftOrRightEnemyCollision()
+        private void HandleNormalLeftOrRightEnemyCollision(){
             collision.ResolveOverlap(collision.GameObjectA, side);
                 enemyA.ShiftDirection();
                 enemyB.ShiftDirection();
