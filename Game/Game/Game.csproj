@@ -109,10 +109,8 @@
     <Compile Include="FlagPoles\FlagPole.cs" />
     <Compile Include="FlagPoles\FlagPoleSprites\ActiveFlagPoleSprite.cs" />
     <Compile Include="FlagPoles\FlagPoleSprites\InactiveFlagPoleSprite.cs" />
-    <Compile Include="FlagPoles\FlagPoleSprites\TopOfPoleSprite.cs" />
     <Compile Include="FlagPoles\InvisibleFlagPoleBarrier.cs" />
     <Compile Include="FlagPoles\FlagPoleSprites\InvisibleFlagPoleBarrierSprite.cs" />
-    <Compile Include="FlagPoles\TopOfPole.cs" />
     <Compile Include="Interfaces\IBlock.cs" />
     <Compile Include="Collisions\BlockCollisionHandling\MarioBlockCollisionHandler.cs" />
     <Compile Include="Collisions\BottomSideCollision.cs" />
@@ -286,7 +284,6 @@
     <Compile Include="Mario\MarioStates\SmallRightJumpingState.cs" />
     <Compile Include="Mario\MarioStates\SmallRightRunningState.cs" />
     <Compile Include="Utilities\ObjectPhysics.cs" />
-    <Compile Include="Utilities\Score.cs" />
     <Compile Include="Utilities\ScoreManager.cs" />
     <Compile Include="WorldManager.cs" />
   </ItemGroup>

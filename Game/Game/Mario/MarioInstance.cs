@@ -17,7 +17,6 @@ namespace Game.Mario
         private Game1 myGame;
         private ObjectPhysics physics;
         private FireBallFactory factory;
-        public static int stompKillStreak = 0;
 
         public MarioInstance(Game1 game)
         {

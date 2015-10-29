@@ -10,7 +10,7 @@ namespace Game.Utilities
 {
     public static class ScoreManager
     {
-        public static int score;
+        public static int totalScore;
         public static Vector2 location;
         public static Game1 game;
         private static SpriteFont scoreFont;
@@ -33,13 +33,13 @@ namespace Game.Utilities
                 currentScoreToDraw = value;
             }
             hasChanged = true;
-            score+=value;
+            totalScore+=value;
             if (scoreFont == null)
                 scoreFont = SpriteFactories.BackgroundElementsSpriteFactory.CreateScoreFont();
         }
         public static void ResetScore()
         {
-            score = 0;
+            totalScore = 0;
 
         }
         public static void Update()
@@ -97,6 +97,30 @@ namespace Game.Utilities
             stompSequence[9] = 8000;
 
             return stompSequence[shellSequenceIndex];
+        }
+
+        public static int HandleFlagPoleRange(int marioFootLocation)
+        {
+            if (marioFootLocation >= 272 && marioFootLocation < 315)
+            {
+                return 5000;
+            }
+            else if (marioFootLocation >= 315 && marioFootLocation < 336)
+            {
+                return 2000;
+            }
+            else if (marioFootLocation >= 336 && marioFootLocation < 368)
+            {
+                return 800;
+            }
+            else if (marioFootLocation >= 368 && marioFootLocation < 416)
+            {
+                return 400;
+            }
+            else
+            {
+                return 100;
+            }
         }
     }
 }

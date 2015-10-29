@@ -34,11 +34,10 @@ namespace Game.FlagPoles.FlagPoleSprites
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
 
-
+            
 
             Rectangle sourceRectangle = new Rectangle(sourceX, sourceY, width, height);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
-
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
