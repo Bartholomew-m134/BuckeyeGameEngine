@@ -1,0 +1,12 @@
+﻿Author:							Connor Swick
+Date :							10/28/15
+Sprint:							4
+Reviewed file:					ObjectPhysics.cs
+File Author:					Kyle Powers
+Minutes to complete:			7
+Code Readability:
+		Overall this class is very readable. The variable names are very descriptive and it is easy for
+		the reader to see what the represent exactly. The separation of methods allows the methods themselves 
+		allows the separate functionalities to be more clear and readable. I don't see much room at all 
+		for improvement. Well done.
+	
