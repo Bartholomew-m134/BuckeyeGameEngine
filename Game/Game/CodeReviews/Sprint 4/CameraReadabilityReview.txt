@@ -1,0 +1,11 @@
+﻿Author:							Jackson Luken
+Date :							10/28/15
+Sprint:							4
+Reviewed file:					Camera.cs
+File Author:					Matt Bartholomew
+Minutes to complete:			8
+Code Readability:
+		This class is fairly readable. Variable names make it easy to follow and easy to 
+		recognize what is being used and modified. The class is a little long, but seems
+		necessary in order to achieve the complex functionality. Overall great job.
+	
