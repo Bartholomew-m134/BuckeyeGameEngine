@@ -1,0 +1,10 @@
+﻿Author: Kyle Powers
+Date: 10/28/2015
+Sprint: 4
+File name: EnemyEnemyCollisionHandler.cs
+Author: John Cramer
+Minutes to complete: 5
+
+Comments: The class appropriately handles all possible collisions between enemies and makes good use of 
+methods to decrease the size of the comparisons, which makes the code more readable. The code is easy
+to understand and read overall, and I have no criticisms of the implementation of this class.
