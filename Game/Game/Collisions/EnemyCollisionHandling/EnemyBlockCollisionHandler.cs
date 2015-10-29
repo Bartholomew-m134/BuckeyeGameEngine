@@ -6,6 +6,10 @@ using Game.Interfaces;
 using Game.Enemies.KoopaClasses;
 using Microsoft.Xna.Framework;
 using Game.Blocks;
+using Game.Enemies.GoombaClasses;
+using Game.Enemies.GoombaClasses.GoombaStates;
+using Game.Utilities;
+using Game.Enemies.KoopaClasses.KoopaStates;
 
 namespace Game.Collisions.EnemyCollisionHandling
 {
@@ -36,7 +40,8 @@ namespace Game.Collisions.EnemyCollisionHandling
 
         public void HandleCollision()
         {
-            if(!enemy.IsFlipped)
+            HandleScore();
+            if (!enemy.IsFlipped)
                 collision.ResolveOverlap(enemy, side);
             if (side is LeftSideCollision)
             {
@@ -58,6 +63,25 @@ namespace Game.Collisions.EnemyCollisionHandling
             {
                 enemy.CanDealDamage = false;
                 enemy.Flipped();
+            }
+        }
+        private void HandleScore()
+        {
+            if(((Block)block).isBumped && enemy is Goomba){
+                if (((Goomba)enemy).state is GoombaWalkingLeftState || ((Goomba)enemy).state is GoombaWalkingRightState)
+                {
+                    ScoreManager.IncreaseScore(100);
+                    ScoreManager.location = enemy.VectorCoordinates;
+                }
+            }
+
+            if (((Block)block).isBumped && enemy is GreenKoopa)
+            {
+                if (((GreenKoopa)enemy).state is GreenKoopaWalkingLeftState || ((GreenKoopa)enemy).state is GreenKoopaWalkingRightState)
+                {
+                    ScoreManager.IncreaseScore(100);
+                    ScoreManager.location = enemy.VectorCoordinates;
+                }
             }
         }
     }

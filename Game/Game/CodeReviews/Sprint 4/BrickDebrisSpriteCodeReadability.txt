@@ -2,10 +2,10 @@
 Date :							10/28/15
 Sprint:							4
 Reviewed file:					BrickDebrisSprite.cs
-File Author:					Conner Swick
+File Author:					Connor Swick
 Minutes to complete:			6
 Code Readability:
-		FOr the most part, very readable. Constructor and Update methods are short and simple. As for the Draw(), there are many declarations of new
+		For the most part, very readable. Constructor and Update methods are short and simple. As for the Draw(), there are many declarations of new
 		drawing locations, but, it is needed to draw multiple debris at different points. Naming for the entire class is clean and simple. An improvement
 		that could be made is combing width and height into a singe Vector2 variable.
 	
