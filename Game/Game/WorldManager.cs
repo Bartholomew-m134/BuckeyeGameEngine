@@ -1,6 +1,7 @@
 ﻿using Game.Collisions;
 using Game.Interfaces;
 using Game.Mario;
+using Game.Music;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections;
@@ -19,7 +20,7 @@ namespace Game
         private static Game1 currentGame;
         private static ICamera camera;
         private static System.Diagnostics.Stopwatch timer;
-
+        private static IMusic backgroundMusic;
         public static void LoadListFromFile(string filename, Game1 game)
         {
             objectList = LevelLoader.Load(filename, game);
@@ -27,7 +28,8 @@ namespace Game
             currentFileName = filename;
             currentGame = game;
             timer = new System.Diagnostics.Stopwatch();
-
+            backgroundMusic = new BackgroundMusic();
+            backgroundMusic.PlayTheme();
         }
 
         public static void Update(ICamera currentCamera)
@@ -108,8 +110,10 @@ namespace Game
 
         public static void ResetToDefault()
         {
+            backgroundMusic.StopTheme();
             LoadListFromFile(currentFileName, currentGame);
             camera.MoveToPosition(Vector2.Zero);
+
         }
     }
 }

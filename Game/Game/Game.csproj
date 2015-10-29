@@ -176,6 +176,8 @@
     <Compile Include="Mario\HurtMario.cs" />
     <Compile Include="Mario\MarioSprites\FireThrowLeftSprite.cs" />
     <Compile Include="Mario\MarioSprites\FireThrowRightSprite.cs" />
+    <Compile Include="Music\BackgroundMusic.cs" />
+    <Compile Include="Interfaces\IMusic.cs" />
     <Compile Include="Projectiles\LeftFire.cs" />
     <Compile Include="Items\Flower.cs" />
     <Compile Include="Items\GreenMushroom.cs" />
