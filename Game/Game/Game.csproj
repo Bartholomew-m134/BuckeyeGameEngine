@@ -102,6 +102,7 @@
     <Compile Include="Collisions\EnemyCollisionHandling\EnemyFireballCollisionHandler.cs" />
     <Compile Include="Collisions\FlagPoleCollisionHandling\MarioFlagPoleCollisionHandler.cs" />
     <Compile Include="Collisions\ItemCollisionHandling\ItemPipeCollisionHandler.cs" />
+    <Compile Include="Collisions\PipeCollisionHandling\PipeFireballCollisionHandler.cs" />
     <Compile Include="Commands\MarioCommands\MarioRunFireBallCommand.cs" />
     <Compile Include="Enemies\GoombaClasses\Goomba.cs" />
     <Compile Include="FireBallFactory.cs" />
@@ -310,6 +311,7 @@
     <Content Include="CodeReviews\Sprint 3\WorldManagerReadability.txt" />
     <Content Include="CodeReviews\Sprint 4\BrickDebrisSpriteCodeReadability.txt" />
     <Content Include="CodeReviews\Sprint 4\ObjectPhysicsCodeReadability.txt" />
+    <Content Include="CodeReviews\Sprint 4\HurtMarioReadability.txt" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>

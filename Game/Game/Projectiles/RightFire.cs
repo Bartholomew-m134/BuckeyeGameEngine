@@ -56,7 +56,7 @@ namespace Game.Projectiles
 
         public void Bounce()
         {
-            physics.Velocity = new Vector2(physics.Velocity.X, -3);
+            physics.Velocity = new Vector2(physics.Velocity.X, -2);
         }
 
         public void ReturnObject()

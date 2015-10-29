@@ -4,19 +4,17 @@ using System.Linq;
 using System.Text;
 using Game.Projectiles;
 using Game.Interfaces;
-using Game.Blocks.BlockStates;
 using Microsoft.Xna.Framework;
 
-namespace Game.Collisions.BlockCollisionHandling
+namespace Game.Collisions.PipeCollisionHandling
 {
-    public class BlockFireballCollisionHandler
+    public class PipeFireballCollisionHandler
     {
         private CollisionData collision;
         private IProjectile fireball;
-        private IBlock block;
         private ICollisionSide side;
 
-        public BlockFireballCollisionHandler(CollisionData collision)
+        public PipeFireballCollisionHandler(CollisionData collision)
         {
             this.collision = collision;
             this.side = collision.CollisionSide;
@@ -24,13 +22,10 @@ namespace Game.Collisions.BlockCollisionHandling
             if (collision.GameObjectA is IProjectile)
             {
                 fireball = (IProjectile)collision.GameObjectA;
-                block = (IBlock)collision.GameObjectB;
-                
             }
             else
             {
                 fireball = (IProjectile)collision.GameObjectB;
-                block = (IBlock)collision.GameObjectA;
                 this.side.FlipSide();
             }
         }
@@ -39,11 +34,10 @@ namespace Game.Collisions.BlockCollisionHandling
         {
             collision.ResolveOverlap(fireball, side);
 
-            if (side is TopSideCollision && !(block.State is HiddenBlockState))
+            if (side is TopSideCollision)
                 fireball.Bounce();
-            else if(!(block.State is HiddenBlockState))
+            else
                 fireball.Explode();
-            
         }
     }
 }

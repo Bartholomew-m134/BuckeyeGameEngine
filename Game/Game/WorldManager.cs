@@ -36,6 +36,9 @@ namespace Game
 
             for (int i = objectList.Count - 1; i >= 0; i--)
             {
+                if (objectList[i] is IProjectile && (camera.IsRightOfCamera(objectList[i].VectorCoordinates) || camera.IsBelowCamera(objectList[i].VectorCoordinates)))
+                    FreeObject(objectList[i]);
+
                 if (camera.IsWithinUpdateZone(objectList[i].VectorCoordinates))
                 {
                     objectList[i].Update();
