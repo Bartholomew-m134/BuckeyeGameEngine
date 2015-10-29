@@ -260,6 +260,7 @@
     <Compile Include="SoundEffects\BrickBreakingEffect.cs" />
     <Compile Include="SoundEffects\FireballEffect.cs" />
     <Compile Include="SoundEffects\EnemyFlippedEffect.cs" />
+    <Compile Include="SoundEffects\ShrinkingOrPipeEffect.cs" />
     <Compile Include="SoundEffects\SmallMarioJumpEffect.cs" />
     <Compile Include="SoundEffects\SoundEffectManager.cs" />
     <Compile Include="SoundEffects\SuperMarioJumpEffect.cs" />
