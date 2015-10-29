@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.SoundEffects;
 
 namespace Game.Mario
 {
@@ -17,6 +18,7 @@ namespace Game.Mario
         public FireMario(IMario mario, Game1 game)
         {
             this.mario = mario;
+            SoundEffectManager.PowerPlayerUpEffect();
             this.myGame = game;
             WorldManager.SetMario(this);
             frame = 0;
