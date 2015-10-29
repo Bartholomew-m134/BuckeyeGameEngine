@@ -14,17 +14,24 @@ namespace Game.Utilities
         public static Vector2 location;
         public static Game1 game;
         private static SpriteFont scoreFont;
-        private static  string scoreString;
         public static bool flagTopBeenHit = false;
         private static bool hasChanged = false;
         private static int currentScoreToDraw;
         private static int drawOnScreenTimer;
         private static int[] shellSequence;
         private static int[] stompSequence;
+        private static int upwardDrawYModifier = 0;
+        public static bool onStreak = false;
         
         public static void IncreaseScore(int value)
         {
-            currentScoreToDraw = value;
+            if (drawOnScreenTimer<10 && hasChanged && !onStreak){
+                currentScoreToDraw += value;
+            }
+            else
+            {
+                currentScoreToDraw = value;
+            }
             hasChanged = true;
             score+=value;
             if (scoreFont == null)
@@ -44,10 +51,17 @@ namespace Game.Utilities
 
             if(hasChanged)
             drawOnScreenTimer++;
+
+            if (upwardDrawYModifier >= 1)
+            {
+                upwardDrawYModifier = 0;
+            }
+            upwardDrawYModifier += 1;
         }
         public static void DrawScore(SpriteBatch spriteBatch, ICamera camera)
         {
-            scoreString = currentScoreToDraw.ToString();
+            string scoreString = currentScoreToDraw.ToString();
+            location.Y -= upwardDrawYModifier;
             if(hasChanged){
                 spriteBatch.Begin();
                 spriteBatch.DrawString(scoreFont, scoreString, camera.GetAdjustedPosition(location), Color.White);

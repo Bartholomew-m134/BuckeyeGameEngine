@@ -286,6 +286,7 @@
     <Compile Include="Mario\MarioStates\SmallRightJumpingState.cs" />
     <Compile Include="Mario\MarioStates\SmallRightRunningState.cs" />
     <Compile Include="Utilities\ObjectPhysics.cs" />
+    <Compile Include="Utilities\Score.cs" />
     <Compile Include="Utilities\ScoreManager.cs" />
     <Compile Include="WorldManager.cs" />
   </ItemGroup>
@@ -311,6 +312,7 @@
     <Content Include="CodeReviews\Sprint 3\WorldManagerCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 3\WorldManagerReadability.txt" />
     <Content Include="CodeReviews\Sprint 4\BrickDebrisSpriteCodeReadability.txt" />
+    <Content Include="CodeReviews\Sprint 4\ObjectPhysicsCodeReadability.txt" />
     <Content Include="CodeReviews\Sprint 4\HurtMarioReadability.txt" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png">
