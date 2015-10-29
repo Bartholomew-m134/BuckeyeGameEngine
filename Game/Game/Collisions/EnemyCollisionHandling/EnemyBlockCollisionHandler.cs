@@ -10,6 +10,7 @@ using Game.Enemies.GoombaClasses;
 using Game.Enemies.GoombaClasses.GoombaStates;
 using Game.Utilities;
 using Game.Enemies.KoopaClasses.KoopaStates;
+using Game.SoundEffects;
 
 namespace Game.Collisions.EnemyCollisionHandling
 {
@@ -48,6 +49,7 @@ namespace Game.Collisions.EnemyCollisionHandling
                 enemy.ShiftDirection();
                 if (enemy is GreenKoopa && ((GreenKoopa)enemy).IsWeaponized)
                 {
+                    SoundEffectManager.EnemyFlippedEffect();
                     enemy.Physics.Velocity = new Vector2(-11, enemy.Physics.Velocity.Y);
                 }
             }
@@ -56,6 +58,7 @@ namespace Game.Collisions.EnemyCollisionHandling
                 enemy.ShiftDirection();
                 if (enemy is GreenKoopa && ((GreenKoopa)enemy).IsWeaponized)
                 {
+                    SoundEffectManager.EnemyFlippedEffect();
                     enemy.Physics.Velocity = new Vector2(11, enemy.Physics.Velocity.Y);
                 }
             }
