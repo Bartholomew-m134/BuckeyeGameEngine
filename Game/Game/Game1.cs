@@ -67,6 +67,7 @@ namespace Game
 
                 WorldManager.Update(camera);
                 ScoreManager.Update();
+                HUDManager.Update();
                 base.Update(gameTime);
                 delay = 0;
             }
@@ -82,6 +83,7 @@ namespace Game
             GraphicsDevice.Clear(Color.CornflowerBlue);
             WorldManager.Draw(camera);
             ScoreManager.DrawScore(spriteBatch, camera);
+            HUDManager.DrawHUD(spriteBatch, camera);
             base.Draw(gameTime);
         }
     }

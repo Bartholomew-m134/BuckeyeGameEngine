@@ -70,7 +70,7 @@ namespace Game.Collisions.EnemyCollisionHandling
         }
         private void HandleScore()
         {
-            if(((Block)block).isBumped && enemy is Goomba){
+            if(((Block)block).isBumped && enemy is Goomba && side is TopSideCollision){
                 if (((Goomba)enemy).state is GoombaWalkingLeftState || ((Goomba)enemy).state is GoombaWalkingRightState)
                 {
                     ScoreManager.IncreaseScore(100);
@@ -78,7 +78,7 @@ namespace Game.Collisions.EnemyCollisionHandling
                 }
             }
 
-            if (((Block)block).isBumped && enemy is GreenKoopa)
+            if (((Block)block).isBumped && enemy is GreenKoopa && side is TopSideCollision)
             {
                 if (((GreenKoopa)enemy).state is GreenKoopaWalkingLeftState || ((GreenKoopa)enemy).state is GreenKoopaWalkingRightState)
                 {

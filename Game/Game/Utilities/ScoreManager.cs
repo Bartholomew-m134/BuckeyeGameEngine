@@ -17,7 +17,7 @@ namespace Game.Utilities
         public static bool flagTopBeenHit = false;
         private static bool hasChanged = false;
         private static int currentScoreToDraw;
-        private static int drawOnScreenTimer;
+        private static int drawOnScreenTimer=0;
         private static int[] shellSequence;
         private static int[] stompSequence;
         private static int upwardDrawYModifier = 0;
@@ -25,6 +25,8 @@ namespace Game.Utilities
         
         public static void IncreaseScore(int value)
         {
+            totalScore += value;
+            HUDManager.UpdateHUDScore(totalScore);
             if (drawOnScreenTimer<10 && hasChanged && !onStreak){
                 currentScoreToDraw += value;
             }
@@ -33,7 +35,6 @@ namespace Game.Utilities
                 currentScoreToDraw = value;
             }
             hasChanged = true;
-            totalScore+=value;
             if (scoreFont == null)
                 scoreFont = SpriteFactories.BackgroundElementsSpriteFactory.CreateScoreFont();
         }

@@ -13,11 +13,13 @@ namespace Game.SpriteFactories
     {
         private static Texture2D backgroundElementsSpriteSheet;
         private static SpriteFont spriteFont;
+        private static SpriteFont hudFont;
 
         public static void Load(ContentManager content)
         {
             backgroundElementsSpriteSheet = content.Load<Texture2D>("ScenarySpriteSheet");
             spriteFont = content.Load<SpriteFont>("ScoreFont");
+            hudFont = content.Load<SpriteFont>("HUDFont");
 
 
         }
@@ -62,6 +64,10 @@ namespace Game.SpriteFactories
         public static SpriteFont CreateScoreFont()
         {
             return spriteFont;
+        }
+        public static SpriteFont CreateHUDFont()
+        {
+            return hudFont;
         }
     }
 }

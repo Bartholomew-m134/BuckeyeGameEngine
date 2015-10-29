@@ -4,6 +4,11 @@ using System.Linq;
 using System.Text;
 using Game.Projectiles;
 using Game.Interfaces;
+using Game.Utilities;
+using Game.Enemies.GoombaClasses;
+using Game.Enemies.GoombaClasses.GoombaStates;
+using Game.Enemies.KoopaClasses;
+using Game.Enemies.KoopaClasses.KoopaStates;
 
 namespace Game.Collisions.EnemyCollisionHandling
 {
@@ -31,9 +36,26 @@ namespace Game.Collisions.EnemyCollisionHandling
 
         public void HandleCollision()
         {
+            HandleScore();
             enemy.CanDealDamage = false;
             enemy.Flipped();
             fireball.Explode();
+        }
+
+        public void HandleScore(){
+            if (enemy is Goomba)
+            {
+                if (((Goomba)enemy).state is GoombaWalkingLeftState || ((Goomba)enemy).state is GoombaWalkingRightState)
+                {
+                    ScoreManager.location = enemy.VectorCoordinates;
+                    ScoreManager.IncreaseScore(100);
+                }
+            }
+            else if (!(((GreenKoopa)enemy).state is GreenKoopaFlippedInShellState))
+            {
+                    ScoreManager.location = enemy.VectorCoordinates;
+                    ScoreManager.IncreaseScore(100);
+            }
         }
     }
 }

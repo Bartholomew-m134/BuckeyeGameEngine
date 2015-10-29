@@ -81,6 +81,7 @@ namespace Game.Collisions.ItemCollisionHandling
         {
             if (collidingBlock.isBumped && side is TopSideCollision && collidingItem.VectorCoordinates.X == collidingBlock.VectorCoordinates.X && collidingItem is Coin)
             {
+                HUDManager.UpdateHUDCoins(1);
                 ScoreManager.IncreaseScore(200);
                 ScoreManager.location = collidingItem.VectorCoordinates;
             }
