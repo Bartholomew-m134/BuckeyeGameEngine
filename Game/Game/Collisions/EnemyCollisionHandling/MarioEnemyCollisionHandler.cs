@@ -54,6 +54,8 @@ namespace Game.Collisions.EnemyCollisionHandling
             else if (!MarioDeadState() && !mario.IsStarMario() && !mario.IsHurt() && enemy.CanDealDamage)
             {
                 collision.ResolveOverlap(mario, side);
+                if (mario.IsBigMario())
+                    SoundEffectManager.ShrinkingOrPipeEffect();
                 mario.Damage();
             }
             else if (mario.IsStarMario())
@@ -94,11 +96,15 @@ namespace Game.Collisions.EnemyCollisionHandling
             else if (enemy.Physics.Velocity.X > 0)
             {
                 enemy.Physics.Velocity = new Vector2(-11, enemy.Physics.Velocity.Y);
+                if (mario.IsBigMario())
+                    SoundEffectManager.ShrinkingOrPipeEffect();
                 mario.Damage();
             }
             else if (enemy.Physics.Velocity.X < 0)
             {
                 enemy.Physics.Velocity = new Vector2(11, enemy.Physics.Velocity.Y);
+                if(mario.IsBigMario())
+                    SoundEffectManager.ShrinkingOrPipeEffect();
                 mario.Damage();
             }
         }
