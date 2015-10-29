@@ -1,0 +1,11 @@
+﻿Author:							Jackson
+Date :							10/28/15
+Sprint:							4
+Reviewed file:					Camera.cs
+File Author:					Matt Bartholemew
+Minutes to complete:			3
+Code Readability:
+		The readability in this code is for the most part very well done. All of the related methods
+		are grouped together so that the reader can see how they differ and why different inputs will get
+		different outcomes. All variables are very descriptive and are used in a way which mimics English
+		grammar. 
