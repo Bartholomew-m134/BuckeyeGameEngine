@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.SoundEffects;
 
 namespace Game.Blocks.BlockStates
 {
@@ -16,6 +17,7 @@ namespace Game.Blocks.BlockStates
         public BrickDebrisState(IBlock block)
         {
             this.block = block;
+            SoundEffectManager.BreakingBlockSoundEffect();
             block.Sprite = TileSpriteFactory.CreateBrickDebrisSprite();
         }
 

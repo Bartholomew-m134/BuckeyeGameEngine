@@ -6,6 +6,8 @@ using Microsoft.Xna.Framework;
 using System.Diagnostics;
 using Game.Interfaces;
 using Game.Utilities;
+using Game.Music;
+using Game.Mario.MarioStates;
 
 namespace Game.Mario
 {
@@ -22,6 +24,7 @@ namespace Game.Mario
             this.mario = mario;
             this.myGame = game;
             WorldManager.SetMario(this);
+            BackgroundThemeManager.PlayStarTheme();
             factory = new FireBallFactory(game);
         }
 
@@ -32,9 +35,13 @@ namespace Game.Mario
         public void Update()
         {
             timer--;
-            if (timer == 0)
+            if(timer == 0 && IsOnFlagPole()){
+                WorldManager.SetMario(this.mario);
+            }
+            else if (timer == 0)
             {
                 WorldManager.SetMario(this.mario);
+                BackgroundThemeManager.PlayOverWorldTheme();
             }
             mario.Update();
         }
@@ -182,6 +189,10 @@ namespace Game.Mario
         public bool IsHurt()
         {
             return false;
+        }
+
+        private bool IsOnFlagPole(){
+            return (mario.MarioState is FireFlagPoleSlidingState || mario.MarioState is NormalFlagPoleSlidingState || mario.MarioState is SmallFlagPoleSlidingState);
         }
     }
 }

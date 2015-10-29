@@ -12,6 +12,7 @@ using Microsoft.Xna.Framework;
 using Game.Mario.MarioStates;
 using Game.Utilities;
 using Game.Enemies.GoombaClasses.GoombaStates;
+using Game.SoundEffects;
 
 namespace Game.Collisions.EnemyCollisionHandling
 {
@@ -70,6 +71,7 @@ namespace Game.Collisions.EnemyCollisionHandling
         private void WeaponizedKoopa()
         {
             collision.ResolveOverlap(mario, side);
+            SoundEffectManager.EnemyFlippedEffect();
             if (((GreenKoopa)enemy).state is GreenKoopaEmergingFromShellState)
                 ((GreenKoopa)enemy).state = new GreenKoopaHidingInShellState((GreenKoopa)enemy);
             if (side is LeftSideCollision && enemy.Physics.Velocity.X == 0)
@@ -86,7 +88,7 @@ namespace Game.Collisions.EnemyCollisionHandling
             {
                 ((GreenKoopa)enemy).IsWeaponized = false;
                 enemy.Physics.ResetPhysics();
-                mario.Physics.Velocity = new Vector2(mario.Physics.Velocity.X, -2);
+                mario.Physics.Velocity = new Vector2(mario.Physics.Velocity.X, -3);
                 mario.Physics.Acceleration = new Vector2(mario.Physics.Acceleration.X, 1);
             }
             else if (enemy.Physics.Velocity.X > 0)
@@ -104,6 +106,10 @@ namespace Game.Collisions.EnemyCollisionHandling
         private void MarioEnemyTopSide()
         {
             collision.ResolveOverlap(mario, side);
+            if (enemy is GreenKoopa)
+            {
+                SoundEffectManager.EnemyFlippedEffect();
+            }
             enemy.CanDealDamage = false;
             enemy.Hit();
 

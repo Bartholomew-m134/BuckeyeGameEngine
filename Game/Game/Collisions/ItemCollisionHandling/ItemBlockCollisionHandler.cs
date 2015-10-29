@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.SoundEffects;
 
 namespace Game.Collisions.ItemCollisionHandling
 {
@@ -36,8 +37,11 @@ namespace Game.Collisions.ItemCollisionHandling
         public void HandleCollision()
         {
             HandleScore();
-            if (collidingBlock.isBumped && side is TopSideCollision && collidingItem.VectorCoordinates.X == collidingBlock.VectorCoordinates.X)           
+            if (collidingBlock.isBumped && side is TopSideCollision && collidingItem.VectorCoordinates.X == collidingBlock.VectorCoordinates.X)
+            {
                 collidingItem.Release();
+                HandleSoundEffect();
+            }
 
             if (!collidingItem.IsInsideBlock && (side is TopSideCollision || side is BottomSideCollision) && !(collidingBlock.State is HiddenBlockState) && !(collidingBlock.State is BrickDebrisState))
             {
@@ -59,6 +63,18 @@ namespace Game.Collisions.ItemCollisionHandling
                 collidingItem.ReverseDirection();
             }
             
+        }
+
+        private void HandleSoundEffect()
+        {
+            if (!(collidingItem is Coin))
+            {
+                SoundEffectManager.PowerUpAppearsEffect();
+            }
+            else if (collidingItem is Coin)
+            {
+                SoundEffectManager.CoinEffect();
+            }
         }
 
         public void HandleScore()

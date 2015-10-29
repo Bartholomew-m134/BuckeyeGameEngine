@@ -6,6 +6,7 @@ using Game.Mario;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
 using Game.Utilities;
+using Game.SoundEffects;
 
 namespace Game.Mario.MarioStates
 {
@@ -23,6 +24,7 @@ namespace Game.Mario.MarioStates
                 Vector2 velocity = this.mario.Physics.Velocity;
                 velocity.Y = -12;
                 this.mario.Physics.Velocity = velocity;
+                SoundEffectManager.SuperMarioJumpEffect();
             }
         }
         public void Update()

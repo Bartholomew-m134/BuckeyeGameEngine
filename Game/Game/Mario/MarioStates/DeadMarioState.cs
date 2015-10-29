@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Game.Mario;
 using Game.Interfaces;
+using Game.Music;
 using Microsoft.Xna.Framework;
 
 
@@ -17,6 +18,7 @@ namespace Game.Mario.MarioStates
         public DeadMarioState(IMario mario)
         {
             this.mario = mario;
+            BackgroundThemeManager.PlayDeathTheme();
             mario.Sprite = SpriteFactories.MarioSpriteFactory.CreateDeadSprite();
             mario.Physics.ResetPhysics();
             mario.Physics.Velocity = new Vector2(0, -9);

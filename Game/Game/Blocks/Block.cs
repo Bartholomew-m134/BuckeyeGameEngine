@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Game.Utilities;
+using Game.SoundEffects;
 
 namespace Game.Blocks
 {
@@ -54,6 +55,7 @@ namespace Game.Blocks
             if (!isBumped)
             {
                 isBumped = true;
+                SoundEffectManager.BlockBumpedEffect();
                 physics.ResetPhysics();
                 physics.Velocity = new Vector2(0,-2);
             }

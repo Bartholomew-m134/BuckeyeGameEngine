@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.SoundEffects;
 
 namespace Game.Collisions.ItemCollisionHandling
 {
@@ -45,6 +46,7 @@ namespace Game.Collisions.ItemCollisionHandling
                 }
                 else if (collidingItem is GreenMushroom)
                 {
+                    SoundEffectManager.OneUpEffect();
                     collidingItem.Disappear();
                 }
                 else if (collidingItem is RedMushroom)

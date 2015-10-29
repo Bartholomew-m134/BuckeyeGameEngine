@@ -7,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.Music;
+using Game.SoundEffects;
 
 namespace Game.Collisions.FlagPoleCollisionHandling
 {
@@ -37,6 +39,8 @@ namespace Game.Collisions.FlagPoleCollisionHandling
             {
                 if (collidingFlagPole is InvisibleFlagPoleBarrier && collision.CollisionSide is RightSideCollision)
                 {
+                    BackgroundThemeManager.PlayFlagPoleVictoryTheme();
+                    SoundEffectManager.FlagPoleEffect();
                     collidingMario.PoleSlide();
                 }
                 else if (collidingFlagPole is FlagPole)

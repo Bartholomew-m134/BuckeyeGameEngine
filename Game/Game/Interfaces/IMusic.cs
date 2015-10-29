@@ -9,10 +9,6 @@ namespace Game.Interfaces
     {
         void StopTheme();
 
-        void ResumeTheme();
-
         void PlayTheme();
-
-        void ReleaseTheme();
     }
 }
