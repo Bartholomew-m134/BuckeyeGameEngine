@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.Utilities;
+using Game.Utilities.Constants;
 
 namespace Game.Utilities
 {
@@ -16,20 +18,8 @@ namespace Game.Utilities
         public static int scoreToPrint;
         public static int coinsToPrint;
         public static int livesToPrint;
-        public static int timeToPrint = 400;
-        private static int updateTimerCounter = 0;
-        public static Vector2 marioHUDLocation = new Vector2(30, 0);
-        public static Vector2 scoreHUDLocation = new Vector2(30, 25);
-        public static Vector2 coinHUDLocation = new Vector2(210, 25);
-        public static Vector2 coinSpriteHUDLocation = new Vector2(190, 39);
-        public static Vector2 worldHUDLocation = new Vector2(410, 0);
-        public static Vector2 timeStringHUDLocation = new Vector2(610, 0);
-        public static Vector2 timeCounterStringHUDLocation = new Vector2(610, 25);
-        public static Vector2 worldNumberStringHUDLocation = new Vector2(435, 25);
-        private static string marioString = "MARIO";
-        private static string worldString = "WORLD";
-        private static string timeString = "TIME";
-        private static string worldNumberString = "1-1";
+        public static int timeToPrint = HUDConstants.STARTINGTIME;
+        private static int updateTimerCounter = HUDConstants.RESETUPDATEDELAYCOUNTER;
 
         public static void UpdateHUDScore(int scoreToAdd)
         {
@@ -41,16 +31,16 @@ namespace Game.Utilities
         }
         public static void UpdateHUDTime()
         {
-            timeToPrint -= 1;
+            timeToPrint -= HUDConstants.INCREMENTBYONE;
         }
         public static void Update()
         {
-            if (updateTimerCounter >=15)
+            if (updateTimerCounter >=HUDConstants.NUMBEROFUPDATESPERSECOND)
             {
                 UpdateHUDTime();
-                updateTimerCounter = 0;
+                updateTimerCounter = HUDConstants.RESETUPDATEDELAYCOUNTER;
             }
-            updateTimerCounter += 1;
+            updateTimerCounter += HUDConstants.INCREMENTBYONE;
             coin.Update();
             
         }
@@ -58,17 +48,17 @@ namespace Game.Utilities
         {
             string scoreString = scoreToPrint.ToString();
             string timeCounterString = timeToPrint.ToString();
-            string coinString = "x" + coinsToPrint.ToString();
+            string coinString = HUDConstants.XCOINCOUNTER + coinsToPrint.ToString();
 
-            coin.Draw(spriteBatch, coinSpriteHUDLocation);
+            coin.Draw(spriteBatch, HUDConstants.COINSPRITEHUDLOCATION);
             spriteBatch.Begin();
-            spriteBatch.DrawString(hudFont, marioString, marioHUDLocation, Color.White);
-            spriteBatch.DrawString(hudFont, scoreString, scoreHUDLocation, Color.White);
-            spriteBatch.DrawString(hudFont, coinString, coinHUDLocation, Color.White);
-            spriteBatch.DrawString(hudFont, worldString, worldHUDLocation, Color.White);
-            spriteBatch.DrawString(hudFont, worldNumberString, worldNumberStringHUDLocation, Color.White);
-            spriteBatch.DrawString(hudFont, timeString, timeStringHUDLocation, Color.White);
-            spriteBatch.DrawString(hudFont, timeCounterString, timeCounterStringHUDLocation, Color.White);
+            spriteBatch.DrawString(hudFont, HUDConstants.MARIOHUDSTRING, HUDConstants.MARIOHUDLOCATION, Color.White);
+            spriteBatch.DrawString(hudFont, scoreString, HUDConstants.SCOREHUDLOCATION, Color.White);
+            spriteBatch.DrawString(hudFont, coinString, HUDConstants.COINHUDLOCATION, Color.White);
+            spriteBatch.DrawString(hudFont, HUDConstants.WORLDHUDSTRING, HUDConstants.WORLDHUDLOCATION, Color.White);
+            spriteBatch.DrawString(hudFont, HUDConstants.WORLDNUMBERHUDSTRING, HUDConstants.WORLDNUMBERHUDLOCATION, Color.White);
+            spriteBatch.DrawString(hudFont, HUDConstants.TIMEHUDSTRING, HUDConstants.TIMESTRINGHUDLOCATION, Color.White);
+            spriteBatch.DrawString(hudFont, timeCounterString, HUDConstants.TIMECOUNTERHUDLOCATION, Color.White);
 
             spriteBatch.End();
 

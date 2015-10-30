@@ -302,6 +302,7 @@
     <Compile Include="Mario\MarioStates\SmallRightIdleState.cs" />
     <Compile Include="Mario\MarioStates\SmallRightJumpingState.cs" />
     <Compile Include="Mario\MarioStates\SmallRightRunningState.cs" />
+    <Compile Include="Utilities\Constants\HUDConstants.cs" />
     <Compile Include="Utilities\HUDManager.cs" />
     <Compile Include="Utilities\ObjectPhysics.cs" />
     <Compile Include="Utilities\ScoreManager.cs" />
