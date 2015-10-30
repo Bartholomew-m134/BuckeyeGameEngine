@@ -1,4 +1,5 @@
 ﻿using Game.Interfaces;
+using Game.Utilities.Constants;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -17,17 +18,16 @@ namespace Game.Utilities
         public static bool flagTopBeenHit = false;
         private static bool hasChanged = false;
         private static int currentScoreToDraw;
-        private static int drawOnScreenTimer=0;
-        private static int[] shellSequence;
-        private static int[] stompSequence;
-        private static int upwardDrawYModifier = 0;
+        private static int drawOnScreenTimer = ScoreManagerConstants.RESETTOZERO;
+        private static int upwardDrawYModifier = ScoreManagerConstants.RESETTOZERO;
         public static bool onStreak = false;
         
         public static void IncreaseScore(int value)
         {
             totalScore += value;
             HUDManager.UpdateHUDScore(totalScore);
-            if (drawOnScreenTimer<10 && hasChanged && !onStreak){
+            if (drawOnScreenTimer < ScoreManagerConstants.UPDATEDELAY && hasChanged && !onStreak)
+            {
                 currentScoreToDraw += value;
             }
             else
@@ -40,24 +40,24 @@ namespace Game.Utilities
         }
         public static void ResetScore()
         {
-            totalScore = 0;
+            totalScore = ScoreManagerConstants.RESETTOZERO;
 
         }
         public static void Update()
         {
-            if(hasChanged && drawOnScreenTimer>=10){
+            if(hasChanged && drawOnScreenTimer>=ScoreManagerConstants.UPDATEDELAY){
                 hasChanged = false;
-                drawOnScreenTimer = 0;
+                drawOnScreenTimer = ScoreManagerConstants.RESETTOZERO;
             }
 
             if(hasChanged)
             drawOnScreenTimer++;
 
-            if (upwardDrawYModifier >= 1)
+            if (upwardDrawYModifier >= ScoreManagerConstants.INCREMENTBYONE)
             {
-                upwardDrawYModifier = 0;
+                upwardDrawYModifier = ScoreManagerConstants.RESETTOZERO;
             }
-            upwardDrawYModifier += 1;
+            upwardDrawYModifier += ScoreManagerConstants.INCREMENTBYONE;
         }
         public static void DrawScore(SpriteBatch spriteBatch, ICamera camera)
         {
@@ -72,55 +72,34 @@ namespace Game.Utilities
 
         public static int HandleShellSequence(int shellSequenceIndex)
         {
-            shellSequence = new int[8];
-            shellSequence[0] = 500;
-            shellSequence[1] = 800;
-            shellSequence[2] = 1000;
-            shellSequence[3] = 2000;
-            shellSequence[4] = 4000;
-            shellSequence[5] = 5000;
-            shellSequence[6] = 8000;
-            
-            return shellSequence[shellSequenceIndex];
+            return ScoreManagerConstants.SHELLSEQUENCE[shellSequenceIndex];
         }
-        public static int HandleStompSequence(int shellSequenceIndex)
+        public static int HandleStompSequence(int stompSequenceIndex)
         {
-            stompSequence = new int[11];
-            stompSequence[0] = 100;
-            stompSequence[1] = 200;
-            stompSequence[2] = 400;
-            stompSequence[3] = 500;
-            stompSequence[4] = 800;
-            stompSequence[5] = 1000;
-            stompSequence[6] = 2000;
-            stompSequence[7] = 4000;
-            stompSequence[8] = 5000;
-            stompSequence[9] = 8000;
-
-            return stompSequence[shellSequenceIndex];
+            return ScoreManagerConstants.STOMPSEQUENCE[stompSequenceIndex];
         }
 
         public static int HandleFlagPoleRange(int marioFootLocation)
         {
-            if (marioFootLocation >= 272 && marioFootLocation < 315)
+            if (marioFootLocation >= ScoreManagerConstants.ZONEONEYCOORDINATE && marioFootLocation < ScoreManagerConstants.ZONETWOYCOORDINATE)
             {
-                return 5000;
+                return ScoreManagerConstants.ZONEONESCORE;
             }
-            else if (marioFootLocation >= 315 && marioFootLocation < 336)
+            else if (marioFootLocation >= ScoreManagerConstants.ZONETWOYCOORDINATE && marioFootLocation < ScoreManagerConstants.ZONETHREEYCOORDINATE)
             {
-                return 2000;
+                return ScoreManagerConstants.ZONETWOSCORE;
             }
-            else if (marioFootLocation >= 336 && marioFootLocation < 368)
+            else if (marioFootLocation >= ScoreManagerConstants.ZONETHREEYCOORDINATE && marioFootLocation < ScoreManagerConstants.ZONEFOURYCOORDINATE)
             {
-                return 800;
+                return ScoreManagerConstants.ZONETHREESCORE;
             }
-            else if (marioFootLocation >= 368 && marioFootLocation < 416)
+            else if (marioFootLocation >= ScoreManagerConstants.ZONEFOURYCOORDINATE && marioFootLocation < ScoreManagerConstants.ZONEFIVEYCOORDINATE)
             {
-                return 400;
+                return ScoreManagerConstants.ZONEFOURSCORE;
             }
             else
             {
-                return 100;
+                return ScoreManagerConstants.ZONEFIVESCORE;
             }
         }
     }
