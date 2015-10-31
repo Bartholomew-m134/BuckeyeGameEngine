@@ -17,7 +17,6 @@ namespace Game.Utilities
         private static ISprite coin= (CoinSprite)SpriteFactories.ItemsSpriteFactory.CreateCoinSprite();
         public static int scoreToPrint;
         public static int coinsToPrint;
-        public static int livesToPrint;
         public static int timeToPrint = HUDConstants.STARTINGTIME;
         private static int updateTimerCounter = HUDConstants.RESETUPDATEDELAYCOUNTER;
 

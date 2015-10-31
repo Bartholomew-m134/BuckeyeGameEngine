@@ -1,4 +1,5 @@
 ﻿using Game.Interfaces;
+using Game.Utilities.Constants;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -11,42 +12,27 @@ namespace Game.FlagPoles.FlagPoleSprites
     public class InactiveFlagPoleSprite : ISprite
     {
         private Texture2D Texture { get; set; }
-        private int width;
-        private int height;
-        private int sourceX ;
-        private int sourceY;
         public InactiveFlagPoleSprite(Texture2D texture)
         {
             Texture = texture;
-            width = 25;
-            height = 176;
-            sourceX = 248;
-            sourceY = 586;
-
         }
 
         public void Update()
         {
-
-
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-
-            
-
-            Rectangle sourceRectangle = new Rectangle(sourceX, sourceY, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
+            Rectangle sourceRectangle = new Rectangle((int)FlagPoleSpriteConstants.FIRSTFLAGFRAMECOORDINATES.X, (int)FlagPoleSpriteConstants.FIRSTFLAGFRAMECOORDINATES.Y, width, height);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, FlagPoleSpriteConstants.FLAGPOLEWIDTH, FlagPoleSpriteConstants.FLAGPOLEHEIGHT);
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
-
         }
 
         public Vector2 SpriteDimensions
         {
-            get { return new Vector2(width, height); }
+            get { return new Vector2(FlagPoleSpriteConstants.FLAGPOLEWIDTH, FlagPoleSpriteConstants.FLAGPOLEHEIGHT); }
         }
     }
 }
