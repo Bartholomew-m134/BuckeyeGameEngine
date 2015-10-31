@@ -23,7 +23,7 @@ namespace Game.FlagPoles.FlagPoleSprites
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle((int)FlagPoleSpriteConstants.FIRSTFLAGFRAMECOORDINATES.X, (int)FlagPoleSpriteConstants.FIRSTFLAGFRAMECOORDINATES.Y, width, height);
+            Rectangle sourceRectangle = new Rectangle((int)FlagPoleSpriteConstants.FIRSTFLAGFRAMECOORDINATES.X, (int)FlagPoleSpriteConstants.FIRSTFLAGFRAMECOORDINATES.Y, FlagPoleSpriteConstants.FLAGPOLEWIDTH, FlagPoleSpriteConstants.FLAGPOLEHEIGHT);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, FlagPoleSpriteConstants.FLAGPOLEWIDTH, FlagPoleSpriteConstants.FLAGPOLEHEIGHT);
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
