@@ -6,37 +6,27 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
+using Game.Utilities.Constants;
 
 namespace Game.Mario.MarioSprites
 {
     public class DeadMarioSprite : IMarioSprite
     {
         private Texture2D spriteSheet;
-        private int width;
-        private int height;
-        private int sheetXLocation;
-        private int sheetYLocation;
-        private int toggle;
-
         public DeadMarioSprite(Texture2D spriteSheet)
         {
             this.spriteSheet = spriteSheet;
-            width = 14;
-            height = 13;
-            sheetXLocation = 390;
-            sheetYLocation = 16;
-            toggle = 0;
         }
         public void Update()
-        {
-            
+        {           
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle(sheetXLocation, sheetYLocation, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
-
+            Rectangle sourceRectangle = new Rectangle((int)MarioSpriteConstants.DEADMARIOSOURCECOORDINATES.X, 
+                (int)MarioSpriteConstants.DEADMARIOSOURCECOORDINATES.Y, (int)MarioSpriteConstants.DEADMARIOWIDTHHIEGHT.X, (int)MarioSpriteConstants.DEADMARIOWIDTHHIEGHT.Y);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, (int)MarioSpriteConstants.DEADMARIOWIDTHHIEGHT.X, 
+                (int)MarioSpriteConstants.DEADMARIOSOURCECOORDINATES.Y);
             spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
@@ -44,46 +34,11 @@ namespace Game.Mario.MarioSprites
 
         public void StarDraw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle(sheetXLocation, sheetYLocation, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
-
-            if (toggle < 5)
-            {
-                spriteBatch.Begin();
-                spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.Brown);
-                spriteBatch.End();
-                toggle++;
-            }
-
-            else if (toggle > 6 && toggle < 10)
-            {
-                spriteBatch.Begin();
-                spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.YellowGreen);
-                spriteBatch.End();
-                toggle++;
-            }
-
-            else
-            {
-                spriteBatch.Begin();
-                spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.Orange);
-                spriteBatch.End();
-                if (toggle < 15)
-                {
-                    toggle++;
-                }
-                else
-                {
-                    toggle = 0;
-                }
-            }
-
         }
-
 
         public Vector2 SpriteDimensions
         {
-            get { return new Vector2(width, height); }
+            get { return new Vector2((int)MarioSpriteConstants.DEADMARIOWIDTHHIEGHT.X, (int)MarioSpriteConstants.DEADMARIOWIDTHHIEGHT.Y); }
         }
     }
 }

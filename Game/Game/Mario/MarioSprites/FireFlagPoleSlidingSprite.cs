@@ -1,4 +1,5 @@
 ﻿using Game.Interfaces;
+using Game.Utilities.Constants;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -10,49 +11,42 @@ namespace Game.Mario.MarioSprites
 {
     class FireFlagPoleSlidingSprite : IMarioSprite
     {
-        private int toggle;
+        private int starDrawCounter;
         private int delayCounter;
         private Texture2D spriteSheet;
-        private int width;
-        private int height;
         private Vector2 currentSourceLocation;
-        private int frameCounter;
+        private bool frameCounter;
         public FireFlagPoleSlidingSprite(Texture2D spriteSheet)
         {
-            toggle = 0;
-            frameCounter = 0;
-            delayCounter = 0;
+            starDrawCounter = MarioSpriteConstants.RESETTOZERO;
+            frameCounter = false;
+            delayCounter = MarioSpriteConstants.RESETTOZERO;
             this.spriteSheet = spriteSheet;
-            width = 14;
-            height = 30;
-
-            currentSourceLocation.X = 363;
-            currentSourceLocation.Y = 158;
+            currentSourceLocation = MarioSpriteConstants.FIRSTFIREFLAGSOURCECOORDINATES;
         }
         public void Update()
         {
-            if (frameCounter == 0 && delayCounter == 2)
+            if (frameCounter == false && delayCounter == MarioSpriteConstants.FLAGUPDATEDELAYCOUNTER)
             {
-                currentSourceLocation.X = 363;
-                currentSourceLocation.Y = 159;
-                frameCounter = 1;
-                delayCounter = 0;
+                currentSourceLocation = MarioSpriteConstants.FIRSTFIREFLAGSOURCECOORDINATES;
+                frameCounter = true;
+                delayCounter = MarioSpriteConstants.RESETTOZERO;
             }
-            else if (delayCounter == 2)
+            else if (delayCounter == MarioSpriteConstants.FLAGUPDATEDELAYCOUNTER)
             {
-                currentSourceLocation.X = 390;
-                currentSourceLocation.Y = 159;
-                frameCounter = 0;
-                delayCounter = 0;
+                currentSourceLocation = MarioSpriteConstants.SECONDFIREFLAGSOURCECOORDINATES;
+                frameCounter = false;
+                delayCounter = MarioSpriteConstants.RESETTOZERO;
             }
             delayCounter++;
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle((int)currentSourceLocation.X, (int)currentSourceLocation.Y, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
-
+            Rectangle sourceRectangle = new Rectangle((int)currentSourceLocation.X, (int)currentSourceLocation.Y,
+                (int)MarioSpriteConstants.FIREFLAGMARIOWIDTHHEIGHT.X, (int)MarioSpriteConstants.FIREFLAGMARIOWIDTHHEIGHT.Y);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
+                (int)MarioSpriteConstants.FIREFLAGMARIOWIDTHHEIGHT.X, (int)MarioSpriteConstants.FIREFLAGMARIOWIDTHHEIGHT.Y);
             spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
@@ -60,45 +54,38 @@ namespace Game.Mario.MarioSprites
 
         public void StarDraw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle((int)currentSourceLocation.X, (int)currentSourceLocation.Y, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
-
-            if (toggle < 5)
+            Rectangle sourceRectangle = new Rectangle((int)currentSourceLocation.X, (int)currentSourceLocation.Y,
+                (int)MarioSpriteConstants.FIREFLAGMARIOWIDTHHEIGHT.X, (int)MarioSpriteConstants.FIREFLAGMARIOWIDTHHEIGHT.Y);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
+                (int)MarioSpriteConstants.FIREFLAGMARIOWIDTHHEIGHT.X, (int)MarioSpriteConstants.FIREFLAGMARIOWIDTHHEIGHT.Y);
+            if (starDrawCounter < MarioSpriteConstants.STARDRAWBROWNCOUNTER)
             {
                 spriteBatch.Begin();
                 spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.Brown);
                 spriteBatch.End();
-                toggle++;
+                starDrawCounter++;
             }
-
-            else if (toggle > 6 && toggle < 10)
+            else if (starDrawCounter > MarioSpriteConstants.STARDRAWBROWNCOUNTER && starDrawCounter < MarioSpriteConstants.STARDRAWYELLOWGREENCOUNTER)
             {
                 spriteBatch.Begin();
                 spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.YellowGreen);
                 spriteBatch.End();
-                toggle++;
+                starDrawCounter++;
             }
-
             else
             {
                 spriteBatch.Begin();
                 spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.Orange);
                 spriteBatch.End();
-                if (toggle < 15)
-                {
-                    toggle++;
-                }
+                if (starDrawCounter < MarioSpriteConstants.STARDRAWORANGECOUNTER)   
+                    starDrawCounter++; 
                 else
-                {
-                    toggle = 0;
-                }
+                    starDrawCounter = MarioSpriteConstants.RESETTOZERO;
             }
-
         }
-
         public Vector2 SpriteDimensions
         {
-            get { return new Vector2(width, height); }
+            get { return new Vector2((int)MarioSpriteConstants.FIREFLAGMARIOWIDTHHEIGHT.X, (int)MarioSpriteConstants.FIREFLAGMARIOWIDTHHEIGHT.Y); }
         }
     }
 }
