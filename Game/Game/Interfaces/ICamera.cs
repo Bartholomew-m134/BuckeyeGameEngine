@@ -16,6 +16,8 @@ namespace Game.Interfaces
 
         bool IsWithinUpdateZone(Vector2 position);
 
+        bool IsWithinReleaseZone(Vector2 position);
+
         void MoveToPosition(Vector2 position);
 
         bool IsLeftOfCamera(Vector2 position);
@@ -25,17 +27,5 @@ namespace Game.Interfaces
         bool IsAboveCamera(Vector2 position);
         
         bool IsBelowCamera(Vector2 position);        
-
-        bool LeftScrollingDisabled
-        {
-            get;
-            set;
-        }
-
-        bool VerticalScrollingDisabled
-        {
-            get;
-            set;
-        }
     }
 }
