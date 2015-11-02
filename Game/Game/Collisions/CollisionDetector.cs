@@ -28,9 +28,8 @@ namespace Game.Collisions
                 objectAOldCoordinates = objectA.Physics.OldCoordinates;
 
                 if (objectA.Physics.Velocity.Y > 0)
-                {
                     objectAOldCoordinates.Y--;
-                }
+                
             }
             else
                 objectAOldCoordinates = objectA.VectorCoordinates;

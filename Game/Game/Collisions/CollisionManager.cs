@@ -20,11 +20,11 @@ namespace Game.Collisions
 
         private static void HandleCollisionsInOrder(List<IGameObject> gameObjects)
         {
-            gameObjects.Reverse();
-            for (int i = 0; i < gameObjects.Count; i++)
+            
+            for (int i = gameObjects.Count - 1; i >= 0; i--)
             {
                 List<CollisionData> objectCollisionList = new List<CollisionData>();
-                for (int j = i + 1; j < gameObjects.Count; j++)
+                for (int j = i - 1; j >= 0; j--)
                 {
                     ICollisionSide side = CollisionDetector.DetectCollision(gameObjects[i], gameObjects[j]);
 

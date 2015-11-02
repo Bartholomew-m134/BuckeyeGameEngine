@@ -20,6 +20,7 @@ namespace Game
         private static Game1 currentGame;
         private static ICamera camera;
         private static System.Diagnostics.Stopwatch timer;
+
         public static void LoadListFromFile(string filename, Game1 game)
         {
             BackgroundThemeManager.PlayOverWorldTheme();
@@ -32,48 +33,33 @@ namespace Game
 
         public static void Update(ICamera currentCamera)
         {
+            objectWithinZoneList.Clear();
             camera = currentCamera;
 
             for (int i = objectList.Count - 1; i >= 0; i--)
             {
-                if (objectList[i] is IProjectile && (camera.IsRightOfCamera(objectList[i].VectorCoordinates) || camera.IsBelowCamera(objectList[i].VectorCoordinates)))
-                    FreeObject(objectList[i]);
+                Vector2 position = objectList[i].VectorCoordinates;
 
-                if (camera.IsWithinUpdateZone(objectList[i].VectorCoordinates))
+                if (camera.IsWithinUpdateZone(position))
                 {
                     objectList[i].Update();
                     objectWithinZoneList.Add(objectList[i]);
                 }
-                else if ((camera.IsBelowCamera(objectList[i].VectorCoordinates)||camera.IsLeftOfCamera(objectList[i].VectorCoordinates)) && camera.LeftScrollingDisabled)
+                else if (camera.IsWithinReleaseZone(position) || objectList[i] is IProjectile)
                     FreeObject(objectList[i]);
             }
 
             CollisionManager.Update(objectWithinZoneList);
-
-            objectWithinZoneList.Clear();
-
             camera.Update(GetMario());
-
-            if (GetMario().MarioState is Mario.MarioStates.DeadMarioState)
-            {
-                timer.Start();
-                if (timer.ElapsedMilliseconds > 1500)
-                {
-                    timer.Reset();
-                    ResetToDefault();                   
-                }
-            }
+            ResetIfMarioIsDead();
         }
 
         public static void Draw(ICamera currentCamera)
         {
             camera = currentCamera;
 
-            foreach (IGameObject gameObject in objectList)
-            {
-                if (camera.IsWithinUpdateZone(gameObject.VectorCoordinates))
-                    gameObject.Draw(camera);
-            }
+            for (int i = objectWithinZoneList.Count - 1; i >= 0; i--)
+                    objectWithinZoneList[i].Draw(camera);
         }
 
         public static IMario GetMario()
@@ -93,6 +79,7 @@ namespace Game
             if (referenceObject is IProjectile)
                 ((IProjectile)referenceObject).ReturnObject();
             if (referenceObject is IMario)
+                //((IMario)referenceObject).Die();
                 ResetToDefault();
         }
 
@@ -111,6 +98,19 @@ namespace Game
             BackgroundThemeManager.StopAllBackgroundThemes();
             LoadListFromFile(currentFileName, currentGame);
             camera.MoveToPosition(Vector2.Zero);
+        }
+
+        private static void ResetIfMarioIsDead()
+        {
+            if (GetMario().MarioState is Mario.MarioStates.DeadMarioState)
+            {
+                timer.Start();
+                if (timer.ElapsedMilliseconds > 1500)
+                {
+                    timer.Reset();
+                    ResetToDefault();
+                }
+            }
         }
     }
 }

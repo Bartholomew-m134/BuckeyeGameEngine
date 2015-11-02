@@ -21,74 +21,58 @@ namespace Game.Mario
 
         public MarioInstance(Game1 game)
         {
-
             state = new SmallRightIdleState(this);
             myGame = game;
             physics = new ObjectPhysics();
             factory = new FireBallFactory(game);
-  
         }
-
         public void Update()
         {
             location = physics.Update(location);
             state.Update();    
         }
-
         public void Draw(ICamera camera)
         {
             sprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
-
         public void Left()
         {
             state.Left();
         }
-
-
         public void Right()
         {
             state.Right();
         }
-
-
         public void Up()
         {
             state.Up();
         }
-
-
         public void Down()
         {
             state.Down();
         }
-
         public void Jump()
         {
             if (Physics.Velocity.Y < 2)
              state.Jump();
         }
-
         public void StopJumping() {
             state.StopJumping();
         }
-
         public void Run()
         {
             state.Run();
         }
-
         public void StopRunning()
         {
             state.StopRunning();
         }
-
         public void Flower()
         {
             if (!this.IsFireMario())
             {
                 new FireMario(this, myGame);
-        }
+            }
         }
 
         public void ThrowFireball()
@@ -108,8 +92,6 @@ namespace Game.Mario
                 }
             }
         }
-
-
         public void Mushroom()
         {
             if(!this.IsBigMario())
@@ -117,20 +99,16 @@ namespace Game.Mario
                 new GrowMario(this, myGame);
             }
         }
-
         public void Star()
-        {
-            
+        {   
             new StarMario(this, myGame);
         }
-
         public void PoleSlide()
         {
             Physics.ResetX();
             Physics.ResetY();
             state.PoleSlide();
         }
-
         public void Damage()
         {
             if (this.IsBigMario())
@@ -143,13 +121,11 @@ namespace Game.Mario
                 state.Damage();
             }
         }
-
         public Vector2 VectorCoordinates
         {
             get { return location; }
             set { location = value; }
         }
-
         public ISprite Sprite
         {
             get { return (ISprite)sprite; }
@@ -160,11 +136,6 @@ namespace Game.Mario
         {
             get { return state; }
             set { state = value; }
-        }
-
-        public bool IsTransitioning()
-        {
-            return false;
         }
 
         public bool IsBigMario()

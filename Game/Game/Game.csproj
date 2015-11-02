@@ -97,7 +97,6 @@
     <Compile Include="Blocks\BlockSprites\SolidBlockSprite.cs" />
     <Compile Include="Blocks\BlockSprites\UsedBlockSprite.cs" />
     <Compile Include="Blocks\BlockStates\BrickDebrisState.cs" />
-    <Compile Include="Camera.cs" />
     <Compile Include="Collisions\BlockCollisionHandling\BlockFireballCollisionHandler.cs" />
     <Compile Include="Collisions\CollisionManager.cs" />
     <Compile Include="Collisions\EnemyCollisionHandling\EnemyFireballCollisionHandler.cs" />
@@ -308,6 +307,7 @@
     <Compile Include="Utilities\Constants\MarioSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\ScoreManagerConstants.cs" />
     <Compile Include="Utilities\HUDManager.cs" />
+    <Compile Include="Utilities\MarioCamera.cs" />
     <Compile Include="Utilities\ObjectPhysics.cs" />
     <Compile Include="Utilities\ScoreManager.cs" />
     <Compile Include="WorldManager.cs" />

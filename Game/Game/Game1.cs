@@ -18,7 +18,7 @@ namespace Game
     {
         public GraphicsDeviceManager graphics;
         public SpriteBatch spriteBatch;
-        public static Camera camera;
+        public ICamera camera;
         private List<IController> controllerList;
         private int delay;
 
@@ -50,7 +50,7 @@ namespace Game
 
             WorldManager.LoadListFromFile("World1-1", this);
 
-            camera = new Camera(WorldManager.GetMario().VectorCoordinates);
+            camera = new MarioCamera(WorldManager.GetMario().VectorCoordinates);
         }
 
         protected override void UnloadContent()
