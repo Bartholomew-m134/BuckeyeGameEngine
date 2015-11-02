@@ -75,6 +75,7 @@
   <ItemGroup>
     <Compile Include="Background Elements\BackgroundElementSprites\BigHillSprite.cs" />
     <Compile Include="Background Elements\BackgroundElementSprites\CastleSprite.cs" />
+    <Compile Include="Background Elements\BackgroundElementSprites\LogoSprite.cs" />
     <Compile Include="Background Elements\BackgroundElementSprites\SingleBushSprite.cs" />
     <Compile Include="Background Elements\BackgroundElementSprites\SingleCloudSprite.cs" />
     <Compile Include="Background Elements\BackgroundElementSprites\SmallHillSprite.cs" />

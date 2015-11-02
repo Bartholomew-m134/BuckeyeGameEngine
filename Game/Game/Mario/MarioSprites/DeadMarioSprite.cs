@@ -20,7 +20,6 @@ namespace Game.Mario.MarioSprites
         public void Update()
         {           
         }
-
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Rectangle sourceRectangle = new Rectangle((int)MarioSpriteConstants.DEADMARIOSOURCECOORDINATES.X, 
@@ -31,7 +30,6 @@ namespace Game.Mario.MarioSprites
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
-
         public void StarDraw(SpriteBatch spriteBatch, Vector2 location)
         {
         }
