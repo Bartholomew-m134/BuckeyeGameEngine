@@ -96,7 +96,7 @@ namespace Game.Mario
             if (!this.IsFireMario())
             {
                 new FireMario(this, myGame);
-        }
+            }
         }
 
         public void ThrowFireball()
@@ -151,10 +151,7 @@ namespace Game.Mario
             get { return mario.MarioState; }
             set { mario.MarioState = value; }
         }
-        public bool IsTransitioning()
-        {
-            return mario.IsTransitioning();
-        }
+     
         public bool IsBigMario()
         {
             return mario.MarioState.IsBigMario();

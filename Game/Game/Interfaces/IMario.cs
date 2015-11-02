@@ -46,8 +46,6 @@ namespace Game.Mario
 
         void Damage();
 
-        bool IsTransitioning();
-
         bool IsBigMario();
 
         bool IsFireMario();

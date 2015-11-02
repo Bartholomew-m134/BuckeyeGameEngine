@@ -45,7 +45,7 @@ namespace Game
                     objectList[i].Update();
                     objectWithinZoneList.Add(objectList[i]);
                 }
-                else if (camera.IsWithinReleaseZone(position) || (objectList[i] is IProjectile && camera.IsRightOfCamera(position)))
+                else if (camera.IsWithinReleaseZone(position) || objectList[i] is IProjectile)
                     FreeObject(objectList[i]);
             }
 
@@ -58,8 +58,8 @@ namespace Game
         {
             camera = currentCamera;
 
-            foreach (IGameObject gameObject in objectWithinZoneList)
-                    gameObject.Draw(camera);
+            for (int i = objectWithinZoneList.Count - 1; i >= 0; i--)
+                    objectWithinZoneList[i].Draw(camera);
         }
 
         public static IMario GetMario()

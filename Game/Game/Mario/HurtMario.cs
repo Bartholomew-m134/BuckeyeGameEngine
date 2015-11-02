@@ -127,11 +127,7 @@ namespace Game.Mario
             set { mario.MarioState = value; }
         }
 
-        public bool IsTransitioning()
-        {
-            return mario.IsTransitioning();
-        }
-
+       
         public bool IsBigMario()
         {
             return mario.MarioState.IsBigMario();
