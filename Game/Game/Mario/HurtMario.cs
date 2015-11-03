@@ -11,13 +11,11 @@ namespace Game.Mario
     public class HurtMario : IMario
     {
          private IMario mario;
-        private Game1 myGame;
         private int frame;
 
-        public HurtMario(IMario mario, Game1 game)
+        public HurtMario(IMario mario)
         {
             this.mario = mario;
-            this.myGame = game;
             WorldManager.SetMario(this);
             frame = 0;
         }

@@ -50,7 +50,8 @@ namespace Game.Utilities
             string scoreString = scoreToPrint.ToString();
             string timeCounterString = timeToPrint.ToString();
             string coinString = HUDConstants.XCOINCOUNTER + coinsToPrint.ToString();
-
+            // following line is part of next sprint
+            //logo.Draw(spriteBatch,HUDConstants.LOGOLOCATION);
             coin.Draw(spriteBatch, HUDConstants.COINSPRITEHUDLOCATION);
             spriteBatch.Begin();
             spriteBatch.DrawString(hudFont, HUDConstants.MARIOHUDSTRING, HUDConstants.MARIOHUDLOCATION, Color.White);

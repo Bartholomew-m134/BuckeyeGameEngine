@@ -12,14 +12,12 @@ namespace Game.Mario
     public class FireMario : IMario
     {
         private IMario mario;
-        private Game1 myGame;
         private int frame;
 
-        public FireMario(IMario mario, Game1 game)
+        public FireMario(IMario mario)
         {
             this.mario = mario;
             SoundEffectManager.PowerPlayerUpEffect();
-            this.myGame = game;
             WorldManager.SetMario(this);
             frame = 0;
         }
@@ -124,7 +122,7 @@ namespace Game.Mario
             set { mario.MarioState = value; }
         }
 
-        public bool IsTransitioning()
+        public static bool IsTransitioning()
         {
             return true;
         }

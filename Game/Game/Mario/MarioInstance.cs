@@ -71,7 +71,7 @@ namespace Game.Mario
         {
             if (!this.IsFireMario())
             {
-                new FireMario(this, myGame);
+                new FireMario(this);
             }
         }
 
@@ -96,7 +96,7 @@ namespace Game.Mario
         {
             if(!this.IsBigMario())
             {
-                new GrowMario(this, myGame);
+                new GrowMario(this);
             }
         }
         public void Star()
@@ -114,7 +114,7 @@ namespace Game.Mario
             if (this.IsBigMario())
             {
             state.Damage();
-                new HurtMario(this, myGame);
+            new HurtMario(this);
         }
             else
         {
