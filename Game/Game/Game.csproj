@@ -337,6 +337,7 @@
     <Content Include="CodeReviews\Sprint 4\BrickDebrisSpriteCodeReadability.txt" />
     <Content Include="CodeReviews\Sprint 4\CameraCodeReadability.txt" />
     <Content Include="CodeReviews\Sprint 4\EnemyEnemyCollisionHandlerCodeQuality.txt" />
+    <Content Include="CodeReviews\Sprint 4\MarioCameraCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 4\ObjectPhysicsCodeReadability.txt" />
     <Content Include="CodeReviews\Sprint 4\EnemyEnemyCollisionHandlerReadability.txt" />
     <Content Include="CodeReviews\Sprint 4\HurtMarioReadability.txt" />
