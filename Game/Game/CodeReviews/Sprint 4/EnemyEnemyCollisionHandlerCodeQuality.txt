@@ -1,7 +1,7 @@
 ﻿Author: Kyle Powers
-Date: 10/11/2015
-Sprint:3
-File name: MarioEnemyCollisionHandler.cs
+Date: 11/2/2015
+Sprint: 4
+File name: EnemyEnemyCollisionHandler.cs
 Author: John Cramer
 
 

@@ -333,6 +333,7 @@
     <Content Include="CodeReviews\Sprint 3\MarioItemCollisionHandlerCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 3\WorldManagerCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 3\WorldManagerReadability.txt" />
+    <Content Include="CodeReviews\Sprint 4\BrickDebrisSpriteCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 4\BrickDebrisSpriteCodeReadability.txt" />
     <Content Include="CodeReviews\Sprint 4\CameraCodeReadability.txt" />
     <Content Include="CodeReviews\Sprint 4\EnemyEnemyCollisionHandlerCodeQuality.txt" />
@@ -340,6 +341,7 @@
     <Content Include="CodeReviews\Sprint 4\ObjectPhysicsCodeReadability.txt" />
     <Content Include="CodeReviews\Sprint 4\EnemyEnemyCollisionHandlerReadability.txt" />
     <Content Include="CodeReviews\Sprint 4\HurtMarioReadability.txt" />
+    <Content Include="CodeReviews\Sprint 4\ObjectPhysicsCodeQuality.txt" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>

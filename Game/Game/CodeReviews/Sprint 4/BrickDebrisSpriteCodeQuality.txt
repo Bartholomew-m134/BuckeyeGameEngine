@@ -1,0 +1,12 @@
+﻿Author:							Matt Bartholomew
+Date :							11/2/15
+Sprint:							4
+Reviewed file:					BrickDebrisSprite.cs
+File Author:					Connor Swick
+Minutes to complete:			8
+Code Quality:
+	Coupling is low since only reference is to spritebatch and brick debris sprite. The cohesion is high since the class only
+	does one thing. Naming and length are acceptable.
+Hypothetical Addition:
+	If gravity in the world is changed, the appearence of falling blocks will be drastically be different. The falling adjustment 
+	would need to be changed to match appearence along with the timer to draw.
