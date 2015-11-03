@@ -1,0 +1,13 @@
+﻿Author:							John Cramer
+Date :							11/2/15
+Sprint:							4
+Reviewed file:					HurtMario.cs
+File Author:					Jackson Luken
+Minutes to complete:			7
+Code Readability:
+
+The code is cohesive, as it only deals with the damaged Mario State transitions. The code has higher coupling, as
+it has access to a IMario object, which has quite a few dependencies, although many of these dependencies are
+necessary. One hypothetical change to this file would be to make the damage transition more accurate to the real game,
+in which mario is shown powering down, instead of just going straight to the invincibility state. Also the file
+could have a more specific name, such as DamagedMarioTransitionDecorator.
