@@ -53,11 +53,11 @@ namespace Game.Collisions.FlagPoleCollisionHandling
 
         public void HandleScore()
         {
-            if (collidingFlagPole is InvisibleFlagPoleBarrier && ScoreManager.flagTopBeenHit == false)
+            if (collidingFlagPole is InvisibleFlagPoleBarrier && ScoreManager.FlagTopBeenHit == false)
             {
                 ScoreManager.location = collidingMario.VectorCoordinates;
                 ScoreManager.IncreaseScore((int)(ScoreManager.HandleFlagPoleRange((int)collidingMario.VectorCoordinates.Y + (int)collidingMario.Sprite.SpriteDimensions.Y)));
-                ScoreManager.flagTopBeenHit = true;
+                ScoreManager.FlagTopBeenHit = true;
             }
         }
     }

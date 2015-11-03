@@ -12,7 +12,6 @@ namespace Game.Collisions.EnemyCollisionHandling
     public class EnemyPipeCollisionHandler
     {
         private IEnemy enemy;
-        IPipe pipe;
         private ICollisionSide side;
         private CollisionData collision;
 
@@ -24,12 +23,10 @@ namespace Game.Collisions.EnemyCollisionHandling
             if (collision.GameObjectA is IEnemy)
             {
                 enemy = (IEnemy)collision.GameObjectA;
-                pipe = (IPipe)collision.GameObjectB;
             }
             else
             {
                 enemy = (IEnemy)collision.GameObjectB;
-                pipe = (IPipe)collision.GameObjectA;
                 side = side.FlipSide();
             }
         }

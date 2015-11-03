@@ -8,20 +8,20 @@ namespace Game.Utilities.Constants
 {
     public static class ScoreManagerConstants
     {
-        public static int[] STOMPSEQUENCE = new int[11]{100, 200, 400, 500, 800, 1000, 2000, 4000, 5000, 8000, 0};
-        public static int[] SHELLSEQUENCE = new int[8]{500, 800, 1000, 2000, 4000, 5000, 8000, 0};
-        public static int RESETTOZERO =  0;
-        public static int UPDATEDELAY = 10;
-        public static int INCREMENTBYONE = 1;
-        public static int ZONEONEYCOORDINATE = 272;
-        public static int ZONEONESCORE = 5000;
-        public static int ZONETWOYCOORDINATE = 315;
-        public static int ZONETWOSCORE = 2000;
-        public static int ZONETHREEYCOORDINATE = 336;
-        public static int ZONETHREESCORE = 800;
-        public static int ZONEFOURYCOORDINATE = 368;
-        public static int ZONEFOURSCORE = 400;
-        public static int ZONEFIVEYCOORDINATE = 416;
-        public static int ZONEFIVESCORE = 100;
+        public static readonly int[] STOMPSEQUENCE = new int[11]{100, 200, 400, 500, 800, 1000, 2000, 4000, 5000, 8000, 0};
+        public static readonly int[] SHELLSEQUENCE = new int[8] { 500, 800, 1000, 2000, 4000, 5000, 8000, 0 };
+        public const int RESETTOZERO = 0;
+        public const int UPDATEDELAY = 10;
+        public const int INCREMENTBYONE = 1;
+        public const int ZONEONEYCOORDINATE = 272;
+        public const int ZONEONESCORE = 5000;
+        public const int ZONETWOYCOORDINATE = 315;
+        public const int ZONETWOSCORE = 2000;
+        public const int ZONETHREEYCOORDINATE = 336;
+        public const int ZONETHREESCORE = 800;
+        public const int ZONEFOURYCOORDINATE = 368;
+        public const int ZONEFOURSCORE = 400;
+        public const int ZONEFIVEYCOORDINATE = 416;
+        public const int ZONEFIVESCORE = 100;
     }
 }

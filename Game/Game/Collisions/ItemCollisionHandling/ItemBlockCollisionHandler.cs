@@ -37,7 +37,7 @@ namespace Game.Collisions.ItemCollisionHandling
         public void HandleCollision()
         {
             HandleScore();
-            if (collidingBlock.isBumped && side is TopSideCollision && collidingItem.VectorCoordinates.X == collidingBlock.VectorCoordinates.X)
+            if (collidingBlock.IsBumped && side is TopSideCollision && collidingItem.VectorCoordinates.X == collidingBlock.VectorCoordinates.X)
             {
                 collidingItem.Release();
                 HandleSoundEffect();
@@ -79,7 +79,7 @@ namespace Game.Collisions.ItemCollisionHandling
 
         public void HandleScore()
         {
-            if (collidingBlock.isBumped && side is TopSideCollision && collidingItem.VectorCoordinates.X == collidingBlock.VectorCoordinates.X && collidingItem is Coin)
+            if (collidingBlock.IsBumped && side is TopSideCollision && collidingItem.VectorCoordinates.X == collidingBlock.VectorCoordinates.X && collidingItem is Coin)
             {
                 HUDManager.UpdateHUDCoins(1);
                 ScoreManager.IncreaseScore(200);

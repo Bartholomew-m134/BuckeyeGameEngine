@@ -97,14 +97,9 @@ namespace Game.Mario
         {
             
         }
-
         public void Star()
         {
             
-        }
-
-        public void Die()
-        {
         }
         public void PoleSlide()
         {

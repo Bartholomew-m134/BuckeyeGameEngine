@@ -103,10 +103,6 @@ namespace Game.Mario
         {
             
         }
-
-        public void Die()
-        {
-        }
         public void PoleSlide()
         {
             mario.PoleSlide();
