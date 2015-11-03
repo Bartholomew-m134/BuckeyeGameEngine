@@ -10,7 +10,7 @@ namespace Game.Mario
 {
     public class HurtMario : IMario
     {
-         private IMario mario;
+        private IMario mario;
         private Game1 myGame;
         private int frame;
 
@@ -40,15 +40,8 @@ namespace Game.Mario
 
         public void Draw(ICamera camera)
         {
-
             if (frame % 2 == 0 && frame % 4 == 0)
-            {
                 mario.Draw(camera);
-            }
-            else if (frame % 2 == 1 && frame % 4 != 0)
-            {
-                
-            }
         }
 
         public void Left()
@@ -153,8 +146,6 @@ namespace Game.Mario
         {
             get { return ((MarioInstance)mario).Physics; }
         }
-
-
 
         public void Run()
         {
