@@ -1,0 +1,16 @@
+﻿Author: Jackson Luken
+Date: 11/2/2015
+Sprint: 4
+File Name: MarioCamera.cs
+File Author: Matt Bartholomew
+Code Quality:
+This code has very limited coupling and what is there is very low. The only repeatedly used outside data is the position information 
+passed in in the various methods.All of the methods are separated into their own specific duties and do not take on excessive 
+code to handle more than they need to. Overall the class is very well organized and makes sure that it handles all duties 
+necessary for the camera to move.
+
+Hypothetical Change: 
+If you wanted to change the game into a vertical or left scroller, all that would need to be changed would be the if 
+statement in the AdjustCameraPosition method to allow for a checkon Y position change instead of X, or to change the > to a < to 
+allow to left movement instead of right. Because the method keeps all data in itself, everthing else will remain unchanged and 
+working properly.
