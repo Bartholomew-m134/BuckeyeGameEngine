@@ -11,11 +11,10 @@ namespace Game.Utilities
 {
     public static class ScoreManager
     {
-        public static int totalScore;
-        public static Vector2 location;
-        public static Game1 game;
+        private static int totalScore;
+        public  static Vector2 location;
         private static SpriteFont scoreFont;
-        public static bool flagTopBeenHit = false;
+        private static bool flagTopBeenHit = false;
         private static bool hasChanged = false;
         private static int currentScoreToDraw;
         private static int drawOnScreenTimer = ScoreManagerConstants.RESETTOZERO;
@@ -101,6 +100,12 @@ namespace Game.Utilities
             {
                 return ScoreManagerConstants.ZONEFIVESCORE;
             }
+        }
+
+        public static bool FlagTopBeenHit
+        {
+            get { return flagTopBeenHit; }
+            set { flagTopBeenHit = value; }
         }
     }
 }

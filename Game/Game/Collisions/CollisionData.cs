@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Game.Collisions
 {
-    public class CollisionData:IComparable
+    public class CollisionData
     {
         private IGameObject gameObjectA;
         private IGameObject gameObjectB;
@@ -73,9 +73,5 @@ namespace Game.Collisions
             get { return collisionSide; }
         }
 
-         int IComparable.CompareTo(object obj) {
-            CollisionData collision = (CollisionData)obj;
-            return this.OverlapArea() - collision.OverlapArea();
-        }
     }
 }

@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Game.SpriteFactories
 {
-    class ProjectileSpriteFactory
+    public static class ProjectileSpriteFactory
     {
 
         private static Texture2D enemiesSpriteSheet;

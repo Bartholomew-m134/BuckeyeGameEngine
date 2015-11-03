@@ -16,12 +16,9 @@ namespace Game.Collisions.EnemyCollisionHandling
     {
         private IEnemy enemy;
         private IProjectile fireball;
-        private CollisionData collision;
 
         public EnemyFireballCollisionHandler(CollisionData collision)
         {
-            this.collision = collision;
-
             if (collision.GameObjectA is IEnemy)
             {
                 enemy = (IEnemy)collision.GameObjectA;

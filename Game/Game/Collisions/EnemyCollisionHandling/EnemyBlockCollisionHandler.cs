@@ -62,7 +62,7 @@ namespace Game.Collisions.EnemyCollisionHandling
                     enemy.Physics.Velocity = new Vector2(11, enemy.Physics.Velocity.Y);
                 }
             }
-            else if (side is TopSideCollision && ((Block)block).isBumped)
+            else if (side is TopSideCollision && ((Block)block).IsBumped)
             {
                 enemy.CanDealDamage = false;
                 enemy.Flipped();
@@ -70,7 +70,7 @@ namespace Game.Collisions.EnemyCollisionHandling
         }
         private void HandleScore()
         {
-            if(((Block)block).isBumped && enemy is Goomba && side is TopSideCollision){
+            if(((Block)block).IsBumped && enemy is Goomba && side is TopSideCollision){
                 if (((Goomba)enemy).state is GoombaWalkingLeftState || ((Goomba)enemy).state is GoombaWalkingRightState)
                 {
                     ScoreManager.IncreaseScore(100);
@@ -78,7 +78,7 @@ namespace Game.Collisions.EnemyCollisionHandling
                 }
             }
 
-            if (((Block)block).isBumped && enemy is GreenKoopa && side is TopSideCollision)
+            if (((Block)block).IsBumped && enemy is GreenKoopa && side is TopSideCollision)
             {
                 if (((GreenKoopa)enemy).state is GreenKoopaWalkingLeftState || ((GreenKoopa)enemy).state is GreenKoopaWalkingRightState)
                 {

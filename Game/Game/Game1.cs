@@ -18,7 +18,7 @@ namespace Game
     {
         public GraphicsDeviceManager graphics;
         public SpriteBatch spriteBatch;
-        public ICamera camera;
+        private ICamera camera;
         private List<IController> controllerList;
         private int delay;
 
@@ -83,7 +83,7 @@ namespace Game
             GraphicsDevice.Clear(Color.CornflowerBlue);
             WorldManager.Draw(camera);
             ScoreManager.DrawScore(spriteBatch, camera);
-            HUDManager.DrawHUD(spriteBatch, camera);
+            HUDManager.DrawHUD(spriteBatch);
             base.Draw(gameTime);
         }
     }

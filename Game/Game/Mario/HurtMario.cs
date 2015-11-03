@@ -100,10 +100,6 @@ namespace Game.Mario
         {
             mario.Star();
         }
-
-        public void Die()
-        {
-        }
         public void PoleSlide()
         {
             mario.PoleSlide();

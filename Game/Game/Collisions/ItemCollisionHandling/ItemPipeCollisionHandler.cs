@@ -11,7 +11,6 @@ namespace Game.Collisions.ItemCollisionHandling
 {
     public class ItemPipeCollisionHandler
     {
-        private IPipe collidingPipe;
         private IItem collidingItem;
         private ICollisionSide side;
         private CollisionData collision;
@@ -23,11 +22,9 @@ namespace Game.Collisions.ItemCollisionHandling
             if (collision.GameObjectA is IItem)
             {
                 collidingItem = (IItem)collision.GameObjectA;
-                collidingPipe = (IPipe)collision.GameObjectB;
             }
             else
             {
-                collidingPipe = (IPipe)collision.GameObjectA;
                 collidingItem = (IItem)collision.GameObjectB;
                 side = side.FlipSide();
             }

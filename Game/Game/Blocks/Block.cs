@@ -18,7 +18,7 @@ namespace Game.Blocks
         private ISprite sprite;
         private Game1 game;
         private Vector2 location;
-        public bool isBumped;
+        private bool isBumped;
         private ObjectPhysics physics;
 
         public Block(Type blockType, Game1 game)
@@ -41,7 +41,7 @@ namespace Game.Blocks
                 physics.Acceleration = Vector2.Zero;
             }
 
-            if(isBumped)
+            if (isBumped)
                 location = physics.Update(location);
         }
 
@@ -117,6 +117,12 @@ namespace Game.Blocks
         public ObjectPhysics Physics
         {
             get { return null; }
+        }
+
+        public bool IsBumped
+        {
+            get { return isBumped; }
+
         }
     }
 }

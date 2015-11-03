@@ -14,11 +14,12 @@ namespace Game.Utilities
     public static class HUDManager
     {
         private static SpriteFont hudFont = SpriteFactories.BackgroundElementsSpriteFactory.CreateHUDFont();
-        private static ISprite logo = SpriteFactories.BackgroundElementsSpriteFactory.CreateLogoSprite();
+        // following line is part of next sprint
+        //private static ISprite logo = SpriteFactories.BackgroundElementsSpriteFactory.CreateLogoSprite();
         private static ISprite coin= (CoinSprite)SpriteFactories.ItemsSpriteFactory.CreateCoinSprite();
-        public static int scoreToPrint;
-        public static int coinsToPrint;
-        public static int timeToPrint = HUDConstants.STARTINGTIME;
+        private static int scoreToPrint;
+        private static int coinsToPrint;
+        private static int timeToPrint = HUDConstants.STARTINGTIME;
         private static int updateTimerCounter = HUDConstants.RESETUPDATEDELAYCOUNTER;
 
         public static void UpdateHUDScore(int scoreToAdd)
@@ -44,7 +45,7 @@ namespace Game.Utilities
             coin.Update();
             
         }
-        public static void DrawHUD(SpriteBatch spriteBatch, ICamera camera)
+        public static void DrawHUD(SpriteBatch spriteBatch)
         {
             string scoreString = scoreToPrint.ToString();
             string timeCounterString = timeToPrint.ToString();

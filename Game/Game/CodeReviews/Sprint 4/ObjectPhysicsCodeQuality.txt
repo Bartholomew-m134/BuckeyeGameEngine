@@ -1,0 +1,12 @@
+﻿Author:							Connor Swick
+Date :							11/2/15
+Sprint:							4
+Reviewed file:					ObjectPhysics.cs
+File Author:					Kyle Powers
+Code Quality:
+		This class has overall great quality. The methods are short and concise with
+		very cohesive functionalities related to physics. The class features all private
+		fields and uses very limited directives making it very loosely coupled. One improvement
+		of this would be to create an IPhysics interface in order to have multiple different 
+		physics objects with different properties. For example, having moon-like physics on 
+		separate platforms. 

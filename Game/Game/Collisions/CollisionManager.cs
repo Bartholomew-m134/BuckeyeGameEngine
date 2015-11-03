@@ -8,13 +8,8 @@ namespace Game.Collisions
 {
     public static class CollisionManager
     {
-
-        private static List<CollisionData> collisionList;
-
         public static void Update(List<IGameObject> gameObjects)
         {
-            collisionList = new List<CollisionData>();
-
             HandleCollisionsInOrder(gameObjects);
         }
 
@@ -23,7 +18,6 @@ namespace Game.Collisions
             
             for (int i = gameObjects.Count - 1; i >= 0; i--)
             {
-                List<CollisionData> objectCollisionList = new List<CollisionData>();
                 for (int j = i - 1; j >= 0; j--)
                 {
                     ICollisionSide side = CollisionDetector.DetectCollision(gameObjects[i], gameObjects[j]);
