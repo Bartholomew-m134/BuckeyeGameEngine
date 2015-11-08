@@ -28,5 +28,11 @@ namespace Game.GameStates
         {
             throw new NotImplementedException();
         }
+
+
+        public void Pause()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

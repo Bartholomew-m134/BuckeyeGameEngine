@@ -11,20 +11,26 @@ namespace Game.GameStates
     {
         public void LoadContent()
         {
-            throw new NotImplementedException();
+            
         }
 
         public void UnloadContent()
         {
-            throw new NotImplementedException();
+            
         }
 
         public void Update()
         {
-            throw new NotImplementedException();
+            
         }
 
         public void Draw(SpriteBatch spriteBatch)
+        {
+            
+        }
+
+
+        public void Pause()
         {
             throw new NotImplementedException();
         }

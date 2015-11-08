@@ -8,13 +8,16 @@ namespace Game.Commands
 {
     public class PauseGameCommand : ICommand
     {
-        public PauseGameCommand()
+        private Game1 game;
+
+        public PauseGameCommand(Game1 game)
         {
+            this.game = game;
         }
 
         public void Execute()
         {
-            
+            game.gameState.Pause();
         }
 
         public void Hold()
@@ -26,4 +29,5 @@ namespace Game.Commands
         {
 
         }
+    }
 }

@@ -1,6 +1,7 @@
 ﻿using Game.Interfaces;
 using Game.SpriteFactories;
 using Game.Utilities;
+using Game.Utilities.Controls;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace Game.GameStates
         {
             this.game = game;
             controllerList = new List<IController>();
-            controllerList.Add(new KeyboardController());
+            controllerList.Add(new KeyboardController(new MarioControls(), game));
             controllerList.Add(new GamePadController());
         }
 
@@ -68,6 +69,11 @@ namespace Game.GameStates
             WorldManager.Draw(camera);
             ScoreManager.DrawScore(spriteBatch, camera);
             HUDManager.DrawHUD(spriteBatch);
+        }
+
+        public void Pause()
+        {
+            game.gameState = new PauseGameState(this, game);
         }
     }
 }

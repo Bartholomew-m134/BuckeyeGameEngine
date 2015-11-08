@@ -1,4 +1,6 @@
 ﻿using Game.Interfaces;
+using Game.Utilities;
+using Game.Utilities.Controls;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -9,24 +11,43 @@ namespace Game.GameStates
 {
     public class PauseGameState : IGameState
     {
+        private Game1 game;
+        private IGameState prevGameState;
+        private List<IController> controllerList;
+
+        public PauseGameState(IGameState gameState, Game1 game)
+        {
+            this.game = game;
+            prevGameState = gameState;
+            controllerList = new List<IController>();
+            controllerList.Add(new KeyboardController(new PausedControls(), game));
+            controllerList.Add(new GamePadController());
+        }
+
         public void LoadContent()
         {
-            throw new NotImplementedException();
+            
         }
 
         public void UnloadContent()
         {
-            throw new NotImplementedException();
+
         }
 
         public void Update()
         {
-            throw new NotImplementedException();
+            foreach (IController controller in controllerList)
+                controller.Update();
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            throw new NotImplementedException();
+            prevGameState.Draw(spriteBatch);
+        }
+
+        public void Pause()
+        {
+            game.gameState = prevGameState;
         }
     }
 }

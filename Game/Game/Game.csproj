@@ -152,6 +152,7 @@
     <Compile Include="Enemies\GoombaClasses\GoombaStates\GoombaWalkingLeftState.cs" />
     <Compile Include="Enemies\GoombaClasses\GoombaStates\GoombaWalkingRightState.cs" />
     <Compile Include="Enemies\GoombaClasses\GoombaStates\IGoombaState.cs" />
+    <Compile Include="Interfaces\IControls.cs" />
     <Compile Include="Interfaces\IEnemy.cs" />
     <Compile Include="Enemies\KoopaClasses\GreenKoopa.cs" />
     <Compile Include="Enemies\KoopaClasses\KoopaSprites\GreenKoopaEmergingFromShellSprite.cs" />
@@ -312,6 +313,8 @@
     <Compile Include="Utilities\Constants\HUDConstants.cs" />
     <Compile Include="Utilities\Constants\MarioSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\ScoreManagerConstants.cs" />
+    <Compile Include="Utilities\Controls\MarioControls.cs" />
+    <Compile Include="Utilities\Controls\PausedControls.cs" />
     <Compile Include="Utilities\HUDManager.cs" />
     <Compile Include="Utilities\MarioCamera.cs" />
     <Compile Include="Utilities\ObjectPhysics.cs" />
