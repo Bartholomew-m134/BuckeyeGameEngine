@@ -72,7 +72,7 @@ namespace Game.SpriteFactories
 
         public static ISprite CreateStartSprite()
         {
-            return new LogoSprite(startSpriteSheet);
+            return new StartSprite(startSpriteSheet);
         }
 
 

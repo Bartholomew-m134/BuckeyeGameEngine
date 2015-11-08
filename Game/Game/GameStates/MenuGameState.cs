@@ -1,5 +1,6 @@
 ﻿using Game.Interfaces;
 using Game.SpriteFactories;
+using Game.Utilities.Controls;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -24,15 +25,17 @@ namespace Game.GameStates
             this.game = game;
             controllerList = new List<IController>();
             controllerList.Add(new KeyboardController(new MenuControls(game)));
-            controllerList.Add(new GamePadController());
-            startMenuSprite = BackgroundElementsSpriteFactory.CreateStartSprite();
-            namesLogoSprite = BackgroundElementsSpriteFactory.CreateLogoSprite();
+            controllerList.Add(new GamePadController(new MenuControls(game)));
+            
         }
 
         public void LoadContent()
         {
             BackgroundElementsSpriteFactory.Load(game.Content);
+            startMenuSprite = BackgroundElementsSpriteFactory.CreateStartSprite();
+            namesLogoSprite = BackgroundElementsSpriteFactory.CreateLogoSprite();
         }
+
 
         public void UnloadContent()
         {
@@ -49,7 +52,7 @@ namespace Game.GameStates
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (logoCounter < 100)
+            if (logoCounter < 300)
                 namesLogoSprite.Draw(game.spriteBatch, new Vector2(0, 0));
             else
                 startMenuSprite.Draw(game.spriteBatch, new Vector2(0, 0));
@@ -58,7 +61,9 @@ namespace Game.GameStates
 
         public void StartButton()
         {
-            throw new NotImplementedException();
+
+            game.gameState = new NormalMarioGameState(game);
+            game.gameState.LoadContent();
         }
     }
 }

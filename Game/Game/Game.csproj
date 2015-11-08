@@ -79,6 +79,7 @@
     <Compile Include="Background Elements\BackgroundElementSprites\SingleBushSprite.cs" />
     <Compile Include="Background Elements\BackgroundElementSprites\SingleCloudSprite.cs" />
     <Compile Include="Background Elements\BackgroundElementSprites\SmallHillSprite.cs" />
+    <Compile Include="Background Elements\BackgroundElementSprites\StartSprite.cs" />
     <Compile Include="Background Elements\BackgroundElementSprites\TripleBushSprite.cs" />
     <Compile Include="Background Elements\BackgroundElementSprites\TripleCloudSprite.cs" />
     <Compile Include="Background Elements\BigHill.cs" />

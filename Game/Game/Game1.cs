@@ -29,7 +29,7 @@ namespace Game
 
         protected override void Initialize()
         {
-            gameState = new NormalMarioGameState(this);
+            gameState = new MenuGameState(this);
             base.Initialize();
         }
 
