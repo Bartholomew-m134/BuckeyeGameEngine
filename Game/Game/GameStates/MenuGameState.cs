@@ -1,4 +1,6 @@
 ﻿using Game.Interfaces;
+using Game.SpriteFactories;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -9,24 +11,48 @@ namespace Game.GameStates
 {
     public class MenuGameState : IGameState
     {
+
+
+        private Game1 game;
+        private ISprite startMenuSprite;
+        private ISprite namesLogoSprite;
+        private List<IController> controllerList;
+        private int logoCounter = 0;
+
+        public MenuGameState( Game1 game)
+        {
+            this.game = game;
+            controllerList = new List<IController>();
+            controllerList.Add(new KeyboardController(new MenuControls(game)));
+            controllerList.Add(new GamePadController());
+            startMenuSprite = BackgroundElementsSpriteFactory.CreateStartSprite();
+            namesLogoSprite = BackgroundElementsSpriteFactory.CreateLogoSprite();
+        }
+
         public void LoadContent()
         {
-            throw new NotImplementedException();
+            BackgroundElementsSpriteFactory.Load(game.Content);
         }
 
         public void UnloadContent()
         {
-            throw new NotImplementedException();
+            
         }
 
         public void Update()
         {
-            throw new NotImplementedException();
+            foreach (IController controller in controllerList)
+                controller.Update();
+
+            logoCounter++;
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            throw new NotImplementedException();
+            if (logoCounter < 100)
+                namesLogoSprite.Draw(game.spriteBatch, new Vector2(0, 0));
+            else
+                startMenuSprite.Draw(game.spriteBatch, new Vector2(0, 0));
         }
 
 

@@ -13,6 +13,7 @@ namespace Game.SpriteFactories
     {
         private static Texture2D backgroundElementsSpriteSheet;
         private static Texture2D logoSpriteSheet;
+        private static Texture2D startSpriteSheet;
         private static SpriteFont spriteFont;
         private static SpriteFont hudFont;
 
@@ -20,6 +21,7 @@ namespace Game.SpriteFactories
         {
             backgroundElementsSpriteSheet = content.Load<Texture2D>("ScenarySpriteSheet");
             logoSpriteSheet = content.Load<Texture2D>("BGENamesVersion");
+            startSpriteSheet = content.Load<Texture2D>("BGEPressStartVersion");
             spriteFont = content.Load<SpriteFont>("ScoreFont");
             hudFont = content.Load<SpriteFont>("HUDFont");
 
@@ -67,6 +69,13 @@ namespace Game.SpriteFactories
         {
             return new LogoSprite(logoSpriteSheet);
         }
+
+        public static ISprite CreateStartSprite()
+        {
+            return new LogoSprite(startSpriteSheet);
+        }
+
+
         public static SpriteFont CreateScoreFont()
         {
             return spriteFont;
