@@ -104,6 +104,7 @@
     <Compile Include="Collisions\ItemCollisionHandling\ItemPipeCollisionHandler.cs" />
     <Compile Include="Collisions\PipeCollisionHandling\PipeFireballCollisionHandler.cs" />
     <Compile Include="Commands\MarioCommands\MarioRunFireBallCommand.cs" />
+    <Compile Include="Commands\PauseGameCommand.cs" />
     <Compile Include="Enemies\GoombaClasses\Goomba.cs" />
     <Compile Include="FireBallSpawner.cs" />
     <Compile Include="FlagPoles\FlagPole.cs" />
@@ -111,6 +112,10 @@
     <Compile Include="FlagPoles\FlagPoleSprites\InactiveFlagPoleSprite.cs" />
     <Compile Include="FlagPoles\InvisibleFlagPoleBarrier.cs" />
     <Compile Include="FlagPoles\FlagPoleSprites\InvisibleFlagPoleBarrierSprite.cs" />
+    <Compile Include="GameStates\LoadingGameState.cs" />
+    <Compile Include="GameStates\MenuGameState.cs" />
+    <Compile Include="GameStates\NormalMarioGameState.cs" />
+    <Compile Include="GameStates\PauseGameState.cs" />
     <Compile Include="Interfaces\IBlock.cs" />
     <Compile Include="Collisions\BlockCollisionHandling\MarioBlockCollisionHandler.cs" />
     <Compile Include="Collisions\BottomSideCollision.cs" />
@@ -162,6 +167,7 @@
     <Compile Include="Enemies\KoopaClasses\KoopaStates\IKoopaState.cs" />
     <Compile Include="Interfaces\IFlagPole.cs" />
     <Compile Include="Interfaces\IGameObject.cs" />
+    <Compile Include="Interfaces\IGameState.cs" />
     <Compile Include="Interfaces\IMarioSprite.cs" />
     <Compile Include="Interfaces\IProjectile.cs" />
     <Compile Include="Interfaces\IScenery.cs" />
