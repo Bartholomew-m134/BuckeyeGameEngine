@@ -14,9 +14,9 @@ namespace Game
         private Dictionary<Keys, ICommand> keyMappings;
         private Keys[] prevPressedKeys;
 
-        public KeyboardController(IControls controls, Game1 game)
+        public KeyboardController(IControls controls)
         {
-            keyMappings = controls.GetKeyboardControls(game);
+            keyMappings = controls.GetKeyboardControls();
             prevPressedKeys = Keyboard.GetState().GetPressedKeys();
         }
 

@@ -11,7 +11,14 @@ namespace Game.Utilities.Controls
 {
     public class MarioControls : IControls
     {
-        public Dictionary<Keys, ICommand> GetKeyboardControls(Game1 game)
+        private Game1 game;
+
+        public MarioControls(Game1 game)
+        {
+            this.game = game;
+        }
+
+        public Dictionary<Keys, ICommand> GetKeyboardControls()
         {
             Dictionary<Keys, ICommand> keyboardControls = new Dictionary<Keys, ICommand>();
 
@@ -34,12 +41,20 @@ namespace Game.Utilities.Controls
             return keyboardControls;
         }
 
-
-
-
-        public Dictionary<Keys, ICommand> GamePadControls
+        public Dictionary<Buttons, ICommand> GetGamePadControls()
         {
-            get { throw new NotImplementedException(); }
+            Dictionary<Buttons, ICommand> gamePadControls = new Dictionary<Buttons, ICommand>();
+
+            gamePadControls.Add(Buttons.LeftThumbstickDown, new LowerMarioStanceCommand());
+            gamePadControls.Add(Buttons.LeftThumbstickLeft, new FurtherLeftMarioStanceCommand());
+            gamePadControls.Add(Buttons.LeftThumbstickRight, new FurtherRightMarioStanceCommand());
+
+            gamePadControls.Add(Buttons.A, new RaiseMarioStanceCommand());
+            gamePadControls.Add(Buttons.B, new MarioRunFireBallCommand());
+
+            gamePadControls.Add(Buttons.Start, new PauseGameCommand(game));
+
+            return gamePadControls;
         }
     }
 }

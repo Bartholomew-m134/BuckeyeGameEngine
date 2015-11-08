@@ -20,7 +20,7 @@ namespace Game.GameStates
             this.game = game;
             prevGameState = gameState;
             controllerList = new List<IController>();
-            controllerList.Add(new KeyboardController(new PausedControls(), game));
+            controllerList.Add(new KeyboardController(new PausedControls(game)));
             controllerList.Add(new GamePadController());
         }
 

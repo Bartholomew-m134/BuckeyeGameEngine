@@ -10,7 +10,14 @@ namespace Game.Utilities.Controls
 {
     public class PausedControls : IControls
     {
-        public Dictionary<Keys, ICommand> GetKeyboardControls(Game1 game)
+        private Game1 game;
+
+        public PausedControls(Game1 game)
+        {
+            this.game = game;
+        }
+
+        public Dictionary<Keys, ICommand> GetKeyboardControls()
         {
             Dictionary<Keys, ICommand> keyboardControls = new Dictionary<Keys, ICommand>();
 
@@ -19,9 +26,13 @@ namespace Game.Utilities.Controls
             return keyboardControls;
         }
 
-        public Dictionary<Microsoft.Xna.Framework.Input.Keys, ICommand> GamePadControls
+        public Dictionary<Buttons, ICommand> GetGamePadControls()
         {
-            get { return null; }
+            Dictionary<Buttons, ICommand> gamePadControls = new Dictionary<Buttons, ICommand>();
+
+            gamePadControls.Add(Buttons.Start, new PauseGameCommand(game));
+
+            return gamePadControls;
         }
     }
 }
