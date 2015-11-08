@@ -36,7 +36,7 @@ namespace Game.Utilities.Controls
             keyboardControls.Add(Keys.X, new MarioRunFireBallCommand());
 
             keyboardControls.Add(Keys.R, new ResetToDefaultCommand());
-            keyboardControls.Add(Keys.P, new PauseGameCommand(game));
+            keyboardControls.Add(Keys.P, new StartButtonCommand(game));
 
             return keyboardControls;
         }
@@ -52,7 +52,7 @@ namespace Game.Utilities.Controls
             gamePadControls.Add(Buttons.A, new RaiseMarioStanceCommand());
             gamePadControls.Add(Buttons.B, new MarioRunFireBallCommand());
 
-            gamePadControls.Add(Buttons.Start, new PauseGameCommand(game));
+            gamePadControls.Add(Buttons.Start, new StartButtonCommand(game));
 
             return gamePadControls;
         }

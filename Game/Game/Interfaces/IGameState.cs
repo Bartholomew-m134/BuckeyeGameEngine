@@ -16,6 +16,6 @@ namespace Game.Interfaces
 
         void Draw(SpriteBatch spriteBatch);
 
-        void Pause();
+        void StartButton();
     }
 }

@@ -56,7 +56,7 @@ namespace Game.GameStates
         }
 
 
-        public void Pause()
+        public void StartButton()
         {
             throw new NotImplementedException();
         }

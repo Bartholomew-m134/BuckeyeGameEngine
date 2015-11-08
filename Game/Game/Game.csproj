@@ -104,7 +104,7 @@
     <Compile Include="Collisions\ItemCollisionHandling\ItemPipeCollisionHandler.cs" />
     <Compile Include="Collisions\PipeCollisionHandling\PipeFireballCollisionHandler.cs" />
     <Compile Include="Commands\MarioCommands\MarioRunFireBallCommand.cs" />
-    <Compile Include="Commands\PauseGameCommand.cs" />
+    <Compile Include="Commands\StartButtonCommand.cs" />
     <Compile Include="Enemies\GoombaClasses\Goomba.cs" />
     <Compile Include="FireBallSpawner.cs" />
     <Compile Include="FlagPoles\FlagPole.cs" />
@@ -314,6 +314,7 @@
     <Compile Include="Utilities\Constants\MarioSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\ScoreManagerConstants.cs" />
     <Compile Include="Utilities\Controls\MarioControls.cs" />
+    <Compile Include="Utilities\Controls\MenuControls.cs" />
     <Compile Include="Utilities\Controls\PausedControls.cs" />
     <Compile Include="Utilities\HUDManager.cs" />
     <Compile Include="Utilities\MarioCamera.cs" />
@@ -388,7 +389,9 @@
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Commands\MenuCommands\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
   <!--

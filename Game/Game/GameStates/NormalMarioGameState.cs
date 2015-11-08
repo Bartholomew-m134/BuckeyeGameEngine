@@ -22,7 +22,7 @@ namespace Game.GameStates
             this.game = game;
             controllerList = new List<IController>();
             controllerList.Add(new KeyboardController(new MarioControls(game)));
-            controllerList.Add(new GamePadController());
+            controllerList.Add(new GamePadController(new MarioControls(game)));
         }
 
         public void LoadContent()
@@ -71,7 +71,7 @@ namespace Game.GameStates
             HUDManager.DrawHUD(spriteBatch);
         }
 
-        public void Pause()
+        public void StartButton()
         {
             game.gameState = new PauseGameState(this, game);
         }

@@ -15,9 +15,9 @@ namespace Game
         private Dictionary<Buttons, ICommand> buttonMappings;
         private GamePadState prevState;
 
-        public GamePadController()
+        public GamePadController(IControls controls)
         {
-            buttonMappings = new Dictionary<Buttons, ICommand>();
+            buttonMappings = controls.GetGamePadControls();
             prevState = GamePad.GetState(PlayerIndex.One);
         }
 

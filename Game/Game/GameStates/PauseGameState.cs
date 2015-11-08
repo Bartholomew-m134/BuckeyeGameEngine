@@ -21,7 +21,7 @@ namespace Game.GameStates
             prevGameState = gameState;
             controllerList = new List<IController>();
             controllerList.Add(new KeyboardController(new PausedControls(game)));
-            controllerList.Add(new GamePadController());
+            controllerList.Add(new GamePadController(new PausedControls(game)));
         }
 
         public void LoadContent()
@@ -45,7 +45,7 @@ namespace Game.GameStates
             prevGameState.Draw(spriteBatch);
         }
 
-        public void Pause()
+        public void StartButton()
         {
             game.gameState = prevGameState;
         }
