@@ -71,7 +71,7 @@ namespace Game.GameStates
             HUDManager.DrawHUD(spriteBatch);
         }
 
-        public void Pause()
+        public void StartButton()
         {
             game.gameState = new PauseGameState(this, game);
         }

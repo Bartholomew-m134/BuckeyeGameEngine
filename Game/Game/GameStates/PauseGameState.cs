@@ -45,7 +45,7 @@ namespace Game.GameStates
             prevGameState.Draw(spriteBatch);
         }
 
-        public void Pause()
+        public void StartButton()
         {
             game.gameState = prevGameState;
         }

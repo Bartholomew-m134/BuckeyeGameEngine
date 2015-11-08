@@ -8,11 +8,11 @@ using System.Text;
 
 namespace Game.Utilities.Controls
 {
-    public class PausedControls : IControls
+    public class MenuControls : IControls
     {
         private Game1 game;
 
-        public PausedControls(Game1 game)
+        public MenuControls(Game1 game)
         {
             this.game = game;
         }
