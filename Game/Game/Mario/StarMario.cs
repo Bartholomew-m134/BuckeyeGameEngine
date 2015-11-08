@@ -18,14 +18,14 @@ namespace Game.Mario
         private int timer = 200;
         public static int stompKillStreak = 0;
 
-        private FireBallFactory factory;
+        private FireBallSpawner factory;
         public StarMario(IMario mario, Game1 game)
         {
             this.mario = mario;
             this.myGame = game;
             WorldManager.SetMario(this);
             BackgroundThemeManager.PlayStarTheme();
-            factory = new FireBallFactory(game);
+            factory = new FireBallSpawner(game);
         }
 
         public void Damage()
