@@ -8,12 +8,12 @@ namespace Game.Collisions
 {
     public static class CollisionManager
     {
-        public static void Update(List<IGameObject> gameObjects)
+        public static void Update(List<IGameObject> gameObjects, IGameState gameState)
         {
-            HandleCollisionsInOrder(gameObjects);
+            HandleCollisionsInOrder(gameObjects, gameState);
         }
 
-        private static void HandleCollisionsInOrder(List<IGameObject> gameObjects)
+        private static void HandleCollisionsInOrder(List<IGameObject> gameObjects, IGameState gameState)
         {
             
             for (int i = gameObjects.Count - 1; i >= 0; i--)
@@ -23,7 +23,7 @@ namespace Game.Collisions
                     ICollisionSide side = CollisionDetector.DetectCollision(gameObjects[i], gameObjects[j]);
 
                     if (side != null)
-                        CollisionSelector.HandleCollision(new CollisionData(gameObjects[i], gameObjects[j], side));
+                        CollisionSelector.HandleCollision(new CollisionData(gameObjects[i], gameObjects[j], side), gameState);
                 }  
             }
         }

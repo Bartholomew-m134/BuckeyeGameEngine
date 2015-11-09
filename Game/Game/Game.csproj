@@ -117,6 +117,7 @@
     <Compile Include="GameStates\MenuGameState.cs" />
     <Compile Include="GameStates\NormalMarioGameState.cs" />
     <Compile Include="GameStates\PauseGameState.cs" />
+    <Compile Include="GameStates\PipeTransitioningGameState.cs" />
     <Compile Include="Interfaces\IBlock.cs" />
     <Compile Include="Collisions\BlockCollisionHandling\MarioBlockCollisionHandler.cs" />
     <Compile Include="Collisions\BottomSideCollision.cs" />

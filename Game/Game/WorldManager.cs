@@ -49,7 +49,7 @@ namespace Game
                     FreeObject(objectList[i]);
             }
 
-            CollisionManager.Update(objectWithinZoneList);
+            CollisionManager.Update(objectWithinZoneList, currentGame.gameState);
             camera.Update(GetMario());
             ResetIfMarioIsDead();
         }
