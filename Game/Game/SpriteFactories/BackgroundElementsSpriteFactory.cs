@@ -24,8 +24,6 @@ namespace Game.SpriteFactories
             startSpriteSheet = content.Load<Texture2D>("BGEPressStartVersion");
             spriteFont = content.Load<SpriteFont>("ScoreFont");
             hudFont = content.Load<SpriteFont>("HUDFont");
-
-
         }
 
         public static void Unload()
@@ -61,25 +59,17 @@ namespace Game.SpriteFactories
         {
             return new TripleBushSprite(backgroundElementsSpriteSheet);
         }
+
         public static ISprite CreateCastleSprite()
         {
             return new CastleSprite(backgroundElementsSpriteSheet);
         }
-        public static ISprite CreateLogoSprite()
-        {
-            return new LogoSprite(logoSpriteSheet);
-        }
-
-        public static ISprite CreateStartSprite()
-        {
-            return new StartSprite(startSpriteSheet);
-        }
-
 
         public static SpriteFont CreateScoreFont()
         {
             return spriteFont;
         }
+
         public static SpriteFont CreateHUDFont()
         {
             return hudFont;
