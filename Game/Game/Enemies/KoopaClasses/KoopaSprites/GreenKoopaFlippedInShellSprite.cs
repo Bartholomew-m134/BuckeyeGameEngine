@@ -5,21 +5,16 @@ using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
+using Game.Utilities.Constants;
 
 namespace Game.Enemies.KoopaClasses.GreenKoopaSprites
 {
     class GreenKoopaFlippedInShellSprite : ISprite
     {
         private Texture2D spriteSheet;
-        private Vector2 spriteLocations;
-        private Vector2 spriteDimensions;
-
         public GreenKoopaFlippedInShellSprite(Texture2D texture)
         {
             spriteSheet = texture;
-
-            spriteLocations = new Vector2(361, 5);
-            spriteDimensions = new Vector2(14, 13);
         }
 
         public void Update()
@@ -28,8 +23,10 @@ namespace Game.Enemies.KoopaClasses.GreenKoopaSprites
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle((int)spriteLocations.X, (int)spriteLocations.Y, (int)spriteDimensions.X, (int)spriteDimensions.Y);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, (int)spriteDimensions.X, (int)spriteDimensions.Y);
+            Rectangle sourceRectangle = new Rectangle((int)EnemySpriteConstants.KOOPAFLIPPEDSOURCE.X, (int)(int)EnemySpriteConstants.KOOPAFLIPPEDSOURCE.Y,
+                (int)EnemySpriteConstants.KOOPAFLIPPEDDIMENSIONS.X, (int)EnemySpriteConstants.KOOPAFLIPPEDDIMENSIONS.Y);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
+                (int)EnemySpriteConstants.KOOPAFLIPPEDDIMENSIONS.X, (int)EnemySpriteConstants.KOOPAFLIPPEDDIMENSIONS.Y);
 
             spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White, 0, new Vector2(0, 0), SpriteEffects.FlipVertically, 0);
@@ -38,7 +35,7 @@ namespace Game.Enemies.KoopaClasses.GreenKoopaSprites
 
         public Vector2 SpriteDimensions
         {
-            get { return spriteDimensions; }
+            get { return EnemySpriteConstants.KOOPAFLIPPEDDIMENSIONS; }
         }
     }
 }

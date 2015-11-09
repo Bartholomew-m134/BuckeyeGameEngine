@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
+using Game.Utilities.Constants;
 
 namespace Game.Enemies.KoopaClasses.GreenKoopaSprites
 {
@@ -12,44 +13,24 @@ namespace Game.Enemies.KoopaClasses.GreenKoopaSprites
     {
         private Texture2D spriteSheet;
         private int currentFrame;
-        private int totalFrames = 2;
-        private Vector2[] spriteLocations;
-        private Vector2[] spriteDimensions;
-
         public GreenKoopaEmergingFromShellSprite(Texture2D texture)
         {
             spriteSheet = texture;
-            currentFrame = 0;
-
-            spriteLocations = new Vector2[2];
-            spriteDimensions = new Vector2[2];
-
-            spriteLocations[0].X = 361;
-            spriteLocations[0].Y = 5;
-
-            spriteDimensions[0].X = 14;
-            spriteDimensions[0].Y = 13;
-
-            spriteLocations[1].X = 331;
-            spriteLocations[1].Y = 4;
-
-            spriteDimensions[1].X = 14;
-            spriteDimensions[1].Y = 15;
         }
 
         public void Update()
         {
-
                 currentFrame++;
-                if (currentFrame == totalFrames)
-                    currentFrame = 0;
-
+                if (currentFrame == EnemySpriteConstants.TOTALKOOPAEMERGINGFRAMES)
+                    currentFrame = EnemySpriteConstants.RESETTOZERO;
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle((int)spriteLocations[currentFrame].X, (int)spriteLocations[currentFrame].Y, (int)spriteDimensions[currentFrame].X, (int)spriteDimensions[currentFrame].Y);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, (int)spriteDimensions[currentFrame].X, (int)spriteDimensions[currentFrame].Y);
+            Rectangle sourceRectangle = new Rectangle((int)EnemySpriteConstants.KOOPAEMERGINGFRAMES[currentFrame].X, (int)EnemySpriteConstants.KOOPAEMERGINGFRAMES[currentFrame].Y,
+                (int)EnemySpriteConstants.KOOPAEMERGINGFRAMES[currentFrame].X, (int)EnemySpriteConstants.KOOPAEMERGINGFRAMES[currentFrame].Y);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
+                (int)EnemySpriteConstants.KOOPAEMERGINGFRAMES[currentFrame].X, (int)EnemySpriteConstants.KOOPAEMERGINGFRAMES[currentFrame].Y);
 
             spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
@@ -58,7 +39,7 @@ namespace Game.Enemies.KoopaClasses.GreenKoopaSprites
 
         public Vector2 SpriteDimensions
         {
-            get { return spriteDimensions[currentFrame]; }
+            get { return EnemySpriteConstants.KOOPAEMERGINGFRAMES[currentFrame]; }
         }
     }
 }
