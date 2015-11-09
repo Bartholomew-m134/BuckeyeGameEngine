@@ -273,6 +273,7 @@
     <Compile Include="SoundEffects\SoundEffectManager.cs" />
     <Compile Include="SoundEffects\SuperMarioJumpEffect.cs" />
     <Compile Include="SpriteFactories\BackgroundElementsSpriteFactory.cs" />
+    <Compile Include="SpriteFactories\MenuSpriteFactories.cs" />
     <Compile Include="SpriteFactories\ProjectileSpriteFactory.cs" />
     <Compile Include="SpriteFactories\TileSpriteFactory.cs" />
     <Compile Include="SpriteFactories\EnemySpriteFactory.cs" />

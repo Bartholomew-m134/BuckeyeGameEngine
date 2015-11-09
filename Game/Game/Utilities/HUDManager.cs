@@ -13,7 +13,7 @@ namespace Game.Utilities
 {
     public static class HUDManager
     {
-        private static SpriteFont hudFont = SpriteFactories.BackgroundElementsSpriteFactory.CreateHUDFont();
+        private static SpriteFont hudFont = SpriteFactories.MenuSpriteFactory.CreateHUDFont();
         // following line is part of next sprint
         //private static ISprite logo = SpriteFactories.BackgroundElementsSpriteFactory.CreateLogoSprite();
         private static ISprite coin= (CoinSprite)SpriteFactories.ItemsSpriteFactory.CreateCoinSprite();

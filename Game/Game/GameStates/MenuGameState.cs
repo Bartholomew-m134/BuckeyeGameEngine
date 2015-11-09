@@ -12,8 +12,6 @@ namespace Game.GameStates
 {
     public class MenuGameState : IGameState
     {
-
-
         private Game1 game;
         private ISprite startMenuSprite;
         private ISprite namesLogoSprite;
@@ -31,9 +29,9 @@ namespace Game.GameStates
 
         public void LoadContent()
         {
-            BackgroundElementsSpriteFactory.Load(game.Content);
-            startMenuSprite = BackgroundElementsSpriteFactory.CreateStartSprite();
-            namesLogoSprite = BackgroundElementsSpriteFactory.CreateLogoSprite();
+            MenuSpriteFactory.Load(game.Content);
+            startMenuSprite = MenuSpriteFactory.CreateStartSprite();
+            namesLogoSprite = MenuSpriteFactory.CreateLogoSprite();
         }
 
 
@@ -61,8 +59,7 @@ namespace Game.GameStates
 
         public void StartButton()
         {
-
-            game.gameState = new NormalMarioGameState(game);
+            game.gameState = new LoadingGameState(game);
             game.gameState.LoadContent();
         }
     }
