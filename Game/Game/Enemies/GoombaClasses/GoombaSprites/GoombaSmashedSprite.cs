@@ -5,34 +5,28 @@ using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
+using Game.Utilities.Constants;
 
 namespace Game.Enemies.GoombaClasses.GoombaSprites
 {
     class GoombaSmashedSprite : ISprite
     {
         private Texture2D spriteSheet;
-        private Vector2 spriteLocations;
-        private Vector2 spriteDimensions;
 
         public GoombaSmashedSprite(Texture2D texture)
         {
             spriteSheet = texture;
-
-            spriteLocations.X = 60;
-            spriteLocations.Y = 8;
-
-            spriteDimensions.X = 16;
-            spriteDimensions.Y = 8;
         }
 
         public void Update()
         {
         }
-
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle((int)spriteLocations.X, (int)spriteLocations.Y, (int)spriteDimensions.X, (int)spriteDimensions.Y);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, (int)spriteDimensions.X, (int)spriteDimensions.Y);
+            Rectangle sourceRectangle = new Rectangle((int)EnemySpriteConstants.GOOMBASMASHEDSOURCE.X, (int)(int)EnemySpriteConstants.GOOMBASMASHEDSOURCE.Y,
+                (int)EnemySpriteConstants.GOOMBASMASHEDDIMENSIONS.X, (int)(int)EnemySpriteConstants.GOOMBASMASHEDDIMENSIONS.Y);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
+                (int)EnemySpriteConstants.GOOMBASMASHEDDIMENSIONS.X, (int)(int)EnemySpriteConstants.GOOMBASMASHEDDIMENSIONS.Y);
 
             spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
@@ -41,7 +35,7 @@ namespace Game.Enemies.GoombaClasses.GoombaSprites
 
         public Vector2 SpriteDimensions
         {
-            get { return spriteDimensions; }
+            get { return EnemySpriteConstants.GOOMBASMASHEDDIMENSIONS; }
         }
     }
 }

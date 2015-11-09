@@ -50,10 +50,11 @@ namespace Game.GameStates
 
         public void Draw(SpriteBatch spriteBatch)
         {
+            game.GraphicsDevice.Clear(Color.Black);
             if (logoCounter < 300)
-                namesLogoSprite.Draw(game.spriteBatch, new Vector2(0, 0));
+                namesLogoSprite.Draw(game.spriteBatch, Vector2.Zero);
             else
-                startMenuSprite.Draw(game.spriteBatch, new Vector2(0, 0));
+                startMenuSprite.Draw(game.spriteBatch, Vector2.Zero);
         }
 
 

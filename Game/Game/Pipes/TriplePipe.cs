@@ -24,7 +24,7 @@ namespace Game.Pipes
             isWarpPipe = false;
         }
 
-        public TriplePipe(Game1 game, Vector2 marioWarpCoordinates)
+        public TriplePipe(Vector2 marioWarpCoordinates, Game1 game)
         {
             myGame = game;
             pipeSprite = TileSpriteFactory.CreateTriplePipeSprite();

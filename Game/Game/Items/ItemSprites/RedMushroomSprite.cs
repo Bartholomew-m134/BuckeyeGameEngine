@@ -6,17 +6,12 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
+using Game.Utilities.Constants;
 namespace Game.Items.ItemSprites
 {
     public class RedMushroomSprite : ISprite
     {
         private Texture2D Texture { get; set; }
-
-        private int width = 17;
-        private int height = 17;
-        private int sourceX = 183;
-        private int sourceY = 33;
-
         public RedMushroomSprite(Texture2D texture)
         {
             Texture = texture;
@@ -24,13 +19,13 @@ namespace Game.Items.ItemSprites
 
         public void Update() 
         { 
-        
         }
-
         public void Draw(SpriteBatch spriteBatch, Vector2 location) 
         {
-            Rectangle sourceRectangle = new Rectangle(sourceX, sourceY, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
+            Rectangle sourceRectangle = new Rectangle((int)ItemSpriteConstants.REDMUSHSOURCE.X, (int)ItemSpriteConstants.REDMUSHSOURCE.Y,
+                (int)ItemSpriteConstants.REDMUSHDIMENSIONS.X, (int)ItemSpriteConstants.REDMUSHDIMENSIONS.Y);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
+                (int)ItemSpriteConstants.REDMUSHDIMENSIONS.X, (int)ItemSpriteConstants.REDMUSHDIMENSIONS.Y);
 
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
@@ -39,7 +34,7 @@ namespace Game.Items.ItemSprites
 
         public Vector2 SpriteDimensions
         {
-            get { return new Vector2(width, height); }
+            get { return new Vector2((int)ItemSpriteConstants.REDMUSHDIMENSIONS.X, (int)ItemSpriteConstants.REDMUSHDIMENSIONS.Y); }
         }
     }
 }
