@@ -7,70 +7,49 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using System.Collections;
 using Game.Interfaces;
+using Game.Utilities.Constants;
 
 namespace Game.Mario.MarioSprites
 {
     public class FireLeftRunningMarioSprite : IMarioSprite
     {
-        private int toggle;
+        private int starDrawCounter;
+        private int currentSprite;
         private Texture2D spriteSheet;
         private ArrayList fireLeftRunningSpriteDimensions;
         private ArrayList fireLeftRunningSpriteLocations;
-        private int currentSprite;
         private Vector2 currentDimensions;
         private Vector2 currentLocation;
 
-        private Vector2 firstFireLeftRunningSpriteLocation;
-        private Vector2 secondFireLeftRunningSpriteLocation;
-        private Vector2 thirdFireLeftRunningSpriteLocation;
+        private readonly Vector2 FIRSTFIRELEFTRUNNINGSOURCE = new Vector2(152, 122);
+        private readonly Vector2 SECONDFIRELEFTRUNNINGSOURCE = new Vector2(128, 122);
+        private readonly Vector2 THIRDFIRELEFTRUNNINGSOURCE = new Vector2(102, 123);
 
-        private Vector2 firstFireLeftRunningSpriteDimensions;
-        private Vector2 secondFireLeftRunningSpriteDimensions;
-        private Vector2 thirdFireLeftRunningSpriteDimensions;
-
-        private Rectangle sourceRectangle;
-        private Rectangle destinationRectangle;
+        private readonly Vector2 FIRSTFIRELEFTRUNNINGDIMENSIONS = new Vector2(16,31);
+        private readonly Vector2 SECONDFIRELEFTRUNNINGDIMENSIONS = new Vector2(16, 31);
+        private readonly Vector2 THIRDFIRELEFTRUNNINGDIMENSIONS = new Vector2(16, 29);
 
         public FireLeftRunningMarioSprite(Texture2D spriteSheet)
         {
             this.spriteSheet = spriteSheet;
-            toggle = 0;
-            currentSprite = 0;
+            starDrawCounter = MarioSpriteConstants.RESETTOZERO;
+            currentSprite = MarioSpriteConstants.RESETTOZERO;
             fireLeftRunningSpriteDimensions = new ArrayList();
             fireLeftRunningSpriteLocations = new ArrayList();
-            
-            firstFireLeftRunningSpriteDimensions.X = 16;
-            firstFireLeftRunningSpriteDimensions.Y = 31;
 
-            secondFireLeftRunningSpriteDimensions.X = 16;
-            secondFireLeftRunningSpriteDimensions.Y = 30;
+            fireLeftRunningSpriteDimensions.Add(THIRDFIRELEFTRUNNINGDIMENSIONS);
+            fireLeftRunningSpriteDimensions.Add(SECONDFIRELEFTRUNNINGDIMENSIONS);
+            fireLeftRunningSpriteDimensions.Add(FIRSTFIRELEFTRUNNINGDIMENSIONS);
+            fireLeftRunningSpriteDimensions.Add(SECONDFIRELEFTRUNNINGDIMENSIONS);
 
-            thirdFireLeftRunningSpriteDimensions.X = 16;
-            thirdFireLeftRunningSpriteDimensions.Y = 29;
- 
-            firstFireLeftRunningSpriteLocation.X = 152;
-            firstFireLeftRunningSpriteLocation.Y = 122;
-
-            secondFireLeftRunningSpriteLocation.X = 128;
-            secondFireLeftRunningSpriteLocation.Y = 122;
-
-            thirdFireLeftRunningSpriteLocation.X = 102;
-            thirdFireLeftRunningSpriteLocation.Y = 123;
-
-            fireLeftRunningSpriteDimensions.Add(thirdFireLeftRunningSpriteDimensions);           
-            fireLeftRunningSpriteDimensions.Add(secondFireLeftRunningSpriteDimensions);
-            fireLeftRunningSpriteDimensions.Add(firstFireLeftRunningSpriteDimensions);
-            fireLeftRunningSpriteDimensions.Add(secondFireLeftRunningSpriteDimensions);
-
-            fireLeftRunningSpriteLocations.Add(thirdFireLeftRunningSpriteLocation);
-            fireLeftRunningSpriteLocations.Add(secondFireLeftRunningSpriteLocation);
-            fireLeftRunningSpriteLocations.Add(firstFireLeftRunningSpriteLocation);
-            fireLeftRunningSpriteLocations.Add(secondFireLeftRunningSpriteLocation);
+            fireLeftRunningSpriteLocations.Add(THIRDFIRELEFTRUNNINGSOURCE);
+            fireLeftRunningSpriteLocations.Add(SECONDFIRELEFTRUNNINGSOURCE);
+            fireLeftRunningSpriteLocations.Add(FIRSTFIRELEFTRUNNINGSOURCE);
+            fireLeftRunningSpriteLocations.Add(SECONDFIRELEFTRUNNINGSOURCE);
         }
         public void Update()
         {
-
-                if (currentSprite < 3)
+                if (currentSprite < MarioSpriteConstants.RUNNINGUPDATEDELAY)
                 {
                     currentDimensions = (Vector2)fireLeftRunningSpriteDimensions[currentSprite];
                     currentLocation = (Vector2)fireLeftRunningSpriteLocations[currentSprite];
@@ -78,20 +57,19 @@ namespace Game.Mario.MarioSprites
                 }
                 else
                 {
-                    currentSprite = 0;
+                    currentSprite = MarioSpriteConstants.RESETTOZERO;
                     currentDimensions = (Vector2)fireLeftRunningSpriteDimensions[currentSprite];
                     currentLocation = (Vector2)fireLeftRunningSpriteLocations[currentSprite];
                     currentSprite++;
                 }
-
-
-            
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            sourceRectangle = new Rectangle((int)currentLocation.X, (int)currentLocation.Y, (int)currentDimensions.X, (int)currentDimensions.Y);
-            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, (int)currentDimensions.X, (int)currentDimensions.Y);
+            Rectangle sourceRectangle = new Rectangle((int)currentLocation.X, (int)currentLocation.Y, 
+                (int)currentDimensions.X, (int)currentDimensions.Y);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 
+                (int)currentDimensions.X, (int)currentDimensions.Y);
 
             spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
@@ -100,42 +78,42 @@ namespace Game.Mario.MarioSprites
 
         public void StarDraw(SpriteBatch spriteBatch, Vector2 location)
         {
-            sourceRectangle = new Rectangle((int)currentLocation.X, (int)currentLocation.Y, (int)currentDimensions.X, (int)currentDimensions.Y);
-            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, (int)currentDimensions.X, (int)currentDimensions.Y);
+            Rectangle sourceRectangle = new Rectangle((int)currentLocation.X, (int)currentLocation.Y, 
+                (int)currentDimensions.X, (int)currentDimensions.Y);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 
+                (int)currentDimensions.X, (int)currentDimensions.Y);
 
-            if (toggle < 5)
+            if (starDrawCounter < MarioSpriteConstants.STARDRAWBROWNCOUNTER)
             {
                 spriteBatch.Begin();
                 spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.Brown);
                 spriteBatch.End();
-                toggle++;
+                starDrawCounter++;
             }
 
-            else if (toggle > 6 && toggle < 10)
+            else if (starDrawCounter > MarioSpriteConstants.STARDRAWBROWNCOUNTER && starDrawCounter < MarioSpriteConstants.STARDRAWYELLOWGREENCOUNTER)
             {
                 spriteBatch.Begin();
                 spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.YellowGreen);
                 spriteBatch.End();
-                toggle++;
+                starDrawCounter++;
             }
-
             else
             {
                 spriteBatch.Begin();
                 spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.Orange);
                 spriteBatch.End();
-                if (toggle < 15)
+                if (starDrawCounter < MarioSpriteConstants.STARDRAWORANGECOUNTER)
                 {
-                    toggle++;
+                    starDrawCounter++;
                 }
                 else
                 {
-                    toggle = 0;
+                    starDrawCounter = MarioSpriteConstants.RESETTOZERO;
                 }
             }
 
         }
-
         public Vector2 SpriteDimensions
         {
             get { return currentDimensions; }

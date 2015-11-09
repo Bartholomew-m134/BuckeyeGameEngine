@@ -6,82 +6,73 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
+using Game.Utilities.Constants;
 
 namespace Game.Mario.MarioSprites
 {
     public class FireLeftIdleMarioSprite : IMarioSprite
     {
         private Texture2D spriteSheet;
-        private int width;
-        private int height;
-        private int sheetXLocation;
-        private int sheetYLocation;
-        private int toggle;
+        private int starDrawCounter;
+        private readonly Vector2 FIRELEFTIDLEWIDTHHEIGHT = new Vector2(16,31);
+        private readonly Vector2 FIRELEFTIDLESOURCE = new Vector2(180, 122);
         public FireLeftIdleMarioSprite(Texture2D spriteSheet)
         {
             this.spriteSheet = spriteSheet;
-            width = 16;
-            height = 31;
-            sheetXLocation = 180;
-            sheetYLocation = 122;
-            toggle = 0;
+            starDrawCounter = MarioSpriteConstants.RESETTOZERO;
         }
         public void Update()
         {
-
         }
-
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle(sheetXLocation, sheetYLocation, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
-
+            Rectangle sourceRectangle = new Rectangle((int)FIRELEFTIDLESOURCE.X, (int)FIRELEFTIDLESOURCE.Y, 
+                (int)FIRELEFTIDLEWIDTHHEIGHT.X, (int)FIRELEFTIDLEWIDTHHEIGHT.Y);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 
+                (int)FIRELEFTIDLEWIDTHHEIGHT.X, (int)FIRELEFTIDLEWIDTHHEIGHT.Y);
             spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
-
         public void StarDraw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle(sheetXLocation, sheetYLocation, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
+            Rectangle sourceRectangle = new Rectangle((int)FIRELEFTIDLESOURCE.X, (int)FIRELEFTIDLESOURCE.Y, 
+                (int)FIRELEFTIDLEWIDTHHEIGHT.X, (int)FIRELEFTIDLEWIDTHHEIGHT.Y);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 
+                (int)FIRELEFTIDLEWIDTHHEIGHT.X, (int)FIRELEFTIDLEWIDTHHEIGHT.Y);
 
-            if (toggle < 5)
+            if (starDrawCounter < MarioSpriteConstants.STARDRAWBROWNCOUNTER)
             {
                 spriteBatch.Begin();
                 spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.Brown);
                 spriteBatch.End();
-                toggle++;
+                starDrawCounter++;
             }
-
-            else if (toggle > 6 && toggle < 10)
+            else if (starDrawCounter > MarioSpriteConstants.STARDRAWBROWNCOUNTER && starDrawCounter < MarioSpriteConstants.STARDRAWYELLOWGREENCOUNTER)
             {
                 spriteBatch.Begin();
                 spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.YellowGreen);
                 spriteBatch.End();
-                toggle++;
+                starDrawCounter++;
             }
-
             else
             {
                 spriteBatch.Begin();
                 spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.Orange);
                 spriteBatch.End();
-                if (toggle < 15)
+                if (starDrawCounter < MarioSpriteConstants.STARDRAWORANGECOUNTER)
                 {
-                    toggle++;
+                    starDrawCounter++;
                 }
                 else
                 {
-                    toggle = 0;
+                    starDrawCounter = MarioSpriteConstants.RESETTOZERO;
                 }
             }
-
         }
-
         public Vector2 SpriteDimensions
         {
-            get { return new Vector2(width, height); }
+            get { return new Vector2((int)FIRELEFTIDLEWIDTHHEIGHT.X, (int)FIRELEFTIDLEWIDTHHEIGHT.Y); }
         }
     }
 }

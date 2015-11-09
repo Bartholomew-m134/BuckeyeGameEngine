@@ -6,83 +6,74 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
+using Game.Utilities.Constants;
 
 namespace Game.Mario.MarioSprites
 {
     public class FireLeftCrouchingMarioSprite : IMarioSprite
     {
         private Texture2D spriteSheet;
-        private int width;
-        private int height;
-        private int sheetXLocation;
-        private int sheetYLocation;
-        private int toggle;
+        private int starDrawCounter;
 
         public FireLeftCrouchingMarioSprite(Texture2D spriteSheet)
         {
             this.spriteSheet = spriteSheet;
-            width = 16;
-            height = 21;
-            sheetXLocation = 0;
-            sheetYLocation = 127;
-            toggle = 0;
+            starDrawCounter = MarioSpriteConstants.RESETTOZERO;
         }
         public void Update()
         {
 
         }
-
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle(sheetXLocation, sheetYLocation, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
+            Rectangle sourceRectangle = new Rectangle((int)MarioSpriteConstants.FIRELEFTCROUCHINGSOURCE.X, (int)MarioSpriteConstants.FIRELEFTCROUCHINGSOURCE.Y,
+                (int)MarioSpriteConstants.FIRELEFTCROUCHINGWIDTHHEIGHT.X, (int)MarioSpriteConstants.FIRELEFTCROUCHINGWIDTHHEIGHT.Y);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
+                (int)MarioSpriteConstants.FIRELEFTCROUCHINGWIDTHHEIGHT.X, (int)MarioSpriteConstants.FIRELEFTCROUCHINGWIDTHHEIGHT.Y);
 
             spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
-
         public void StarDraw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle(sheetXLocation, sheetYLocation, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
-
-            if (toggle < 5)
+            Rectangle sourceRectangle = new Rectangle((int)MarioSpriteConstants.FIRELEFTCROUCHINGSOURCE.X, (int)MarioSpriteConstants.FIRELEFTCROUCHINGSOURCE.Y,
+                (int)MarioSpriteConstants.FIRELEFTCROUCHINGWIDTHHEIGHT.X, (int)MarioSpriteConstants.FIRELEFTCROUCHINGWIDTHHEIGHT.Y);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
+                (int)MarioSpriteConstants.FIRELEFTCROUCHINGWIDTHHEIGHT.X, (int)MarioSpriteConstants.FIRELEFTCROUCHINGWIDTHHEIGHT.Y);
+            if (starDrawCounter < MarioSpriteConstants.STARDRAWBROWNCOUNTER)
             {
                 spriteBatch.Begin();
                 spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.Brown);
                 spriteBatch.End();
-                toggle++;
+                starDrawCounter++;
             }
-
-            else if (toggle > 6 && toggle < 10)
+            else if (starDrawCounter > MarioSpriteConstants.STARDRAWBROWNCOUNTER && starDrawCounter < MarioSpriteConstants.STARDRAWYELLOWGREENCOUNTER)
             {
                 spriteBatch.Begin();
                 spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.YellowGreen);
                 spriteBatch.End();
-                toggle++;
+                starDrawCounter++;
             }
-
             else
             {
                 spriteBatch.Begin();
                 spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.Orange);
                 spriteBatch.End();
-                if (toggle < 15)
+                if (starDrawCounter < MarioSpriteConstants.STARDRAWORANGECOUNTER)
                 {
-                    toggle++;
+                    starDrawCounter++;
                 }
                 else
                 {
-                    toggle = 0;
+                    starDrawCounter = MarioSpriteConstants.RESETTOZERO;
                 }
             }
 
         }
-
         public Vector2 SpriteDimensions
         {
-            get { return new Vector2(width, height); }
+            get { return new Vector2((int)MarioSpriteConstants.FIRELEFTCROUCHINGWIDTHHEIGHT.X, (int)MarioSpriteConstants.FIRELEFTCROUCHINGWIDTHHEIGHT.Y); }
         }
     }
 }
