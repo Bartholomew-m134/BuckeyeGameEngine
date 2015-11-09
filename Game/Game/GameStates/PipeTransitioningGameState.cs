@@ -53,7 +53,9 @@ namespace Game.GameStates
             {
                 
                 game.gameState = prevGameState;
+                Console.WriteLine(warpLocation);
                 WorldManager.GetMario().VectorCoordinates = warpLocation;
+                Console.WriteLine(WorldManager.GetMario().VectorCoordinates);
                 
             }
         }
