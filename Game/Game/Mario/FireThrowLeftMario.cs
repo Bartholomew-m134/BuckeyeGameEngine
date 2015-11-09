@@ -166,5 +166,11 @@ namespace Game.Mario
         {
             return false;
         }
+
+
+        public bool IsPressingDown()
+        {
+            return mario.IsPressingDown();
+        }
     }
 }

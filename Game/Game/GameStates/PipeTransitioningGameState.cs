@@ -18,10 +18,10 @@ namespace Game.GameStates
         private int timer = 100;
         private Vector2 warpLocation;
 
-        public PipeTransitioningGameState(IGameState gameState, Vector2 warpLocation, Game1 game)
+        public PipeTransitioningGameState(Vector2 warpLocation, Game1 game)
         {
             this.game = game;
-            prevGameState = gameState;
+            prevGameState = game.gameState;
             this.warpLocation = warpLocation;
             controllerList = new List<IController>();
             controllerList.Add(new KeyboardController(new PausedControls(game)));
@@ -47,11 +47,14 @@ namespace Game.GameStates
                     controller.Update();
 
                 WorldManager.GetMario().Update();
+                timer--;
             }
             else
             {
+                
                 game.gameState = prevGameState;
                 WorldManager.GetMario().VectorCoordinates = warpLocation;
+                
             }
         }
 
@@ -62,7 +65,13 @@ namespace Game.GameStates
 
         public void StartButton()
         {
-            game.gameState = new PauseGameState(this, game);
+            game.gameState = new PauseGameState(game);
+        }
+
+
+        public void PipeTransition(Vector2 warpLocation)
+        {
+            game.gameState = prevGameState;
         }
     }
 }

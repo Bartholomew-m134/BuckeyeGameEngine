@@ -21,6 +21,7 @@ namespace Game.Utilities.Controls
         {
             Dictionary<Keys, ICommand> keyboardControls = new Dictionary<Keys, ICommand>();
 
+            keyboardControls.Add(Keys.R, new ResetToDefaultCommand());
             keyboardControls.Add(Keys.P, new StartButtonCommand(game));
 
             return keyboardControls;

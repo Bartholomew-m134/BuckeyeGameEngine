@@ -1,6 +1,7 @@
 ﻿using Game.Interfaces;
 using Game.Utilities;
 using Game.Utilities.Controls;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -15,10 +16,10 @@ namespace Game.GameStates
         private IGameState prevGameState;
         private List<IController> controllerList;
 
-        public PauseGameState(IGameState gameState, Game1 game)
+        public PauseGameState(Game1 game)
         {
             this.game = game;
-            prevGameState = gameState;
+            prevGameState = game.gameState;
             controllerList = new List<IController>();
             controllerList.Add(new KeyboardController(new PausedControls(game)));
             controllerList.Add(new GamePadController(new PausedControls(game)));
@@ -48,6 +49,12 @@ namespace Game.GameStates
         public void StartButton()
         {
             game.gameState = prevGameState;
+        }
+
+
+        public void PipeTransition(Vector2 warpLocation)
+        {
+            game.gameState = new PipeTransitioningGameState(warpLocation, game);
         }
     }
 }

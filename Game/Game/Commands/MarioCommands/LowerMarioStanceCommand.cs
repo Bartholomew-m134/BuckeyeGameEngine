@@ -24,7 +24,7 @@ namespace Game.Commands.MarioCommands
 
         public void Release()
         {
-
+            WorldManager.GetMario().Up();
         }
     }
 }
