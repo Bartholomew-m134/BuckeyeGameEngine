@@ -14,12 +14,21 @@ namespace Game.Pipes
         private Game1 myGame;
         private ISprite pipeSprite;
         private Vector2 location;
-
+        private Vector2 warpLocation;
+        private bool isWarpPipe;
         public Pipe(Game1 game)
         {
             myGame = game;
             pipeSprite = TileSpriteFactory.CreatePipeSprite();
+            isWarpPipe = false;
+        }
 
+        public Pipe(Game1 game, Vector2 marioWarpCoordinates)
+        {
+            myGame = game;
+            pipeSprite = TileSpriteFactory.CreatePipeSprite();
+            isWarpPipe = true;
+            warpLocation = marioWarpCoordinates;
         }
 
         public void Update()
@@ -42,6 +51,12 @@ namespace Game.Pipes
         {
             get { return pipeSprite; }
             set { pipeSprite = value; }
+        }
+
+        public bool IsWarpPipe
+        {
+            get { return isWarpPipe; }
+           
         }
 
         public ObjectPhysics Physics
