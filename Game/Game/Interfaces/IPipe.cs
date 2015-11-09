@@ -8,7 +8,7 @@ namespace Game.Interfaces
 {
     public interface IPipe : IGameObject
     {
-        public Vector2 WarpVectorCoordinates
+         Vector2 WarpVectorCoordinates
         {
             get;
 
