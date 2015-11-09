@@ -47,6 +47,12 @@ namespace Game.Pipes
             set { location = value; }
         }
 
+        public Vector2 WarpVectorCoordinates
+        {
+            get { return warpLocation; }
+
+        }
+
         public ISprite Sprite
         {
             get { return pipeSprite; }

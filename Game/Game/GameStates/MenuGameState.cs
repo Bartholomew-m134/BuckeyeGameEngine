@@ -63,5 +63,11 @@ namespace Game.GameStates
             game.gameState = new LoadingGameState(game);
             game.gameState.LoadContent();
         }
+
+
+        public void PipeTransition(Vector2 warpLocation)
+        {
+            game.gameState = new PipeTransitioningGameState(warpLocation, game);
+        }
     }
 }

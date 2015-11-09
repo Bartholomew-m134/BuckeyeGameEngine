@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,5 +18,7 @@ namespace Game.Interfaces
         void Draw(SpriteBatch spriteBatch);
 
         void StartButton();
+
+        void PipeTransition(Vector2 warpLocation);
     }
 }

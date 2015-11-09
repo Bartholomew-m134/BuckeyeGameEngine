@@ -56,6 +56,8 @@ namespace Game.Mario
 
         bool IsJumping();
 
+        bool IsPressingDown();
+
         void ToIdle();
 
     }

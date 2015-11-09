@@ -191,5 +191,11 @@ namespace Game.Mario
         private bool IsOnFlagPole(){
             return (mario.MarioState is FireFlagPoleSlidingState || mario.MarioState is NormalFlagPoleSlidingState || mario.MarioState is SmallFlagPoleSlidingState);
         }
+
+
+        public bool IsPressingDown()
+        {
+            return mario.IsPressingDown();
+        }
     }
 }
