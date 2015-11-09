@@ -5,15 +5,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.Utilities.Constants;
 namespace Game.Blocks.BlockSprites
 {
     class BrickDebrisSprite : ISprite
     {
         private Texture2D spriteSheet;
-        private int width;
-        private int height;
-        private int sheetXLocation;
-        private int sheetYLocation;
         private int timer;
         private Vector2 topLeftDestination;
         private Vector2 topRightDestination;
@@ -24,38 +21,36 @@ namespace Game.Blocks.BlockSprites
         public BrickDebrisSprite(Texture2D spriteSheet)
         {
             this.spriteSheet = spriteSheet;
-            width = 8;
-            height = 8;
-            sheetXLocation = 304;
-            sheetYLocation = 112;
         }
 
         public void Update()
         {
-            if (timer < 5)
-                adjustment += new Vector2(1, 6);
+            if (timer < BlockSpriteConstants.BRICKDEBRISUPDATEDELAY)
+                adjustment += BlockSpriteConstants.BRICKBLOCKUPADJUSTMENT;
             else
-                adjustment += new Vector2(1, -6);
+                adjustment += BlockSpriteConstants.BRICKBLOCKDOWNADJUSTMENT;
             timer++;
         }
 
         public void Draw(SpriteBatch spriteBatch, Microsoft.Xna.Framework.Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle(sheetXLocation, sheetYLocation, width, height);
+            Rectangle sourceRectangle = new Rectangle((int)BlockSpriteConstants.BRICKDEBRISBLOCKSOURCE.X, (int)BlockSpriteConstants.BRICKDEBRISBLOCKSOURCE.Y,
+                (int)BlockSpriteConstants.BRICKDEBRISBLOCKDIMENSIONS.X, (int)BlockSpriteConstants.BRICKDEBRISBLOCKDIMENSIONS.Y);
 
             topLeftDestination.X = location.X - adjustment.X;
             topLeftDestination.Y = location.Y - adjustment.Y;
 
-            topRightDestination.X = location.X + adjustment.X + 8;
+            topRightDestination.X = location.X + adjustment.X + BlockSpriteConstants.BRICKDEBRISADJUST;
             topRightDestination.Y = location.Y - adjustment.Y;
 
             bottomLeftDestination.X = location.X + adjustment.X;
-            bottomLeftDestination.Y = location.Y - adjustment.Y + 8;
+            bottomLeftDestination.Y = location.Y - adjustment.Y + BlockSpriteConstants.BRICKDEBRISADJUST;
 
-            bottomRightDestination.X = location.X - adjustment.X + 8;
-            bottomRightDestination.Y = location.Y - adjustment.Y + 8;
+            bottomRightDestination.X = location.X - adjustment.X + BlockSpriteConstants.BRICKDEBRISADJUST;
+            bottomRightDestination.Y = location.Y - adjustment.Y + BlockSpriteConstants.BRICKDEBRISADJUST;
 
-            if (timer <75){
+            if (timer < BlockSpriteConstants.BRICKDEBRISTIMER)
+            {
                 spriteBatch.Begin();
                 spriteBatch.Draw(spriteSheet, topLeftDestination, sourceRectangle, Color.White);
                 spriteBatch.Draw(spriteSheet, topRightDestination, sourceRectangle, Color.White);
@@ -68,7 +63,7 @@ namespace Game.Blocks.BlockSprites
 
         public Vector2 SpriteDimensions
         {
-            get { return new Vector2(width, height); }
+            get { return new Vector2((int)BlockSpriteConstants.BRICKDEBRISBLOCKDIMENSIONS.X, (int)BlockSpriteConstants.BRICKDEBRISBLOCKDIMENSIONS.Y); }
         }
 
     }
