@@ -64,6 +64,7 @@ namespace Game.Collisions.ItemCollisionHandling
         public void HandleScore()
         {
             if(collidingItem is Coin && !collidingItem.IsInsideBlock){
+                HUDManager.UpdateHUDCoins(1);
                 ScoreManager.IncreaseScore(200);
                 ScoreManager.location = collidingItem.VectorCoordinates;
             }

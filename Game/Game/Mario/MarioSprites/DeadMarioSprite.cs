@@ -22,10 +22,10 @@ namespace Game.Mario.MarioSprites
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle((int)MarioSpriteConstants.DEADMARIOSOURCECOORDINATES.X, 
-                (int)MarioSpriteConstants.DEADMARIOSOURCECOORDINATES.Y, (int)MarioSpriteConstants.DEADMARIOWIDTHHIEGHT.X, (int)MarioSpriteConstants.DEADMARIOWIDTHHIEGHT.Y);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, (int)MarioSpriteConstants.DEADMARIOWIDTHHIEGHT.X, 
-                (int)MarioSpriteConstants.DEADMARIOSOURCECOORDINATES.Y);
+            Rectangle sourceRectangle = new Rectangle((int)MarioSpriteConstants.DEADMARIOSOURCECOORDINATES.X, (int)MarioSpriteConstants.DEADMARIOSOURCECOORDINATES.Y,
+                (int)MarioSpriteConstants.DEADMARIOWIDTHHIEGHT.X, (int)MarioSpriteConstants.DEADMARIOWIDTHHIEGHT.Y);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
+                (int)MarioSpriteConstants.DEADMARIOWIDTHHIEGHT.X, (int)MarioSpriteConstants.DEADMARIOSOURCECOORDINATES.Y);
             spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();

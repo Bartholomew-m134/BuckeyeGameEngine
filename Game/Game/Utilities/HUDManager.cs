@@ -29,6 +29,9 @@ namespace Game.Utilities
         public static void UpdateHUDCoins(int coinsToAdd)
         {
             coinsToPrint += coinsToAdd;
+            if (coinsToPrint % HUDConstants.COINSPERLIFE== HUDConstants.ZEROREMAINDER){
+                LifeManager.IncrementLives();
+            }
         }
         public static void UpdateHUDTime()
         {

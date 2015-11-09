@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Game.SoundEffects;
+using Game.Utilities.Constants;
 
 namespace Game.Collisions.ItemCollisionHandling
 {
@@ -81,8 +82,8 @@ namespace Game.Collisions.ItemCollisionHandling
         {
             if (collidingBlock.IsBumped && side is TopSideCollision && collidingItem.VectorCoordinates.X == collidingBlock.VectorCoordinates.X && collidingItem is Coin)
             {
-                HUDManager.UpdateHUDCoins(1);
-                ScoreManager.IncreaseScore(200);
+                HUDManager.UpdateHUDCoins(ScoreManagerConstants.ADDONECOIN);
+                ScoreManager.IncreaseScore(ScoreManagerConstants.POINTSPERCOIN);
                 ScoreManager.location = collidingItem.VectorCoordinates;
             }
         }

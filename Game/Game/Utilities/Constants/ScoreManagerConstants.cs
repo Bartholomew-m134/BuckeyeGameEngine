@@ -23,5 +23,7 @@ namespace Game.Utilities.Constants
         public const int ZONEFOURSCORE = 400;
         public const int ZONEFIVEYCOORDINATE = 416;
         public const int ZONEFIVESCORE = 100;
+        public const int POINTSPERCOIN = 200;
+        public const int ADDONECOIN = 1;
     }
 }

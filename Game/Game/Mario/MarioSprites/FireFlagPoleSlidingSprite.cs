@@ -16,6 +16,7 @@ namespace Game.Mario.MarioSprites
         private Texture2D spriteSheet;
         private Vector2 currentSourceLocation;
         private bool frameCounter;
+
         public FireFlagPoleSlidingSprite(Texture2D spriteSheet)
         {
             starDrawCounter = MarioSpriteConstants.RESETTOZERO;
