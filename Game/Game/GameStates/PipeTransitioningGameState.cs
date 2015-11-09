@@ -47,11 +47,14 @@ namespace Game.GameStates
                     controller.Update();
 
                 WorldManager.GetMario().Update();
+                timer--;
             }
             else
             {
+                
                 game.gameState = prevGameState;
                 WorldManager.GetMario().VectorCoordinates = warpLocation;
+                
             }
         }
 
