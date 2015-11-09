@@ -45,7 +45,7 @@ namespace Game.GameStates
             {
                 foreach (IController controller in controllerList)
                     controller.Update();
-
+                WorldManager.GetMario().Physics.Velocity = new Vector2(0, 1);
                 WorldManager.GetMario().Update();
                 timer--;
             }
@@ -56,6 +56,7 @@ namespace Game.GameStates
                 Console.WriteLine(warpLocation);
                 WorldManager.GetMario().VectorCoordinates = warpLocation;
                 Console.WriteLine(WorldManager.GetMario().VectorCoordinates);
+                
                 
             }
         }
