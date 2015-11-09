@@ -6,6 +6,7 @@ using Game.Mario;
 using Game.Pipes;
 using Game.Interfaces;
 using Game.Mario.MarioStates;
+using Game.GameStates;
 
 namespace Game.Collisions.PipeCollisionHandling
 {
@@ -14,11 +15,14 @@ namespace Game.Collisions.PipeCollisionHandling
         private IMario mario;
         private IPipe pipe;
         private ICollisionSide side;
+
+        private IGameState gameState;
         private CollisionData collision;
 
-        public MarioPipeCollisionHandler(CollisionData collision)
+        public MarioPipeCollisionHandler(CollisionData collision, IGameState gameState)
         {
             this.collision = collision;
+            this.gameState = gameState;
 
             side = collision.CollisionSide;
             if (collision.GameObjectA is IMario)
@@ -40,7 +44,12 @@ namespace Game.Collisions.PipeCollisionHandling
             if (!(mario.MarioState is DeadMarioState))
             {
                 collision.ResolveOverlap(mario, side);
-                if (side is TopSideCollision)
+                if (side is TopSideCollision && mario.IsPressingDown())
+                {
+                    gameState.PipeTransition(pipe.WarpVectorCoordinates);
+
+                }
+                else if (side is TopSideCollision)
                 {
                     mario.Physics.ResetY();
                     if (mario.IsJumping())

@@ -2,6 +2,7 @@
 using Game.SpriteFactories;
 using Game.Utilities;
 using Game.Utilities.Controls;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -73,7 +74,13 @@ namespace Game.GameStates
 
         public void StartButton()
         {
-            game.gameState = new PauseGameState(this, game);
+            game.gameState = new PauseGameState(game);
+        }
+
+
+        public void PipeTransition(Vector2 warpLocation)
+        {
+            game.gameState = new PipeTransitioningGameState(warpLocation, game);
         }
     }
 }

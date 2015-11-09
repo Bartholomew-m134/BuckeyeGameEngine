@@ -18,6 +18,7 @@ namespace Game.Mario
         private Game1 myGame;
         private ObjectPhysics physics;
         private FireBallSpawner factory;
+        private bool isPressingDown;
 
         public MarioInstance(Game1 game)
         {
@@ -25,6 +26,7 @@ namespace Game.Mario
             myGame = game;
             physics = new ObjectPhysics();
             factory = new FireBallSpawner(game);
+            isPressingDown = false;
         }
         public void Update()
         {
@@ -46,10 +48,12 @@ namespace Game.Mario
         public void Up()
         {
             state.Up();
+            this.isPressingDown = false;
         }
         public void Down()
         {
             state.Down();
+            this.isPressingDown = true;
         }
         public void Jump()
         {
@@ -176,6 +180,12 @@ namespace Game.Mario
         public bool IsHurt()
         {
             return false;
+        }
+
+
+        public bool IsPressingDown()
+        {
+            return isPressingDown;
         }
     }
 }
