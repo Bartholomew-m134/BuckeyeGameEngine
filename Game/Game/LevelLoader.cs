@@ -89,8 +89,6 @@ namespace Game
                         gameObject = new GreenKoopa(game);
                     else if (objectName.Equals("Goomba"))
                         gameObject = new Goomba(game);
-                    else if (objectName.Equals("Pipe"))
-                        gameObject = new Pipe(game);
                     else if (objectName.Equals("Castle"))
                         gameObject = new Castle(game);
                     else if (objectName.Equals("FlagPole"))
@@ -154,6 +152,13 @@ namespace Game
                         gameObject = new DoublePipe(game);
                     else if (objectName.Equals("TriplePipe"))
                         gameObject = new TriplePipe(game);
+                    else if (objectName.StartsWith("TripleWarpPipe"))
+                    {
+                        string[] parsedName = objectName.Split('-');
+                        float x = Int32.Parse(parsedName[1]);
+                        float y = Int32.Parse(parsedName[2]);
+                        gameObject = new TriplePipe(new Vector2(x, y), game);
+                    }
                     else if (objectName.Equals("BigHill"))
                         gameObject = new BigHill(game);
                     else if (objectName.Equals("Bush"))
