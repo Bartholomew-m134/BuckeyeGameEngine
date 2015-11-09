@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,5 +22,7 @@ namespace Game.Utilities.Constants
         public static readonly Vector2 FOURTHFLAGFRAMECOORDINATES = new Vector2(148, 586);
         public static readonly Vector2 FIFTHFLAGFRAMECOORDINATES = new Vector2(115, 586);
         public static readonly Vector2 FLAGPOLEBARRIERCOORDINATES = new Vector2(300, 594);
+        public static readonly ArrayList FLAGPOLESOURCES = new ArrayList() { FIRSTFLAGFRAMECOORDINATES, 
+            SECONDFLAGFRAMECOORDINATES, THIRDFLAGFRAMECOORDINATES, FOURTHFLAGFRAMECOORDINATES, FIFTHFLAGFRAMECOORDINATES};
     }
 }

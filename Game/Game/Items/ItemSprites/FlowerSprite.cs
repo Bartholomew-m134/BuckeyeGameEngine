@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
+using Game.Utilities.Constants;
 
 namespace Game.Items.ItemSprites
 {
@@ -13,36 +14,27 @@ namespace Game.Items.ItemSprites
     {
         private Texture2D Texture { get; set; }
         private int currentFrame;
-        private int totalFrames;
-        private int width = 17;
-        private int height = 17;
-        private int sourceX = 3;
-        private int sourceY = 63;
-        private int distanceBetweenSprites = 30;
+        private int sourceX;
         public FlowerSprite(Texture2D texture)
         {
             Texture = texture;
-            currentFrame = 0;
-            totalFrames = 4;
-
         }
 
         public void Update()
         {
             currentFrame++;
-            if (currentFrame == totalFrames)
-            {
-                currentFrame = 0;
-
-            }
+            if (currentFrame == ItemSpriteConstants.TOTALFLOWERFRAMES)
+                currentFrame = ItemSpriteConstants.RESETTOZERO;
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location) 
         {
-            sourceX = 3 + distanceBetweenSprites * currentFrame;
+            sourceX = (int)ItemSpriteConstants.FLOWERSOURCE.X + ItemSpriteConstants.DISTANCEBETWEENFLOWERSPRITES * currentFrame;
             
-            Rectangle sourceRectangle = new Rectangle(sourceX, sourceY, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
+            Rectangle sourceRectangle = new Rectangle(sourceX, (int)ItemSpriteConstants.FLOWERSOURCE.Y,
+                (int)ItemSpriteConstants.FLOWERDIMENSIONS.X, (int)ItemSpriteConstants.FLOWERDIMENSIONS.Y);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
+                (int)ItemSpriteConstants.FLOWERDIMENSIONS.X, (int)ItemSpriteConstants.FLOWERDIMENSIONS.Y);
 
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
@@ -51,7 +43,7 @@ namespace Game.Items.ItemSprites
 
         public Vector2 SpriteDimensions
         {
-            get { return new Vector2(width, height); }
+            get { return new Vector2((int)ItemSpriteConstants.FLOWERDIMENSIONS.X, (int)ItemSpriteConstants.FLOWERDIMENSIONS.Y); }
         }
 
     }

@@ -17,21 +17,13 @@ namespace Game.FlagPoles.FlagPoleSprites
 
         private int currentSourceFrame;
         private Vector2 currentSourceCoordinates;
-        private ArrayList flagPoleSources;
         public ActiveFlagPoleSprite(Texture2D texture)
         {
             Texture = texture;
-            flagPoleSources = new ArrayList();
-            currentSourceCoordinates.X = FlagPoleSpriteConstants.FIRSTFLAGFRAMECOORDINATES.X;
-            currentSourceCoordinates.Y = FlagPoleSpriteConstants.FIRSTFLAGFRAMECOORDINATES.Y;
+            currentSourceCoordinates = FlagPoleSpriteConstants.FIRSTFLAGFRAMECOORDINATES;
             currentSourceFrame = FlagPoleSpriteConstants.RESETTOZERO;
             delayCounter = FlagPoleSpriteConstants.RESETTOZERO;
 
-            flagPoleSources.Add(FlagPoleSpriteConstants.FIRSTFLAGFRAMECOORDINATES);
-            flagPoleSources.Add(FlagPoleSpriteConstants.SECONDFLAGFRAMECOORDINATES);
-            flagPoleSources.Add(FlagPoleSpriteConstants.THIRDFLAGFRAMECOORDINATES);
-            flagPoleSources.Add(FlagPoleSpriteConstants.FOURTHFLAGFRAMECOORDINATES);
-            flagPoleSources.Add(FlagPoleSpriteConstants.FIFTHFLAGFRAMECOORDINATES);
         }
 
         public void Update()
@@ -39,7 +31,7 @@ namespace Game.FlagPoles.FlagPoleSprites
             if(delayCounter == FlagPoleSpriteConstants.UPDATEDELAY){
                 if (currentSourceFrame < FlagPoleSpriteConstants.NUMBEROFFRAMES)
                 {
-                    currentSourceCoordinates = (Vector2)flagPoleSources[currentSourceFrame];
+                    currentSourceCoordinates = (Vector2)FlagPoleSpriteConstants.FLAGPOLESOURCES[currentSourceFrame];
                     currentSourceFrame++;
                 }
                 delayCounter = FlagPoleSpriteConstants.RESETTOZERO;

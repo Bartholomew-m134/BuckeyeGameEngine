@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
+using Game.Utilities.Constants;
 
 namespace Game.Items.ItemSprites
 {
@@ -13,45 +14,32 @@ namespace Game.Items.ItemSprites
     {
         private Texture2D Texture { get; set; }
         private int currentFrame;
-        private int totalFrames;
-        private int width = 17;
-        private int height = 17;
-        private int sourceX = 3;
-        private int sourceY = 93;
-        private int distanceBetweenSprites = 30;
-
+        private int sourceX;
         public StarSprite(Texture2D texture)
         {
             Texture = texture;
-            currentFrame = 0;
-            totalFrames = 4;
         }
-
         public void Update()
         {
             currentFrame++;
-            if (currentFrame == totalFrames)
+            if (currentFrame == ItemSpriteConstants.TOTALSTARFRAMES)
             {
-                currentFrame = 0;
-
+                currentFrame = ItemSpriteConstants.RESETTOZERO;
             }
         }
-
         public void Draw(SpriteBatch spriteBatch, Vector2 location) {
-            sourceX = 3 + distanceBetweenSprites * currentFrame;
-            
-            Rectangle sourceRectangle = new Rectangle(sourceX, sourceY, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
-
+            sourceX = (int)ItemSpriteConstants.STARSOURCE.X + ItemSpriteConstants.DISTANCEBETWEENSTARSPRITES * currentFrame;    
+            Rectangle sourceRectangle = new Rectangle(sourceX, (int)ItemSpriteConstants.STARSOURCE.Y,
+                (int)ItemSpriteConstants.STARDIMENSIONS.X, (int)ItemSpriteConstants.STARDIMENSIONS.Y);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
+                (int)ItemSpriteConstants.STARDIMENSIONS.X, (int)ItemSpriteConstants.STARDIMENSIONS.Y);
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
-
         }
- 
         public Vector2 SpriteDimensions
         {
-            get { return new Vector2(width, height); }
+            get { return new Vector2((int)ItemSpriteConstants.STARDIMENSIONS.X, (int)ItemSpriteConstants.STARDIMENSIONS.Y); }
         }
     }
 }
