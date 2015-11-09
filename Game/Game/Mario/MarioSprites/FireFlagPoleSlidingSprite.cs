@@ -19,9 +19,7 @@ namespace Game.Mario.MarioSprites
 
         public FireFlagPoleSlidingSprite(Texture2D spriteSheet)
         {
-            starDrawCounter = MarioSpriteConstants.RESETTOZERO;
             frameCounter = false;
-            delayCounter = MarioSpriteConstants.RESETTOZERO;
             this.spriteSheet = spriteSheet;
             currentSourceLocation = MarioSpriteConstants.FIRSTFIREFLAGSOURCECOORDINATES;
         }

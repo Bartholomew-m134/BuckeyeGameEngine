@@ -8,69 +8,39 @@ using Microsoft.Xna.Framework;
 using System.Collections;
 using System.Diagnostics;
 using Game.Interfaces;
+using Game.Utilities.Constants;
 
 namespace Game.Mario.MarioSprites
 {
     public class NormalRightRunningMarioSprite : IMarioSprite
     {
-        private int toggle;
+        private int starDrawCounter;
         private Texture2D spriteSheet;
         private ArrayList normalRightRunningSpriteDimensions;
         private ArrayList normalRightRunningSpriteLocations;
         private int currentSprite;
         private Vector2 currentDimensions;
         private Vector2 currentLocation;
-
-        private Vector2 firstNormalRightRunningSpriteLocation;
-        private Vector2 secondNormalRightRunningSpriteLocation;
-        private Vector2 thirdNormalRightRunningSpriteLocation;
-
-        private Vector2 firstNormalRightRunningSpriteDimensions;
-        private Vector2 secondNormalRightRunningSpriteDimensions;
-        private Vector2 thirdNormalRightRunningSpriteDimensions;
-
-        private Rectangle sourceRectangle;
-        private Rectangle destinationRectangle;
         public NormalRightRunningMarioSprite(Texture2D spriteSheet)
         {
-            toggle = 0;
             this.spriteSheet = spriteSheet;
-            currentSprite = 0;
             normalRightRunningSpriteDimensions = new ArrayList();
             normalRightRunningSpriteLocations = new ArrayList();
 
-            firstNormalRightRunningSpriteDimensions.X = 16;
-            firstNormalRightRunningSpriteDimensions.Y = 31;
+            normalRightRunningSpriteDimensions.Add(MarioSpriteConstants.THIRDNORMALRIGHTRUNNINGDIMENSIONS);
+            normalRightRunningSpriteDimensions.Add(MarioSpriteConstants.SECONDNORMALRIGHTRUNNINGDIMENSIONS);
+            normalRightRunningSpriteDimensions.Add(MarioSpriteConstants.FIRSTNORMALRIGHTRUNNINGDIMENSIONS);
+            normalRightRunningSpriteDimensions.Add(MarioSpriteConstants.SECONDNORMALRIGHTRUNNINGDIMENSIONS);
 
-            secondNormalRightRunningSpriteDimensions.X = 16;
-            secondNormalRightRunningSpriteDimensions.Y = 30;
-
-            thirdNormalRightRunningSpriteDimensions.X = 16;
-            thirdNormalRightRunningSpriteDimensions.Y = 29;
-
-            firstNormalRightRunningSpriteLocation.X = 239;
-            firstNormalRightRunningSpriteLocation.Y = 52;
-
-            secondNormalRightRunningSpriteLocation.X = 270;
-            secondNormalRightRunningSpriteLocation.Y = 52;
-
-            thirdNormalRightRunningSpriteLocation.X = 299;
-            thirdNormalRightRunningSpriteLocation.Y = 53;
-
-            normalRightRunningSpriteDimensions.Add(thirdNormalRightRunningSpriteDimensions);       
-            normalRightRunningSpriteDimensions.Add(secondNormalRightRunningSpriteDimensions);
-            normalRightRunningSpriteDimensions.Add(firstNormalRightRunningSpriteDimensions);
-            normalRightRunningSpriteDimensions.Add(secondNormalRightRunningSpriteDimensions);
-
-            normalRightRunningSpriteLocations.Add(thirdNormalRightRunningSpriteLocation);
-            normalRightRunningSpriteLocations.Add(secondNormalRightRunningSpriteLocation);
-            normalRightRunningSpriteLocations.Add(firstNormalRightRunningSpriteLocation);
-            normalRightRunningSpriteLocations.Add(secondNormalRightRunningSpriteLocation);
+            normalRightRunningSpriteLocations.Add(MarioSpriteConstants.THIRDNORMALRIGHTRUNNINGSOURCE);
+            normalRightRunningSpriteLocations.Add(MarioSpriteConstants.SECONDNORMALRIGHTRUNNINGSOURCE);
+            normalRightRunningSpriteLocations.Add(MarioSpriteConstants.FIRSTNORMALRIGHTRUNNINGSOURCE);
+            normalRightRunningSpriteLocations.Add(MarioSpriteConstants.SECONDNORMALRIGHTRUNNINGSOURCE);
         }
         public void Update()
         {
 
-                if (currentSprite < 3)
+                if (currentSprite < MarioSpriteConstants.RUNNINGUPDATEDELAY)
                 {
                     currentDimensions = (Vector2)normalRightRunningSpriteDimensions[currentSprite];
                     currentLocation = (Vector2)normalRightRunningSpriteLocations[currentSprite];
@@ -78,7 +48,7 @@ namespace Game.Mario.MarioSprites
                 }
                 else
                 {
-                    currentSprite = 0;
+                    currentSprite = MarioSpriteConstants.RESETTOZERO;
                     currentDimensions = (Vector2)normalRightRunningSpriteDimensions[currentSprite];
                     currentLocation = (Vector2)normalRightRunningSpriteLocations[currentSprite];
                     currentSprite++;
@@ -89,8 +59,8 @@ namespace Game.Mario.MarioSprites
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            sourceRectangle = new Rectangle((int)currentLocation.X, (int)currentLocation.Y, (int)currentDimensions.X, (int)currentDimensions.Y);
-            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, (int)currentDimensions.X, (int)currentDimensions.Y);
+            Rectangle sourceRectangle = new Rectangle((int)currentLocation.X, (int)currentLocation.Y, (int)currentDimensions.X, (int)currentDimensions.Y);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, (int)currentDimensions.X, (int)currentDimensions.Y);
 
             spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
@@ -99,23 +69,23 @@ namespace Game.Mario.MarioSprites
 
         public void StarDraw(SpriteBatch spriteBatch, Vector2 location)
         {
-            sourceRectangle = new Rectangle((int)currentLocation.X, (int)currentLocation.Y, (int)currentDimensions.X, (int)currentDimensions.Y);
-            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, (int)currentDimensions.X, (int)currentDimensions.Y);
+            Rectangle sourceRectangle = new Rectangle((int)currentLocation.X, (int)currentLocation.Y, (int)currentDimensions.X, (int)currentDimensions.Y);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, (int)currentDimensions.X, (int)currentDimensions.Y);
 
-            if (toggle < 5)
+            if (starDrawCounter < MarioSpriteConstants.STARDRAWBROWNCOUNTER)
             {
                 spriteBatch.Begin();
                 spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.Brown);
                 spriteBatch.End();
-                toggle++;
+                starDrawCounter++;
             }
 
-            else if (toggle > 6 && toggle < 10)
+            else if (starDrawCounter > MarioSpriteConstants.STARDRAWBROWNCOUNTER && starDrawCounter < MarioSpriteConstants.STARDRAWYELLOWGREENCOUNTER)
             {
                 spriteBatch.Begin();
                 spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.YellowGreen);
                 spriteBatch.End();
-                toggle++;
+                starDrawCounter++;
             }
 
             else
@@ -123,13 +93,13 @@ namespace Game.Mario.MarioSprites
                 spriteBatch.Begin();
                 spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.Orange);
                 spriteBatch.End();
-                if (toggle < 15)
+                if (starDrawCounter < MarioSpriteConstants.STARDRAWORANGECOUNTER)
                 {
-                    toggle++;
+                    starDrawCounter++;
                 }
                 else
                 {
-                    toggle = 0;
+                    starDrawCounter = MarioSpriteConstants.RESETTOZERO;
                 }
             }
 

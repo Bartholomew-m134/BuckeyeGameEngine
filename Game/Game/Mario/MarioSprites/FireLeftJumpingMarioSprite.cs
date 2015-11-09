@@ -15,22 +15,19 @@ namespace Game.Mario.MarioSprites
     {
         private Texture2D spriteSheet;
         private int starDrawCounter;
-        private readonly Vector2 FIRELEFTJUMPWIDTHHEIGHT = new Vector2(16,31);
-        private readonly Vector2 FIRELEFTJUMPSOURCE = new Vector2(27,122);
         public FireLeftJumpingMarioSprite(Texture2D spriteSheet)
         {
             this.spriteSheet = spriteSheet;
-            starDrawCounter = MarioSpriteConstants.RESETTOZERO;
         }
         public void Update()
         {
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle((int)FIRELEFTJUMPSOURCE.X, (int)FIRELEFTJUMPSOURCE.Y, 
-                (int)FIRELEFTJUMPWIDTHHEIGHT.X, (int)FIRELEFTJUMPWIDTHHEIGHT.Y);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 
-                (int)FIRELEFTJUMPWIDTHHEIGHT.X, (int)FIRELEFTJUMPWIDTHHEIGHT.Y);
+            Rectangle sourceRectangle = new Rectangle((int)MarioSpriteConstants.FIRELEFTJUMPSOURCE.X, (int)MarioSpriteConstants.FIRELEFTJUMPSOURCE.Y,
+                (int)MarioSpriteConstants.FIRELEFTJUMPWIDTHHEIGHT.X, (int)MarioSpriteConstants.FIRELEFTJUMPWIDTHHEIGHT.Y);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
+                (int)MarioSpriteConstants.FIRELEFTJUMPWIDTHHEIGHT.X, (int)MarioSpriteConstants.FIRELEFTJUMPWIDTHHEIGHT.Y);
 
             spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
@@ -38,10 +35,10 @@ namespace Game.Mario.MarioSprites
         }
         public void StarDraw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle((int)FIRELEFTJUMPSOURCE.X, (int)FIRELEFTJUMPSOURCE.Y, 
-                (int)FIRELEFTJUMPWIDTHHEIGHT.X, (int)FIRELEFTJUMPWIDTHHEIGHT.Y);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 
-                (int)FIRELEFTJUMPWIDTHHEIGHT.X, (int)FIRELEFTJUMPWIDTHHEIGHT.Y);
+            Rectangle sourceRectangle = new Rectangle((int)MarioSpriteConstants.FIRELEFTJUMPSOURCE.X, (int)MarioSpriteConstants.FIRELEFTJUMPSOURCE.Y,
+                (int)MarioSpriteConstants.FIRELEFTJUMPWIDTHHEIGHT.X, (int)MarioSpriteConstants.FIRELEFTJUMPWIDTHHEIGHT.Y);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
+                (int)MarioSpriteConstants.FIRELEFTJUMPWIDTHHEIGHT.X, (int)MarioSpriteConstants.FIRELEFTJUMPWIDTHHEIGHT.Y);
             if (starDrawCounter < MarioSpriteConstants.STARDRAWBROWNCOUNTER)
             {
                 spriteBatch.Begin();
@@ -70,11 +67,10 @@ namespace Game.Mario.MarioSprites
                     starDrawCounter = MarioSpriteConstants.RESETTOZERO;
                 }
             }
-
         }
         public Vector2 SpriteDimensions
         {
-            get { return new Vector2((int)FIRELEFTJUMPWIDTHHEIGHT.X, (int)FIRELEFTJUMPWIDTHHEIGHT.Y); }
+            get { return new Vector2((int)MarioSpriteConstants.FIRELEFTJUMPWIDTHHEIGHT.X, (int)MarioSpriteConstants.FIRELEFTJUMPWIDTHHEIGHT.Y); }
         }
     }
 }

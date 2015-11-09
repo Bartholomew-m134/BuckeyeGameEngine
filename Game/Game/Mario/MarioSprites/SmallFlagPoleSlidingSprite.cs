@@ -5,51 +5,43 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.Utilities.Constants;
 
 namespace Game.Mario.MarioSprites
 {
     class SmallFlagPoleSlidingSprite : IMarioSprite
     {
-        private int toggle;
+        private int starDrawCounter;
         private Texture2D spriteSheet;
-        private int width;
-        private int height;
         private Vector2 currentSourceLocation;
-        private int frameCounter;
+        private bool frameCounter;
         private int delayCounter;
         public SmallFlagPoleSlidingSprite(Texture2D spriteSheet)
         {
-            toggle = 0;
-            frameCounter = 0;
-            delayCounter = 0;
+            frameCounter = false;
             this.spriteSheet = spriteSheet;
-            width = 14;
-            height = 16;
-            currentSourceLocation.X = 331;
-            currentSourceLocation.Y = 30;
         }
         public void Update()
         {
-            if (frameCounter ==0 && delayCounter ==2){
-                currentSourceLocation.X = 331;
-                currentSourceLocation.Y = 30;
-                frameCounter = 1;
-                delayCounter = 0;
+            if (frameCounter ==false && delayCounter ==MarioSpriteConstants.FLAGUPDATEDELAYCOUNTER){
+                currentSourceLocation = MarioSpriteConstants.FIRSTSMALLFLAGSOURCE;
+                frameCounter = true;
+                delayCounter = MarioSpriteConstants.RESETTOZERO;
             }
-            else if (delayCounter == 2){
-                currentSourceLocation.X = 361;
-                currentSourceLocation.Y = 30;
-                frameCounter = 0;
-                delayCounter = 0;
+            else if (delayCounter == MarioSpriteConstants.FLAGUPDATEDELAYCOUNTER){
+                currentSourceLocation = MarioSpriteConstants.SECONDSMALLFLAGSOURCE;
+                frameCounter = false;
+                delayCounter = MarioSpriteConstants.RESETTOZERO;
             }
             delayCounter++;
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle((int)currentSourceLocation.X, (int)currentSourceLocation.Y, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
-
+            Rectangle sourceRectangle = new Rectangle((int)currentSourceLocation.X, (int)currentSourceLocation.Y,
+                (int)MarioSpriteConstants.SMALLFLAGMARIODIMENSIONS.X, (int)MarioSpriteConstants.SMALLFLAGMARIODIMENSIONS.Y);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
+                (int)MarioSpriteConstants.SMALLFLAGMARIODIMENSIONS.X, (int)MarioSpriteConstants.SMALLFLAGMARIODIMENSIONS.Y);
             spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
@@ -57,23 +49,25 @@ namespace Game.Mario.MarioSprites
 
         public void StarDraw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle((int)currentSourceLocation.X, (int)currentSourceLocation.Y, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
+            Rectangle sourceRectangle = new Rectangle((int)currentSourceLocation.X, (int)currentSourceLocation.Y,
+                (int)MarioSpriteConstants.SMALLFLAGMARIODIMENSIONS.X, (int)MarioSpriteConstants.SMALLFLAGMARIODIMENSIONS.Y);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
+                (int)MarioSpriteConstants.SMALLFLAGMARIODIMENSIONS.X, (int)MarioSpriteConstants.SMALLFLAGMARIODIMENSIONS.Y);
 
-            if (toggle < 5)
+            if (starDrawCounter < MarioSpriteConstants.STARDRAWBROWNCOUNTER)
             {
                 spriteBatch.Begin();
                 spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.Brown);
                 spriteBatch.End();
-                toggle++;
+                starDrawCounter++;
             }
 
-            else if (toggle > 6 && toggle < 10)
+            else if (starDrawCounter > MarioSpriteConstants.STARDRAWBROWNCOUNTER && starDrawCounter < MarioSpriteConstants.STARDRAWYELLOWGREENCOUNTER)
             {
                 spriteBatch.Begin();
                 spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.YellowGreen);
                 spriteBatch.End();
-                toggle++;
+                starDrawCounter++;
             }
 
             else
@@ -81,21 +75,19 @@ namespace Game.Mario.MarioSprites
                 spriteBatch.Begin();
                 spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.Orange);
                 spriteBatch.End();
-                if (toggle < 15)
+                if (starDrawCounter < MarioSpriteConstants.STARDRAWORANGECOUNTER)
                 {
-                    toggle++;
+                    starDrawCounter++;
                 }
                 else
                 {
-                    toggle = 0;
+                    starDrawCounter = MarioSpriteConstants.RESETTOZERO;
                 }
             }
-
         }
-
         public Vector2 SpriteDimensions
         {
-            get { return new Vector2(width, height); }
+            get { return new Vector2((int)MarioSpriteConstants.SMALLFLAGMARIODIMENSIONS.X, (int)MarioSpriteConstants.SMALLFLAGMARIODIMENSIONS.Y); }
         }
     }
 }

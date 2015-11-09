@@ -18,7 +18,6 @@ namespace Game.Mario.MarioSprites
         public FireLeftCrouchingMarioSprite(Texture2D spriteSheet)
         {
             this.spriteSheet = spriteSheet;
-            starDrawCounter = MarioSpriteConstants.RESETTOZERO;
         }
         public void Update()
         {

@@ -21,31 +21,22 @@ namespace Game.Mario.MarioSprites
         private Vector2 currentDimensions;
         private Vector2 currentLocation;
 
-        private readonly Vector2 FIRSTFIRELEFTRUNNINGSOURCE = new Vector2(152, 122);
-        private readonly Vector2 SECONDFIRELEFTRUNNINGSOURCE = new Vector2(128, 122);
-        private readonly Vector2 THIRDFIRELEFTRUNNINGSOURCE = new Vector2(102, 123);
-
-        private readonly Vector2 FIRSTFIRELEFTRUNNINGDIMENSIONS = new Vector2(16,31);
-        private readonly Vector2 SECONDFIRELEFTRUNNINGDIMENSIONS = new Vector2(16, 31);
-        private readonly Vector2 THIRDFIRELEFTRUNNINGDIMENSIONS = new Vector2(16, 29);
-
         public FireLeftRunningMarioSprite(Texture2D spriteSheet)
         {
             this.spriteSheet = spriteSheet;
-            starDrawCounter = MarioSpriteConstants.RESETTOZERO;
             currentSprite = MarioSpriteConstants.RESETTOZERO;
             fireLeftRunningSpriteDimensions = new ArrayList();
             fireLeftRunningSpriteLocations = new ArrayList();
 
-            fireLeftRunningSpriteDimensions.Add(THIRDFIRELEFTRUNNINGDIMENSIONS);
-            fireLeftRunningSpriteDimensions.Add(SECONDFIRELEFTRUNNINGDIMENSIONS);
-            fireLeftRunningSpriteDimensions.Add(FIRSTFIRELEFTRUNNINGDIMENSIONS);
-            fireLeftRunningSpriteDimensions.Add(SECONDFIRELEFTRUNNINGDIMENSIONS);
+            fireLeftRunningSpriteDimensions.Add(MarioSpriteConstants.THIRDFIRELEFTRUNNINGDIMENSIONS);
+            fireLeftRunningSpriteDimensions.Add(MarioSpriteConstants.SECONDFIRELEFTRUNNINGDIMENSIONS);
+            fireLeftRunningSpriteDimensions.Add(MarioSpriteConstants.FIRSTFIRELEFTRUNNINGDIMENSIONS);
+            fireLeftRunningSpriteDimensions.Add(MarioSpriteConstants.SECONDFIRELEFTRUNNINGDIMENSIONS);
 
-            fireLeftRunningSpriteLocations.Add(THIRDFIRELEFTRUNNINGSOURCE);
-            fireLeftRunningSpriteLocations.Add(SECONDFIRELEFTRUNNINGSOURCE);
-            fireLeftRunningSpriteLocations.Add(FIRSTFIRELEFTRUNNINGSOURCE);
-            fireLeftRunningSpriteLocations.Add(SECONDFIRELEFTRUNNINGSOURCE);
+            fireLeftRunningSpriteLocations.Add(MarioSpriteConstants.THIRDFIRELEFTRUNNINGSOURCE);
+            fireLeftRunningSpriteLocations.Add(MarioSpriteConstants.SECONDFIRELEFTRUNNINGSOURCE);
+            fireLeftRunningSpriteLocations.Add(MarioSpriteConstants.FIRSTFIRELEFTRUNNINGSOURCE);
+            fireLeftRunningSpriteLocations.Add(MarioSpriteConstants.SECONDFIRELEFTRUNNINGSOURCE);
         }
         public void Update()
         {
