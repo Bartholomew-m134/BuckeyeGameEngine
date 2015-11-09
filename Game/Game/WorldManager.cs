@@ -79,7 +79,6 @@ namespace Game
             if (referenceObject is IProjectile)
                 ((IProjectile)referenceObject).ReturnObject();
             if (referenceObject is IMario)
-                //((IMario)referenceObject).Die();
                 ResetToDefault();
         }
 

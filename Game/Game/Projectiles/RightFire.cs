@@ -16,9 +16,9 @@ namespace Game.Projectiles
         private Vector2 location;
         private ObjectPhysics physics;
         private bool isExploded;
-        private FireBallFactory factory;
+        private FireBallSpawner factory;
 
-        public RightFire(FireBallFactory factory, Game1 game)
+        public RightFire(FireBallSpawner factory, Game1 game)
         {
             myGame = game;
             FireSprite = ProjectileSpriteFactory.CreateFireSprite();

@@ -15,17 +15,10 @@ namespace Game
         private Dictionary<Buttons, ICommand> buttonMappings;
         private GamePadState prevState;
 
-        public GamePadController()
+        public GamePadController(IControls controls)
         {
-            buttonMappings = new Dictionary<Buttons, ICommand>();
+            buttonMappings = controls.GetGamePadControls();
             prevState = GamePad.GetState(PlayerIndex.One);
-
-            RegisterCommand(Buttons.LeftThumbstickDown, new LowerMarioStanceCommand());
-            RegisterCommand(Buttons.LeftThumbstickLeft, new FurtherLeftMarioStanceCommand());
-            RegisterCommand(Buttons.LeftThumbstickRight, new FurtherRightMarioStanceCommand());
-
-            RegisterCommand(Buttons.A, new RaiseMarioStanceCommand());
-            RegisterCommand(Buttons.B, new MarioRunFireBallCommand());
         }
 
         public void RegisterCommand(Buttons button, ICommand command)

@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Media;
 using Game.SpriteFactories;
 using Game.Interfaces;
 using Game.Utilities;
+using Game.GameStates;
 
 namespace Game
 {
@@ -18,72 +19,41 @@ namespace Game
     {
         public GraphicsDeviceManager graphics;
         public SpriteBatch spriteBatch;
-        private ICamera camera;
-        private List<IController> controllerList;
-        private int delay;
+        public IGameState gameState;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            delay = 0;
         }
 
         protected override void Initialize()
         {
-            controllerList = new List<IController>();
-            controllerList.Add(new KeyboardController());
-            controllerList.Add(new GamePadController());
+            gameState = new MenuGameState(this);
             base.Initialize();
         }
-
 
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            ItemsSpriteFactory.Load(Content);
-            EnemySpriteFactory.Load(Content);
-            MarioSpriteFactory.Load(Content);
-            TileSpriteFactory.Load(Content);
-            ProjectileSpriteFactory.Load(Content);
-            BackgroundElementsSpriteFactory.Load(Content);
-
-            WorldManager.LoadListFromFile("World1-1", this);
-
-            camera = new MarioCamera(WorldManager.GetMario().VectorCoordinates);
+            gameState.LoadContent();
         }
 
         protected override void UnloadContent()
         {
-            
+            gameState.UnloadContent();
         }
 
         protected override void Update(GameTime gameTime)
         {
-            if (delay == 3)
-            {
-                foreach (IController controller in controllerList)
-                    controller.Update();
-
-                WorldManager.Update(camera);
-                ScoreManager.Update();
-                HUDManager.Update();
-                base.Update(gameTime);
-                delay = 0;
-            }
-
-            else
-            {
-                delay++;
-            }
+            gameState.Update();
+            base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            WorldManager.Draw(camera);
-            ScoreManager.DrawScore(spriteBatch, camera);
-            HUDManager.DrawHUD(spriteBatch);
+            gameState.Draw(spriteBatch);
             base.Draw(gameTime);
         }
     }

@@ -17,14 +17,14 @@ namespace Game.Mario
         private Vector2 location;
         private Game1 myGame;
         private ObjectPhysics physics;
-        private FireBallFactory factory;
+        private FireBallSpawner factory;
 
         public MarioInstance(Game1 game)
         {
             state = new SmallRightIdleState(this);
             myGame = game;
             physics = new ObjectPhysics();
-            factory = new FireBallFactory(game);
+            factory = new FireBallSpawner(game);
         }
         public void Update()
         {
@@ -168,7 +168,7 @@ namespace Game.Mario
             get { return physics; }
         }
 
-        public FireBallFactory FireBallFactory
+        public FireBallSpawner FireBallFactory
         {
             get { return factory; }
         }
