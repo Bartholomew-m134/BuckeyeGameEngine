@@ -38,7 +38,7 @@ namespace Game.Projectiles
             }
             else
             {
-                location.Y = 2000;
+                location.Y = 4000;
             }
         }
 

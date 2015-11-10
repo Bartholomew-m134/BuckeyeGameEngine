@@ -220,6 +220,13 @@ namespace Game
                     gameObjects.RemoveAt(index);
                     gameObjects.Insert(0, scenery);
                 }
+
+                if (gameObjects[index] is IPipe)
+                {
+                    IGameObject pipe = gameObjects[index];
+                    gameObjects.RemoveAt(index);
+                    gameObjects.Add(pipe);
+                }
             }
 
                 return gameObjects;

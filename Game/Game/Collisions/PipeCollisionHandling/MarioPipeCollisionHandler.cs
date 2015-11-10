@@ -8,6 +8,7 @@ using Game.Interfaces;
 using Game.Mario.MarioStates;
 using Game.GameStates;
 using Game.Utilities;
+using Game.Utilities.Constants;
 
 namespace Game.Collisions.PipeCollisionHandling
 {
@@ -41,11 +42,11 @@ namespace Game.Collisions.PipeCollisionHandling
 
         public void HandleCollision()
         {
-            ScoreManager.stompStreak = 0;
+            ScoreManager.stompStreak = ScoreManagerConstants.RESETTOZERO;
             if (!(mario.MarioState is DeadMarioState))
             {
                 collision.ResolveOverlap(mario, side);
-                if (side is TopSideCollision && mario.IsPressingDown())
+                if (side is TopSideCollision && mario.IsPressingDown() && pipe.IsWarpPipe)
                 {
                     gameState.PipeTransition(pipe.WarpVectorCoordinates);
 

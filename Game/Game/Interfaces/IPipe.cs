@@ -13,5 +13,7 @@ namespace Game.Interfaces
             get;
 
         }
+
+         bool IsWarpPipe { get; }
     }
 }

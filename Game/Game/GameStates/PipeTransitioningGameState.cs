@@ -16,7 +16,7 @@ namespace Game.GameStates
         private Game1 game;
         private IGameState prevGameState;
         private List<IController> controllerList;
-        private int timer = 100;
+        private int timer = 40;
         private Vector2 warpLocation;
 
         public PipeTransitioningGameState(Vector2 warpLocation, Game1 game)
