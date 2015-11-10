@@ -44,7 +44,7 @@ namespace Game.Collisions.PipeCollisionHandling
             if (!(mario.MarioState is DeadMarioState))
             {
                 collision.ResolveOverlap(mario, side);
-                if (side is TopSideCollision && mario.IsPressingDown())
+                if (side is TopSideCollision && mario.IsPressingDown() && pipe.IsWarpPipe)
                 {
                     gameState.PipeTransition(pipe.WarpVectorCoordinates);
 

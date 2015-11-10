@@ -17,13 +17,14 @@ namespace Game.GameStates
         public ICamera camera;
         private List<IController> controllerList;
         private int delay;
-
+        private bool isUnderground;
         public NormalMarioGameState(Game1 game)
         {
             this.game = game;
             controllerList = new List<IController>();
             controllerList.Add(new KeyboardController(new MarioControls(game)));
             controllerList.Add(new GamePadController(new MarioControls(game)));
+            isUnderground = false;
         }
 
         public void LoadContent()
@@ -80,7 +81,9 @@ namespace Game.GameStates
 
         public void PipeTransition(Vector2 warpLocation)
         {
+            isUnderground = !isUnderground;
             game.gameState = new PipeTransitioningGameState(warpLocation, game);
         }
+
     }
 }

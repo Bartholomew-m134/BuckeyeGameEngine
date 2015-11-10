@@ -37,7 +37,7 @@ namespace Game.Projectiles
                 location = physics.Update(location);
             }
             else {
-                location.Y = 2000;
+                location.Y = 4000;
             }
         }
 
