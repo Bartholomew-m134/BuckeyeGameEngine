@@ -312,6 +312,7 @@
     <Compile Include="Mario\MarioStates\SmallRightIdleState.cs" />
     <Compile Include="Mario\MarioStates\SmallRightJumpingState.cs" />
     <Compile Include="Mario\MarioStates\SmallRightRunningState.cs" />
+    <Compile Include="Utilities\Constants\BackgroundElementSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\BlockSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\EnemySpriteConstants.cs" />
     <Compile Include="Utilities\Constants\FlagPoleSpriteConstants.cs" />

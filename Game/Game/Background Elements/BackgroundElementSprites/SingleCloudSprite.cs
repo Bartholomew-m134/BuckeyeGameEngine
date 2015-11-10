@@ -5,44 +5,34 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.Utilities.Constants;
 
 namespace Game.Background_Elements.BackgroundElementSprites
 {
     class SingleCloudSprite:ISprite
     {
         private Texture2D Texture { get; set; }
-        private int width = 33;
-        private int height = 25;
-        private int sourceX = 210;
-        private int sourceY = 68;
         public SingleCloudSprite(Texture2D texture)
         {
             Texture = texture;
-
-
         }
 
         public void Update() { 
-        
-        
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location) {
-            
-            
-
-            Rectangle sourceRectangle = new Rectangle(sourceX, sourceY, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
+            Rectangle sourceRectangle = new Rectangle((int)BackgroundElementSpriteConstants.SINGLCLOUDSOURCE.X, (int)BackgroundElementSpriteConstants.SINGLCLOUDSOURCE.Y,
+                (int)BackgroundElementSpriteConstants.SINGLECLOUDDIMENSIONS.X, (int)BackgroundElementSpriteConstants.SINGLECLOUDDIMENSIONS.Y);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
+                (int)BackgroundElementSpriteConstants.SINGLECLOUDDIMENSIONS.X, (int)BackgroundElementSpriteConstants.SINGLECLOUDDIMENSIONS.Y);
 
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
-
         }
-
         public Vector2 SpriteDimensions
         {
-            get { return new Vector2(width, height); }
+            get { return new Vector2((int)BackgroundElementSpriteConstants.SINGLECLOUDDIMENSIONS.X, (int)BackgroundElementSpriteConstants.SINGLECLOUDDIMENSIONS.Y); }
         }
     }
 }
