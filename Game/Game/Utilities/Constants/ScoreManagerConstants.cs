@@ -8,8 +8,8 @@ namespace Game.Utilities.Constants
 {
     public static class ScoreManagerConstants
     {
-        public static readonly int[] STOMPSEQUENCE = new int[11]{100, 200, 400, 500, 800, 1000, 2000, 4000, 5000, 8000, 0};
-        public static readonly int[] SHELLSEQUENCE = new int[8] { 500, 800, 1000, 2000, 4000, 5000, 8000, 0 };
+        public static readonly int[] STOMPSEQUENCE = new int[11] { 100, 200, 400, 500, 800, 1000, 2000, 4000, 5000, 8000, AWARDONELIFE };
+        public static readonly int[] SHELLSEQUENCE = new int[8] { 500, 800, 1000, 2000, 4000, 5000, 8000, AWARDONELIFE };
         public const int RESETTOZERO = 0;
         public const int UPDATEDELAY = 10;
         public const int INCREMENTBYONE = 1;
@@ -23,7 +23,14 @@ namespace Game.Utilities.Constants
         public const int ZONEFOURSCORE = 400;
         public const int ZONEFIVEYCOORDINATE = 416;
         public const int ZONEFIVESCORE = 100;
-        public const int POINTSPERCOIN = 200;
         public const int ADDONECOIN = 1;
+        public const int TWOHUNDREDPOINTS = 200;
+        public const int ONEHUNDREDPOINTS = 100;
+        public const int FIFTYPOINTS = 50;
+        public const int ONETHOUSANDPOINTS = 1000;
+        public const int AWARDONELIFE = -1;
+        public const int STOMPSEQUENCEMAXINDEX = 10;
+        public const int SHELLSEQUENCEMAXINDEX = 7;
+        public const int MINIMUMSTREAKINDEX = 0;
     }
 }

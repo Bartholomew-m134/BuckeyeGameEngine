@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using Game.Music;
 using Game.SoundEffects;
+using Game.Utilities.Constants;
 
 namespace Game.Collisions.FlagPoleCollisionHandling
 {
@@ -53,6 +54,7 @@ namespace Game.Collisions.FlagPoleCollisionHandling
 
         public void HandleScore()
         {
+            ScoreManager.stompStreak = ScoreManagerConstants.RESETTOZERO;
             if (collidingFlagPole is InvisibleFlagPoleBarrier && ScoreManager.FlagTopBeenHit == false)
             {
                 ScoreManager.location = collidingMario.VectorCoordinates;

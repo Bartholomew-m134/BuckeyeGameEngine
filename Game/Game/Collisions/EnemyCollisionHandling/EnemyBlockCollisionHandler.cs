@@ -11,6 +11,7 @@ using Game.Enemies.GoombaClasses.GoombaStates;
 using Game.Utilities;
 using Game.Enemies.KoopaClasses.KoopaStates;
 using Game.SoundEffects;
+using Game.Utilities.Constants;
 
 namespace Game.Collisions.EnemyCollisionHandling
 {
@@ -73,7 +74,7 @@ namespace Game.Collisions.EnemyCollisionHandling
             if(((Block)block).IsBumped && enemy is Goomba && side is TopSideCollision){
                 if (((Goomba)enemy).state is GoombaWalkingLeftState || ((Goomba)enemy).state is GoombaWalkingRightState)
                 {
-                    ScoreManager.IncreaseScore(100);
+                    ScoreManager.IncreaseScore(ScoreManagerConstants.ONEHUNDREDPOINTS);
                     ScoreManager.location = enemy.VectorCoordinates;
                 }
             }
@@ -82,7 +83,7 @@ namespace Game.Collisions.EnemyCollisionHandling
             {
                 if (((GreenKoopa)enemy).state is GreenKoopaWalkingLeftState || ((GreenKoopa)enemy).state is GreenKoopaWalkingRightState)
                 {
-                    ScoreManager.IncreaseScore(100);
+                    ScoreManager.IncreaseScore(ScoreManagerConstants.ONEHUNDREDPOINTS);
                     ScoreManager.location = enemy.VectorCoordinates;
                 }
             }

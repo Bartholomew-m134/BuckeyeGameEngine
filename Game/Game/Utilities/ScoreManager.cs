@@ -19,23 +19,25 @@ namespace Game.Utilities
         private static int currentScoreToDraw;
         private static int drawOnScreenTimer = ScoreManagerConstants.RESETTOZERO;
         private static int upwardDrawYModifier = ScoreManagerConstants.RESETTOZERO;
-        public static bool onStreak = false;
+        public static int stompStreak = ScoreManagerConstants.RESETTOZERO;
+        public static int shellStreak = ScoreManagerConstants.RESETTOZERO;
         
         public static void IncreaseScore(int value)
         {
-            totalScore += value;
-            HUDManager.UpdateHUDScore(totalScore);
-            if (drawOnScreenTimer < ScoreManagerConstants.UPDATEDELAY && hasChanged && !onStreak)
+            if (!(value == ScoreManagerConstants.AWARDONELIFE))
             {
-                currentScoreToDraw += value;
+                totalScore += value;
+                HUDManager.UpdateHUDScore(totalScore);
+                if (drawOnScreenTimer < ScoreManagerConstants.UPDATEDELAY && hasChanged && (OnShellStreak() == false) && (OnStompStreak() == false))
+                    currentScoreToDraw += value;
+                else
+                    currentScoreToDraw = value;
+                hasChanged = true;
+                if (scoreFont == null)
+                    scoreFont = SpriteFactories.BackgroundElementsSpriteFactory.CreateScoreFont();
             }
             else
-            {
-                currentScoreToDraw = value;
-            }
-            hasChanged = true;
-            if (scoreFont == null)
-                scoreFont = SpriteFactories.BackgroundElementsSpriteFactory.CreateScoreFont();
+                LifeManager.IncrementLives();
         }
         public static void ResetScore()
         {
@@ -48,14 +50,10 @@ namespace Game.Utilities
                 hasChanged = false;
                 drawOnScreenTimer = ScoreManagerConstants.RESETTOZERO;
             }
-
             if(hasChanged)
             drawOnScreenTimer++;
-
             if (upwardDrawYModifier >= ScoreManagerConstants.INCREMENTBYONE)
-            {
-                upwardDrawYModifier = ScoreManagerConstants.RESETTOZERO;
-            }
+                upwardDrawYModifier = ScoreManagerConstants.RESETTOZERO; 
             upwardDrawYModifier += ScoreManagerConstants.INCREMENTBYONE;
         }
         public static void DrawScore(SpriteBatch spriteBatch, ICamera camera)
@@ -71,11 +69,23 @@ namespace Game.Utilities
 
         public static int HandleShellSequence(int shellSequenceIndex)
         {
-            return ScoreManagerConstants.SHELLSEQUENCE[shellSequenceIndex];
+            if (shellSequenceIndex > ScoreManagerConstants.SHELLSEQUENCEMAXINDEX)
+            {
+                ScoreManager.shellStreak = ScoreManagerConstants.RESETTOZERO;
+                return ScoreManagerConstants.SHELLSEQUENCE[shellStreak];
+            }
+            else
+                return ScoreManagerConstants.SHELLSEQUENCE[shellSequenceIndex];
         }
         public static int HandleStompSequence(int stompSequenceIndex)
         {
-            return ScoreManagerConstants.STOMPSEQUENCE[stompSequenceIndex];
+            if (stompSequenceIndex > ScoreManagerConstants.STOMPSEQUENCEMAXINDEX)
+            {
+                stompStreak = ScoreManagerConstants.RESETTOZERO;
+                return ScoreManagerConstants.STOMPSEQUENCE[stompStreak];
+            }
+            else
+                return ScoreManagerConstants.STOMPSEQUENCE[stompSequenceIndex];
         }
 
         public static int HandleFlagPoleRange(int marioFootLocation)
@@ -106,6 +116,15 @@ namespace Game.Utilities
         {
             get { return flagTopBeenHit; }
             set { flagTopBeenHit = value; }
+        }
+
+        public static bool OnStompStreak()
+        {
+            return (stompStreak > ScoreManagerConstants.MINIMUMSTREAKINDEX);
+        }
+        public static bool OnShellStreak()
+        {
+            return (shellStreak > ScoreManagerConstants.MINIMUMSTREAKINDEX);
         }
     }
 }

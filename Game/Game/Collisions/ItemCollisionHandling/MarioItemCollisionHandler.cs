@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Game.SoundEffects;
+using Game.Utilities.Constants;
 
 namespace Game.Collisions.ItemCollisionHandling
 {
@@ -63,29 +64,30 @@ namespace Game.Collisions.ItemCollisionHandling
         }
         public void HandleScore()
         {
+            ScoreManager.stompStreak = ScoreManagerConstants.RESETTOZERO;
             if(collidingItem is Coin && !collidingItem.IsInsideBlock){
-                HUDManager.UpdateHUDCoins(1);
-                ScoreManager.IncreaseScore(200);
+                HUDManager.UpdateHUDCoins(ScoreManagerConstants.ADDONECOIN);
+                ScoreManager.IncreaseScore(ScoreManagerConstants.TWOHUNDREDPOINTS);
                 ScoreManager.location = collidingItem.VectorCoordinates;
             }
             else if (collidingItem is RedMushroom && !collidingItem.IsInsideBlock)
             {
-                ScoreManager.IncreaseScore(1000);
+                ScoreManager.IncreaseScore(ScoreManagerConstants.ONETHOUSANDPOINTS);
                 ScoreManager.location = collidingItem.VectorCoordinates;
             }
             else if (collidingItem is GreenMushroom && !collidingItem.IsInsideBlock)
             {
-                ScoreManager.IncreaseScore(1000);
+                ScoreManager.IncreaseScore(ScoreManagerConstants.ONETHOUSANDPOINTS);
                 ScoreManager.location = collidingItem.VectorCoordinates;
             }
             else if (collidingItem is Star && !collidingItem.IsInsideBlock)
             {
-                ScoreManager.IncreaseScore(1000);
+                ScoreManager.IncreaseScore(ScoreManagerConstants.ONETHOUSANDPOINTS);
                 ScoreManager.location = collidingItem.VectorCoordinates;
             }
             else if (collidingItem is Flower && !collidingItem.IsInsideBlock)
             {
-                ScoreManager.IncreaseScore(1000);
+                ScoreManager.IncreaseScore(ScoreManagerConstants.ONETHOUSANDPOINTS);
                 ScoreManager.location = collidingItem.VectorCoordinates;
             }
         }

@@ -9,6 +9,7 @@ using Game.Enemies.GoombaClasses;
 using Game.Enemies.GoombaClasses.GoombaStates;
 using Game.Enemies.KoopaClasses;
 using Game.Enemies.KoopaClasses.KoopaStates;
+using Game.Utilities.Constants;
 
 namespace Game.Collisions.EnemyCollisionHandling
 {
@@ -45,13 +46,13 @@ namespace Game.Collisions.EnemyCollisionHandling
                 if (((Goomba)enemy).state is GoombaWalkingLeftState || ((Goomba)enemy).state is GoombaWalkingRightState)
                 {
                     ScoreManager.location = enemy.VectorCoordinates;
-                    ScoreManager.IncreaseScore(100);
+                    ScoreManager.IncreaseScore(ScoreManagerConstants.ONEHUNDREDPOINTS);
                 }
             }
             else if (!(((GreenKoopa)enemy).state is GreenKoopaFlippedInShellState))
             {
                     ScoreManager.location = enemy.VectorCoordinates;
-                    ScoreManager.IncreaseScore(100);
+                    ScoreManager.IncreaseScore(ScoreManagerConstants.ONEHUNDREDPOINTS);
             }
         }
     }

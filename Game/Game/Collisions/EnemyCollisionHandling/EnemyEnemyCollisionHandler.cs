@@ -8,6 +8,7 @@ using Game.Enemies.KoopaClasses.KoopaStates;
 using Game.Enemies.GoombaClasses;
 using Game.Utilities;
 using Game.Enemies.GoombaClasses.GoombaStates;
+using Game.Utilities.Constants;
 
 namespace Game.Collisions.EnemyCollisionHandling
 {
@@ -91,25 +92,28 @@ namespace Game.Collisions.EnemyCollisionHandling
         }
         private void HandleScore()
         {
-
             if (enemyB is Goomba && enemyA is GreenKoopa){
                 if (((GreenKoopa)enemyA).IsWeaponized && (((Goomba)enemyB).state is GoombaWalkingLeftState || ((Goomba)enemyB).state is GoombaWalkingRightState))
                 {
-                    ScoreManager.onStreak = (((GreenKoopa)enemyA).weaponizedShellKillStreak > 0);   
                     ScoreManager.location = enemyB.VectorCoordinates;
                     ScoreManager.IncreaseScore(ScoreManager.HandleShellSequence(((GreenKoopa)enemyA).weaponizedShellKillStreak));
-                    ((GreenKoopa)enemyA).weaponizedShellKillStreak += 1;
+                    ((GreenKoopa)enemyA).weaponizedShellKillStreak += ScoreManagerConstants.INCREMENTBYONE;
+                    ScoreManager.shellStreak = (((GreenKoopa)enemyA).weaponizedShellKillStreak); 
                }
+               if (((GreenKoopa)enemyA).weaponizedShellKillStreak > ScoreManagerConstants.SHELLSEQUENCEMAXINDEX)
+                   (((GreenKoopa)enemyA).weaponizedShellKillStreak) = ScoreManagerConstants.RESETTOZERO;
             }
             if (enemyA is Goomba && enemyB is GreenKoopa)
             {
                 if (((GreenKoopa)enemyB).IsWeaponized && (((Goomba)enemyA).state is GoombaWalkingLeftState || ((Goomba)enemyA).state is GoombaWalkingRightState))
                 {
-                    ScoreManager.onStreak = (((GreenKoopa)enemyB).weaponizedShellKillStreak > 0);
                     ScoreManager.location = enemyB.VectorCoordinates;
                     ScoreManager.IncreaseScore(ScoreManager.HandleShellSequence(((GreenKoopa)enemyB).weaponizedShellKillStreak));  
-                    ((GreenKoopa)enemyB).weaponizedShellKillStreak += 1;
+                    ((GreenKoopa)enemyB).weaponizedShellKillStreak += ScoreManagerConstants.INCREMENTBYONE;
+                    ScoreManager.shellStreak = (((GreenKoopa)enemyB).weaponizedShellKillStreak);
                 }
+                if ((((GreenKoopa)enemyB).weaponizedShellKillStreak) > ScoreManagerConstants.SHELLSEQUENCEMAXINDEX)
+                    (((GreenKoopa)enemyB).weaponizedShellKillStreak) = ScoreManagerConstants.RESETTOZERO;
             }
             
         }

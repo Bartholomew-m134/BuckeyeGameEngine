@@ -9,6 +9,7 @@ using System.Diagnostics;
 using Game.Interfaces;
 using Game.Mario.MarioStates;
 using Game.Utilities;
+using Game.Utilities.Constants;
 
 namespace Game.Collisions.BlockCollisionHandling
 {
@@ -127,9 +128,10 @@ namespace Game.Collisions.BlockCollisionHandling
 
         private void HandleScore()
         {
+            ScoreManager.stompStreak = ScoreManagerConstants.RESETTOZERO;
             if (collidingBlock.State is BrickBlockState && collidingMario.IsBigMario() && collisionSide is BottomSideCollision)
             {
-                ScoreManager.IncreaseScore(50);
+                ScoreManager.IncreaseScore(ScoreManagerConstants.FIFTYPOINTS);
                 ScoreManager.location = collidingBlock.VectorCoordinates;
             }
         }
