@@ -15,7 +15,6 @@ namespace Game.GameStates
     {
         private Game1 game;
         private IGameState prevGameState;
-        public ICamera camera;
         private int timer = 0;
         private int updateDelay = 0;
         private List<IController> controllerList;
@@ -113,6 +112,12 @@ namespace Game.GameStates
         public void FlagPoleTransition()
         {
             game.gameState = prevGameState;
+        }
+
+
+        public void PlayerDied()
+        {
+            
         }
     }
 }

@@ -115,6 +115,7 @@
     <Compile Include="FlagPoles\FlagPoleSprites\InvisibleFlagPoleBarrierSprite.cs" />
     <Compile Include="GameStates\FlagPoleVictoryGameState.cs" />
     <Compile Include="GameStates\LoadingGameState.cs" />
+    <Compile Include="GameStates\MarioDeathGameState.cs" />
     <Compile Include="GameStates\MenuGameState.cs" />
     <Compile Include="GameStates\NormalMarioGameState.cs" />
     <Compile Include="GameStates\PauseGameState.cs" />

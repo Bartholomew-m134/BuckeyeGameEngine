@@ -68,6 +68,8 @@ namespace Game.GameStates
 
         public void Draw(SpriteBatch spriteBatch)
         {
+            if (isUnderground)
+                game.GraphicsDevice.Clear(Color.Gray);
             WorldManager.Draw(camera);
             ScoreManager.DrawScore(spriteBatch, camera);
             HUDManager.DrawHUD(spriteBatch);
@@ -87,6 +89,11 @@ namespace Game.GameStates
         public void FlagPoleTransition()
         {
             game.gameState = new FlagPoleVictoryGameState(game);
+        }
+
+        public void PlayerDied()
+        {
+            game.gameState = new MarioDeathGameState(game);
         }
     }
 }

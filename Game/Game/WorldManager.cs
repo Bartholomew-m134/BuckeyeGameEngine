@@ -19,7 +19,7 @@ namespace Game
         private static string currentFileName;
         private static Game1 currentGame;
         private static ICamera camera;
-        private static System.Diagnostics.Stopwatch timer;
+
 
         public static void LoadListFromFile(string filename, Game1 game)
         {
@@ -27,8 +27,7 @@ namespace Game
             objectList = LevelLoader.Load(filename, game);
             objectWithinZoneList = new List<IGameObject>();
             currentFileName = filename;
-            currentGame = game;
-            timer = new System.Diagnostics.Stopwatch();
+            currentGame = game;           
         }
 
         public static void Update(ICamera currentCamera)
@@ -75,11 +74,14 @@ namespace Game
 
         public static void FreeObject(IGameObject referenceObject)
         {
-            objectList.Remove(referenceObject);
+
             if (referenceObject is IProjectile)
-                ((IProjectile)referenceObject).ReturnObject();
-            if (referenceObject is IMario)
-                ResetToDefault();
+            {
+                objectList.Remove(referenceObject);
+                ((IProjectile)referenceObject).ReturnObject();           
+            }
+            else if (referenceObject is IMario)
+                currentGame.gameState.PlayerDied();
         }
 
         public static void CreateNewObject(IGameObject newObject)
@@ -102,14 +104,7 @@ namespace Game
         private static void ResetIfMarioIsDead()
         {
             if (GetMario().MarioState is Mario.MarioStates.DeadMarioState)
-            {
-                timer.Start();
-                if (timer.ElapsedMilliseconds > 1500)
-                {
-                    timer.Reset();
-                    ResetToDefault();
-                }
-            }
+                FreeObject(GetMario());
         }
     }
 }

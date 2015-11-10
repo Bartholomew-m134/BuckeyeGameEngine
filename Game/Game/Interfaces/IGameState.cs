@@ -24,5 +24,6 @@ namespace Game.Interfaces
         void FlagPoleTransition();
 
 
+        void PlayerDied();
     }
 }
