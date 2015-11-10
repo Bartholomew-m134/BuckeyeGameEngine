@@ -63,6 +63,10 @@ namespace Game.Mario.MarioStates
         public void PoleSlide()
         {
         }
+        public void FlipAroundPole()
+        {
+
+        }
 
         public void Mushroom()
         {

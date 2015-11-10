@@ -48,5 +48,6 @@ namespace Game.Interfaces
          void ToIdle();
 
          void PoleSlide();
+         void FlipAroundPole();
     }
 }
