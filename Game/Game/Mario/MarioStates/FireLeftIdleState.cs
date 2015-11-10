@@ -42,6 +42,10 @@ namespace Game.Mario.MarioStates
         {
             mario.MarioState = new FireFlagPoleSlidingState(mario);
         }
+        public void FlipAroundPole()
+        {
+
+        }
 
         public void Right()
         {

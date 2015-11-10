@@ -1,4 +1,5 @@
 ﻿using Game.Interfaces;
+using Game.Utilities.Constants;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,7 @@ namespace Game.Mario.MarioStates
 
             public void Right()
             {
+                mario.MarioState = new SmallRightRunningState(mario);
             }
 
             public void Up()
@@ -57,7 +59,11 @@ namespace Game.Mario.MarioStates
 
             public void PoleSlide()
             {
-                mario.MarioState = new SmallFlagPoleSlidingState(mario);
+            }
+            public void FlipAroundPole()
+            {
+                mario.VectorCoordinates = new Vector2((int)mario.VectorCoordinates.X + MarioSpriteConstants.SMALLFLAGMARIODIMENSIONS.X,(int)mario.VectorCoordinates.Y);
+                mario.MarioState = new SmallFlagPoleFlippedState(mario);
             }
 
             public void Mushroom()

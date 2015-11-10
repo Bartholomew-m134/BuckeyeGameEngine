@@ -83,7 +83,7 @@ namespace Game.Collisions
             }
             else if ((collision.GameObjectA is IMario && collision.GameObjectB is IFlagPole) || (collision.GameObjectA is IFlagPole && collision.GameObjectB is IMario))
             {
-                MarioFlagPoleCollisionHandler collisionHandler = new MarioFlagPoleCollisionHandler(collision);
+                MarioFlagPoleCollisionHandler collisionHandler = new MarioFlagPoleCollisionHandler(collision, gameState);
                 collisionHandler.HandleCollision();
             }
         }

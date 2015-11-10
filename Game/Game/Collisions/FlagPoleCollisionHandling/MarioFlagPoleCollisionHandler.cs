@@ -18,10 +18,12 @@ namespace Game.Collisions.FlagPoleCollisionHandling
         private IFlagPole collidingFlagPole;
         private IMario collidingMario;
         private CollisionData collision;
+        private IGameState gameState;
 
-        public MarioFlagPoleCollisionHandler(CollisionData collision)
+        public MarioFlagPoleCollisionHandler(CollisionData collision, IGameState gameState)
         {
             this.collision = collision;
+            this.gameState = gameState;
             if (collision.GameObjectA is IFlagPole)
             {
                 collidingFlagPole = (IFlagPole)collision.GameObjectA;
@@ -40,6 +42,7 @@ namespace Game.Collisions.FlagPoleCollisionHandling
             {
                 if (collidingFlagPole is InvisibleFlagPoleBarrier && collision.CollisionSide is RightSideCollision)
                 {
+                    gameState.FlagPoleTransition();
                     BackgroundThemeManager.PlayFlagPoleVictoryTheme();
                     SoundEffectManager.FlagPoleEffect();
                     collidingMario.PoleSlide();

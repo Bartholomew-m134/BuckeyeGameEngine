@@ -113,6 +113,7 @@
     <Compile Include="FlagPoles\FlagPoleSprites\InactiveFlagPoleSprite.cs" />
     <Compile Include="FlagPoles\InvisibleFlagPoleBarrier.cs" />
     <Compile Include="FlagPoles\FlagPoleSprites\InvisibleFlagPoleBarrierSprite.cs" />
+    <Compile Include="GameStates\FlagPoleVictoryGameState.cs" />
     <Compile Include="GameStates\LoadingGameState.cs" />
     <Compile Include="GameStates\MenuGameState.cs" />
     <Compile Include="GameStates\NormalMarioGameState.cs" />
@@ -182,8 +183,14 @@
     <Compile Include="Mario\FireThrowRightMario.cs" />
     <Compile Include="Mario\GrowMario.cs" />
     <Compile Include="Mario\HurtMario.cs" />
+    <Compile Include="Mario\MarioSprites\FireFlagPoleFlippedSprite.cs" />
     <Compile Include="Mario\MarioSprites\FireThrowLeftSprite.cs" />
     <Compile Include="Mario\MarioSprites\FireThrowRightSprite.cs" />
+    <Compile Include="Mario\MarioSprites\NormalFlagPoleFlippedSprite.cs" />
+    <Compile Include="Mario\MarioSprites\SmallFlagPoleFlippedSprite.cs" />
+    <Compile Include="Mario\MarioStates\FireFlagPoleFlippedState.cs" />
+    <Compile Include="Mario\MarioStates\NormalFlagPoleFlippedState.cs" />
+    <Compile Include="Mario\MarioStates\SmallFlagPoleFlippedState.cs" />
     <Compile Include="Music\BackgroundThemeManager.cs" />
     <Compile Include="Music\DeathTheme.cs" />
     <Compile Include="Music\FlagPoleVictoryTheme.cs" />

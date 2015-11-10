@@ -103,12 +103,17 @@ namespace Game.Utilities.Constants
         public static readonly Vector2 SMALLRIGHTJUMPDIMENSIONS = new Vector2(16, 15);
         public static readonly Vector2 SMALLRIGHTTWISTSOURCE = new Vector2(331, 0);
         public static readonly Vector2 SMALLRIGHTTWISTDIMENSIONS = new Vector2(16, 15);
-
         public static readonly Vector2 FIRSTSMALLRIGHTRUNNINGSOURCE = new Vector2(241,0);
         public static readonly Vector2 SECONDSMALLRIGHTRUNNINGSOURCE = new Vector2(272,0);
         public static readonly Vector2 THIRDSMALLRIGHTRUNNINGSOURCE = new Vector2(300,0);
         public static readonly Vector2 FIRSTSMALLRIGHTRUNNINGDIMENSIONS = new Vector2(16, 14);
         public static readonly Vector2 SECONDSMALLRIGHTRUNNINGDIMENSIONS = new Vector2(16, 15);
         public static readonly Vector2 THIRDSMALLRIGHTRUNNINGDIMENSIONS = new Vector2(16, 15);
+        public static readonly Vector2 FIREFLAGFLIPPEDSOURCE = new Vector2(28,159);
+        public static readonly Vector2 FIREFLAGFLIPPEDDIMENSIONS = new Vector2(14,30);
+        public static readonly Vector2 NORMALFLAGFLIPPEDSOURCE = new Vector2(28, 89);
+        public static readonly Vector2 NORMALFLAGFLIPPEDDIMENSIONS = new Vector2(14, 30);
+        public static readonly Vector2 SMALLFLAGFLIPPEDSOURCE = new Vector2(61,30);
+        public static readonly Vector2 SMALLFLAGFLIPPEDDIMENSIONS = new Vector2(13,15);
     }
 }

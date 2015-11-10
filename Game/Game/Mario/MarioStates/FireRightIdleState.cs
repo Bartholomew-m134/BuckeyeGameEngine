@@ -78,6 +78,10 @@ namespace Game.Mario.MarioStates
         {
 
         }
+        public void FlipAroundPole()
+        {
+
+        }
 
         public void Mushroom()
         {

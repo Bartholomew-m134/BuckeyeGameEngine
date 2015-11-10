@@ -80,5 +80,8 @@ namespace Game.GameStates
         {
             game.gameState = prevGameState;
         }
+        public void FlagPoleTransition()
+        {
+        }
     }
 }

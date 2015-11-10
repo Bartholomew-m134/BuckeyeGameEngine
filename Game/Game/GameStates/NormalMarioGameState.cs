@@ -84,6 +84,9 @@ namespace Game.GameStates
             isUnderground = !isUnderground;
             game.gameState = new PipeTransitioningGameState(warpLocation, game);
         }
-
+        public void FlagPoleTransition()
+        {
+            game.gameState = new FlagPoleVictoryGameState(game);
+        }
     }
 }

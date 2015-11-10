@@ -82,6 +82,10 @@ namespace Game.Mario.MarioStates
         {
             mario.MarioState = new NormalFlagPoleSlidingState(mario);
         }
+        public void FlipAroundPole()
+        {
+
+        }
 
         public void Mushroom()
         {

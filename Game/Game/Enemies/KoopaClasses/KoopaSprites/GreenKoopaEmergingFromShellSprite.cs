@@ -23,14 +23,15 @@ namespace Game.Enemies.KoopaClasses.GreenKoopaSprites
                 currentFrame++;
                 if (currentFrame == EnemySpriteConstants.TOTALKOOPAEMERGINGFRAMES)
                     currentFrame = EnemySpriteConstants.RESETTOZERO;
+                Console.WriteLine(currentFrame);
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Rectangle sourceRectangle = new Rectangle((int)EnemySpriteConstants.KOOPAEMERGINGFRAMES[currentFrame].X, (int)EnemySpriteConstants.KOOPAEMERGINGFRAMES[currentFrame].Y,
-                (int)EnemySpriteConstants.KOOPAEMERGINGFRAMES[currentFrame].X, (int)EnemySpriteConstants.KOOPAEMERGINGFRAMES[currentFrame].Y);
+                (int)EnemySpriteConstants.KOOPAEMERGINGDIMENSIONS[currentFrame].X, (int)EnemySpriteConstants.KOOPAEMERGINGDIMENSIONS[currentFrame].Y);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
-                (int)EnemySpriteConstants.KOOPAEMERGINGFRAMES[currentFrame].X, (int)EnemySpriteConstants.KOOPAEMERGINGFRAMES[currentFrame].Y);
+                (int)EnemySpriteConstants.KOOPAEMERGINGDIMENSIONS[currentFrame].X, (int)EnemySpriteConstants.KOOPAEMERGINGDIMENSIONS[currentFrame].Y);
 
             spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);

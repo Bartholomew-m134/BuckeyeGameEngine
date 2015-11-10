@@ -26,12 +26,15 @@ namespace Game.Utilities.Constants
         public static readonly Vector2 SECONDGOOMBAWALKINGRIGHTSOURCE = new Vector2(30, 4);
         public static readonly Vector2[] GOOMBAWALKINGRIGHTFRAMES = new Vector2[4] {FIRSTGOOMBAWALKINGRIGHTSOURCE, 
             FIRSTGOOMBAWALKINGRIGHTSOURCE, SECONDGOOMBAWALKINGRIGHTSOURCE, SECONDGOOMBAWALKINGRIGHTSOURCE };
+
         public static readonly Vector2 FIRSTKOOPAEMERGINGSOURCE = new Vector2(361,5);
         public static readonly Vector2 SECONDKOOPAEMERGINGSOURCE = new Vector2(331,4);
         public static readonly Vector2 FIRSTKOOPAEMERGINGDIMENSIONS = new Vector2(14,13);
         public static readonly Vector2 SECONDKOOPAEMERGINGDIMENSIONS = new Vector2(14,15);
-        public static readonly Vector2[] KOOPAEMERGINGFRAMES = new Vector2[4] { FIRSTKOOPAEMERGINGSOURCE, 
-            FIRSTKOOPAEMERGINGSOURCE, SECONDKOOPAEMERGINGSOURCE, SECONDKOOPAEMERGINGSOURCE };
+        public static readonly Vector2[] KOOPAEMERGINGFRAMES = new Vector2[2] { FIRSTKOOPAEMERGINGSOURCE,
+            SECONDKOOPAEMERGINGSOURCE };
+        public static readonly Vector2[] KOOPAEMERGINGDIMENSIONS= new Vector2[2] { FIRSTKOOPAEMERGINGDIMENSIONS,SECONDKOOPAEMERGINGDIMENSIONS };
+
         public static readonly Vector2 KOOPAFLIPPEDSOURCE = new Vector2(361,5);
         public static readonly Vector2 KOOPAFLIPPEDDIMENSIONS = new Vector2(14,13);
         public static readonly Vector2 KOOPAHIDINGSOURCE = new Vector2(361, 5);

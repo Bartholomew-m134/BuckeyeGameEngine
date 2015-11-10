@@ -191,5 +191,17 @@ namespace Game.SpriteFactories
         {
             return new SmallFlagPoleSlidingSprite(marioSpriteSheet);
         }
+        public static ISprite CreateNormalFlagPoleFlippedSprite()
+        {
+            return new NormalFlagPoleFlippedSprite(marioSpriteSheet);
+        }
+        public static ISprite CreateFireFlagPoleFlippedSprite()
+        {
+            return new FireFlagPoleFlippedSprite(marioSpriteSheet);
+        }
+        public static ISprite CreateSmallFlagPoleFlippedSprite()
+        {
+            return new SmallFlagPoleFlippedSprite(marioSpriteSheet);
+        }
     }
 }

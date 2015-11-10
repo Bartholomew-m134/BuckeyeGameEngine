@@ -56,6 +56,8 @@ namespace Game.GameStates
         {
             game.gameState = new PipeTransitioningGameState(warpLocation, game);
         }
-
+        public void FlagPoleTransition()
+        {
+        }
     }
 }

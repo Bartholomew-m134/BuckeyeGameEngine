@@ -1,38 +1,26 @@
-﻿using System;
+﻿using Game.Interfaces;
+using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Game.Mario;
-using Microsoft.Xna.Framework;
-using Game.Interfaces;
-using Game.Utilities;
 
 namespace Game.Mario.MarioStates
 {
-    public class SmallLeftTwistState : IMarioState
+    class FireFlagPoleFlippedState : IMarioState
     {
-
         private IMario mario;
 
-        public SmallLeftTwistState(IMario mario)
+        public FireFlagPoleFlippedState(IMario mario)
         {
             this.mario = mario;
-            mario.Sprite = SpriteFactories.MarioSpriteFactory.CreateSmallLeftTwistSprite();
+            mario.Sprite = SpriteFactories.MarioSpriteFactory.CreateFireFlagPoleFlippedSprite();
         }
-
         public void Update()
         {
             mario.Sprite.Update();
-
-            if (mario.Physics.Velocity.X > 0)
-            {
-                mario.Physics.DampenRight();
-            }
-            else if (mario.Physics.Velocity.X <= 0)
-            {
-                mario.MarioState = new SmallLeftIdleState(mario);
-            }
         }
+
         public void Left()
         {
 
@@ -40,7 +28,7 @@ namespace Game.Mario.MarioStates
 
         public void Right()
         {
-            mario.MarioState = new SmallRightIdleState(mario);
+            mario.MarioState = new FireRightRunningState(mario);
         }
 
         public void Up()
@@ -55,8 +43,7 @@ namespace Game.Mario.MarioStates
 
         public void Jump()
         {
-
-            mario.MarioState = new SmallLeftJumpingState(mario);
+            mario.MarioState = new FireLeftJumpingState(mario);
         }
 
         public void StopJumping()
@@ -65,23 +52,11 @@ namespace Game.Mario.MarioStates
 
         public void Flower()
         {
-            mario.MarioState = new FireLeftTwistState(mario);
-
-        }
-
-        public void PoleSlide()
-        {
-            mario.MarioState = new SmallFlagPoleSlidingState(mario);
-        }
-        public void FlipAroundPole()
-        {
 
         }
 
         public void Mushroom()
         {
-            mario.MarioState = new NormalLeftTwistState(mario);
-            mario.VectorCoordinates += new Vector2(0, -16);
         }
 
         public void Star()
@@ -89,22 +64,28 @@ namespace Game.Mario.MarioStates
 
         }
 
+        public void PoleSlide()
+        {
+
+        }
+        public void FlipAroundPole()
+        {
+            mario.MarioState = new FireFlagPoleFlippedState(mario);
+        }
+
         public void Damage()
         {
-            ScoreManager.ResetScore();
-            mario.MarioState = new DeadMarioState(mario);
+
         }
 
         public bool IsBigMario()
         {
-            return false;
-            
-            
+            return true;
         }
 
         public bool IsFireMario()
         {
-            return false;
+            return true;
         }
 
         public bool IsRight()
@@ -114,6 +95,7 @@ namespace Game.Mario.MarioStates
 
         public void ToIdle()
         {
+            mario.Right();
         }
 
         public bool IsJumping()

@@ -21,6 +21,8 @@ namespace Game.Interfaces
 
         void PipeTransition(Vector2 warpLocation);
 
+        void FlagPoleTransition();
+
 
     }
 }

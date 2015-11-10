@@ -79,6 +79,10 @@ namespace Game.Mario.MarioStates
         {
             mario.MarioState = new SmallFlagPoleSlidingState(mario);
         }
+        public void FlipAroundPole()
+        {
+            mario.MarioState = new SmallRightRunningState(mario);
+        }
 
         public void Mushroom()
         {
