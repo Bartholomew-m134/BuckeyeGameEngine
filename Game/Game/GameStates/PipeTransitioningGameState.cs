@@ -57,7 +57,7 @@ namespace Game.GameStates
                 Console.WriteLine(warpLocation);
                 
                 WorldManager.GetMario().VectorCoordinates = warpLocation;
-                ((NormalMarioGameState)(game.gameState)).camera.Update(WorldManager.GetMario());
+                //((NormalMarioGameState)(game.gameState)).camera.Update(WorldManager.GetMario());
                 Console.WriteLine(WorldManager.GetMario().VectorCoordinates);
                 
                 
@@ -79,6 +79,11 @@ namespace Game.GameStates
         public void PipeTransition(Vector2 warpLocation)
         {
             game.gameState = prevGameState;
+        }
+
+        public void PlayerDied()
+        {
+
         }
     }
 }

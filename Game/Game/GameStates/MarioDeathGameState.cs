@@ -1,6 +1,5 @@
 ﻿using Game.Interfaces;
 using Game.Utilities;
-using Game.Utilities.Controls;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -10,24 +9,23 @@ using System.Text;
 
 namespace Game.GameStates
 {
-    public class PauseGameState : IGameState
+    public class MarioDeathGameState : IGameState
     {
         private Game1 game;
         private IGameState prevGameState;
-        private List<IController> controllerList;
+        private System.Diagnostics.Stopwatch timer;
 
-        public PauseGameState(Game1 game)
+       public MarioDeathGameState(Game1 game)
         {
             this.game = game;
             prevGameState = game.gameState;
-            controllerList = new List<IController>();
-            controllerList.Add(new KeyboardController(new PausedControls(game)));
-            controllerList.Add(new GamePadController(new PausedControls(game)));
-        }
 
+            timer = new System.Diagnostics.Stopwatch();
+            timer.Start();
+        }
         public void LoadContent()
         {
-            
+
         }
 
         public void UnloadContent()
@@ -36,9 +34,24 @@ namespace Game.GameStates
         }
 
         public void Update()
-        {
-            foreach (IController controller in controllerList)
-                controller.Update();
+        {      
+            WorldManager.GetMario().Update();
+
+            if (timer.ElapsedMilliseconds > 1500)
+            {
+                timer.Reset();
+                LifeManager.DecrementLives();
+
+                if (LifeManager.Lives > 0)
+                {
+                    game.gameState = new LoadingGameState(game);
+                    game.gameState.LoadContent();
+                }
+                else
+                {
+
+                }
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -48,13 +61,12 @@ namespace Game.GameStates
 
         public void StartButton()
         {
-            game.gameState = prevGameState;
-        }
 
+        }
 
         public void PipeTransition(Vector2 warpLocation)
         {
-            game.gameState = new PipeTransitioningGameState(warpLocation, game);
+
         }
 
         public void PlayerDied()
