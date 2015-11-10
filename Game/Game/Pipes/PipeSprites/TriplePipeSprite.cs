@@ -6,47 +6,36 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
+using Game.Utilities.Constants;
 
 namespace Game.Pipes.PipeSprites
 {
     class TriplePipeSprite : ISprite
     {
-        private int width;
-        private int height;
-        private int sourceX;
-        private int sourceY;
         private Texture2D Texture { get; set; }
 
         public TriplePipeSprite(Texture2D texture)
         {
             Texture = texture;
-
-            width = 32;
-            height = 64;
-            sourceX = 230;
-            sourceY = 385;
-
         }
 
         public void Update()
         {
-
         }
-
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle(sourceX, sourceY, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
-
+            Rectangle sourceRectangle = new Rectangle((int)PipeSpriteConstants.TRIPLEPIPESOURCE.X, (int)PipeSpriteConstants.TRIPLEPIPESOURCE.Y,
+                (int)PipeSpriteConstants.TRIPLEPIPEDIMENSIONS.X, (int)PipeSpriteConstants.TRIPLEPIPEDIMENSIONS.Y);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
+                (int)PipeSpriteConstants.TRIPLEPIPEDIMENSIONS.X, (int)PipeSpriteConstants.TRIPLEPIPEDIMENSIONS.Y);
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
-
         }
 
         public Vector2 SpriteDimensions
         {
-            get { return new Vector2(width, height); }
+            get { return new Vector2((int)PipeSpriteConstants.TRIPLEPIPEDIMENSIONS.X, (int)PipeSpriteConstants.TRIPLEPIPEDIMENSIONS.Y); }
         }
     }
 }

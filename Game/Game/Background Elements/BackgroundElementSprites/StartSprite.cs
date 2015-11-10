@@ -5,16 +5,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.Utilities.Constants;
 
 namespace Game.Background_Elements.BackgroundElementSprites
 {
     class StartSprite : ISprite
     {
         private Texture2D Texture;
-        private int width = 879;
-        private int height = 479;
-        private int sourceX = 104;
-        private int sourceY = 127;
         public StartSprite(Texture2D texture)
         {
             Texture = texture;
@@ -26,8 +23,10 @@ namespace Game.Background_Elements.BackgroundElementSprites
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle(sourceX, sourceY, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
+            Rectangle sourceRectangle = new Rectangle((int)BackgroundElementSpriteConstants.STARTSOURCE.X, (int)BackgroundElementSpriteConstants.STARTSOURCE.Y,
+                (int)BackgroundElementSpriteConstants.STARTDIMENSIONS.X, (int)BackgroundElementSpriteConstants.STARTDIMENSIONS.Y);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
+                (int)BackgroundElementSpriteConstants.STARTDIMENSIONS.X, (int)BackgroundElementSpriteConstants.STARTDIMENSIONS.Y);
             //float scale = .9f;
             spriteBatch.Begin();
             //spriteBatch.Draw(Texture, location, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
@@ -38,7 +37,7 @@ namespace Game.Background_Elements.BackgroundElementSprites
 
         public Vector2 SpriteDimensions
         {
-            get { return new Vector2(width, height); }
+            get { return new Vector2((int)BackgroundElementSpriteConstants.STARTDIMENSIONS.X, (int)BackgroundElementSpriteConstants.STARTDIMENSIONS.Y); }
         }
     }
 }
