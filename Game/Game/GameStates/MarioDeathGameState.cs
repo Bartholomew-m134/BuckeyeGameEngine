@@ -73,5 +73,11 @@ namespace Game.GameStates
         {
             
         }
+
+
+        public void FlagPoleTransition()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

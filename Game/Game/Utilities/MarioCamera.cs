@@ -11,9 +11,8 @@ namespace Game.Utilities
     public class MarioCamera : ICamera
     {
         private readonly Vector2 DIMENSIONS = new Vector2(800, 480);
-        private readonly Vector2 UPDATE_ZONE_DIMENSIONS = new Vector2(160, 800);
         private const float LEFT_UPDATE_ZONE_DIMENSIONS = 160;
-        private const float RIGHT_UPDATE_ZONE_DIMENSIONS = 160;
+        private const float RIGHT_UPDATE_ZONE_DIMENSIONS = 100;
         private const float UP_UPDATE_ZONE_DIMENSIONS = 100;
         private const float BOTTOM_UPDATE_ZONE_DIMENSIONS = 1600;
 
@@ -100,6 +99,9 @@ namespace Game.Utilities
 
             if (marioLocation.X > cameraLocation.X + DIMENSIONS.X / 2 || difference.Y != 0)
                 cameraLocation = Vector2.Add(cameraLocation, difference);
+
+            if (cameraLocation.Y < 0)
+                cameraLocation.Y = 0;
 
             prevMarioLocation = marioLocation;
         }
