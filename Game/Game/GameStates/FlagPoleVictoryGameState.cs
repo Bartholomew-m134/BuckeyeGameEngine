@@ -21,6 +21,7 @@ namespace Game.GameStates
         private List<IController> controllerList;
         private bool slidingDownPole = true;
         private bool hasJumpedOffPole = false;
+        private bool hasWalkedIntoCastle = false;
 
         public FlagPoleVictoryGameState(Game1 game)
         {
@@ -64,9 +65,24 @@ namespace Game.GameStates
                         WorldManager.GetMario().MarioState.FlipAroundPole();
                     }
                 }
-                else if (hasJumpedOffPole && !(slidingDownPole))
+                else if (hasJumpedOffPole && !(slidingDownPole) && !(hasWalkedIntoCastle))
                 {
                     WorldManager.GetMario().Physics.Velocity = new Vector2(5,0);
+                    WorldManager.GetMario().Physics.Acceleration = new Vector2(0, 0);
+                    WorldManager.GetMario().Update();
+                    Console.WriteLine(WorldManager.GetMario().VectorCoordinates.X);
+                    if (WorldManager.GetMario().VectorCoordinates.X>=3248)
+                    {
+                        hasWalkedIntoCastle = true;
+                        WorldManager.GetMario().Physics.Velocity = new Vector2(0, 0);
+                        WorldManager.GetMario().Physics.Acceleration = new Vector2(0, 0);
+                        WorldManager.GetMario().Update();
+                    }
+                }
+                else if (hasJumpedOffPole && !(slidingDownPole) && hasWalkedIntoCastle)
+                {
+                    WorldManager.GetMario().ToIdle();
+                    WorldManager.GetMario().Physics.Velocity = new Vector2(0, 0);
                     WorldManager.GetMario().Physics.Acceleration = new Vector2(0, 0);
                     WorldManager.GetMario().Update();
                 }
