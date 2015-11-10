@@ -315,6 +315,7 @@
     <Compile Include="Utilities\Constants\BlockSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\EnemySpriteConstants.cs" />
     <Compile Include="Utilities\Constants\FlagPoleSpriteConstants.cs" />
+    <Compile Include="Utilities\Constants\CameraConstants.cs" />
     <Compile Include="Utilities\Constants\HUDConstants.cs" />
     <Compile Include="Utilities\Constants\ItemSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\MarioSpriteConstants.cs" />

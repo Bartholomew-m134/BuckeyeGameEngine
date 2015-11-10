@@ -1,4 +1,5 @@
 ﻿using Game.Interfaces;
+using Game.Utilities.Constants;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,11 @@ namespace Game.Utilities
     public class MarioCamera : ICamera
     {
         private readonly Vector2 DIMENSIONS = new Vector2(800, 480);
-        private readonly Vector2 UPDATE_ZONE_DIMENSIONS = new Vector2(160, 48);
+        private readonly Vector2 UPDATE_ZONE_DIMENSIONS = new Vector2(160, 1600);
+        private const float LEFT_UPDATE_ZONE_DIMENSIONS = 160;
+        private const float RIGHT_UPDATE_ZONE_DIMENSIONS = 160;
+        private const float UP_UPDATE_ZONE_DIMENSIONS = 100;
+        private const float BOTTOM_UPDATE_ZONE_DIMENSIONS = 1600;
 
         private Vector2 cameraLocation;
         private Vector2 prevMarioLocation;
@@ -44,13 +49,13 @@ namespace Game.Utilities
 
         public bool IsWithinUpdateZone(Vector2 position)
         {
-            float rightBound = cameraLocation.X + DIMENSIONS.X + UPDATE_ZONE_DIMENSIONS.X;
-            float leftBound = cameraLocation.X - UPDATE_ZONE_DIMENSIONS.X;
+            float rightBound = cameraLocation.X + DIMENSIONS.X + RIGHT_UPDATE_ZONE_DIMENSIONS;
+            float leftBound = cameraLocation.X - LEFT_UPDATE_ZONE_DIMENSIONS;
 
-            float lowerBound = cameraLocation.Y + DIMENSIONS.Y + UPDATE_ZONE_DIMENSIONS.Y;
-            float upperBound = cameraLocation.Y - UPDATE_ZONE_DIMENSIONS.Y;
+            float lowerBound = cameraLocation.Y + DIMENSIONS.Y + BOTTOM_UPDATE_ZONE_DIMENSIONS;
+            float upperBound = cameraLocation.Y - UP_UPDATE_ZONE_DIMENSIONS;
 
-            return leftBound < position.X && position.X < rightBound && upperBound < position.Y && position.Y < lowerBound;
+            return leftBound < position.X && position.X < rightBound && position.Y < lowerBound;
         }
 
         public bool IsWithinReleaseZone(Vector2 position)
@@ -87,12 +92,13 @@ namespace Game.Utilities
         {
             Vector2 difference = Vector2.Subtract(marioLocation, prevMarioLocation);
 
-            difference.Y = 0;
+            if(Math.Abs(difference.Y) < CameraConstants.SCREENDIMENSIONS.Y)
+                difference.Y = 0;
 
             if (difference.X < 0)
                 difference.X = 0;
 
-            if (marioLocation.X > cameraLocation.X + DIMENSIONS.X / 2)
+            if (marioLocation.X > cameraLocation.X + DIMENSIONS.X / 2 || difference.Y != 0)
                 cameraLocation = Vector2.Add(cameraLocation, difference);
 
             prevMarioLocation = marioLocation;

@@ -1,5 +1,6 @@
 ﻿using Game.Interfaces;
 using Game.Utilities;
+using Game.Utilities.Constants;
 using Game.Utilities.Controls;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -54,8 +55,11 @@ namespace Game.GameStates
                 
                 game.gameState = prevGameState;
                 Console.WriteLine(warpLocation);
+                
                 WorldManager.GetMario().VectorCoordinates = warpLocation;
+                ((NormalMarioGameState)(game.gameState)).camera.Update(WorldManager.GetMario());
                 Console.WriteLine(WorldManager.GetMario().VectorCoordinates);
+                
                 
                 
             }
