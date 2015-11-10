@@ -88,5 +88,10 @@ namespace Game.GameStates
         {
             game.gameState = new FlagPoleVictoryGameState(game);
         }
+
+        public void PlayerDied()
+        {
+            game.gameState = new MarioDeathGameState(game);
+        }
     }
 }

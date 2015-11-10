@@ -72,5 +72,11 @@ namespace Game.GameStates
         public void FlagPoleTransition()
         {
         }
+
+
+        public void PlayerDied()
+        {
+            
+        }
     }
 }
