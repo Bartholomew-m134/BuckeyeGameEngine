@@ -54,14 +54,9 @@ namespace Game.GameStates
             {
                 
                 game.gameState = prevGameState;
-                Console.WriteLine(warpLocation);
-                
+                Console.WriteLine(warpLocation);                
                 WorldManager.GetMario().VectorCoordinates = warpLocation;
-                //((NormalMarioGameState)(game.gameState)).camera.Update(WorldManager.GetMario());
-                Console.WriteLine(WorldManager.GetMario().VectorCoordinates);
-                
-                
-                
+                prevGameState.IsUnderground = !prevGameState.IsUnderground;
             }
         }
 
@@ -80,13 +75,28 @@ namespace Game.GameStates
         {
             game.gameState = prevGameState;
         }
+
         public void FlagPoleTransition()
         {
+
         }
 
         public void PlayerDied()
         {
 
+        }
+
+
+        public bool IsUnderground
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
         }
     }
 }

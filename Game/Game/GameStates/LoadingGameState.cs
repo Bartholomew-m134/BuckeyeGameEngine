@@ -33,7 +33,7 @@ namespace Game.GameStates
             MarioSpriteFactory.Load(game.Content);
             ItemsSpriteFactory.Load(game.Content);
 
-            marioSprite = MarioSpriteFactory.CreateNormalRightIdleSprite();
+            marioSprite = MarioSpriteFactory.CreateSmallRightIdleSprite();
             font = MenuSpriteFactory.CreateHUDFont();            
         }
 
@@ -80,6 +80,19 @@ namespace Game.GameStates
         public void PlayerDied()
         {
             
+        }
+
+
+        public bool IsUnderground
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
         }
     }
 }

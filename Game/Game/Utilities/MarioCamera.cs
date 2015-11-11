@@ -100,7 +100,7 @@ namespace Game.Utilities
             if (marioLocation.X > cameraLocation.X + DIMENSIONS.X / 2 || difference.Y != 0)
                 cameraLocation = Vector2.Add(cameraLocation, difference);
 
-            if (cameraLocation.Y < 0)
+            if (difference.Y < 0)
                 cameraLocation.Y = 0;
 
             prevMarioLocation = marioLocation;

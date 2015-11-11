@@ -119,5 +119,18 @@ namespace Game.GameStates
         {
             
         }
+
+
+        public bool IsUnderground
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }

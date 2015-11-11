@@ -23,7 +23,8 @@ namespace Game.Interfaces
 
         void FlagPoleTransition();
 
-
         void PlayerDied();
+
+        bool IsUnderground { get; set; }
     }
 }
