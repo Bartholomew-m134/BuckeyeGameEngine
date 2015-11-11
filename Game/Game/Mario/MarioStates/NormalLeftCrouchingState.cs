@@ -34,23 +34,13 @@ namespace Game.Mario.MarioStates
 
         public void Left()
         {
-            mario.MarioState = new NormalLeftRunningState(mario);
-            mario.VectorCoordinates += new Vector2(0, -10);
+            
         }
 
         public void Right()
         {
-            
-            mario.VectorCoordinates += new Vector2(0, -10);
 
-            if (mario.Physics.Velocity.X < 0)
-            {
-                mario.MarioState = new NormalRightTwistState(mario);
-            }
-            else
-            {
-                mario.MarioState = new NormalRightIdleState(mario);
-            }
+            mario.MarioState = new NormalRightCrouchingState(mario);
         }
 
         public void Up()
