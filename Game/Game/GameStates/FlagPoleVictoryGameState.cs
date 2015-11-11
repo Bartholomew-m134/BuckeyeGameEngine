@@ -60,8 +60,8 @@ namespace Game.GameStates
                 else if (timer >= 350 && timer < 600 && !(hasJumpedOffPole))
                 {
                     tempMario.MarioState.Jump();
-                    tempMario.Physics.Velocity = new Vector2(3, 5);
-                    if ((tempMario.VectorCoordinates.Y + tempMario.Sprite.SpriteDimensions.Y) > 448)
+                    tempMario.Physics.Velocity = new Vector2(4, 5);
+                    if ((tempMario.VectorCoordinates.Y + tempMario.Sprite.SpriteDimensions.Y) > 440)
                     {
                         hasJumpedOffPole = true;
                         tempMario.MarioState.FlipAroundPole();
