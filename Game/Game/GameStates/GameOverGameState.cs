@@ -45,7 +45,7 @@ namespace Game.GameStates
         {
             game.GraphicsDevice.Clear(Color.Black);
             spriteBatch.Begin();
-            spriteBatch.DrawString(font, "Game Over", new Vector2(400, 200), Color.White);
+            spriteBatch.DrawString(font, "Game Over", new Vector2(320, 200), Color.White);
             spriteBatch.End();
         }
 

@@ -25,7 +25,6 @@ namespace Game.GameStates
             controllerList = new List<IController>();
             controllerList.Add(new KeyboardController(new PausedControls(game)));
             controllerList.Add(new GamePadController(new PausedControls(game)));
-            //HUDManager.SetToInitalTime();
         }
 
         public void LoadContent()
@@ -35,7 +34,9 @@ namespace Game.GameStates
             ItemsSpriteFactory.Load(game.Content);
 
             marioSprite = MarioSpriteFactory.CreateSmallRightIdleSprite();
-            font = MenuSpriteFactory.CreateHUDFont();            
+            font = MenuSpriteFactory.CreateHUDFont();
+
+            HUDManager.SetToStartingTime();
         }
 
         public void UnloadContent()
