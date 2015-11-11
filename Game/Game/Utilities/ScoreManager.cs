@@ -88,6 +88,11 @@ namespace Game.Utilities
                 return ScoreManagerConstants.STOMPSEQUENCE[stompSequenceIndex];
         }
 
+        public static void HandleRemainingTime()
+        {
+            ScoreManager.IncreaseScore(HUDManager.RemainingTime() * ScoreManagerConstants.POINTSPERREMAININGSECOND);
+        }
+
         public static int HandleFlagPoleRange(int marioFootLocation)
         {
             if (marioFootLocation >= ScoreManagerConstants.ZONEONEYCOORDINATE && marioFootLocation < ScoreManagerConstants.ZONETWOYCOORDINATE)

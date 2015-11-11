@@ -32,5 +32,6 @@ namespace Game.Utilities.Constants
         public const int STOMPSEQUENCEMAXINDEX = 10;
         public const int SHELLSEQUENCEMAXINDEX = 7;
         public const int MINIMUMSTREAKINDEX = 0;
+        public const int POINTSPERREMAININGSECOND = 50;
     }
 }

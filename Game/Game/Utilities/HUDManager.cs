@@ -19,8 +19,8 @@ namespace Game.Utilities
         private static ISprite coin= (CoinSprite)SpriteFactories.ItemsSpriteFactory.CreateCoinSprite();
         private static int scoreToPrint;
         private static int coinsToPrint;
-        private static int timeToPrint = HUDConstants.STARTINGTIME;
         private static int updateTimerCounter = HUDConstants.RESETUPDATEDELAYCOUNTER;
+        private static int timeToPrint = HUDConstants.STARTINGTIME;
 
         public static void UpdateHUDScore(int scoreToAdd)
         {
@@ -32,6 +32,9 @@ namespace Game.Utilities
             if (coinsToPrint % HUDConstants.COINSPERLIFE== HUDConstants.ZEROREMAINDER){
                 LifeManager.IncrementLives();
             }
+        }
+        public static int RemainingTime(){
+            return timeToPrint;
         }
         public static void UpdateHUDTime()
         {
