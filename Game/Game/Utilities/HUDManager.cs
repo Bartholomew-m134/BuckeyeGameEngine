@@ -71,5 +71,10 @@ namespace Game.Utilities
             spriteBatch.End();
 
         }
+
+        internal static void SetToStartingTime()
+        {
+            timeToPrint = HUDConstants.STARTINGTIME;
+        }
     }
 }

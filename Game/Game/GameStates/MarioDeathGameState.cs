@@ -49,7 +49,8 @@ namespace Game.GameStates
                 }
                 else
                 {
-
+                    game.gameState = new GameOverGameState(game);
+                    game.gameState.LoadContent();
                 }
             }
         }

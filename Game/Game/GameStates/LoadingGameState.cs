@@ -34,7 +34,9 @@ namespace Game.GameStates
             ItemsSpriteFactory.Load(game.Content);
 
             marioSprite = MarioSpriteFactory.CreateSmallRightIdleSprite();
-            font = MenuSpriteFactory.CreateHUDFont();            
+            font = MenuSpriteFactory.CreateHUDFont();
+
+            HUDManager.SetToStartingTime();
         }
 
         public void UnloadContent()
@@ -53,10 +55,10 @@ namespace Game.GameStates
             game.GraphicsDevice.Clear(Color.Black);
             HUDManager.DrawHUD(spriteBatch);
 
-            marioSprite.Draw(spriteBatch, new Vector2(370, 200));
+            marioSprite.Draw(spriteBatch, new Vector2(370, 215));
 
             spriteBatch.Begin();
-            spriteBatch.DrawString(font, "x 0", new Vector2(400, 200), Color.White);
+            spriteBatch.DrawString(font, "x " + LifeManager.Lives, new Vector2(400, 200), Color.White);
             spriteBatch.End();
         }
 
