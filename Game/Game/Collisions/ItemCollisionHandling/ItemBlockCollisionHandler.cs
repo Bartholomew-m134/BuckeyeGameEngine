@@ -54,7 +54,7 @@ namespace Game.Collisions.ItemCollisionHandling
                 else 
                 {
                     if (side is TopSideCollision)
-                        collidingItem.Physics.Velocity = new Microsoft.Xna.Framework.Vector2(collidingItem.Physics.Velocity.X, -8);
+                        collidingItem.Physics.Velocity = new Microsoft.Xna.Framework.Vector2(collidingItem.Physics.Velocity.X, CollisionHandlerConstants.STARBLOCKTOPSIDECOLLISION);
                     
                 }
             }
