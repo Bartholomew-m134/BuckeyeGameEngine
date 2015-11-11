@@ -13,7 +13,7 @@ namespace Game.Music
 {
     public class FlagPoleVictoryTheme : IMusic
     {
-        private Stream backgroundSoundFile = TitleContainer.OpenStream(@"Content\SoundTracks\06-level-complete.wav");
+        private Stream backgroundSoundFile = TitleContainer.OpenStream(@"Content\SoundTracks\carmen(8-bit).wav");
         private SoundEffect backgroundSoundEffect;
         private SoundEffectInstance instance;
 

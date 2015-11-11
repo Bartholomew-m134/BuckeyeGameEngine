@@ -10,6 +10,7 @@ using Game.GameStates;
 using Game.Utilities;
 using Game.Utilities.Constants;
 using Microsoft.Xna.Framework;
+using Game.SoundEffects;
 
 namespace Game.Collisions.PipeCollisionHandling
 {
@@ -53,6 +54,7 @@ namespace Game.Collisions.PipeCollisionHandling
                 warpPipeCoordinateOffsetRight += pipe.VectorCoordinates;
                 if (side is TopSideCollision && mario.IsPressingDown() && pipe.IsWarpPipe && ((warpPipeCoordinateOffsetLeft.X < mario.VectorCoordinates.X) && (mario.VectorCoordinates.X < warpPipeCoordinateOffsetRight.X)))
                 {
+                    SoundEffectManager.ShrinkingOrPipeEffect();
                     gameState.PipeTransition(pipe.WarpVectorCoordinates);
 
                 }
