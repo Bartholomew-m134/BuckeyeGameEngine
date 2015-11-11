@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Game.SoundEffects;
+using Game.Utilities.Constants;
 
 namespace Game.Enemies.GoombaClasses.GoombaStates
 {
@@ -14,8 +15,8 @@ namespace Game.Enemies.GoombaClasses.GoombaStates
         {
             this.goomba = goomba;
             SoundEffectManager.EnemyFlippedEffect();
-            goomba.Physics.Velocity = new Vector2(0, -5);
-            goomba.Physics.Acceleration = new Vector2(0, 1);
+            goomba.Physics.Velocity = new Vector2(0, EnemyStatesConstants.FLIPPEDYVELOCITY);
+            goomba.Physics.Acceleration = new Vector2(0, EnemyStatesConstants.GRAVITY);
             this.goomba.IsFlipped = true;
             this.goomba.Sprite = Game.SpriteFactories.EnemySpriteFactory.CreateGoombaFlippedSprite();
         }

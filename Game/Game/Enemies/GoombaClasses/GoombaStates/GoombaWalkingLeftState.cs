@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Game.Utilities.Constants;
 namespace Game.Enemies.GoombaClasses.GoombaStates
 {
     public class GoombaWalkingLeftState : IGoombaState
@@ -14,10 +14,7 @@ namespace Game.Enemies.GoombaClasses.GoombaStates
         {
             this.goomba = goomba;
             this.goomba.Sprite = Game.SpriteFactories.EnemySpriteFactory.CreateGoombaWalkingLeftSprite();
-
-            Vector2 velocity = this.goomba.Physics.Velocity;
-            velocity.X = -2;
-            this.goomba.Physics.Velocity = velocity;
+            goomba.Physics.Velocity = new Vector2(EnemyStatesConstants.WALKINGLEFTVELOCITY, 0);
         }
         public void SmashGoomba()
         {
