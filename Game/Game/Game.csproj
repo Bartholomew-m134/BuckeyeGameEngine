@@ -143,7 +143,6 @@
     <Compile Include="Commands\MarioCommands\FurtherRightMarioStanceCommand.cs" />
     <Compile Include="Commands\MarioCommands\RaiseMarioStanceCommand.cs" />
     <Compile Include="Commands\MarioCommands\LowerMarioStanceCommand.cs" />
-    <Compile Include="Commands\ResetToDefaultCommand.cs" />
     <Compile Include="Interfaces\IController.cs" />
     <Compile Include="Controllers\GamePadController.cs" />
     <Compile Include="Controllers\KeyboardController.cs" />

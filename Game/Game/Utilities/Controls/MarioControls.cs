@@ -35,7 +35,6 @@ namespace Game.Utilities.Controls
             keyboardControls.Add(Keys.Z, new RaiseMarioStanceCommand());
             keyboardControls.Add(Keys.X, new MarioRunFireBallCommand());
 
-            keyboardControls.Add(Keys.R, new ResetToDefaultCommand());
             keyboardControls.Add(Keys.P, new StartButtonCommand(game));
 
             return keyboardControls;
