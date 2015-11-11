@@ -336,6 +336,7 @@
     <Compile Include="Utilities\Constants\ItemConstants.cs" />
     <Compile Include="Utilities\Constants\ItemSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\MarioSpriteConstants.cs" />
+    <Compile Include="Utilities\Constants\MarioStateConstants.cs" />
     <Compile Include="Utilities\Constants\PipeSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\ProjectileConstants.cs" />
     <Compile Include="Utilities\Constants\ProjectileSpriteConstants.cs" />

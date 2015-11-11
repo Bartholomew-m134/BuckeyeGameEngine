@@ -6,6 +6,7 @@ using Game.Mario;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
 using Game.Utilities;
+using Game.Utilities.Constants;
 
 namespace Game.Mario.MarioStates
 {
