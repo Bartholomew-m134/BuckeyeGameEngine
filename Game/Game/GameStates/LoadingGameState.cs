@@ -25,6 +25,7 @@ namespace Game.GameStates
             controllerList = new List<IController>();
             controllerList.Add(new KeyboardController(new PausedControls(game)));
             controllerList.Add(new GamePadController(new PausedControls(game)));
+            //HUDManager.SetToInitalTime();
         }
 
         public void LoadContent()
@@ -53,10 +54,10 @@ namespace Game.GameStates
             game.GraphicsDevice.Clear(Color.Black);
             HUDManager.DrawHUD(spriteBatch);
 
-            marioSprite.Draw(spriteBatch, new Vector2(370, 200));
+            marioSprite.Draw(spriteBatch, new Vector2(370, 215));
 
             spriteBatch.Begin();
-            spriteBatch.DrawString(font, "x 0", new Vector2(400, 200), Color.White);
+            spriteBatch.DrawString(font, "x " + LifeManager.Lives, new Vector2(400, 200), Color.White);
             spriteBatch.End();
         }
 

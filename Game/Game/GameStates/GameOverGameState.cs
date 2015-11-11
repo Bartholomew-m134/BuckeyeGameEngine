@@ -1,6 +1,4 @@
 ﻿using Game.Interfaces;
-using Game.SpriteFactories;
-using Game.Utilities;
 using Game.Utilities.Controls;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -11,30 +9,26 @@ using System.Text;
 
 namespace Game.GameStates
 {
-    public class MenuGameState : IGameState
+    public class GameOverGameState : IGameState
     {
         private Game1 game;
-        private ISprite startMenuSprite;
-        private ISprite namesLogoSprite;
+        private IGameState prevGameState;
         private List<IController> controllerList;
-        private int logoCounter = 0;
+        private SpriteFont font;
 
-        public MenuGameState( Game1 game)
+        public GameOverGameState(Game1 game)
         {
             this.game = game;
+            prevGameState = game.gameState;
             controllerList = new List<IController>();
-            controllerList.Add(new KeyboardController(new MenuControls(game)));
-            controllerList.Add(new GamePadController(new MenuControls(game)));
-            LifeManager.Lives = 3;
+            controllerList.Add(new KeyboardController(new PausedControls(game)));
+            controllerList.Add(new GamePadController(new PausedControls(game)));
         }
 
         public void LoadContent()
         {
-            MenuSpriteFactory.Load(game.Content);
-            startMenuSprite = MenuSpriteFactory.CreateStartSprite();
-            namesLogoSprite = MenuSpriteFactory.CreateLogoSprite();
+            font = SpriteFactories.MenuSpriteFactory.CreateHUDFont();
         }
-
 
         public void UnloadContent()
         {
@@ -45,41 +39,36 @@ namespace Game.GameStates
         {
             foreach (IController controller in controllerList)
                 controller.Update();
-
-            logoCounter++;
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             game.GraphicsDevice.Clear(Color.Black);
-            if (logoCounter < 300)
-                namesLogoSprite.Draw(game.spriteBatch, Vector2.Zero);
-            else
-                startMenuSprite.Draw(game.spriteBatch, Vector2.Zero);
+            spriteBatch.Begin();
+            spriteBatch.DrawString(font, "Game Over", new Vector2(400, 200), Color.White);
+            spriteBatch.End();
         }
-
 
         public void StartButton()
         {
-            game.gameState = new LoadingGameState(game);
+            game.gameState = new MenuGameState(game);
             game.gameState.LoadContent();
         }
 
-
         public void PipeTransition(Vector2 warpLocation)
         {
-            game.gameState = new PipeTransitioningGameState(warpLocation, game);
-        }
-        public void FlagPoleTransition()
-        {
+            
         }
 
+        public void FlagPoleTransition()
+        {
+            
+        }
 
         public void PlayerDied()
         {
             
         }
-
 
         public bool IsUnderground
         {
