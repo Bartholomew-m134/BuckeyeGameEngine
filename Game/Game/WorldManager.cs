@@ -2,6 +2,7 @@
 using Game.Interfaces;
 using Game.Mario;
 using Game.Music;
+using Game.Utilities;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections;
@@ -96,7 +97,7 @@ namespace Game
 
         private static void ResetIfMarioIsDead()
         {
-            if (GetMario().MarioState is Mario.MarioStates.DeadMarioState)
+            if (GetMario().MarioState is Mario.MarioStates.DeadMarioState || !camera.IsWithinBounds(GetMario().VectorCoordinates) || HUDManager.OutOfTime)
                 FreeObject(GetMario());
         }
     }
