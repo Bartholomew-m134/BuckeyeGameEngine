@@ -83,6 +83,7 @@ namespace Game.GameStates
                     if (!haveAddedTimePoints){
                         ScoreManager.HandleRemainingTime();
                         haveAddedTimePoints = true;
+                        HUDManager.SetTimeToZero();
                     }
                     tempMario.ToIdle();
                     tempMario.Physics.Velocity = new Vector2(0, 0);

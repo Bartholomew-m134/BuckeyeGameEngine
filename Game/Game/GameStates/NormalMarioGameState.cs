@@ -69,6 +69,7 @@ namespace Game.GameStates
             if (HUDManager.OutOfTime)
             {
                 WorldManager.GetMario().MarioState = new DeadMarioState(WorldManager.GetMario());
+                
             }
         }
 

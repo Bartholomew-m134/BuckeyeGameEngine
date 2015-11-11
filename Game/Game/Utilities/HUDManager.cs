@@ -19,7 +19,6 @@ namespace Game.Utilities
         private static int coinsToPrint;
         private static int updateTimerCounter = HUDConstants.RESETUPDATEDELAYCOUNTER;
         private static int timeToPrint = HUDConstants.STARTINGTIME;
-        private static bool outOfTime = false;
 
         public static void UpdateHUDScore(int scoreToAdd)
         {
@@ -38,9 +37,6 @@ namespace Game.Utilities
         public static void UpdateHUDTime()
         {
             timeToPrint -= HUDConstants.INCREMENTBYONE;
-            if (timeToPrint == 0){
-                outOfTime = true;
-            }
         }
         public static void Update()
         {
@@ -71,14 +67,18 @@ namespace Game.Utilities
             spriteBatch.End();
 
         }
-        internal static void SetToStartingTime()
+        public static void SetToStartingTime()
         {
             timeToPrint = HUDConstants.STARTINGTIME;
         }
 
+        public static void SetTimeToZero()
+        {
+            timeToPrint = HUDConstants.RESETTOZERO;
+        }
         public static bool OutOfTime
         {
-            get { return outOfTime; }
+            get { return (timeToPrint<=0); }
         }
     }
 }

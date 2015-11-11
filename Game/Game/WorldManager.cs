@@ -97,7 +97,7 @@ namespace Game
 
         private static void ResetIfMarioIsDead()
         {
-            if (GetMario().MarioState is Mario.MarioStates.DeadMarioState || !camera.IsWithinBounds(GetMario().VectorCoordinates) || HUDManager.OutOfTime)
+            if (GetMario().MarioState is Mario.MarioStates.DeadMarioState || !camera.IsWithinBounds(GetMario().VectorCoordinates))
                 FreeObject(GetMario());
         }
     }
