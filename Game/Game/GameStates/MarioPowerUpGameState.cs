@@ -17,7 +17,8 @@ namespace Game.GameStates
         private List<IController> controllerList;
         ObjectPhysics storedPhysics;
         private int timer;
-
+        private int delay;
+        ICamera camera;
         public MarioPowerUpGameState(Game1 game)
         {
             this.game = game;
@@ -25,7 +26,7 @@ namespace Game.GameStates
             controllerList = new List<IController>();
             controllerList.Add(new KeyboardController(new PausedControls(game)));
             controllerList.Add(new GamePadController(new PausedControls(game)));
-
+            camera = ((NormalMarioGameState)prevGameState).camera;
             storedPhysics = WorldManager.GetMario().Physics;
 
             WorldManager.GetMario().Physics.Acceleration = Vector2.Zero;
@@ -44,17 +45,24 @@ namespace Game.GameStates
 
         public void Update()
         {
-            foreach (IController controller in controllerList)
-                controller.Update();
-
-            WorldManager.GetMario().Update();
-
-            if (timer > 40)
+            if (delay == 3)
             {
-                game.gameState = prevGameState;
-                WorldManager.GetMario().Physics.ResetPhysics();
+                foreach (IController controller in controllerList)
+                    controller.Update();
+
+                WorldManager.Update(camera);
+
+                if (timer > 10)
+                {
+                    game.gameState = prevGameState;
+
+                    WorldManager.GetMario().Physics.ResetPhysics();
+                }
+                timer++;
+                delay = 0;
             }
-            timer++;
+            else
+                delay++;
         }
 
         public void Draw(SpriteBatch spriteBatch)
