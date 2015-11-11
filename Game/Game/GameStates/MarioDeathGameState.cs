@@ -14,7 +14,7 @@ namespace Game.GameStates
         private Game1 game;
         private IGameState prevGameState;
         private System.Diagnostics.Stopwatch timer;
-
+        private int delay;
        public MarioDeathGameState(Game1 game)
         {
             this.game = game;
@@ -34,25 +34,31 @@ namespace Game.GameStates
         }
 
         public void Update()
-        {      
-            WorldManager.GetMario().Update();
-
-            if (timer.ElapsedMilliseconds > 1500)
+        {
+            if (delay == 3)
             {
-                timer.Reset();
-                LifeManager.DecrementLives();
+                WorldManager.GetMario().Update();
 
-                if (LifeManager.Lives > 0)
+                if (timer.ElapsedMilliseconds > 1500)
                 {
-                    game.gameState = new LoadingGameState(game);
-                    game.gameState.LoadContent();
+                    timer.Reset();
+                    LifeManager.DecrementLives();
+
+                    if (LifeManager.Lives > 0)
+                    {
+                        game.gameState = new LoadingGameState(game);
+                        game.gameState.LoadContent();
+                    }
+                    else
+                    {
+                        game.gameState = new GameOverGameState(game);
+                        game.gameState.LoadContent();
+                    }
                 }
-                else
-                {
-                    game.gameState = new GameOverGameState(game);
-                    game.gameState.LoadContent();
-                }
+                delay = 0;
             }
+            else
+                delay++;
         }
 
         public void Draw(SpriteBatch spriteBatch)
