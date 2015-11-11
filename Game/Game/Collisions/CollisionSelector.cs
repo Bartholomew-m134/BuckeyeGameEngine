@@ -33,7 +33,7 @@ namespace Game.Collisions
             }
             else if ((collision.GameObjectA is IMario && collision.GameObjectB is IItem) || (collision.GameObjectA is IItem && collision.GameObjectB is IMario))
             {
-                MarioItemCollisionHandler collisionHandler = new MarioItemCollisionHandler(collision);
+                MarioItemCollisionHandler collisionHandler = new MarioItemCollisionHandler(collision, gameState);
                 collisionHandler.HandleCollision();
             }
             else if ((collision.GameObjectA is IMario && collision.GameObjectB is IPipe) || (collision.GameObjectA is IPipe && collision.GameObjectB is IMario))

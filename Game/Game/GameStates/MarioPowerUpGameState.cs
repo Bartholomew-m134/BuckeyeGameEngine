@@ -10,24 +10,31 @@ using System.Text;
 
 namespace Game.GameStates
 {
-    public class PauseGameState : IGameState
+    public class MarioPowerUpGameState : IGameState
     {
         private Game1 game;
         private IGameState prevGameState;
         private List<IController> controllerList;
+        ObjectPhysics storedPhysics;
+        private int timer;
 
-        public PauseGameState(Game1 game)
+        public MarioPowerUpGameState(Game1 game)
         {
             this.game = game;
             prevGameState = game.gameState;
             controllerList = new List<IController>();
             controllerList.Add(new KeyboardController(new PausedControls(game)));
             controllerList.Add(new GamePadController(new PausedControls(game)));
+
+            storedPhysics = WorldManager.GetMario().Physics;
+
+            WorldManager.GetMario().Physics.Acceleration = Vector2.Zero;
+            WorldManager.GetMario().Physics.Velocity = Vector2.Zero;
         }
 
         public void LoadContent()
         {
-            
+
         }
 
         public void UnloadContent()
@@ -39,6 +46,15 @@ namespace Game.GameStates
         {
             foreach (IController controller in controllerList)
                 controller.Update();
+
+            WorldManager.GetMario().Update();
+
+            if (timer > 40)
+            {
+                game.gameState = prevGameState;
+                WorldManager.GetMario().Physics.ResetPhysics();
+            }
+            timer++;
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -54,15 +70,16 @@ namespace Game.GameStates
 
         public void PipeTransition(Vector2 warpLocation)
         {
-            game.gameState = new PipeTransitioningGameState(warpLocation, game);
+
         }
         public void FlagPoleTransition()
         {
+
         }
 
         public void PlayerDied()
         {
-            
+
         }
 
 
@@ -81,7 +98,7 @@ namespace Game.GameStates
 
         public void MarioPowerUp()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

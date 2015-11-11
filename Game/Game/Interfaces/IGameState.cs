@@ -25,6 +25,8 @@ namespace Game.Interfaces
 
         void PlayerDied();
 
+        void MarioPowerUp();
+
         bool IsUnderground { get; set; }
     }
 }
