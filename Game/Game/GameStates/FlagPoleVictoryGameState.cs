@@ -88,6 +88,11 @@ namespace Game.GameStates
                     tempMario.ToIdle();
                     tempMario.Physics.Velocity = new Vector2(0, 0);
                     tempMario.Physics.Acceleration = new Vector2(0, 0);
+                    int victoryWaitTimer = 5;
+                    while (victoryWaitTimer > 0)
+                        victoryWaitTimer--;
+                    game.gameState = new VictoryScreenGameState(game);
+                    game.gameState.LoadContent();
                 }
 
                     updateDelay = 0;
