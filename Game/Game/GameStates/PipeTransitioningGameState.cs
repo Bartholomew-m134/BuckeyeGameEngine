@@ -24,9 +24,11 @@ namespace Game.GameStates
             this.game = game;
             prevGameState = game.gameState;
             this.warpLocation = warpLocation;
+            WorldManager.GetMario().Physics.ResetX();
             controllerList = new List<IController>();
             controllerList.Add(new KeyboardController(new PausedControls(game)));
             controllerList.Add(new GamePadController(new PausedControls(game)));
+            
             
         }
 

@@ -55,7 +55,10 @@ namespace Game.Collisions.PipeCollisionHandling
                 if (side is TopSideCollision && mario.IsPressingDown() && pipe.IsWarpPipe && ((warpPipeCoordinateOffsetLeft.X < mario.VectorCoordinates.X) && (mario.VectorCoordinates.X < warpPipeCoordinateOffsetRight.X)))
                 {
                     SoundEffectManager.ShrinkingOrPipeEffect();
+                    
                     gameState.PipeTransition(pipe.WarpVectorCoordinates);
+                    mario.Physics.ResetX();
+                    
 
                 }
                 else if (side is TopSideCollision)
