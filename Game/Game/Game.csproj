@@ -325,6 +325,7 @@
     <Compile Include="Utilities\Constants\BackgroundElementSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\BlockSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\CollisionHandlerConstants.cs" />
+    <Compile Include="Utilities\Constants\EnemyStatesConstants.cs" />
     <Compile Include="Utilities\Constants\IBlockConstants.cs" />
     <Compile Include="Utilities\Constants\IEnemyObjectConstants.cs" />
     <Compile Include="Utilities\Constants\EnemySpriteConstants.cs" />
@@ -335,6 +336,7 @@
     <Compile Include="Utilities\Constants\ItemConstants.cs" />
     <Compile Include="Utilities\Constants\ItemSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\MarioSpriteConstants.cs" />
+    <Compile Include="Utilities\Constants\MarioStateConstants.cs" />
     <Compile Include="Utilities\Constants\PipeSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\ProjectileConstants.cs" />
     <Compile Include="Utilities\Constants\ProjectileSpriteConstants.cs" />
