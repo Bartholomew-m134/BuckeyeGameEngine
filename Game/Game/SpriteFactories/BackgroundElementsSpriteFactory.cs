@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.Utilities.Constants;
 
 namespace Game.SpriteFactories
 {
@@ -19,11 +20,11 @@ namespace Game.SpriteFactories
 
         public static void Load(ContentManager content)
         {
-            backgroundElementsSpriteSheet = content.Load<Texture2D>("ScenarySpriteSheet");
-            logoSpriteSheet = content.Load<Texture2D>("BGENamesVersion");
-            startSpriteSheet = content.Load<Texture2D>("BGEPressStartVersion");
-            spriteFont = content.Load<SpriteFont>("ScoreFont");
-            hudFont = content.Load<SpriteFont>("HUDFont");
+            backgroundElementsSpriteSheet = content.Load<Texture2D>(SpriteFactoryConstants.SCENERYSPRITESHEET);
+            logoSpriteSheet = content.Load<Texture2D>(SpriteFactoryConstants.BGENAMESVERSION);
+            startSpriteSheet = content.Load<Texture2D>(SpriteFactoryConstants.BGEPRESSSTARTVERSION);
+            spriteFont = content.Load<SpriteFont>(SpriteFactoryConstants.SCOREFONT);
+            hudFont = content.Load<SpriteFont>(SpriteFactoryConstants.HUDFONT);
         }
 
         public static void Unload()

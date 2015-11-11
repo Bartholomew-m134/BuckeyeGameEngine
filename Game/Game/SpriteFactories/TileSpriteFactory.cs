@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.Utilities.Constants;
 
 namespace Game.SpriteFactories
 {
@@ -19,9 +20,9 @@ namespace Game.SpriteFactories
 
         public static void Load(ContentManager content)
         {
-            tileSpriteSheet = content.Load<Texture2D>("MarioTilesSpriteSheet");
-            brickDebrisSpriteSheet = content.Load<Texture2D>("brickdebrissprite");
-            scenerySpriteSheet = content.Load<Texture2D>("ScenarySpriteSheet");
+            tileSpriteSheet = content.Load<Texture2D>(SpriteFactoryConstants.TILESSPRITESHEET);
+            brickDebrisSpriteSheet = content.Load<Texture2D>(SpriteFactoryConstants.BRICKDEBRISSPRITESHEET);
+            scenerySpriteSheet = content.Load<Texture2D>(SpriteFactoryConstants.SCENERYSPRITESHEET);
         }
 
         public static void Unload()

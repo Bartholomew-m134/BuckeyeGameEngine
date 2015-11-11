@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Content;
 using Game.Enemies.GoombaClasses.GoombaSprites;
 using Game.Enemies.KoopaClasses.GreenKoopaSprites;
 using Game.Interfaces;
+using Game.Utilities.Constants;
 
 namespace Game.SpriteFactories
 {
@@ -17,7 +18,7 @@ namespace Game.SpriteFactories
 
         public static void Load(ContentManager content)
         {
-            enemySpriteSheet = content.Load<Texture2D>("EnemiesSpriteSheet");
+            enemySpriteSheet = content.Load<Texture2D>(SpriteFactoryConstants.ENEMYSPRITESHEET);
         }
 
         public static void Unload()
