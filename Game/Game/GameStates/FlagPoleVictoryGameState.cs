@@ -1,4 +1,5 @@
 ﻿using Game.Interfaces;
+using Game.Mario;
 using Game.Mario.MarioStates;
 using Game.Utilities;
 using Game.Utilities.Controls;
@@ -21,6 +22,7 @@ namespace Game.GameStates
         private bool slidingDownPole = true;
         private bool hasJumpedOffPole = false;
         private bool hasWalkedIntoCastle = false;
+        private IMario tempMario;
 
         public FlagPoleVictoryGameState(Game1 game)
         {
@@ -42,56 +44,58 @@ namespace Game.GameStates
 
         public void Update()
         {
-            if(updateDelay == 5){
+            tempMario = WorldManager.GetMario();
+            //if(updateDelay == 5){
                 if (slidingDownPole){
-                    WorldManager.GetMario().MarioState.PoleSlide();
-                    WorldManager.GetMario().Physics.Velocity = new Vector2(0,5);
-                    WorldManager.GetMario().Update();
-                    if (WorldManager.GetMario().VectorCoordinates.Y > 400){
+                    tempMario.MarioState.PoleSlide();
+                    tempMario.Physics.Velocity = new Vector2(0, 5);
+                    //WorldManager.GetMario().Update();
+                    if (tempMario.VectorCoordinates.Y > 400)
+                    {
                         slidingDownPole = false;
-                        WorldManager.GetMario().MarioState.FlipAroundPole();
+                        tempMario.MarioState.FlipAroundPole();
 
                     }
                 }
                 else if (timer >= 350 && timer < 600 && !(hasJumpedOffPole))
                 {
-                    WorldManager.GetMario().MarioState.Jump();
-                    WorldManager.GetMario().Physics.Velocity = new Vector2(3,5);
-                    WorldManager.GetMario().Update();
-                    if (WorldManager.GetMario().VectorCoordinates.Y > 431)
+                    tempMario.MarioState.Jump();
+                    tempMario.Physics.Velocity = new Vector2(3, 5);
+                    //WorldManager.GetMario().Update();
+                    if ((tempMario.VectorCoordinates.Y + tempMario.Sprite.SpriteDimensions.Y) > 448)
                     {
                         hasJumpedOffPole = true;
-                        WorldManager.GetMario().MarioState.FlipAroundPole();
+                        tempMario.MarioState.FlipAroundPole();
                     }
                 }
                 else if (hasJumpedOffPole && !(slidingDownPole) && !(hasWalkedIntoCastle))
                 {
-                    WorldManager.GetMario().Physics.Velocity = new Vector2(5,0);
-                    WorldManager.GetMario().Physics.Acceleration = new Vector2(0, 0);
-                    WorldManager.GetMario().Update();
-                    Console.WriteLine(WorldManager.GetMario().VectorCoordinates.X);
-                    if (WorldManager.GetMario().VectorCoordinates.X>=3248)
+                    tempMario.Physics.Velocity = new Vector2(5, 0);
+                    tempMario.Physics.Acceleration = new Vector2(0, 0);
+                    //WorldManager.GetMario().Update();
+                    if (tempMario.VectorCoordinates.X >= 3248)
                     {
                         hasWalkedIntoCastle = true;
-                        WorldManager.GetMario().Physics.Velocity = new Vector2(0, 0);
-                        WorldManager.GetMario().Physics.Acceleration = new Vector2(0, 0);
-                        WorldManager.GetMario().Update();
+                        tempMario.Physics.Velocity = new Vector2(0, 0);
+                        tempMario.Physics.Acceleration = new Vector2(0, 0);
+                       // WorldManager.GetMario().Update();
                     }
                 }
                 else if (hasJumpedOffPole && !(slidingDownPole) && hasWalkedIntoCastle)
                 {
-                    WorldManager.GetMario().ToIdle();
-                    WorldManager.GetMario().Physics.Velocity = new Vector2(0, 0);
-                    WorldManager.GetMario().Physics.Acceleration = new Vector2(0, 0);
-                    WorldManager.GetMario().Update();
+                    tempMario.ToIdle();
+                    tempMario.Physics.Velocity = new Vector2(0, 0);
+                    tempMario.Physics.Acceleration = new Vector2(0, 0);
+                    //WorldManager.GetMario().Update();
                 }
 
                     updateDelay = 0;
-                }
+               // }
                 foreach (IController controller in controllerList)
                     controller.Update();
                 timer++;
                 updateDelay++;
+                WorldManager.Update(((NormalMarioGameState)prevGameState).camera);
         }
 
         public void Draw(SpriteBatch spriteBatch)
