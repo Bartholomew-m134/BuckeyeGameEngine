@@ -54,7 +54,7 @@ namespace Game.Mario.MarioStates
 
         public void Up()
         {
-            
+            mario.MarioState = new NormalRightIdleState(mario);
         }
 
         public void Down()
