@@ -14,13 +14,12 @@ namespace Game.Utilities
     public static class HUDManager
     {
         private static SpriteFont hudFont = SpriteFactories.MenuSpriteFactory.CreateHUDFont();
-        // following line is part of next sprint
-        //private static ISprite logo = SpriteFactories.BackgroundElementsSpriteFactory.CreateLogoSprite();
         private static ISprite coin= (CoinSprite)SpriteFactories.ItemsSpriteFactory.CreateCoinSprite();
         private static int scoreToPrint;
         private static int coinsToPrint;
         private static int updateTimerCounter = HUDConstants.RESETUPDATEDELAYCOUNTER;
         private static int timeToPrint = HUDConstants.STARTINGTIME;
+        private static bool outOfTime = false;
 
         public static void UpdateHUDScore(int scoreToAdd)
         {
@@ -39,6 +38,9 @@ namespace Game.Utilities
         public static void UpdateHUDTime()
         {
             timeToPrint -= HUDConstants.INCREMENTBYONE;
+            if (timeToPrint == 0){
+                outOfTime = true;
+            }
         }
         public static void Update()
         {
@@ -56,8 +58,6 @@ namespace Game.Utilities
             string scoreString = scoreToPrint.ToString();
             string timeCounterString = timeToPrint.ToString();
             string coinString = HUDConstants.XCOINCOUNTER + coinsToPrint.ToString();
-            // following line is part of next sprint
-            //logo.Draw(spriteBatch,HUDConstants.LOGOLOCATION);
             coin.Draw(spriteBatch, HUDConstants.COINSPRITEHUDLOCATION);
             spriteBatch.Begin();
             spriteBatch.DrawString(hudFont, HUDConstants.MARIOHUDSTRING, HUDConstants.MARIOHUDLOCATION, Color.White);
@@ -71,10 +71,14 @@ namespace Game.Utilities
             spriteBatch.End();
 
         }
-
         internal static void SetToStartingTime()
         {
             timeToPrint = HUDConstants.STARTINGTIME;
+        }
+
+        public static bool OutOfTime
+        {
+            get { return outOfTime; }
         }
     }
 }

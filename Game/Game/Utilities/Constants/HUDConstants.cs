@@ -25,7 +25,7 @@ namespace Game.Utilities.Constants
         public const int NUMBEROFUPDATESPERSECOND = 3;
         public const int RESETUPDATEDELAYCOUNTER = 0;
         public const int INCREMENTBYONE = 1;
-        public const int STARTINGTIME = 400;
+        public const int STARTINGTIME = 70;
         public const int COINSPERLIFE = 100;
         public const int ZEROREMAINDER = 0;
 

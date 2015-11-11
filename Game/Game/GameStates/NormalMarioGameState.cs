@@ -1,4 +1,5 @@
 ﻿using Game.Interfaces;
+using Game.Mario.MarioStates;
 using Game.SpriteFactories;
 using Game.Utilities;
 using Game.Utilities.Controls;
@@ -64,6 +65,10 @@ namespace Game.GameStates
             else
             {
                 delay++;
+            }
+            if (HUDManager.OutOfTime)
+            {
+                WorldManager.GetMario().MarioState = new DeadMarioState(WorldManager.GetMario());
             }
         }
 
