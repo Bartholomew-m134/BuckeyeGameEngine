@@ -94,13 +94,6 @@ namespace Game
             
         }
 
-        public static void ResetToDefault()
-        {
-            BackgroundThemeManager.StopAllBackgroundThemes();
-            LoadListFromFile(currentFileName, currentGame);
-            camera.MoveToPosition(Vector2.Zero);
-        }
-
         private static void ResetIfMarioIsDead()
         {
             if (GetMario().MarioState is Mario.MarioStates.DeadMarioState)
