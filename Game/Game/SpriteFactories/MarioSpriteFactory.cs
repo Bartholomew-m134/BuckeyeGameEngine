@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Game.Mario.MarioSprites;
 using Game.Interfaces;
+using Game.Utilities.Constants;
 
 namespace Game.SpriteFactories
 {
@@ -15,7 +16,7 @@ namespace Game.SpriteFactories
 
         public static void Load(ContentManager content)
         {
-            marioSpriteSheet = content.Load<Texture2D>("MarioSpriteSheet");
+            marioSpriteSheet = content.Load<Texture2D>(SpriteFactoryConstants.MARIOSPRITESHEET);
 
         }
 

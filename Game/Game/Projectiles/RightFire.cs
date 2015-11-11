@@ -6,7 +6,7 @@ using System.Text;
 using Game.SpriteFactories;
 using Game.Interfaces;
 using Game.Utilities;
-
+using Game.Utilities.Constants;
 namespace Game.Projectiles
 {
     public class RightFire : IProjectile
@@ -23,8 +23,8 @@ namespace Game.Projectiles
             myGame = game;
             FireSprite = ProjectileSpriteFactory.CreateFireSprite();
             physics = new ObjectPhysics();
-            physics.Velocity = new Vector2(10, physics.Velocity.Y);
-            physics.VelocityMaximum = new Vector2(10, physics.VelocityMaximum.Y);
+            physics.Velocity = new Vector2(ProjectileConstants.RIGHTFIREINITIALXVELOCITY, physics.Velocity.Y);
+            physics.VelocityMaximum = new Vector2(ProjectileConstants.RIGHTFIREINITIALXVELOCITY, physics.VelocityMaximum.Y);
             isExploded = false;
             this.factory = factory;
         }
@@ -37,7 +37,7 @@ namespace Game.Projectiles
                 location = physics.Update(location);
             }
             else {
-                location.Y = 4000;
+                location.Y = ProjectileConstants.FIREBALLHELL;
             }
         }
 
@@ -56,7 +56,7 @@ namespace Game.Projectiles
 
         public void Bounce()
         {
-            physics.Velocity = new Vector2(physics.Velocity.X, -2);
+            physics.Velocity = new Vector2(physics.Velocity.X, ProjectileConstants.FIREBALLBOUNCEYVELOCITY);
         }
 
         public void ReturnObject()

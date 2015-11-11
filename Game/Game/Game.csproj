@@ -336,8 +336,10 @@
     <Compile Include="Utilities\Constants\ItemSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\MarioSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\PipeSpriteConstants.cs" />
+    <Compile Include="Utilities\Constants\ProjectileConstants.cs" />
     <Compile Include="Utilities\Constants\ProjectileSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\ScoreManagerConstants.cs" />
+    <Compile Include="Utilities\Constants\SpriteFactoryConstants.cs" />
     <Compile Include="Utilities\Controls\MarioControls.cs" />
     <Compile Include="Utilities\Controls\MenuControls.cs" />
     <Compile Include="Utilities\Controls\PausedControls.cs" />
