@@ -81,7 +81,7 @@ namespace Game.Mario.MarioStates
         }
         public void FlipAroundPole()
         {
-
+            mario.MarioState = new NormalRightRunningState(mario);
         }
         public void Mushroom()
         {
