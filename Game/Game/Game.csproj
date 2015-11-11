@@ -324,6 +324,7 @@
     <Compile Include="Mario\MarioStates\SmallRightRunningState.cs" />
     <Compile Include="Utilities\Constants\BackgroundElementSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\BlockSpriteConstants.cs" />
+    <Compile Include="Utilities\Constants\CollisionHandlerConstants.cs" />
     <Compile Include="Utilities\Constants\EnemyStatesConstants.cs" />
     <Compile Include="Utilities\Constants\IBlockConstants.cs" />
     <Compile Include="Utilities\Constants\IEnemyObjectConstants.cs" />

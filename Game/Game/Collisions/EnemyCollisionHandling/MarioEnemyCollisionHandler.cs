@@ -80,30 +80,30 @@ namespace Game.Collisions.EnemyCollisionHandling
             if (side is LeftSideCollision && enemy.Physics.Velocity.X == 0)
             {
                 ((GreenKoopa)enemy).IsWeaponized = true;
-                enemy.Physics.Velocity = new Vector2(11, enemy.Physics.Velocity.Y);
+                enemy.Physics.Velocity = new Vector2(CollisionHandlerConstants.WEAPONIZEDKOOPATRAVELSPEED, enemy.Physics.Velocity.Y);
             }
             else if (side is RightSideCollision && enemy.Physics.Velocity.X == 0)
             {
                 ((GreenKoopa)enemy).IsWeaponized = true;
-                enemy.Physics.Velocity = new Vector2(-11, enemy.Physics.Velocity.Y);
+                enemy.Physics.Velocity = new Vector2(-CollisionHandlerConstants.WEAPONIZEDKOOPATRAVELSPEED, enemy.Physics.Velocity.Y);
             }
             else if (side is TopSideCollision)
             {
                 ((GreenKoopa)enemy).IsWeaponized = false;
                 enemy.Physics.ResetPhysics();
-                mario.Physics.Velocity = new Vector2(mario.Physics.Velocity.X, -3);
-                mario.Physics.Acceleration = new Vector2(mario.Physics.Acceleration.X, 1);
+                mario.Physics.Velocity = new Vector2(mario.Physics.Velocity.X, CollisionHandlerConstants.MARIOBUMPSPEEDY);
+                mario.Physics.Acceleration = new Vector2(mario.Physics.Acceleration.X, CollisionHandlerConstants.MARIOBUMPACCELERATIONY);
             }
             else if (enemy.Physics.Velocity.X > 0)
             {
-                enemy.Physics.Velocity = new Vector2(-11, enemy.Physics.Velocity.Y);
+                enemy.Physics.Velocity = new Vector2(-CollisionHandlerConstants.WEAPONIZEDKOOPATRAVELSPEED, enemy.Physics.Velocity.Y);
                 if (mario.IsBigMario())
                     SoundEffectManager.ShrinkingOrPipeEffect();
                 mario.Damage();
             }
             else if (enemy.Physics.Velocity.X < 0)
             {
-                enemy.Physics.Velocity = new Vector2(11, enemy.Physics.Velocity.Y);
+                enemy.Physics.Velocity = new Vector2(CollisionHandlerConstants.WEAPONIZEDKOOPATRAVELSPEED, enemy.Physics.Velocity.Y);
                 if(mario.IsBigMario())
                     SoundEffectManager.ShrinkingOrPipeEffect();
                 mario.Damage();
@@ -120,8 +120,8 @@ namespace Game.Collisions.EnemyCollisionHandling
             enemy.CanDealDamage = false;
             enemy.Hit();
 
-            mario.Physics.Velocity = new Vector2(mario.Physics.Velocity.X, -2);
-            mario.Physics.Acceleration = new Vector2(mario.Physics.Acceleration.X, 1);
+            mario.Physics.Velocity = new Vector2(mario.Physics.Velocity.X, CollisionHandlerConstants.MARIOBUMPSPEEDY);
+            mario.Physics.Acceleration = new Vector2(mario.Physics.Acceleration.X, CollisionHandlerConstants.MARIOBUMPACCELERATIONY);
         }
 
         private void HandleScore()

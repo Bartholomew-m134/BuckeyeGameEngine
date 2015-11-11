@@ -48,8 +48,8 @@ namespace Game.Collisions.PipeCollisionHandling
             if (!(mario.MarioState is DeadMarioState))
             {
                 collision.ResolveOverlap(mario, side);
-                Vector2 warpPipeCoordinateOffsetLeft = new Vector2(2, 0);
-                Vector2 warpPipeCoordinateOffsetRight = new Vector2(20, 0);
+                Vector2 warpPipeCoordinateOffsetLeft = new Vector2(CollisionHandlerConstants.WARPPIPECOORDINATEOFFSETLEFT, 0);
+                Vector2 warpPipeCoordinateOffsetRight = new Vector2(CollisionHandlerConstants.WARPPIPECOORDINATEOFFSETRIGHT, 0);
                 warpPipeCoordinateOffsetLeft += pipe.VectorCoordinates;
                 warpPipeCoordinateOffsetRight += pipe.VectorCoordinates;
                 if (side is TopSideCollision && mario.IsPressingDown() && pipe.IsWarpPipe && ((warpPipeCoordinateOffsetLeft.X < mario.VectorCoordinates.X) && (mario.VectorCoordinates.X < warpPipeCoordinateOffsetRight.X)))
