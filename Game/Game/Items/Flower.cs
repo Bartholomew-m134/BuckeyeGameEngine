@@ -50,13 +50,13 @@ namespace Game.Items
             {
                 isInsideBlock = false;
                 physics.ResetPhysics();
-                physics.Velocity = new Vector2(0, -1);
+                physics.Velocity = new Vector2(ItemConstants.ZERO, ItemConstants.RELEASEYVELOCITY);
             }
         }
 
         public void ReverseDirection()
         {
-            physics.Velocity *= new Vector2(-1, 1);
+            physics.Velocity *= new Vector2(ItemConstants.REVERSEXVELOCITY, ItemConstants.REVERSEYVELOCITY);
         }
 
         public Vector2 VectorCoordinates
