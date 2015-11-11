@@ -8,12 +8,13 @@ using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Media;
 using Game.Interfaces;
+using Game.Utilities.Constants;
 
 namespace Game.SoundEffects
 {
     public class PowerUpAppearsEffect : ISoundEffect
     {
-        private Stream backgroundSoundFile = TitleContainer.OpenStream(@"Content\SoundEffects\smb_powerup_appears.wav");
+        private Stream backgroundSoundFile = TitleContainer.OpenStream(SoundConstants.POWERUPAPPEARSEFFECT);
         private SoundEffect backgroundSoundEffect;
         private SoundEffectInstance instance;
 

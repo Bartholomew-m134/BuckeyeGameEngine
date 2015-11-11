@@ -8,12 +8,13 @@ using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Media;
 using Game.Interfaces;
+using Game.Utilities.Constants;
 
 namespace Game.Music
 {
     public class DeathTheme : IMusic
     {
-        private Stream backgroundSoundFile = TitleContainer.OpenStream(@"Content\SoundTracks\08_you_re_dead.wav");
+        private Stream backgroundSoundFile = TitleContainer.OpenStream(SoundConstants.DEATHTHEME);
         private SoundEffect backgroundSoundEffect;
         private SoundEffectInstance instance;
 

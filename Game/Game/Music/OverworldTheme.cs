@@ -8,13 +8,13 @@ using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Media;
 using Game.Interfaces;
-
+using Game.Utilities.Constants;
 
 namespace Game.Music
 {
     public class OverworldTheme : IMusic
     {
-        private Stream backgroundSoundFile= TitleContainer.OpenStream(@"Content\SoundTracks\across_the_field.wav");
+        private Stream backgroundSoundFile= TitleContainer.OpenStream(SoundConstants.OVERWORLDTHEME);
         private SoundEffect backgroundSoundEffect;
         private SoundEffectInstance instance;
 
