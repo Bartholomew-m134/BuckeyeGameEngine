@@ -96,56 +96,60 @@ namespace Game
                     else if (objectName.Equals("FlagPoleBarrier"))
                         gameObject = new InvisibleFlagPoleBarrier(game);
                     else if (objectName.Equals("SolidBlock"))
-                        gameObject = new Block(Block.Type.SolidBlock, game);
+                        gameObject = new Block(Block.Type.SolidBlock, false, game);
                     else if (objectName.Equals("InvisCoinBlock"))
                     {
                         objectsItem = new Coin(true, game);
-                        gameObject = new Block(Block.Type.HiddenBlock, game);
+                        gameObject = new Block(Block.Type.HiddenBlock, false, game);
                     }
                     else if (objectName.Equals("InvisGreenMushBlock"))
                     {
                         objectsItem = new GreenMushroom(true, game);
-                        gameObject = new Block(Block.Type.HiddenBlock, game);
+                        gameObject = new Block(Block.Type.HiddenBlock, false, game);
                     }
                     else if (objectName.Equals("QuestionCoinBlock"))
                     {
                         objectsItem = new Coin(true, game);
-                        gameObject = new Block(Block.Type.QuestionBlock, game);
+                        gameObject = new Block(Block.Type.QuestionBlock, false, game);
                     }
                     else if (objectName.Equals("BrickCoinBlock"))
                     {
                         objectsItem = new Coin(true, game);
-                        gameObject = new Block(Block.Type.BrickBlock, game);
+                        gameObject = new Block(Block.Type.BrickBlock, false, game);
                     }
                     else if (objectName.Equals("QuestionRedMushBlock"))
                     {
                         objectsItem = new RedMushroom(true, game);
-                        gameObject = new Block(Block.Type.QuestionBlock, game);
+                        gameObject = new Block(Block.Type.QuestionBlock, false, game);
                     }
                     else if (objectName.Equals("QuestionGreenMushBlock"))
                     {
                         objectsItem = new GreenMushroom(true, game);
-                        gameObject = new Block(Block.Type.QuestionBlock, game);
+                        gameObject = new Block(Block.Type.QuestionBlock, false, game);
                     }
                     else if (objectName.Equals("QuestionFlowerBlock"))
                     {
                         objectsItem = new Flower(true, game);
-                        gameObject = new Block(Block.Type.QuestionBlock, game);
+                        gameObject = new Block(Block.Type.QuestionBlock, false, game);
                     }
                     else if (objectName.Equals("QuestionStarBlock"))
                     {
                         objectsItem = new Star(true, game);
-                        gameObject = new Block(Block.Type.QuestionBlock, game);
+                        gameObject = new Block(Block.Type.QuestionBlock, false, game);
                     }
                     else if (objectName.Equals("BrickStarBlock"))
                     {
                         objectsItem = new Star(true, game);
-                        gameObject = new Block(Block.Type.BrickBlock, game);
+                        gameObject = new Block(Block.Type.BrickBlock, false, game);
                     }
                     else if (objectName.Equals("BrickBlock"))
-                        gameObject = new Block(Block.Type.BrickBlock, game);
+                        gameObject = new Block(Block.Type.BrickBlock, false, game);
+                    else if (objectName.Equals("UndergroundBrickBlock"))
+                        gameObject = new Block(Block.Type.BrickBlock, true, game);
                     else if (objectName.Equals("BreakingBlock"))
-                        gameObject = new Block(Block.Type.BreakingBlock, game);
+                        gameObject = new Block(Block.Type.BreakingBlock, false, game);
+                    else if (objectName.Equals("UndergroundBreakingBlock"))
+                        gameObject = new Block(Block.Type.BreakingBlock, true, game);
                     else if (objectName.Equals("Pipe"))
                         gameObject = new Pipe(game);
                     else if (objectName.Equals("DoublePipe"))
