@@ -128,7 +128,7 @@ namespace Game.Collisions.EnemyCollisionHandling
         {
             if (!(enemy is Goomba) && !(side is TopSideCollision))
                 ScoreManager.stompStreak = ScoreManagerConstants.RESETTOZERO;
-            if (enemy is Goomba && !(mario.MarioState is DeadMarioState) && side is TopSideCollision && !(mario is HurtMario) && !(mario is GrowMario) && !(mario is StarMario))
+            if (enemy is Goomba && !(mario.MarioState is DeadMarioState) && side is TopSideCollision && !(mario is DamagedMarioTransitionDecorator) && !(mario is GrowingMarioTransitionDecorator) && !(mario is StarMarioDecorator))
             {
                 if (!(((Goomba)enemy).state is GoombaFlippedState) && !(((Goomba)enemy).state is GoombaSmashedState))
                 {
@@ -137,21 +137,21 @@ namespace Game.Collisions.EnemyCollisionHandling
                     ScoreManager.location = enemy.VectorCoordinates;
                 }
             }
-            if (enemy is GreenKoopa && !(mario.MarioState is DeadMarioState) && side is TopSideCollision && !(mario is HurtMario) && !(mario is GrowMario) && !(mario is StarMario))
+            if (enemy is GreenKoopa && !(mario.MarioState is DeadMarioState) && side is TopSideCollision && !(mario is DamagedMarioTransitionDecorator) && !(mario is GrowingMarioTransitionDecorator) && !(mario is StarMarioDecorator))
             {
                 if(!(((GreenKoopa)enemy).state is GreenKoopaEmergingFromShellState) && !(((GreenKoopa)enemy).state is GreenKoopaHidingInShellState)){
                     ScoreManager.IncreaseScore(ScoreManagerConstants.ONEHUNDREDPOINTS);
                     ScoreManager.location = enemy.VectorCoordinates;
                 }
             }
-            if (mario is StarMario && enemy is Goomba){
+            if (mario is StarMarioDecorator && enemy is Goomba){
                 if (((Goomba)enemy).state is GoombaWalkingLeftState || ((Goomba)enemy).state is GoombaWalkingRightState)
                 {
                     ScoreManager.IncreaseScore(ScoreManagerConstants.ONEHUNDREDPOINTS);
                     ScoreManager.location = enemy.VectorCoordinates;
                 }
             }
-            if (mario is StarMario && enemy is GreenKoopa)
+            if (mario is StarMarioDecorator && enemy is GreenKoopa)
             {
                 if (((GreenKoopa)enemy).state is GreenKoopaWalkingLeftState || ((GreenKoopa)enemy).state is GreenKoopaWalkingRightState)
                 {

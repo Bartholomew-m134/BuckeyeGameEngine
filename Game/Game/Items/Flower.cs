@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Game.Utilities;
+using Game.Utilities.Constants;
 
 namespace Game.Items
 {
@@ -40,7 +41,7 @@ namespace Game.Items
         }
 
         public void Disappear() {
-            location.Y += 2000;
+            location.Y += ItemConstants.RELEASEITEM;
         }
 
         public void Release()

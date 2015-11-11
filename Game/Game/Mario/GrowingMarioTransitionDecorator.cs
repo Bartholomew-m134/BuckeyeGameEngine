@@ -1,77 +1,81 @@
-﻿using System;
+﻿using Game.Interfaces;
+using Game.Utilities;
+using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Microsoft.Xna.Framework;
-using System.Diagnostics;
-using Game.Interfaces;
-using Game.Utilities;
-using Microsoft.Xna.Framework.Graphics;
-using Game.Mario.MarioSprites;
-using Game.SpriteFactories;
+using Game.SoundEffects;
+using Game.Utilities.Constants;
 
 namespace Game.Mario
 {
-    public class FireThrowRightMario : IMario
+    public class GrowingMarioTransitionDecorator : IMario
     {
         private IMario mario;
-        private Game1 myGame;
-        private int timer = 5;
-        ISprite sprite;
+        private int frame;
 
-        public FireThrowRightMario(IMario mario, Game1 game)
+        public GrowingMarioTransitionDecorator(IMario mario)
         {
             this.mario = mario;
-            this.myGame = game;
+            SoundEffectManager.PowerPlayerUpEffect();
             WorldManager.SetMario(this);
-            sprite = MarioSpriteFactory.CreateFireThrowRight();
+            frame = IMarioObjectConstants.ZERO;
         }
 
         public void Damage()
         {
-            mario.Damage();
         }
 
         public void Update()
         {
 
-            timer--;
-            if (timer == 0)
+            if (frame == IMarioObjectConstants.POWERUPMARIOTIMERMAX)
             {
                 WorldManager.SetMario(this.mario);
             }
+            else if (frame % IMarioObjectConstants.TWO == IMarioObjectConstants.ZERO && frame % IMarioObjectConstants.FOUR == IMarioObjectConstants.ZERO)
+            {
+                mario.MarioState.Mushroom();
+            }
+            else if (frame % IMarioObjectConstants.TWO == IMarioObjectConstants.ZERO && frame % IMarioObjectConstants.FOUR != IMarioObjectConstants.ZERO)
+            {
+                mario.MarioState.Damage();
+            }
             mario.Update();
+
+            frame++;
+            
         }
 
         public void Draw(ICamera camera)
         {
-            Vector2 location = mario.VectorCoordinates;
-            sprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
+            mario.Draw(camera);
         }
 
         public void Left()
         {
-            mario.Left();
+            
         }
 
         public void Right()
         {
-            mario.Right();
+            
         }
 
         public void Up()
         {
-            mario.Up();
+            
         }
 
         public void Down()
         {
-            mario.Down();
+            
         }
 
         public void Jump()
         {
-            mario.Jump();
+            
         }
 
         public void StopJumping()
@@ -79,36 +83,25 @@ namespace Game.Mario
             mario.StopJumping();
         }
 
-        public void Run()
-        {
-            mario.Run();
-        }
-
-        public void StopRunning()
-        {
-            mario.StopRunning();
-        }
-
         public void Flower()
         {
-            mario.Flower();
+            
         }
 
         public void ThrowFireball()
         {
-            mario.ThrowFireball();
+            
         }
 
         public void Mushroom()
         {
-            mario.Mushroom();
+            
         }
 
         public void Star()
         {
-            mario.Star();
+            
         }
-
         public void PoleSlide()
         {
             mario.PoleSlide();
@@ -131,7 +124,11 @@ namespace Game.Mario
             get { return mario.MarioState; }
             set { mario.MarioState = value; }
         }
-      
+
+        public static  bool IsTransitioning()
+        {
+            return true;
+        }
         public bool IsBigMario()
         {
             return mario.MarioState.IsBigMario();
@@ -144,7 +141,7 @@ namespace Game.Mario
 
         public bool IsStarMario()
         {
-            return true;
+            return mario.IsStarMario();
         }
 
         public bool IsJumping()
@@ -161,6 +158,20 @@ namespace Game.Mario
         {
             get { return ((IMario)mario).Physics; }
         }
+
+
+
+
+        public void Run()
+        {
+           
+        }
+
+        public void StopRunning()
+        {
+            
+        }
+
 
         public bool IsHurt()
         {

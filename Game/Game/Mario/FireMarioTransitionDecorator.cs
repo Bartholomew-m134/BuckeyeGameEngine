@@ -6,20 +6,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Game.SoundEffects;
+using Game.Utilities.Constants;
 
 namespace Game.Mario
 {
-    public class GrowMario : IMario
+    public class FireMarioTransitionDecorator : IMario
     {
-         private IMario mario;
+        private IMario mario;
         private int frame;
 
-        public GrowMario(IMario mario)
+        public FireMarioTransitionDecorator(IMario mario)
         {
             this.mario = mario;
             SoundEffectManager.PowerPlayerUpEffect();
             WorldManager.SetMario(this);
-            frame = 0;
+            frame = IMarioObjectConstants.ZERO;
         }
 
         public void Damage()
@@ -28,16 +29,15 @@ namespace Game.Mario
 
         public void Update()
         {
-            
-            if (frame == 18)
+            if (frame == IMarioObjectConstants.POWERUPMARIOTIMERMAX)
             {
                 WorldManager.SetMario(this.mario);
             }
-            else if (frame % 2 == 0 && frame % 4 == 0)
+            else if (frame % IMarioObjectConstants.TWO == IMarioObjectConstants.ZERO && frame % IMarioObjectConstants.FOUR == IMarioObjectConstants.ZERO)
             {
-                mario.MarioState.Mushroom();
+                mario.MarioState.Flower();
             }
-            else if (frame % 2 == 0 && frame % 4 != 0)
+            else if (frame % IMarioObjectConstants.TWO == IMarioObjectConstants.ZERO && frame % IMarioObjectConstants.FOUR != IMarioObjectConstants.ZERO)
             {
                 mario.MarioState.Damage();
             }
@@ -96,7 +96,6 @@ namespace Game.Mario
         {
             
         }
-
         public void Star()
         {
             
@@ -124,10 +123,11 @@ namespace Game.Mario
             set { mario.MarioState = value; }
         }
 
-        public static  bool IsTransitioning()
+        public static bool IsTransitioning()
         {
             return true;
         }
+
         public bool IsBigMario()
         {
             return mario.MarioState.IsBigMario();
@@ -160,10 +160,9 @@ namespace Game.Mario
 
 
 
-
         public void Run()
         {
-           
+            
         }
 
         public void StopRunning()

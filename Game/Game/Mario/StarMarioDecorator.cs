@@ -8,18 +8,19 @@ using Game.Interfaces;
 using Game.Utilities;
 using Game.Music;
 using Game.Mario.MarioStates;
+using Game.Utilities.Constants;
 
 namespace Game.Mario
 {
-    public class StarMario : IMario
+    public class StarMarioDecorator : IMario
     {
         private IMario mario;
         private Game1 myGame;
-        private int timer = 200;
-        public static int stompKillStreak = 0;
+        private int timer = IMarioObjectConstants.STARMARIOINITIALTIMER;
+        public static int stompKillStreak = IMarioObjectConstants.ZERO;
 
         private FireBallSpawner factory;
-        public StarMario(IMario mario, Game1 game)
+        public StarMarioDecorator(IMario mario, Game1 game)
         {
             this.mario = mario;
             this.myGame = game;
@@ -35,10 +36,11 @@ namespace Game.Mario
         public void Update()
         {
             timer--;
-            if(timer == 0 && IsOnFlagPole()){
+            if (timer == IMarioObjectConstants.ZERO && IsOnFlagPole())
+            {
                 WorldManager.SetMario(this.mario);
             }
-            else if (timer == 0)
+            else if (timer == IMarioObjectConstants.ZERO)
             {
                 WorldManager.SetMario(this.mario);
                 BackgroundThemeManager.PlayOverWorldTheme();
@@ -95,7 +97,7 @@ namespace Game.Mario
         {
             if (!this.IsFireMario())
             {
-                new FireMario(this);
+                new FireMarioTransitionDecorator(this);
             }
         }
 
@@ -106,12 +108,12 @@ namespace Game.Mario
                 if (mario.MarioState.IsRight())
                 {
                     factory.ReleaseRightFireBall(new Vector2(mario.VectorCoordinates.X + mario.Sprite.SpriteDimensions.X, mario.VectorCoordinates.Y));
-                    new FireThrowRightMario(this, myGame);
+                    new ThrowFireRightDecorator(this, myGame);
                 }
                 else
                 {
                     factory.ReleaseLeftFireBall(mario.VectorCoordinates);
-                    new FireThrowLeftMario(this, myGame);
+                    new ThrowFireLeftDecorator(this, myGame);
                 }
             }
         }
@@ -120,13 +122,13 @@ namespace Game.Mario
         {
             if (!this.IsBigMario())
             {
-                new GrowMario(this);
+                new GrowingMarioTransitionDecorator(this);
             }
         }
 
         public void Star()
         {
-            timer = 1000;
+            timer = IMarioObjectConstants.STARMARIOINITIALTIMER;
         }
 
         public void PoleSlide()

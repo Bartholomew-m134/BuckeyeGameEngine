@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using Game.Utilities;
 using Game.SoundEffects;
+using Game.Utilities.Constants;
 
 namespace Game.Blocks
 {
@@ -34,7 +35,7 @@ namespace Game.Blocks
         {
             blockState.Update();
 
-            if (isBumped && physics.Velocity.Y == 2)
+            if (isBumped && physics.Velocity.Y == IBlockConstants.YVELOCITYCAP)
             {
                 isBumped = false;
                 physics.ResetPhysics();
@@ -57,7 +58,7 @@ namespace Game.Blocks
                 isBumped = true;
                 SoundEffectManager.BlockBumpedEffect();
                 physics.ResetPhysics();
-                physics.Velocity = new Vector2(0,-2);
+                physics.Velocity = new Vector2(0,IBlockConstants.BUMPEDBLOCKVELOCITY);
             }
         }
 

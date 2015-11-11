@@ -9,17 +9,18 @@ using Game.Utilities;
 using Microsoft.Xna.Framework.Graphics;
 using Game.Mario.MarioSprites;
 using Game.SpriteFactories;
+using Game.Utilities.Constants;
 
 namespace Game.Mario
 {
-    public class FireThrowLeftMario : IMario
+    public class ThrowFireLeftDecorator : IMario
     {
         private IMario mario;
         private Game1 myGame;
-        private int timer = 5;
+        private int timer = IMarioObjectConstants.FIRETHROWTIMER;
         ISprite sprite;
 
-        public FireThrowLeftMario(IMario mario, Game1 game)
+        public ThrowFireLeftDecorator(IMario mario, Game1 game)
         {
             this.mario = mario;
             this.myGame = game;
@@ -36,7 +37,7 @@ namespace Game.Mario
         {
 
             timer--;
-            if (timer == 0)
+            if (timer == IMarioObjectConstants.ZERO)
             {
                 WorldManager.SetMario(this.mario);
             }

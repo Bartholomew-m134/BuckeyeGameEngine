@@ -54,6 +54,7 @@ namespace Game.Collisions.ItemCollisionHandling
                 else if (collidingItem is GreenMushroom)
                 {
                     SoundEffectManager.OneUpEffect();
+                    LifeManager.IncrementLives();
                     collidingItem.Disappear();
                 }
                 else if (collidingItem is RedMushroom)

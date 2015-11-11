@@ -7,6 +7,7 @@ using Game.Interfaces;
 using Game.Mario.MarioStates;
 using Game.Utilities;
 using Game.SoundEffects;
+using Game.Utilities.Constants;
 
 namespace Game.Mario
 {
@@ -57,7 +58,7 @@ namespace Game.Mario
         }
         public void Jump()
         {
-            if (Physics.Velocity.Y < 2)
+            if (Physics.Velocity.Y < IMarioObjectConstants.JUMPPREVENTIONCAP)
              state.Jump();
         }
         public void StopJumping() {
@@ -75,7 +76,7 @@ namespace Game.Mario
         {
             if (!this.IsFireMario())
             {
-                new FireMario(this);
+                new FireMarioTransitionDecorator(this);
             }
         }
 
@@ -87,12 +88,12 @@ namespace Game.Mario
                 if (state.IsRight())
                 {
                     factory.ReleaseRightFireBall(new Vector2(location.X + sprite.SpriteDimensions.X, location.Y));
-                    new FireThrowRightMario(this, myGame);
+                    new ThrowFireRightDecorator(this, myGame);
                 }
                 else
                 {
                     factory.ReleaseLeftFireBall(location);
-                    new FireThrowLeftMario(this, myGame);
+                    new ThrowFireLeftDecorator(this, myGame);
                 }
             }
         }
@@ -100,12 +101,12 @@ namespace Game.Mario
         {
             if(!this.IsBigMario())
             {
-                new GrowMario(this);
+                new GrowingMarioTransitionDecorator(this);
             }
         }
         public void Star()
         {   
-            new StarMario(this, myGame);
+            new StarMarioDecorator(this, myGame);
         }
         public void PoleSlide()
         {
@@ -118,7 +119,7 @@ namespace Game.Mario
             if (this.IsBigMario())
             {
             state.Damage();
-            new HurtMario(this);
+            new DamagedMarioTransitionDecorator(this);
         }
             else
         {

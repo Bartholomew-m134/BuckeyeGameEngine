@@ -5,19 +5,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.Utilities.Constants;
 
 namespace Game.Mario
 {
-    public class HurtMario : IMario
+    public class DamagedMarioTransitionDecorator : IMario
     {
-         private IMario mario;
+        private IMario mario;
         private int frame;
 
-        public HurtMario(IMario mario)
+        public DamagedMarioTransitionDecorator(IMario mario)
         {
             this.mario = mario;
             WorldManager.SetMario(this);
-            frame = 0;
+            frame = IMarioObjectConstants.ZERO;
         }
 
         public void Damage()
@@ -26,7 +27,7 @@ namespace Game.Mario
 
         public void Update()
         {
-            if (frame == 35)
+            if (frame == IMarioObjectConstants.HURTMARIOTIMERMAX)
             {
                 WorldManager.SetMario(this.mario);
             }
@@ -38,7 +39,7 @@ namespace Game.Mario
 
         public void Draw(ICamera camera)
         {
-            if (frame % 2 == 0 && frame % 4 == 0)
+            if (frame % IMarioObjectConstants.TWO == IMarioObjectConstants.ZERO && frame % IMarioObjectConstants.FOUR == IMarioObjectConstants.ZERO)
                 mario.Draw(camera);
             }
                 
