@@ -117,6 +117,7 @@
     <Compile Include="GameStates\GameOverGameState.cs" />
     <Compile Include="GameStates\LoadingGameState.cs" />
     <Compile Include="GameStates\MarioDeathGameState.cs" />
+    <Compile Include="GameStates\MarioPowerUpGameState.cs" />
     <Compile Include="GameStates\MenuGameState.cs" />
     <Compile Include="GameStates\NormalMarioGameState.cs" />
     <Compile Include="GameStates\PauseGameState.cs" />

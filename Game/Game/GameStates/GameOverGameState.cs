@@ -81,5 +81,11 @@ namespace Game.GameStates
                 throw new NotImplementedException();
             }
         }
+
+
+        public void MarioPowerUp()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

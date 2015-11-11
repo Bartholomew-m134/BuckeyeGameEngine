@@ -15,9 +15,13 @@ namespace Game.Collisions.ItemCollisionHandling
     {
         private IMario collidingMario;
         private IItem collidingItem;
+        private IGameState gameState;
   
 
-        public MarioItemCollisionHandler(CollisionData collision) {
+        public MarioItemCollisionHandler(CollisionData collision, IGameState gameState) 
+        {
+            this.gameState = gameState;
+
             if (collision.GameObjectA is IMario)
             {
                 collidingMario = (IMario)collision.GameObjectA;
@@ -44,6 +48,8 @@ namespace Game.Collisions.ItemCollisionHandling
                 {
                     collidingItem.Disappear();
                     collidingMario.Flower();
+                    if(!collidingMario.IsFireMario())
+                        gameState.MarioPowerUp();
                 }
                 else if (collidingItem is GreenMushroom)
                 {
@@ -54,6 +60,8 @@ namespace Game.Collisions.ItemCollisionHandling
                 {
                     collidingItem.Disappear();
                     collidingMario.Mushroom();
+                    if(!collidingMario.IsBigMario())
+                        gameState.MarioPowerUp();
                 }
                 else if (collidingItem is Star)
                 {

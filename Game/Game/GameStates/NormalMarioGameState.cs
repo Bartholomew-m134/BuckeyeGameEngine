@@ -107,5 +107,11 @@ namespace Game.GameStates
             get { return isUnderground; }
             set { isUnderground = value; }
         }
+
+
+        public void MarioPowerUp()
+        {
+            game.gameState = new MarioPowerUpGameState(game);
+        }
     }
 }
