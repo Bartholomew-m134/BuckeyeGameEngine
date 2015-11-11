@@ -14,7 +14,7 @@ namespace Game.Music
 {
     public class OverworldTheme : IMusic
     {
-        private Stream backgroundSoundFile= TitleContainer.OpenStream(@"Content\SoundTracks\01-main-theme-overworld.wav");
+        private Stream backgroundSoundFile= TitleContainer.OpenStream(@"Content\SoundTracks\across_the_field.wav");
         private SoundEffect backgroundSoundEffect;
         private SoundEffectInstance instance;
 

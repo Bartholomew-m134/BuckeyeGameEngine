@@ -59,6 +59,8 @@ namespace Game.Mario.MarioStates
         public void Down()
         {
             mario.MarioState = new NormalLeftCrouchingState(mario);
+            mario.VectorCoordinates += new Vector2(0, 16);
+            
         }
 
         public void Jump()

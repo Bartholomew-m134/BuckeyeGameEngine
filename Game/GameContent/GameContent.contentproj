@@ -238,10 +238,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SoundTracks\Across_the_Field_8-bit_.wav">
-      <Name>Across_the_Field_8-bit_</Name>
+    <Compile Include="SoundTracks\across_the_field.wav">
+      <Name>across_the_field</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
