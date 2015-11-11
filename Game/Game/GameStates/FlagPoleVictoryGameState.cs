@@ -22,6 +22,7 @@ namespace Game.GameStates
         private bool slidingDownPole = true;
         private bool hasJumpedOffPole = false;
         private bool hasWalkedIntoCastle = false;
+        private bool haveAddedTimePoints = false;
         private IMario tempMario;
 
         public FlagPoleVictoryGameState(Game1 game)
@@ -79,6 +80,10 @@ namespace Game.GameStates
                 }
                 else if (hasJumpedOffPole && !(slidingDownPole) && hasWalkedIntoCastle)
                 {
+                    if (!haveAddedTimePoints){
+                        ScoreManager.HandleRemainingTime();
+                        haveAddedTimePoints = true;
+                    }
                     tempMario.ToIdle();
                     tempMario.Physics.Velocity = new Vector2(0, 0);
                     tempMario.Physics.Acceleration = new Vector2(0, 0);

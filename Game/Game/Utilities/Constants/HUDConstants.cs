@@ -22,7 +22,7 @@ namespace Game.Utilities.Constants
         public static readonly Vector2 TIMESTRINGHUDLOCATION = new Vector2(700, 20);
         public static readonly Vector2 TIMECOUNTERHUDLOCATION = new Vector2(710, 45);
         public static readonly Vector2 WORLDNUMBERHUDLOCATION = new Vector2(573, 45);
-        public const int NUMBEROFUPDATESPERSECOND = 15;
+        public const int NUMBEROFUPDATESPERSECOND = 3;
         public const int RESETUPDATEDELAYCOUNTER = 0;
         public const int INCREMENTBYONE = 1;
         public const int STARTINGTIME = 400;
