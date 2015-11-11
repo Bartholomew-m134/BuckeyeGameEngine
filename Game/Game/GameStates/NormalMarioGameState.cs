@@ -18,6 +18,7 @@ namespace Game.GameStates
         private List<IController> controllerList;
         private int delay;
         private bool isUnderground;
+
         public NormalMarioGameState(Game1 game)
         {
             this.game = game;
@@ -69,7 +70,7 @@ namespace Game.GameStates
         public void Draw(SpriteBatch spriteBatch)
         {
             if (isUnderground)
-                game.GraphicsDevice.Clear(Color.Gray);
+                game.GraphicsDevice.Clear(Color.DarkGray);
             WorldManager.Draw(camera);
             ScoreManager.DrawScore(spriteBatch, camera);
             HUDManager.DrawHUD(spriteBatch);
@@ -83,7 +84,6 @@ namespace Game.GameStates
 
         public void PipeTransition(Vector2 warpLocation)
         {
-            isUnderground = !isUnderground;
             game.gameState = new PipeTransitioningGameState(warpLocation, game);
         }
         public void FlagPoleTransition()
@@ -94,6 +94,12 @@ namespace Game.GameStates
         public void PlayerDied()
         {
             game.gameState = new MarioDeathGameState(game);
+        }
+
+        public bool IsUnderground 
+        {
+            get { return isUnderground; }
+            set { isUnderground = value; }
         }
     }
 }
