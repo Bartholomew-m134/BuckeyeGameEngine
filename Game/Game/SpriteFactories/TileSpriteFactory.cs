@@ -63,7 +63,14 @@ namespace Game.SpriteFactories
         {
             return new BreakingBlockSprite(tileSpriteSheet);
         }
-
+        public static ISprite CreateUndergroundBrickBlockSprite()
+        {
+            return new UndergroundBrickBlockSprite(tileSpriteSheet);
+        }
+        public static ISprite CreateUndergroundBreakingBlockSprite()
+        {
+            return new UndergroundBreakingBlockSprite(tileSpriteSheet);
+        }
         public static ISprite CreatePipeSprite()
         {
             return new PipeSprite(scenerySpriteSheet);
@@ -75,6 +82,10 @@ namespace Game.SpriteFactories
         public static ISprite CreateTriplePipeSprite()
         {
             return new TriplePipeSprite(scenerySpriteSheet);
+        }
+        public static ISprite CreateFullSidePipeSprite()
+        {
+            return new FullSidePipeSprite(scenerySpriteSheet);
         }
         public static ISprite CreateActiveFlagPoleSprite()
         {

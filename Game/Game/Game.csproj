@@ -96,6 +96,8 @@
     <Compile Include="Blocks\BlockSprites\HiddenBlockSprite.cs" />
     <Compile Include="Blocks\BlockSprites\QuestionBlockSprite.cs" />
     <Compile Include="Blocks\BlockSprites\SolidBlockSprite.cs" />
+    <Compile Include="Blocks\BlockSprites\UndergroundBreakingBlockSprite.cs" />
+    <Compile Include="Blocks\BlockSprites\UndergroundBrickBlockSprite.cs" />
     <Compile Include="Blocks\BlockSprites\UsedBlockSprite.cs" />
     <Compile Include="Blocks\BlockStates\BrickDebrisState.cs" />
     <Compile Include="Collisions\BlockCollisionHandling\BlockFireballCollisionHandler.cs" />
@@ -202,6 +204,8 @@
     <Compile Include="Music\OverworldTheme.cs" />
     <Compile Include="Interfaces\IMusic.cs" />
     <Compile Include="Music\StarTheme.cs" />
+    <Compile Include="Pipes\FullSidePipe.cs" />
+    <Compile Include="Pipes\PipeSprites\FullSidePipeSprite.cs" />
     <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerSprites\BuckeyeRightIdleSprite.cs" />
     <Compile Include="Projectiles\LeftFire.cs" />
     <Compile Include="Items\Flower.cs" />

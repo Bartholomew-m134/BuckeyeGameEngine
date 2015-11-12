@@ -156,12 +156,21 @@ namespace Game
                         gameObject = new DoublePipe(game);
                     else if (objectName.Equals("TriplePipe"))
                         gameObject = new TriplePipe(game);
+                    else if (objectName.Equals("FullSidePipe"))
+                        gameObject = new FullSidePipe(game);
                     else if (objectName.StartsWith("TripleWarpPipe"))
                     {
                         string[] parsedName = objectName.Split('-');
                         float x = Int32.Parse(parsedName[1]);
                         float y = Int32.Parse(parsedName[2]);
                         gameObject = new TriplePipe(new Vector2(x, y), game);
+                    }
+                    else if (objectName.StartsWith("FullSideWarpPipe"))
+                    {
+                        string[] parsedName = objectName.Split('-');
+                        float x = Int32.Parse(parsedName[1]);
+                        float y = Int32.Parse(parsedName[2]);
+                        gameObject = new FullSidePipe(new Vector2(x, y), game);
                     }
                     else if (objectName.Equals("BigHill"))
                         gameObject = new BigHill(game);

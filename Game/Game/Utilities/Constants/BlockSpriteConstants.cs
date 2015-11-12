@@ -20,6 +20,8 @@ namespace Game.Utilities.Constants
         public static readonly Vector2 QUESTIONBLOCKSOURCE = new Vector2(368,0);
         public static readonly Vector2 SOLIDBLOCKSOURCE = new Vector2(0,16);
         public static readonly Vector2 USEDBLOCKSOURCE = new Vector2(48,0);
+        public static readonly Vector2 UNDERGROUNDBREAKINGBLOCKSOURCE = new Vector2(0, 32);
+        public static readonly Vector2 UNDERGROUNDBRICKBLOCKSOURCE = new Vector2(32, 32);
         public static readonly Vector2 BRICKBLOCKUPADJUSTMENT = new Vector2(1,6);
         public static readonly Vector2 BRICKBLOCKDOWNADJUSTMENT = new Vector2(1, -6);
     }
