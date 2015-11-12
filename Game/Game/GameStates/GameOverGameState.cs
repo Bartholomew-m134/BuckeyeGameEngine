@@ -19,6 +19,7 @@ namespace Game.GameStates
         public GameOverGameState(Game1 game)
         {
             this.game = game;
+            Game.SoundEffects.SoundEffectManager.GameOverEffect();
             prevGameState = game.gameState;
             controllerList = new List<IController>();
             controllerList.Add(new KeyboardController(new PausedControls(game)));

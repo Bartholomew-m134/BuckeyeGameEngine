@@ -271,6 +271,7 @@
     <Compile Include="Game1.cs" />
     <Compile Include="SoundEffects\CoinEffect.cs" />
     <Compile Include="SoundEffects\FlagPoleMovingEffect.cs" />
+    <Compile Include="SoundEffects\GameOverEffect.cs" />
     <Compile Include="SoundEffects\GoombaStompedEffect.cs" />
     <Compile Include="SoundEffects\OneUpEffect.cs" />
     <Compile Include="SoundEffects\PowerPlayerUpEffect.cs" />
