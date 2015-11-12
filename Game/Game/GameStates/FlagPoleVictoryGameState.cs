@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.Utilities.Constants;
 
 namespace Game.GameStates
 {
@@ -17,8 +18,8 @@ namespace Game.GameStates
     {
         private Game1 game;
         private IGameState prevGameState;
-        private int timer = 0;
-        private int updateDelay = 0;
+        private int timer;
+        private int updateDelay;
         private List<IController> controllerList;
         private bool slidingDownPole = true;
         private bool hasJumpedOffPole = false;
@@ -49,7 +50,7 @@ namespace Game.GameStates
         public void Update()
         {
             tempMario = WorldManager.GetMario();
-            if(updateDelay == 5){
+            if(updateDelay == IGameStateConstants.UPDATEDELAY){
                 if (slidingDownPole){
                     tempMario.MarioState.PoleSlide();
                     tempMario.Physics.Velocity = new Vector2(0, 5);

@@ -357,6 +357,7 @@
     <Compile Include="Utilities\Constants\FlagPoleSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\CameraConstants.cs" />
     <Compile Include="Utilities\Constants\HUDConstants.cs" />
+    <Compile Include="Utilities\Constants\IGameStateConstants.cs" />
     <Compile Include="Utilities\Constants\IMarioObjectConstants.cs" />
     <Compile Include="Utilities\Constants\ItemConstants.cs" />
     <Compile Include="Utilities\Constants\ItemSpriteConstants.cs" />
