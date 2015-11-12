@@ -24,5 +24,6 @@ namespace Game.Utilities.Constants
         public const String SHRINKINGORPIPEEFFECT = @"Content\SoundEffects\smb_pipe_or_damage.wav";
         public const String SMALLMARIOJUMPEFFECT = @"Content\SoundEffects\smb_jumpsmall.wav";
         public const String SUPERMARIOJUMPEFFECT = @"Content\SoundEffects\smb_jump-super.wav";
+        public const String GAMEOVEREFFECT = @"Content\SoundEffects\smb-game-over.wav";
     }
 }
