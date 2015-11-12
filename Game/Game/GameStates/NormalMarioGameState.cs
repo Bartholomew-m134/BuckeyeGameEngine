@@ -1,4 +1,5 @@
-﻿using Game.Interfaces;
+﻿using Game.Collisions;
+using Game.Interfaces;
 using Game.Mario.MarioStates;
 using Game.SpriteFactories;
 using Game.Utilities;
@@ -56,7 +57,12 @@ namespace Game.GameStates
                 foreach (IController controller in controllerList)
                     controller.Update();
 
+                
                 WorldManager.Update(camera);
+                CollisionManager.Update(this);
+                camera.Update(WorldManager.GetMario());
+                //WorldManager.ResetIfMarioIsDead(camera);
+
                 ScoreManager.Update();
                 HUDManager.Update();
                 delay = 0;
@@ -90,11 +96,11 @@ namespace Game.GameStates
 
         public void PipeTransition(Vector2 warpLocation)
         {
-            game.gameState = new PipeTransitioningGameState(warpLocation, game);
+            game.gameState = new PipeTransitioningGameState(camera, warpLocation, game);
         }
         public void FlagPoleTransition()
         {
-            game.gameState = new FlagPoleVictoryGameState(game);
+            game.gameState = new FlagPoleVictoryGameState(camera, game);
         }
 
         public void PlayerDied()

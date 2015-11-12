@@ -1,4 +1,5 @@
-﻿using Game.Interfaces;
+﻿using Game.Collisions;
+using Game.Interfaces;
 using Game.Mario;
 using Game.Mario.MarioStates;
 using Game.Utilities;
@@ -24,11 +25,13 @@ namespace Game.GameStates
         private bool hasWalkedIntoCastle = false;
         private bool haveAddedTimePoints = false;
         private IMario tempMario;
+        private ICamera camera;
 
-        public FlagPoleVictoryGameState(Game1 game)
+        public FlagPoleVictoryGameState(ICamera camera, Game1 game)
         {
             this.game = game;
             prevGameState = game.gameState;
+            this.camera = camera;
             controllerList = new List<IController>();
             controllerList.Add(new KeyboardController(new PausedControls(game)));
             controllerList.Add(new GamePadController(new PausedControls(game)));
@@ -96,7 +99,9 @@ namespace Game.GameStates
                 }
 
                     updateDelay = 0;
-                    WorldManager.Update(((NormalMarioGameState)prevGameState).camera);
+                    WorldManager.Update(camera);
+                    CollisionManager.Update(this);
+                    camera.Update(tempMario);
                 }
                 foreach (IController controller in controllerList)
                     controller.Update();
