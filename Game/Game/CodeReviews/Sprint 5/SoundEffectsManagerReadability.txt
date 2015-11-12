@@ -1,0 +1,10 @@
+﻿Author: Kyle Powers
+Date: 11/12/2015
+Sprint: 4
+File name: SoundEffectManager.cs
+Author: John Cramer
+Minutes to complete: 5
+
+Comments: The class is very simple and easy to read. It serves the purpose of handling all sound effects played
+during the game and is easy for the client to use to call any sound needed. Overall, the class is well written, very readable
+and I have no criticisms of the class.
