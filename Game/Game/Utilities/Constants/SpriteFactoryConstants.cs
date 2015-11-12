@@ -17,6 +17,8 @@ namespace Game.Utilities.Constants
         public const String MARIOSPRITESHEET = "MarioSpriteSheet";
         public const String TILESSPRITESHEET = "MarioTilesSpriteSheet";
         public const String BRICKDEBRISSPRITESHEET = "brickdebrissprite";
+
+        public const String BUCKEYEPLAYERSPRITESHEET = "ProjectBuckeyeSprites/BuckeyePlayerSpriteSheet";
       
     }
 }

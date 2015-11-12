@@ -135,6 +135,8 @@
     <Compile Include="Collisions\EnemyCollisionHandling\EnemyEnemyCollisionHandler.cs" />
     <Compile Include="Collisions\EnemyCollisionHandling\EnemyPipeCollisionHandler.cs" />
     <Compile Include="Collisions\EnemyCollisionHandling\MarioEnemyCollisionHandler.cs" />
+    <Compile Include="Interfaces\IBuckeyePlayer.cs" />
+    <Compile Include="Interfaces\IBuckeyePlayerStates.cs" />
     <Compile Include="Interfaces\ICamera.cs" />
     <Compile Include="Interfaces\ICollisionSide.cs" />
     <Compile Include="Collisions\ItemCollisionHandling\ItemBlockCollisionHandler.cs" />
@@ -206,7 +208,23 @@
     <Compile Include="Music\StarTheme.cs" />
     <Compile Include="Pipes\FullSidePipe.cs" />
     <Compile Include="Pipes\PipeSprites\FullSidePipeSprite.cs" />
+    <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayer.cs" />
+    <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerSprites\BuckeyeLeftDownSprite.cs" />
+    <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerSprites\BuckeyeLeftIdleSprite.cs" />
+    <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerSprites\BuckeyeLeftJumpingSprite.cs" />
+    <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerSprites\BuckeyeLeftMovementSprite.cs" />
+    <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerSprites\BuckeyeRightDownSprite.cs" />
     <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerSprites\BuckeyeRightIdleSprite.cs" />
+    <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerSprites\BuckeyeRightJumpingSprite.cs" />
+    <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerSprites\BuckeyeRightMovementSprite.cs" />
+    <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerStates\BuckeyeLeftDownState.cs" />
+    <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerStates\BuckeyeLeftIdleState.cs" />
+    <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerStates\BuckeyeLeftJumpingState.cs" />
+    <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerStates\BuckeyeLeftMovementState.cs" />
+    <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerStates\BuckeyeRightDownState.cs" />
+    <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerStates\BuckeyeRightIdleState.cs" />
+    <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerStates\BuckeyeRightJumpingState.cs" />
+    <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerStates\BuckeyeRightMovementState.cs" />
     <Compile Include="Projectiles\LeftFire.cs" />
     <Compile Include="Items\Flower.cs" />
     <Compile Include="Items\GreenMushroom.cs" />
@@ -292,6 +310,7 @@
     <Compile Include="SoundEffects\SoundEffectManager.cs" />
     <Compile Include="SoundEffects\SuperMarioJumpEffect.cs" />
     <Compile Include="SpriteFactories\BackgroundElementsSpriteFactory.cs" />
+    <Compile Include="SpriteFactories\BuckeyePlayerSpriteFactory.cs" />
     <Compile Include="SpriteFactories\MenuSpriteFactories.cs" />
     <Compile Include="SpriteFactories\ProjectileSpriteFactory.cs" />
     <Compile Include="SpriteFactories\TileSpriteFactory.cs" />
@@ -333,6 +352,7 @@
     <Compile Include="Utilities\Constants\BackgroundElementSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\BlockSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\BuckeyePlayerSpriteConstants.cs" />
+    <Compile Include="Utilities\Constants\BuckeyePlayerStateConstants.cs" />
     <Compile Include="Utilities\Constants\CollisionHandlerConstants.cs" />
     <Compile Include="Utilities\Constants\EnemyStatesConstants.cs" />
     <Compile Include="Utilities\Constants\IBlockConstants.cs" />
@@ -341,6 +361,7 @@
     <Compile Include="Utilities\Constants\FlagPoleSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\CameraConstants.cs" />
     <Compile Include="Utilities\Constants\HUDConstants.cs" />
+    <Compile Include="Utilities\Constants\IGameStateConstants.cs" />
     <Compile Include="Utilities\Constants\IMarioObjectConstants.cs" />
     <Compile Include="Utilities\Constants\ItemConstants.cs" />
     <Compile Include="Utilities\Constants\ItemSpriteConstants.cs" />
@@ -436,7 +457,6 @@
     <Folder Include="Commands\MenuCommands\" />
     <Folder Include="ProjectBuckeye\EnemyClasses\WolverineSprites\" />
     <Folder Include="ProjectBuckeye\EnemyClasses\WolverineStates\" />
-    <Folder Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerStates\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
