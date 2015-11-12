@@ -51,7 +51,7 @@ namespace Game.Items
             {
                 isReleased = true;
                 physics.ResetPhysics();
-                physics.Velocity = new Vector2(ItemConstants.ZERO, ItemConstants.COINRELEASEYVELOCITY);
+                physics.Velocity = new Vector2(0, ItemConstants.COINRELEASEYVELOCITY);
             }
         }
 

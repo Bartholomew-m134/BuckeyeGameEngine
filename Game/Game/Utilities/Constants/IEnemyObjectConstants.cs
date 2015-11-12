@@ -7,8 +7,6 @@ namespace Game.Utilities.Constants
 {
     public static class IEnemyObjectConstants
     {
-        public const int RESETTOZERO = 0;
-
         public const int HIDINGINSHELLMAXTIME = 100;
         public const int EMERGINGFROMSHELLMAXTIME = 45;
         public const int KOOPAMAXVELOCITY = 12;

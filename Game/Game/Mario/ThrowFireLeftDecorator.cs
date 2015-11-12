@@ -37,7 +37,7 @@ namespace Game.Mario
         {
 
             timer--;
-            if (timer == IMarioObjectConstants.ZERO)
+            if (timer == 0)
             {
                 WorldManager.SetMario(this.mario);
             }

@@ -19,7 +19,7 @@ namespace Game.Enemies.GoombaClasses
         private Vector2 location;
         private bool canDealDamage = true;
         private ObjectPhysics physics;
-        private int deathTimer = IEnemyObjectConstants.RESETTOZERO;
+        private int deathTimer = 0;
         private bool isFlipped = false;
         private bool isHit = false;
 

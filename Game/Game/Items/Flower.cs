@@ -50,7 +50,7 @@ namespace Game.Items
             {
                 isInsideBlock = false;
                 physics.ResetPhysics();
-                physics.Velocity = new Vector2(ItemConstants.ZERO, ItemConstants.RELEASEYVELOCITY);
+                physics.Velocity = new Vector2(0, ItemConstants.RELEASEYVELOCITY);
             }
         }
 

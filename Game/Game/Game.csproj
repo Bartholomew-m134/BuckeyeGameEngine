@@ -355,6 +355,7 @@
     <Compile Include="WorldManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BugsToFixList\Bugs.txt" />
     <Content Include="CodeReviews\Sprint 2\JacksonBlockReadability.txt" />
     <Content Include="CodeReviews\Sprint 2\CoinSpriteCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 2\CoinSpriteReadability.txt" />

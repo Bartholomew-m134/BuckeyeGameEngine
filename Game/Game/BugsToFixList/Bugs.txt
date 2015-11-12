@@ -1,0 +1,1 @@
+﻿- The Score Manager is reseting on first score after a death.

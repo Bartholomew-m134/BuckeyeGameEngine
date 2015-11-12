@@ -18,7 +18,7 @@ namespace Game.Mario
         {
             this.mario = mario;
             WorldManager.SetMario(this);
-            frame = IMarioObjectConstants.ZERO;
+            frame = 0;
         }
 
         public void Damage()
@@ -39,7 +39,7 @@ namespace Game.Mario
 
         public void Draw(ICamera camera)
         {
-            if (frame % IMarioObjectConstants.TWO == IMarioObjectConstants.ZERO && frame % IMarioObjectConstants.FOUR == IMarioObjectConstants.ZERO)
+            if (frame % IMarioObjectConstants.TWO == 0 && frame % IMarioObjectConstants.FOUR == 0)
                 mario.Draw(camera);
             }
                 

@@ -17,7 +17,7 @@ namespace Game.Mario
         private IMario mario;
         private Game1 myGame;
         private int timer = IMarioObjectConstants.STARMARIOINITIALTIMER;
-        public static int stompKillStreak = IMarioObjectConstants.ZERO;
+        public static int stompKillStreak = 0;
 
         private FireBallSpawner factory;
         public StarMarioDecorator(IMario mario, Game1 game)
@@ -36,11 +36,11 @@ namespace Game.Mario
         public void Update()
         {
             timer--;
-            if (timer == IMarioObjectConstants.ZERO && IsOnFlagPole())
+            if (timer == 0 && IsOnFlagPole())
             {
                 WorldManager.SetMario(this.mario);
             }
-            else if (timer == IMarioObjectConstants.ZERO)
+            else if (timer == 0)
             {
                 WorldManager.SetMario(this.mario);
                 BackgroundThemeManager.PlayOverWorldTheme();

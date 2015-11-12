@@ -20,7 +20,7 @@ namespace Game.Mario
             this.mario = mario;
             SoundEffectManager.PowerPlayerUpEffect();
             WorldManager.SetMario(this);
-            frame = IMarioObjectConstants.ZERO;
+            frame = 0;
         }
 
         public void Damage()
@@ -33,11 +33,11 @@ namespace Game.Mario
             {
                 WorldManager.SetMario(this.mario);
             }
-            else if (frame % IMarioObjectConstants.TWO == IMarioObjectConstants.ZERO && frame % IMarioObjectConstants.FOUR == IMarioObjectConstants.ZERO)
+            else if (frame % IMarioObjectConstants.TWO == 0 && frame % IMarioObjectConstants.FOUR == 0)
             {
                 mario.MarioState.Flower();
             }
-            else if (frame % IMarioObjectConstants.TWO == IMarioObjectConstants.ZERO && frame % IMarioObjectConstants.FOUR != IMarioObjectConstants.ZERO)
+            else if (frame % IMarioObjectConstants.TWO == 0 && frame % IMarioObjectConstants.FOUR != 0)
             {
                 mario.MarioState.Damage();
             }

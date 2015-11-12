@@ -7,8 +7,6 @@ namespace Game.Utilities.Constants
 {
     public static class IMarioObjectConstants
     {
-        public const int ZERO = 0;
-
         public const int JUMPPREVENTIONCAP = 2;
 
         public const int STARMARIOINITIALTIMER = 200;

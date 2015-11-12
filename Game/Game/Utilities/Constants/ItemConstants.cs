@@ -7,7 +7,6 @@ namespace Game.Utilities.Constants
 {
     public static class ItemConstants
     {
-        public const int ZERO = 0;
         public const int RELEASEITEM = 4000;
         public const int REVERSEXVELOCITY = -1;
         public const int REVERSEYVELOCITY = 1;

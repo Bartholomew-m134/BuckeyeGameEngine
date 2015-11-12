@@ -18,7 +18,7 @@ namespace Game.Enemies.KoopaClasses
         private Game1 myGame;
         private Vector2 location;
         private bool canDealDamage = true;
-        private int inShellTimer = IEnemyObjectConstants.RESETTOZERO;
+        private int inShellTimer = 0;
         private ObjectPhysics physics;
         private bool isFlipped = false;
         private bool isHit = false;
@@ -32,7 +32,7 @@ namespace Game.Enemies.KoopaClasses
             physics.VelocityMaximum = new Vector2(IEnemyObjectConstants.KOOPAMAXVELOCITY, physics.VelocityMaximum.Y);
             physics.VelocityMinimum = new Vector2(IEnemyObjectConstants.KOOPAMINVELOCITY, physics.VelocityMinimum.Y);
             state = new GreenKoopaWalkingLeftState(this);
-            weaponizedShellKillStreak = IEnemyObjectConstants.RESETTOZERO;
+            weaponizedShellKillStreak = 0;
         }
 
         public void Hit()
@@ -88,15 +88,15 @@ namespace Game.Enemies.KoopaClasses
             if (inShellTimer == IEnemyObjectConstants.HIDINGINSHELLMAXTIME && state is GreenKoopaHidingInShellState)
             {
                 state.KoopaEmergingFromShell();
-                inShellTimer = IEnemyObjectConstants.RESETTOZERO;
+                inShellTimer = 0;
             }
             else if (inShellTimer == IEnemyObjectConstants.EMERGINGFROMSHELLMAXTIME && state is GreenKoopaEmergingFromShellState)
             {
-                weaponizedShellKillStreak = IEnemyObjectConstants.RESETTOZERO;
+                weaponizedShellKillStreak = 0;
                 state.KoopaChangeDirection();
                 canDealDamage = true;
                 isHit = false;
-                inShellTimer = IEnemyObjectConstants.RESETTOZERO;
+                inShellTimer = 0;
             }
 
             location = physics.Update(location);
