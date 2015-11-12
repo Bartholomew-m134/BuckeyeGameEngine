@@ -254,7 +254,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BuckeyeGameSprites\BuckeyePlayerSpriteSheet.png">
+    <Compile Include="ProjectBuckeyeSprites\BuckeyePlayerSpriteSheet.png">
       <Name>BuckeyePlayerSpriteSheet</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
@@ -262,7 +262,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BuckeyeGameSprites\WolverineEnemySpriteSheet.png">
+    <Compile Include="ProjectBuckeyeSprites\WolverineEnemySpriteSheet.png">
       <Name>WolverineEnemySpriteSheet</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
@@ -270,7 +270,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BuckeyeGameSprites\Football.png">
+    <Compile Include="ProjectBuckeyeSprites\Football.png">
       <Name>Football</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>

@@ -7,27 +7,8 @@ using Game.Interfaces;
 
 namespace Game.Mario
 {
-    public interface IMario : IGameObject
+    public interface IMario : IPlayer
     {
-        void Left();
-
-
-        void Right();
-
-
-        void Up();
-
-
-        void Down();
-
-        void Jump();
-
-        void StopJumping();
-
-        void Run();
-
-        void StopRunning();
-
         void Flower();
 
         void ThrowFireball();

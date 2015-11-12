@@ -176,6 +176,8 @@
     <Compile Include="Interfaces\IGameObject.cs" />
     <Compile Include="Interfaces\IGameState.cs" />
     <Compile Include="Interfaces\IMarioSprite.cs" />
+    <Compile Include="Interfaces\IPlayer.cs" />
+    <Compile Include="Interfaces\IPlayerState.cs" />
     <Compile Include="Interfaces\IProjectile.cs" />
     <Compile Include="Interfaces\IScenery.cs" />
     <Compile Include="Interfaces\ISoundEffect.cs" />
@@ -200,6 +202,7 @@
     <Compile Include="Music\OverworldTheme.cs" />
     <Compile Include="Interfaces\IMusic.cs" />
     <Compile Include="Music\StarTheme.cs" />
+    <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerSprites\BuckeyeRightIdleSprite.cs" />
     <Compile Include="Projectiles\LeftFire.cs" />
     <Compile Include="Items\Flower.cs" />
     <Compile Include="Items\GreenMushroom.cs" />
@@ -325,6 +328,7 @@
     <Compile Include="Mario\MarioStates\SmallRightRunningState.cs" />
     <Compile Include="Utilities\Constants\BackgroundElementSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\BlockSpriteConstants.cs" />
+    <Compile Include="Utilities\Constants\BuckeyePlayerSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\CollisionHandlerConstants.cs" />
     <Compile Include="Utilities\Constants\EnemyStatesConstants.cs" />
     <Compile Include="Utilities\Constants\IBlockConstants.cs" />
@@ -388,6 +392,7 @@
     <Content Include="CodeReviews\Sprint 4\EnemyEnemyCollisionHandlerReadability.txt" />
     <Content Include="CodeReviews\Sprint 4\HurtMarioReadability.txt" />
     <Content Include="CodeReviews\Sprint 4\ObjectPhysicsCodeQuality.txt" />
+    <Content Include="CodeReviews\Sprint 5\ScoreManagerReadability.txt" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
@@ -426,6 +431,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Commands\MenuCommands\" />
+    <Folder Include="ProjectBuckeye\EnemyClasses\WolverineSprites\" />
+    <Folder Include="ProjectBuckeye\EnemyClasses\WolverineStates\" />
+    <Folder Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerStates\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
