@@ -1,0 +1,12 @@
+﻿Author:							Connor Swick
+Date :							11/12/15
+Sprint:							5
+Reviewed file:					PipeTransitioningGameState.cs
+File Author:					Kyle Powers
+Minutes to complete:			5
+Code Readability:
+		This class is slighty complex, but it is justified by the amount of 
+		responsibilities a game state has. The class is still very readable and easy 
+		to trace through to determine functionality. As usual, your variable and 
+		method names make it very evident what the objects are/their purpose and how 
+		they are being modified. Good job here.
