@@ -14,7 +14,7 @@ namespace Game.Utilities
     public static class HUDManager
     {
         private static SpriteFont hudFont = SpriteFactories.MenuSpriteFactory.CreateHUDFont();
-        private static ISprite coin= (CoinSprite)SpriteFactories.ItemsSpriteFactory.CreateCoinSprite();
+        private static ISprite coin = SpriteFactories.ItemsSpriteFactory.CreateCoinSprite();
         private static int scoreToPrint;
         private static int coinsToPrint;
         private static int updateTimerCounter = HUDConstants.RESETUPDATEDELAYCOUNTER;
