@@ -51,7 +51,7 @@ namespace Game.Utilities
                 drawOnScreenTimer = ScoreManagerConstants.RESETTOZERO;
             }
             if(hasChanged)
-            drawOnScreenTimer++;
+                drawOnScreenTimer++;
             if (upwardDrawYModifier >= ScoreManagerConstants.INCREMENTBYONE)
                 upwardDrawYModifier = ScoreManagerConstants.RESETTOZERO; 
             upwardDrawYModifier += ScoreManagerConstants.INCREMENTBYONE;

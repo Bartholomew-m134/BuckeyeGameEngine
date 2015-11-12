@@ -1,0 +1,12 @@
+﻿Author:							Matt Bartholomew
+Date :							11/12/15
+Sprint:							5
+Reviewed file:					ScoreManager.cs
+File Author:					Connor Swick
+Minutes to complete:			4
+Code Readability:
+		IncreaseScore is readable but very complicated. Update has many modifiers being updated which can be hard to understand at quick glance.
+		Shell and stomp sequences could be handled with a mod equals instead of conditions that reset to zero. Otherwise, naming and overall 
+		readability is quite simple and nice. One improvement that could be made though is removing the zero constants, since zero is not considered
+		a magic number.
+	
