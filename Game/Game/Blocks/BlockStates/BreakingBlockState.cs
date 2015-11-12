@@ -16,7 +16,7 @@ namespace Game.Blocks.BlockStates
         {
             this.block = block;
             if (isUnderground)
-                block.Sprite = null;
+                block.Sprite = TileSpriteFactory.CreateUndergroundBreakingBlockSprite();
             else
                 block.Sprite = TileSpriteFactory.CreateBreakingBlockSprite();
         }
