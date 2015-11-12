@@ -220,21 +220,13 @@ namespace Game
 
             for (int index = 0; index < gameObjects.Count; index++)
             {
-                if (gameObjects[index] is IMario)
-                {
-                    IGameObject mario = gameObjects[index];
-                    gameObjects.RemoveAt(index);
-                    gameObjects.Add(mario);
-                }
-
                 if (gameObjects[index] is IScenery)
                 {
                     IGameObject scenery = gameObjects[index];
                     gameObjects.RemoveAt(index);
                     gameObjects.Insert(0, scenery);
                 }
-
-                if (gameObjects[index] is IPipe)
+                else if (gameObjects[index] is IPipe)
                 {
                     IGameObject pipe = gameObjects[index];
                     gameObjects.RemoveAt(index);

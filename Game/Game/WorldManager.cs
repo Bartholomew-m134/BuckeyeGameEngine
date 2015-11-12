@@ -51,7 +51,7 @@ namespace Game
         public static void Draw(ICamera camera)
         {
             for (int i = objectWithinZoneList.Count - 1; i >= 0; i--)
-                    objectWithinZoneList[i].Draw(camera);
+                objectWithinZoneList[i].Draw(camera);
         }
 
         public static List<IGameObject> GetCurrentObjectList
