@@ -101,11 +101,11 @@ namespace Game.Collisions.BlockCollisionHandling
                 collidingBlock.Bump();
                 collision.ResolveOverlap(collidingMario, collisionSide);
             } 
-            else if (!(collidingBlock.State is BrickDebrisState)){
+            else if (!(collidingBlock.State is BrickDebrisState) && !(collidingBlock.State is HiddenBlockState)){
                 collision.ResolveOverlap(collidingMario, collisionSide);
             }
            
-            if(!(collidingBlock.State is NullBlockState || collidingBlock.State is BrickDebrisState))
+            if(!(collidingBlock.State is NullBlockState || collidingBlock.State is BrickDebrisState || collidingBlock.State is HiddenBlockState))
                 collidingMario.Physics.ResetY();
         }
         private void HandleRightSide()
