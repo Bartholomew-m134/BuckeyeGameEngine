@@ -59,10 +59,11 @@ namespace Game.GameStates
             {
                 
                 game.gameState = prevGameState;
-                Console.WriteLine(warpLocation);                
+    
                 WorldManager.GetMario().VectorCoordinates = warpLocation;
                 CollisionManager.Update(this);
                 camera.Update(WorldManager.GetMario());
+
                 prevGameState.IsUnderground = !prevGameState.IsUnderground;
             }
         }

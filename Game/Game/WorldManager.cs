@@ -1,5 +1,4 @@
-﻿using Game.Collisions;
-using Game.Interfaces;
+﻿using Game.Interfaces;
 using Game.Mario;
 using Game.Music;
 using Game.Utilities;

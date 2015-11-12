@@ -57,26 +57,20 @@ namespace Game.GameStates
                 foreach (IController controller in controllerList)
                     controller.Update();
 
-                
                 WorldManager.Update(camera);
                 CollisionManager.Update(this);
                 camera.Update(WorldManager.GetMario());
-                //WorldManager.ResetIfMarioIsDead(camera);
-
                 ScoreManager.Update();
                 HUDManager.Update();
                 delay = 0;
             }
-
             else
             {
                 delay++;
             }
+
             if (HUDManager.OutOfTime)
-            {
                 WorldManager.GetMario().MarioState = new DeadMarioState(WorldManager.GetMario());
-                
-            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -117,7 +111,7 @@ namespace Game.GameStates
 
         public void MarioPowerUp()
         {
-            game.gameState = new MarioPowerUpGameState(game);
+            game.gameState = new MarioPowerUpGameState(camera, game);
         }
     }
 }
