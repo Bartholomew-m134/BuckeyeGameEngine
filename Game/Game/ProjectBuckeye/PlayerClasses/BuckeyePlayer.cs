@@ -28,81 +28,69 @@ namespace Game.ProjectBuckeye.PlayerClasses
 
         public void Left()
         {
-            
+            state.Left();
         }
 
         public void Right()
         {
-            throw new NotImplementedException();
+            state.Right();
         }
 
         public void Up()
         {
-            throw new NotImplementedException();
         }
 
         public void Down()
         {
-            throw new NotImplementedException();
+            state.Down();
         }
 
         public void Jump()
         {
-            throw new NotImplementedException();
+            state.Jump();
         }
 
         public void StopJumping()
         {
-            throw new NotImplementedException();
+            state.StopJumping();
         }
 
         public void Run()
         {
-            throw new NotImplementedException();
+            state.Run();
         }
 
         public void StopRunning()
         {
-            throw new NotImplementedException();
+            state.StopRunning();
         }
 
         public void Update()
         {
-            throw new NotImplementedException();
+            location = physics.Update(location);
+            state.Update();  
         }
 
         public void Draw(ICamera camera)
         {
-            throw new NotImplementedException();
+            sprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
         public Vector2 VectorCoordinates
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return location; }
+            set { location = value; }
         }
 
         public ISprite Sprite
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return sprite; }
+            set { sprite = value; }
         }
 
         public ObjectPhysics Physics
         {
-            get { throw new NotImplementedException(); }
+            get { return physics; }
         }
 
         public IBuckeyePlayerState State

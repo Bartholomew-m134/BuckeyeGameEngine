@@ -7,6 +7,7 @@ using Game.Interfaces;
 using Microsoft.Xna.Framework;
 using Game.Utilities;
 using Game.Utilities.Constants;
+using Game.SoundEffects;
 
 namespace Game.ProjectBuckeye.PlayerClasses.BuckeyePlayerStates
 {
@@ -18,56 +19,73 @@ namespace Game.ProjectBuckeye.PlayerClasses.BuckeyePlayerStates
         {
             this.buckeyePlayer = buckeyePlayer;
             buckeyePlayer.Sprite = SpriteFactories.BuckeyePlayerSpriteFactory.CreateBuckeyeRightJumpingSprite();
+            if (!buckeyePlayer.State.IsJumping)
+            {
+                Vector2 velocity = this.buckeyePlayer.Physics.Velocity;
+                velocity.Y = BuckeyePlayerStateConstants.INITIAL_JUMP_VELOCITY;
+                this.buckeyePlayer.Physics.Velocity = velocity;
+                SoundEffectManager.SmallMarioJumpEffect();
+            }
         }
 
         public void Update()
         {
-            throw new NotImplementedException();
+            buckeyePlayer.Sprite.Update();
         }
 
         public void Left()
         {
-            throw new NotImplementedException();
+            Vector2 acceleration = buckeyePlayer.Physics.Acceleration;
+            acceleration.X = BuckeyePlayerStateConstants.NEGATIVE_JUMPING_X_ACCELERATION;
+            buckeyePlayer.Physics.Acceleration = acceleration;
         }
 
         public void Right()
         {
-            throw new NotImplementedException();
+            Vector2 acceleration = buckeyePlayer.Physics.Acceleration;
+            acceleration.X = BuckeyePlayerStateConstants.POSITIVE_JUMPING_X_ACCELERATION;
+            buckeyePlayer.Physics.Acceleration = acceleration;
         }
 
         public void Up()
         {
-            throw new NotImplementedException();
         }
 
         public void Down()
         {
-            throw new NotImplementedException();
         }
 
         public void Jump()
         {
-            throw new NotImplementedException();
         }
 
         public void StopJumping()
         {
-            throw new NotImplementedException();
+            if (buckeyePlayer.Physics.Velocity.Y < 0)
+            {
+                buckeyePlayer.Physics.ResetY();
+            }
         }
 
         public void Run()
         {
-            throw new NotImplementedException();
         }
 
         public void StopRunning()
         {
-            throw new NotImplementedException();
+            buckeyePlayer.Physics.VelocityMaximum = new Vector2(BuckeyePlayerStateConstants.WALKING_VELOCITY_MAX, buckeyePlayer.Physics.VelocityMaximum.Y);
+            buckeyePlayer.Physics.VelocityMinimum = new Vector2(BuckeyePlayerStateConstants.WALKING_VELOCITY_MIN, buckeyePlayer.Physics.VelocityMinimum.Y);
         }
 
         public void DownPlayer()
         {
-            throw new NotImplementedException();
+            buckeyePlayer.State = new BuckeyeRightDownState(buckeyePlayer);
+        }
+
+
+        public bool IsJumping
+        {
+            get { return true; }
         }
     }
 }

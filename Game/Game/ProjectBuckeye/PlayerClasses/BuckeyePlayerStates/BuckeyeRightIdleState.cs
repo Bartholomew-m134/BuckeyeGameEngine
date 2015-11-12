@@ -75,5 +75,11 @@ namespace Game.ProjectBuckeye.PlayerClasses.BuckeyePlayerStates
         {
             buckeyePlayer.State = new BuckeyeRightDownState(buckeyePlayer);
         }
+
+
+        public bool IsJumping
+        {
+            get { return false; }
+        }
     }
 }

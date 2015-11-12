@@ -63,5 +63,11 @@ namespace Game.ProjectBuckeye.PlayerClasses.BuckeyePlayerStates
         public void DownPlayer()
         {
         }
+
+
+        public bool IsJumping
+        {
+            get { return false; }
+        }
     }
 }

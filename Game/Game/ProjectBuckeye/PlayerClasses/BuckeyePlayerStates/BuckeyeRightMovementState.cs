@@ -22,52 +22,59 @@ namespace Game.ProjectBuckeye.PlayerClasses.BuckeyePlayerStates
 
         public void Update()
         {
-            throw new NotImplementedException();
+            buckeyePlayer.Sprite.Update();
         }
 
         public void Left()
         {
-            throw new NotImplementedException();
+            buckeyePlayer.State = new BuckeyeRightIdleState(buckeyePlayer);
         }
 
         public void Right()
         {
-            throw new NotImplementedException();
+            Vector2 acceleration = buckeyePlayer.Physics.Acceleration;
+            acceleration.X = BuckeyePlayerStateConstants.POSITIVE_RUNNING_X_ACCELERATION;
+            buckeyePlayer.Physics.Acceleration = acceleration;
         }
 
         public void Up()
         {
-            throw new NotImplementedException();
         }
 
         public void Down()
         {
-            throw new NotImplementedException();
         }
 
         public void Jump()
         {
-            throw new NotImplementedException();
+            buckeyePlayer.State = new BuckeyeRightJumpingState(buckeyePlayer);
         }
 
         public void StopJumping()
         {
-            throw new NotImplementedException();
         }
 
         public void Run()
         {
-            throw new NotImplementedException();
+            buckeyePlayer.Physics.VelocityMaximum = new Vector2(BuckeyePlayerStateConstants.RUNNING_VELOCITY_MAX, buckeyePlayer.Physics.VelocityMaximum.Y);
+            buckeyePlayer.Physics.VelocityMinimum = new Vector2(BuckeyePlayerStateConstants.RUNNING_VELOCITY_MIN, buckeyePlayer.Physics.VelocityMinimum.Y);
         }
 
         public void StopRunning()
         {
-            throw new NotImplementedException();
+            buckeyePlayer.Physics.VelocityMaximum = new Vector2(BuckeyePlayerStateConstants.WALKING_VELOCITY_MAX, buckeyePlayer.Physics.VelocityMaximum.Y);
+            buckeyePlayer.Physics.VelocityMinimum = new Vector2(BuckeyePlayerStateConstants.WALKING_VELOCITY_MIN, buckeyePlayer.Physics.VelocityMinimum.Y);
         }
 
         public void DownPlayer()
         {
-            throw new NotImplementedException();
+            buckeyePlayer.State = new BuckeyeRightDownState(buckeyePlayer);
+        }
+
+
+        public bool IsJumping
+        {
+            get { return false; }
         }
     }
 }

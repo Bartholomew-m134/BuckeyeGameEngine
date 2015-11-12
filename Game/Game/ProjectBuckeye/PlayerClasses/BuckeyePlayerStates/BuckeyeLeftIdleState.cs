@@ -22,52 +22,64 @@ namespace Game.ProjectBuckeye.PlayerClasses.BuckeyePlayerStates
 
         public void Update()
         {
-            throw new NotImplementedException();
+            if (buckeyePlayer.Physics.Velocity.X < 0)
+            {
+                buckeyePlayer.Physics.DampenLeft();
+            }
+            else if (buckeyePlayer.Physics.Velocity.X > 0)
+            {
+                buckeyePlayer.Physics.DampenRight();
+            }
+
+            buckeyePlayer.Sprite.Update();
         }
 
         public void Left()
         {
-            throw new NotImplementedException();
+            buckeyePlayer.State = new BuckeyeLeftMovementState(buckeyePlayer);
         }
 
         public void Right()
         {
-            throw new NotImplementedException();
+            buckeyePlayer.State = new BuckeyeLeftIdleState(buckeyePlayer);
         }
 
         public void Up()
         {
-            throw new NotImplementedException();
         }
 
         public void Down()
         {
-            throw new NotImplementedException();
         }
 
         public void Jump()
         {
-            throw new NotImplementedException();
+            buckeyePlayer.State = new BuckeyeLeftJumpingState(buckeyePlayer);
         }
 
         public void StopJumping()
         {
-            throw new NotImplementedException();
         }
 
         public void Run()
         {
-            throw new NotImplementedException();
         }
 
         public void StopRunning()
         {
-            throw new NotImplementedException();
+            buckeyePlayer.Physics.VelocityMaximum = new Vector2(BuckeyePlayerStateConstants.WALKING_VELOCITY_MAX, buckeyePlayer.Physics.VelocityMaximum.Y);
+            buckeyePlayer.Physics.VelocityMinimum = new Vector2(BuckeyePlayerStateConstants.WALKING_VELOCITY_MIN, buckeyePlayer.Physics.VelocityMinimum.Y);
         }
 
         public void DownPlayer()
         {
-            throw new NotImplementedException();
+            buckeyePlayer.State = new BuckeyeLeftDownState(buckeyePlayer);
+        }
+
+
+        public bool IsJumping
+        {
+            get { return false; }
         }
     }
 }
