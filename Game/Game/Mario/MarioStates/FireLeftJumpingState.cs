@@ -23,7 +23,7 @@ namespace Game.Mario.MarioStates
             if (!mario.MarioState.IsJumping())
             {
                 Vector2 velocity = this.mario.Physics.Velocity;
-                velocity.Y = -12;
+                velocity.Y = MarioStateConstants.INITIALJUMPVELOCITY;
                 this.mario.Physics.Velocity = velocity;
                 SoundEffectManager.SuperMarioJumpEffect();
             }
@@ -37,14 +37,14 @@ namespace Game.Mario.MarioStates
         {
           
             Vector2 acceleration = mario.Physics.Acceleration;
-            acceleration.X = -1;
+            acceleration.X = MarioStateConstants.NEGATIVEJUMPINGXACCELERATION;
             mario.Physics.Acceleration = acceleration;
         }
 
         public void Right()
         {
             Vector2 acceleration = mario.Physics.Acceleration;
-            acceleration.X = 1;
+            acceleration.X = MarioStateConstants.POSITIVEJUMPINGXACCELERATION;
             mario.Physics.Acceleration = acceleration;
         }
 
@@ -130,8 +130,8 @@ namespace Game.Mario.MarioStates
 
         public void StopRunning()
         {
-            mario.Physics.VelocityMaximum = new Vector2(6, mario.Physics.VelocityMaximum.Y);
-            mario.Physics.VelocityMinimum = new Vector2(-6, mario.Physics.VelocityMinimum.Y);
+            mario.Physics.VelocityMaximum = new Vector2(MarioStateConstants.WALKINGVELOCITYMAX, mario.Physics.VelocityMaximum.Y);
+            mario.Physics.VelocityMinimum = new Vector2(MarioStateConstants.WALKINGVELOCITYMIN, mario.Physics.VelocityMinimum.Y);
         }
     }
 }

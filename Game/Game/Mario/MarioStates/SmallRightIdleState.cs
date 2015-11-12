@@ -73,7 +73,7 @@ namespace Game.Mario.MarioStates
         public void Flower()
         {
             mario.MarioState = new FireRightIdleState(mario);
-            mario.VectorCoordinates += new Vector2(0, -16);
+            mario.VectorCoordinates += new Vector2(0, MarioStateConstants.POWERUPOFFSET);
         }
 
         public void PoleSlide()
@@ -88,7 +88,7 @@ namespace Game.Mario.MarioStates
         public void Mushroom()
         {
             mario.MarioState = new NormalRightIdleState(mario);
-            mario.VectorCoordinates += new Vector2(0, -16);
+            mario.VectorCoordinates += new Vector2(0, MarioStateConstants.POWERUPOFFSET);
         }
 
         public void Star()
@@ -133,8 +133,8 @@ namespace Game.Mario.MarioStates
 
         public void StopRunning()
         {
-            mario.Physics.VelocityMaximum = new Vector2(6, mario.Physics.VelocityMaximum.Y);
-            mario.Physics.VelocityMinimum = new Vector2(-6, mario.Physics.VelocityMinimum.Y);
+            mario.Physics.VelocityMaximum = new Vector2(MarioStateConstants.WALKINGVELOCITYMAX, mario.Physics.VelocityMaximum.Y);
+            mario.Physics.VelocityMinimum = new Vector2(MarioStateConstants.WALKINGVELOCITYMIN, mario.Physics.VelocityMinimum.Y);
         }
     }
 }

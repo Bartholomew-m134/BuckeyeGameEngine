@@ -29,7 +29,7 @@ namespace Game.Mario.MarioStates
         {
             
             Vector2 acceleration = mario.Physics.Acceleration;
-            acceleration.X = -2;
+            acceleration.X = MarioStateConstants.NEGATIVERUNNINGXACCELERATION;
             mario.Physics.Acceleration = acceleration;
         }
         public void PoleSlide()
@@ -54,7 +54,7 @@ namespace Game.Mario.MarioStates
         public void Down()
         {
             mario.MarioState = new FireLeftCrouchingState(mario);
-            mario.VectorCoordinates += new Vector2(0, 16);
+            mario.VectorCoordinates += new Vector2(0, MarioStateConstants.SMALLORCROUCHINGOFFSET);
         }
 
 
@@ -115,15 +115,15 @@ namespace Game.Mario.MarioStates
 
         public void Run()
         {
-            mario.Physics.VelocityMaximum = new Vector2(10, mario.Physics.VelocityMaximum.Y);
-            mario.Physics.VelocityMinimum = new Vector2(-10, mario.Physics.VelocityMinimum.Y);
+            mario.Physics.VelocityMaximum = new Vector2(MarioStateConstants.RUNNINGVELOCITYMAX, mario.Physics.VelocityMaximum.Y);
+            mario.Physics.VelocityMinimum = new Vector2(MarioStateConstants.RUNNINGVELOCITYMIN, mario.Physics.VelocityMinimum.Y);
 
         }
 
         public void StopRunning()
         {
-            mario.Physics.VelocityMaximum = new Vector2(6, mario.Physics.VelocityMaximum.Y);
-            mario.Physics.VelocityMinimum = new Vector2(-6, mario.Physics.VelocityMinimum.Y);
+            mario.Physics.VelocityMaximum = new Vector2(MarioStateConstants.WALKINGVELOCITYMAX, mario.Physics.VelocityMaximum.Y);
+            mario.Physics.VelocityMinimum = new Vector2(MarioStateConstants.WALKINGVELOCITYMIN, mario.Physics.VelocityMinimum.Y);
         }
     }
 }
