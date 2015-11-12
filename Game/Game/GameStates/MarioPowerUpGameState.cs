@@ -1,4 +1,5 @@
-﻿using Game.Interfaces;
+﻿using Game.Collisions;
+using Game.Interfaces;
 using Game.Utilities;
 using Game.Utilities.Controls;
 using Microsoft.Xna.Framework;
@@ -15,18 +16,18 @@ namespace Game.GameStates
         private Game1 game;
         private IGameState prevGameState;
         private List<IController> controllerList;
-        ObjectPhysics storedPhysics;
         private int timer;
+        private int delay;
+        private ICamera camera;
 
-        public MarioPowerUpGameState(Game1 game)
+        public MarioPowerUpGameState(ICamera camera, Game1 game)
         {
             this.game = game;
             prevGameState = game.gameState;
+            this.camera = camera;
             controllerList = new List<IController>();
             controllerList.Add(new KeyboardController(new PausedControls(game)));
             controllerList.Add(new GamePadController(new PausedControls(game)));
-
-            storedPhysics = WorldManager.GetMario().Physics;
 
             WorldManager.GetMario().Physics.Acceleration = Vector2.Zero;
             WorldManager.GetMario().Physics.Velocity = Vector2.Zero;
@@ -44,17 +45,25 @@ namespace Game.GameStates
 
         public void Update()
         {
-            foreach (IController controller in controllerList)
-                controller.Update();
-
-            WorldManager.GetMario().Update();
-
-            if (timer > 40)
+            if (delay == 3)
             {
-                game.gameState = prevGameState;
-                WorldManager.GetMario().Physics.ResetPhysics();
+                foreach (IController controller in controllerList)
+                    controller.Update();
+
+                WorldManager.GetMario().Update();
+                CollisionManager.Update(this);
+                camera.Update(WorldManager.GetMario());
+
+                if (timer > 10)
+                {
+                    WorldManager.GetMario().Physics.ResetPhysics();
+                    game.gameState = prevGameState;
+                }
+                timer++;
+                delay = 0;
             }
-            timer++;
+            else
+                delay++;
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -64,7 +73,7 @@ namespace Game.GameStates
 
         public void StartButton()
         {
-            game.gameState = prevGameState;
+            game.gameState = new PauseGameState(game);
         }
 
 

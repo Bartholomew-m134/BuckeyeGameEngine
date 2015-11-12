@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
 using Game.Utilities;
+using Game.Utilities.Constants;
 
 namespace Game.Enemies.GoombaClasses
 {
@@ -69,9 +70,9 @@ namespace Game.Enemies.GoombaClasses
 
         public void Update()
         {
-            if (state is GoombaSmashedState && deathTimer == 3)
+            if (state is GoombaSmashedState && deathTimer == IEnemyObjectConstants.STOMPEDGOOMBADELAYTIME)
             {
-                location.Y += 2000;
+                location.Y += IEnemyObjectConstants.VANISH;
                 deathTimer = 0;
                 state = new GoombaWalkingLeftState(this);
             }

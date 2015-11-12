@@ -5,17 +5,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.SoundEffects;
+using Game.Utilities.Constants;
 
 namespace Game.Mario
 {
-    public class HurtMario : IMario
+    public class FireMarioTransitionDecorator : IMario
     {
-         private IMario mario;
+        private IMario mario;
         private int frame;
 
-        public HurtMario(IMario mario)
+        public FireMarioTransitionDecorator(IMario mario)
         {
             this.mario = mario;
+            SoundEffectManager.PowerPlayerUpEffect();
             WorldManager.SetMario(this);
             frame = 0;
         }
@@ -26,9 +29,17 @@ namespace Game.Mario
 
         public void Update()
         {
-            if (frame == 35)
+            if (frame == IMarioObjectConstants.POWERUPMARIOTIMERMAX)
             {
                 WorldManager.SetMario(this.mario);
+            }
+            else if (frame % IMarioObjectConstants.TWO == 0 && frame % IMarioObjectConstants.FOUR == 0)
+            {
+                mario.MarioState.Flower();
+            }
+            else if (frame % IMarioObjectConstants.TWO == 0 && frame % IMarioObjectConstants.FOUR != 0)
+            {
+                mario.MarioState.Damage();
             }
             mario.Update();
 
@@ -38,33 +49,32 @@ namespace Game.Mario
 
         public void Draw(ICamera camera)
         {
-            if (frame % 2 == 0 && frame % 4 == 0)
-                mario.Draw(camera);
-            }
-                
+            mario.Draw(camera);
+        }
+
         public void Left()
         {
-            mario.Left();
+            
         }
 
         public void Right()
         {
-            mario.Right();
+            
         }
 
         public void Up()
         {
-            mario.Up();
+            
         }
 
         public void Down()
         {
-            mario.Down();
+            
         }
 
         public void Jump()
         {
-            mario.Jump();
+            
         }
 
         public void StopJumping()
@@ -74,22 +84,21 @@ namespace Game.Mario
 
         public void Flower()
         {
-            mario.Flower();
+            
         }
 
         public void ThrowFireball()
         {
-            mario.ThrowFireball();
+            
         }
 
         public void Mushroom()
         {
-            mario.Mushroom();
+            
         }
-
         public void Star()
         {
-            mario.Star();
+            
         }
         public void PoleSlide()
         {
@@ -114,7 +123,11 @@ namespace Game.Mario
             set { mario.MarioState = value; }
         }
 
-       
+        public static bool IsTransitioning()
+        {
+            return true;
+        }
+
         public bool IsBigMario()
         {
             return mario.MarioState.IsBigMario();
@@ -142,23 +155,25 @@ namespace Game.Mario
 
         public ObjectPhysics Physics
         {
-            get { return ((MarioInstance)mario).Physics; }
+            get { return ((IMario)mario).Physics; }
         }
+
+
 
         public void Run()
         {
-            mario.Run();
+            
         }
 
         public void StopRunning()
         {
-            mario.StopRunning();
+            
         }
 
 
         public bool IsHurt()
         {
-            return true;
+            return false;
         }
 
 

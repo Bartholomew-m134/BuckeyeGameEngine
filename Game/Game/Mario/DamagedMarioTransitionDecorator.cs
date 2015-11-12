@@ -1,31 +1,24 @@
-﻿using System;
+﻿using Game.Interfaces;
+using Game.Utilities;
+using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Microsoft.Xna.Framework;
-using System.Diagnostics;
-using Game.Interfaces;
-using Game.Utilities;
-using Game.Music;
-using Game.Mario.MarioStates;
+using Game.Utilities.Constants;
 
 namespace Game.Mario
 {
-    public class StarMario : IMario
+    public class DamagedMarioTransitionDecorator : IMario
     {
         private IMario mario;
-        private Game1 myGame;
-        private int timer = 200;
-        public static int stompKillStreak = 0;
+        private int frame;
 
-        private FireBallSpawner factory;
-        public StarMario(IMario mario, Game1 game)
+        public DamagedMarioTransitionDecorator(IMario mario)
         {
             this.mario = mario;
-            this.myGame = game;
             WorldManager.SetMario(this);
-            BackgroundThemeManager.PlayStarTheme();
-            factory = new FireBallSpawner(game);
+            frame = 0;
         }
 
         public void Damage()
@@ -34,23 +27,22 @@ namespace Game.Mario
 
         public void Update()
         {
-            timer--;
-            if(timer == 0 && IsOnFlagPole()){
-                WorldManager.SetMario(this.mario);
-            }
-            else if (timer == 0)
+            if (frame == IMarioObjectConstants.HURTMARIOTIMERMAX)
             {
                 WorldManager.SetMario(this.mario);
-                BackgroundThemeManager.PlayOverWorldTheme();
             }
             mario.Update();
+
+            frame++;
+            
         }
 
         public void Draw(ICamera camera)
         {
-            ((IMarioSprite)mario.Sprite).StarDraw(myGame.spriteBatch, camera.GetAdjustedPosition(mario.VectorCoordinates));
-        }
-
+            if (frame % IMarioObjectConstants.TWO == 0 && frame % IMarioObjectConstants.FOUR == 0)
+                mario.Draw(camera);
+            }
+                
         public void Left()
         {
             mario.Left();
@@ -81,54 +73,25 @@ namespace Game.Mario
             mario.StopJumping();
         }
 
-        public void Run() 
-        {
-            mario.Run();
-        }
-
-        public void StopRunning() 
-        {
-            mario.StopJumping();
-        }
-
         public void Flower()
         {
-            if (!this.IsFireMario())
-            {
-                new FireMario(this);
-            }
+            mario.Flower();
         }
 
         public void ThrowFireball()
         {
-            if (this.IsFireMario())
-            {
-                if (mario.MarioState.IsRight())
-                {
-                    factory.ReleaseRightFireBall(new Vector2(mario.VectorCoordinates.X + mario.Sprite.SpriteDimensions.X, mario.VectorCoordinates.Y));
-                    new FireThrowRightMario(this, myGame);
-                }
-                else
-                {
-                    factory.ReleaseLeftFireBall(mario.VectorCoordinates);
-                    new FireThrowLeftMario(this, myGame);
-                }
-            }
+            mario.ThrowFireball();
         }
 
         public void Mushroom()
         {
-            if (!this.IsBigMario())
-            {
-                new GrowMario(this);
-            }
+            mario.Mushroom();
         }
 
         public void Star()
         {
-            timer = 1000;
+            mario.Star();
         }
-
         public void PoleSlide()
         {
             mario.PoleSlide();
@@ -151,7 +114,8 @@ namespace Game.Mario
             get { return mario.MarioState; }
             set { mario.MarioState = value; }
         }
-     
+
+       
         public bool IsBigMario()
         {
             return mario.MarioState.IsBigMario();
@@ -164,7 +128,7 @@ namespace Game.Mario
 
         public bool IsStarMario()
         {
-            return true;
+            return mario.IsStarMario();
         }
 
         public bool IsJumping()
@@ -182,14 +146,20 @@ namespace Game.Mario
             get { return ((MarioInstance)mario).Physics; }
         }
 
+        public void Run()
+        {
+            mario.Run();
+        }
+
+        public void StopRunning()
+        {
+            mario.StopRunning();
+        }
+
 
         public bool IsHurt()
         {
-            return false;
-        }
-
-        private bool IsOnFlagPole(){
-            return (mario.MarioState is FireFlagPoleSlidingState || mario.MarioState is NormalFlagPoleSlidingState || mario.MarioState is SmallFlagPoleSlidingState);
+            return true;
         }
 
 

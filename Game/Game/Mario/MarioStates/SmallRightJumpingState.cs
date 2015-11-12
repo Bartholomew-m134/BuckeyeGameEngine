@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Game.Interfaces;
 using Game.Utilities;
 using Game.SoundEffects;
+using Game.Utilities.Constants;
 
 namespace Game.Mario.MarioStates
 {
@@ -22,7 +23,7 @@ namespace Game.Mario.MarioStates
             if (!mario.MarioState.IsJumping())
             {
                 Vector2 velocity = this.mario.Physics.Velocity;
-                velocity.Y = -12;
+                velocity.Y = MarioStateConstants.INITIALJUMPVELOCITY;
                 this.mario.Physics.Velocity = velocity;
                 SoundEffectManager.SmallMarioJumpEffect();
             }
@@ -35,14 +36,14 @@ namespace Game.Mario.MarioStates
         public void Left()
         {
             Vector2 acceleration = mario.Physics.Acceleration;
-            acceleration.X = -1;
+            acceleration.X = MarioStateConstants.NEGATIVEJUMPINGXACCELERATION;
             mario.Physics.Acceleration = acceleration;
         }
 
         public void Right()
         {      
             Vector2 acceleration = mario.Physics.Acceleration;
-            acceleration.X = 1;
+            acceleration.X = MarioStateConstants.POSITIVEJUMPINGXACCELERATION;
             mario.Physics.Acceleration = acceleration;
         }
 
@@ -72,7 +73,7 @@ namespace Game.Mario.MarioStates
         public void Flower()
         {
             mario.MarioState = new FireRightJumpingState(mario);
-            mario.VectorCoordinates += new Vector2(0, -16);
+            mario.VectorCoordinates += new Vector2(0, MarioStateConstants.POWERUPOFFSET);
         }
 
         public void PoleSlide()
@@ -87,7 +88,7 @@ namespace Game.Mario.MarioStates
         public void Mushroom()
         {
             mario.MarioState = new NormalRightJumpingState(mario);
-            mario.VectorCoordinates += new Vector2(0, -16);
+            mario.VectorCoordinates += new Vector2(0, MarioStateConstants.POWERUPOFFSET);
         }
 
         public void Star()
@@ -134,8 +135,8 @@ namespace Game.Mario.MarioStates
 
         public void StopRunning()
         {
-            mario.Physics.VelocityMaximum = new Vector2(6, mario.Physics.VelocityMaximum.Y);
-            mario.Physics.VelocityMinimum = new Vector2(-6, mario.Physics.VelocityMinimum.Y); 
+            mario.Physics.VelocityMaximum = new Vector2(MarioStateConstants.WALKINGVELOCITYMAX, mario.Physics.VelocityMaximum.Y);
+            mario.Physics.VelocityMinimum = new Vector2(MarioStateConstants.WALKINGVELOCITYMIN, mario.Physics.VelocityMinimum.Y); 
         }
     }
 }

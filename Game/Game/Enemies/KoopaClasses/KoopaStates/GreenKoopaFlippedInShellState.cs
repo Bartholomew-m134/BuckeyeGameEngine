@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Game.SoundEffects;
-
+using Game.Utilities.Constants;
 namespace Game.Enemies.KoopaClasses.KoopaStates
 {
     public class GreenKoopaFlippedInShellState : IKoopaState
@@ -15,8 +15,8 @@ namespace Game.Enemies.KoopaClasses.KoopaStates
         {
             this.greenKoopa = greenKoopa;
             SoundEffectManager.EnemyFlippedEffect();
-            greenKoopa.Physics.Velocity = new Vector2(0, -5);
-            greenKoopa.Physics.Acceleration = new Vector2(0, 1);
+            greenKoopa.Physics.Velocity = new Vector2(0, EnemyStatesConstants.FLIPPEDYVELOCITY);
+            greenKoopa.Physics.Acceleration = new Vector2(0, EnemyStatesConstants.GRAVITY);
             this.greenKoopa.IsFlipped = true;
             float prevHeight = greenKoopa.Sprite.SpriteDimensions.Y;
             this.greenKoopa.Sprite = Game.SpriteFactories.EnemySpriteFactory.CreateGreenKoopaFlippedInShellSprite();

@@ -40,7 +40,7 @@ namespace Game.Collisions.EnemyCollisionHandling
                 if (enemy is GreenKoopa && ((GreenKoopa)enemy).IsWeaponized)
                 {
                     SoundEffectManager.EnemyFlippedEffect();
-                    enemy.Physics.Velocity = new Vector2(-11, enemy.Physics.Velocity.Y);
+                    enemy.Physics.Velocity = new Vector2(-enemy.Physics.Velocity.X, enemy.Physics.Velocity.Y);
                 }
             }
             else if (side is RightSideCollision)
@@ -49,7 +49,7 @@ namespace Game.Collisions.EnemyCollisionHandling
                 if (enemy is GreenKoopa && ((GreenKoopa)enemy).IsWeaponized)
                 {
                     SoundEffectManager.EnemyFlippedEffect();
-                    enemy.Physics.Velocity = new Vector2(11, enemy.Physics.Velocity.Y);
+                    enemy.Physics.Velocity = new Vector2(-enemy.Physics.Velocity.X, enemy.Physics.Velocity.Y);
                 }
             }
         }

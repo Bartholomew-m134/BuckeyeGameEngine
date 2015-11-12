@@ -12,12 +12,12 @@ namespace Game.Items.ItemSprites
 {
     public class CoinSprite : ISprite
     {
-        private Texture2D Texture { get; set; }
+        private Texture2D texture;
         private int currentFrame;
         private int sourceX;
         public CoinSprite(Texture2D texture)
         {
-            Texture = texture;
+            this.texture = texture;
         }
 
         public void Update() {
@@ -34,7 +34,7 @@ namespace Game.Items.ItemSprites
                 (int)ItemSpriteConstants.COINDIMENSIONS.X, (int)ItemSpriteConstants.COINDIMENSIONS.Y);
 
             spriteBatch.Begin();
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.Draw(texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
 

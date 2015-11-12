@@ -21,6 +21,7 @@ namespace Game.SoundEffects
         private static ISoundEffect flagPoleEffect;
         private static ISoundEffect powerPlayerUpEffect;
         private static ISoundEffect shrinkingOrPipeEffect;
+        private static ISoundEffect gameOverEffect;
 
         public static void EnemyFlippedEffect()
         {
@@ -98,6 +99,12 @@ namespace Game.SoundEffects
         {
             shrinkingOrPipeEffect = new ShrinkingOrPipeEffect();
             shrinkingOrPipeEffect.Play();
+        }
+
+        public static void GameOverEffect()
+        {
+            gameOverEffect = new GameOverEffect();
+            gameOverEffect.Play();
         }
     }
 }

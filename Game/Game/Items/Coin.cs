@@ -6,6 +6,7 @@ using System.Text;
 using Game.SpriteFactories;
 using Game.Interfaces;
 using Game.Utilities;
+using Game.Utilities.Constants;
 
 namespace Game.Items
 {
@@ -36,12 +37,12 @@ namespace Game.Items
 
         public void Draw(ICamera camera)
         {
-            if (!isInsideBlock || (isReleased && physics.Velocity.Y < 3))
+            if (!isInsideBlock || (isReleased && physics.Velocity.Y < ItemConstants.COINYVELOCITYCAP))
                 coinSprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
         public void Disappear() {
-            location.Y += 2000;
+            location.Y += ItemConstants.RELEASEITEM;
         }
 
         public void Release()
@@ -50,7 +51,7 @@ namespace Game.Items
             {
                 isReleased = true;
                 physics.ResetPhysics();
-                physics.Velocity = new Vector2(0, -7);
+                physics.Velocity = new Vector2(0, ItemConstants.COINRELEASEYVELOCITY);
             }
         }
 

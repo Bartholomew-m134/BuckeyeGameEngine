@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Game.Utilities;
+using Game.Utilities.Constants;
 
 namespace Game.Items
 {
@@ -40,7 +41,7 @@ namespace Game.Items
         }
 
         public void Disappear() {
-            location.Y += 2000;
+            location.Y += ItemConstants.RELEASEITEM;
         }
 
         public void Release()
@@ -49,13 +50,13 @@ namespace Game.Items
             {
                 isInsideBlock = false;
                 physics.ResetPhysics();
-                physics.Velocity = new Vector2(0, -1);
+                physics.Velocity = new Vector2(0, ItemConstants.RELEASEYVELOCITY);
             }
         }
 
         public void ReverseDirection()
         {
-            physics.Velocity *= new Vector2(-1, 1);
+            physics.Velocity *= new Vector2(ItemConstants.REVERSEXVELOCITY, ItemConstants.REVERSEYVELOCITY);
         }
 
         public Vector2 VectorCoordinates

@@ -12,10 +12,13 @@ namespace Game.Blocks.BlockStates
     {
         private IBlock block;
 
-        public BrickBlockState(IBlock block)
+        public BrickBlockState(IBlock block, bool isUnderground)
         {
             this.block = block;
-            block.Sprite = TileSpriteFactory.CreateBrickBlockSprite();
+            if (isUnderground)
+                block.Sprite = null;
+            else
+                block.Sprite = TileSpriteFactory.CreateBrickBlockSprite();
         }
 
         public void Update()

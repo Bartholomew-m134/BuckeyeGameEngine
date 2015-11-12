@@ -6,15 +6,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Game.SoundEffects;
+using Game.Utilities.Constants;
 
 namespace Game.Mario
 {
-    public class GrowMario : IMario
+    public class GrowingMarioTransitionDecorator : IMario
     {
-         private IMario mario;
+        private IMario mario;
         private int frame;
 
-        public GrowMario(IMario mario)
+        public GrowingMarioTransitionDecorator(IMario mario)
         {
             this.mario = mario;
             SoundEffectManager.PowerPlayerUpEffect();
@@ -28,16 +29,16 @@ namespace Game.Mario
 
         public void Update()
         {
-            
-            if (frame == 18)
+
+            if (frame == IMarioObjectConstants.POWERUPMARIOTIMERMAX)
             {
                 WorldManager.SetMario(this.mario);
             }
-            else if (frame % 2 == 0 && frame % 4 == 0)
+            else if (frame % IMarioObjectConstants.TWO == 0 && frame % IMarioObjectConstants.FOUR == 0)
             {
                 mario.MarioState.Mushroom();
             }
-            else if (frame % 2 == 0 && frame % 4 != 0)
+            else if (frame % IMarioObjectConstants.TWO == 0 && frame % IMarioObjectConstants.FOUR != 0)
             {
                 mario.MarioState.Damage();
             }

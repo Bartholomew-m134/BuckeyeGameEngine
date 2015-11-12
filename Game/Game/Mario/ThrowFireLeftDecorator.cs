@@ -1,79 +1,78 @@
-﻿using Game.Interfaces;
-using Game.Utilities;
-using Microsoft.Xna.Framework;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Game.SoundEffects;
+using Microsoft.Xna.Framework;
+using System.Diagnostics;
+using Game.Interfaces;
+using Game.Utilities;
+using Microsoft.Xna.Framework.Graphics;
+using Game.Mario.MarioSprites;
+using Game.SpriteFactories;
+using Game.Utilities.Constants;
 
 namespace Game.Mario
 {
-    public class FireMario : IMario
+    public class ThrowFireLeftDecorator : IMario
     {
         private IMario mario;
-        private int frame;
+        private Game1 myGame;
+        private int timer = IMarioObjectConstants.FIRETHROWTIMER;
+        ISprite sprite;
 
-        public FireMario(IMario mario)
+        public ThrowFireLeftDecorator(IMario mario, Game1 game)
         {
             this.mario = mario;
-            SoundEffectManager.PowerPlayerUpEffect();
+            this.myGame = game;
             WorldManager.SetMario(this);
-            frame = 0;
+            sprite = MarioSpriteFactory.CreateFireThrowLeft();
         }
 
         public void Damage()
         {
+            mario.Damage();
         }
 
         public void Update()
         {
-            if (frame == 18)
+
+            timer--;
+            if (timer == 0)
             {
                 WorldManager.SetMario(this.mario);
             }
-            else if (frame % 2 == 0 && frame % 4 == 0)
-            {
-                mario.MarioState.Flower();
-            }
-            else if (frame % 2 == 0 && frame % 4 != 0)
-            {
-                mario.MarioState.Damage();
-            }
             mario.Update();
-
-            frame++;
-            
         }
 
         public void Draw(ICamera camera)
         {
-            mario.Draw(camera);
+            Vector2 location = mario.VectorCoordinates;
+            sprite.Draw(myGame.spriteBatch, camera.GetAdjustedPosition(location));
         }
 
         public void Left()
         {
-            
+            mario.Left();
         }
 
         public void Right()
         {
-            
+            mario.Right();
         }
 
         public void Up()
         {
-            
+            mario.Up();
         }
 
         public void Down()
         {
-            
+            mario.Down();
         }
 
         public void Jump()
         {
-            
+            mario.Jump();
         }
 
         public void StopJumping()
@@ -81,24 +80,36 @@ namespace Game.Mario
             mario.StopJumping();
         }
 
+        public void Run()
+        {
+            mario.Run();
+        }
+
+        public void StopRunning()
+        {
+            mario.StopRunning();
+        }
+
         public void Flower()
         {
-            
+            mario.Flower();
         }
 
         public void ThrowFireball()
         {
-            
+            mario.ThrowFireball();
         }
 
         public void Mushroom()
         {
-            
+            mario.Mushroom();
         }
+
         public void Star()
         {
-            
+            mario.Star();
         }
+
         public void PoleSlide()
         {
             mario.PoleSlide();
@@ -121,12 +132,7 @@ namespace Game.Mario
             get { return mario.MarioState; }
             set { mario.MarioState = value; }
         }
-
-        public static bool IsTransitioning()
-        {
-            return true;
-        }
-
+      
         public bool IsBigMario()
         {
             return mario.MarioState.IsBigMario();
@@ -139,7 +145,7 @@ namespace Game.Mario
 
         public bool IsStarMario()
         {
-            return mario.IsStarMario();
+            return true;
         }
 
         public bool IsJumping()
@@ -156,19 +162,6 @@ namespace Game.Mario
         {
             get { return ((IMario)mario).Physics; }
         }
-
-
-
-        public void Run()
-        {
-            
-        }
-
-        public void StopRunning()
-        {
-            
-        }
-
 
         public bool IsHurt()
         {

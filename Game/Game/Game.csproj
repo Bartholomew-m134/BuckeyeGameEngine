@@ -181,11 +181,11 @@
     <Compile Include="Interfaces\ISoundEffect.cs" />
     <Compile Include="Interfaces\ISprite.cs" />
     <Compile Include="Items\Coin.cs" />
-    <Compile Include="Mario\FireMario.cs" />
-    <Compile Include="Mario\FireThrowLeftMario.cs" />
-    <Compile Include="Mario\FireThrowRightMario.cs" />
-    <Compile Include="Mario\GrowMario.cs" />
-    <Compile Include="Mario\HurtMario.cs" />
+    <Compile Include="Mario\FireMarioTransitionDecorator.cs" />
+    <Compile Include="Mario\ThrowFireLeftDecorator.cs" />
+    <Compile Include="Mario\ThrowFireRightDecorator.cs" />
+    <Compile Include="Mario\GrowingMarioTransitionDecorator.cs" />
+    <Compile Include="Mario\DamagedMarioTransitionDecorator.cs" />
     <Compile Include="Mario\MarioSprites\FireFlagPoleFlippedSprite.cs" />
     <Compile Include="Mario\MarioSprites\FireThrowLeftSprite.cs" />
     <Compile Include="Mario\MarioSprites\FireThrowRightSprite.cs" />
@@ -257,7 +257,7 @@
     <Compile Include="Mario\MarioStates\SmallFlagPoleSlidingState.cs" />
     <Compile Include="Mario\MarioStates\SmallLeftTwistState.cs" />
     <Compile Include="Mario\MarioStates\SmallRightTwistState.cs" />
-    <Compile Include="Mario\StarMario.cs" />
+    <Compile Include="Mario\StarMarioDecorator.cs" />
     <Compile Include="Interfaces\IPipe.cs" />
     <Compile Include="Pipes\DoublePipe.cs" />
     <Compile Include="Pipes\Pipe.cs" />
@@ -271,6 +271,7 @@
     <Compile Include="Game1.cs" />
     <Compile Include="SoundEffects\CoinEffect.cs" />
     <Compile Include="SoundEffects\FlagPoleMovingEffect.cs" />
+    <Compile Include="SoundEffects\GameOverEffect.cs" />
     <Compile Include="SoundEffects\GoombaStompedEffect.cs" />
     <Compile Include="SoundEffects\OneUpEffect.cs" />
     <Compile Include="SoundEffects\PowerPlayerUpEffect.cs" />
@@ -324,15 +325,26 @@
     <Compile Include="Mario\MarioStates\SmallRightRunningState.cs" />
     <Compile Include="Utilities\Constants\BackgroundElementSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\BlockSpriteConstants.cs" />
+    <Compile Include="Utilities\Constants\CollisionHandlerConstants.cs" />
+    <Compile Include="Utilities\Constants\EnemyStatesConstants.cs" />
+    <Compile Include="Utilities\Constants\IBlockConstants.cs" />
+    <Compile Include="Utilities\Constants\IEnemyObjectConstants.cs" />
     <Compile Include="Utilities\Constants\EnemySpriteConstants.cs" />
     <Compile Include="Utilities\Constants\FlagPoleSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\CameraConstants.cs" />
     <Compile Include="Utilities\Constants\HUDConstants.cs" />
+    <Compile Include="Utilities\Constants\IMarioObjectConstants.cs" />
+    <Compile Include="Utilities\Constants\ItemConstants.cs" />
     <Compile Include="Utilities\Constants\ItemSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\MarioSpriteConstants.cs" />
+    <Compile Include="Utilities\Constants\MarioStateConstants.cs" />
+    <Compile Include="Utilities\Constants\ObjectPhysicsConstants.cs" />
     <Compile Include="Utilities\Constants\PipeSpriteConstants.cs" />
+    <Compile Include="Utilities\Constants\ProjectileConstants.cs" />
     <Compile Include="Utilities\Constants\ProjectileSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\ScoreManagerConstants.cs" />
+    <Compile Include="Utilities\Constants\SoundConstants.cs" />
+    <Compile Include="Utilities\Constants\SpriteFactoryConstants.cs" />
     <Compile Include="Utilities\Controls\MarioControls.cs" />
     <Compile Include="Utilities\Controls\MenuControls.cs" />
     <Compile Include="Utilities\Controls\PausedControls.cs" />
@@ -344,6 +356,7 @@
     <Compile Include="WorldManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BugsToFixList\Bugs.txt" />
     <Content Include="CodeReviews\Sprint 2\JacksonBlockReadability.txt" />
     <Content Include="CodeReviews\Sprint 2\CoinSpriteCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 2\CoinSpriteReadability.txt" />

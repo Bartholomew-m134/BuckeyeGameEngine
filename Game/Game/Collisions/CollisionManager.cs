@@ -8,9 +8,9 @@ namespace Game.Collisions
 {
     public static class CollisionManager
     {
-        public static void Update(List<IGameObject> gameObjects, IGameState gameState)
+        public static void Update(IGameState gameState)
         {
-            HandleCollisionsInOrder(gameObjects, gameState);
+            HandleCollisionsInOrder(WorldManager.GetCurrentObjectList, gameState);
         }
 
         private static void HandleCollisionsInOrder(List<IGameObject> gameObjects, IGameState gameState)

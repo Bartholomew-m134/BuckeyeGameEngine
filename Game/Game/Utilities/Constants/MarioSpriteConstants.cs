@@ -30,7 +30,7 @@ namespace Game.Utilities.Constants
         public static readonly Vector2 THIRDFIRELEFTRUNNINGSOURCE = new Vector2(102, 123);
         public static readonly Vector2 FIRSTFIRELEFTRUNNINGDIMENSIONS = new Vector2(16, 31);
         public static readonly Vector2 SECONDFIRELEFTRUNNINGDIMENSIONS = new Vector2(16, 31);
-        public static readonly Vector2 THIRDFIRELEFTRUNNINGDIMENSIONS = new Vector2(16, 29);
+        public static readonly Vector2 THIRDFIRELEFTRUNNINGDIMENSIONS = new Vector2(16, 31);
         public static readonly Vector2 FIRELEFTWISTWIDTHHEIGHT = new Vector2(16, 31);
         public static readonly Vector2 FIRELEFTWISTSOURCE = new Vector2(337, 122);
         public static readonly Vector2 FIRERIGHTCROUCHSOURCE = new Vector2(389,127);
@@ -43,8 +43,8 @@ namespace Game.Utilities.Constants
         public static readonly Vector2 SECONDFIRERIGHTRUNNINGSOURCE = new Vector2(264, 122);
         public static readonly Vector2 THIRDFIRERIGHTRUNNINGSOURCE = new Vector2(287,123);
         public static readonly Vector2 FIRSTFIRERIGHTRUNNINGDIMENSIONS = new Vector2(16, 31);
-        public static readonly Vector2 SECONDFIRERIGHTRUNNINGDIMENSIONS = new Vector2(16, 30);
-        public static readonly Vector2 THIRDFIRERIGHTRUNNINGDIMENSIONS = new Vector2(16, 29);
+        public static readonly Vector2 SECONDFIRERIGHTRUNNINGDIMENSIONS = new Vector2(16, 31);
+        public static readonly Vector2 THIRDFIRERIGHTRUNNINGDIMENSIONS = new Vector2(16, 31);
         public static readonly Vector2 FIRERIGHTTWISTSOURCE = new Vector2(52, 122);
         public static readonly Vector2 FIRERIGHTTWISTDIMENSIONS = new Vector2(16, 31);
         public static readonly Vector2 FIRETHROWLEFTSOURCE = new Vector2(77, 122);
@@ -64,8 +64,8 @@ namespace Game.Utilities.Constants
         public static readonly Vector2 SECONDNORMALLEFTRUNNINGSOURCE = new Vector2(121,52);
         public static readonly Vector2 THIRDNORMALLEFTRUNNINGSOURCE = new Vector2(90,53);
         public static readonly Vector2 FIRSTNORMALLEFTRUNNINGDIMENSIONS = new Vector2(16,31);
-        public static readonly Vector2 SECONDNORMALLEFTRUNNINGDIMENSIONS = new Vector2(16,30);
-        public static readonly Vector2 THIRDNORMALLEFTRUNNINGDIMENSIONS = new Vector2(16,29);
+        public static readonly Vector2 SECONDNORMALLEFTRUNNINGDIMENSIONS = new Vector2(16,31);
+        public static readonly Vector2 THIRDNORMALLEFTRUNNINGDIMENSIONS = new Vector2(16,31);
         public static readonly Vector2 NORMALLEFTTWISTSOURCE = new Vector2(329,52);
         public static readonly Vector2 NORMALLEFTTWISTDIMENSIONS = new Vector2(16, 31);
         public static readonly Vector2 NORMALRIGHTCROUCHSOURCE = new Vector2(389,57);
@@ -78,8 +78,8 @@ namespace Game.Utilities.Constants
         public static readonly Vector2 SECONDNORMALRIGHTRUNNINGSOURCE = new Vector2(270,52);
         public static readonly Vector2 THIRDNORMALRIGHTRUNNINGSOURCE = new Vector2(299,53);
         public static readonly Vector2 FIRSTNORMALRIGHTRUNNINGDIMENSIONS = new Vector2(16, 31);
-        public static readonly Vector2 SECONDNORMALRIGHTRUNNINGDIMENSIONS = new Vector2(16, 30);
-        public static readonly Vector2 THIRDNORMALRIGHTRUNNINGDIMENSIONS = new Vector2(16, 29);
+        public static readonly Vector2 SECONDNORMALRIGHTRUNNINGDIMENSIONS = new Vector2(16, 31);
+        public static readonly Vector2 THIRDNORMALRIGHTRUNNINGDIMENSIONS = new Vector2(16, 31);
         public static readonly Vector2 NORMALRIGHTTWISTSOURCE = new Vector2(60, 52);
         public static readonly Vector2 NORMALRIGHTTWISTDIMENSIONS = new Vector2(16, 31);
         public static readonly Vector2 SMALLFLAGMARIODIMENSIONS = new Vector2(14, 16);

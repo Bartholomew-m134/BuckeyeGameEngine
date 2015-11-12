@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Game.Utilities.Constants;
 namespace Game.Enemies.KoopaClasses.KoopaStates
 {
     public class GreenKoopaWalkingLeftState : IKoopaState
@@ -15,9 +15,7 @@ namespace Game.Enemies.KoopaClasses.KoopaStates
             this.greenKoopa = greenKoopa;
             this.greenKoopa.Sprite = Game.SpriteFactories.EnemySpriteFactory.CreateGreenKoopaWalkingLeftSprite();
 
-            Vector2 velocity = this.greenKoopa.Physics.Velocity;
-            velocity.X = -2;
-            this.greenKoopa.Physics.Velocity = velocity;
+            greenKoopa.Physics.Velocity = new Vector2(EnemyStatesConstants.WALKINGLEFTVELOCITY, 0);
         }
 
         public void KoopaEmergingFromShell()

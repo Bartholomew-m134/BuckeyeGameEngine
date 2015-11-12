@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Game.Utilities.Constants;
 
 namespace Game.Utilities
 {
@@ -11,9 +12,9 @@ namespace Game.Utilities
         private Vector2 velocity;
         private Vector2 acceleration;
         private Vector2 oldCoordinates;
-        private Vector2 velocityMaximum = new Vector2(6, 12);
-        private Vector2 velocityMinimum = new Vector2(-6, -12);
-        private const int gravity = 1;
+        private Vector2 velocityMaximum = new Vector2(ObjectPhysicsConstants.INITIALXMAXVELOCITY, ObjectPhysicsConstants.INTIALYMAXVELOCITY);
+        private Vector2 velocityMinimum = new Vector2(ObjectPhysicsConstants.INITIALXMINVELOCITY, ObjectPhysicsConstants.INITIALYMINVELOCITY);
+        private const int gravity = ObjectPhysicsConstants.GRAVITY;
 
         public ObjectPhysics()
         {
@@ -90,19 +91,19 @@ namespace Game.Utilities
 
         public void DampenRight() {
             acceleration.X = 0;
-            if (velocity.X >= 2)
-                velocity.X -= 2;
+            if (velocity.X >= ObjectPhysicsConstants.RIGHTDAMPENTHRESHOLD)
+                velocity.X -= ObjectPhysicsConstants.RIGHTDAMPENTHRESHOLD;
             else if (velocity.X > 0)
-                velocity.X -= 1;
+                velocity.X--;
         }
 
         public void DampenLeft()
         {
             acceleration.X = 0;
-            if (velocity.X <= -2)
-                velocity.X += 2;
+            if (velocity.X <= ObjectPhysicsConstants.LEFTDAMPENTHRESHOLD)
+                velocity.X -= ObjectPhysicsConstants.LEFTDAMPENTHRESHOLD;
             else if (velocity.X < 0)
-                velocity.X += 1;
+                velocity.X++;
         }
     }
 }

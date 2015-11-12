@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using Game.Utilities;
 using Game.SoundEffects;
+using Game.Utilities.Constants;
 
 namespace Game.Blocks
 {
@@ -21,20 +22,21 @@ namespace Game.Blocks
         private bool isBumped;
         private ObjectPhysics physics;
 
-        public Block(Type blockType, Game1 game)
+        public Block(Type blockType, bool isUnderground, Game1 game)
         {
             isBumped = false;
             this.game = game;
-            SetInitialState(blockType);
+            SetInitialState(blockType, isUnderground);
             physics = new ObjectPhysics();
             physics.Acceleration = Vector2.Zero;
+
         }
 
         public void Update()
         {
             blockState.Update();
 
-            if (isBumped && physics.Velocity.Y == 2)
+            if (isBumped && physics.Velocity.Y == IBlockConstants.YVELOCITYCAP)
             {
                 isBumped = false;
                 physics.ResetPhysics();
@@ -57,7 +59,7 @@ namespace Game.Blocks
                 isBumped = true;
                 SoundEffectManager.BlockBumpedEffect();
                 physics.ResetPhysics();
-                physics.Velocity = new Vector2(0,-2);
+                physics.Velocity = new Vector2(0,IBlockConstants.BUMPEDBLOCKVELOCITY);
             }
         }
 
@@ -89,12 +91,12 @@ namespace Game.Blocks
             set { blockState = value; }
         }
 
-        private void SetInitialState(Type blockType)
+        private void SetInitialState(Type blockType, bool isUnderground)
         {
             switch (blockType)
             {
                 case Type.BrickBlock:
-                    blockState = new BrickBlockState(this);
+                    blockState = new BrickBlockState(this, isUnderground);
                     break;
                 case Type.HiddenBlock:
                     blockState = new HiddenBlockState(this);
@@ -106,7 +108,7 @@ namespace Game.Blocks
                     blockState = new SolidBlockState(this);
                     break;
                 case Type.BreakingBlock:
-                    blockState = new BreakingBlockState(this);
+                    blockState = new BreakingBlockState(this, isUnderground);
                     break;
                 case Type.NullBlock:
                     blockState = new NullBlockState(this);

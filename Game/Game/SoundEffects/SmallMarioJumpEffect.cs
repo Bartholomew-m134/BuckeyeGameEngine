@@ -8,12 +8,13 @@ using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Media;
 using Game.Interfaces;
+using Game.Utilities.Constants;
 
 namespace Game.SoundEffects
 {
     public class SmallMarioJumpEffect : ISoundEffect
     {
-        private Stream backgroundSoundFile = TitleContainer.OpenStream(@"Content\SoundEffects\smb_jumpsmall.wav");
+        private Stream backgroundSoundFile = TitleContainer.OpenStream(SoundConstants.SMALLMARIOJUMPEFFECT);
         private SoundEffect backgroundSoundEffect;
         private SoundEffectInstance instance;
 

@@ -1,4 +1,5 @@
-﻿using Game.Interfaces;
+﻿using Game.Collisions;
+using Game.Interfaces;
 using Game.Utilities;
 using Game.Utilities.Constants;
 using Game.Utilities.Controls;
@@ -18,15 +19,19 @@ namespace Game.GameStates
         private List<IController> controllerList;
         private int timer = 40;
         private Vector2 warpLocation;
+        private ICamera camera;
 
-        public PipeTransitioningGameState(Vector2 warpLocation, Game1 game)
+        public PipeTransitioningGameState(ICamera camera, Vector2 warpLocation, Game1 game)
         {
             this.game = game;
             prevGameState = game.gameState;
             this.warpLocation = warpLocation;
+            this.camera = camera;
+            WorldManager.GetMario().Physics.ResetX();
             controllerList = new List<IController>();
             controllerList.Add(new KeyboardController(new PausedControls(game)));
             controllerList.Add(new GamePadController(new PausedControls(game)));
+            
             
         }
 
@@ -54,8 +59,11 @@ namespace Game.GameStates
             {
                 
                 game.gameState = prevGameState;
-                Console.WriteLine(warpLocation);                
+    
                 WorldManager.GetMario().VectorCoordinates = warpLocation;
+                CollisionManager.Update(this);
+                camera.Update(WorldManager.GetMario());
+
                 prevGameState.IsUnderground = !prevGameState.IsUnderground;
             }
         }
@@ -73,7 +81,7 @@ namespace Game.GameStates
 
         public void PipeTransition(Vector2 warpLocation)
         {
-            game.gameState = prevGameState;
+
         }
 
         public void FlagPoleTransition()

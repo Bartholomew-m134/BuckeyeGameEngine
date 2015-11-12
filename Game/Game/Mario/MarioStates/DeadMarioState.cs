@@ -6,6 +6,7 @@ using Game.Mario;
 using Game.Interfaces;
 using Game.Music;
 using Microsoft.Xna.Framework;
+using Game.Utilities.Constants;
 
 
 namespace Game.Mario.MarioStates
@@ -21,7 +22,7 @@ namespace Game.Mario.MarioStates
             BackgroundThemeManager.PlayDeathTheme();
             mario.Sprite = SpriteFactories.MarioSpriteFactory.CreateDeadSprite();
             mario.Physics.ResetPhysics();
-            mario.Physics.Velocity = new Vector2(0, -9);
+            mario.Physics.Velocity = new Vector2(0, MarioStateConstants.DEADMARIOYVELOCITY);
         }
 
         public void Update() {
@@ -114,8 +115,6 @@ namespace Game.Mario.MarioStates
 
         public void StopRunning()
         {
-            mario.Physics.VelocityMaximum = new Vector2(6, mario.Physics.VelocityMaximum.Y);
-            mario.Physics.VelocityMinimum = new Vector2(-6, mario.Physics.VelocityMinimum.Y);
         }
     }
 }

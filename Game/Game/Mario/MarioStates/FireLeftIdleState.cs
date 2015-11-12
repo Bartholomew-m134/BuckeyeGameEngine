@@ -6,6 +6,7 @@ using Game.Mario;
 using Game.Interfaces;
 using Microsoft.Xna.Framework;
 using Game.Utilities;
+using Game.Utilities.Constants;
 
 namespace Game.Mario.MarioStates
 {
@@ -67,7 +68,7 @@ namespace Game.Mario.MarioStates
         public void Down()
         {
             mario.MarioState = new FireLeftCrouchingState(mario);
-            mario.VectorCoordinates += new Vector2(0, 16);
+            mario.VectorCoordinates += new Vector2(0, MarioStateConstants.SMALLORCROUCHINGOFFSET);
         }
 
         public void Jump()
@@ -128,8 +129,8 @@ namespace Game.Mario.MarioStates
 
         public void StopRunning()
         {
-            mario.Physics.VelocityMaximum = new Vector2(6, mario.Physics.VelocityMaximum.Y);
-            mario.Physics.VelocityMinimum = new Vector2(-6, mario.Physics.VelocityMinimum.Y);
+            mario.Physics.VelocityMaximum = new Vector2(MarioStateConstants.WALKINGVELOCITYMAX, mario.Physics.VelocityMaximum.Y);
+            mario.Physics.VelocityMinimum = new Vector2(MarioStateConstants.WALKINGVELOCITYMIN, mario.Physics.VelocityMinimum.Y);
         }
     }
 }

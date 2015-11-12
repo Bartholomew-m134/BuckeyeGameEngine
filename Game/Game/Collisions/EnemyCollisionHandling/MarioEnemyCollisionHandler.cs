@@ -80,30 +80,30 @@ namespace Game.Collisions.EnemyCollisionHandling
             if (side is LeftSideCollision && enemy.Physics.Velocity.X == 0)
             {
                 ((GreenKoopa)enemy).IsWeaponized = true;
-                enemy.Physics.Velocity = new Vector2(11, enemy.Physics.Velocity.Y);
+                enemy.Physics.Velocity = new Vector2(CollisionHandlerConstants.WEAPONIZEDKOOPATRAVELSPEED, enemy.Physics.Velocity.Y);
             }
             else if (side is RightSideCollision && enemy.Physics.Velocity.X == 0)
             {
                 ((GreenKoopa)enemy).IsWeaponized = true;
-                enemy.Physics.Velocity = new Vector2(-11, enemy.Physics.Velocity.Y);
+                enemy.Physics.Velocity = new Vector2(-CollisionHandlerConstants.WEAPONIZEDKOOPATRAVELSPEED, enemy.Physics.Velocity.Y);
             }
             else if (side is TopSideCollision)
             {
                 ((GreenKoopa)enemy).IsWeaponized = false;
                 enemy.Physics.ResetPhysics();
-                mario.Physics.Velocity = new Vector2(mario.Physics.Velocity.X, -3);
-                mario.Physics.Acceleration = new Vector2(mario.Physics.Acceleration.X, 1);
+                mario.Physics.Velocity = new Vector2(mario.Physics.Velocity.X, CollisionHandlerConstants.MARIOBUMPSPEEDY);
+                mario.Physics.Acceleration = new Vector2(mario.Physics.Acceleration.X, CollisionHandlerConstants.MARIOBUMPACCELERATIONY);
             }
             else if (enemy.Physics.Velocity.X > 0)
             {
-                enemy.Physics.Velocity = new Vector2(-11, enemy.Physics.Velocity.Y);
+                enemy.Physics.Velocity = new Vector2(-CollisionHandlerConstants.WEAPONIZEDKOOPATRAVELSPEED, enemy.Physics.Velocity.Y);
                 if (mario.IsBigMario())
                     SoundEffectManager.ShrinkingOrPipeEffect();
                 mario.Damage();
             }
             else if (enemy.Physics.Velocity.X < 0)
             {
-                enemy.Physics.Velocity = new Vector2(11, enemy.Physics.Velocity.Y);
+                enemy.Physics.Velocity = new Vector2(CollisionHandlerConstants.WEAPONIZEDKOOPATRAVELSPEED, enemy.Physics.Velocity.Y);
                 if(mario.IsBigMario())
                     SoundEffectManager.ShrinkingOrPipeEffect();
                 mario.Damage();
@@ -120,15 +120,15 @@ namespace Game.Collisions.EnemyCollisionHandling
             enemy.CanDealDamage = false;
             enemy.Hit();
 
-            mario.Physics.Velocity = new Vector2(mario.Physics.Velocity.X, -2);
-            mario.Physics.Acceleration = new Vector2(mario.Physics.Acceleration.X, 1);
+            mario.Physics.Velocity = new Vector2(mario.Physics.Velocity.X, CollisionHandlerConstants.MARIOBUMPSPEEDY);
+            mario.Physics.Acceleration = new Vector2(mario.Physics.Acceleration.X, CollisionHandlerConstants.MARIOBUMPACCELERATIONY);
         }
 
         private void HandleScore()
         {
             if (!(enemy is Goomba) && !(side is TopSideCollision))
                 ScoreManager.stompStreak = ScoreManagerConstants.RESETTOZERO;
-            if (enemy is Goomba && !(mario.MarioState is DeadMarioState) && side is TopSideCollision && !(mario is HurtMario) && !(mario is GrowMario) && !(mario is StarMario))
+            if (enemy is Goomba && !(mario.MarioState is DeadMarioState) && side is TopSideCollision && !(mario is DamagedMarioTransitionDecorator) && !(mario is GrowingMarioTransitionDecorator) && !(mario is StarMarioDecorator))
             {
                 if (!(((Goomba)enemy).state is GoombaFlippedState) && !(((Goomba)enemy).state is GoombaSmashedState))
                 {
@@ -137,21 +137,21 @@ namespace Game.Collisions.EnemyCollisionHandling
                     ScoreManager.location = enemy.VectorCoordinates;
                 }
             }
-            if (enemy is GreenKoopa && !(mario.MarioState is DeadMarioState) && side is TopSideCollision && !(mario is HurtMario) && !(mario is GrowMario) && !(mario is StarMario))
+            if (enemy is GreenKoopa && !(mario.MarioState is DeadMarioState) && side is TopSideCollision && !(mario is DamagedMarioTransitionDecorator) && !(mario is GrowingMarioTransitionDecorator) && !(mario is StarMarioDecorator))
             {
                 if(!(((GreenKoopa)enemy).state is GreenKoopaEmergingFromShellState) && !(((GreenKoopa)enemy).state is GreenKoopaHidingInShellState)){
                     ScoreManager.IncreaseScore(ScoreManagerConstants.ONEHUNDREDPOINTS);
                     ScoreManager.location = enemy.VectorCoordinates;
                 }
             }
-            if (mario is StarMario && enemy is Goomba){
+            if (mario is StarMarioDecorator && enemy is Goomba){
                 if (((Goomba)enemy).state is GoombaWalkingLeftState || ((Goomba)enemy).state is GoombaWalkingRightState)
                 {
                     ScoreManager.IncreaseScore(ScoreManagerConstants.ONEHUNDREDPOINTS);
                     ScoreManager.location = enemy.VectorCoordinates;
                 }
             }
-            if (mario is StarMario && enemy is GreenKoopa)
+            if (mario is StarMarioDecorator && enemy is GreenKoopa)
             {
                 if (((GreenKoopa)enemy).state is GreenKoopaWalkingLeftState || ((GreenKoopa)enemy).state is GreenKoopaWalkingRightState)
                 {

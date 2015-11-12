@@ -9,17 +9,18 @@ using Game.Utilities;
 using Microsoft.Xna.Framework.Graphics;
 using Game.Mario.MarioSprites;
 using Game.SpriteFactories;
+using Game.Utilities.Constants;
 
 namespace Game.Mario
 {
-    public class FireThrowRightMario : IMario
+    public class ThrowFireRightDecorator : IMario
     {
         private IMario mario;
         private Game1 myGame;
-        private int timer = 5;
+        private int timer = IMarioObjectConstants.FIRETHROWTIMER;
         ISprite sprite;
 
-        public FireThrowRightMario(IMario mario, Game1 game)
+        public ThrowFireRightDecorator(IMario mario, Game1 game)
         {
             this.mario = mario;
             this.myGame = game;

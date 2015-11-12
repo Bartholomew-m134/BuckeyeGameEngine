@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
 using Game.Utilities;
+using Game.Utilities.Constants;
 
 namespace Game.Enemies.KoopaClasses
 {
@@ -28,8 +29,8 @@ namespace Game.Enemies.KoopaClasses
         {
             myGame = game;
             physics = new ObjectPhysics();
-            physics.VelocityMaximum = new Vector2(12, physics.VelocityMaximum.Y);
-            physics.VelocityMinimum = new Vector2(-12, physics.VelocityMinimum.Y);
+            physics.VelocityMaximum = new Vector2(IEnemyObjectConstants.KOOPAMAXVELOCITY, physics.VelocityMaximum.Y);
+            physics.VelocityMinimum = new Vector2(IEnemyObjectConstants.KOOPAMINVELOCITY, physics.VelocityMinimum.Y);
             state = new GreenKoopaWalkingLeftState(this);
             weaponizedShellKillStreak = 0;
         }
@@ -84,12 +85,12 @@ namespace Game.Enemies.KoopaClasses
             {
                 inShellTimer++;
             }
-            if (inShellTimer == 100 && state is GreenKoopaHidingInShellState)
+            if (inShellTimer == IEnemyObjectConstants.HIDINGINSHELLMAXTIME && state is GreenKoopaHidingInShellState)
             {
                 state.KoopaEmergingFromShell();
                 inShellTimer = 0;
             }
-            else if (inShellTimer == 45 && state is GreenKoopaEmergingFromShellState)
+            else if (inShellTimer == IEnemyObjectConstants.EMERGINGFROMSHELLMAXTIME && state is GreenKoopaEmergingFromShellState)
             {
                 weaponizedShellKillStreak = 0;
                 state.KoopaChangeDirection();

@@ -1,5 +1,4 @@
-﻿using Game.Collisions;
-using Game.Interfaces;
+﻿using Game.Interfaces;
 using Game.Mario;
 using Game.Music;
 using Game.Utilities;
@@ -19,8 +18,6 @@ namespace Game
 
         private static string currentFileName;
         private static Game1 currentGame;
-        private static ICamera camera;
-
 
         public static void LoadListFromFile(string filename, Game1 game)
         {
@@ -31,10 +28,9 @@ namespace Game
             currentGame = game;           
         }
 
-        public static void Update(ICamera currentCamera)
+        public static void Update(ICamera camera)
         {
-            objectWithinZoneList.Clear();
-            camera = currentCamera;
+            objectWithinZoneList.Clear();            
 
             for (int i = objectList.Count - 1; i >= 0; i--)
             {
@@ -49,17 +45,18 @@ namespace Game
                     FreeObject(objectList[i]);
             }
 
-            CollisionManager.Update(objectWithinZoneList, currentGame.gameState);
-            camera.Update(GetMario());
-            ResetIfMarioIsDead();
+            ResetIfMarioIsDead(camera);
         }
 
-        public static void Draw(ICamera currentCamera)
+        public static void Draw(ICamera camera)
         {
-            camera = currentCamera;
-
             for (int i = objectWithinZoneList.Count - 1; i >= 0; i--)
                     objectWithinZoneList[i].Draw(camera);
+        }
+
+        public static List<IGameObject> GetCurrentObjectList
+        {
+            get { return objectWithinZoneList; }
         }
 
         public static IMario GetMario()
@@ -95,9 +92,9 @@ namespace Game
             
         }
 
-        private static void ResetIfMarioIsDead()
+        private static void ResetIfMarioIsDead(ICamera camera)
         {
-            if (GetMario().MarioState is Mario.MarioStates.DeadMarioState || !camera.IsWithinBounds(GetMario().VectorCoordinates))
+            if (GetMario().MarioState is Mario.MarioStates.DeadMarioState || camera.IsBelowCamera(GetMario().VectorCoordinates))
                 FreeObject(GetMario());
         }
     }

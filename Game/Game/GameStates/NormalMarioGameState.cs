@@ -1,4 +1,5 @@
-﻿using Game.Interfaces;
+﻿using Game.Collisions;
+using Game.Interfaces;
 using Game.Mario.MarioStates;
 using Game.SpriteFactories;
 using Game.Utilities;
@@ -57,26 +58,25 @@ namespace Game.GameStates
                     controller.Update();
 
                 WorldManager.Update(camera);
+                CollisionManager.Update(this);
+                camera.Update(WorldManager.GetMario());
                 ScoreManager.Update();
                 HUDManager.Update();
                 delay = 0;
             }
-
             else
             {
                 delay++;
             }
+
             if (HUDManager.OutOfTime)
-            {
                 WorldManager.GetMario().MarioState = new DeadMarioState(WorldManager.GetMario());
-                
-            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             if (isUnderground)
-                game.GraphicsDevice.Clear(Color.DarkGray);
+                game.GraphicsDevice.Clear(Color.Black);
             WorldManager.Draw(camera);
             ScoreManager.DrawScore(spriteBatch, camera);
             HUDManager.DrawHUD(spriteBatch);
@@ -90,11 +90,11 @@ namespace Game.GameStates
 
         public void PipeTransition(Vector2 warpLocation)
         {
-            game.gameState = new PipeTransitioningGameState(warpLocation, game);
+            game.gameState = new PipeTransitioningGameState(camera, warpLocation, game);
         }
         public void FlagPoleTransition()
         {
-            game.gameState = new FlagPoleVictoryGameState(game);
+            game.gameState = new FlagPoleVictoryGameState(camera, game);
         }
 
         public void PlayerDied()
@@ -111,7 +111,7 @@ namespace Game.GameStates
 
         public void MarioPowerUp()
         {
-            game.gameState = new MarioPowerUpGameState(game);
+            game.gameState = new MarioPowerUpGameState(camera, game);
         }
     }
 }

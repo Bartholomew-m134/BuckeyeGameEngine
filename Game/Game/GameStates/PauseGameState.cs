@@ -54,7 +54,7 @@ namespace Game.GameStates
 
         public void PipeTransition(Vector2 warpLocation)
         {
-            game.gameState = new PipeTransitioningGameState(warpLocation, game);
+            
         }
         public void FlagPoleTransition()
         {
