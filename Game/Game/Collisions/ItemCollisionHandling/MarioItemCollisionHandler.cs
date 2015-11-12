@@ -41,8 +41,8 @@ namespace Game.Collisions.ItemCollisionHandling
             {
                 if (collidingItem is Coin)
                 {
+                    SoundEffectManager.CoinEffect();
                     collidingItem.Disappear();
-                    
                 }
                 else if (collidingItem is Flower)
                 {
