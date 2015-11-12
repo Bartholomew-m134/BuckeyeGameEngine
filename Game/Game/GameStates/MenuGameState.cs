@@ -25,7 +25,6 @@ namespace Game.GameStates
             controllerList = new List<IController>();
             controllerList.Add(new KeyboardController(new MenuControls(game)));
             controllerList.Add(new GamePadController(new MenuControls(game)));
-            LifeManager.Lives = 3;
         }
 
         public void LoadContent()
@@ -63,6 +62,9 @@ namespace Game.GameStates
         {
             game.gameState = new LoadingGameState(game);
             game.gameState.LoadContent();
+            LifeManager.Lives = 3;
+            ScoreManager.ResetScore();
+            HUDManager.UpdateHUDScore(0);
         }
 
 
