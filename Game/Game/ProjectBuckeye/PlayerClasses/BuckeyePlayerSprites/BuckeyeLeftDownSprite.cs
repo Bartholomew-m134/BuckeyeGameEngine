@@ -9,11 +9,11 @@ using Game.Utilities.Constants;
 
 namespace Game.ProjectBuckeye.PlayerClasses.BuckeyePlayerSprites
 {
-    public class BuckeyeRightIdleSprite : ISprite
+    public class BuckeyeLeftDownSprite : ISprite
     {
         private Texture2D spriteSheet;
 
-        public BuckeyeRightIdleSprite(Texture2D texture)
+        public BuckeyeLeftDownSprite(Texture2D texture)
         {
             spriteSheet = texture;
         }
@@ -24,8 +24,8 @@ namespace Game.ProjectBuckeye.PlayerClasses.BuckeyePlayerSprites
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle((int)BuckeyePlayerSpriteConstants.RIGHT_FRAME_1_SOURCE.X, (int)BuckeyePlayerSpriteConstants.RIGHT_FRAME_1_SOURCE.Y,
-                (int)BuckeyePlayerSpriteConstants.RIGHT_FRAME_1_DIMENSIONS.X, (int)BuckeyePlayerSpriteConstants.RIGHT_FRAME_1_DIMENSIONS.Y);
+            Rectangle sourceRectangle = new Rectangle((int)BuckeyePlayerSpriteConstants.FALL_LOOKING_LEFT_SOURCE.X, (int)BuckeyePlayerSpriteConstants.FALL_LOOKING_LEFT_SOURCE.Y,
+                (int)BuckeyePlayerSpriteConstants.FALL_LOOKING_LEFT_DIMENSIONS.X, (int)BuckeyePlayerSpriteConstants.FALL_LOOKING_LEFT_DIMENSIONS.Y);
 
             spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, location, sourceRectangle, Color.White, 0f, Vector2.Zero, BuckeyePlayerSpriteConstants.SPRITE_SCALE_FACTOR, SpriteEffects.None, 0f);
@@ -34,7 +34,7 @@ namespace Game.ProjectBuckeye.PlayerClasses.BuckeyePlayerSprites
 
         public Vector2 SpriteDimensions
         {
-            get { return BuckeyePlayerSpriteConstants.RIGHT_FRAME_1_DIMENSIONS*BuckeyePlayerSpriteConstants.SPRITE_SCALE_FACTOR; }
+            get { return BuckeyePlayerSpriteConstants.FALL_LOOKING_LEFT_DIMENSIONS * BuckeyePlayerSpriteConstants.SPRITE_SCALE_FACTOR; }
         }
     }
 }
