@@ -416,6 +416,7 @@
     <Content Include="CodeReviews\Sprint 4\EnemyEnemyCollisionHandlerReadability.txt" />
     <Content Include="CodeReviews\Sprint 4\HurtMarioReadability.txt" />
     <Content Include="CodeReviews\Sprint 4\ObjectPhysicsCodeQuality.txt" />
+    <Content Include="CodeReviews\Sprint 5\FullSIdePipeReadability.txt" />
     <Content Include="CodeReviews\Sprint 5\ScoreManagerReadability.txt" />
     <Content Include="CodeReviews\Sprint 5\PipeTransitioningGameStateReadabilty.txt" />
     <Content Include="Game.ico" />

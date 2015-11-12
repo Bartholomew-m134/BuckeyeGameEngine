@@ -1,0 +1,9 @@
+﻿Author:							John Cramer
+Date :							11/12/15
+Sprint:							5
+Reviewed file:					FullSidePipe.cs
+File Author:					Jackson Luken
+Minutes to complete:			4
+Code Readability:
+		Overall the code is very readable. There are no deep branching statements, and each
+		method is fairly straightforward, as each only contains a few lines of code at most.
