@@ -10,6 +10,6 @@ namespace Game.Utilities.Constants
         public const int FIREBALLHELL = 4000;
         public const int LEFTFIREINITIALXVELOCITY = -10;
         public const int RIGHTFIREINITIALXVELOCITY = 10;
-        public const int FIREBALLBOUNCEYVELOCITY = -2;
+        public const int FIREBALLBOUNCEYVELOCITY = -3;
     }
 }
