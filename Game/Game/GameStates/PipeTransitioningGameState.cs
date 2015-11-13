@@ -28,6 +28,7 @@ namespace Game.GameStates
             this.warpLocation = warpLocation;
             this.camera = camera;
             WorldManager.GetMario().Physics.ResetX();
+            WorldManager.GetMario().Physics.ResetY();
             controllerList = new List<IController>();
             controllerList.Add(new KeyboardController(new PausedControls(game)));
             controllerList.Add(new GamePadController(new PausedControls(game)));
@@ -51,7 +52,13 @@ namespace Game.GameStates
             {
                 foreach (IController controller in controllerList)
                     controller.Update();
+                if (prevGameState.IsUnderground) {
+                    WorldManager.GetMario().Physics.Acceleration = new Vector2(0, 0);
+                    WorldManager.GetMario().Physics.Velocity = new Vector2(1, 0);
+                }
+                else { 
                 WorldManager.GetMario().Physics.Velocity = new Vector2(0, 1);
+                }
                 WorldManager.GetMario().Update();
                 timer--;
             }

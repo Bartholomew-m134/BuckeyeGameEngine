@@ -61,7 +61,7 @@ namespace Game.Collisions.PipeCollisionHandling
                     
 
                 }
-                else if (side is LeftSideCollision && pipe.IsWarpPipe && pipe.IsSideWarpPipe && ((warpPipeCoordinateOffsetLeft.X < mario.VectorCoordinates.X) && (mario.VectorCoordinates.X < warpPipeCoordinateOffsetRight.X)))
+                else if ((side is LeftSideCollision || side is RightSideCollision) && pipe.IsWarpPipe && pipe.IsSideWarpPipe)
                 {
                     SoundEffectManager.ShrinkingOrPipeEffect();
 
