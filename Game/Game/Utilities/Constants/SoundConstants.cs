@@ -8,8 +8,8 @@ namespace Game.Utilities.Constants
     public static class SoundConstants
     {
         public const String DEATHTHEME = @"Content\SoundTracks\08_you_re_dead.wav";
-        public const String FLAGPOLEVICTORYTHEME = @"Content\SoundTracks\carmen(8-bit).wav";
-        public const String OVERWORLDTHEME = @"Content\SoundTracks\across_the_field.wav";
+        public const String FLAGPOLEVICTORYTHEME = @"Content\SoundTracks\06-level-complete.wav";
+        public const String OVERWORLDTHEME = @"Content\SoundTracks\01-main-theme-overworld.wav";
         public const String STARTHEME = @"Content\SoundTracks\05-starman.wav";
         public const String BLOCKBUMPEFFECT = @"Content\SoundEffects\smb_block_bump.wav";
         public const String BRICKBREAKINGEFFECT = @"Content\SoundEffects\smb_breakblock.wav";
