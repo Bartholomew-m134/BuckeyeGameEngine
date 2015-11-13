@@ -207,7 +207,9 @@
     <Compile Include="Interfaces\IMusic.cs" />
     <Compile Include="Music\StarTheme.cs" />
     <Compile Include="Pipes\FullSidePipe.cs" />
-    <Compile Include="Pipes\PipeSprites\FullSidePipeSprite.cs" />
+    <Compile Include="Pipes\PipeSprites\BottomSidePipeSprite.cs" />
+    <Compile Include="Pipes\PipeSprites\SidePipeSprite.cs" />
+    <Compile Include="Pipes\SidePipe.cs" />
     <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayer.cs" />
     <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerSprites\BuckeyeLeftDownSprite.cs" />
     <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerSprites\BuckeyeLeftIdleSprite.cs" />

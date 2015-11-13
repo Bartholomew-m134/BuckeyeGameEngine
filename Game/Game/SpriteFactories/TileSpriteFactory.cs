@@ -83,9 +83,13 @@ namespace Game.SpriteFactories
         {
             return new TriplePipeSprite(scenerySpriteSheet);
         }
-        public static ISprite CreateFullSidePipeSprite()
+        public static ISprite CreateBottomSidePipeSprite()
         {
-            return new FullSidePipeSprite(scenerySpriteSheet);
+            return new BottomSidePipeSprite(scenerySpriteSheet);
+        }
+        public static ISprite CreateSidePipeSprite()
+        {
+            return new SidePipeSprite(scenerySpriteSheet);
         }
         public static ISprite CreateActiveFlagPoleSprite()
         {
