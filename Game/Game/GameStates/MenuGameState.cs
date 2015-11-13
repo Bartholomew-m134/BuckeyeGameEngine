@@ -62,9 +62,10 @@ namespace Game.GameStates
         {
             game.gameState = new LoadingGameState(game);
             game.gameState.LoadContent();
-            LifeManager.Lives = 3;
+            LifeManager.Lives = 2;
             ScoreManager.ResetScore();
             HUDManager.UpdateHUDScore(0);
+            HUDManager.UpdateHUDCoins(0);
         }
 
 
