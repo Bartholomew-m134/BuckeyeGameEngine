@@ -17,7 +17,7 @@ namespace Game.Utilities.Constants
         public static readonly Vector2 SECONDFIRESOURCE = new Vector2(41,165);
         public static readonly Vector2 THIRDFIRESOURCE = new Vector2(26,150);
         public static readonly Vector2 FOURTHFIRESOURCE = new Vector2(26,165);
-        public static readonly Vector2 FIREDIMENSIONS = new Vector2(8,8);
+        public static readonly Vector2 FIREDIMENSIONS = new Vector2(10,10);
         public static readonly ArrayList FIRESOURCES = new ArrayList() { THIRDFIRESOURCE, SECONDFIRESOURCE, FIRSTFIRESOURCE, FOURTHFIRESOURCE };
     }
 }
