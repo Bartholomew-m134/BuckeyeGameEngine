@@ -1,0 +1,11 @@
+﻿Author:							Jackson Luken
+Date :							11/12/15
+Sprint:							5
+Reviewed file:					NormalMarioGameState.cs
+File Author:					Matt Bartholemew
+Minutes to complete:			6
+Code Readability:
+		While the terms used in this code may be more esoteric than the pervious ones, that is to be expected
+		this late in development. Assuming you have a general understanding of the system, the rest of it
+		is fairly straightforward, with most of the information being getters and setters, which are all
+		clearly labelled so that the reader can follow.
