@@ -421,6 +421,7 @@
     <Content Include="CodeReviews\Sprint 5\FullSIdePipeReadability.txt" />
     <Content Include="CodeReviews\Sprint 5\ScoreManagerReadability.txt" />
     <Content Include="CodeReviews\Sprint 5\PipeTransitioningGameStateReadabilty.txt" />
+    <Content Include="CodeReviews\Sprint 5\SoundEffectManagerReadability.txt" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
