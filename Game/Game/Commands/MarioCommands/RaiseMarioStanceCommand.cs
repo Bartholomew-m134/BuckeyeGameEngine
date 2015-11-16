@@ -20,7 +20,8 @@ namespace Game.Commands.MarioCommands
 
         public void Hold()
         {
-            WorldManager.GetMario().Jump();
+            if(!WorldManager.GetMario().IsPressingDown())
+                WorldManager.GetMario().Jump();
         }
 
         public void Release()
