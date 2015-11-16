@@ -84,12 +84,7 @@ namespace Game
 
         public static void CreateNewObject(IGameObject newObject)
         {
-            int index = 0;
-            while (objectList[index] is IScenery)
-                index++;
-
-            objectList.Insert(index, newObject);
-            
+            objectList.Add(newObject);          
         }
 
         private static void ResetIfMarioIsDead(ICamera camera)
