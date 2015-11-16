@@ -10,5 +10,6 @@ Code Quality:
 	due to the class having to draw the score instead of a sprite class. Besides that, the class could improve the
 	readability of the class, but if the spriteFont functionality is moved elsewhere, the class would be acceptable.
 Hypothetical Addition:
-	If a font
+	If another score sequence needed to be added, one would have to add an additional method to handle the score
+	to add, but also add to the corresponding collision to then detect the sequence. 
 	
