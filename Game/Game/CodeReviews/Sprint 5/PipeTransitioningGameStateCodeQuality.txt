@@ -1,0 +1,16 @@
+﻿Author:							Connor Swick
+Date :							11/16/15
+Sprint:							5
+Reviewed file:					PipeTransitioningGameState.cs
+File Author:					Kyle Powers
+Minutes to complete:			5
+Code Quality:
+		The overall quality of this game state class is great. As far as cohesion, it handles all
+		of the necessary responsibilities that a game state should. Everything contained in the class
+		certainly belongs there. As far as coupling, all of the fields are private and does not 
+		expose much data to other areas of the program, except where it is absolutely necessary. 
+		There are many different types of objects used in the class, however they are of interface
+		type, and a game state needs to know about these things to function properly. A proposed change 
+		to this class would be to make it so mario is able to go into pipes from any direction. Ex., 
+		mario could enter this game state by jumping up into a pipe, or going left or right into 
+		a pipe. 
