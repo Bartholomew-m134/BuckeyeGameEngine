@@ -8,7 +8,7 @@ namespace Game.Utilities.Constants
 {
     public static class IGameStateConstants
     {
-        public const int UPDATEDELAY = 5;
+        public const int UPDATEDELAY = 3;
         public const int POLESLIDEVELOCITY = 5;
         public const int ENDPOLESLIDECOORDINATE = 400;
         public const int FLAGPOLESTATETIMERJUMPMIN = 350;
