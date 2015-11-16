@@ -10,5 +10,7 @@ namespace Game.Interfaces
         void StopTheme();
 
         void PlayTheme();
+
+        bool IsPlaying();
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using Game.Utilities;
 using Game.Utilities.Constants;
+using Game.Music;
 
 namespace Game.Utilities
 {
@@ -36,6 +37,8 @@ namespace Game.Utilities
         }
         public static void UpdateHUDTime()
         {
+            if (HUDManager.RemainingTime() == SoundConstants.HURRYUPTIME)
+                BackgroundThemeManager.HurryTimeUpdate();
             timeToPrint -= HUDConstants.INCREMENTBYONE;
         }
         public static void Update()

@@ -9,7 +9,7 @@ namespace Game.Utilities.Constants
     {
         public const int WEAPONIZEDKOOPATRAVELSPEED = 11;
 
-        public const int MARIOBUMPSPEEDY = -3;
+        public const int MARIOBUMPSPEEDY = -4;
         public const int MARIOBUMPACCELERATIONY = 1;
 
         public const int STARBLOCKTOPSIDECOLLISION = -8;

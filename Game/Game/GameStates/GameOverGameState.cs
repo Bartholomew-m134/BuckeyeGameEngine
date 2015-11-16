@@ -15,11 +15,11 @@ namespace Game.GameStates
         private IGameState prevGameState;
         private List<IController> controllerList;
         private SpriteFont font;
+        private int gameOverSoundDelay = 0;
 
         public GameOverGameState(Game1 game)
         {
             this.game = game;
-            Game.SoundEffects.SoundEffectManager.GameOverEffect();
             prevGameState = game.gameState;
             controllerList = new List<IController>();
             controllerList.Add(new KeyboardController(new PausedControls(game)));
@@ -38,8 +38,11 @@ namespace Game.GameStates
 
         public void Update()
         {
+            if(gameOverSoundDelay == 80)
+                Game.SoundEffects.SoundEffectManager.GameOverEffect();
             foreach (IController controller in controllerList)
                 controller.Update();
+            gameOverSoundDelay++;
         }
 
         public void Draw(SpriteBatch spriteBatch)

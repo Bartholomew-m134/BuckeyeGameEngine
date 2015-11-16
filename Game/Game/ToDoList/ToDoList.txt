@@ -1,0 +1,5 @@
+﻿- Figure out to handle using a font across different computers.
+
+- Enable a way to reset score without giving an extra lives. (Right now Mario starts with 2 lives)
+
+- Remove magic numbers from GameStates.

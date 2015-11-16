@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Game.Interfaces;
 using Game.Utilities.Constants;
+using Game.Utilities;
 
 namespace Game.Music
 {
@@ -15,36 +16,34 @@ namespace Game.Music
         private static IMusic death = new DeathTheme();
 
         public static void PlayOverWorldTheme(){
-            starMan.StopTheme();
-            flagPoleVictory.StopTheme();
-            overworld.StopTheme();
-            overworld = new OverworldTheme();
+            StopAllBackgroundThemes();
+            if(HUDManager.RemainingTime() > SoundConstants.HURRYUPTIME)
+                overworld = new OverworldTheme();
+            else
+                overworld = new RushedOverworldTheme();
             overworld.PlayTheme();
         }
 
         public static void PlayStarTheme()
         {
-            starMan.StopTheme();
-            flagPoleVictory.StopTheme();
-            overworld.StopTheme();
-            starMan = new StarTheme();
+            StopAllBackgroundThemes();
+            if (HUDManager.RemainingTime() > SoundConstants.HURRYUPTIME)
+                starMan = new StarTheme();
+            else
+                starMan = new RushedStarTheme();
             starMan.PlayTheme();
         }
 
         public static void PlayFlagPoleVictoryTheme()
         {
-            starMan.StopTheme();
-            flagPoleVictory.StopTheme();
-            overworld.StopTheme();
+            StopAllBackgroundThemes();
             flagPoleVictory = new FlagPoleVictoryTheme();
             flagPoleVictory.PlayTheme();
         }
 
         public static void PlayDeathTheme()
         {
-            starMan.StopTheme();
-            flagPoleVictory.StopTheme();
-            overworld.StopTheme();
+            StopAllBackgroundThemes();
             death = new DeathTheme();
             death.PlayTheme();
         }
@@ -54,6 +53,15 @@ namespace Game.Music
             starMan.StopTheme();
             flagPoleVictory.StopTheme();
             overworld.StopTheme();
+            death.StopTheme();
+        }
+
+        public static void HurryTimeUpdate()
+        {
+            if (overworld.IsPlaying())
+                PlayOverWorldTheme();
+            else if (starMan.IsPlaying())
+                PlayStarTheme();
         }
     }
 }
