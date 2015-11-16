@@ -423,6 +423,7 @@
     <Content Include="CodeReviews\Sprint 5\PipeTransitioningGameStateReadabilty.txt" />
     <Content Include="CodeReviews\Sprint 5\SoundEffectManagerReadability.txt" />
     <Content Include="CodeReviews\Sprint 5\NormalMarioGameStateReadability.txt" />
+    <Content Include="CodeReviews\Sprint 5\PipeTransitioningGameStateCodeQuality.txt" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
