@@ -1,0 +1,13 @@
+﻿Author: Jackson Luken
+Date: 11/16/2015
+Sprint: 5
+File name: NormalMarioGameStateCodeQuality.cs
+Author: Jackson Luken
+
+Comments: This code has a high amount of tight coupling throughout, however due to the nature of a game state, this is necessary.
+When taking this into account, this class has an acceptable level of coupling. There is also high cohesion, with the individual methods 
+making sure to handle everything necessary and no more, ensuring that everthing is sufficiently modular and functional.
+
+A hypothetical change would be if you wanted to add more potential states to the system, which given the current coding of the
+class allows for simply creating a new method for every new type of state. Everything is kept as a simple state system, meaning that 
+new/ methods control functionality by linking together the separate states.
