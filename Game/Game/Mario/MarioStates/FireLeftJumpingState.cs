@@ -55,7 +55,6 @@ namespace Game.Mario.MarioStates
 
         public void Down()
         {
-            mario.MarioState = new FireLeftIdleState(mario);
         }
 
         public void Jump()
