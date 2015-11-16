@@ -205,6 +205,8 @@
     <Compile Include="Music\FlagPoleVictoryTheme.cs" />
     <Compile Include="Music\OverworldTheme.cs" />
     <Compile Include="Interfaces\IMusic.cs" />
+    <Compile Include="Music\RushedOverworldTheme.cs" />
+    <Compile Include="Music\RushedStarTheme.cs" />
     <Compile Include="Music\StarTheme.cs" />
     <Compile Include="Pipes\FullSidePipe.cs" />
     <Compile Include="Pipes\PipeSprites\BottomSidePipeSprite.cs" />
@@ -387,7 +389,9 @@
     <Compile Include="WorldManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BugsToFixList\Bugs.txt" />
+    <Content Include="CodeReviews\Sprint 5\NormalMarioGameStateCodeQuality.txt" />
+    <Content Include="CodeReviews\Sprint 5\ScoreManagerCodeReview.txt" />
+    <Content Include="ToDoList\ToDoList.txt" />
     <Content Include="CodeReviews\Sprint 2\JacksonBlockReadability.txt" />
     <Content Include="CodeReviews\Sprint 2\CoinSpriteCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 2\CoinSpriteReadability.txt" />
@@ -423,6 +427,7 @@
     <Content Include="CodeReviews\Sprint 5\PipeTransitioningGameStateReadabilty.txt" />
     <Content Include="CodeReviews\Sprint 5\SoundEffectManagerReadability.txt" />
     <Content Include="CodeReviews\Sprint 5\NormalMarioGameStateReadability.txt" />
+    <Content Include="CodeReviews\Sprint 5\PipeTransitioningGameStateCodeQuality.txt" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>

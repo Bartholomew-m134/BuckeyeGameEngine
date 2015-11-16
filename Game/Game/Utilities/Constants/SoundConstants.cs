@@ -7,10 +7,14 @@ namespace Game.Utilities.Constants
 {
     public static class SoundConstants
     {
+        public const int HURRYUPTIME = 99;
+
         public const String DEATHTHEME = @"Content\SoundTracks\08_you_re_dead.wav";
         public const String FLAGPOLEVICTORYTHEME = @"Content\SoundTracks\06-level-complete.wav";
         public const String OVERWORLDTHEME = @"Content\SoundTracks\01-main-theme-overworld.wav";
+        public const String RUSHOVERWORLDTHEME = @"Content\SoundTracks\18_hurry_overworld_.wav";
         public const String STARTHEME = @"Content\SoundTracks\05-starman.wav";
+        public const String RUSHSTARTHEME = @"Content\SoundTracks\17_hurry_starman_.wav";
         public const String BLOCKBUMPEFFECT = @"Content\SoundEffects\smb_block_bump.wav";
         public const String BRICKBREAKINGEFFECT = @"Content\SoundEffects\smb_breakblock.wav";
         public const String COINEFFECT = @"Content\SoundEffects\smb_coin.wav";

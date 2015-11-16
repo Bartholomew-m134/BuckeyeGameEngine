@@ -33,5 +33,14 @@ namespace Game.Music
         {
             instance.Play();
         }
+
+
+        public bool IsPlaying()
+        {
+            bool isPlaying = false;
+            if(instance.State == SoundState.Playing)
+                isPlaying = true;
+            return isPlaying;
+        }
     }
 }
