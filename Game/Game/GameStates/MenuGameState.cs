@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.Utilities.Constants;
 
 namespace Game.GameStates
 {
@@ -51,7 +52,7 @@ namespace Game.GameStates
         public void Draw(SpriteBatch spriteBatch)
         {
             game.GraphicsDevice.Clear(Color.Black);
-            if (logoCounter < 300)
+            if (logoCounter < IGameStateConstants.MENUGAMESTATELOGOCOUNTER)
                 namesLogoSprite.Draw(game.spriteBatch, Vector2.Zero);
             else
                 startMenuSprite.Draw(game.spriteBatch, Vector2.Zero);
@@ -62,7 +63,7 @@ namespace Game.GameStates
         {
             game.gameState = new LoadingGameState(game);
             game.gameState.LoadContent();
-            LifeManager.Lives = 2;
+            LifeManager.Lives = IGameStateConstants.MENUGAMESTATELIVES;
             ScoreManager.ResetScore();
             HUDManager.UpdateHUDScore(0);
             HUDManager.UpdateHUDCoins(0);
@@ -88,18 +89,18 @@ namespace Game.GameStates
         {
             get
             {
-                throw new NotImplementedException();
+                return false;
             }
             set
             {
-                throw new NotImplementedException();
+                
             }
         }
 
 
         public void MarioPowerUp()
         {
-            throw new NotImplementedException();
+
         }
     }
 }

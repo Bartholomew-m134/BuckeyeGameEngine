@@ -53,19 +53,19 @@ namespace Game.GameStates
             if(updateDelay == IGameStateConstants.UPDATEDELAY){
                 if (slidingDownPole){
                     tempMario.MarioState.PoleSlide();
-                    tempMario.Physics.Velocity = new Vector2(0, 5);
-                    if (tempMario.VectorCoordinates.Y > 400)
+                    tempMario.Physics.Velocity = new Vector2(0, IGameStateConstants.POLESLIDEVELOCITY);
+                    if (tempMario.VectorCoordinates.Y > IGameStateConstants.ENDPOLESLIDECOORDINATE)
                     {
                         slidingDownPole = false;
                         tempMario.MarioState.FlipAroundPole();
 
                     }
                 }
-                else if (timer >= 350 && timer < 600 && !(hasJumpedOffPole))
+                else if (timer >= IGameStateConstants.FLAGPOLESTATETIMERJUMPMIN && timer < IGameStateConstants.FLAGPOLESTATETIMERJUMPMAX && !(hasJumpedOffPole))
                 {
                     tempMario.MarioState.Jump();
-                    tempMario.Physics.Velocity = new Vector2(4, 5);
-                    if ((tempMario.VectorCoordinates.Y + tempMario.Sprite.SpriteDimensions.Y) > 440)
+                    tempMario.Physics.Velocity = new Vector2(IGameStateConstants.FLAGPOLESTATEMARIOJUMPXVELOCITY, IGameStateConstants.FLAGPOLESTATEMARIOJUMPYVELOCITY);
+                    if ((tempMario.VectorCoordinates.Y + tempMario.Sprite.SpriteDimensions.Y) > IGameStateConstants.FLAGPOLESTATEMARIOHASJUMPEDYCOORDINATE)
                     {
                         hasJumpedOffPole = true;
                         tempMario.MarioState.FlipAroundPole();
@@ -73,9 +73,9 @@ namespace Game.GameStates
                 }
                 else if (hasJumpedOffPole && !(slidingDownPole) && !(hasWalkedIntoCastle))
                 {
-                    tempMario.Physics.Velocity = new Vector2(5, 0);
+                    tempMario.Physics.Velocity = new Vector2(IGameStateConstants.FLAGPOLESTATEMARIOWALKINGTOWARDSCASTLEXVELOCITY, 0);
                     tempMario.Physics.Acceleration = new Vector2(0, 0);
-                    if (tempMario.VectorCoordinates.X >= 3248)
+                    if (tempMario.VectorCoordinates.X >= IGameStateConstants.FLAGPOLESTATECASTLEDOORXCOORDINATE)
                     {
                         hasWalkedIntoCastle = true;
                         tempMario.Physics.Velocity = new Vector2(0, 0);
@@ -92,7 +92,7 @@ namespace Game.GameStates
                     tempMario.ToIdle();
                     tempMario.Physics.Velocity = new Vector2(0, 0);
                     tempMario.Physics.Acceleration = new Vector2(0, 0);
-                    int victoryWaitTimer = 5;
+                    int victoryWaitTimer = IGameStateConstants.FLAGPOLESTATEVICTORYWAITTIMER;
                     while (victoryWaitTimer > 0)
                         victoryWaitTimer--;
                     game.gameState = new VictoryScreenGameState(game);
@@ -142,18 +142,18 @@ namespace Game.GameStates
         {
             get
             {
-                throw new NotImplementedException();
+                return false;
             }
             set
             {
-                throw new NotImplementedException();
+      
             }
         }
 
 
         public void MarioPowerUp()
         {
-            throw new NotImplementedException();
+         
         }
     }
 }

@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.Utilities.Constants;
 
 namespace Game.GameStates
 {
@@ -45,7 +46,7 @@ namespace Game.GameStates
 
         public void Update()
         {
-            if (delay == 3)
+            if (delay == IGameStateConstants.UPDATEDELAY)
             {
                 foreach (IController controller in controllerList)
                     controller.Update();
@@ -54,7 +55,7 @@ namespace Game.GameStates
                 CollisionManager.Update(this);
                 camera.Update(WorldManager.GetMario());
 
-                if (timer > 10)
+                if (timer > IGameStateConstants.MARIOPOWERUPSTATETIMER)
                 {
                     WorldManager.GetMario().Physics.ResetPhysics();
                     game.gameState = prevGameState;
@@ -96,11 +97,11 @@ namespace Game.GameStates
         {
             get
             {
-                throw new NotImplementedException();
+                return false;
             }
             set
             {
-                throw new NotImplementedException();
+              
             }
         }
 

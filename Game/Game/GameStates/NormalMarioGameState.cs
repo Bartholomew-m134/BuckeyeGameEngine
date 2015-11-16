@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.Utilities.Constants;
 
 namespace Game.GameStates
 {
@@ -39,7 +40,7 @@ namespace Game.GameStates
             ProjectileSpriteFactory.Load(game.Content);
             BackgroundElementsSpriteFactory.Load(game.Content);
 
-            WorldManager.LoadListFromFile("World1-1", game);
+            WorldManager.LoadListFromFile(IGameStateConstants.NORMALMARIOWORLD, game);
 
             camera = new MarioCamera(WorldManager.GetMario().VectorCoordinates);
         }
@@ -52,7 +53,7 @@ namespace Game.GameStates
 
         public void Update()
         {
-            if (delay == 3)
+            if (delay == IGameStateConstants.UPDATEDELAY)
             {
                 foreach (IController controller in controllerList)
                     controller.Update();

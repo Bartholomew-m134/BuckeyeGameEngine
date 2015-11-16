@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Game.Utilities.Constants;
 namespace Game.GameStates
 {
     public class MarioDeathGameState : IGameState
@@ -35,11 +35,11 @@ namespace Game.GameStates
 
         public void Update()
         {
-            if (delay == 3)
+            if (delay == IGameStateConstants.UPDATEDELAY)
             {
                 WorldManager.GetMario().Update();
 
-                if (timer.ElapsedMilliseconds > 1500)
+                if (timer.ElapsedMilliseconds > IGameStateConstants.MARIODEATHSTATETIMER)
                 {
                     timer.Reset();
                     LifeManager.DecrementLives();
@@ -84,7 +84,7 @@ namespace Game.GameStates
 
         public void FlagPoleTransition()
         {
-            throw new NotImplementedException();
+     
         }
 
 
@@ -92,18 +92,18 @@ namespace Game.GameStates
         {
             get
             {
-                throw new NotImplementedException();
+                return false;
             }
             set
             {
-                throw new NotImplementedException();
+          
             }
         }
 
 
         public void MarioPowerUp()
         {
-            throw new NotImplementedException();
+        
         }
     }
 }

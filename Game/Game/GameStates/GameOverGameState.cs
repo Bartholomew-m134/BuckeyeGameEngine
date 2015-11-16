@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.Utilities.Constants;
 
 namespace Game.GameStates
 {
@@ -46,7 +47,7 @@ namespace Game.GameStates
         {
             game.GraphicsDevice.Clear(Color.Black);
             spriteBatch.Begin();
-            spriteBatch.DrawString(font, "Game Over", new Vector2(320, 200), Color.White);
+            spriteBatch.DrawString(font, IGameStateConstants.GAMEOVERSTATEMESSAGE, IGameStateConstants.GAMEOVERSTATEMESSAGELOCATION, Color.White);
             spriteBatch.End();
         }
 
@@ -75,18 +76,18 @@ namespace Game.GameStates
         {
             get
             {
-                throw new NotImplementedException();
+                return false;
             }
             set
             {
-                throw new NotImplementedException();
+                
             }
         }
 
 
         public void MarioPowerUp()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+
 namespace Game.GameStates
 {
     public class LoadingGameState : IGameState
@@ -55,10 +56,10 @@ namespace Game.GameStates
             game.GraphicsDevice.Clear(Color.Black);
             HUDManager.DrawHUD(spriteBatch);
 
-            marioSprite.Draw(spriteBatch, new Vector2(370, 215));
+            marioSprite.Draw(spriteBatch, IGameStateConstants.LOADINGGAMESTATEMARIOLOCATION);
 
             spriteBatch.Begin();
-            spriteBatch.DrawString(font, "x " + LifeManager.Lives, new Vector2(400, 200), Color.White);
+            spriteBatch.DrawString(font, IGameStateConstants.LOADINGGAMESTATEX + LifeManager.Lives, IGameStateConstants.LOADINGGAMESTATEMESSAGELOCATION, Color.White);
             spriteBatch.End();
         }
 
@@ -89,18 +90,18 @@ namespace Game.GameStates
         {
             get
             {
-                throw new NotImplementedException();
+                return false;
             }
             set
             {
-                throw new NotImplementedException();
+                
             }
         }
 
 
         public void MarioPowerUp()
         {
-            throw new NotImplementedException();
+         
         }
     }
 }

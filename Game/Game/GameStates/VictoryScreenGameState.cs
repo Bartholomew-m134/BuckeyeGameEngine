@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.Utilities.Constants;
 
 namespace Game.GameStates
 {
@@ -45,8 +46,8 @@ namespace Game.GameStates
         {
             game.GraphicsDevice.Clear(Color.Black);
             spriteBatch.Begin();
-            spriteBatch.DrawString(font, "Congratulations, you won!", new Vector2(200, 200), Color.White);
-            spriteBatch.DrawString(font, "Press Start to restart the game.", new Vector2(175, 250), Color.White);
+            spriteBatch.DrawString(font, IGameStateConstants.VICTORYSCREENGAMESTATECONGRATSMESSAGE, IGameStateConstants.VICTORYSCREENGAMESTATECONGRATSMESSAGELOCATION, Color.White);
+            spriteBatch.DrawString(font, IGameStateConstants.VICTORYSCREENGAMESTATESTARTMESSAGE, IGameStateConstants.VICTORYSCREENGAMESTATESTARTMESSAGELOCATION, Color.White);
             spriteBatch.End();
         }
 

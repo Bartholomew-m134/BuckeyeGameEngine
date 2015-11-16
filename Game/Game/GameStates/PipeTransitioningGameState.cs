@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+
 namespace Game.GameStates
 {
     public class PipeTransitioningGameState : IGameState
@@ -17,7 +18,7 @@ namespace Game.GameStates
         private Game1 game;
         private IGameState prevGameState;
         private List<IController> controllerList;
-        private int timer = 40;
+        private int timer;
         private Vector2 warpLocation;
         private ICamera camera;
 
@@ -30,6 +31,7 @@ namespace Game.GameStates
             WorldManager.GetMario().Physics.ResetX();
             WorldManager.GetMario().Physics.ResetY();
             controllerList = new List<IController>();
+            timer = IGameStateConstants.PIPETRANSITIONINGGAMESTATETIMER;
             controllerList.Add(new KeyboardController(new PausedControls(game)));
             controllerList.Add(new GamePadController(new PausedControls(game)));
             
@@ -54,10 +56,10 @@ namespace Game.GameStates
                     controller.Update();
                 if (prevGameState.IsUnderground) {
                     WorldManager.GetMario().Physics.Acceleration = new Vector2(0, 0);
-                    WorldManager.GetMario().Physics.Velocity = new Vector2(1, 0);
+                    WorldManager.GetMario().Physics.Velocity = new Vector2(IGameStateConstants.PIPETRANSITIONINGGGAMESTATEMARIOXVELOCITY, 0);
                 }
                 else { 
-                WorldManager.GetMario().Physics.Velocity = new Vector2(0, 1);
+                WorldManager.GetMario().Physics.Velocity = new Vector2(0, IGameStateConstants.PIPETRANSITIONINGGGAMESTATEMARIOYVELOCITY);
                 }
                 WorldManager.GetMario().Update();
                 timer--;
@@ -106,18 +108,18 @@ namespace Game.GameStates
         {
             get
             {
-                throw new NotImplementedException();
+                return false;
             }
             set
             {
-                throw new NotImplementedException();
+            
             }
         }
 
 
         public void MarioPowerUp()
         {
-            throw new NotImplementedException();
+           
         }
     }
 }
