@@ -8,7 +8,7 @@ namespace Game.Utilities.Constants
 {
     public static class BuckeyePlayerSpriteConstants
     {
-        public const int MOVEMENT_FRAME_DELAY = 6;
+        public const int MOVEMENT_FRAME_DELAY = 2;
         public const int MOVEMENT_FRAME_MAX = 4;
         public const float SPRITE_SCALE_FACTOR = 0.5f;
 

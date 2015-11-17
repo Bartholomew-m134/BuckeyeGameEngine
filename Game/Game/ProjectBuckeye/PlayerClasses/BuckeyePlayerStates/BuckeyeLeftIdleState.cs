@@ -41,7 +41,7 @@ namespace Game.ProjectBuckeye.PlayerClasses.BuckeyePlayerStates
 
         public void Right()
         {
-            buckeyePlayer.State = new BuckeyeLeftIdleState(buckeyePlayer);
+            buckeyePlayer.State = new BuckeyeRightIdleState(buckeyePlayer);
         }
 
         public void Up()

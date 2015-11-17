@@ -36,6 +36,8 @@ namespace Game.Utilities.Constants
         public const String VICTORYSCREENGAMESTATESTARTMESSAGE = "Press Start to restart the game.";
         public static readonly Vector2 VICTORYSCREENGAMESTATECONGRATSMESSAGELOCATION = new Vector2(200, 200);
         public static readonly Vector2 VICTORYSCREENGAMESTATESTARTMESSAGELOCATION = new Vector2(175, 250);
+
+        public const String PROJECT_BUCKEYE_TEST_WORLD = "ProjectBuckeyeTest";
         
     }
 }

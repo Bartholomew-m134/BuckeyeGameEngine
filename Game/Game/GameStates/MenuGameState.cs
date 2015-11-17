@@ -70,6 +70,11 @@ namespace Game.GameStates
             HUDManager.ResetCoins();
         }
 
+        public void StartBuckeyeButton()
+        {
+            game.gameState = new ProjectBuckeyeGameState(game);
+            game.gameState.LoadContent();
+        }
 
         public void PipeTransition(Vector2 warpLocation)
         {

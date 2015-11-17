@@ -15,7 +15,7 @@ namespace Game.Commands.MarioCommands
 
         public void Execute()
         {
-            if(((IMario)WorldManager.GetPlayer()).IsFireMario())
+            if( WorldManager.GetPlayer() is IMario && ((IMario)WorldManager.GetPlayer()).IsFireMario())
                 ((IMario)WorldManager.GetPlayer()).ThrowFireball();
         }
 

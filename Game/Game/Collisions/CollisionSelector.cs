@@ -14,6 +14,7 @@ using Game.Collisions.ItemCollisionHandling;
 using Game.Collisions.PipeCollisionHandling;
 using Game.Interfaces;
 using Game.Collisions.FlagPoleCollisionHandling;
+using Game.ProjectBuckeye.Collision;
 
 namespace Game.Collisions
 {
@@ -84,6 +85,11 @@ namespace Game.Collisions
             else if ((collision.GameObjectA is IMario && collision.GameObjectB is IFlagPole) || (collision.GameObjectA is IFlagPole && collision.GameObjectB is IMario))
             {
                 MarioFlagPoleCollisionHandler collisionHandler = new MarioFlagPoleCollisionHandler(collision, gameState);
+                collisionHandler.HandleCollision();
+            }
+            else if ((collision.GameObjectA is IBuckeyePlayer && collision.GameObjectB is IBlock) || (collision.GameObjectA is IBlock && collision.GameObjectB is IBuckeyePlayer))
+            {
+                BuckeyeBlockCollisionHandler collisionHandler = new BuckeyeBlockCollisionHandler(collision);
                 collisionHandler.HandleCollision();
             }
         }
