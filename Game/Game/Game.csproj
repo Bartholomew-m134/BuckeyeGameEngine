@@ -106,6 +106,7 @@
     <Compile Include="Collisions\FlagPoleCollisionHandling\MarioFlagPoleCollisionHandler.cs" />
     <Compile Include="Collisions\ItemCollisionHandling\ItemPipeCollisionHandler.cs" />
     <Compile Include="Collisions\PipeCollisionHandling\PipeFireballCollisionHandler.cs" />
+    <Compile Include="Commands\BuckeyePlayerCommands\TransitionLeftBuckeyeCommand.cs" />
     <Compile Include="Commands\MarioCommands\MarioRunFireBallCommand.cs" />
     <Compile Include="Commands\StartButtonCommand.cs" />
     <Compile Include="Enemies\GoombaClasses\Goomba.cs" />
@@ -379,6 +380,7 @@
     <Compile Include="Utilities\Constants\ScoreManagerConstants.cs" />
     <Compile Include="Utilities\Constants\SoundConstants.cs" />
     <Compile Include="Utilities\Constants\SpriteFactoryConstants.cs" />
+    <Compile Include="Utilities\Controls\BuckeyePlayerControls.cs" />
     <Compile Include="Utilities\Controls\MarioControls.cs" />
     <Compile Include="Utilities\Controls\MenuControls.cs" />
     <Compile Include="Utilities\Controls\PausedControls.cs" />

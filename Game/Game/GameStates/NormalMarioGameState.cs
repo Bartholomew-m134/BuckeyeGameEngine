@@ -1,4 +1,5 @@
 ﻿using Game.Collisions;
+using Game.Mario;
 using Game.Interfaces;
 using Game.Mario.MarioStates;
 using Game.SpriteFactories;
@@ -42,7 +43,7 @@ namespace Game.GameStates
 
             WorldManager.LoadListFromFile(IGameStateConstants.NORMALMARIOWORLD, game);
 
-            camera = new MarioCamera(WorldManager.GetMario().VectorCoordinates);
+            camera = new MarioCamera(WorldManager.GetPlayer().VectorCoordinates);
         }
 
 
@@ -60,7 +61,7 @@ namespace Game.GameStates
 
                 WorldManager.Update(camera);
                 CollisionManager.Update(this);
-                camera.Update(WorldManager.GetMario());
+                camera.Update(WorldManager.GetPlayer());
                 ScoreManager.Update();
                 HUDManager.Update();
                 delay = 0;
@@ -71,7 +72,7 @@ namespace Game.GameStates
             }
 
             if (HUDManager.OutOfTime)
-                WorldManager.GetMario().MarioState = new DeadMarioState(WorldManager.GetMario());
+                ((IMario)WorldManager.GetPlayer()).MarioState = new DeadMarioState((IMario)WorldManager.GetPlayer());
         }
 
         public void Draw(SpriteBatch spriteBatch)

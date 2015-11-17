@@ -18,12 +18,16 @@ namespace Game.ProjectBuckeye.PlayerClasses
         private Vector2 location;
         private Game1 myGame;
         private ObjectPhysics physics;
+        private bool isDead;
+        private bool isPressingDown;
 
         public BuckeyePlayer(Game1 game)
         {
             state = new BuckeyeRightIdleState(this);
             myGame = game;
             physics = new ObjectPhysics();
+            isPressingDown = false;
+            isDead = false;
         }
 
         public void Left()
@@ -38,11 +42,14 @@ namespace Game.ProjectBuckeye.PlayerClasses
 
         public void Up()
         {
+            state.Up();
+            this.isPressingDown = false;
         }
 
         public void Down()
         {
             state.Down();
+            this.isPressingDown = true;
         }
 
         public void Jump()
@@ -97,6 +104,29 @@ namespace Game.ProjectBuckeye.PlayerClasses
         {
             get { return state; }
             set { state = value; }
+        }
+
+
+        public bool Dead
+        {
+            get { return isDead; }
+            set { isDead = value; }
+        }
+
+
+        public bool IsPressingDown()
+        {
+            return isPressingDown;
+        }
+
+        public bool IsJumping()
+        {
+            return state.IsJumping();
+        }
+
+        public void ToIdle()
+        {
+            state.ToIdle();
         }
     }
 }

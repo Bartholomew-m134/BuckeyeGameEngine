@@ -24,5 +24,9 @@ namespace Game.Interfaces
         void Run();
 
         void StopRunning();
+
+        void ToIdle();
+
+        bool IsJumping();
     }
 }

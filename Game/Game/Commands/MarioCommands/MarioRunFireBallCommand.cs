@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.Mario;
 
 namespace Game.Commands.MarioCommands
 {
@@ -10,23 +11,22 @@ namespace Game.Commands.MarioCommands
     {
         public MarioRunFireBallCommand()
         {
-
         }
 
         public void Execute()
         {
-            if(WorldManager.GetMario().IsFireMario())
-                WorldManager.GetMario().ThrowFireball();
+            if(((IMario)WorldManager.GetPlayer()).IsFireMario())
+                ((IMario)WorldManager.GetPlayer()).ThrowFireball();
         }
 
         public void Hold()
         {
-            WorldManager.GetMario().Run();
+            WorldManager.GetPlayer().Run();
         }
 
         public void Release()
         {
-            WorldManager.GetMario().StopRunning();
+            WorldManager.GetPlayer().StopRunning();
         }
     }
 }

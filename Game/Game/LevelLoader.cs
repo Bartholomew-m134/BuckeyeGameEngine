@@ -14,6 +14,7 @@ using Game.Background_Elements;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
 using Game.FlagPoles;
+using Game.ProjectBuckeye.PlayerClasses;
 
 namespace Game
 {
@@ -186,6 +187,8 @@ namespace Game
                         gameObject = new TripleBush(game);
                     else if (objectName.Equals("TripleCloud"))
                         gameObject = new TripleCloud(game);
+                    else if (objectName.Equals("Buckeye"))
+                        gameObject = new BuckeyePlayer(game);
 
                     if (objectsItem != null)
                     {

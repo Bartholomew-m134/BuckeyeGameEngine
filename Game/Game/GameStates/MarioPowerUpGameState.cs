@@ -30,8 +30,8 @@ namespace Game.GameStates
             controllerList.Add(new KeyboardController(new PausedControls(game)));
             controllerList.Add(new GamePadController(new PausedControls(game)));
 
-            WorldManager.GetMario().Physics.Acceleration = Vector2.Zero;
-            WorldManager.GetMario().Physics.Velocity = Vector2.Zero;
+            WorldManager.GetPlayer().Physics.Acceleration = Vector2.Zero;
+            WorldManager.GetPlayer().Physics.Velocity = Vector2.Zero;
         }
 
         public void LoadContent()
@@ -51,13 +51,13 @@ namespace Game.GameStates
                 foreach (IController controller in controllerList)
                     controller.Update();
 
-                WorldManager.GetMario().Update();
+                WorldManager.GetPlayer().Update();
                 CollisionManager.Update(this);
-                camera.Update(WorldManager.GetMario());
+                camera.Update(WorldManager.GetPlayer());
 
                 if (timer > IGameStateConstants.MARIOPOWERUPSTATETIMER)
                 {
-                    WorldManager.GetMario().Physics.ResetPhysics();
+                    WorldManager.GetPlayer().Physics.ResetPhysics();
                     game.gameState = prevGameState;
                 }
                 timer++;

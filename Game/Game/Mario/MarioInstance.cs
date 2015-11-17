@@ -19,6 +19,7 @@ namespace Game.Mario
         private ObjectPhysics physics;
         private FireBallSpawner factory;
         private bool isPressingDown;
+        private bool isDead;
 
         public MarioInstance(Game1 game)
         {
@@ -27,6 +28,7 @@ namespace Game.Mario
             physics = new ObjectPhysics();
             factory = new FireBallSpawner(game);
             isPressingDown = false;
+            isDead = false;
         }
         public void Update()
         {
@@ -185,6 +187,13 @@ namespace Game.Mario
         public bool IsPressingDown()
         {
             return isPressingDown;
+        }
+
+
+        public bool Dead
+        {
+            get { return isDead; }
+            set { isDead = value; }
         }
     }
 }

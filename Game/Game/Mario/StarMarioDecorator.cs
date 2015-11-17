@@ -24,7 +24,7 @@ namespace Game.Mario
         {
             this.mario = mario;
             this.myGame = game;
-            WorldManager.SetMario(this);
+            WorldManager.SetPlayer(this);
             BackgroundThemeManager.PlayStarTheme();
             factory = new FireBallSpawner(game);
         }
@@ -38,11 +38,11 @@ namespace Game.Mario
             timer--;
             if (timer == 0 && IsOnFlagPole())
             {
-                WorldManager.SetMario(this.mario);
+                WorldManager.SetPlayer(this.mario);
             }
             else if (timer == 0)
             {
-                WorldManager.SetMario(this.mario);
+                WorldManager.SetPlayer(this.mario);
                 BackgroundThemeManager.PlayOverWorldTheme();
             }
             mario.Update();
@@ -198,6 +198,12 @@ namespace Game.Mario
         public bool IsPressingDown()
         {
             return mario.IsPressingDown();
+        }
+
+        public bool Dead
+        {
+            get { return mario.Dead; }
+            set { mario.Dead = value; }
         }
     }
 }

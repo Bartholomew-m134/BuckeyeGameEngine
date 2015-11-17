@@ -24,7 +24,7 @@ namespace Game.Mario
         {
             this.mario = mario;
             this.myGame = game;
-            WorldManager.SetMario(this);
+            WorldManager.SetPlayer(this);
             sprite = MarioSpriteFactory.CreateFireThrowLeft();
         }
 
@@ -39,7 +39,7 @@ namespace Game.Mario
             timer--;
             if (timer == 0)
             {
-                WorldManager.SetMario(this.mario);
+                WorldManager.SetPlayer(this.mario);
             }
             mario.Update();
         }
@@ -172,6 +172,12 @@ namespace Game.Mario
         public bool IsPressingDown()
         {
             return mario.IsPressingDown();
+        }
+
+        public bool Dead
+        {
+            get { return mario.Dead; }
+            set { mario.Dead = value; }
         }
     }
 }

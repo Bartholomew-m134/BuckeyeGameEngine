@@ -49,7 +49,7 @@ namespace Game.GameStates
 
         public void Update()
         {
-            tempMario = WorldManager.GetMario();
+            tempMario = (IMario)WorldManager.GetPlayer();
             if(updateDelay == IGameStateConstants.UPDATEDELAY){
                 if (slidingDownPole){
                     tempMario.MarioState.PoleSlide();

@@ -22,5 +22,17 @@ namespace Game.Interfaces
         void Run();
 
         void StopRunning();
+
+        bool Dead
+        {
+            get;
+            set;
+        }
+
+        bool IsPressingDown();
+
+        bool IsJumping();
+
+        void ToIdle();
     }
 }

@@ -17,7 +17,7 @@ namespace Game.Mario
         public DamagedMarioTransitionDecorator(IMario mario)
         {
             this.mario = mario;
-            WorldManager.SetMario(this);
+            WorldManager.SetPlayer(this);
             frame = 0;
         }
 
@@ -29,7 +29,7 @@ namespace Game.Mario
         {
             if (frame == IMarioObjectConstants.HURTMARIOTIMERMAX)
             {
-                WorldManager.SetMario(this.mario);
+                WorldManager.SetPlayer(this.mario);
             }
             mario.Update();
 
@@ -166,6 +166,13 @@ namespace Game.Mario
         public bool IsPressingDown()
         {
             return mario.IsPressingDown();
+        }
+
+
+        public bool Dead
+        {
+            get { return mario.Dead; }
+            set { mario.Dead = value; }
         }
     }
 }

@@ -28,8 +28,8 @@ namespace Game.GameStates
             prevGameState = game.gameState;
             this.warpLocation = warpLocation;
             this.camera = camera;
-            WorldManager.GetMario().Physics.ResetX();
-            WorldManager.GetMario().Physics.ResetY();
+            WorldManager.GetPlayer().Physics.ResetX();
+            WorldManager.GetPlayer().Physics.ResetY();
             controllerList = new List<IController>();
             timer = IGameStateConstants.PIPETRANSITIONINGGAMESTATETIMER;
             controllerList.Add(new KeyboardController(new PausedControls(game)));
@@ -55,13 +55,13 @@ namespace Game.GameStates
                 foreach (IController controller in controllerList)
                     controller.Update();
                 if (prevGameState.IsUnderground) {
-                    WorldManager.GetMario().Physics.Acceleration = new Vector2(0, 0);
-                    WorldManager.GetMario().Physics.Velocity = new Vector2(IGameStateConstants.PIPETRANSITIONINGGGAMESTATEMARIOXVELOCITY, 0);
+                    WorldManager.GetPlayer().Physics.Acceleration = new Vector2(0, 0);
+                    WorldManager.GetPlayer().Physics.Velocity = new Vector2(IGameStateConstants.PIPETRANSITIONINGGGAMESTATEMARIOXVELOCITY, 0);
                 }
                 else { 
-                WorldManager.GetMario().Physics.Velocity = new Vector2(0, IGameStateConstants.PIPETRANSITIONINGGGAMESTATEMARIOYVELOCITY);
+                WorldManager.GetPlayer().Physics.Velocity = new Vector2(0, IGameStateConstants.PIPETRANSITIONINGGGAMESTATEMARIOYVELOCITY);
                 }
-                WorldManager.GetMario().Update();
+                WorldManager.GetPlayer().Update();
                 timer--;
             }
             else
@@ -69,9 +69,9 @@ namespace Game.GameStates
                 
                 game.gameState = prevGameState;
     
-                WorldManager.GetMario().VectorCoordinates = warpLocation;
+                WorldManager.GetPlayer().VectorCoordinates = warpLocation;
                 CollisionManager.Update(this);
-                camera.Update(WorldManager.GetMario());
+                camera.Update(WorldManager.GetPlayer());
 
                 prevGameState.IsUnderground = !prevGameState.IsUnderground;
             }

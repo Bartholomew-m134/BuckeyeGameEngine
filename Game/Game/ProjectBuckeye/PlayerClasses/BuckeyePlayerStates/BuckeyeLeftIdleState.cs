@@ -76,10 +76,14 @@ namespace Game.ProjectBuckeye.PlayerClasses.BuckeyePlayerStates
             buckeyePlayer.State = new BuckeyeLeftDownState(buckeyePlayer);
         }
 
-
-        public bool IsJumping
+        public void ToIdle()
         {
-            get { return false; }
+            buckeyePlayer.State = new BuckeyeLeftIdleState(buckeyePlayer);
+        }
+
+        bool IPlayerState.IsJumping()
+        {
+            return false;
         }
     }
 }

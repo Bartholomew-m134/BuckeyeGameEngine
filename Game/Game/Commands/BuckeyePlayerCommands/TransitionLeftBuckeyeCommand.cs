@@ -1,17 +1,13 @@
-﻿using Game.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.Interfaces;
 
-namespace Game.Commands.MarioCommands
+namespace Game.Commands.BuckeyePlayerCommands
 {
-    public class FurtherRightMarioStanceCommand : ICommand
+    public class TransitionLeftBuckeyeCommand : ICommand
     {
-        public FurtherRightMarioStanceCommand()
-        {
-        }
-
         public void Execute()
         {
             
@@ -19,7 +15,7 @@ namespace Game.Commands.MarioCommands
 
         public void Hold()
         {
-            WorldManager.GetPlayer().Right();
+            WorldManager.GetPlayer().Left();
         }
 
         public void Release()

@@ -19,17 +19,17 @@ namespace Game.Commands.MarioCommands
 
         public void Hold()
         {
-            WorldManager.GetMario().Left();
+            WorldManager.GetPlayer().Left();
         }
 
         public void Release()
         {
-            if (WorldManager.GetMario().IsJumping() == false)
+            if (WorldManager.GetPlayer().IsJumping() == false)
             {
-                WorldManager.GetMario().ToIdle();
+                WorldManager.GetPlayer().ToIdle();
             }
             else {
-                WorldManager.GetMario().Physics.ResetX();
+                WorldManager.GetPlayer().Physics.ResetX();
             }
         }
     }

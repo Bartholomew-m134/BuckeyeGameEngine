@@ -21,10 +21,6 @@ namespace Game.Interfaces
 
          bool IsRight();
 
-         bool IsJumping();
-
-         void ToIdle();
-
          void PoleSlide();
 
          void FlipAroundPole();

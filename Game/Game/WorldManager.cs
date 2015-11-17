@@ -43,7 +43,7 @@ namespace Game
                     FreeObject(objectList[i]);
             }
 
-            ResetIfMarioIsDead(camera);
+            ResetIfPlayerIsDead(camera);
         }
 
         public static void Draw(ICamera camera)
@@ -57,15 +57,15 @@ namespace Game
             get { return objectWithinZoneList; }
         }
 
-        public static IMario GetMario()
+        public static IPlayer GetPlayer()
         {
-            return (IMario)objectList.Find(i => i is IMario);
+            return (IPlayer)objectList.Find(i => i is IPlayer);
         }
 
-        public static void SetMario(IMario mario)
+        public static void SetPlayer(IPlayer player)
         {
-            int index = objectList.FindIndex(i => i is IMario);
-            objectList[index] = mario;
+            int index = objectList.FindIndex(i => i is IPlayer);
+            objectList[index] = player;
         }
 
         public static void FreeObject(IGameObject referenceObject)
@@ -85,10 +85,10 @@ namespace Game
             objectList.Add(newObject);          
         }
 
-        private static void ResetIfMarioIsDead(ICamera camera)
+        private static void ResetIfPlayerIsDead(ICamera camera)
         {
-            if (GetMario().MarioState is Mario.MarioStates.DeadMarioState || camera.IsBelowCamera(GetMario().VectorCoordinates))
-                FreeObject(GetMario());
+            if (GetPlayer().Dead || camera.IsBelowCamera(GetPlayer().VectorCoordinates))
+                FreeObject(GetPlayer());
         }
     }
 }

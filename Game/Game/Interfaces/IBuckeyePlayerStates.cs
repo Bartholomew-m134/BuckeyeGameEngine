@@ -8,8 +8,5 @@ namespace Game.Interfaces
     public interface IBuckeyePlayerState : IPlayerState
     {
         void DownPlayer();
-        bool IsJumping{
-            get;
-        }
     }
 }

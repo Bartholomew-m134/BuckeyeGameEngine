@@ -19,12 +19,12 @@ namespace Game.Commands.MarioCommands
 
         public void Hold()
         {
-            WorldManager.GetMario().Down();
+            WorldManager.GetPlayer().Down();
         }
 
         public void Release()
         {
-            WorldManager.GetMario().Up();
+            WorldManager.GetPlayer().Up();
         }
     }
 }

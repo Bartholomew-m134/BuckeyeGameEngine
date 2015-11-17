@@ -19,7 +19,7 @@ namespace Game.Mario
         {
             this.mario = mario;
             SoundEffectManager.PowerPlayerUpEffect();
-            WorldManager.SetMario(this);
+            WorldManager.SetPlayer(this);
             frame = 0;
         }
 
@@ -32,7 +32,7 @@ namespace Game.Mario
 
             if (frame == IMarioObjectConstants.POWERUPMARIOTIMERMAX)
             {
-                WorldManager.SetMario(this.mario);
+                WorldManager.SetPlayer(this.mario);
             }
             else if (frame % IMarioObjectConstants.TWO == 0 && frame % IMarioObjectConstants.FOUR == 0)
             {
@@ -182,6 +182,12 @@ namespace Game.Mario
         public bool IsPressingDown()
         {
             return mario.IsPressingDown();
+        }
+
+        public bool Dead
+        {
+            get { return mario.Dead; }
+            set { mario.Dead = value; }
         }
     }
 }

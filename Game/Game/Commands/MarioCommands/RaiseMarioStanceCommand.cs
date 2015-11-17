@@ -1,4 +1,5 @@
 ﻿using Game.Interfaces;
+using Game.Mario;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -20,13 +21,13 @@ namespace Game.Commands.MarioCommands
 
         public void Hold()
         {
-            if(!WorldManager.GetMario().IsPressingDown())
-                WorldManager.GetMario().Jump();
+            if(!WorldManager.GetPlayer().IsPressingDown())
+                WorldManager.GetPlayer().Jump();
         }
 
         public void Release()
         {
-            WorldManager.GetMario().StopJumping();
+            WorldManager.GetPlayer().StopJumping();
         }
     }
 }

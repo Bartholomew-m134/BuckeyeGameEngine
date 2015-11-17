@@ -19,6 +19,7 @@ namespace Game.Mario.MarioStates
         public DeadMarioState(IMario mario)
         {
             this.mario = mario;
+            this.mario.Dead = true;
             BackgroundThemeManager.PlayDeathTheme();
             mario.Sprite = SpriteFactories.MarioSpriteFactory.CreateDeadSprite();
             mario.Physics.ResetPhysics();

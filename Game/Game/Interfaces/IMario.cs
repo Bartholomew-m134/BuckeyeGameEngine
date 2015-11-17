@@ -35,11 +35,5 @@ namespace Game.Mario
 
         bool IsHurt();
 
-        bool IsJumping();
-
-        bool IsPressingDown();
-
-        void ToIdle();
-
     }
 }

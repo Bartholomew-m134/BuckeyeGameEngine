@@ -19,7 +19,7 @@ namespace Game.ProjectBuckeye.PlayerClasses.BuckeyePlayerStates
         {
             this.buckeyePlayer = buckeyePlayer;
             buckeyePlayer.Sprite = SpriteFactories.BuckeyePlayerSpriteFactory.CreateBuckeyeLeftJumpingSprite();
-            if (!buckeyePlayer.State.IsJumping)
+            if (!buckeyePlayer.State.IsJumping())
             {
                 Vector2 velocity = this.buckeyePlayer.Physics.Velocity;
                 velocity.Y = BuckeyePlayerStateConstants.INITIAL_JUMP_VELOCITY;
@@ -82,10 +82,14 @@ namespace Game.ProjectBuckeye.PlayerClasses.BuckeyePlayerStates
             buckeyePlayer.State = new BuckeyeLeftDownState(buckeyePlayer);
         }
 
-
-        public bool IsJumping
+        public void ToIdle()
         {
-            get { return true; }
+            buckeyePlayer.State = new BuckeyeLeftIdleState(buckeyePlayer);
+        }
+
+        bool IPlayerState.IsJumping()
+        {
+            return true;
         }
     }
 }
