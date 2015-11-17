@@ -88,7 +88,7 @@ namespace Game.GameStates
         }
 
 
-        public void PipeTransition(Vector2 warpLocation)
+        public void PipeTransition(Vector2 warpLoc)
         {
 
         }

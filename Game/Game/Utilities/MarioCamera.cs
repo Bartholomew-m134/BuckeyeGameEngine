@@ -52,7 +52,6 @@ namespace Game.Utilities
             float leftBound = cameraLocation.X - LEFT_UPDATE_ZONE_DIMENSIONS;
 
             float lowerBound = cameraLocation.Y + DIMENSIONS.Y + BOTTOM_UPDATE_ZONE_DIMENSIONS;
-            float upperBound = cameraLocation.Y - UP_UPDATE_ZONE_DIMENSIONS;
 
             return leftBound < position.X && position.X < rightBound && position.Y < lowerBound;
         }

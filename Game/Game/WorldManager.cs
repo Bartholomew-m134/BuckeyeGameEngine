@@ -16,7 +16,6 @@ namespace Game
         private static List<IGameObject> objectList;
         private static List<IGameObject> objectWithinZoneList;
 
-        private static string currentFileName;
         private static Game1 currentGame;
 
         public static void LoadListFromFile(string filename, Game1 game)
@@ -24,7 +23,6 @@ namespace Game
             BackgroundThemeManager.PlayOverWorldTheme();
             objectList = LevelLoader.Load(filename, game);
             objectWithinZoneList = new List<IGameObject>();
-            currentFileName = filename;
             currentGame = game;           
         }
 

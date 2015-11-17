@@ -13,14 +13,12 @@ namespace Game.GameStates
     public class VictoryScreenGameState : IGameState
     {
         private Game1 game;
-        private IGameState prevGameState;
         private List<IController> controllerList;
         private SpriteFont font;
 
         public VictoryScreenGameState(Game1 game)
         {
             this.game = game;
-            prevGameState = game.gameState;
             controllerList = new List<IController>();
             controllerList.Add(new KeyboardController(new PausedControls(game)));
             controllerList.Add(new GamePadController(new PausedControls(game)));

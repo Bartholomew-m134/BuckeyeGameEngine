@@ -17,7 +17,7 @@ namespace Game.GameStates
     public class NormalMarioGameState : IGameState
     {
         private Game1 game;
-        public ICamera camera;
+        private ICamera camera;
         private List<IController> controllerList;
         private int delay;
         private bool isUnderground;
