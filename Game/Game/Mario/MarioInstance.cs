@@ -6,7 +6,6 @@ using Microsoft.Xna.Framework;
 using Game.Interfaces;
 using Game.Mario.MarioStates;
 using Game.Utilities;
-using Game.SoundEffects;
 using Game.Utilities.Constants;
 
 namespace Game.Mario
@@ -84,7 +83,6 @@ namespace Game.Mario
         {
             if (this.IsFireMario())
             {
-                SoundEffectManager.FireBallThrowEffect();
                 if (state.IsRight())
                 {
                     factory.ReleaseRightFireBall(new Vector2(location.X + sprite.SpriteDimensions.X, location.Y));

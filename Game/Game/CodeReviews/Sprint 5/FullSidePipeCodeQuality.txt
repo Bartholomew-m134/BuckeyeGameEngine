@@ -1,0 +1,11 @@
+﻿Author:							John Cramer
+Date :							11/16/15
+Sprint:							5
+Reviewed file:					FullSidePipeCodeQuality.cs
+File Author:					Jackson Luken
+Minutes to complete:			5
+Code Readability:
+		The code has low coupling, as it is not reliant on unnecessary classes.
+		The code has high cohesion, as everything in the class is directly related to
+		the FullSidePipe class. A theoretical change would be the ability to have a
+		flipped version of the side pipe.
