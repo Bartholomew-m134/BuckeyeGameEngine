@@ -9,6 +9,7 @@ using System.Text;
 using Game.Utilities;
 using Game.Utilities.Constants;
 using Game.Music;
+using Game.SoundEffects;
 
 namespace Game.Utilities
 {
@@ -28,8 +29,11 @@ namespace Game.Utilities
         public static void UpdateHUDCoins(int coinsToAdd)
         {
             coinsToPrint += coinsToAdd;
-            if (coinsToPrint % HUDConstants.COINSPERLIFE== HUDConstants.ZEROREMAINDER){
+            if (coinsToPrint >= HUDConstants.COINSPERLIFE)
+            {
                 LifeManager.IncrementLives();
+                SoundEffectManager.OneUpEffect();
+                ResetCoins();
             }
         }
         public static int RemainingTime(){
@@ -82,6 +86,11 @@ namespace Game.Utilities
         public static bool OutOfTime
         {
             get { return (timeToPrint<=0); }
+        }
+
+        public static void ResetCoins()
+        {
+            coinsToPrint = 0;
         }
     }
 }

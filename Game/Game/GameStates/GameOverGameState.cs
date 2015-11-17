@@ -13,6 +13,8 @@ namespace Game.GameStates
     public class GameOverGameState : IGameState
     {
         private Game1 game;
+        private const int DeathSoundDelay = 80;
+        private IGameState prevGameState;
         private List<IController> controllerList;
         private SpriteFont font;
         private int gameOverSoundDelay = 0;
@@ -37,7 +39,7 @@ namespace Game.GameStates
 
         public void Update()
         {
-            if(gameOverSoundDelay == 80)
+            if (gameOverSoundDelay == DeathSoundDelay)
                 Game.SoundEffects.SoundEffectManager.GameOverEffect();
             foreach (IController controller in controllerList)
                 controller.Update();
