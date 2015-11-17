@@ -1,6 +1,6 @@
 ﻿Author: Kyle Powers
 Date: 11/12/2015
-Sprint: 4
+Sprint: 5
 File name: SoundEffectManager.cs
 Author: John Cramer
 Minutes to complete: 5

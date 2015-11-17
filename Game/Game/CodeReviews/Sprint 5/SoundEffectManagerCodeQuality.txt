@@ -1,0 +1,12 @@
+﻿Author: Kyle Powers
+Date: 11/16/2015
+Sprint: 5
+File name: SoundEffectManager.cs
+Author: John Cramer
+Minutes to complete: 5
+
+Comments: The sound effect manager is very cohesive, as it only serves the purpose of managing sound effects.
+It doesn't even handle background effects, so its purpose is very specific. The class has very loose coupling
+as it has no dependencies on other classes. A hypothetical change to make that would impact it would be adding any
+new sound effect, but implementation would be very simple, thus it is very maintainable and reusable. I have no
+criticisms of this class.
