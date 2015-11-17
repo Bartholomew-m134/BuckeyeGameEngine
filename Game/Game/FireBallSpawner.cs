@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.SoundEffects;
 
 namespace Game
 {
@@ -23,6 +24,7 @@ namespace Game
             if(count < MAXCOUNT)
             {
                 RightFire fire = new RightFire(this, game);
+                SoundEffectManager.FireBallThrowEffect();
                 fire.VectorCoordinates = location;
                 WorldManager.CreateNewObject(fire);
                 count++;
@@ -34,6 +36,7 @@ namespace Game
             if (count < MAXCOUNT)
             {
                 LeftFire fire = new LeftFire(this, game);
+                SoundEffectManager.FireBallThrowEffect();
                 fire.VectorCoordinates = location;
                 WorldManager.CreateNewObject(fire);
                 count++;

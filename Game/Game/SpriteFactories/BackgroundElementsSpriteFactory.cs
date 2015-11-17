@@ -13,16 +13,12 @@ namespace Game.SpriteFactories
     public static class BackgroundElementsSpriteFactory
     {
         private static Texture2D backgroundElementsSpriteSheet;
-        private static Texture2D logoSpriteSheet;
-        private static Texture2D startSpriteSheet;
         private static SpriteFont spriteFont;
         private static SpriteFont hudFont;
 
         public static void Load(ContentManager content)
         {
             backgroundElementsSpriteSheet = content.Load<Texture2D>(SpriteFactoryConstants.SCENERYSPRITESHEET);
-            logoSpriteSheet = content.Load<Texture2D>(SpriteFactoryConstants.BGENAMESVERSION);
-            startSpriteSheet = content.Load<Texture2D>(SpriteFactoryConstants.BGEPRESSSTARTVERSION);
             spriteFont = content.Load<SpriteFont>(SpriteFactoryConstants.SCOREFONT);
             hudFont = content.Load<SpriteFont>(SpriteFactoryConstants.HUDFONT);
         }
