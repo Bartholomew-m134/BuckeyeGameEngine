@@ -15,18 +15,18 @@ namespace Game.Commands.MarioCommands
 
         public void Execute()
         {
-            if( WorldManager.GetPlayer() is IMario && ((IMario)WorldManager.GetPlayer()).IsFireMario())
-                ((IMario)WorldManager.GetPlayer()).ThrowFireball();
+            if( WorldManager.ReturnPlayer() is IMario && ((IMario)WorldManager.ReturnPlayer()).IsFireMario())
+                ((IMario)WorldManager.ReturnPlayer()).ThrowFireball();
         }
 
         public void Hold()
         {
-            WorldManager.GetPlayer().Run();
+            WorldManager.ReturnPlayer().Run();
         }
 
         public void Release()
         {
-            WorldManager.GetPlayer().StopRunning();
+            WorldManager.ReturnPlayer().StopRunning();
         }
     }
 }

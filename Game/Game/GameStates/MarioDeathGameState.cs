@@ -37,7 +37,7 @@ namespace Game.GameStates
         {
             if (delay == IGameStateConstants.UPDATEDELAY)
             {
-                WorldManager.GetPlayer().Update();
+                WorldManager.ReturnPlayer().Update();
 
                 if (timer.ElapsedMilliseconds > IGameStateConstants.MARIODEATHSTATETIMER)
                 {

@@ -57,7 +57,7 @@ namespace Game
             get { return objectWithinZoneList; }
         }
 
-        public static IPlayer GetPlayer()
+        public static IPlayer ReturnPlayer()
         {
             return (IPlayer)objectList.Find(i => i is IPlayer);
         }
@@ -87,8 +87,8 @@ namespace Game
 
         private static void ResetIfPlayerIsDead(ICamera camera)
         {
-            if (GetPlayer().Dead || camera.IsBelowCamera(GetPlayer().VectorCoordinates))
-                FreeObject(GetPlayer());
+            if (ReturnPlayer().Dead || camera.IsBelowCamera(ReturnPlayer().VectorCoordinates))
+                FreeObject(ReturnPlayer());
         }
     }
 }

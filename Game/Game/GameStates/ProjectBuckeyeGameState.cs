@@ -42,7 +42,7 @@ namespace Game.GameStates
 
             WorldManager.LoadListFromFile(IGameStateConstants.PROJECT_BUCKEYE_TEST_WORLD, game);
 
-            camera = new MarioCamera(WorldManager.GetPlayer().VectorCoordinates);
+            camera = new MarioCamera(WorldManager.ReturnPlayer().VectorCoordinates);
         }
 
         public void UnloadContent()
@@ -58,7 +58,7 @@ namespace Game.GameStates
 
                 WorldManager.Update(camera);
                 CollisionManager.Update(this);
-                camera.Update(WorldManager.GetPlayer());
+                camera.Update(WorldManager.ReturnPlayer());
                 delay = 0;
             }
             else

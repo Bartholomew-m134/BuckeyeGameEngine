@@ -21,13 +21,13 @@ namespace Game.Commands.MarioCommands
 
         public void Hold()
         {
-            if(!WorldManager.GetPlayer().IsPressingDown())
-                WorldManager.GetPlayer().Jump();
+            if(!WorldManager.ReturnPlayer().IsPressingDown())
+                WorldManager.ReturnPlayer().Jump();
         }
 
         public void Release()
         {
-            WorldManager.GetPlayer().StopJumping();
+            WorldManager.ReturnPlayer().StopJumping();
         }
     }
 }

@@ -43,7 +43,7 @@ namespace Game.GameStates
 
             WorldManager.LoadListFromFile(IGameStateConstants.NORMALMARIOWORLD, game);
 
-            camera = new MarioCamera(WorldManager.GetPlayer().VectorCoordinates);
+            camera = new MarioCamera(WorldManager.ReturnPlayer().VectorCoordinates);
         }
 
 
@@ -61,7 +61,7 @@ namespace Game.GameStates
 
                 WorldManager.Update(camera);
                 CollisionManager.Update(this);
-                camera.Update(WorldManager.GetPlayer());
+                camera.Update(WorldManager.ReturnPlayer());
                 ScoreManager.Update();
                 HUDManager.Update();
                 delay = 0;
@@ -72,7 +72,7 @@ namespace Game.GameStates
             }
 
             if (HUDManager.OutOfTime)
-                ((IMario)WorldManager.GetPlayer()).MarioState = new DeadMarioState((IMario)WorldManager.GetPlayer());
+                ((IMario)WorldManager.ReturnPlayer()).MarioState = new DeadMarioState((IMario)WorldManager.ReturnPlayer());
         }
 
         public void Draw(SpriteBatch spriteBatch)

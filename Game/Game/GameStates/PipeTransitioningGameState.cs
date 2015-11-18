@@ -28,8 +28,8 @@ namespace Game.GameStates
             prevGameState = game.gameState;
             this.warpLocation = warpLocation;
             this.camera = camera;
-            WorldManager.GetPlayer().Physics.ResetX();
-            WorldManager.GetPlayer().Physics.ResetY();
+            WorldManager.ReturnPlayer().Physics.ResetX();
+            WorldManager.ReturnPlayer().Physics.ResetY();
             controllerList = new List<IController>();
             timer = IGameStateConstants.PIPETRANSITIONINGGAMESTATETIMER;
             controllerList.Add(new KeyboardController(new PausedControls(game)));
@@ -55,13 +55,13 @@ namespace Game.GameStates
                 foreach (IController controller in controllerList)
                     controller.Update();
                 if (prevGameState.IsUnderground) {
-                    WorldManager.GetPlayer().Physics.Acceleration = new Vector2(0, 0);
-                    WorldManager.GetPlayer().Physics.Velocity = new Vector2(IGameStateConstants.PIPETRANSITIONINGGGAMESTATEMARIOXVELOCITY, 0);
+                    WorldManager.ReturnPlayer().Physics.Acceleration = new Vector2(0, 0);
+                    WorldManager.ReturnPlayer().Physics.Velocity = new Vector2(IGameStateConstants.PIPETRANSITIONINGGGAMESTATEMARIOXVELOCITY, 0);
                 }
                 else { 
-                WorldManager.GetPlayer().Physics.Velocity = new Vector2(0, IGameStateConstants.PIPETRANSITIONINGGGAMESTATEMARIOYVELOCITY);
+                WorldManager.ReturnPlayer().Physics.Velocity = new Vector2(0, IGameStateConstants.PIPETRANSITIONINGGGAMESTATEMARIOYVELOCITY);
                 }
-                WorldManager.GetPlayer().Update();
+                WorldManager.ReturnPlayer().Update();
                 timer--;
             }
             else
@@ -69,9 +69,9 @@ namespace Game.GameStates
                 
                 game.gameState = prevGameState;
     
-                WorldManager.GetPlayer().VectorCoordinates = warpLocation;
+                WorldManager.ReturnPlayer().VectorCoordinates = warpLocation;
                 CollisionManager.Update(this);
-                camera.Update(WorldManager.GetPlayer());
+                camera.Update(WorldManager.ReturnPlayer());
 
                 prevGameState.IsUnderground = !prevGameState.IsUnderground;
             }

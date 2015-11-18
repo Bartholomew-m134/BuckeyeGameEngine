@@ -30,8 +30,8 @@ namespace Game.GameStates
             controllerList.Add(new KeyboardController(new PausedControls(game)));
             controllerList.Add(new GamePadController(new PausedControls(game)));
 
-            WorldManager.GetPlayer().Physics.Acceleration = Vector2.Zero;
-            WorldManager.GetPlayer().Physics.Velocity = Vector2.Zero;
+            WorldManager.ReturnPlayer().Physics.Acceleration = Vector2.Zero;
+            WorldManager.ReturnPlayer().Physics.Velocity = Vector2.Zero;
         }
 
         public void LoadContent()
@@ -51,13 +51,13 @@ namespace Game.GameStates
                 foreach (IController controller in controllerList)
                     controller.Update();
 
-                WorldManager.GetPlayer().Update();
+                WorldManager.ReturnPlayer().Update();
                 CollisionManager.Update(this);
-                camera.Update(WorldManager.GetPlayer());
+                camera.Update(WorldManager.ReturnPlayer());
 
                 if (timer > IGameStateConstants.MARIOPOWERUPSTATETIMER)
                 {
-                    WorldManager.GetPlayer().Physics.ResetPhysics();
+                    WorldManager.ReturnPlayer().Physics.ResetPhysics();
                     game.gameState = prevGameState;
                 }
                 timer++;
