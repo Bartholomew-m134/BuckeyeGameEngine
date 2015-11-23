@@ -15,6 +15,7 @@ using Microsoft.Xna.Framework;
 using Game.Interfaces;
 using Game.FlagPoles;
 using Game.ProjectBuckeye.PlayerClasses;
+using Game.Lemming;
 using Game.GameStates;
 
 namespace Game
@@ -77,6 +78,8 @@ namespace Game
 
                     if (objectName.Equals("Mario"))
                         gameObject = new MarioInstance(game);
+                    else if (objectName.Equals("Lemming"))
+                        gameObject = new LemmingInstance(game);
                     else if (objectName.Equals("Coin"))
                         gameObject = new Coin(false, game);
                     else if (objectName.Equals("Flower"))

@@ -118,6 +118,7 @@
     <Compile Include="FlagPoles\FlagPoleSprites\InvisibleFlagPoleBarrierSprite.cs" />
     <Compile Include="GameStates\FlagPoleVictoryGameState.cs" />
     <Compile Include="GameStates\GameOverGameState.cs" />
+    <Compile Include="GameStates\LemmingGameState.cs" />
     <Compile Include="GameStates\LoadingGameState.cs" />
     <Compile Include="GameStates\MarioDeathGameState.cs" />
     <Compile Include="GameStates\MarioPowerUpGameState.cs" />
@@ -182,13 +183,17 @@
     <Compile Include="Interfaces\IGameObject.cs" />
     <Compile Include="Interfaces\IGameState.cs" />
     <Compile Include="Interfaces\IMarioSprite.cs" />
+    <Compile Include="Interfaces\ILemming.cs" />
     <Compile Include="Interfaces\IPlayer.cs" />
     <Compile Include="Interfaces\IPlayerState.cs" />
     <Compile Include="Interfaces\IProjectile.cs" />
     <Compile Include="Interfaces\IScenery.cs" />
     <Compile Include="Interfaces\ISoundEffect.cs" />
     <Compile Include="Interfaces\ISprite.cs" />
+    <Compile Include="Interfaces\IWolverine.cs" />
+    <Compile Include="Interfaces\IWolverineState.cs" />
     <Compile Include="Items\Coin.cs" />
+    <Compile Include="Lemming\LemmingInstance.cs" />
     <Compile Include="Mario\FireMarioTransitionDecorator.cs" />
     <Compile Include="Mario\ThrowFireLeftDecorator.cs" />
     <Compile Include="Mario\ThrowFireRightDecorator.cs" />
@@ -216,6 +221,15 @@
     <Compile Include="Pipes\VerticalPipe.cs" />
     <Compile Include="ProjectBuckeye\Collision\BuckeyeBlockCollisionHandler.cs" />
     <Compile Include="GameStates\ProjectBuckeyeGameState.cs" />
+    <Compile Include="ProjectBuckeye\EnemyClasses\WolverineEnemy.cs" />
+    <Compile Include="ProjectBuckeye\EnemyClasses\WolverineSprites\WolverineDownLeftSprite.cs" />
+    <Compile Include="ProjectBuckeye\EnemyClasses\WolverineSprites\WolverineDownRightSprite.cs" />
+    <Compile Include="ProjectBuckeye\EnemyClasses\WolverineSprites\WolverineMovingLeftSprite.cs" />
+    <Compile Include="ProjectBuckeye\EnemyClasses\WolverineSprites\WolverineMovingRightSprite.cs" />
+    <Compile Include="ProjectBuckeye\EnemyClasses\WolverineStates\WolverineLeftDownState.cs" />
+    <Compile Include="ProjectBuckeye\EnemyClasses\WolverineStates\WolverineMovingLeftState.cs" />
+    <Compile Include="ProjectBuckeye\EnemyClasses\WolverineStates\WolverineMovingRightState.cs" />
+    <Compile Include="ProjectBuckeye\EnemyClasses\WolverineStates\WolverineRightDownState.cs" />
     <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayer.cs" />
     <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerSprites\BuckeyeLeftDownSprite.cs" />
     <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerSprites\BuckeyeLeftIdleSprite.cs" />
@@ -357,6 +371,7 @@
     <Compile Include="Mario\MarioStates\SmallRightIdleState.cs" />
     <Compile Include="Mario\MarioStates\SmallRightJumpingState.cs" />
     <Compile Include="Mario\MarioStates\SmallRightRunningState.cs" />
+    <Compile Include="SpriteFactories\WolverineSpriteFactory.cs" />
     <Compile Include="Utilities\Constants\BackgroundElementSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\BlockSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\BuckeyePlayerSpriteConstants.cs" />
@@ -383,6 +398,8 @@
     <Compile Include="Utilities\Constants\ScoreManagerConstants.cs" />
     <Compile Include="Utilities\Constants\SoundConstants.cs" />
     <Compile Include="Utilities\Constants\SpriteFactoryConstants.cs" />
+    <Compile Include="Utilities\Controls\LemmingControls.cs" />
+    <Compile Include="Utilities\Constants\WolverineEnemyConstant.cs" />
     <Compile Include="Utilities\Controls\MarioControls.cs" />
     <Compile Include="Utilities\Controls\MenuControls.cs" />
     <Compile Include="Utilities\Controls\PausedControls.cs" />
@@ -474,8 +491,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Commands\MenuCommands\" />
-    <Folder Include="ProjectBuckeye\EnemyClasses\WolverineSprites\" />
-    <Folder Include="ProjectBuckeye\EnemyClasses\WolverineStates\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />

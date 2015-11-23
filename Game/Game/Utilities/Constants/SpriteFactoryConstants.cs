@@ -19,6 +19,7 @@ namespace Game.Utilities.Constants
         public const String BRICKDEBRISSPRITESHEET = "brickdebrissprite";
 
         public const String BUCKEYEPLAYERSPRITESHEET = "ProjectBuckeyeSprites/BuckeyePlayerSpriteSheet";
+        public const String WOLVERINEPLAYERSPRITESHEET = "ProjectBuckeyeSprites/WolverineEnemySpriteSheet";
       
     }
 }
