@@ -55,7 +55,7 @@ namespace Game.GameStates
             game.gameState.LoadContent();
         }
 
-        public void PipeTransition(Vector2 warpLocation)
+        public void PipeTransition(IPipe warpPipe)
         {
 
         }

@@ -78,7 +78,11 @@ namespace Game.Pipes
         public bool IsGameStatePipe
         {
             get { return gameState != null; }
+        }
 
+        public IGameState GameState
+        {
+            get { return gameState; }
         }
 
         public ObjectPhysics Physics

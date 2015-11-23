@@ -21,7 +21,7 @@ namespace Game.Interfaces
 
         void StartBuckeyeButton();
 
-        void PipeTransition(Vector2 warpLocation);
+        void PipeTransition(IPipe warpPipe);
 
         void FlagPoleTransition();
 

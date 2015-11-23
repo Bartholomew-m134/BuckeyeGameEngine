@@ -122,10 +122,11 @@ namespace Game.GameStates
         }
 
 
-        public void PipeTransition(Vector2 warpLocation)
+        public void PipeTransition(IPipe warpPipe)
         {
-            game.gameState = prevGameState;
+            
         }
+
         public void FlagPoleTransition()
         {
             game.gameState = prevGameState;

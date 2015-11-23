@@ -9,7 +9,7 @@ using Game.Utilities;
 
 namespace Game.Pipes
 {
-    public class BottomSidePipe : IPipe
+    public class VerticalPipe : IPipe
     {
         private Game1 myGame;
         private ISprite pipeSprite;
@@ -17,20 +17,11 @@ namespace Game.Pipes
         private Vector2 warpLocation;
         private bool isWarpPipe;
 
-        public BottomSidePipe(Game1 game)
+        public VerticalPipe(Game1 game)
         {
             myGame = game;
-            pipeSprite = TileSpriteFactory.CreateBottomSidePipeSprite();
+            pipeSprite = TileSpriteFactory.CreateSidePipeSprite();
             isWarpPipe = false;
-
-        }
-
-        public BottomSidePipe(Vector2 marioWarpCoordinates, Game1 game)
-        {
-            myGame = game;
-            pipeSprite = TileSpriteFactory.CreateBottomSidePipeSprite();
-            isWarpPipe = true;
-            warpLocation = marioWarpCoordinates;
         }
 
         public void Update()
@@ -67,6 +58,17 @@ namespace Game.Pipes
 
         }
 
+
+        public bool IsGameStatePipe
+        {
+            get { return false; }
+        }
+
+        public IGameState GameState
+        {
+            get { return null; }
+        }
+
         public ObjectPhysics Physics
         {
             get { return null; }
@@ -75,4 +77,3 @@ namespace Game.Pipes
 
 
 }
-
