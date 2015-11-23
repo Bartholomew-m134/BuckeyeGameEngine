@@ -28,7 +28,6 @@ namespace Game.Interfaces
             get;
             set;
         }
-
         bool IsPressingDown();
 
         bool IsJumping();

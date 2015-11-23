@@ -81,14 +81,15 @@ namespace Game.GameStates
                         tempMario.Physics.Velocity = new Vector2(0, 0);
                         tempMario.Physics.Acceleration = new Vector2(0, 0);
                     }
+                    if (!haveAddedTimePoints)
+                    {
+                        ScoreManager.HandleRemainingTime();
+                        HUDManager.SetTimeToZero();
+                        haveAddedTimePoints = true;
+                    }
                 }
                 else if (hasJumpedOffPole && !(slidingDownPole) && hasWalkedIntoCastle)
                 {
-                    if (!haveAddedTimePoints){
-                        ScoreManager.HandleRemainingTime();
-                        haveAddedTimePoints = true;
-                        HUDManager.SetTimeToZero();
-                    }
                     tempMario.ToIdle();
                     tempMario.Physics.Velocity = new Vector2(0, 0);
                     tempMario.Physics.Acceleration = new Vector2(0, 0);

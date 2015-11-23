@@ -38,6 +38,7 @@ namespace Game.Utilities.Constants
         public static readonly Vector2 VICTORYSCREENGAMESTATESTARTMESSAGELOCATION = new Vector2(175, 250);
 
         public const String PROJECT_BUCKEYE_TEST_WORLD = "ProjectBuckeyeTest";
+        public const String PACMARIO_WORLD = "PacMarioWorld";
         
     }
 }
