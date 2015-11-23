@@ -82,6 +82,8 @@ namespace Game
                         gameObject = new LemmingInstance(game);
                     else if (objectName.Equals("Coin"))
                         gameObject = new Coin(false, game);
+                    else if (objectName.Equals("PacMarioCoin"))
+                        gameObject = new PacMarioCoin(false, game);
                     else if (objectName.Equals("Flower"))
                         gameObject = new Flower(false, game);
                     else if (objectName.Equals("GreenMush"))

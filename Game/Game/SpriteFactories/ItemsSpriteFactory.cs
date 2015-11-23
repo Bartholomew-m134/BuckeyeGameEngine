@@ -39,6 +39,10 @@ namespace Game.SpriteFactories
         {
             return new CoinSprite(itemSpriteSheet);
         }
+        public static ISprite CreatePacMarioCoinSprite()
+        {
+            return new PacMarioCoinSprite(itemSpriteSheet);
+        }
 
         public static ISprite CreateFlowerSprite()
         {

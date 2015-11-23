@@ -44,6 +44,12 @@ namespace Game.Collisions.ItemCollisionHandling
                     SoundEffectManager.CoinEffect();
                     collidingItem.Disappear();
                 }
+                if (collidingItem is PacMarioCoin)
+                {
+                    SoundEffectManager.CoinEffect();
+                    collidingItem.Disappear();
+                    collidingMario.Star();
+                }
                 else if (collidingItem is Flower)
                 {
                     collidingItem.Disappear();

@@ -192,6 +192,8 @@
     <Compile Include="Interfaces\ISprite.cs" />
     <Compile Include="Interfaces\IWolverine.cs" />
     <Compile Include="Interfaces\IWolverineState.cs" />
+    <Compile Include="Items\ItemSprites\PacMarioCoinSprite.cs" />
+    <Compile Include="Items\PacMarioCoin.cs" />
     <Compile Include="Items\Coin.cs" />
     <Compile Include="Lemming\LemmingInstance.cs" />
     <Compile Include="Mario\FireMarioTransitionDecorator.cs" />
