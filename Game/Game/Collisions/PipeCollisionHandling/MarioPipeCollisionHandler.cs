@@ -52,7 +52,8 @@ namespace Game.Collisions.PipeCollisionHandling
                 Vector2 warpPipeCoordinateOffsetRight = new Vector2(CollisionHandlerConstants.WARPPIPECOORDINATEOFFSETRIGHT, 0);
                 warpPipeCoordinateOffsetLeft += pipe.VectorCoordinates;
                 warpPipeCoordinateOffsetRight += pipe.VectorCoordinates;
-                if (side is TopSideCollision && mario.IsPressingDown() && pipe.IsWarpPipe && !pipe.IsSideWarpPipe && ((warpPipeCoordinateOffsetLeft.X < mario.VectorCoordinates.X) && (mario.VectorCoordinates.X < warpPipeCoordinateOffsetRight.X)))
+
+                if (side is TopSideCollision && mario.IsPressingDown() && pipe.IsWarpPipe && !(pipe is BottomSidePipe) && ((warpPipeCoordinateOffsetLeft.X < mario.VectorCoordinates.X) && (mario.VectorCoordinates.X < warpPipeCoordinateOffsetRight.X)))
                 {
                     SoundEffectManager.ShrinkingOrPipeEffect();
                     
@@ -61,7 +62,7 @@ namespace Game.Collisions.PipeCollisionHandling
                     
 
                 }
-                else if ((side is LeftSideCollision || side is RightSideCollision) && pipe.IsWarpPipe && pipe.IsSideWarpPipe)
+                else if ((side is LeftSideCollision || side is RightSideCollision) && pipe.IsWarpPipe && (pipe is BottomSidePipe))
                 {
                     SoundEffectManager.ShrinkingOrPipeEffect();
 

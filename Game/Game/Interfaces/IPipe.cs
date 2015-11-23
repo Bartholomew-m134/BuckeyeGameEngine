@@ -15,7 +15,5 @@ namespace Game.Interfaces
         }
 
          bool IsWarpPipe { get; }
-
-         bool IsSideWarpPipe { get; }
     }
 }

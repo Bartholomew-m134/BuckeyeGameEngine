@@ -16,13 +16,13 @@ namespace Game.Pipes
         private Vector2 location;
         private Vector2 warpLocation;
         private bool isWarpPipe;
-        private bool isSideWarpPipe;
+
         public BottomSidePipe(Game1 game)
         {
             myGame = game;
             pipeSprite = TileSpriteFactory.CreateBottomSidePipeSprite();
             isWarpPipe = false;
-            isSideWarpPipe = false;
+
         }
 
         public BottomSidePipe(Vector2 marioWarpCoordinates, Game1 game)
@@ -30,7 +30,6 @@ namespace Game.Pipes
             myGame = game;
             pipeSprite = TileSpriteFactory.CreateBottomSidePipeSprite();
             isWarpPipe = true;
-            isSideWarpPipe = true;
             warpLocation = marioWarpCoordinates;
         }
 
@@ -65,12 +64,6 @@ namespace Game.Pipes
         public bool IsWarpPipe
         {
             get { return isWarpPipe; }
-
-        }
-
-        public bool IsSideWarpPipe
-        {
-            get { return isSideWarpPipe; }
 
         }
 
