@@ -29,6 +29,7 @@ namespace Game.Utilities.Constants
         public const int MENUGAMESTATELOGOCOUNTER = 300;
         public const int MENUGAMESTATELIVES = 2;
         public const String NORMALMARIOWORLD = "World1-1";
+        public const String LEMMINGWORLD = "LemmingWorld";
         public const int PIPETRANSITIONINGGAMESTATETIMER = 40;
         public const int PIPETRANSITIONINGGGAMESTATEMARIOXVELOCITY = 1;
         public const int PIPETRANSITIONINGGGAMESTATEMARIOYVELOCITY = 1;
