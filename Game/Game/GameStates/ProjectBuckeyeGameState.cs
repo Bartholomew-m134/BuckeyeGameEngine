@@ -77,8 +77,12 @@ namespace Game.GameStates
             game.gameState = new PauseGameState(game);
         }
 
-        public void PipeTransition(Microsoft.Xna.Framework.Vector2 warpLocation)
+        public void PipeTransition(IPipe warpPipe)
         {
+            if (warpPipe.IsGameStatePipe)
+                game.gameState = warpPipe.GameState;
+            else
+                game.gameState = new PipeTransitioningGameState(camera, warpPipe, game);
         }
 
         public void FlagPoleTransition()

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
-using Microsoft.Xna.Framework;
 using Game.Utilities;
 using Game.Utilities.Constants;
 

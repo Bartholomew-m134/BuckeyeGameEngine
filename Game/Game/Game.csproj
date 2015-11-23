@@ -212,10 +212,10 @@
     <Compile Include="Music\RushedOverworldTheme.cs" />
     <Compile Include="Music\RushedStarTheme.cs" />
     <Compile Include="Music\StarTheme.cs" />
-    <Compile Include="Pipes\FullSidePipe.cs" />
+    <Compile Include="Pipes\SidePipe.cs" />
     <Compile Include="Pipes\PipeSprites\BottomSidePipeSprite.cs" />
     <Compile Include="Pipes\PipeSprites\SidePipeSprite.cs" />
-    <Compile Include="Pipes\SidePipe.cs" />
+    <Compile Include="Pipes\VerticalPipe.cs" />
     <Compile Include="ProjectBuckeye\Collision\BuckeyeBlockCollisionHandler.cs" />
     <Compile Include="GameStates\ProjectBuckeyeGameState.cs" />
     <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayer.cs" />
