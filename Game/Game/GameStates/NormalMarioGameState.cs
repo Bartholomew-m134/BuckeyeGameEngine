@@ -90,9 +90,9 @@ namespace Game.GameStates
         }
 
 
-        public void PipeTransition(Vector2 warpLocation)
+        public void PipeTransition(IPipe warpPipe)
         {
-            game.gameState = new PipeTransitioningGameState(camera, warpLocation, game);
+            game.gameState = new PipeTransitioningGameState(camera, warpPipe, game);
         }
         public void FlagPoleTransition()
         {
