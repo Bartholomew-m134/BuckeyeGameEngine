@@ -35,14 +35,12 @@ namespace Game.GameStates
         {
             ItemsSpriteFactory.Load(game.Content);
             EnemySpriteFactory.Load(game.Content);
-            BuckeyePlayerSpriteFactory.Load(game.Content);
             TileSpriteFactory.Load(game.Content);
-            ProjectileSpriteFactory.Load(game.Content);
             BackgroundElementsSpriteFactory.Load(game.Content);
 
             WorldManager.LoadListFromFile(IGameStateConstants.PACMARIO_WORLD, game);
 
-            camera = new MarioCamera(WorldManager.ReturnPlayer().VectorCoordinates);
+            camera = new StillCamera();
         }
 
         public void UnloadContent()
@@ -56,7 +54,7 @@ namespace Game.GameStates
                 foreach (IController controller in controllerList)
                     controller.Update();
 
-                //WorldManager.Update(camera);
+                WorldManager.Update(camera);
                 CollisionManager.Update(this);
                 camera.Update(WorldManager.ReturnPlayer());
                 delay = 0;
@@ -69,6 +67,7 @@ namespace Game.GameStates
 
         public void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch)
         {
+            game.GraphicsDevice.Clear(Color.Black);
             WorldManager.Draw(camera);
         }
 
@@ -77,7 +76,7 @@ namespace Game.GameStates
             game.gameState = new PauseGameState(game);
         }
 
-        public void PipeTransition(Microsoft.Xna.Framework.Vector2 warpLocation)
+        public void PipeTransition(IPipe warpPipe)
         {
         }
 

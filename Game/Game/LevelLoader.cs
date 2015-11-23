@@ -258,6 +258,10 @@ namespace Game
             {
                 gameState = new ProjectBuckeyeGameState(game);
             }
+            else if (text.Equals("PacMarioGameState"))
+            {
+                gameState = new PacMarioGameState(game);
+            }
 
             return gameState;
         }

@@ -391,6 +391,7 @@
     <Compile Include="Utilities\MarioCamera.cs" />
     <Compile Include="Utilities\ObjectPhysics.cs" />
     <Compile Include="Utilities\ScoreManager.cs" />
+    <Compile Include="Utilities\StillCamera.cs" />
     <Compile Include="WorldManager.cs" />
   </ItemGroup>
   <ItemGroup>

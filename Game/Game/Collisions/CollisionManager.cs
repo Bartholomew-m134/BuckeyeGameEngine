@@ -1,4 +1,5 @@
 ﻿using Game.Interfaces;
+using Game.Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace Game.Collisions
         {
             for (int i = objectList.Count - 1; i >= 0; i--)
             {
-                if (!(objectList[i] is IBlock || objectList[i] is IPipe || objectList[i] is IScenery))
+                if (!(objectList[i] is IBlock || objectList[i] is IPipe || objectList[i] is IScenery || objectList[i] is Coin))
                 {
                     for (int j = objectList.Count - 1; j >= 0; j--)
                     {
