@@ -1,21 +1,20 @@
-﻿using Game.Collisions;
-using Game.Mario;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using Game.Interfaces;
-using Game.Mario.MarioStates;
+using Game.Utilities.Constants;
+using Game.Collisions;
 using Game.SpriteFactories;
 using Game.Utilities;
 using Game.Utilities.Controls;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Game.Utilities.Constants;
+using Game.GameStates;
 
 namespace Game.GameStates
 {
-    public class NormalMarioGameState : IGameState
+    public class PacMarioGameState : IGameState
     {
         private Game1 game;
         private ICamera camera;
@@ -23,7 +22,7 @@ namespace Game.GameStates
         private int delay;
         private bool isUnderground;
 
-        public NormalMarioGameState(Game1 game)
+        public PacMarioGameState(Game1 game)
         {
             this.game = game;
             controllerList = new List<IController>();
@@ -36,20 +35,18 @@ namespace Game.GameStates
         {
             ItemsSpriteFactory.Load(game.Content);
             EnemySpriteFactory.Load(game.Content);
-            MarioSpriteFactory.Load(game.Content);
+            BuckeyePlayerSpriteFactory.Load(game.Content);
             TileSpriteFactory.Load(game.Content);
             ProjectileSpriteFactory.Load(game.Content);
             BackgroundElementsSpriteFactory.Load(game.Content);
 
-            WorldManager.LoadListFromFile(IGameStateConstants.NORMALMARIOWORLD, game);
+            WorldManager.LoadListFromFile(IGameStateConstants.PACMARIO_WORLD, game);
 
             camera = new MarioCamera(WorldManager.ReturnPlayer().VectorCoordinates);
         }
 
-
         public void UnloadContent()
         {
-            
         }
 
         public void Update()
@@ -59,29 +56,20 @@ namespace Game.GameStates
                 foreach (IController controller in controllerList)
                     controller.Update();
 
-                WorldManager.Update(camera);
+                //WorldManager.Update(camera);
                 CollisionManager.Update(this);
                 camera.Update(WorldManager.ReturnPlayer());
-                ScoreManager.Update();
-                HUDManager.Update();
                 delay = 0;
             }
             else
             {
                 delay++;
             }
-
-            if (HUDManager.OutOfTime)
-                ((IMario)WorldManager.ReturnPlayer()).MarioState = new DeadMarioState((IMario)WorldManager.ReturnPlayer());
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch)
         {
-            if (isUnderground)
-                game.GraphicsDevice.Clear(Color.Black);
             WorldManager.Draw(camera);
-            ScoreManager.DrawScore(spriteBatch, camera);
-            HUDManager.DrawHUD(spriteBatch);
         }
 
         public void StartButton()
@@ -89,31 +77,26 @@ namespace Game.GameStates
             game.gameState = new PauseGameState(game);
         }
 
-
-        public void PipeTransition(IPipe warpPipe)
+        public void PipeTransition(Microsoft.Xna.Framework.Vector2 warpLocation)
         {
-            game.gameState = new PipeTransitioningGameState(camera, warpPipe, game);
         }
+
         public void FlagPoleTransition()
         {
-            game.gameState = new FlagPoleVictoryGameState(camera, game);
         }
 
         public void PlayerDied()
         {
-            game.gameState = new MarioDeathGameState(game);
         }
-
-        public bool IsUnderground 
-        {
-            get { return isUnderground; }
-            set { isUnderground = value; }
-        }
-
 
         public void MarioPowerUp()
         {
-            game.gameState = new MarioPowerUpGameState(camera, game);
+        }
+
+        public bool IsUnderground
+        {
+            get { return isUnderground; }
+            set { isUnderground = value; }
         }
 
         public void StartBuckeyeButton()

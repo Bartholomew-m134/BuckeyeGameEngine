@@ -16,6 +16,15 @@ namespace Game.Interfaces
 
          bool IsWarpPipe { get; }
 
-         bool IsSideWarpPipe { get; }
+
+         bool IsGameStatePipe
+         {
+             get;
+         }
+
+         IGameState GameState
+         {
+             get;
+         }
     }
 }

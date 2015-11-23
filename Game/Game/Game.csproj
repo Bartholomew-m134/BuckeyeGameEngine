@@ -118,6 +118,7 @@
     <Compile Include="FlagPoles\FlagPoleSprites\InvisibleFlagPoleBarrierSprite.cs" />
     <Compile Include="GameStates\FlagPoleVictoryGameState.cs" />
     <Compile Include="GameStates\GameOverGameState.cs" />
+    <Compile Include="GameStates\LemmingGameState.cs" />
     <Compile Include="GameStates\LoadingGameState.cs" />
     <Compile Include="GameStates\MarioDeathGameState.cs" />
     <Compile Include="GameStates\MarioPowerUpGameState.cs" />
@@ -125,6 +126,7 @@
     <Compile Include="GameStates\NormalMarioGameState.cs" />
     <Compile Include="GameStates\PauseGameState.cs" />
     <Compile Include="GameStates\PipeTransitioningGameState.cs" />
+    <Compile Include="GameStates\PacMarioGameState.cs" />
     <Compile Include="GameStates\VictoryScreenGameState.cs" />
     <Compile Include="Interfaces\IBlock.cs" />
     <Compile Include="Collisions\BlockCollisionHandling\MarioBlockCollisionHandler.cs" />
@@ -181,6 +183,7 @@
     <Compile Include="Interfaces\IGameObject.cs" />
     <Compile Include="Interfaces\IGameState.cs" />
     <Compile Include="Interfaces\IMarioSprite.cs" />
+    <Compile Include="Interfaces\ILemming.cs" />
     <Compile Include="Interfaces\IPlayer.cs" />
     <Compile Include="Interfaces\IPlayerState.cs" />
     <Compile Include="Interfaces\IProjectile.cs" />
@@ -190,6 +193,7 @@
     <Compile Include="Interfaces\IWolverine.cs" />
     <Compile Include="Interfaces\IWolverineState.cs" />
     <Compile Include="Items\Coin.cs" />
+    <Compile Include="Lemming\LemmingInstance.cs" />
     <Compile Include="Mario\FireMarioTransitionDecorator.cs" />
     <Compile Include="Mario\ThrowFireLeftDecorator.cs" />
     <Compile Include="Mario\ThrowFireRightDecorator.cs" />
@@ -211,10 +215,10 @@
     <Compile Include="Music\RushedOverworldTheme.cs" />
     <Compile Include="Music\RushedStarTheme.cs" />
     <Compile Include="Music\StarTheme.cs" />
-    <Compile Include="Pipes\FullSidePipe.cs" />
+    <Compile Include="Pipes\SidePipe.cs" />
     <Compile Include="Pipes\PipeSprites\BottomSidePipeSprite.cs" />
     <Compile Include="Pipes\PipeSprites\SidePipeSprite.cs" />
-    <Compile Include="Pipes\SidePipe.cs" />
+    <Compile Include="Pipes\VerticalPipe.cs" />
     <Compile Include="ProjectBuckeye\Collision\BuckeyeBlockCollisionHandler.cs" />
     <Compile Include="GameStates\ProjectBuckeyeGameState.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineEnemy.cs" />
@@ -394,6 +398,7 @@
     <Compile Include="Utilities\Constants\ScoreManagerConstants.cs" />
     <Compile Include="Utilities\Constants\SoundConstants.cs" />
     <Compile Include="Utilities\Constants\SpriteFactoryConstants.cs" />
+    <Compile Include="Utilities\Controls\LemmingControls.cs" />
     <Compile Include="Utilities\Constants\WolverineEnemyConstant.cs" />
     <Compile Include="Utilities\Controls\MarioControls.cs" />
     <Compile Include="Utilities\Controls\MenuControls.cs" />

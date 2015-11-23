@@ -29,6 +29,7 @@ namespace Game.Utilities.Constants
         public const int MENUGAMESTATELOGOCOUNTER = 300;
         public const int MENUGAMESTATELIVES = 2;
         public const String NORMALMARIOWORLD = "World1-1";
+        public const String LEMMINGWORLD = "LemmingWorld";
         public const int PIPETRANSITIONINGGAMESTATETIMER = 40;
         public const int PIPETRANSITIONINGGGAMESTATEMARIOXVELOCITY = 1;
         public const int PIPETRANSITIONINGGGAMESTATEMARIOYVELOCITY = 1;
@@ -38,6 +39,7 @@ namespace Game.Utilities.Constants
         public static readonly Vector2 VICTORYSCREENGAMESTATESTARTMESSAGELOCATION = new Vector2(175, 250);
 
         public const String PROJECT_BUCKEYE_TEST_WORLD = "ProjectBuckeyeTest";
+        public const String PACMARIO_WORLD = "PacMarioWorld";
         
     }
 }

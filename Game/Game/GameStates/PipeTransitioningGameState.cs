@@ -19,14 +19,14 @@ namespace Game.GameStates
         private IGameState prevGameState;
         private List<IController> controllerList;
         private int timer;
-        private Vector2 warpLocation;
+        private IPipe warpPipe;
         private ICamera camera;
 
-        public PipeTransitioningGameState(ICamera camera, Vector2 warpLocation, Game1 game)
+        public PipeTransitioningGameState(ICamera camera, IPipe warpPipe, Game1 game)
         {
             this.game = game;
             prevGameState = game.gameState;
-            this.warpLocation = warpLocation;
+            this.warpPipe = warpPipe;
             this.camera = camera;
             WorldManager.ReturnPlayer().Physics.ResetX();
             WorldManager.ReturnPlayer().Physics.ResetY();
@@ -64,16 +64,21 @@ namespace Game.GameStates
                 WorldManager.ReturnPlayer().Update();
                 timer--;
             }
-            else
+            else if(!warpPipe.IsGameStatePipe)
             {
                 
                 game.gameState = prevGameState;
     
-                WorldManager.ReturnPlayer().VectorCoordinates = warpLocation;
+                WorldManager.ReturnPlayer().VectorCoordinates = warpPipe.WarpVectorCoordinates;
                 CollisionManager.Update(this);
                 camera.Update(WorldManager.ReturnPlayer());
 
                 prevGameState.IsUnderground = !prevGameState.IsUnderground;
+            }
+            else
+            {
+                game.gameState = warpPipe.GameState;
+                game.gameState.LoadContent();
             }
         }
 
@@ -88,7 +93,7 @@ namespace Game.GameStates
         }
 
 
-        public void PipeTransition(Vector2 warpLoc)
+        public void PipeTransition(IPipe warpPipe)
         {
 
         }

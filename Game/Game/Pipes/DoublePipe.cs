@@ -16,14 +16,13 @@ namespace Game.Pipes
         private Vector2 location;
         private Vector2 warpLocation;
         private bool isWarpPipe;
-        private bool isSideWarpPipe;
+        private IGameState gameState;
 
         public DoublePipe(Game1 game)
         {
             myGame = game;
             pipeSprite = TileSpriteFactory.CreateDoublePipeSprite();
             isWarpPipe = false;
-            isSideWarpPipe = false;
         }
 
         public DoublePipe(Vector2 marioWarpCoordinates, Game1 game)
@@ -31,8 +30,15 @@ namespace Game.Pipes
             myGame = game;
             pipeSprite = TileSpriteFactory.CreateDoublePipeSprite();
             isWarpPipe = true;
-            isSideWarpPipe = false;
             warpLocation = marioWarpCoordinates;
+        }
+
+        public DoublePipe(IGameState gameState, Game1 game)
+        {
+            myGame = game;
+            pipeSprite = TileSpriteFactory.CreateDoublePipeSprite();
+            isWarpPipe = true;
+            this.gameState = gameState;
         }
 
         public void Update()
@@ -69,10 +75,14 @@ namespace Game.Pipes
 
         }
 
-        public bool IsSideWarpPipe
+        public bool IsGameStatePipe
         {
-            get { return isSideWarpPipe; }
+            get { return gameState != null; }
+        }
 
+        public IGameState GameState
+        {
+            get { return gameState; }
         }
 
         public ObjectPhysics Physics

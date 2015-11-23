@@ -15,7 +15,7 @@ using Game.Utilities.Constants;
 
 namespace Game.GameStates
 {
-    public class NormalMarioGameState : IGameState
+    public class LemmingGameState : IGameState
     {
         private Game1 game;
         private ICamera camera;
@@ -23,12 +23,12 @@ namespace Game.GameStates
         private int delay;
         private bool isUnderground;
 
-        public NormalMarioGameState(Game1 game)
+        public LemmingGameState(Game1 game)
         {
             this.game = game;
             controllerList = new List<IController>();
-            controllerList.Add(new KeyboardController(new MarioControls(game)));
-            controllerList.Add(new GamePadController(new MarioControls(game)));
+            controllerList.Add(new KeyboardController(new LemmingControls(game)));
+            controllerList.Add(new GamePadController(new LemmingControls(game)));
             isUnderground = false;
         }
 
@@ -41,15 +41,16 @@ namespace Game.GameStates
             ProjectileSpriteFactory.Load(game.Content);
             BackgroundElementsSpriteFactory.Load(game.Content);
 
-            WorldManager.LoadListFromFile(IGameStateConstants.NORMALMARIOWORLD, game);
+            WorldManager.LoadListFromFile(IGameStateConstants.LEMMINGWORLD, game);
 
+            
             camera = new MarioCamera(WorldManager.ReturnPlayer().VectorCoordinates);
         }
 
 
         public void UnloadContent()
         {
-            
+
         }
 
         public void Update()
@@ -60,6 +61,7 @@ namespace Game.GameStates
                     controller.Update();
 
                 WorldManager.Update(camera);
+                //New block collisions
                 CollisionManager.Update(this);
                 camera.Update(WorldManager.ReturnPlayer());
                 ScoreManager.Update();
@@ -89,10 +91,9 @@ namespace Game.GameStates
             game.gameState = new PauseGameState(game);
         }
 
-
         public void PipeTransition(IPipe warpPipe)
         {
-            game.gameState = new PipeTransitioningGameState(camera, warpPipe, game);
+            
         }
         public void FlagPoleTransition()
         {
@@ -104,7 +105,7 @@ namespace Game.GameStates
             game.gameState = new MarioDeathGameState(game);
         }
 
-        public bool IsUnderground 
+        public bool IsUnderground
         {
             get { return isUnderground; }
             set { isUnderground = value; }

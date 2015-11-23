@@ -15,6 +15,8 @@ using Microsoft.Xna.Framework;
 using Game.Interfaces;
 using Game.FlagPoles;
 using Game.ProjectBuckeye.PlayerClasses;
+using Game.Lemming;
+using Game.GameStates;
 
 namespace Game
 {
@@ -76,6 +78,8 @@ namespace Game
 
                     if (objectName.Equals("Mario"))
                         gameObject = new MarioInstance(game);
+                    else if (objectName.Equals("Lemming"))
+                        gameObject = new LemmingInstance(game);
                     else if (objectName.Equals("Coin"))
                         gameObject = new Coin(false, game);
                     else if (objectName.Equals("Flower"))
@@ -158,9 +162,9 @@ namespace Game
                     else if (objectName.Equals("TriplePipe"))
                         gameObject = new TriplePipe(game);
                     else if (objectName.Equals("BottomSidePipe"))
-                        gameObject = new BottomSidePipe(game);
-                    else if (objectName.Equals("SidePipe"))
                         gameObject = new SidePipe(game);
+                    else if (objectName.Equals("VerticalPipe"))
+                        gameObject = new VerticalPipe(game);
                     else if (objectName.StartsWith("TripleWarpPipe"))
                     {
                         string[] parsedName = objectName.Split('-');
@@ -168,12 +172,18 @@ namespace Game
                         float y = Int32.Parse(parsedName[2]);
                         gameObject = new TriplePipe(new Vector2(x, y), game);
                     }
-                    else if (objectName.StartsWith("BottomSideWarpPipe"))
+                    else if (objectName.StartsWith("TripleGameStatePipe"))
+                    {
+                        string[] parsedName = objectName.Split('-');
+                        IGameState gameState = createNewGameState(parsedName[1], game);
+                        gameObject = new TriplePipe(gameState, game);
+                    }
+                    else if (objectName.StartsWith("SideWarpPipe"))
                     {
                         string[] parsedName = objectName.Split('-');
                         float x = Int32.Parse(parsedName[1]);
                         float y = Int32.Parse(parsedName[2]);
-                        gameObject = new BottomSidePipe(new Vector2(x, y), game);
+                        gameObject = new SidePipe(new Vector2(x, y), game);
                     }
                     else if (objectName.Equals("BigHill"))
                         gameObject = new BigHill(game);
@@ -241,5 +251,19 @@ namespace Game
 
                 return gameObjects;
         }
+
+
+        public static IGameState createNewGameState(string text, Game1 game)
+        {
+            IGameState gameState = null;
+
+            if(text.Equals("ProjectBuckeyeGameState"))
+            {
+                gameState = new ProjectBuckeyeGameState(game);
+            }
+
+            return gameState;
+        }
+
     }
 }

@@ -76,7 +76,7 @@ namespace Game
                 objectList.Remove(referenceObject);
                 ((IProjectile)referenceObject).ReturnObject();           
             }
-            else if (referenceObject is IMario)
+            else if (referenceObject is IPlayer)
                 currentGame.gameState.PlayerDied();
         }
 

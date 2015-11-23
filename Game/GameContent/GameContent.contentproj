@@ -63,6 +63,10 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
+    <None Include="Levels\PacMarioWorld.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>PacMarioWorld</Name>
+    </None>
     <None Include="Levels\ProjectBuckeyeTest.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>ProjectBuckeyeTest</Name>
