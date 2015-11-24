@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Game.Utilities.Constants;
+using Game.Music;
 
 namespace Game.GameStates
 {
@@ -117,8 +118,9 @@ namespace Game.GameStates
             game.gameState = new MarioPowerUpGameState(camera, game);
         }
 
-        public void StartBuckeyeButton()
+        public void StateBackgroundTheme()
         {
+            BackgroundThemeManager.PlayOverWorldTheme();
         }
     }
 }

@@ -11,6 +11,7 @@ using Game.Utilities.Controls;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Game.GameStates;
+using Game.Music;
 
 namespace Game.GameStates
 {
@@ -98,8 +99,9 @@ namespace Game.GameStates
             set { isUnderground = value; }
         }
 
-        public void StartBuckeyeButton()
+        public void StateBackgroundTheme()
         {
+            BackgroundThemeManager.PlayPacManLevelTheme();
         }
     }
 }

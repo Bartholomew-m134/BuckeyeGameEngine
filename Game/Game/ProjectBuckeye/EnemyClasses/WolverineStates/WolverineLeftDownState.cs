@@ -16,6 +16,9 @@ namespace Game.ProjectBuckeye.EnemyClasses.WolverineStates
             this.enemy = enemy;
             this.enemy.Sprite = Game.SpriteFactories.WolverineSpriteFactory.CreateWolverineLeftDownSprite();
             enemy.Physics.ResetPhysics();
+
+            this.enemy.CanDealDamage = false;
+            this.enemy.IsHit = false;
         }
         public void Damage()
         {

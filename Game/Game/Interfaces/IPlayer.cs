@@ -23,7 +23,7 @@ namespace Game.Interfaces
 
         void StopRunning();
 
-        bool Dead
+        bool IsDead
         {
             get;
             set;

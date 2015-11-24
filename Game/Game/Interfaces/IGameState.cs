@@ -19,8 +19,6 @@ namespace Game.Interfaces
 
         void StartButton();
 
-        void StartBuckeyeButton();
-
         void PipeTransition(IPipe warpPipe);
 
         void FlagPoleTransition();
@@ -30,5 +28,7 @@ namespace Game.Interfaces
         void MarioPowerUp();
 
         bool IsUnderground { get; set; }
+
+        void StateBackgroundTheme();
     }
 }

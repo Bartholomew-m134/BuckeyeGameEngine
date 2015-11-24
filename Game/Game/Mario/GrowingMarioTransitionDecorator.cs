@@ -154,7 +154,7 @@ namespace Game.Mario
             mario.ToIdle();
         }
 
-        public ObjectPhysics Physics
+        public IPhysics Physics
         {
             get { return ((IMario)mario).Physics; }
         }
@@ -184,10 +184,10 @@ namespace Game.Mario
             return mario.IsPressingDown();
         }
 
-        public bool Dead
+        public bool IsDead
         {
-            get { return mario.Dead; }
-            set { mario.Dead = value; }
+            get { return mario.IsDead; }
+            set { mario.IsDead = value; }
         }
     }
 }

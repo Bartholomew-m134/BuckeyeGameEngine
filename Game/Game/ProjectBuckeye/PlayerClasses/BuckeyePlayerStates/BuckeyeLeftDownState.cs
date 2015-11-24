@@ -18,7 +18,7 @@ namespace Game.ProjectBuckeye.PlayerClasses.BuckeyePlayerStates
         public BuckeyeLeftDownState(IBuckeyePlayer buckeyePlayer)
         {
             this.buckeyePlayer = buckeyePlayer;
-            this.buckeyePlayer.Dead = true;
+            this.buckeyePlayer.IsDead = true;
             BackgroundThemeManager.PlayDeathTheme();
             buckeyePlayer.Sprite = SpriteFactories.BuckeyePlayerSpriteFactory.CreateBuckeyeLeftDownSprite();
             buckeyePlayer.Physics.ResetPhysics();
@@ -67,7 +67,6 @@ namespace Game.ProjectBuckeye.PlayerClasses.BuckeyePlayerStates
 
         public void ToIdle()
         {
-            buckeyePlayer.State = new BuckeyeLeftIdleState(buckeyePlayer);
         }
 
         bool IPlayerState.IsJumping()

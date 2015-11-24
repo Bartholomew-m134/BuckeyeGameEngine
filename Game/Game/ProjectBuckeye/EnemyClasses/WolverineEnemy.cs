@@ -16,15 +16,15 @@ namespace Game.ProjectBuckeye.EnemyClasses
         private Vector2 location;
         private bool isHit;
         private bool canDealDamage;
-        private ObjectPhysics physics;
+        private IPhysics physics;
         private Game1 myGame;
 
         public WolverineEnemy(Game1 game)
         {
             myGame = game;
             isHit = false;
-            canDealDamage = false;
-            physics = new ObjectPhysics();
+            canDealDamage = true;
+            physics = new MarioGamePhysics();
             state = new WolverineMovingLeftState(this);
         }
 
@@ -73,7 +73,7 @@ namespace Game.ProjectBuckeye.EnemyClasses
             set { sprite = value; }
         }
 
-        public ObjectPhysics Physics
+        public IPhysics Physics
         {
             get { return physics; }
         }

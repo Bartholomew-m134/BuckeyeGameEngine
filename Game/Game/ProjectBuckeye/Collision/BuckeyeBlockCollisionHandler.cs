@@ -35,26 +35,14 @@ namespace Game.ProjectBuckeye.Collision
 
         public void HandleCollision()
         {
-            if (!player.Dead)
-            {
-
-                if (collisionSide is RightSideCollision)
-                {
-                    HandleRightSide();
-                }
-                else if (collisionSide is LeftSideCollision)
-                {
-                    HandleLeftSide();
-                }
-                else if (collisionSide is TopSideCollision)
-                {
-                    HandleTopSide();
-                }
-                else
-                {
-                    HandleBottomSide();
-                }
-            }
+            if (collisionSide is RightSideCollision)
+                HandleRightSide();
+            else if (collisionSide is LeftSideCollision)
+                HandleLeftSide();
+            else if (collisionSide is TopSideCollision)
+                HandleTopSide();
+            else
+                HandleBottomSide();
         }
 
         private void HandleTopSide()

@@ -10,15 +10,19 @@ namespace Game.Music
 {
     public static class BackgroundThemeManager
     {
-        private static IMusic overworld = new OverworldTheme();
+        private static IMusic overworld = new MarioOverworldTheme();
         private static IMusic starMan = new StarTheme();
         private static IMusic flagPoleVictory = new FlagPoleVictoryTheme();
         private static IMusic death = new DeathTheme();
+        private static IMusic buckeyeOverworld = new BuckeyeOverworldTheme();
+        private static IMusic pacLevel = new PacManLevelTheme();
+
+        private static IMusic prePowerUpTheme;
 
         public static void PlayOverWorldTheme(){
             StopAllBackgroundThemes();
             if(HUDManager.RemainingTime() > SoundConstants.HURRYUPTIME)
-                overworld = new OverworldTheme();
+                overworld = new MarioOverworldTheme();
             else
                 overworld = new RushedOverworldTheme();
             overworld.PlayTheme();
@@ -26,6 +30,7 @@ namespace Game.Music
 
         public static void PlayStarTheme()
         {
+            GetPreviousTheme();
             StopAllBackgroundThemes();
             if (HUDManager.RemainingTime() > SoundConstants.HURRYUPTIME)
                 starMan = new StarTheme();
@@ -54,6 +59,8 @@ namespace Game.Music
             flagPoleVictory.StopTheme();
             overworld.StopTheme();
             death.StopTheme();
+            buckeyeOverworld.StopTheme();
+            pacLevel.StopTheme();
         }
 
         public static void HurryTimeUpdate()
@@ -62,6 +69,38 @@ namespace Game.Music
                 PlayOverWorldTheme();
             else if (starMan.IsPlaying())
                 PlayStarTheme();
+        }
+
+        public static void PlayBuckeyeOverworldTheme()
+        {
+            StopAllBackgroundThemes();
+            buckeyeOverworld = new BuckeyeOverworldTheme();
+            buckeyeOverworld.PlayTheme();
+        }
+
+        public static void PlayPacManLevelTheme()
+        {
+            StopAllBackgroundThemes();
+            pacLevel = new PacManLevelTheme();
+            pacLevel.PlayTheme();
+        }
+
+        public static void ResetFromPowerUpTheme()
+        {
+            StopAllBackgroundThemes();
+            prePowerUpTheme.PlayTheme();
+        }
+
+        private static void GetPreviousTheme()
+        {
+            if (overworld.IsPlaying())
+                prePowerUpTheme = overworld;
+            else if (flagPoleVictory.IsPlaying())
+                prePowerUpTheme = flagPoleVictory;
+            else if (buckeyeOverworld.IsPlaying())
+                prePowerUpTheme = buckeyeOverworld;
+            else if (pacLevel.IsPlaying())
+                prePowerUpTheme = pacLevel;
         }
     }
 }

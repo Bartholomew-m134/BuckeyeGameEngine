@@ -20,14 +20,14 @@ namespace Game.Blocks
         private Game1 game;
         private Vector2 location;
         private bool isBumped;
-        private ObjectPhysics physics;
+        private IPhysics physics;
 
         public Block(Type blockType, bool isUnderground, Game1 game)
         {
             isBumped = false;
             this.game = game;
             SetInitialState(blockType, isUnderground);
-            physics = new ObjectPhysics();
+            physics = new MarioGamePhysics();
             physics.Acceleration = Vector2.Zero;
 
         }
@@ -116,7 +116,7 @@ namespace Game.Blocks
             }
         }
 
-        public ObjectPhysics Physics
+        public IPhysics Physics
         {
             get { return null; }
         }

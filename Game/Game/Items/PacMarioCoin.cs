@@ -15,7 +15,7 @@ namespace Game.Items
         private Game1 myGame;
         private ISprite coinSprite;
         private Vector2 location;
-        private ObjectPhysics physics;
+        private IPhysics physics;
         private bool isInsideBlock;
         private bool isReleased;
 
@@ -25,7 +25,7 @@ namespace Game.Items
             isReleased = false;
             myGame = game;
             coinSprite = ItemsSpriteFactory.CreatePacMarioCoinSprite();
-            physics = new ObjectPhysics();
+            physics = new MarioGamePhysics();
             physics.Acceleration = Vector2.Zero;
         }
 
@@ -72,7 +72,7 @@ namespace Game.Items
             set { coinSprite = value; }
         }
 
-        public ObjectPhysics Physics
+        public IPhysics Physics
         {
             get { return physics; }
         }

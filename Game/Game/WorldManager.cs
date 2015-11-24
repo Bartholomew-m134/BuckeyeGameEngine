@@ -1,6 +1,5 @@
 ﻿using Game.Interfaces;
 using Game.Mario;
-using Game.Music;
 using Game.Utilities;
 using Microsoft.Xna.Framework;
 using System;
@@ -20,10 +19,10 @@ namespace Game
 
         public static void LoadListFromFile(string filename, Game1 game)
         {
-            BackgroundThemeManager.PlayOverWorldTheme();
             objectList = LevelLoader.Load(filename, game);
             objectWithinZoneList = new List<IGameObject>();
-            currentGame = game;           
+            currentGame = game;
+            currentGame.gameState.StateBackgroundTheme();
         }
 
         public static void Update(ICamera camera)
@@ -87,7 +86,7 @@ namespace Game
 
         private static void ResetIfPlayerIsDead(ICamera camera)
         {
-            if (ReturnPlayer().Dead || camera.IsBelowCamera(ReturnPlayer().VectorCoordinates))
+            if (ReturnPlayer().IsDead || camera.IsBelowCamera(ReturnPlayer().VectorCoordinates))
                 FreeObject(ReturnPlayer());
         }
     }

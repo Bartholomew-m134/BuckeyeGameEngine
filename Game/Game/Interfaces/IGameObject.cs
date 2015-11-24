@@ -26,7 +26,7 @@ namespace Game.Interfaces
             set;
         }
 
-        ObjectPhysics Physics
+        IPhysics Physics
         {
             get;
         }

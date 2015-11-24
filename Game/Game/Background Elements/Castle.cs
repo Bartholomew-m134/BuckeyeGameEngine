@@ -46,7 +46,7 @@ namespace Game.Background_Elements
             set { castleSprite = value; }
         }
 
-        public ObjectPhysics Physics
+        public IPhysics Physics
         {
             get { return null; }
         }

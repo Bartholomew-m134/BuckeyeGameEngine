@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Game.Utilities.Constants;
+using Game.Interfaces;
 
 namespace Game.Utilities
 {
-    public class ObjectPhysics
+    public class MarioGamePhysics : IPhysics
     {
         private Vector2 velocity;
         private Vector2 acceleration;
@@ -16,7 +17,7 @@ namespace Game.Utilities
         private Vector2 velocityMinimum = new Vector2(ObjectPhysicsConstants.INITIALXMINVELOCITY, ObjectPhysicsConstants.INITIALYMINVELOCITY);
         private const int gravity = ObjectPhysicsConstants.GRAVITY;
 
-        public ObjectPhysics()
+        public MarioGamePhysics()
         {
             acceleration = new Vector2(0, gravity);
         }
@@ -45,9 +46,12 @@ namespace Game.Utilities
             }
 
             return (coordinates + (oldVelocity + velocity) / 2);
-           
         }
-        public Vector2 OldCoordinates { get { return oldCoordinates; } }
+
+        public Vector2 OldCoordinates { 
+            get { return oldCoordinates; }
+        }
+
         public Vector2 Velocity
         {
             get { return velocity; }
@@ -72,7 +76,8 @@ namespace Game.Utilities
             set { velocityMinimum = value; }
         }
 
-        public void ResetY() {
+        public void ResetY() 
+        {
             acceleration.Y = gravity;
             velocity.Y = 0;
         }

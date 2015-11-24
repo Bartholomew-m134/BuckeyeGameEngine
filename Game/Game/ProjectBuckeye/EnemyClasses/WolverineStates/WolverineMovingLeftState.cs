@@ -19,7 +19,7 @@ namespace Game.ProjectBuckeye.EnemyClasses.WolverineStates
         }
         public void Damage()
         {
-            throw new NotImplementedException();
+            enemy.State = new WolverineLeftDownState(enemy);
         }
 
         public void DirectionChange()

@@ -32,7 +32,7 @@ namespace Game.Mario.MarioStates
 
         public void Right()
         {
-            ObjectPhysics physics = mario.Physics;
+            IPhysics physics = mario.Physics;
             Vector2 acceleration = physics.Acceleration;
             acceleration.X = MarioStateConstants.POSITIVERUNNINGXACCELERATION;
             physics.Acceleration = acceleration;

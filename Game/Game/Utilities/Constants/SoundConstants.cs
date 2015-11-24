@@ -29,5 +29,9 @@ namespace Game.Utilities.Constants
         public const String SMALLMARIOJUMPEFFECT = @"Content\SoundEffects\smb_jumpsmall.wav";
         public const String SUPERMARIOJUMPEFFECT = @"Content\SoundEffects\smb_jump-super.wav";
         public const String GAMEOVEREFFECT = @"Content\SoundEffects\smb-game-over.wav";
+
+        public const String BUCKEYEOVERWORLD = @"Content\SoundTracks\across_the_field.wav";
+
+        public const String PACOVERWORLD = @"Content\SoundTracks\PacMan_Original_Theme.wav";
     }
 }

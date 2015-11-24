@@ -15,6 +15,7 @@ using Microsoft.Xna.Framework;
 using Game.Interfaces;
 using Game.FlagPoles;
 using Game.ProjectBuckeye.PlayerClasses;
+using Game.ProjectBuckeye.EnemyClasses;
 using Game.Lemming;
 using Game.GameStates;
 
@@ -201,6 +202,8 @@ namespace Game
                         gameObject = new TripleCloud(game);
                     else if (objectName.Equals("Buckeye"))
                         gameObject = new BuckeyePlayer(game);
+                    else if (objectName.Equals("Wolverine"))
+                        gameObject = new WolverineEnemy(game);
 
                     if (objectsItem != null)
                     {

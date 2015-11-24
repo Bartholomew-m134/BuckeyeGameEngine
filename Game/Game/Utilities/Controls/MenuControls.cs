@@ -22,7 +22,6 @@ namespace Game.Utilities.Controls
             Dictionary<Keys, ICommand> keyboardControls = new Dictionary<Keys, ICommand>();
 
             keyboardControls.Add(Keys.P, new StartButtonCommand(game));
-            keyboardControls.Add(Keys.O, new BuckeyeStartCommand(game));
 
             return keyboardControls;
         }
