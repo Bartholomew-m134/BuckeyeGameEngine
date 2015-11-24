@@ -19,7 +19,7 @@ namespace Game.Enemies.KoopaClasses
         private Vector2 location;
         private bool canDealDamage = true;
         private int inShellTimer = 0;
-        private ObjectPhysics physics;
+        private IPhysics physics;
         private bool isFlipped = false;
         private bool isHit = false;
         private bool isWeaponized = false;
@@ -28,7 +28,7 @@ namespace Game.Enemies.KoopaClasses
         public GreenKoopa(Game1 game)
         {
             myGame = game;
-            physics = new ObjectPhysics();
+            physics = new MarioGamePhysics();
             physics.VelocityMaximum = new Vector2(IEnemyObjectConstants.KOOPAMAXVELOCITY, physics.VelocityMaximum.Y);
             physics.VelocityMinimum = new Vector2(IEnemyObjectConstants.KOOPAMINVELOCITY, physics.VelocityMinimum.Y);
             state = new GreenKoopaWalkingLeftState(this);
@@ -116,7 +116,7 @@ namespace Game.Enemies.KoopaClasses
             set { sprite = value; }
         }
 
-        public ObjectPhysics Physics
+        public IPhysics Physics
         {
             get {return physics;}
         }

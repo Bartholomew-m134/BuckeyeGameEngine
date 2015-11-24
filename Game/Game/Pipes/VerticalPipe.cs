@@ -69,7 +69,7 @@ namespace Game.Pipes
             get { return null; }
         }
 
-        public ObjectPhysics Physics
+        public IPhysics Physics
         {
             get { return null; }
         }

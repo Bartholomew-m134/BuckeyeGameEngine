@@ -11,6 +11,7 @@ using Game.Utilities.Controls;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Game.GameStates;
+using Game.Music;
 
 namespace Game.GameStates
 {
@@ -100,6 +101,12 @@ namespace Game.GameStates
 
         public void StartBuckeyeButton()
         {
+        }
+
+
+        public void StateBackgroundTheme()
+        {
+            BackgroundThemeManager.PlayPacManLevelTheme();
         }
     }
 }

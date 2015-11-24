@@ -184,6 +184,7 @@
     <Compile Include="Interfaces\IGameState.cs" />
     <Compile Include="Interfaces\IMarioSprite.cs" />
     <Compile Include="Interfaces\ILemming.cs" />
+    <Compile Include="Interfaces\IPhysics.cs" />
     <Compile Include="Interfaces\IPlayer.cs" />
     <Compile Include="Interfaces\IPlayerState.cs" />
     <Compile Include="Interfaces\IProjectile.cs" />
@@ -210,10 +211,12 @@
     <Compile Include="Mario\MarioStates\NormalFlagPoleFlippedState.cs" />
     <Compile Include="Mario\MarioStates\SmallFlagPoleFlippedState.cs" />
     <Compile Include="Music\BackgroundThemeManager.cs" />
+    <Compile Include="Music\BuckeyeOverworldTheme.cs" />
     <Compile Include="Music\DeathTheme.cs" />
     <Compile Include="Music\FlagPoleVictoryTheme.cs" />
-    <Compile Include="Music\OverworldTheme.cs" />
+    <Compile Include="Music\MarioOverworldTheme.cs" />
     <Compile Include="Interfaces\IMusic.cs" />
+    <Compile Include="Music\PacManLevelTheme.cs" />
     <Compile Include="Music\RushedOverworldTheme.cs" />
     <Compile Include="Music\RushedStarTheme.cs" />
     <Compile Include="Music\StarTheme.cs" />
@@ -408,7 +411,7 @@
     <Compile Include="Utilities\HUDManager.cs" />
     <Compile Include="Utilities\LifeManager.cs" />
     <Compile Include="Utilities\MarioCamera.cs" />
-    <Compile Include="Utilities\ObjectPhysics.cs" />
+    <Compile Include="Utilities\MarioGamePhysics.cs" />
     <Compile Include="Utilities\ScoreManager.cs" />
     <Compile Include="Utilities\StillCamera.cs" />
     <Compile Include="WorldManager.cs" />

@@ -43,7 +43,7 @@ namespace Game.Mario
             else if (timer == 0)
             {
                 WorldManager.SetPlayer(this.mario);
-                BackgroundThemeManager.PlayOverWorldTheme();
+                BackgroundThemeManager.ResetFromPowerUpTheme();
             }
             mario.Update();
         }
@@ -179,7 +179,7 @@ namespace Game.Mario
             mario.ToIdle();
         }
 
-        public ObjectPhysics Physics
+        public IPhysics Physics
         {
             get { return ((MarioInstance)mario).Physics; }
         }

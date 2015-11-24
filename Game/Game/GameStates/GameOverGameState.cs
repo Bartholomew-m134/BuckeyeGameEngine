@@ -14,7 +14,6 @@ namespace Game.GameStates
     {
         private Game1 game;
         private const int DeathSoundDelay = 80;
-        private IGameState prevGameState;
         private List<IController> controllerList;
         private SpriteFont font;
         private int gameOverSoundDelay = 0;
@@ -94,6 +93,11 @@ namespace Game.GameStates
         }
 
         public void StartBuckeyeButton()
+        {
+        }
+
+
+        public void StateBackgroundTheme()
         {
         }
     }

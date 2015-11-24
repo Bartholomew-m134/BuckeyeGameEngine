@@ -18,7 +18,7 @@ namespace Game.Enemies.GoombaClasses
         private Game1 myGame;
         private Vector2 location;
         private bool canDealDamage = true;
-        private ObjectPhysics physics;
+        private IPhysics physics;
         private int deathTimer = 0;
         private bool isFlipped = false;
         private bool isHit = false;
@@ -26,7 +26,7 @@ namespace Game.Enemies.GoombaClasses
         public Goomba(Game1 game)
         {
             myGame = game;
-            physics = new ObjectPhysics();
+            physics = new MarioGamePhysics();
             state = new GoombaWalkingLeftState(this);
         }
 
@@ -99,7 +99,7 @@ namespace Game.Enemies.GoombaClasses
             set { sprite = value; }
         }
 
-        public ObjectPhysics Physics
+        public IPhysics Physics
         {
             get { return physics; }
         }

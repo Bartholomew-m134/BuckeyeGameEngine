@@ -108,5 +108,10 @@ namespace Game.GameStates
         {
 
         }
+
+
+        public void StateBackgroundTheme()
+        {
+        }
     }
 }

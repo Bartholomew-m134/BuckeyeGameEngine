@@ -15,7 +15,7 @@ namespace Game.Items
         private Game1 myGame;
         private ISprite greenMushroomSprite;
         private Vector2 location;
-        private ObjectPhysics physics;
+        private IPhysics physics;
         private bool isInsideBlock;
 
 
@@ -24,7 +24,7 @@ namespace Game.Items
             this.isInsideBlock = isInsideBlock;
             myGame = game;
             greenMushroomSprite = ItemsSpriteFactory.CreateGreenMushroomSprite();
-            physics = new ObjectPhysics();
+            physics = new MarioGamePhysics();
             physics.Acceleration = Vector2.Zero;
         }
 
@@ -72,7 +72,7 @@ namespace Game.Items
             set { greenMushroomSprite = value; }
         }
 
-        public ObjectPhysics Physics
+        public IPhysics Physics
         {
             get { return physics; }
         }

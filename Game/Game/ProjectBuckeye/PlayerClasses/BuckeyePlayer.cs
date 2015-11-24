@@ -17,7 +17,7 @@ namespace Game.ProjectBuckeye.PlayerClasses
         private ISprite sprite;
         private Vector2 location;
         private Game1 myGame;
-        private ObjectPhysics physics;
+        private IPhysics physics;
         private bool isDead;
         private bool isPressingDown;
 
@@ -25,7 +25,7 @@ namespace Game.ProjectBuckeye.PlayerClasses
         {
             state = new BuckeyeRightIdleState(this);
             myGame = game;
-            physics = new ObjectPhysics();
+            physics = new MarioGamePhysics();
             isPressingDown = false;
             isDead = false;
         }
@@ -95,7 +95,7 @@ namespace Game.ProjectBuckeye.PlayerClasses
             set { sprite = value; }
         }
 
-        public ObjectPhysics Physics
+        public IPhysics Physics
         {
             get { return physics; }
         }

@@ -19,14 +19,14 @@ namespace Game.Lemming
         private ISprite sprite;
         private Vector2 location;
         private Game1 myGame;
-        private ObjectPhysics physics;
+        private IPhysics physics;
 
 
             public LemmingInstance(Game1 game)
         {
            // state = new LemmingWalkingRightState(this);
             myGame = game;
-            physics = new ObjectPhysics();
+            physics = new MarioGamePhysics();
             isDead = false;
             isJumping = false;
             isPressingDown = false;
@@ -92,7 +92,7 @@ namespace Game.Lemming
         {
 
         }
-        public ObjectPhysics Physics
+        public IPhysics Physics
         {
             get { return physics; }
         }

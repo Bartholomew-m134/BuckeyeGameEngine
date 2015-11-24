@@ -30,5 +30,7 @@ namespace Game.Interfaces
         void MarioPowerUp();
 
         bool IsUnderground { get; set; }
+
+        void StateBackgroundTheme();
     }
 }

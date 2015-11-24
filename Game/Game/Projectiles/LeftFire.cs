@@ -15,7 +15,7 @@ namespace Game.Projectiles
         private Game1 myGame;
         private ISprite FireSprite;
         private Vector2 location;
-        private ObjectPhysics physics;
+        private IPhysics physics;
         private bool isExploded;
         private FireBallSpawner factory;
 
@@ -23,7 +23,7 @@ namespace Game.Projectiles
         {
             myGame = game;
             FireSprite = ProjectileSpriteFactory.CreateFireSprite();
-            physics = new ObjectPhysics();
+            physics = new MarioGamePhysics();
             physics.Velocity = new Vector2(ProjectileConstants.LEFTFIREINITIALXVELOCITY, physics.Velocity.Y);
             physics.VelocityMinimum = new Vector2(ProjectileConstants.LEFTFIREINITIALXVELOCITY, physics.VelocityMinimum.Y);
             isExploded = false;
@@ -78,7 +78,7 @@ namespace Game.Projectiles
             set { FireSprite = value; }
         }
 
-        public ObjectPhysics Physics
+        public IPhysics Physics
         {
             get { return physics; }
         }

@@ -12,13 +12,13 @@ using Game.Utilities.Constants;
 
 namespace Game.Music
 {
-    public class OverworldTheme : IMusic
+    public class BuckeyeOverworldTheme : IMusic
     {
-        private Stream backgroundSoundFile= TitleContainer.OpenStream(SoundConstants.OVERWORLDTHEME);
+        private Stream backgroundSoundFile= TitleContainer.OpenStream(SoundConstants.BUCKEYEOVERWORLD);
         private SoundEffect backgroundSoundEffect;
         private SoundEffectInstance instance;
 
-        public OverworldTheme()
+        public BuckeyeOverworldTheme()
         {
             backgroundSoundEffect = SoundEffect.FromStream(backgroundSoundFile);
             instance = backgroundSoundEffect.CreateInstance();

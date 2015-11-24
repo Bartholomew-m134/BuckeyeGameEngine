@@ -114,5 +114,9 @@ namespace Game.GameStates
         public void StartBuckeyeButton()
         {
         }
+
+        public void StateBackgroundTheme()
+        {
+        }
     }
 }

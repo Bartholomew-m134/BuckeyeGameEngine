@@ -16,7 +16,7 @@ namespace Game.Mario
         private IMarioSprite sprite;
         private Vector2 location;
         private Game1 myGame;
-        private ObjectPhysics physics;
+        private IPhysics physics;
         private FireBallSpawner factory;
         private bool isPressingDown;
         private bool isDead;
@@ -25,7 +25,7 @@ namespace Game.Mario
         {
             state = new SmallRightIdleState(this);
             myGame = game;
-            physics = new ObjectPhysics();
+            physics = new MarioGamePhysics();
             factory = new FireBallSpawner(game);
             isPressingDown = false;
             isDead = false;
@@ -168,7 +168,7 @@ namespace Game.Mario
             state.ToIdle();
         }
 
-        public ObjectPhysics Physics
+        public IPhysics Physics
         {
             get { return physics; }
         }

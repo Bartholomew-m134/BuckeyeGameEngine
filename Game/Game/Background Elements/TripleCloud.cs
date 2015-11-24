@@ -44,7 +44,7 @@ namespace Game.Background_Elements
             set { tripleCloudSprite = value; }
         }
 
-        public ObjectPhysics Physics
+        public IPhysics Physics
         {
             get { return null; }
         }

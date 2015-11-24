@@ -48,7 +48,7 @@ namespace Game.FlagPoles
             set { invisibleFlagPoleSprite = value; }
         }
 
-        public ObjectPhysics Physics
+        public IPhysics Physics
         {
             get { return null; }
         }
