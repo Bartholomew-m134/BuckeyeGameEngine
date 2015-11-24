@@ -118,11 +118,6 @@ namespace Game.GameStates
             game.gameState = new MarioPowerUpGameState(camera, game);
         }
 
-        public void StartBuckeyeButton()
-        {
-        }
-
-
         public void StateBackgroundTheme()
         {
             BackgroundThemeManager.PlayOverWorldTheme();

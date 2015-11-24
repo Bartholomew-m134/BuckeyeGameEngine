@@ -99,11 +99,6 @@ namespace Game.GameStates
             set { isUnderground = value; }
         }
 
-        public void StartBuckeyeButton()
-        {
-        }
-
-
         public void StateBackgroundTheme()
         {
             BackgroundThemeManager.PlayPacManLevelTheme();
