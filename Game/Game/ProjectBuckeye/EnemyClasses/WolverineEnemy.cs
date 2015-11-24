@@ -23,7 +23,7 @@ namespace Game.ProjectBuckeye.EnemyClasses
         {
             myGame = game;
             isHit = false;
-            canDealDamage = false;
+            canDealDamage = true;
             physics = new MarioGamePhysics();
             state = new WolverineMovingLeftState(this);
         }

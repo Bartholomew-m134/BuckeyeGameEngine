@@ -82,7 +82,7 @@ namespace Game.Lemming
 
         }
 
-        public bool Dead
+        public bool IsDead
         {
             get { return isDead; }
             set { isDead = value; }

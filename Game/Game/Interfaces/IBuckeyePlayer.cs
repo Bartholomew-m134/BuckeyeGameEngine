@@ -12,5 +12,7 @@ namespace Game.Interfaces
             get;
             set;
         }
+
+        void Damage();
     }
 }

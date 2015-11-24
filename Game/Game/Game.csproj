@@ -225,6 +225,7 @@
     <Compile Include="Pipes\VerticalPipe.cs" />
     <Compile Include="ProjectBuckeye\Collision\BuckeyeBlockCollisionHandler.cs" />
     <Compile Include="GameStates\ProjectBuckeyeGameState.cs" />
+    <Compile Include="ProjectBuckeye\Collision\BuckeyeWolverineCollisionHandler.cs" />
     <Compile Include="ProjectBuckeye\Collision\WolverineBlockCollisionHandler.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineEnemy.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineSprites\WolverineDownLeftSprite.cs" />

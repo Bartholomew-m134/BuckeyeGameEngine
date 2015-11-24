@@ -86,7 +86,7 @@ namespace Game
 
         private static void ResetIfPlayerIsDead(ICamera camera)
         {
-            if (ReturnPlayer().Dead || camera.IsBelowCamera(ReturnPlayer().VectorCoordinates))
+            if (ReturnPlayer().IsDead || camera.IsBelowCamera(ReturnPlayer().VectorCoordinates))
                 FreeObject(ReturnPlayer());
         }
     }

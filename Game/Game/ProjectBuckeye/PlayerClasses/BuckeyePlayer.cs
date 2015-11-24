@@ -48,8 +48,6 @@ namespace Game.ProjectBuckeye.PlayerClasses
 
         public void Down()
         {
-            state.Down();
-            this.isPressingDown = true;
         }
 
         public void Jump()
@@ -107,7 +105,7 @@ namespace Game.ProjectBuckeye.PlayerClasses
         }
 
 
-        public bool Dead
+        public bool IsDead
         {
             get { return isDead; }
             set { isDead = value; }
@@ -127,6 +125,12 @@ namespace Game.ProjectBuckeye.PlayerClasses
         public void ToIdle()
         {
             state.ToIdle();
+        }
+
+
+        public void Damage()
+        {
+            state.DownPlayer();
         }
     }
 }

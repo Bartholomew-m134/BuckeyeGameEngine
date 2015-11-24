@@ -190,7 +190,7 @@ namespace Game.Mario
         }
 
 
-        public bool Dead
+        public bool IsDead
         {
             get { return isDead; }
             set { isDead = value; }

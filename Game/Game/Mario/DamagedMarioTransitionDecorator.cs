@@ -169,10 +169,10 @@ namespace Game.Mario
         }
 
 
-        public bool Dead
+        public bool IsDead
         {
-            get { return mario.Dead; }
-            set { mario.Dead = value; }
+            get { return mario.IsDead; }
+            set { mario.IsDead = value; }
         }
     }
 }

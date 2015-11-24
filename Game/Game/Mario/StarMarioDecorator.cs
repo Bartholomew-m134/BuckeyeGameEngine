@@ -200,10 +200,10 @@ namespace Game.Mario
             return mario.IsPressingDown();
         }
 
-        public bool Dead
+        public bool IsDead
         {
-            get { return mario.Dead; }
-            set { mario.Dead = value; }
+            get { return mario.IsDead; }
+            set { mario.IsDead = value; }
         }
     }
 }
