@@ -70,6 +70,8 @@ namespace Game.GameStates
         {
             game.GraphicsDevice.Clear(Color.Black);
             WorldManager.Draw(camera);
+            ScoreManager.DrawScore(spriteBatch, camera);
+            HUDManager.DrawHUD(spriteBatch);
         }
 
         public void StartButton()
