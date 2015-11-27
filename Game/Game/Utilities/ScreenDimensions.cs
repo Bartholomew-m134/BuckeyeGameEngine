@@ -21,6 +21,6 @@ namespace Game.Utilities
             spriteScale = Matrix.CreateScale(horizontalScale, verticalScale, 1);
         }
 
-        public static Matrix SpriteScale { get { return spriteScale; } }
+        public static Matrix ScalingMatrix { get { return spriteScale; } }
     }
 }
