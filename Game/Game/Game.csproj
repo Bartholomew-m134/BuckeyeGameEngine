@@ -409,6 +409,7 @@
     <Compile Include="Utilities\Controls\MarioControls.cs" />
     <Compile Include="Utilities\Controls\MenuControls.cs" />
     <Compile Include="Utilities\Controls\PausedControls.cs" />
+    <Compile Include="Utilities\ScreenDimensions.cs" />
     <Compile Include="Utilities\HUDManager.cs" />
     <Compile Include="Utilities\LifeManager.cs" />
     <Compile Include="Utilities\MarioCamera.cs" />

@@ -25,6 +25,8 @@ namespace Game
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            Window.AllowUserResizing = true;
+            Window.Title = "BuckeyeGameEngine";
         }
 
         protected override void Initialize()
@@ -46,6 +48,7 @@ namespace Game
 
         protected override void Update(GameTime gameTime)
         {
+            ScreenDimensions.Update(graphics);
             gameState.Update();
             base.Update(gameTime);
         }
