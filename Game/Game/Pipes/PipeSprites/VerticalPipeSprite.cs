@@ -11,11 +11,11 @@ using Game.Utilities;
 
 namespace Game.Pipes.PipeSprites
 {
-    class BottomSidePipeSprite : ISprite
+    class VerticalPipeSprite : ISprite
     {
         private Texture2D Texture { get; set; }
 
-        public BottomSidePipeSprite(Texture2D texture)
+        public VerticalPipeSprite(Texture2D texture)
         {
             Texture = texture;
         }
@@ -26,10 +26,10 @@ namespace Game.Pipes.PipeSprites
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle((int)PipeSpriteConstants.BOTTOMSIDEPIPESOURCE.X, (int)PipeSpriteConstants.BOTTOMSIDEPIPESOURCE.Y,
-                (int)PipeSpriteConstants.BOTTOMSIDEPIPEDIMENSIONS.X, (int)PipeSpriteConstants.BOTTOMSIDEPIPEDIMENSIONS.Y);
+            Rectangle sourceRectangle = new Rectangle((int)PipeSpriteConstants.SIDEPIPESOURCE.X, (int)PipeSpriteConstants.SIDEPIPESOURCE.Y,
+                (int)PipeSpriteConstants.SIDEPIPEDIMENSIONS.X, (int)PipeSpriteConstants.SIDEPIPEDIMENSIONS.Y);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
-                (int)PipeSpriteConstants.BOTTOMSIDEPIPEDIMENSIONS.X, (int)PipeSpriteConstants.BOTTOMSIDEPIPEDIMENSIONS.Y);
+                (int)PipeSpriteConstants.SIDEPIPEDIMENSIONS.X, (int)PipeSpriteConstants.SIDEPIPEDIMENSIONS.Y);
 
             spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
@@ -38,7 +38,7 @@ namespace Game.Pipes.PipeSprites
 
         public Vector2 SpriteDimensions
         {
-            get { return new Vector2((int)PipeSpriteConstants.BOTTOMSIDEPIPEDIMENSIONS.X, (int)PipeSpriteConstants.BOTTOMSIDEPIPEDIMENSIONS.Y); }
+            get { return new Vector2((int)PipeSpriteConstants.SIDEPIPEDIMENSIONS.X, (int)PipeSpriteConstants.SIDEPIPEDIMENSIONS.Y); }
         }
     }
 }

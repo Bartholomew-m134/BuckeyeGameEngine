@@ -164,7 +164,7 @@ namespace Game
                         gameObject = new DoublePipe(game);
                     else if (objectName.Equals("TriplePipe"))
                         gameObject = new TriplePipe(game);
-                    else if (objectName.Equals("BottomSidePipe"))
+                    else if (objectName.Equals("SidePipe"))
                         gameObject = new SidePipe(game);
                     else if (objectName.Equals("VerticalPipe"))
                         gameObject = new VerticalPipe(game);
