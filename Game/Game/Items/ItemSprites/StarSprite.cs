@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
 using Game.Utilities.Constants;
+using Game.Utilities;
 
 namespace Game.Items.ItemSprites
 {
@@ -33,7 +34,8 @@ namespace Game.Items.ItemSprites
                 (int)ItemSpriteConstants.STARDIMENSIONS.X, (int)ItemSpriteConstants.STARDIMENSIONS.Y);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
                 (int)ItemSpriteConstants.STARDIMENSIONS.X, (int)ItemSpriteConstants.STARDIMENSIONS.Y);
-            spriteBatch.Begin();
+
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
