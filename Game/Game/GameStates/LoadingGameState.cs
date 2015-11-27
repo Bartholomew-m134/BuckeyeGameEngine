@@ -58,7 +58,7 @@ namespace Game.GameStates
 
             marioSprite.Draw(spriteBatch, IGameStateConstants.LOADINGGAMESTATEMARIOLOCATION);
 
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
             spriteBatch.DrawString(font, IGameStateConstants.LOADINGGAMESTATEX + LifeManager.Lives, IGameStateConstants.LOADINGGAMESTATEMESSAGELOCATION, Color.White);
             spriteBatch.End();
         }

@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
 using Game.Utilities.Constants;
+using Game.Utilities;
 
 namespace Game.ProjectBuckeye.PlayerClasses.BuckeyePlayerSprites
 {
@@ -27,7 +28,7 @@ namespace Game.ProjectBuckeye.PlayerClasses.BuckeyePlayerSprites
             Rectangle sourceRectangle = new Rectangle((int)BuckeyePlayerSpriteConstants.RIGHT_FRAME_3_SOURCE.X, (int)BuckeyePlayerSpriteConstants.RIGHT_FRAME_3_SOURCE.Y,
                 (int)BuckeyePlayerSpriteConstants.RIGHT_FRAME_3_DIMENSIONS.X, (int)BuckeyePlayerSpriteConstants.RIGHT_FRAME_3_DIMENSIONS.Y);
 
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
             spriteBatch.Draw(spriteSheet, location, sourceRectangle, Color.White, 0f, Vector2.Zero, BuckeyePlayerSpriteConstants.SPRITE_SCALE_FACTOR, SpriteEffects.None, 0f);
             spriteBatch.End();
         }

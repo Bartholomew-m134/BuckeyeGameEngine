@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework;
 using Game.Interfaces;
 using System.Collections;
 using Game.Utilities.Constants;
+using Game.Utilities;
 
 namespace Game.Projectiles.ProjectileSprites
 {
@@ -41,7 +42,8 @@ namespace Game.Projectiles.ProjectileSprites
                 (int)ProjectileSpriteConstants.FIREDIMENSIONS.X, (int)ProjectileSpriteConstants.FIREDIMENSIONS.X);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
                 (int)ProjectileSpriteConstants.FIREDIMENSIONS.X, (int)ProjectileSpriteConstants.FIREDIMENSIONS.X);
-            spriteBatch.Begin();
+
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
             spriteBatch.Draw(texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }

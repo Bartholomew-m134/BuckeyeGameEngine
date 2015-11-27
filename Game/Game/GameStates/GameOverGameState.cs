@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Game.Utilities.Constants;
+using Game.Utilities;
 
 namespace Game.GameStates
 {
@@ -48,7 +49,7 @@ namespace Game.GameStates
         public void Draw(SpriteBatch spriteBatch)
         {
             game.GraphicsDevice.Clear(Color.Black);
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
             spriteBatch.DrawString(font, IGameStateConstants.GAMEOVERSTATEMESSAGE, IGameStateConstants.GAMEOVERSTATEMESSAGELOCATION, Color.White);
             spriteBatch.End();
         }
