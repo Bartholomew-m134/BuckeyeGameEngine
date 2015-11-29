@@ -52,7 +52,7 @@ namespace Game.GameStates
 
         public void StartButton()
         {
-            game.gameState = new MenuGameState(game);
+            game.gameState = new LogoGameState(game);
             game.gameState.LoadContent();
         }
 

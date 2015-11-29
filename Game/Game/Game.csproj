@@ -121,6 +121,7 @@
     <Compile Include="GameStates\LoadingGameState.cs" />
     <Compile Include="GameStates\MarioDeathGameState.cs" />
     <Compile Include="GameStates\MarioPowerUpGameState.cs" />
+    <Compile Include="GameStates\LogoGameState.cs" />
     <Compile Include="GameStates\MenuGameState.cs" />
     <Compile Include="GameStates\NormalMarioGameState.cs" />
     <Compile Include="GameStates\PauseGameState.cs" />
@@ -183,6 +184,7 @@
     <Compile Include="Interfaces\IGameState.cs" />
     <Compile Include="Interfaces\IMarioSprite.cs" />
     <Compile Include="Interfaces\ILemming.cs" />
+    <Compile Include="Interfaces\IMenu.cs" />
     <Compile Include="Interfaces\IPhysics.cs" />
     <Compile Include="Interfaces\IPlayer.cs" />
     <Compile Include="Interfaces\IPlayerState.cs" />
@@ -209,6 +211,7 @@
     <Compile Include="Mario\MarioStates\FireFlagPoleFlippedState.cs" />
     <Compile Include="Mario\MarioStates\NormalFlagPoleFlippedState.cs" />
     <Compile Include="Mario\MarioStates\SmallFlagPoleFlippedState.cs" />
+    <Compile Include="Menu\MainMenu.cs" />
     <Compile Include="Music\BackgroundThemeManager.cs" />
     <Compile Include="Music\BuckeyeOverworldTheme.cs" />
     <Compile Include="Music\DeathTheme.cs" />

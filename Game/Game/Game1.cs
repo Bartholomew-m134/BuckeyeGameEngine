@@ -31,7 +31,7 @@ namespace Game
 
         protected override void Initialize()
         {
-            gameState = new MenuGameState(this);
+            gameState = new LogoGameState(this);
             base.Initialize();
         }
 

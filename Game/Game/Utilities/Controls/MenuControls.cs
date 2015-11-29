@@ -11,10 +11,12 @@ namespace Game.Utilities.Controls
     public class MenuControls : IControls
     {
         private Game1 game;
+        private IMenu menu;
 
-        public MenuControls(Game1 game)
+        public MenuControls(IMenu menu, Game1 game)
         {
             this.game = game;
+            this.menu = menu;
         }
 
         public Dictionary<Keys, ICommand> GetKeyboardControls()
