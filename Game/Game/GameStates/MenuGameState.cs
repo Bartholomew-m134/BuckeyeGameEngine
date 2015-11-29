@@ -39,7 +39,8 @@ namespace Game.GameStates
 
         public void Update()
         {
-            
+            foreach (IController controller in controllerList)
+                controller.Update();
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -49,7 +50,7 @@ namespace Game.GameStates
 
         public void StartButton()
         {
-            IGameState selectedGameState = menu.CurrentSelection();
+            IGameState selectedGameState = menu.Select();
 
             if(selectedGameState is NormalMarioGameState)
             {
@@ -63,7 +64,8 @@ namespace Game.GameStates
             }
             else if (selectedGameState is ProjectBuckeyeGameState)
             {
-
+                game.gameState = new ProjectBuckeyeGameState(game);
+                game.gameState.LoadContent();
             }
         }
 
