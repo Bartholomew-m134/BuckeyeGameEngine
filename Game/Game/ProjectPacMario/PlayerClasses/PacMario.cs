@@ -49,12 +49,12 @@ namespace Game.ProjectPacMario.PlayerClasses
         public void Up()
         {
             state.Up();
-            this.isPressingDown = false;
+            isPressingDown = false;
         }
         public void Down()
         {
             state.Down();
-            this.isPressingDown = true;
+            isPressingDown = true;
         }
         public void Jump()
         {

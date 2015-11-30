@@ -21,8 +21,7 @@ namespace Game.Commands.MarioCommands
 
         public void Hold()
         {
-            if(!WorldManager.ReturnPlayer().IsPressingDown())
-                WorldManager.ReturnPlayer().Jump();
+            WorldManager.ReturnPlayer().Jump();
         }
 
         public void Release()
