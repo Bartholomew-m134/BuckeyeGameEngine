@@ -58,8 +58,7 @@ namespace Game.ProjectPacMario.PlayerClasses
         }
         public void Jump()
         {
-            if (Physics.Velocity.Y < IMarioObjectConstants.JUMPPREVENTIONCAP)
-                state.Jump();
+            state.Jump();
         }
         public void StopJumping()
         {
