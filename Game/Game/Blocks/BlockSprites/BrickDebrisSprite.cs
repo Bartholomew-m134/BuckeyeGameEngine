@@ -6,9 +6,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Game.Utilities.Constants;
+using Game.Utilities;
 namespace Game.Blocks.BlockSprites
 {
-    class BrickDebrisSprite : ISprite
+    public class BrickDebrisSprite : ISprite
     {
         private Texture2D spriteSheet;
         private int timer;
@@ -17,6 +18,8 @@ namespace Game.Blocks.BlockSprites
         private Vector2 bottomLeftDestination;
         private Vector2 bottomRightDestination;
         private Vector2 adjustment;
+        private Rectangle sourceRectangle = new Rectangle((int)BlockSpriteConstants.BRICKDEBRISBLOCKSOURCE.X, (int)BlockSpriteConstants.BRICKDEBRISBLOCKSOURCE.Y,
+            (int)BlockSpriteConstants.BRICKDEBRISBLOCKDIMENSIONS.X, (int)BlockSpriteConstants.BRICKDEBRISBLOCKDIMENSIONS.Y);
 
         public BrickDebrisSprite(Texture2D spriteSheet)
         {
@@ -34,9 +37,6 @@ namespace Game.Blocks.BlockSprites
 
         public void Draw(SpriteBatch spriteBatch, Microsoft.Xna.Framework.Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle((int)BlockSpriteConstants.BRICKDEBRISBLOCKSOURCE.X, (int)BlockSpriteConstants.BRICKDEBRISBLOCKSOURCE.Y,
-                (int)BlockSpriteConstants.BRICKDEBRISBLOCKDIMENSIONS.X, (int)BlockSpriteConstants.BRICKDEBRISBLOCKDIMENSIONS.Y);
-
             topLeftDestination.X = location.X - adjustment.X;
             topLeftDestination.Y = location.Y - adjustment.Y;
 
@@ -51,7 +51,7 @@ namespace Game.Blocks.BlockSprites
 
             if (timer < BlockSpriteConstants.BRICKDEBRISTIMER)
             {
-                spriteBatch.Begin();
+                spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
                 spriteBatch.Draw(spriteSheet, topLeftDestination, sourceRectangle, Color.White);
                 spriteBatch.Draw(spriteSheet, topRightDestination, sourceRectangle, Color.White);
                 spriteBatch.Draw(spriteSheet, bottomLeftDestination, sourceRectangle, Color.White);

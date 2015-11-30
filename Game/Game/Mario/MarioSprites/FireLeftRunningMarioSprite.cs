@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework;
 using System.Collections;
 using Game.Interfaces;
 using Game.Utilities.Constants;
+using Game.Utilities;
 
 namespace Game.Mario.MarioSprites
 {
@@ -62,7 +63,7 @@ namespace Game.Mario.MarioSprites
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 
                 (int)currentDimensions.X, (int)currentDimensions.Y);
 
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
@@ -76,7 +77,7 @@ namespace Game.Mario.MarioSprites
 
             if (starDrawCounter < MarioSpriteConstants.STARDRAWBROWNCOUNTER)
             {
-                spriteBatch.Begin();
+                spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
                 spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.Brown);
                 spriteBatch.End();
                 starDrawCounter++;
@@ -84,14 +85,14 @@ namespace Game.Mario.MarioSprites
 
             else if (starDrawCounter > MarioSpriteConstants.STARDRAWBROWNCOUNTER && starDrawCounter < MarioSpriteConstants.STARDRAWYELLOWGREENCOUNTER)
             {
-                spriteBatch.Begin();
+                spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
                 spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.YellowGreen);
                 spriteBatch.End();
                 starDrawCounter++;
             }
             else
             {
-                spriteBatch.Begin();
+                spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
                 spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.Orange);
                 spriteBatch.End();
                 if (starDrawCounter < MarioSpriteConstants.STARDRAWORANGECOUNTER)

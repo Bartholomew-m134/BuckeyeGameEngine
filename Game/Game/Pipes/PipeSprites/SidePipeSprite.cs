@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
 using Game.Utilities.Constants;
+using Game.Utilities;
 
 namespace Game.Pipes.PipeSprites
 {
@@ -25,18 +26,19 @@ namespace Game.Pipes.PipeSprites
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle((int)PipeSpriteConstants.SIDEPIPESOURCE.X, (int)PipeSpriteConstants.SIDEPIPESOURCE.Y,
-                (int)PipeSpriteConstants.SIDEPIPEDIMENSIONS.X, (int)PipeSpriteConstants.SIDEPIPEDIMENSIONS.Y);
+            Rectangle sourceRectangle = new Rectangle((int)PipeSpriteConstants.BOTTOMSIDEPIPESOURCE.X, (int)PipeSpriteConstants.BOTTOMSIDEPIPESOURCE.Y,
+                (int)PipeSpriteConstants.BOTTOMSIDEPIPEDIMENSIONS.X, (int)PipeSpriteConstants.BOTTOMSIDEPIPEDIMENSIONS.Y);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
-                (int)PipeSpriteConstants.SIDEPIPEDIMENSIONS.X, (int)PipeSpriteConstants.SIDEPIPEDIMENSIONS.Y);
-            spriteBatch.Begin();
+                (int)PipeSpriteConstants.BOTTOMSIDEPIPEDIMENSIONS.X, (int)PipeSpriteConstants.BOTTOMSIDEPIPEDIMENSIONS.Y);
+
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
 
         public Vector2 SpriteDimensions
         {
-            get { return new Vector2((int)PipeSpriteConstants.SIDEPIPEDIMENSIONS.X, (int)PipeSpriteConstants.SIDEPIPEDIMENSIONS.Y); }
+            get { return new Vector2((int)PipeSpriteConstants.BOTTOMSIDEPIPEDIMENSIONS.X, (int)PipeSpriteConstants.BOTTOMSIDEPIPEDIMENSIONS.Y); }
         }
     }
 }

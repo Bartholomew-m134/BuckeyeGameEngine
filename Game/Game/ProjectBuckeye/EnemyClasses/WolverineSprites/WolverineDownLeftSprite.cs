@@ -7,6 +7,7 @@ using Game.ProjectBuckeye;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Game.Utilities.Constants;
+using Game.Utilities;
 
 namespace Game.ProjectBuckeye.EnemyClasses.WolverineSprites
 {
@@ -28,7 +29,7 @@ namespace Game.ProjectBuckeye.EnemyClasses.WolverineSprites
             Rectangle sourceRectangle = new Rectangle((int)WolverineEnemyConstant.FALL_LOOKING_LEFT_SOURCE.X, (int)WolverineEnemyConstant.FALL_LOOKING_LEFT_SOURCE.Y,
                 (int)WolverineEnemyConstant.FALL_LOOKING_LEFT_DIMENSIONS.X, (int)WolverineEnemyConstant.FALL_LOOKING_LEFT_DIMENSIONS.Y);
 
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
             spriteBatch.Draw(spriteSheet, location, sourceRectangle, Color.White, 0f, Vector2.Zero, WolverineEnemyConstant.SPRITE_SCALE_FACTOR, SpriteEffects.None, 0f);
             spriteBatch.End();
         }

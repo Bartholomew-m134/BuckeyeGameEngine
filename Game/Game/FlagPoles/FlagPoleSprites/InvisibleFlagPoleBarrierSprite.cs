@@ -1,4 +1,5 @@
 ﻿using Game.Interfaces;
+using Game.Utilities;
 using Game.Utilities.Constants;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -23,7 +24,8 @@ namespace Game.FlagPoles.FlagPoleSprites
         public void Draw(SpriteBatch spriteBatch, Vector2 location) {
             Rectangle sourceRectangle = new Rectangle((int)FlagPoleSpriteConstants.FLAGPOLEBARRIERCOORDINATES.X, (int)FlagPoleSpriteConstants.FLAGPOLEBARRIERCOORDINATES.Y, FlagPoleSpriteConstants.FLAGPOLEBARRIERWIDTH, FlagPoleSpriteConstants.FLAGPOLEBARRIERHEIGHT);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, FlagPoleSpriteConstants.FLAGPOLEBARRIERWIDTH, FlagPoleSpriteConstants.FLAGPOLEBARRIERHEIGHT);
-            spriteBatch.Begin();
+
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }

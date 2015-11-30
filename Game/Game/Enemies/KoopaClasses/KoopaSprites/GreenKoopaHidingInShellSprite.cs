@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
 using Game.Utilities.Constants;
+using Game.Utilities;
 
 namespace Game.Enemies.KoopaClasses.GreenKoopaSprites
 {
@@ -28,7 +29,7 @@ namespace Game.Enemies.KoopaClasses.GreenKoopaSprites
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
                (int)EnemySpriteConstants.KOOPAHIDINGDIMENSIONS.X, (int)EnemySpriteConstants.KOOPAHIDINGDIMENSIONS.Y);
 
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }

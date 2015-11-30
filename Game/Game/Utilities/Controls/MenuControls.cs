@@ -1,4 +1,5 @@
 ﻿using Game.Commands;
+using Game.Commands.MenuCommands;
 using Game.Interfaces;
 using Microsoft.Xna.Framework.Input;
 using System;
@@ -11,10 +12,12 @@ namespace Game.Utilities.Controls
     public class MenuControls : IControls
     {
         private Game1 game;
+        private IMenu menu;
 
-        public MenuControls(Game1 game)
+        public MenuControls(IMenu menu, Game1 game)
         {
             this.game = game;
+            this.menu = menu;
         }
 
         public Dictionary<Keys, ICommand> GetKeyboardControls()
@@ -22,6 +25,8 @@ namespace Game.Utilities.Controls
             Dictionary<Keys, ICommand> keyboardControls = new Dictionary<Keys, ICommand>();
 
             keyboardControls.Add(Keys.P, new StartButtonCommand(game));
+            keyboardControls.Add(Keys.Down, new NextMenuCommand(menu));
+            keyboardControls.Add(Keys.Up, new PreviousMenuCommand(menu));
 
             return keyboardControls;
         }
@@ -31,6 +36,8 @@ namespace Game.Utilities.Controls
             Dictionary<Buttons, ICommand> gamePadControls = new Dictionary<Buttons, ICommand>();
 
             gamePadControls.Add(Buttons.Start, new StartButtonCommand(game));
+            gamePadControls.Add(Buttons.DPadDown, new NextMenuCommand(menu));
+            gamePadControls.Add(Buttons.DPadUp, new PreviousMenuCommand(menu));
 
             return gamePadControls;
         }

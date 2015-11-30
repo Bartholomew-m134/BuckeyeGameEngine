@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
 using Game.Utilities.Constants;
+using Game.Utilities;
 
 namespace Game.Mario.MarioSprites
 {
@@ -26,7 +27,8 @@ namespace Game.Mario.MarioSprites
                 (int)MarioSpriteConstants.DEADMARIOWIDTHHIEGHT.X, (int)MarioSpriteConstants.DEADMARIOWIDTHHIEGHT.Y);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
                 (int)MarioSpriteConstants.DEADMARIOWIDTHHIEGHT.X, (int)MarioSpriteConstants.DEADMARIOSOURCECOORDINATES.Y);
-            spriteBatch.Begin();
+
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }

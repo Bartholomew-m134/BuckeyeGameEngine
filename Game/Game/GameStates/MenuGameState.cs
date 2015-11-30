@@ -1,40 +1,36 @@
 ﻿using Game.Interfaces;
+using Game.Menu;
 using Game.SpriteFactories;
 using Game.Utilities;
+using Game.Utilities.Constants;
 using Game.Utilities.Controls;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Game.Utilities.Constants;
 
 namespace Game.GameStates
 {
     public class MenuGameState : IGameState
     {
         private Game1 game;
-        private ISprite startMenuSprite;
-        private ISprite namesLogoSprite;
         private List<IController> controllerList;
-        private int logoCounter = 0;
+        private IMenu menu;
 
-        public MenuGameState( Game1 game)
+        public MenuGameState(Game1 game)
         {
             this.game = game;
+            menu = new MainMenu(game);
             controllerList = new List<IController>();
-            controllerList.Add(new KeyboardController(new MenuControls(game)));
-            controllerList.Add(new GamePadController(new MenuControls(game)));
+            controllerList.Add(new KeyboardController(new MenuControls(menu, game)));
+            controllerList.Add(new GamePadController(new MenuControls(menu, game)));
         }
 
         public void LoadContent()
         {
             MenuSpriteFactory.Load(game.Content);
-            startMenuSprite = MenuSpriteFactory.CreateStartSprite();
-            namesLogoSprite = MenuSpriteFactory.CreateLogoSprite();
         }
-
 
         public void UnloadContent()
         {
@@ -45,45 +41,53 @@ namespace Game.GameStates
         {
             foreach (IController controller in controllerList)
                 controller.Update();
-
-            logoCounter++;
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            game.GraphicsDevice.Clear(Color.Black);
-            if (logoCounter < IGameStateConstants.MENUGAMESTATELOGOCOUNTER)
-                namesLogoSprite.Draw(game.spriteBatch, Vector2.Zero);
-            else
-                startMenuSprite.Draw(game.spriteBatch, Vector2.Zero);
+            menu.Draw(spriteBatch);
         }
-
 
         public void StartButton()
         {
-            game.gameState = new LoadingGameState(game);
-            game.gameState.LoadContent();
-            LifeManager.Lives = IGameStateConstants.MENUGAMESTATELIVES;
-            ScoreManager.ResetScore();
-            LifeManager.ResetLives();
-            HUDManager.UpdateHUDScore(0);
-            HUDManager.ResetCoins();
+            IGameState selectedGameState = menu.Select();
+
+            if(selectedGameState is NormalMarioGameState)
+            {
+                game.gameState = new LoadingGameState(game);
+                game.gameState.LoadContent();
+                LifeManager.Lives = IGameStateConstants.MENUGAMESTATELIVES;
+                ScoreManager.ResetScore();
+                LifeManager.ResetLives();
+                HUDManager.UpdateHUDScore(0);
+                HUDManager.ResetCoins();
+            }
+            else if (selectedGameState is ProjectBuckeyeGameState)
+            {
+                game.gameState = new ProjectBuckeyeGameState(game);
+                game.gameState.LoadContent();
+            }
         }
 
         public void PipeTransition(IPipe warpPipe)
         {
             
         }
+
         public void FlagPoleTransition()
         {
+            
         }
-
 
         public void PlayerDied()
         {
             
         }
 
+        public void MarioPowerUp()
+        {
+            
+        }
 
         public bool IsUnderground
         {
@@ -97,15 +101,9 @@ namespace Game.GameStates
             }
         }
 
-
-        public void MarioPowerUp()
-        {
-
-        }
-
-
         public void StateBackgroundTheme()
         {
+            
         }
     }
 }

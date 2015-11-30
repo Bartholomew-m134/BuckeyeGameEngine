@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Game.Interfaces;
 using Game.Utilities.Constants;
+using Game.Utilities;
 
 namespace Game.Pipes.PipeSprites
 {
@@ -29,7 +30,8 @@ namespace Game.Pipes.PipeSprites
                 (int)PipeSpriteConstants.PIPEDIMENSIONS.X, (int)PipeSpriteConstants.PIPEDIMENSIONS.Y);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
                 (int)PipeSpriteConstants.PIPEDIMENSIONS.X, (int)PipeSpriteConstants.PIPEDIMENSIONS.Y);
-            spriteBatch.Begin();
+
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
