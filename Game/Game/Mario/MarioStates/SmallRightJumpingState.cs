@@ -8,6 +8,7 @@ using Game.Interfaces;
 using Game.Utilities;
 using Game.SoundEffects;
 using Game.Utilities.Constants;
+using Game.ProjectPacMario.PlayerClasses;
 
 namespace Game.Mario.MarioStates
 {
@@ -49,7 +50,7 @@ namespace Game.Mario.MarioStates
 
         public void Up()
         {
-
+            
         }
 
         public void Down()

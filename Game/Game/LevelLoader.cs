@@ -18,6 +18,7 @@ using Game.ProjectBuckeye.PlayerClasses;
 using Game.ProjectBuckeye.EnemyClasses;
 using Game.Lemming;
 using Game.GameStates;
+using Game.ProjectPacMario.PlayerClasses;
 
 namespace Game
 {
@@ -81,6 +82,8 @@ namespace Game
                         gameObject = new MarioInstance(game);
                     else if (objectName.Equals("Lemming"))
                         gameObject = new LemmingInstance(game);
+                    if (objectName.Equals("PacMario"))
+                        gameObject = new PacMario(game);
                     else if (objectName.Equals("Coin"))
                         gameObject = new Coin(false, game);
                     else if (objectName.Equals("PacMarioCoin"))

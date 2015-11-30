@@ -9,6 +9,7 @@ using Game.Utilities;
 using Game.Music;
 using Game.Mario.MarioStates;
 using Game.Utilities.Constants;
+using Game.ProjectPacMario.PlayerClasses;
 
 namespace Game.Mario
 {
@@ -181,7 +182,13 @@ namespace Game.Mario
 
         public IPhysics Physics
         {
-            get { return ((MarioInstance)mario).Physics; }
+            get
+            {
+                if (mario is MarioInstance)
+                    return ((MarioInstance)mario).Physics;
+                else
+                    return ((PacMario)mario).Physics;   
+            }
         }
 
 
