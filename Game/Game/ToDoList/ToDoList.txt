@@ -3,3 +3,5 @@
 - Change IMario namespace
 
 - Change Coin/Block collision detection/creation
+
+- Add ability to exit fullscreen outside of menu

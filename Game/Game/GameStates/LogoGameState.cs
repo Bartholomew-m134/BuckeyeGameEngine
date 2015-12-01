@@ -61,13 +61,16 @@ namespace Game.GameStates
 
         public void StartButton()
         {
-            game.gameState = new LoadingGameState(game);
+            /*game.gameState = new LoadingGameState(game);
             game.gameState.LoadContent();
             LifeManager.Lives = IGameStateConstants.MENUGAMESTATELIVES;
             ScoreManager.ResetScore();
             LifeManager.ResetLives();
             HUDManager.UpdateHUDScore(0);
             HUDManager.ResetCoins();
+            */
+            game.gameState = new MenuGameState(game);
+            game.gameState.LoadContent();
         }
 
         public void PipeTransition(IPipe warpPipe)

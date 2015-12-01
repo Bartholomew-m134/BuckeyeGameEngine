@@ -14,7 +14,7 @@ namespace Game.Menu
 {
     public class MainMenu : IMenu
     {
-        private enum Selections { MarioBros, ProjectBuckeye, FullScreen };
+        private enum Selections { MarioBros=0, ProjectBuckeye=1, FullScreen=2 };
 
         private Game1 game;
         private Selections currentSelection;
@@ -51,11 +51,15 @@ namespace Game.Menu
         public void Next()
         {
             currentSelection++;
+            if (((int)currentSelection) == Enum.GetNames(typeof(Selections)).Length)
+                currentSelection = 0;
         }
 
         public void Previous()
         {
             currentSelection--;
+            if (((int)currentSelection) < 0)
+                currentSelection = 0;
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -63,10 +67,18 @@ namespace Game.Menu
             game.GraphicsDevice.Clear(Color.Black);
 
             spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
-            spriteBatch.DrawString(font, "MarioBros", IGameStateConstants.VICTORYSCREENGAMESTATECONGRATSMESSAGELOCATION, Color.White);
-            spriteBatch.DrawString(font, "ProjectBuckeye", IGameStateConstants.VICTORYSCREENGAMESTATESTARTMESSAGELOCATION + new Vector2(0,100), Color.White);
-            spriteBatch.DrawString(font, "FullScreen", IGameStateConstants.VICTORYSCREENGAMESTATESTARTMESSAGELOCATION + new Vector2(0, 200), Color.White);
+            spriteBatch.DrawString(font, "MarioBros", new Vector2(25, 100), SelectColor(Selections.MarioBros));
+            spriteBatch.DrawString(font, "ProjectBuckeye", new Vector2(25, 200), SelectColor(Selections.ProjectBuckeye));
+            spriteBatch.DrawString(font, "FullScreen: " + game.graphics.IsFullScreen, new Vector2(25, 300), SelectColor(Selections.FullScreen));
             spriteBatch.End();
+        }
+
+        private Color SelectColor(Selections selected)
+        {
+            if (currentSelection == selected)
+                return Color.Yellow;
+            else
+                return Color.White;
         }
     }
 }
