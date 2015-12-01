@@ -1,6 +1,6 @@
 ﻿using Game.Interfaces;
 using Game.Mario;
-using Game.Mario.MarioStates;
+using Game.ProjectPacMario.PlayerClasses.PlayerStates;
 using Game.ProjectPacMario.Utilities;
 using Game.Utilities.Constants;
 using Microsoft.Xna.Framework;
@@ -23,7 +23,7 @@ namespace Game.ProjectPacMario.PlayerClasses
 
         public PacMario(Game1 game)
         {
-            state = new SmallRightIdleState(this);
+            state = new PacMarioRightState(this);
             myGame = game;
             physics = new PacMarioGamePhysics();
             isPressingDown = false;
@@ -49,28 +49,26 @@ namespace Game.ProjectPacMario.PlayerClasses
         public void Up()
         {
             state.Up();
-            this.isPressingDown = false;
         }
         public void Down()
         {
             state.Down();
-            this.isPressingDown = true;
         }
         public void Jump()
         {
-            state.Jump();
+
         }
         public void StopJumping()
         {
-            state.StopJumping();
+
         }
         public void Run()
         {
-            state.Run();
+
         }
         public void StopRunning()
         {
-            state.StopRunning();
+
         }
         public void Flower()
         {

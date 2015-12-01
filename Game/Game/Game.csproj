@@ -109,6 +109,10 @@
     <Compile Include="Commands\MarioCommands\MarioRunFireBallCommand.cs" />
     <Compile Include="Commands\MenuCommands\NextMenuCommand.cs" />
     <Compile Include="Commands\MenuCommands\PreviousMenuCommand.cs" />
+    <Compile Include="Commands\PacMarioCommands\FurtherLeftPacMarioStanceCommand.cs" />
+    <Compile Include="Commands\PacMarioCommands\FurtherRightPacMarioStanceCommand.cs" />
+    <Compile Include="Commands\PacMarioCommands\LowerPacMarioStanceCommand.cs" />
+    <Compile Include="Commands\PacMarioCommands\RaisePacMarioStanceCommand.cs" />
     <Compile Include="Commands\StartButtonCommand.cs" />
     <Compile Include="Enemies\GoombaClasses\Goomba.cs" />
     <Compile Include="FireBallSpawner.cs" />
@@ -325,6 +329,14 @@
     <Compile Include="Pipes\TriplePipe.cs" />
     <Compile Include="Projectiles\RightFire.cs" />
     <Compile Include="ProjectPacMario\PlayerClasses\PacMario.cs" />
+    <Compile Include="ProjectPacMario\PlayerClasses\PlayerSprites\PacMarioDownSprite.cs" />
+    <Compile Include="ProjectPacMario\PlayerClasses\PlayerSprites\PacMarioLeftSprite.cs" />
+    <Compile Include="ProjectPacMario\PlayerClasses\PlayerSprites\PacMarioRightSprite.cs" />
+    <Compile Include="ProjectPacMario\PlayerClasses\PlayerSprites\PacMarioUpSprite.cs" />
+    <Compile Include="ProjectPacMario\PlayerClasses\PlayerStates\PacMarioLeftState.cs" />
+    <Compile Include="ProjectPacMario\PlayerClasses\PlayerStates\PacMarioRightState.cs" />
+    <Compile Include="ProjectPacMario\PlayerClasses\PlayerStates\PacMarioDownState.cs" />
+    <Compile Include="ProjectPacMario\PlayerClasses\PlayerStates\PacMarioUpState.cs" />
     <Compile Include="ProjectPacMario\Utilities\PacMarioGamePhysics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
@@ -347,6 +359,7 @@
     <Compile Include="SpriteFactories\BackgroundElementsSpriteFactory.cs" />
     <Compile Include="SpriteFactories\BuckeyePlayerSpriteFactory.cs" />
     <Compile Include="SpriteFactories\MenuSpriteFactories.cs" />
+    <Compile Include="SpriteFactories\PacMarioSpriteFactory.cs" />
     <Compile Include="SpriteFactories\ProjectileSpriteFactory.cs" />
     <Compile Include="SpriteFactories\TileSpriteFactory.cs" />
     <Compile Include="SpriteFactories\EnemySpriteFactory.cs" />
@@ -405,6 +418,7 @@
     <Compile Include="Utilities\Constants\MarioSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\MarioStateConstants.cs" />
     <Compile Include="Utilities\Constants\ObjectPhysicsConstants.cs" />
+    <Compile Include="Utilities\Constants\PacMarioSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\PipeSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\ProjectileConstants.cs" />
     <Compile Include="Utilities\Constants\ProjectileSpriteConstants.cs" />
@@ -413,6 +427,7 @@
     <Compile Include="Utilities\Constants\SpriteFactoryConstants.cs" />
     <Compile Include="Utilities\Controls\LemmingControls.cs" />
     <Compile Include="Utilities\Constants\WolverineEnemyConstant.cs" />
+    <Compile Include="Utilities\Controls\PacMarioControls.cs" />
     <Compile Include="Utilities\Controls\MarioControls.cs" />
     <Compile Include="Utilities\Controls\MenuControls.cs" />
     <Compile Include="Utilities\Controls\PausedControls.cs" />
@@ -504,7 +519,6 @@
     <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Commands\MenuCommands\" />
     <Folder Include="ProjectPacMario\Collisions\" />
     <Folder Include="ProjectPacMario\EnemyClasses\" />
   </ItemGroup>

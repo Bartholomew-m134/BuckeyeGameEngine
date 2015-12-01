@@ -27,8 +27,8 @@ namespace Game.GameStates
         {
             this.game = game;
             controllerList = new List<IController>();
-            controllerList.Add(new KeyboardController(new MarioControls(game)));
-            controllerList.Add(new GamePadController(new MarioControls(game)));
+            controllerList.Add(new KeyboardController(new PacMarioControls(game)));
+            controllerList.Add(new GamePadController(new PacMarioControls(game)));
             isUnderground = false;
         }
 
@@ -37,6 +37,7 @@ namespace Game.GameStates
             ItemsSpriteFactory.Load(game.Content);
             EnemySpriteFactory.Load(game.Content);
             TileSpriteFactory.Load(game.Content);
+            PacMarioSpriteFactory.Load(game.Content);
             BackgroundElementsSpriteFactory.Load(game.Content);
 
             WorldManager.LoadListFromFile(IGameStateConstants.PACMARIO_WORLD, game);
