@@ -247,6 +247,9 @@
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineStates\WolverineMovingLeftState.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineStates\WolverineMovingRightState.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineStates\WolverineRightDownState.cs" />
+    <Compile Include="ProjectBuckeye\FootballClasses\Football.cs" />
+    <Compile Include="ProjectBuckeye\FootballClasses\FootballSpawner.cs" />
+    <Compile Include="ProjectBuckeye\FootballClasses\FootballSprite.cs" />
     <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayer.cs" />
     <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerSprites\BuckeyeLeftDownSprite.cs" />
     <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerSprites\BuckeyeLeftIdleSprite.cs" />

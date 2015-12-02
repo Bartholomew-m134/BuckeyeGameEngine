@@ -19,6 +19,7 @@ namespace Game.ProjectBuckeye.PlayerClasses.BuckeyePlayerStates
         {
             this.buckeyePlayer = buckeyePlayer;
             buckeyePlayer.Sprite = SpriteFactories.BuckeyePlayerSpriteFactory.CreateBuckeyeLeftJumpingSprite();
+            this.buckeyePlayer.IsFacingRight = false;
             if (!buckeyePlayer.State.IsJumping())
             {
                 Vector2 velocity = this.buckeyePlayer.Physics.Velocity;

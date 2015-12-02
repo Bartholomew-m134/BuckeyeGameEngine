@@ -18,6 +18,7 @@ namespace Game.ProjectBuckeye.PlayerClasses.BuckeyePlayerStates
         public BuckeyeRightJumpingState(IBuckeyePlayer buckeyePlayer)
         {
             this.buckeyePlayer = buckeyePlayer;
+            this.buckeyePlayer.IsFacingRight = true;
             buckeyePlayer.Sprite = SpriteFactories.BuckeyePlayerSpriteFactory.CreateBuckeyeRightJumpingSprite();
             if (!buckeyePlayer.State.IsJumping())
             {

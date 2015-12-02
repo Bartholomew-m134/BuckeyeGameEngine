@@ -19,6 +19,7 @@ namespace Game.ProjectBuckeye.PlayerClasses.BuckeyePlayerStates
         {
             this.buckeyePlayer = buckeyePlayer;
             this.buckeyePlayer.IsDead = true;
+            this.buckeyePlayer.IsFacingRight = true;
             BackgroundThemeManager.PlayDeathTheme();
             buckeyePlayer.Sprite = SpriteFactories.BuckeyePlayerSpriteFactory.CreateBuckeyeRightDownSprite();
             buckeyePlayer.Physics.ResetPhysics();

@@ -8,6 +8,7 @@ using Game.Interfaces;
 using Game.Collisions;
 using Microsoft.Xna.Framework;
 using Game.Utilities.Constants;
+using Game.SoundEffects;
 
 namespace Game.ProjectBuckeye.Collision
 {
@@ -48,6 +49,7 @@ namespace Game.ProjectBuckeye.Collision
                 else if (side is TopSideCollision)
                 {
                     enemy.Hit();
+                    SoundEffectManager.GoombaHitEffect();
                     player.Physics.Velocity = new Vector2(player.Physics.Velocity.X, BuckeyeCollisionConstants.BUCKEYE_BUMP_SPEED_Y);
                     player.Physics.Acceleration = new Vector2(player.Physics.Acceleration.X, BuckeyeCollisionConstants.BUCKEYE_BUMP_ACCELERATION_Y);
                 }

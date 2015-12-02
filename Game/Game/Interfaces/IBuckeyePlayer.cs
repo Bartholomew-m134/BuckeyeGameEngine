@@ -15,8 +15,10 @@ namespace Game.Interfaces
 
         void Damage();
 
-        bool IsJumping();
-
-        void ToIdle();
+        bool IsFacingRight
+        {
+            get;
+            set;
+        }
     }
 }
