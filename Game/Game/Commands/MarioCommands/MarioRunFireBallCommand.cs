@@ -21,12 +21,12 @@ namespace Game.Commands.MarioCommands
 
         public void Hold()
         {
-            WorldManager.ReturnPlayer().Run();
+            ((IMario)WorldManager.ReturnPlayer()).Run();
         }
 
         public void Release()
         {
-            WorldManager.ReturnPlayer().StopRunning();
+            ((IMario)WorldManager.ReturnPlayer()).StopRunning();
         }
     }
 }

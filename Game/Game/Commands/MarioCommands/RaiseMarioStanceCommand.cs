@@ -21,12 +21,12 @@ namespace Game.Commands.MarioCommands
 
         public void Hold()
         {
-            WorldManager.ReturnPlayer().Jump();
+            ((IMario)WorldManager.ReturnPlayer()).Jump();
         }
 
         public void Release()
         {
-            WorldManager.ReturnPlayer().StopJumping();
+            ((IMario)WorldManager.ReturnPlayer()).StopJumping();
         }
     }
 }

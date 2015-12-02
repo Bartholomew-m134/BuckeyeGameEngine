@@ -106,6 +106,11 @@
     <Compile Include="Collisions\FlagPoleCollisionHandling\MarioFlagPoleCollisionHandler.cs" />
     <Compile Include="Collisions\ItemCollisionHandling\ItemPipeCollisionHandler.cs" />
     <Compile Include="Collisions\PipeCollisionHandling\PipeFireballCollisionHandler.cs" />
+    <Compile Include="Commands\BuckeyeCommands\BuckeyeRunFootBallCommand.cs" />
+    <Compile Include="Commands\BuckeyeCommands\FurtherLeftBuckeyeStanceCommand.cs" />
+    <Compile Include="Commands\BuckeyeCommands\FurtherRightBuckeyeStanceCommand.cs" />
+    <Compile Include="Commands\BuckeyeCommands\LowerBuckeyeStanceCommand.cs" />
+    <Compile Include="Commands\BuckeyeCommands\RaiseBuckeyeStanceCommand.cs" />
     <Compile Include="Commands\MarioCommands\MarioRunFireBallCommand.cs" />
     <Compile Include="Commands\MenuCommands\NextMenuCommand.cs" />
     <Compile Include="Commands\MenuCommands\PreviousMenuCommand.cs" />
@@ -147,6 +152,7 @@
     <Compile Include="Interfaces\IBooState.cs" />
     <Compile Include="Interfaces\IBuckeyePlayer.cs" />
     <Compile Include="Interfaces\IBuckeyePlayerStates.cs" />
+    <Compile Include="Interfaces\IBuckeyeTile.cs" />
     <Compile Include="Interfaces\ICamera.cs" />
     <Compile Include="Interfaces\ICollisionSide.cs" />
     <Compile Include="Collisions\ItemCollisionHandling\ItemBlockCollisionHandler.cs" />
@@ -198,6 +204,7 @@
     <Compile Include="Interfaces\IProjectile.cs" />
     <Compile Include="Interfaces\IScenery.cs" />
     <Compile Include="Interfaces\ISoundEffect.cs" />
+    <Compile Include="Interfaces\ISpawner.cs" />
     <Compile Include="Interfaces\ISprite.cs" />
     <Compile Include="Interfaces\IWolverine.cs" />
     <Compile Include="Interfaces\IWolverineState.cs" />
@@ -235,10 +242,10 @@
     <Compile Include="Pipes\PipeSprites\SidePipeSprite.cs" />
     <Compile Include="Pipes\PipeSprites\VerticalPipeSprite.cs" />
     <Compile Include="Pipes\VerticalPipe.cs" />
-    <Compile Include="ProjectBuckeye\Collision\BuckeyeBlockCollisionHandler.cs" />
+    <Compile Include="ProjectBuckeye\Collision\BuckeyeTileCollisionHandler.cs" />
     <Compile Include="GameStates\ProjectBuckeyeGameState.cs" />
     <Compile Include="ProjectBuckeye\Collision\BuckeyeWolverineCollisionHandler.cs" />
-    <Compile Include="ProjectBuckeye\Collision\WolverineBlockCollisionHandler.cs" />
+    <Compile Include="ProjectBuckeye\Collision\WolverineTileCollisionHandler.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineEnemy.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineSprites\WolverineDownLeftSprite.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineSprites\WolverineDownRightSprite.cs" />
@@ -248,6 +255,9 @@
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineStates\WolverineMovingLeftState.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineStates\WolverineMovingRightState.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineStates\WolverineRightDownState.cs" />
+    <Compile Include="ProjectBuckeye\FootballClasses\Football.cs" />
+    <Compile Include="ProjectBuckeye\FootballClasses\FootballSpawner.cs" />
+    <Compile Include="ProjectBuckeye\FootballClasses\FootballSprite.cs" />
     <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayer.cs" />
     <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerSprites\BuckeyeLeftDownSprite.cs" />
     <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerSprites\BuckeyeLeftIdleSprite.cs" />
@@ -265,6 +275,8 @@
     <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerStates\BuckeyeRightIdleState.cs" />
     <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerStates\BuckeyeRightJumpingState.cs" />
     <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerStates\BuckeyeRightMovementState.cs" />
+    <Compile Include="ProjectBuckeye\Tiles\GrassTile.cs" />
+    <Compile Include="ProjectBuckeye\Tiles\TileSprites\GrassTileSprite.cs" />
     <Compile Include="Projectiles\LeftFire.cs" />
     <Compile Include="Items\Flower.cs" />
     <Compile Include="Items\GreenMushroom.cs" />
@@ -380,6 +392,7 @@
     <Compile Include="SoundEffects\SuperMarioJumpEffect.cs" />
     <Compile Include="SpriteFactories\BackgroundElementsSpriteFactory.cs" />
     <Compile Include="SpriteFactories\BuckeyePlayerSpriteFactory.cs" />
+    <Compile Include="SpriteFactories\BuckeyeTileSpriteFactory.cs" />
     <Compile Include="SpriteFactories\MenuSpriteFactories.cs" />
     <Compile Include="SpriteFactories\PacMarioSpriteFactory.cs" />
     <Compile Include="SpriteFactories\ProjectileSpriteFactory.cs" />
@@ -422,6 +435,7 @@
     <Compile Include="SpriteFactories\WolverineSpriteFactory.cs" />
     <Compile Include="Utilities\Constants\BackgroundElementSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\BlockSpriteConstants.cs" />
+    <Compile Include="Utilities\Constants\BuckeyeCollisionConstants.cs" />
     <Compile Include="Utilities\Constants\BuckeyePlayerSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\BuckeyePlayerStateConstants.cs" />
     <Compile Include="Utilities\Constants\CollisionHandlerConstants.cs" />
@@ -447,6 +461,7 @@
     <Compile Include="Utilities\Constants\ScoreManagerConstants.cs" />
     <Compile Include="Utilities\Constants\SoundConstants.cs" />
     <Compile Include="Utilities\Constants\SpriteFactoryConstants.cs" />
+    <Compile Include="Utilities\Controls\BuckeyeControls.cs" />
     <Compile Include="Utilities\Controls\LemmingControls.cs" />
     <Compile Include="Utilities\Constants\WolverineEnemyConstant.cs" />
     <Compile Include="Utilities\Controls\PacMarioControls.cs" />

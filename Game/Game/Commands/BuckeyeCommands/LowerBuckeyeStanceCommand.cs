@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Game.Commands.MarioCommands
+namespace Game.Commands.BuckeyeCommands
 {
-    public class LowerPacMarioStanceCommand : ICommand
+    public class LowerBuckeyeStanceCommand : ICommand
     {
-        public LowerPacMarioStanceCommand()
+        public LowerBuckeyeStanceCommand()
         {
         }
 
@@ -19,12 +19,12 @@ namespace Game.Commands.MarioCommands
 
         public void Hold()
         {
-            ((IMario)WorldManager.ReturnPlayer()).Down();
+            ((IBuckeyePlayer)WorldManager.ReturnPlayer()).Down();
         }
 
         public void Release()
         {
-            ((IMario)WorldManager.ReturnPlayer()).ToIdle();
+            ((IBuckeyePlayer)WorldManager.ReturnPlayer()).Up();
         }
     }
 }

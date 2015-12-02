@@ -5,12 +5,7 @@ using System.Text;
 
 namespace Game.Interfaces
 {
-    public interface IPlayer : IGameObject
+    public interface IBuckeyeTile : IGameObject
     {
-        bool IsDead
-        {
-            get;
-            set;
-        }
     }
 }

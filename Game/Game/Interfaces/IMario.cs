@@ -3,12 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
-using Game.Interfaces;
 
-namespace Game.Mario
+namespace Game.Interfaces
 {
     public interface IMario : IPlayer
     {
+        void Left();
+
+        void Right();
+
+        void Up();
+
+        void Down();
+
+        void Jump();
+
+        void StopJumping();
+
+        void Run();
+
+        void StopRunning();
+
         void Flower();
 
         void ThrowFireball();
@@ -34,6 +49,12 @@ namespace Game.Mario
         bool IsStarMario();
 
         bool IsHurt();
+
+        bool IsPressingDown();
+
+        bool IsJumping();
+
+        void ToIdle();
 
     }
 }

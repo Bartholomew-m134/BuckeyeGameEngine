@@ -231,6 +231,8 @@ namespace Game
                         gameObject = new BuckeyePlayer(game);
                     else if (objectName.Equals("Wolverine"))
                         gameObject = new WolverineEnemy(game);
+                    else if (objectName.Equals("BuckeyeGrass"))
+                        gameObject = new GrassTile(game);
 
                     if (objectsItem != null)
                     {

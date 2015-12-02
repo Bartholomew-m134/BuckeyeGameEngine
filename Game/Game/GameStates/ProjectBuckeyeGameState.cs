@@ -27,8 +27,8 @@ namespace Game.GameStates
         {
             this.game = game;
             controllerList = new List<IController>();
-            controllerList.Add(new KeyboardController(new MarioControls(game)));
-            controllerList.Add(new GamePadController(new MarioControls(game)));
+            controllerList.Add(new KeyboardController(new BuckeyeControls(game)));
+            controllerList.Add(new GamePadController(new BuckeyeControls(game)));
             isUnderground = false;
         }
 
@@ -36,7 +36,8 @@ namespace Game.GameStates
         {
             BuckeyePlayerSpriteFactory.Load(game.Content);
             WolverineSpriteFactory.Load(game.Content);
-            TileSpriteFactory.Load(game.Content);
+            BuckeyeTileSpriteFactory.Load(game.Content);
+            ProjectileSpriteFactory.Load(game.Content);
 
             WorldManager.LoadListFromFile(IGameStateConstants.PROJECT_BUCKEYE_TEST_WORLD, game);
 

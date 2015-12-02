@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Game.Interfaces;
 using Game.Utilities;
+using Game.Utilities.Constants;
 using Microsoft.Xna.Framework;
 using Game.ProjectBuckeye.EnemyClasses.WolverineStates;
 
@@ -18,6 +19,7 @@ namespace Game.ProjectBuckeye.EnemyClasses
         private bool canDealDamage;
         private IPhysics physics;
         private Game1 myGame;
+        private int deathTimer = 0;
 
         public WolverineEnemy(Game1 game)
         {
@@ -52,7 +54,19 @@ namespace Game.ProjectBuckeye.EnemyClasses
 
         public void Update()
         {
-            location = physics.Update(location);
+            if (isHit && deathTimer == IEnemyObjectConstants.STOMPEDGOOMBADELAYTIME)
+            {
+                location.Y += IEnemyObjectConstants.VANISH;
+                deathTimer = 0;
+            }
+            else if (isHit)
+            {
+                deathTimer++;
+            }
+            else if (!isHit)
+            {
+                location = physics.Update(location);
+            }
             state.Update();  
         }
 

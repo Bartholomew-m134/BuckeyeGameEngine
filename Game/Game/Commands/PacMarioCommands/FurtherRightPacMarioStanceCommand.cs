@@ -19,12 +19,12 @@ namespace Game.Commands.MarioCommands
 
         public void Hold()
         {
-            WorldManager.ReturnPlayer().Right();
+            ((IMario)WorldManager.ReturnPlayer()).Right();
         }
 
         public void Release()
         {
-            WorldManager.ReturnPlayer().Physics.ResetX();
+            ((IMario)WorldManager.ReturnPlayer()).Physics.ResetX();
         }
     }
 }

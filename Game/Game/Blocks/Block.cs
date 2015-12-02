@@ -30,8 +30,16 @@ namespace Game.Blocks
             SetInitialState(blockType, isUnderground);
             physics = new MarioGamePhysics();
             physics.Acceleration = Vector2.Zero;
-
         }
+
+        /*public Block(Type blockType, bool isUnderground, Game1 game)
+        {
+            isBumped = false;
+            this.game = game;
+            SetInitialState(blockType, isUnderground);
+            physics = new MarioGamePhysics();
+            physics.Acceleration = Vector2.Zero;
+        }*/
 
         public void Update()
         {

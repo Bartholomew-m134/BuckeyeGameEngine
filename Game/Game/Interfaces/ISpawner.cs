@@ -5,12 +5,7 @@ using System.Text;
 
 namespace Game.Interfaces
 {
-    public interface IPlayer : IGameObject
+    interface ISpawner
     {
-        bool IsDead
-        {
-            get;
-            set;
-        }
     }
 }

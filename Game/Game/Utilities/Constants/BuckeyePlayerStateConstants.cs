@@ -12,7 +12,7 @@ namespace Game.Utilities.Constants
         public const int RUNNING_VELOCITY_MAX = 10;
         public const int RUNNING_VELOCITY_MIN = -10;
 
-        public const int INITIAL_JUMP_VELOCITY = -12;
+        public const int INITIAL_JUMP_VELOCITY = -10;
 
         public const int NEGATIVE_JUMPING_X_ACCELERATION = -1;
         public const int POSITIVE_JUMPING_X_ACCELERATION = 1;

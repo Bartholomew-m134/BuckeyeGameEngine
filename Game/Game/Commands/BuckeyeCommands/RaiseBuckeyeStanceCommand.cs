@@ -4,27 +4,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Game.Commands.MarioCommands
+namespace Game.Commands.BuckeyeCommands
 {
-    public class LowerPacMarioStanceCommand : ICommand
+    public class RaiseBuckeyeStanceCommand : ICommand
     {
-        public LowerPacMarioStanceCommand()
+        public RaiseBuckeyeStanceCommand()
         {
         }
 
         public void Execute()
         {
-            
+
         }
 
         public void Hold()
         {
-            ((IMario)WorldManager.ReturnPlayer()).Down();
+            ((IBuckeyePlayer)WorldManager.ReturnPlayer()).Jump();
         }
 
         public void Release()
         {
-            ((IMario)WorldManager.ReturnPlayer()).ToIdle();
+            ((IBuckeyePlayer)WorldManager.ReturnPlayer()).StopJumping();
         }
     }
 }
