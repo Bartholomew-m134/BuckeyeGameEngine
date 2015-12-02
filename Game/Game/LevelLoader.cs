@@ -21,6 +21,7 @@ using Game.GameStates;
 using Game.ProjectPacMario.PlayerClasses;
 using Game.ProjectPacMario.EnemyClasses;
 using Game.Utilities.Constants;
+using Game.ProjectBuckeye.Tiles;
 
 namespace Game
 {
