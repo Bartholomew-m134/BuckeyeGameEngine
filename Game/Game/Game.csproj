@@ -198,6 +198,7 @@
     <Compile Include="Interfaces\IProjectile.cs" />
     <Compile Include="Interfaces\IScenery.cs" />
     <Compile Include="Interfaces\ISoundEffect.cs" />
+    <Compile Include="Interfaces\ISpawner.cs" />
     <Compile Include="Interfaces\ISprite.cs" />
     <Compile Include="Interfaces\IWolverine.cs" />
     <Compile Include="Interfaces\IWolverineState.cs" />
