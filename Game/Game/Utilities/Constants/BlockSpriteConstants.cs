@@ -12,8 +12,8 @@ namespace Game.Utilities.Constants
         public const int BRICKDEBRISADJUST = 8;
         public const int BRICKDEBRISUPDATEDELAY = 5;
         public static readonly Vector2 GENERICBLOCKDIMENSIONS = new Vector2(16, 16);
-        public static readonly Vector2 BRICKDEBRISBLOCKDIMENSIONS = new Vector2(8,8);
-        public static readonly Vector2 BRICKDEBRISBLOCKSOURCE = new Vector2(304,112);
+        public static readonly Vector2 BRICKDEBRISBLOCKDIMENSIONS = new Vector2(7,8);
+        public static readonly Vector2 BRICKDEBRISBLOCKSOURCE = new Vector2(305,112);
         public static readonly Vector2 BREAKINGBLOCKSOURCE = new Vector2(0,0);
         public static readonly Vector2 BRICKBLOCKSOURCE = new Vector2(16, 0);
         public static readonly Vector2 HIDDENBLOCKSOURCE = new Vector2(224,16);

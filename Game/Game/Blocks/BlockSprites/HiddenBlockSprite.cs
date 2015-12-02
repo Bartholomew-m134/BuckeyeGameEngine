@@ -13,7 +13,7 @@ namespace Game.Blocks.BlockSprites
     public class HiddenBlockSprite : ISprite
     {
         private Texture2D spriteSheet;
-        private Rectangle sourceRectangle = new Rectangle((int)BlockSpriteConstants.HIDDENBLOCKSOURCE.X, (int)BlockSpriteConstants.HIDDENBLOCKSOURCE.Y,
+        private Rectangle sourceRectangle = new Rectangle((int)BlockSpriteConstants.HIDDENBLOCKSOURCE.X + 1, (int)BlockSpriteConstants.HIDDENBLOCKSOURCE.Y + 1,
                 (int)BlockSpriteConstants.GENERICBLOCKDIMENSIONS.X, (int)BlockSpriteConstants.GENERICBLOCKDIMENSIONS.Y);
 
         public HiddenBlockSprite(Texture2D spriteSheet)
@@ -25,12 +25,7 @@ namespace Game.Blocks.BlockSprites
         }
         public void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch, Microsoft.Xna.Framework.Vector2 location)
         {
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
-                (int)BlockSpriteConstants.GENERICBLOCKDIMENSIONS.X, (int)BlockSpriteConstants.GENERICBLOCKDIMENSIONS.Y);
 
-            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
-            spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
-            spriteBatch.End();
         }
 
         public Vector2 SpriteDimensions
