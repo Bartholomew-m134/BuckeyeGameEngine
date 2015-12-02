@@ -14,5 +14,11 @@ namespace Game.Interfaces
         }
 
         void Damage();
+
+        bool IsFacingRight
+        {
+            get;
+            set;
+        }
     }
 }

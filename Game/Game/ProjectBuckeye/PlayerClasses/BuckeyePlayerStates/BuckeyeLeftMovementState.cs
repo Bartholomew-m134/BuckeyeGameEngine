@@ -18,6 +18,7 @@ namespace Game.ProjectBuckeye.PlayerClasses.BuckeyePlayerStates
         {
             this.buckeyePlayer = buckeyePlayer;
             buckeyePlayer.Sprite = SpriteFactories.BuckeyePlayerSpriteFactory.CreateBuckeyeLeftMovementSprite();
+            this.buckeyePlayer.IsFacingRight = false;
         }
 
         public void Update()
