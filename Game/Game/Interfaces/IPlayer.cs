@@ -7,31 +7,10 @@ namespace Game.Interfaces
 {
     public interface IPlayer : IGameObject
     {
-        void Left();
-
-        void Right();
-
-        void Up();
-
-        void Down();
-
-        void Jump();
-
-        void StopJumping();
-
-        void Run();
-
-        void StopRunning();
-
         bool IsDead
         {
             get;
             set;
         }
-        bool IsPressingDown();
-
-        bool IsJumping();
-
-        void ToIdle();
     }
 }
