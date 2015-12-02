@@ -45,6 +45,7 @@ namespace Game.GameStates
             WorldManager.LoadListFromFile(IGameStateConstants.NORMALMARIOWORLD, game);
 
             camera = new MarioCamera(WorldManager.ReturnPlayer().VectorCoordinates);
+
         }
 
 
@@ -55,6 +56,7 @@ namespace Game.GameStates
 
         public void Update()
         {
+            HUDManager.UpdateHUDMarioString(HUDConstants.MARIOHUDSTRING);
             if (delay == IGameStateConstants.UPDATEDELAY)
             {
                 foreach (IController controller in controllerList)

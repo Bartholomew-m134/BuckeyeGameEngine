@@ -8,12 +8,13 @@ using System.Text;
 using Game.Utilities;
 using Game.SoundEffects;
 using Game.Utilities.Constants;
+using Game.ProjectPacMario.Blocks.BlockStates;
 
 namespace Game.Blocks
 {
     public class Block : IBlock
     {
-        public enum Type {NullBlock, BrickBlock, HiddenBlock, QuestionBlock, SolidBlock, BreakingBlock};
+        public enum Type {NullBlock, BrickBlock, HiddenBlock, QuestionBlock, SolidBlock, BreakingBlock, EnemyDownBlock, EnemyUpBlock, EnemyLeftBlock, EnemyRightBlock};
         
         private IBlockState blockState;
         private ISprite sprite;
@@ -112,6 +113,18 @@ namespace Game.Blocks
                     break;
                 case Type.NullBlock:
                     blockState = new NullBlockState(this);
+                    break;
+                case Type.EnemyUpBlock:
+                    blockState = new DirectEnemyUpBlockState(this);
+                    break;
+                case Type.EnemyDownBlock:
+                    blockState = new DirectEnemyDownBlockState(this);
+                    break;
+                case Type.EnemyRightBlock:
+                    blockState = new DirectEnemyRightBlockState(this);
+                    break;
+                case Type.EnemyLeftBlock:
+                    blockState = new DirectEnemyLeftBlockState(this);
                     break;
             }
         }

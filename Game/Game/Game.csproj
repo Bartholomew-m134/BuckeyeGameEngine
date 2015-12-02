@@ -144,6 +144,7 @@
     <Compile Include="Collisions\EnemyCollisionHandling\EnemyEnemyCollisionHandler.cs" />
     <Compile Include="Collisions\EnemyCollisionHandling\EnemyPipeCollisionHandler.cs" />
     <Compile Include="Collisions\EnemyCollisionHandling\MarioEnemyCollisionHandler.cs" />
+    <Compile Include="Interfaces\IBooState.cs" />
     <Compile Include="Interfaces\IBuckeyePlayer.cs" />
     <Compile Include="Interfaces\IBuckeyePlayerStates.cs" />
     <Compile Include="Interfaces\ICamera.cs" />
@@ -200,6 +201,7 @@
     <Compile Include="Interfaces\ISprite.cs" />
     <Compile Include="Interfaces\IWolverine.cs" />
     <Compile Include="Interfaces\IWolverineState.cs" />
+    <Compile Include="Items\PacMarioNormalCoin.cs" />
     <Compile Include="Items\ItemSprites\PacMarioCoinSprite.cs" />
     <Compile Include="Items\PacMarioCoin.cs" />
     <Compile Include="Items\Coin.cs" />
@@ -225,6 +227,7 @@
     <Compile Include="Music\MarioOverworldTheme.cs" />
     <Compile Include="Interfaces\IMusic.cs" />
     <Compile Include="Music\PacManLevelTheme.cs" />
+    <Compile Include="Music\PacMarioDeadTheme.cs" />
     <Compile Include="Music\RushedOverworldTheme.cs" />
     <Compile Include="Music\RushedStarTheme.cs" />
     <Compile Include="Music\StarTheme.cs" />
@@ -328,11 +331,28 @@
     <Compile Include="Pipes\PipeSprites\TriplePipeSprite.cs" />
     <Compile Include="Pipes\TriplePipe.cs" />
     <Compile Include="Projectiles\RightFire.cs" />
+    <Compile Include="ProjectPacMario\Blocks\BlockStates\DirectEnemyDownBlockState.cs" />
+    <Compile Include="ProjectPacMario\Blocks\BlockStates\DirectEnemyLeftBlockState.cs" />
+    <Compile Include="ProjectPacMario\Blocks\BlockStates\DirectEnemyRightBlockState.cs" />
+    <Compile Include="ProjectPacMario\Blocks\BlockStates\DirectEnemyUpBlockState.cs" />
+    <Compile Include="ProjectPacMario\EnemyClasses\Boo.cs" />
+    <Compile Include="ProjectPacMario\EnemyClasses\EnemySprites\DeadBooSprite.cs" />
+    <Compile Include="ProjectPacMario\EnemyClasses\EnemySprites\DownPatrolingBooSprite.cs" />
+    <Compile Include="ProjectPacMario\EnemyClasses\EnemySprites\LeftPatrolingBooSprite.cs" />
+    <Compile Include="ProjectPacMario\EnemyClasses\EnemySprites\RightPatrolingBooSprite.cs" />
+    <Compile Include="ProjectPacMario\EnemyClasses\EnemySprites\UpPatrolingBooSprite.cs" />
+    <Compile Include="ProjectPacMario\EnemyClasses\EnemyStates\DeadBooState.cs" />
+    <Compile Include="ProjectPacMario\EnemyClasses\EnemyStates\DownPatrolingBooState.cs" />
+    <Compile Include="ProjectPacMario\EnemyClasses\EnemyStates\RightPatrolingBooState.cs" />
+    <Compile Include="ProjectPacMario\EnemyClasses\EnemyStates\LeftPatrolingBooState.cs" />
+    <Compile Include="ProjectPacMario\EnemyClasses\EnemyStates\UpPatrolingBooState.cs" />
     <Compile Include="ProjectPacMario\PlayerClasses\PacMario.cs" />
+    <Compile Include="ProjectPacMario\PlayerClasses\PlayerSprites\PacMarioDeadSprite.cs" />
     <Compile Include="ProjectPacMario\PlayerClasses\PlayerSprites\PacMarioDownSprite.cs" />
     <Compile Include="ProjectPacMario\PlayerClasses\PlayerSprites\PacMarioLeftSprite.cs" />
     <Compile Include="ProjectPacMario\PlayerClasses\PlayerSprites\PacMarioRightSprite.cs" />
     <Compile Include="ProjectPacMario\PlayerClasses\PlayerSprites\PacMarioUpSprite.cs" />
+    <Compile Include="ProjectPacMario\PlayerClasses\PlayerStates\PacMarioDeadState.cs" />
     <Compile Include="ProjectPacMario\PlayerClasses\PlayerStates\PacMarioLeftState.cs" />
     <Compile Include="ProjectPacMario\PlayerClasses\PlayerStates\PacMarioRightState.cs" />
     <Compile Include="ProjectPacMario\PlayerClasses\PlayerStates\PacMarioDownState.cs" />
@@ -342,10 +362,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="SoundEffects\CoinEffect.cs" />
+    <Compile Include="SoundEffects\EatGhostEffect.cs" />
     <Compile Include="SoundEffects\FlagPoleMovingEffect.cs" />
     <Compile Include="SoundEffects\GameOverEffect.cs" />
     <Compile Include="SoundEffects\GoombaStompedEffect.cs" />
     <Compile Include="SoundEffects\OneUpEffect.cs" />
+    <Compile Include="SoundEffects\PacMarioChompEffect.cs" />
     <Compile Include="SoundEffects\PowerPlayerUpEffect.cs" />
     <Compile Include="SoundEffects\PowerUpAppearsEffect.cs" />
     <Compile Include="SoundEffects\BlockBumpEffect.cs" />
@@ -520,7 +542,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ProjectPacMario\Collisions\" />
-    <Folder Include="ProjectPacMario\EnemyClasses\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />

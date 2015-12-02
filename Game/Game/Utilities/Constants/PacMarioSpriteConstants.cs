@@ -22,5 +22,13 @@ namespace Game.Utilities.Constants
 
         public static readonly Vector2 VERTICAL_DIMENSIONS = new Vector2(14,14);
         public static readonly Vector2 HORIZONTAL_DIMENSIONS = new Vector2(14, 14);
+
+        public static readonly Vector2 BOO_DIMENSIONS = new Vector2(16,16);
+        public static readonly Vector2 LEFT_BOO_SOURCE = new Vector2(21,1);
+        public static readonly Vector2 RIGHT_BOO_SOURCE = new Vector2(1,1);
+        public static readonly Vector2 UP_BOO_SOURCE = new Vector2(57,1);
+        public static readonly Vector2 DOWN_BOO_SOURCE = new Vector2(39,1);
+        public static readonly Vector2 DEAD_BOO_SOURCE = new Vector2(420,184);
+
     }
 }

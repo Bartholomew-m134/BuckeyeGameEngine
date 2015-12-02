@@ -22,6 +22,8 @@ namespace Game.SoundEffects
         private static ISoundEffect powerPlayerUpEffect;
         private static ISoundEffect shrinkingOrPipeEffect;
         private static ISoundEffect gameOverEffect;
+        private static ISoundEffect pacMarioChompEffect;
+        private static ISoundEffect eatGhostEffect;
 
         public static void EnemyFlippedEffect()
         {
@@ -105,6 +107,16 @@ namespace Game.SoundEffects
         {
             gameOverEffect = new GameOverEffect();
             gameOverEffect.Play();
+        }
+        public static void PacMarioChompEffect()
+        {
+            pacMarioChompEffect = new PacMarioChompEffect();
+            pacMarioChompEffect.Play();
+        }
+        public static void EatGhostEffect()
+        {
+            eatGhostEffect = new EatGhostEffect();
+            eatGhostEffect.Play();
         }
     }
 }

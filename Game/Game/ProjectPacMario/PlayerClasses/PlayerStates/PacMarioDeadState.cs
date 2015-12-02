@@ -1,7 +1,6 @@
 ﻿using Game.Interfaces;
 using Game.Mario;
-using Game.Utilities.Constants;
-using Microsoft.Xna.Framework;
+using Game.Music;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +8,16 @@ using System.Text;
 
 namespace Game.ProjectPacMario.PlayerClasses.PlayerStates
 {
-    public class PacMarioDownState : IMarioState
+    public class PacMarioDeadState : IMarioState
     {
         private IMario mario;
 
-        public PacMarioDownState(IMario mario)
+        public PacMarioDeadState(IMario mario)
         {
             this.mario = mario;
-            mario.Sprite = SpriteFactories.PacMarioSpriteFactory.CreateDownPacMarioSprite();
+            BackgroundThemeManager.PlayPacMarioDeathTheme();
+            mario.Sprite = SpriteFactories.PacMarioSpriteFactory.CreateDeadPacMarioSprite();
+            mario.Physics.ResetPhysics();
         }
         public void Update()
         {
@@ -25,7 +26,6 @@ namespace Game.ProjectPacMario.PlayerClasses.PlayerStates
 
         public void Left()
         {
-            mario.MarioState = new PacMarioLeftState(mario);
         }
         public void PoleSlide()
         {
@@ -38,19 +38,15 @@ namespace Game.ProjectPacMario.PlayerClasses.PlayerStates
 
         public void Right()
         {
-            mario.MarioState = new PacMarioRightState(mario);
         }
 
         public void Up()
         {
-            mario.MarioState = new PacMarioUpState(mario);
         }
 
         public void Down()
         {
-            Vector2 acceleration = mario.Physics.Acceleration;
-            acceleration.Y = MarioStateConstants.POSITIVERUNNINGXACCELERATION;
-            mario.Physics.Acceleration = acceleration;
+
         }
 
         public void Jump()
@@ -77,7 +73,7 @@ namespace Game.ProjectPacMario.PlayerClasses.PlayerStates
 
         public void Damage()
         {
-            mario.MarioState = new PacMarioDeadState(mario);
+
         }
 
         public bool IsBigMario()

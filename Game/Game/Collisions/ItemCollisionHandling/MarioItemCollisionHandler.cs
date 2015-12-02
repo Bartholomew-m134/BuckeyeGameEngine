@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using Game.SoundEffects;
 using Game.Utilities.Constants;
+using Game.ProjectPacMario.PlayerClasses;
 
 namespace Game.Collisions.ItemCollisionHandling
 {
@@ -44,11 +45,16 @@ namespace Game.Collisions.ItemCollisionHandling
                     SoundEffectManager.CoinEffect();
                     collidingItem.Disappear();
                 }
-                if (collidingItem is PacMarioCoin)
+                else if (collidingItem is PacMarioCoin)
                 {
-                    SoundEffectManager.CoinEffect();
+                    SoundEffectManager.PacMarioChompEffect();
                     collidingItem.Disappear();
                     collidingMario.Star();
+                }
+                else if (collidingItem is PacMarioNormalCoin)
+                {
+                    SoundEffectManager.PacMarioChompEffect();
+                    collidingItem.Disappear();
                 }
                 else if (collidingItem is Flower)
                 {
@@ -75,18 +81,24 @@ namespace Game.Collisions.ItemCollisionHandling
                     collidingItem.Disappear();
                     collidingMario.Star();
                 }
+                else if (collidingItem is PacMarioCoin)
+                {
+                    collidingItem.Disappear();
+                    collidingMario.Star();
+                }
             }
         }
         public void HandleScore()
         {
             ScoreManager.stompStreak = ScoreManagerConstants.RESETTOZERO;
-            if(collidingItem is Coin && !collidingItem.IsInsideBlock){
+            if(collidingItem is Coin && !collidingItem.IsInsideBlock || collidingItem is PacMarioNormalCoin){
                 HUDManager.UpdateHUDCoins(ScoreManagerConstants.ADDONECOIN);
                 ScoreManager.IncreaseScore(ScoreManagerConstants.TWOHUNDREDPOINTS);
                 ScoreManager.location = collidingItem.VectorCoordinates;
             }
-            else if (collidingItem is RedMushroom && !collidingItem.IsInsideBlock)
+            else if (collidingItem is RedMushroom && !collidingItem.IsInsideBlock || collidingItem is PacMarioCoin)
             {
+                HUDManager.UpdateHUDCoins(ScoreManagerConstants.ADDONECOIN);
                 ScoreManager.IncreaseScore(ScoreManagerConstants.ONETHOUSANDPOINTS);
                 ScoreManager.location = collidingItem.VectorCoordinates;
             }

@@ -28,6 +28,7 @@ namespace Game.ProjectPacMario.PlayerClasses
             physics = new PacMarioGamePhysics();
             isPressingDown = false;
             isDead = false;
+
         }
         public void Update()
         {
@@ -55,6 +56,14 @@ namespace Game.ProjectPacMario.PlayerClasses
         {
             state.Down();
             isPressingDown = true;
+        }
+        public void TeleportLeft()
+        {
+            location = new Vector2(272,240);
+        }
+        public void TeleportRight()
+        {
+            location = new Vector2(560,240);
         }
         public void Jump()
         {

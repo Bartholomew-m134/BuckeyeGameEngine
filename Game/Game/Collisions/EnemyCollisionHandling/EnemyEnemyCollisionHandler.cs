@@ -9,6 +9,7 @@ using Game.Enemies.GoombaClasses;
 using Game.Utilities;
 using Game.Enemies.GoombaClasses.GoombaStates;
 using Game.Utilities.Constants;
+using Game.ProjectPacMario.EnemyClasses;
 
 namespace Game.Collisions.EnemyCollisionHandling
 {
@@ -65,16 +66,21 @@ namespace Game.Collisions.EnemyCollisionHandling
         }
 
         private void HandleNormalLeftOrRightEnemyCollision(){
+            if(!(enemyA is Boo)){
             collision.ResolveOverlap(collision.GameObjectA, side);
                 enemyA.ShiftDirection();
                 enemyB.ShiftDirection();
             }
+            }
         private void HandleNormalTopOrBottomEnemyCollision()
         {
-            if (side is TopSideCollision)
-                collision.ResolveOverlap(enemyA, side);
-            else
-                collision.ResolveOverlap(enemyB, side.FlipSide());
+            if (!(enemyA is Boo))
+            {
+                if (side is TopSideCollision)
+                    collision.ResolveOverlap(enemyA, side);
+                else
+                    collision.ResolveOverlap(enemyB, side.FlipSide());
+            }
         }
 
         private void HandleWeaponizedKoopaCollisions()

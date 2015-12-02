@@ -14,8 +14,8 @@ namespace Game.ProjectPacMario.Utilities
         private Vector2 velocity;
         private Vector2 acceleration;
         private Vector2 oldCoordinates;
-        private Vector2 velocityMaximum = new Vector2(ObjectPhysicsConstants.INITIALXMAXVELOCITY, ObjectPhysicsConstants.INTIALYMAXVELOCITY);
-        private Vector2 velocityMinimum = new Vector2(ObjectPhysicsConstants.INITIALXMINVELOCITY, ObjectPhysicsConstants.INITIALYMINVELOCITY);
+        private Vector2 velocityMaximum = new Vector2(ObjectPhysicsConstants.PACMARIOINITIALXMAXVELOCITY, ObjectPhysicsConstants.PACMARIOINTIALYMAXVELOCITY);
+        private Vector2 velocityMinimum = new Vector2(ObjectPhysicsConstants.PACMARIOINITIALXMINVELOCITY, ObjectPhysicsConstants.PACMARIOINITIALYMINVELOCITY);
         private const int gravity = ObjectPhysicsConstants.GRAVITY;
 
         public PacMarioGamePhysics()
