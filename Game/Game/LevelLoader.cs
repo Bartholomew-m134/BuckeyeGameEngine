@@ -19,6 +19,7 @@ using Game.ProjectBuckeye.EnemyClasses;
 using Game.Lemming;
 using Game.GameStates;
 using Game.ProjectPacMario.PlayerClasses;
+using Game.ProjectBuckeye.Tiles;
 
 namespace Game
 {
@@ -207,6 +208,8 @@ namespace Game
                         gameObject = new BuckeyePlayer(game);
                     else if (objectName.Equals("Wolverine"))
                         gameObject = new WolverineEnemy(game);
+                    else if (objectName.Equals("BuckeyeGrass"))
+                        gameObject = new GrassTile(game);
 
                     if (objectsItem != null)
                     {

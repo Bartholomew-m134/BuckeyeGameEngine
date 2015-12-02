@@ -18,7 +18,7 @@ namespace Game.ProjectBuckeye.EnemyClasses.WolverineStates
             enemy.Physics.ResetPhysics();
 
             this.enemy.CanDealDamage = false;
-            this.enemy.IsHit = false;
+            this.enemy.IsHit = true;
         }
         public void Damage()
         {

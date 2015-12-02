@@ -87,14 +87,14 @@ namespace Game.Collisions
                 MarioFlagPoleCollisionHandler collisionHandler = new MarioFlagPoleCollisionHandler(collision, gameState);
                 collisionHandler.HandleCollision();
             }
-            else if ((collision.GameObjectA is IBuckeyePlayer && collision.GameObjectB is IBlock) || (collision.GameObjectA is IBlock && collision.GameObjectB is IBuckeyePlayer))
+            else if ((collision.GameObjectA is IBuckeyePlayer && collision.GameObjectB is IBuckeyeTile) || (collision.GameObjectA is IBuckeyeTile && collision.GameObjectB is IBuckeyePlayer))
             {
-                BuckeyeBlockCollisionHandler collisionHandler = new BuckeyeBlockCollisionHandler(collision);
+                BuckeyeTileCollisionHandler collisionHandler = new BuckeyeTileCollisionHandler(collision);
                 collisionHandler.HandleCollision();
             }
-            else if ((collision.GameObjectA is IWolverine && collision.GameObjectB is IBlock) || (collision.GameObjectA is IBlock && collision.GameObjectB is IWolverine))
+            else if ((collision.GameObjectA is IWolverine && collision.GameObjectB is IBuckeyeTile) || (collision.GameObjectA is IBuckeyeTile && collision.GameObjectB is IWolverine))
             {
-                WolverineBlockCollisionHandler collisionHandler = new WolverineBlockCollisionHandler(collision);
+                WolverineTileCollisionHandler collisionHandler = new WolverineTileCollisionHandler(collision);
                 collisionHandler.HandleCollision();
             }
             else if ((collision.GameObjectA is IBuckeyePlayer && collision.GameObjectB is IWolverine) || (collision.GameObjectA is IWolverine && collision.GameObjectB is IBuckeyePlayer))
