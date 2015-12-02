@@ -42,5 +42,7 @@ namespace Game.Interfaces
         bool IsJumping();
 
         void ToIdle();
+
+        void Throw();
     }
 }

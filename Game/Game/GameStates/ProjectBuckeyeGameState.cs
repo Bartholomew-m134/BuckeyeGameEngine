@@ -37,6 +37,7 @@ namespace Game.GameStates
             BuckeyePlayerSpriteFactory.Load(game.Content);
             WolverineSpriteFactory.Load(game.Content);
             BuckeyeTileSpriteFactory.Load(game.Content);
+            ProjectileSpriteFactory.Load(game.Content);
 
             WorldManager.LoadListFromFile(IGameStateConstants.PROJECT_BUCKEYE_TEST_WORLD, game);
 

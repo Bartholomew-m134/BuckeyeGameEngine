@@ -8,6 +8,7 @@ using Game.Utilities;
 using Game.SoundEffects;
 using Game.Utilities.Constants;
 using Game.ProjectBuckeye.PlayerClasses.BuckeyePlayerStates;
+using Game.ProjectBuckeye.FootballClasses;
 
 namespace Game.ProjectBuckeye.PlayerClasses
 {
@@ -21,6 +22,7 @@ namespace Game.ProjectBuckeye.PlayerClasses
         private bool isDead;
         private bool isPressingDown;
         private bool isFacingRight;
+        private FootballSpawner spawner;
 
         public BuckeyePlayer(Game1 game)
         {
@@ -29,6 +31,7 @@ namespace Game.ProjectBuckeye.PlayerClasses
             physics = new MarioGamePhysics();
             isPressingDown = false;
             isDead = false;
+            spawner = new FootballSpawner(game);
         }
 
         public void Left()
@@ -139,6 +142,12 @@ namespace Game.ProjectBuckeye.PlayerClasses
         {
             get { return isFacingRight; }
             set { isFacingRight = value;}
+        }
+
+
+        public void Throw()
+        {
+            spawner.ReleaseFootball(location, isFacingRight);
         }
     }
 }

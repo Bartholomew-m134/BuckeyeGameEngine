@@ -14,7 +14,7 @@ namespace Game.Commands.BuckeyeCommands
 
         public void Execute()
         {
-            //((IBuckeyePlayer)WorldManager.ReturnPlayer()).Throw();
+            ((IBuckeyePlayer)WorldManager.ReturnPlayer()).Throw();
         }
 
         public void Hold()
