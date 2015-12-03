@@ -192,6 +192,9 @@
     <Compile Include="Interfaces\IMarioSprite.cs" />
     <Compile Include="Interfaces\ILemming.cs" />
     <Compile Include="Interfaces\IMenu.cs" />
+    <Compile Include="Interfaces\IPaddle.cs" />
+    <Compile Include="Interfaces\IPaddleBall.cs" />
+    <Compile Include="Interfaces\IPaddleBallState.cs" />
     <Compile Include="Interfaces\IPhysics.cs" />
     <Compile Include="Interfaces\IPlayer.cs" />
     <Compile Include="Interfaces\IPlayerState.cs" />
@@ -334,6 +337,14 @@
     <Compile Include="Pipes\PipeSprites\TriplePipeSprite.cs" />
     <Compile Include="Pipes\TriplePipe.cs" />
     <Compile Include="Projectiles\RightFire.cs" />
+    <Compile Include="ProjectMarioBrickBreaker\PaddleBallClasses\PaddleBall.cs" />
+    <Compile Include="ProjectMarioBrickBreaker\PaddleBallClasses\PaddleBallSprites\NormalPaddleBallSprite.cs" />
+    <Compile Include="ProjectMarioBrickBreaker\PaddleBallClasses\PaddleBallSprites\SuperPaddleBallSprite.cs" />
+    <Compile Include="ProjectMarioBrickBreaker\PaddleBallClasses\PaddleBallStates\NormalPaddleBallState.cs" />
+    <Compile Include="ProjectMarioBrickBreaker\PaddleBallClasses\PaddleBallStates\SuperPaddleBallState.cs" />
+    <Compile Include="ProjectMarioBrickBreaker\PlayerClasses\Paddle.cs" />
+    <Compile Include="ProjectMarioBrickBreaker\PlayerClasses\PaddleSprites\MushroomPaddleSprite.cs" />
+    <Compile Include="ProjectMarioBrickBreaker\PlayerClasses\PaddleSprites\NormalPaddleSprite.cs" />
     <Compile Include="ProjectPacMario\PlayerClasses\PacMario.cs" />
     <Compile Include="ProjectPacMario\PlayerClasses\PlayerSprites\PacMarioDownSprite.cs" />
     <Compile Include="ProjectPacMario\PlayerClasses\PlayerSprites\PacMarioLeftSprite.cs" />
@@ -365,6 +376,7 @@
     <Compile Include="SpriteFactories\BackgroundElementsSpriteFactory.cs" />
     <Compile Include="SpriteFactories\BuckeyePlayerSpriteFactory.cs" />
     <Compile Include="SpriteFactories\BuckeyeTileSpriteFactory.cs" />
+    <Compile Include="SpriteFactories\MarioBrickBreakerSpriteFactory.cs" />
     <Compile Include="SpriteFactories\MenuSpriteFactories.cs" />
     <Compile Include="SpriteFactories\PacMarioSpriteFactory.cs" />
     <Compile Include="SpriteFactories\ProjectileSpriteFactory.cs" />
@@ -427,6 +439,8 @@
     <Compile Include="Utilities\Constants\MarioStateConstants.cs" />
     <Compile Include="Utilities\Constants\ObjectPhysicsConstants.cs" />
     <Compile Include="Utilities\Constants\PacMarioSpriteConstants.cs" />
+    <Compile Include="Utilities\Constants\PaddleBallConstants.cs" />
+    <Compile Include="Utilities\Constants\PaddleSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\PipeSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\ProjectileConstants.cs" />
     <Compile Include="Utilities\Constants\ProjectileSpriteConstants.cs" />
@@ -527,6 +541,9 @@
     <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Commands\MarioBrickBreakerCommands\" />
+    <Folder Include="ProjectMarioBrickBreaker\Collisions\" />
+    <Folder Include="ProjectMarioBrickBreaker\Utilities\" />
     <Folder Include="ProjectPacMario\Collisions\" />
     <Folder Include="ProjectPacMario\EnemyClasses\" />
   </ItemGroup>

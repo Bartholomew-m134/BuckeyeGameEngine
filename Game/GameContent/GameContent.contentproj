@@ -63,6 +63,9 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
+    <Compile Include="Levels\BrickBreakerWorld.csv">
+      <Name>BrickBreakerWorld</Name>
+    </Compile>
     <None Include="Levels\PacMarioWorld.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>PacMarioWorld</Name>

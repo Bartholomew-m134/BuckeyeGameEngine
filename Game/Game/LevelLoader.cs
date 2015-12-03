@@ -20,6 +20,8 @@ using Game.Lemming;
 using Game.GameStates;
 using Game.ProjectPacMario.PlayerClasses;
 using Game.ProjectBuckeye.Tiles;
+using Game.ProjectMarioBrickBreaker.PlayerClasses;
+using Game.ProjectMarioBrickBreaker.BallClasses;
 
 namespace Game
 {
@@ -210,6 +212,10 @@ namespace Game
                         gameObject = new WolverineEnemy(game);
                     else if (objectName.Equals("BuckeyeGrass"))
                         gameObject = new GrassTile(game);
+                    else if (objectName.Equals("Paddle"))
+                        gameObject = new Paddle(game);
+                    else if (objectName.Equals("PaddleBall"))
+                        gameObject = new PaddleBall(game);
 
                     if (objectsItem != null)
                     {
