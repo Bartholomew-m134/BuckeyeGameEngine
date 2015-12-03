@@ -24,6 +24,7 @@ using Game.Utilities.Constants;
 using Game.ProjectBuckeye.Tiles;
 using Game.ProjectMarioBrickBreaker.PlayerClasses;
 using Game.ProjectMarioBrickBreaker.BallClasses;
+using Game.Spawners;
 
 namespace Game
 {
@@ -126,7 +127,8 @@ namespace Game
                     else if (objectName.Equals("InvisCoinBlock"))
                     {
                         objectsItem = new Coin(true, game);
-                        gameObject = new Block(Block.Type.HiddenBlock, false, game);
+                        ISpawner spawner = new ItemSpawner((IItem)objectsItem);
+                        gameObject = new Block(Block.Type.HiddenBlock, spawner, false, game);
                     }
                     else if (objectName.Equals("TeleportBlock"))
                     {
@@ -140,12 +142,14 @@ namespace Game
                     else if (objectName.Equals("QuestionCoinBlock"))
                     {
                         objectsItem = new Coin(true, game);
-                        gameObject = new Block(Block.Type.QuestionBlock, false, game);
+                        ISpawner spawner = new ItemSpawner((IItem)objectsItem);
+                        gameObject = new Block(Block.Type.QuestionBlock, spawner, false, game);
                     }
                     else if (objectName.Equals("BrickCoinBlock"))
                     {
                         objectsItem = new Coin(true, game);
-                        gameObject = new Block(Block.Type.BrickBlock, false, game);
+                        ISpawner spawner = new ItemSpawner((IItem)objectsItem);
+                        gameObject = new Block(Block.Type.BrickBlock, spawner, false, game);
                     }
                     else if (objectName.Equals("QuestionRedMushBlock"))
                     {
