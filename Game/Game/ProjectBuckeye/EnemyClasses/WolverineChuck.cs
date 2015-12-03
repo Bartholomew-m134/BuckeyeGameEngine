@@ -22,6 +22,8 @@ namespace Game.ProjectBuckeye.EnemyClasses
         private int deathTimer = 0;
         private int hp = 14;
 
+        private int stepCounter = 0;
+
         public WolverineChuck(Game1 game)
         {
             myGame = game;
@@ -72,6 +74,7 @@ namespace Game.ProjectBuckeye.EnemyClasses
             else if (!isHit)
             {
                 location = physics.Update(location);
+                HandleAI();
             }
             state.Update();  
         }
@@ -113,6 +116,16 @@ namespace Game.ProjectBuckeye.EnemyClasses
 
         public void Idle()
         {
+        }
+
+        private void HandleAI()
+        {
+            stepCounter++;
+            if (stepCounter > 56)
+            {
+                ShiftDirection();
+                stepCounter = 0;
+            }
         }
     }
 }

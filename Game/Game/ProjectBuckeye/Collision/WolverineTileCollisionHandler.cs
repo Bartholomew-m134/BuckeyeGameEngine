@@ -33,6 +33,7 @@ namespace Game.ProjectBuckeye.Collision
 
         public void HandleCollision()
         {
+            enemy.Physics.ResetY();
             collision.ResolveOverlap(enemy, collisionSide);
         }
     }
