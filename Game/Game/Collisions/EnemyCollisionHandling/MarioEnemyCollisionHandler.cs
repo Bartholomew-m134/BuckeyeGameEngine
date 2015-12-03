@@ -14,6 +14,9 @@ using Game.Utilities;
 using Game.Enemies.GoombaClasses.GoombaStates;
 using Game.SoundEffects;
 using Game.Utilities.Constants;
+using Game.ProjectPacMario.PlayerClasses;
+using Game.ProjectPacMario.EnemyClasses;
+using Game.ProjectPacMario.EnemyClasses.EnemyStates;
 
 namespace Game.Collisions.EnemyCollisionHandling
 {
@@ -44,7 +47,11 @@ namespace Game.Collisions.EnemyCollisionHandling
         public void HandleCollision()
         {
             HandleScore();
-            if (!MarioDeadState() && !mario.IsStarMario() && enemy is GreenKoopa && ((GreenKoopa)enemy).IsHit)
+            if (enemy is Boo)
+            {
+                HandlePacMarioCollision();
+            }
+            else if (!MarioDeadState() && !mario.IsStarMario() && enemy is GreenKoopa && ((GreenKoopa)enemy).IsHit)
             {
                 WeaponizedKoopa();
             }
@@ -52,7 +59,7 @@ namespace Game.Collisions.EnemyCollisionHandling
             {
                 MarioEnemyTopSide();
             }
-            else if (!MarioDeadState() && !mario.IsStarMario() && !mario.IsHurt() && enemy.CanDealDamage)
+            else if (!MarioDeadState() && !mario.IsStarMario() && !mario.IsHurt() && enemy.CanDealDamage && !(enemy is Boo))
             {
                 collision.ResolveOverlap(mario, side);
                 if (mario.IsBigMario())
@@ -158,6 +165,17 @@ namespace Game.Collisions.EnemyCollisionHandling
                     ScoreManager.IncreaseScore(ScoreManagerConstants.TWOHUNDREDPOINTS);
                     ScoreManager.location = enemy.VectorCoordinates;
                 }
+            }
+        }
+        public void HandlePacMarioCollision()
+        {
+            if (mario is PacMario){
+                mario.Damage();
+            }
+            else if (!(((Boo)enemy).state is DeadBooState)){
+                ((Boo)enemy).Hit();
+                ScoreManager.IncreaseScore(ScoreManagerConstants.ONETHOUSANDPOINTS);
+                SoundEffectManager.EatGhostEffect();
             }
         }
     }

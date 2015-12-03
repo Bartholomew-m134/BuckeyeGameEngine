@@ -21,6 +21,7 @@ namespace Game.Utilities
         private static int coinsToPrint;
         private static int updateTimerCounter = HUDConstants.RESETUPDATEDELAYCOUNTER;
         private static int timeToPrint = HUDConstants.STARTINGTIME;
+        private static string marioStringToPrint = HUDConstants.MARIOHUDSTRING;
 
         public static void UpdateHUDScore(int scoreToAdd)
         {
@@ -45,6 +46,18 @@ namespace Game.Utilities
                 BackgroundThemeManager.HurryTimeUpdate();
             timeToPrint -= HUDConstants.INCREMENTBYONE;
         }
+        public static void UpdateHUDMarioString(string marioString)
+        {
+            marioStringToPrint = marioString;
+        }
+        public static string CurrentGameState()
+        {
+            return marioStringToPrint;
+        }
+        public static int CurrentAmountOfCoins()
+        {
+            return coinsToPrint;
+        }
         public static void Update()
         {
             if (updateTimerCounter >=HUDConstants.NUMBEROFUPDATESPERSECOND)
@@ -64,7 +77,7 @@ namespace Game.Utilities
             coin.Draw(spriteBatch, HUDConstants.COINSPRITEHUDLOCATION);
 
             spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
-            spriteBatch.DrawString(hudFont, HUDConstants.MARIOHUDSTRING, HUDConstants.MARIOHUDLOCATION, Color.White);
+            spriteBatch.DrawString(hudFont, marioStringToPrint, HUDConstants.MARIOHUDLOCATION, Color.White);
             spriteBatch.DrawString(hudFont, scoreString, HUDConstants.SCOREHUDLOCATION, Color.White);
             spriteBatch.DrawString(hudFont, coinString, HUDConstants.COINHUDLOCATION, Color.White);
             spriteBatch.DrawString(hudFont, HUDConstants.WORLDHUDSTRING, HUDConstants.WORLDHUDLOCATION, Color.White);

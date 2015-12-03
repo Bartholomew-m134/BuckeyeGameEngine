@@ -12,6 +12,8 @@ using Game.Utilities;
 using Game.Enemies.KoopaClasses.KoopaStates;
 using Game.SoundEffects;
 using Game.Utilities.Constants;
+using Game.ProjectPacMario.Blocks.BlockStates;
+using Game.ProjectPacMario.EnemyClasses;
 
 namespace Game.Collisions.EnemyCollisionHandling
 {
@@ -42,6 +44,7 @@ namespace Game.Collisions.EnemyCollisionHandling
 
         public void HandleCollision()
         {
+            HandleBooAI();
             HandleScore();
             if (!enemy.IsFlipped)
                 collision.ResolveOverlap(enemy, side);
@@ -86,6 +89,25 @@ namespace Game.Collisions.EnemyCollisionHandling
                     ScoreManager.IncreaseScore(ScoreManagerConstants.ONEHUNDREDPOINTS);
                     ScoreManager.location = enemy.VectorCoordinates;
                 }
+            }
+        }
+
+        private void HandleBooAI()
+        {
+            if (block.State is DirectEnemyLeftBlockState){
+                ((Boo)enemy).Left();
+            }
+            if (block.State is DirectEnemyRightBlockState)
+            {
+                ((Boo)enemy).Right();
+            }
+            if (block.State is DirectEnemyUpBlockState)
+            {
+                ((Boo)enemy).Up();
+            }
+            if (block.State is DirectEnemyDownBlockState)
+            {
+                ((Boo)enemy).Down();
             }
         }
     }

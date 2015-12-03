@@ -10,6 +10,7 @@ using Game.Interfaces;
 using Game.Mario.MarioStates;
 using Game.Utilities;
 using Game.Utilities.Constants;
+using Game.ProjectPacMario.PlayerClasses;
 
 namespace Game.Collisions.BlockCollisionHandling
 {
@@ -115,6 +116,9 @@ namespace Game.Collisions.BlockCollisionHandling
                 collision.ResolveOverlap(collidingMario, collisionSide);
                
             }
+            if (collidingBlock.State is HiddenBlockState && collidingMario is PacMario){
+                ((PacMario)collidingMario).TeleportRight();
+            }
 
         }
         private void HandleLeftSide()
@@ -123,6 +127,10 @@ namespace Game.Collisions.BlockCollisionHandling
             {
                 collision.ResolveOverlap(collidingMario, collisionSide);
                 
+            }
+            if (collidingBlock.State is HiddenBlockState && collidingMario is PacMario)
+            {
+                ((PacMario)collidingMario).TeleportLeft();
             }
         }
 

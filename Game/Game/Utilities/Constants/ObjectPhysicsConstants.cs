@@ -17,5 +17,11 @@ namespace Game.Utilities.Constants
 
         public const int RIGHTDAMPENTHRESHOLD = 2;
         public const int LEFTDAMPENTHRESHOLD = -2;
+
+        public const int PACMARIOINITIALXMAXVELOCITY = 6;
+        public const int PACMARIOINTIALYMAXVELOCITY = 6;
+
+        public const int PACMARIOINITIALXMINVELOCITY = -6;
+        public const int PACMARIOINITIALYMINVELOCITY = -6;
     }
 }

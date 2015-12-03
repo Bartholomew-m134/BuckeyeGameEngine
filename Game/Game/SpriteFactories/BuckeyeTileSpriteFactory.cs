@@ -29,5 +29,10 @@ namespace Game.SpriteFactories
         {
             return new GrassTileSprite(tileSheet);
         }
+
+        public static ISprite CreateGroundTile()
+        {
+            return new GroundTileSprite(tileSheet);
+        }
     }
 }

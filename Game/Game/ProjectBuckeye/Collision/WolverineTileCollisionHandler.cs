@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using Game.Interfaces;
 using Game.Collisions;
-using Game.Blocks.BlockStates;
-using Game.Blocks;
 
 namespace Game.ProjectBuckeye.Collision
 {

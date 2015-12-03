@@ -19,6 +19,8 @@ using Game.ProjectBuckeye.EnemyClasses;
 using Game.Lemming;
 using Game.GameStates;
 using Game.ProjectPacMario.PlayerClasses;
+using Game.ProjectPacMario.EnemyClasses;
+using Game.Utilities.Constants;
 using Game.ProjectBuckeye.Tiles;
 using Game.ProjectMarioBrickBreaker.PlayerClasses;
 using Game.ProjectMarioBrickBreaker.BallClasses;
@@ -89,6 +91,8 @@ namespace Game
                         gameObject = new PacMario(game);
                     else if (objectName.Equals("Coin"))
                         gameObject = new Coin(false, game);
+                    else if (objectName.Equals("PacNormCoin"))
+                        gameObject = new PacMarioNormalCoin(false, game);
                     else if (objectName.Equals("PacMarioCoin"))
                         gameObject = new PacMarioCoin(false, game);
                     else if (objectName.Equals("Flower"))
@@ -103,6 +107,14 @@ namespace Game
                         gameObject = new GreenKoopa(game);
                     else if (objectName.Equals("Goomba"))
                         gameObject = new Goomba(game);
+                    else if (objectName.Equals("Boo1"))
+                        gameObject = new Boo(game, IEnemyObjectConstants.BOO_START_LOCATIONS[0]);
+                    else if (objectName.Equals("Boo2"))
+                        gameObject = new Boo(game, IEnemyObjectConstants.BOO_START_LOCATIONS[1]);
+                    else if (objectName.Equals("Boo3"))
+                        gameObject = new Boo(game, IEnemyObjectConstants.BOO_START_LOCATIONS[2]);
+                    else if (objectName.Equals("Boo4"))
+                        gameObject = new Boo(game, IEnemyObjectConstants.BOO_START_LOCATIONS[3]);
                     else if (objectName.Equals("Castle"))
                         gameObject = new Castle(game);
                     else if (objectName.Equals("FlagPole"))
@@ -114,6 +126,10 @@ namespace Game
                     else if (objectName.Equals("InvisCoinBlock"))
                     {
                         objectsItem = new Coin(true, game);
+                        gameObject = new Block(Block.Type.HiddenBlock, false, game);
+                    }
+                    else if (objectName.Equals("TeleportBlock"))
+                    {
                         gameObject = new Block(Block.Type.HiddenBlock, false, game);
                     }
                     else if (objectName.Equals("InvisGreenMushBlock"))
@@ -164,6 +180,14 @@ namespace Game
                         gameObject = new Block(Block.Type.BreakingBlock, false, game);
                     else if (objectName.Equals("UndergroundBreakingBlock"))
                         gameObject = new Block(Block.Type.BreakingBlock, true, game);
+                    else if (objectName.Equals("EnemyUpBlock"))
+                        gameObject = new Block(Block.Type.EnemyUpBlock, true, game);
+                    else if (objectName.Equals("EnemyDownBlock"))
+                        gameObject = new Block(Block.Type.EnemyDownBlock, true, game);
+                    else if (objectName.Equals("EnemyRightBlock"))
+                        gameObject = new Block(Block.Type.EnemyRightBlock, true, game);
+                    else if (objectName.Equals("EnemyLeftBlock"))
+                        gameObject = new Block(Block.Type.EnemyLeftBlock, true, game);
                     else if (objectName.Equals("Pipe"))
                         gameObject = new Pipe(game);
                     else if (objectName.Equals("DoublePipe"))
@@ -210,8 +234,14 @@ namespace Game
                         gameObject = new BuckeyePlayer(game);
                     else if (objectName.Equals("Wolverine"))
                         gameObject = new WolverineEnemy(game);
+                    else if (objectName.Equals("JmpWolverine"))
+                        gameObject = new JumpingWolverineEnemy(game);
+                    else if (objectName.Equals("ThwWolverine"))
+                        gameObject = new ThrowingWolverineEnemy(game);
                     else if (objectName.Equals("BuckeyeGrass"))
                         gameObject = new GrassTile(game);
+                    else if (objectName.Equals("BuckeyeGround"))
+                        gameObject = new GroundTile(game);
                     else if (objectName.Equals("Paddle"))
                         gameObject = new Paddle(game);
                     else if (objectName.Equals("PaddleBall"))

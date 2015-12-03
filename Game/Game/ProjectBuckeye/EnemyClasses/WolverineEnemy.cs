@@ -98,5 +98,10 @@ namespace Game.ProjectBuckeye.EnemyClasses
             get { return state; }
             set { state = value; }
         }
+
+
+        public void Throw()
+        {
+        }
     }
 }

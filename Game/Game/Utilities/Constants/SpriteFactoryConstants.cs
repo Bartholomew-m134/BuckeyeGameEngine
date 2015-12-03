@@ -24,6 +24,7 @@ namespace Game.Utilities.Constants
         public const String FOOTBALLSPRITE = "ProjectBuckeyeSprites/Football";
 
         public const String PACMARIOSPRITESHEET = "PacMarioSpriteSheet";
+        public const String PACMARIOENEMYSPRITESHEET = "PacMarioEnemySpriteSheet";
       
     }
 }

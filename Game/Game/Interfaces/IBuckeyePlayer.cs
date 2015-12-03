@@ -13,6 +13,22 @@ namespace Game.Interfaces
             set;
         }
 
+        void Left();
+
+        void Right();
+
+        void Up();
+
+        void Down();
+
+        void Jump();
+
+        void StopJumping();
+
+        void Run();
+
+        void StopRunning();
+
         void Damage();
 
         bool IsFacingRight
@@ -20,5 +36,13 @@ namespace Game.Interfaces
             get;
             set;
         }
+
+        bool IsPressingDown();
+
+        bool IsJumping();
+
+        void ToIdle();
+
+        void Throw();
     }
 }

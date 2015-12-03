@@ -79,7 +79,7 @@ namespace Game.ProjectPacMario.PlayerClasses.PlayerStates
 
         public void Damage()
         {
-
+            mario.MarioState = new PacMarioDeadState(mario);
         }
 
         public bool IsBigMario()

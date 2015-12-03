@@ -12,6 +12,8 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Game.GameStates;
 using Game.Music;
+using Game.ProjectPacMario.PlayerClasses;
+using Game.ProjectPacMario.PlayerClasses.PlayerStates;
 
 namespace Game.GameStates
 {
@@ -20,16 +22,21 @@ namespace Game.GameStates
         private Game1 game;
         private ICamera camera;
         private List<IController> controllerList;
+        private IGameState prevGameState;
         private int delay;
         private bool isUnderground;
+        private int deathTimer;
+        private int initialCoins;
 
         public PacMarioGameState(Game1 game)
         {
             this.game = game;
+            prevGameState = game.gameState;
             controllerList = new List<IController>();
             controllerList.Add(new KeyboardController(new PacMarioControls(game)));
             controllerList.Add(new GamePadController(new PacMarioControls(game)));
             isUnderground = false;
+            initialCoins = HUDManager.CurrentAmountOfCoins();
         }
 
         public void LoadContent()
@@ -51,6 +58,7 @@ namespace Game.GameStates
 
         public void Update()
         {
+            HUDManager.UpdateHUDMarioString(HUDConstants.PACMARIOHUDSTRING);
             if (delay == IGameStateConstants.UPDATEDELAY)
             {
                 foreach (IController controller in controllerList)
@@ -65,6 +73,21 @@ namespace Game.GameStates
             {
                 delay++;
             }
+            if ((HUDManager.CurrentAmountOfCoins() - IGameStateConstants.TOTALPACLEVELCOINS) == initialCoins){
+                Console.WriteLine("all done");
+            }
+            /*if (((PacMario)WorldManager.ReturnPlayer()).MarioState is PacMarioDeadState)
+            {
+                if (deathTimer == 50)
+                {
+                    game.gameState = prevGameState;
+                    WorldManager.ReturnPlayer().VectorCoordinates = new Vector2(0, 0);
+                    CollisionManager.Update(this);
+                    camera.Update(WorldManager.ReturnPlayer());
+                }
+                deathTimer++;
+            }
+             */
         }
 
         public void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch)
