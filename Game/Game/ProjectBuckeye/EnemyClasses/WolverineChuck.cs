@@ -20,7 +20,7 @@ namespace Game.ProjectBuckeye.EnemyClasses
         private IPhysics physics;
         private Game1 myGame;
         private int deathTimer = 0;
-        private int hp = 14;
+        private int hp = 35;
 
         private int stepCounter = 0;
 

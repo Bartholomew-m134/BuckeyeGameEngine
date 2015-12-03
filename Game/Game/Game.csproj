@@ -251,6 +251,7 @@
     <Compile Include="ProjectBuckeye\Collision\BuckeyeTileCollisionHandler.cs" />
     <Compile Include="GameStates\ProjectBuckeyeGameState.cs" />
     <Compile Include="ProjectBuckeye\Collision\BuckeyeWolverineCollisionHandler.cs" />
+    <Compile Include="ProjectBuckeye\Collision\ProjectileProjectileCollisionHandler.cs" />
     <Compile Include="ProjectBuckeye\Collision\WolverineProjectileCollisionHandler.cs" />
     <Compile Include="ProjectBuckeye\Collision\WolverineTileCollisionHandler.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\JumpingWolverineEnemy.cs" />

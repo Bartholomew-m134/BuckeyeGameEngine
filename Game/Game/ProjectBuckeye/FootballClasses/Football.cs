@@ -44,6 +44,7 @@ namespace Game.ProjectBuckeye.FootballClasses
 
         public void Explode()
         {
+            sprite = ProjectileSpriteFactory.CreateExplodingFireSprite();
             physics.Acceleration = Vector2.Zero;
             physics.Velocity = Vector2.Zero;
             isExploded = true;
