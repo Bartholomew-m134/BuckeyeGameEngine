@@ -28,5 +28,7 @@ namespace Game.Interfaces
             get;
             set;
         }
+
+        void Throw();
     }
 }

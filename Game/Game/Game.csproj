@@ -245,7 +245,10 @@
     <Compile Include="ProjectBuckeye\Collision\BuckeyeTileCollisionHandler.cs" />
     <Compile Include="GameStates\ProjectBuckeyeGameState.cs" />
     <Compile Include="ProjectBuckeye\Collision\BuckeyeWolverineCollisionHandler.cs" />
+    <Compile Include="ProjectBuckeye\Collision\WolverineProjectileCollisionHandler.cs" />
     <Compile Include="ProjectBuckeye\Collision\WolverineTileCollisionHandler.cs" />
+    <Compile Include="ProjectBuckeye\EnemyClasses\JumpingWolverineEnemy.cs" />
+    <Compile Include="ProjectBuckeye\EnemyClasses\ThrowingWolverineEnemy.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineEnemy.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineSprites\WolverineDownLeftSprite.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineSprites\WolverineDownRightSprite.cs" />
@@ -276,7 +279,9 @@
     <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerStates\BuckeyeRightJumpingState.cs" />
     <Compile Include="ProjectBuckeye\PlayerClasses\BuckeyePlayerStates\BuckeyeRightMovementState.cs" />
     <Compile Include="ProjectBuckeye\Tiles\GrassTile.cs" />
+    <Compile Include="ProjectBuckeye\Tiles\GroundTile.cs" />
     <Compile Include="ProjectBuckeye\Tiles\TileSprites\GrassTileSprite.cs" />
+    <Compile Include="ProjectBuckeye\Tiles\TileSprites\GroundTileSprite.cs" />
     <Compile Include="Projectiles\LeftFire.cs" />
     <Compile Include="Items\Flower.cs" />
     <Compile Include="Items\GreenMushroom.cs" />
@@ -389,6 +394,7 @@
     <Compile Include="SoundEffects\ShrinkingOrPipeEffect.cs" />
     <Compile Include="SoundEffects\SmallMarioJumpEffect.cs" />
     <Compile Include="SoundEffects\SoundEffectManager.cs" />
+    <Compile Include="SoundEffects\StompEffect.cs" />
     <Compile Include="SoundEffects\SuperMarioJumpEffect.cs" />
     <Compile Include="SpriteFactories\BackgroundElementsSpriteFactory.cs" />
     <Compile Include="SpriteFactories\BuckeyePlayerSpriteFactory.cs" />

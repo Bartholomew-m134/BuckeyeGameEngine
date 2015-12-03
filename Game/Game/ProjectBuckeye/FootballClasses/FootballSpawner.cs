@@ -11,7 +11,7 @@ namespace Game.ProjectBuckeye.FootballClasses
     {
         private Game1 game;
         private int count;
-        private const int MAXCOUNT = 3;
+        private const int MAXCOUNT = 2;
 
         public FootballSpawner(Game1 game)
         {

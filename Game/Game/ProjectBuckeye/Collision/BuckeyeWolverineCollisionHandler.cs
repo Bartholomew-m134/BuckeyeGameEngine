@@ -44,12 +44,13 @@ namespace Game.ProjectBuckeye.Collision
                 if ((side is LeftSideCollision || side is RightSideCollision) && enemy.CanDealDamage)
                 {
                     player.Damage();
+                    SoundEffectManager.StompEffect();
                     enemy.ShiftDirection();
                 }
                 else if (side is TopSideCollision)
                 {
                     enemy.Hit();
-                    SoundEffectManager.GoombaHitEffect();
+                    SoundEffectManager.StompEffect();
                     player.Physics.Velocity = new Vector2(player.Physics.Velocity.X, BuckeyeCollisionConstants.BUCKEYE_BUMP_SPEED_Y);
                     player.Physics.Acceleration = new Vector2(player.Physics.Acceleration.X, BuckeyeCollisionConstants.BUCKEYE_BUMP_ACCELERATION_Y);
                 }

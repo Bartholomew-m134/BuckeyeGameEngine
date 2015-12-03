@@ -14,7 +14,8 @@ namespace Game.Commands.BuckeyeCommands
 
         public void Execute()
         {
-            ((IBuckeyePlayer)WorldManager.ReturnPlayer()).Throw();
+            if(((IBuckeyePlayer)WorldManager.ReturnPlayer()).IsDead == false)
+                ((IBuckeyePlayer)WorldManager.ReturnPlayer()).Throw();
         }
 
         public void Hold()

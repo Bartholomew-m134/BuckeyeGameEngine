@@ -232,8 +232,14 @@ namespace Game
                         gameObject = new BuckeyePlayer(game);
                     else if (objectName.Equals("Wolverine"))
                         gameObject = new WolverineEnemy(game);
+                    else if (objectName.Equals("JmpWolverine"))
+                        gameObject = new JumpingWolverineEnemy(game);
+                    else if (objectName.Equals("ThwWolverine"))
+                        gameObject = new ThrowingWolverineEnemy(game);
                     else if (objectName.Equals("BuckeyeGrass"))
                         gameObject = new GrassTile(game);
+                    else if (objectName.Equals("BuckeyeGround"))
+                        gameObject = new GroundTile(game);
 
                     if (objectsItem != null)
                     {

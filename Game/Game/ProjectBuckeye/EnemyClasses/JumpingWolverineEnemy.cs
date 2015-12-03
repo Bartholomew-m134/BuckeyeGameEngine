@@ -10,7 +10,7 @@ using Game.ProjectBuckeye.EnemyClasses.WolverineStates;
 
 namespace Game.ProjectBuckeye.EnemyClasses
 {
-    public class WolverineEnemy : IWolverine
+    public class JumpingWolverineEnemy : IWolverine
     {
         private ISprite sprite;
         private IWolverineState state;
@@ -20,8 +20,9 @@ namespace Game.ProjectBuckeye.EnemyClasses
         private IPhysics physics;
         private Game1 myGame;
         private int deathTimer = 0;
+        private int jumpTimer = 0;
 
-        public WolverineEnemy(Game1 game)
+        public JumpingWolverineEnemy(Game1 game)
         {
             myGame = game;
             isHit = false;
@@ -65,7 +66,13 @@ namespace Game.ProjectBuckeye.EnemyClasses
             }
             else if (!isHit)
             {
+                jumpTimer++;
                 location = physics.Update(location);
+                if (jumpTimer == 40)
+                {
+                    physics.Velocity = new Vector2( physics.Velocity.X, -10);
+                    jumpTimer = 0;
+                }
             }
             state.Update();  
         }

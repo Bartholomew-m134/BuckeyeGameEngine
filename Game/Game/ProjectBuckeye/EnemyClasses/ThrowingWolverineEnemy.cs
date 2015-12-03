@@ -7,10 +7,11 @@ using Game.Utilities;
 using Game.Utilities.Constants;
 using Microsoft.Xna.Framework;
 using Game.ProjectBuckeye.EnemyClasses.WolverineStates;
+using Game.ProjectBuckeye.FootballClasses;
 
 namespace Game.ProjectBuckeye.EnemyClasses
 {
-    public class WolverineEnemy : IWolverine
+    public class ThrowingWolverineEnemy : IWolverine
     {
         private ISprite sprite;
         private IWolverineState state;
@@ -20,14 +21,17 @@ namespace Game.ProjectBuckeye.EnemyClasses
         private IPhysics physics;
         private Game1 myGame;
         private int deathTimer = 0;
+        private int throwTimer = 0;
+        private FootballSpawner spawner;
 
-        public WolverineEnemy(Game1 game)
+        public ThrowingWolverineEnemy(Game1 game)
         {
             myGame = game;
             isHit = false;
             canDealDamage = true;
             physics = new MarioGamePhysics();
             state = new WolverineMovingLeftState(this);
+            spawner = new FootballSpawner(myGame);
         }
 
         public void Hit()
@@ -65,7 +69,13 @@ namespace Game.ProjectBuckeye.EnemyClasses
             }
             else if (!isHit)
             {
+                throwTimer++;
                 location = physics.Update(location);
+                if (throwTimer == 30)
+                {
+                    Throw();
+                    throwTimer = 0;
+                }
             }
             state.Update();  
         }
@@ -102,6 +112,16 @@ namespace Game.ProjectBuckeye.EnemyClasses
 
         public void Throw()
         {
+            spawner.ReleaseFootball(location, FacingRight());
+        }
+
+        private bool FacingRight()
+        {
+            bool movingRight = false;
+            if (this.state is WolverineMovingRightState)
+                movingRight = true;
+            return movingRight;
+
         }
     }
 }
