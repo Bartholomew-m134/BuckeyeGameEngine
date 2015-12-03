@@ -18,12 +18,15 @@ namespace Game.ProjectBuckeye.FootballClasses
             this.game = game;
         }
 
-        public void ReleaseFootball(Vector2 location, bool lookingRight)
+        public void ReleaseFootball(Vector2 location, bool lookingRight, bool isHostile)
         {
             if (count < MAXCOUNT)
             {
-                Football football = new Football(this, game, lookingRight);
-                football.VectorCoordinates = new Vector2(location.X, location.Y + 10);
+                Football football = new Football(this, game, lookingRight, isHostile);
+                if (!isHostile)
+                    football.VectorCoordinates = new Vector2(location.X, location.Y + 10);
+                else
+                    football.VectorCoordinates = location;
                 WorldManager.CreateNewObject(football);
                 count++;
             }

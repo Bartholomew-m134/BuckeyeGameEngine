@@ -245,6 +245,7 @@
     <Compile Include="Pipes\PipeSprites\SidePipeSprite.cs" />
     <Compile Include="Pipes\PipeSprites\VerticalPipeSprite.cs" />
     <Compile Include="Pipes\VerticalPipe.cs" />
+    <Compile Include="ProjectBuckeye\Collision\BuckeyeProjectileCollisionHandler.cs" />
     <Compile Include="ProjectBuckeye\Collision\BuckeyeTileCollisionHandler.cs" />
     <Compile Include="GameStates\ProjectBuckeyeGameState.cs" />
     <Compile Include="ProjectBuckeye\Collision\BuckeyeWolverineCollisionHandler.cs" />

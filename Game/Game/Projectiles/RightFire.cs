@@ -81,5 +81,11 @@ namespace Game.Projectiles
             get { return physics; }
         }
 
+
+
+        public bool IsHostile()
+        {
+            return false;
+        }
     }
 }

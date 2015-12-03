@@ -15,5 +15,7 @@ namespace Game.Interfaces
 
         void ReturnObject();
 
+        bool IsHostile();
+
     }
 }

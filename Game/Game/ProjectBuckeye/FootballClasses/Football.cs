@@ -18,8 +18,9 @@ namespace Game.ProjectBuckeye.FootballClasses
         private IPhysics physics;
         private bool isExploded;
         private FootballSpawner spawner;
+        private bool isHostile;
 
-        public Football(FootballSpawner spawner, Game1 game, bool throwingRight)
+        public Football(FootballSpawner spawner, Game1 game, bool throwingRight, bool isHostile)
         {
             myGame = game;
             sprite = ProjectileSpriteFactory.CreateFootballSprite();
@@ -37,6 +38,7 @@ namespace Game.ProjectBuckeye.FootballClasses
             }
 
             isExploded = false;
+            this.isHostile = isHostile;
             this.spawner = spawner;
         }
 
@@ -89,6 +91,12 @@ namespace Game.ProjectBuckeye.FootballClasses
         public IPhysics Physics
         {
             get { return physics; }
+        }
+
+
+        public bool IsHostile()
+        {
+            return isHostile;
         }
     }
 }

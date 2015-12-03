@@ -8,25 +8,25 @@ using Game.SoundEffects;
 
 namespace Game.ProjectBuckeye.Collision
 {
-    public class WolverineProjectileCollisionHandler
+    public class BuckeyeProjectileCollisionHandler
     {
-        private IWolverine enemy;
+        private IBuckeyePlayer player;
         private IProjectile projectile;
         private ICollisionSide collisionSide;
         private CollisionData collision;
 
-        public WolverineProjectileCollisionHandler(CollisionData collision)
+        public BuckeyeProjectileCollisionHandler(CollisionData collision)
         {
             this.collision = collision;
             collisionSide = (ICollisionSide)collision.CollisionSide;
-            if (collision.GameObjectA is IWolverine)
+            if (collision.GameObjectA is IBuckeyePlayer)
             {
-                enemy = (IWolverine)collision.GameObjectA;
+                player = (IBuckeyePlayer)collision.GameObjectA;
                 projectile = (IProjectile)collision.GameObjectB;
             }
             else
             {
-                enemy = (IWolverine)collision.GameObjectB;
+                player = (IBuckeyePlayer)collision.GameObjectB;
                 projectile = (IProjectile)collision.GameObjectA;
                 collisionSide = collisionSide.FlipSide();
             }
@@ -34,10 +34,10 @@ namespace Game.ProjectBuckeye.Collision
 
         public void HandleCollision()
         {
-            if (!enemy.IsHit && !projectile.IsHostile())
+            if (!player.IsDead && projectile.IsHostile())
             {
                 SoundEffectManager.StompEffect();
-                enemy.Hit();
+                player.Damage();
                 projectile.Explode();
             }
         }

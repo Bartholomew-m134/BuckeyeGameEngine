@@ -92,6 +92,11 @@ namespace Game.Collisions
                 BuckeyeTileCollisionHandler collisionHandler = new BuckeyeTileCollisionHandler(collision);
                 collisionHandler.HandleCollision();
             }
+            else if ((collision.GameObjectA is IBuckeyePlayer && collision.GameObjectB is IProjectile) || (collision.GameObjectA is IProjectile && collision.GameObjectB is IBuckeyePlayer))
+            {
+                BuckeyeProjectileCollisionHandler collisionHandler = new BuckeyeProjectileCollisionHandler(collision);
+                collisionHandler.HandleCollision();
+            }
             else if ((collision.GameObjectA is IWolverine && collision.GameObjectB is IBuckeyeTile) || (collision.GameObjectA is IBuckeyeTile && collision.GameObjectB is IWolverine))
             {
                 WolverineTileCollisionHandler collisionHandler = new WolverineTileCollisionHandler(collision);

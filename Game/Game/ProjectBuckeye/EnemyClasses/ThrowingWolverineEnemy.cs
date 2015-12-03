@@ -112,7 +112,7 @@ namespace Game.ProjectBuckeye.EnemyClasses
 
         public void Throw()
         {
-            spawner.ReleaseFootball(location, FacingRight());
+            spawner.ReleaseFootball(location, FacingRight(), true);
         }
 
         private bool FacingRight()
