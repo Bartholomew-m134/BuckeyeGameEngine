@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Game.Utilities.Constants;
+using Game.Music;
 
 namespace Game.GameStates
 {
@@ -26,6 +27,8 @@ namespace Game.GameStates
             controllerList = new List<IController>();
             controllerList.Add(new KeyboardController(new PausedControls(game)));
             controllerList.Add(new GamePadController(new PausedControls(game)));
+
+            BackgroundThemeManager.StopAllBackgroundThemes();
         }
 
         public void LoadContent()

@@ -232,6 +232,7 @@
     <Compile Include="Menu\MainMenu.cs" />
     <Compile Include="Music\BackgroundThemeManager.cs" />
     <Compile Include="Music\BuckeyeOverworldTheme.cs" />
+    <Compile Include="Music\CarmenTheme.cs" />
     <Compile Include="Music\DeathTheme.cs" />
     <Compile Include="Music\FlagPoleVictoryTheme.cs" />
     <Compile Include="Music\MarioOverworldTheme.cs" />
@@ -245,6 +246,7 @@
     <Compile Include="Pipes\PipeSprites\SidePipeSprite.cs" />
     <Compile Include="Pipes\PipeSprites\VerticalPipeSprite.cs" />
     <Compile Include="Pipes\VerticalPipe.cs" />
+    <Compile Include="ProjectBuckeye\BuckeyeVictoryTransition.cs" />
     <Compile Include="ProjectBuckeye\Collision\BuckeyeProjectileCollisionHandler.cs" />
     <Compile Include="ProjectBuckeye\Collision\BuckeyeTileCollisionHandler.cs" />
     <Compile Include="GameStates\ProjectBuckeyeGameState.cs" />
@@ -253,6 +255,11 @@
     <Compile Include="ProjectBuckeye\Collision\WolverineTileCollisionHandler.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\JumpingWolverineEnemy.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\ThrowingWolverineEnemy.cs" />
+    <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuck.cs" />
+    <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuckSprites\WolverineChuckCharginLeftSprite.cs" />
+    <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuckSprites\WolverineChuckCharginRightSprite.cs" />
+    <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuckStates\WolverineChuckCharginLeftState.cs" />
+    <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuckStates\WolverineChuckCharginRightState.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineEnemy.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineSprites\WolverineDownLeftSprite.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineSprites\WolverineDownRightSprite.cs" />

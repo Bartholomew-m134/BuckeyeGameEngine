@@ -123,5 +123,10 @@ namespace Game.ProjectBuckeye.EnemyClasses
             return movingRight;
 
         }
+
+
+        public void Idle()
+        {
+        }
     }
 }

@@ -236,6 +236,8 @@ namespace Game
                         gameObject = new WolverineEnemy(game);
                     else if (objectName.Equals("JmpWolverine"))
                         gameObject = new JumpingWolverineEnemy(game);
+                    else if (objectName.Equals("WolverineChuck"))
+                        gameObject = new WolverineChuck(game);
                     else if (objectName.Equals("ThwWolverine"))
                         gameObject = new ThrowingWolverineEnemy(game);
                     else if (objectName.Equals("BuckeyeGrass"))

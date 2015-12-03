@@ -15,6 +15,7 @@ namespace Game.Music
         private static IMusic flagPoleVictory = new FlagPoleVictoryTheme();
         private static IMusic death = new DeathTheme();
         private static IMusic buckeyeOverworld = new BuckeyeOverworldTheme();
+        private static IMusic carmen = new CarmenTheme();
         private static IMusic pacLevel = new PacManLevelTheme();
         private static IMusic pacDeath = new PacMarioDeadTheme();
 
@@ -68,6 +69,7 @@ namespace Game.Music
             death.StopTheme();
             buckeyeOverworld.StopTheme();
             pacLevel.StopTheme();
+            carmen.StopTheme();
         }
 
         public static void HurryTimeUpdate()
@@ -83,6 +85,13 @@ namespace Game.Music
             StopAllBackgroundThemes();
             buckeyeOverworld = new BuckeyeOverworldTheme();
             buckeyeOverworld.PlayTheme();
+        }
+
+        public static void PlayCarmenTheme()
+        {
+            StopAllBackgroundThemes();
+            carmen = new CarmenTheme();
+            carmen.PlayTheme();
         }
 
         public static void PlayPacManLevelTheme()

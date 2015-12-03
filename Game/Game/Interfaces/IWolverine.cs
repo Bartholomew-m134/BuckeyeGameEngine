@@ -30,5 +30,7 @@ namespace Game.Interfaces
         }
 
         void Throw();
+
+        void Idle();
     }
 }

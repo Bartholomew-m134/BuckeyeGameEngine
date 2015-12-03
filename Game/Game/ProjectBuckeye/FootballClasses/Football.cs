@@ -28,13 +28,13 @@ namespace Game.ProjectBuckeye.FootballClasses
             physics.Acceleration = new Vector2(0, 0);
             if (throwingRight)
             {
-                physics.Velocity = new Vector2(15, 0);
-                physics.VelocityMaximum = new Vector2(15, 0);
+                physics.VelocityMaximum = new Vector2(20, 0);
+                physics.Velocity = new Vector2(20, 0);
             }
             else
             {
-                physics.Velocity = new Vector2(-15, 0);
-                physics.VelocityMinimum = new Vector2(-15, 0);
+                physics.VelocityMinimum = new Vector2(-20, 0);
+                physics.Velocity = new Vector2(-20, 0);
             }
 
             isExploded = false;

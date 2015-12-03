@@ -41,5 +41,20 @@ namespace Game.Utilities.Constants
 
         public static readonly Vector2 FALL_LOOKING_LEFT_SOURCE = new Vector2(129, 178);
         public static readonly Vector2 FALL_LOOKING_LEFT_DIMENSIONS = new Vector2(58, 38);
+
+        public const int CHUCK_MOVEMENT_FRAME_MAX = 2;
+        public const float CHUCK_SPRITE_SCALE_FACTOR = 1.8f;
+
+        public static readonly Vector2 CHUCK_LEFT_FRAME_1_SOURCE = new Vector2(5, 6);
+        public static readonly Vector2 CHUCK_LEFT_FRAME_1_DIMENSIONS = new Vector2(26, 27);
+
+        public static readonly Vector2 CHUCK_LEFT_FRAME_2_SOURCE = new Vector2(45, 7);
+        public static readonly Vector2 CHUCK_LEFT_FRAME_2_DIMENSIONS = new Vector2(26, 26);
+
+        public static readonly Vector2 CHUCK_RIGHT_FRAME_1_SOURCE = new Vector2(44, 50);
+        public static readonly Vector2 CHUCK_RIGHT_FRAME_1_DIMENSIONS = new Vector2(26, 26);
+
+        public static readonly Vector2 CHUCK_RIGHT_FRAME_2_SOURCE = new Vector2(84, 49);
+        public static readonly Vector2 CHUCK_RIGHT_FRAME_2_DIMENSIONS = new Vector2(26, 27);
     }
 }
