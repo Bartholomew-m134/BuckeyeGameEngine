@@ -1,11 +1,15 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace Game.Interfaces
 {
-    interface ISpawner
+    public interface ISpawner
     {
+        void Release();
+
+        void Return();
     }
 }

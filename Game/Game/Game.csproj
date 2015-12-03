@@ -415,6 +415,7 @@
     <Compile Include="SoundEffects\SoundEffectManager.cs" />
     <Compile Include="SoundEffects\StompEffect.cs" />
     <Compile Include="SoundEffects\SuperMarioJumpEffect.cs" />
+    <Compile Include="Spawners\ItemSpawner.cs" />
     <Compile Include="SpriteFactories\BackgroundElementsSpriteFactory.cs" />
     <Compile Include="SpriteFactories\BuckeyePlayerSpriteFactory.cs" />
     <Compile Include="SpriteFactories\BuckeyeTileSpriteFactory.cs" />

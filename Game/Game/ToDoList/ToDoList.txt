@@ -1,5 +1,3 @@
 ﻿- Figure out to handle using a font across different computers.
 
-- Change Coin/Block collision detection/creation
-
 - Add ability to exit fullscreen outside of menu
