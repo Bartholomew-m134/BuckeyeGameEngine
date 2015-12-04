@@ -40,6 +40,7 @@ namespace Game.Utilities.Constants
 
         public const String PROJECT_BUCKEYE_TEST_WORLD = "ProjectBuckeyeTest";
         public const String PACMARIO_WORLD = "PacMarioWorld";
+        public const String BRICKBREAKER_WORLD = "BrickBreakerWorld";
         public const int TOTALPACLEVELCOINS = 179;
         
     }

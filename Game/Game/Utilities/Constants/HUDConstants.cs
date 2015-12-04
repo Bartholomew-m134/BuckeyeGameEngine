@@ -10,6 +10,7 @@ namespace Game.Utilities.Constants
     {
         public const string MARIOHUDSTRING = "MARIO";
         public const string PACMARIOHUDSTRING = "PACMARIO";
+        public const string BRICKBREAKERHUDSTRING = "BRICK BREAKER";
         public const string WORLDHUDSTRING = "WORLD";
         public const string TIMEHUDSTRING = "TIME";
         public const string WORLDNUMBERHUDSTRING = "1-1";
