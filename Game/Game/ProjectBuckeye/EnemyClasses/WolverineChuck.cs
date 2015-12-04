@@ -115,7 +115,7 @@ namespace Game.ProjectBuckeye.EnemyClasses
 
         public void Throw()
         {
-            if (throwTimer > 15)
+            if (throwTimer > 20)
             {
                 spawner.ReleaseFootball(location, FacingRight(), true, this);
                 throwTimer = 0;

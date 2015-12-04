@@ -28,7 +28,7 @@ namespace Game.GameStates
             controllerList.Add(new KeyboardController(new PausedControls(game)));
             controllerList.Add(new GamePadController(new PausedControls(game)));
 
-            BackgroundThemeManager.StopAllBackgroundThemes();
+            BackgroundThemeManager.PlayIntroTheme();
         }
 
         public void LoadContent()

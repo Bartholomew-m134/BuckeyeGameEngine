@@ -10,6 +10,7 @@ namespace Game.Music
 {
     public static class BackgroundThemeManager
     {
+        private static IMusic intro = new IntroTheme();
         private static IMusic overworld = new MarioOverworldTheme();
         private static IMusic starMan = new StarTheme();
         private static IMusic flagPoleVictory = new FlagPoleVictoryTheme();
@@ -20,6 +21,13 @@ namespace Game.Music
         private static IMusic pacDeath = new PacMarioDeadTheme();
 
         private static IMusic prePowerUpTheme;
+
+        public static void PlayIntroTheme()
+        {
+            StopAllBackgroundThemes();
+            intro = new IntroTheme();
+            intro.PlayTheme();
+        }
 
         public static void PlayOverWorldTheme(){
             StopAllBackgroundThemes();
@@ -70,6 +78,7 @@ namespace Game.Music
             buckeyeOverworld.StopTheme();
             pacLevel.StopTheme();
             carmen.StopTheme();
+            intro.StopTheme();
         }
 
         public static void HurryTimeUpdate()

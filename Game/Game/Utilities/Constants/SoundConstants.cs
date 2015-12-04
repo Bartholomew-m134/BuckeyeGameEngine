@@ -9,6 +9,8 @@ namespace Game.Utilities.Constants
     {
         public const int HURRYUPTIME = 99;
 
+        public const String INTROTHEME = @"Content\SoundTracks\Ohio_State_Buckeyes_-_Fight_Song_Battle_Cry_1_.wav";
+
         public const String DEATHTHEME = @"Content\SoundTracks\08_you_re_dead.wav";
         public const String FLAGPOLEVICTORYTHEME = @"Content\SoundTracks\06-level-complete.wav";
         public const String OVERWORLDTHEME = @"Content\SoundTracks\01-main-theme-overworld.wav";
