@@ -19,6 +19,7 @@ namespace Game.ProjectBuckeye.FootballClasses
         private bool isExploded;
         private FootballSpawner spawner;
         private bool isHostile;
+        private int gravityDelayTimer = 0;
 
         public Football(FootballSpawner spawner, Game1 game, bool throwingRight, bool isHostile)
         {
@@ -28,12 +29,12 @@ namespace Game.ProjectBuckeye.FootballClasses
             physics.Acceleration = new Vector2(0, 0);
             if (throwingRight)
             {
-                physics.VelocityMaximum = new Vector2(20, 0);
+                physics.VelocityMaximum = new Vector2(20, physics.VelocityMaximum.Y);
                 physics.Velocity = new Vector2(20, 0);
             }
             else
             {
-                physics.VelocityMinimum = new Vector2(-20, 0);
+                physics.VelocityMinimum = new Vector2(-20, physics.VelocityMinimum.Y);
                 physics.Velocity = new Vector2(-20, 0);
             }
 
@@ -64,7 +65,10 @@ namespace Game.ProjectBuckeye.FootballClasses
             if (!isExploded)
             {
                 sprite.Update();
+                if (gravityDelayTimer >= 10)
+                    physics.Acceleration = new Vector2(0, 1);
                 location = physics.Update(location);
+                gravityDelayTimer++;
             }
             else
             {

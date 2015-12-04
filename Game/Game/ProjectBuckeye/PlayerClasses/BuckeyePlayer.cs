@@ -9,6 +9,7 @@ using Game.SoundEffects;
 using Game.Utilities.Constants;
 using Game.ProjectBuckeye.PlayerClasses.BuckeyePlayerStates;
 using Game.ProjectBuckeye.FootballClasses;
+using Game.GameStates;
 
 namespace Game.ProjectBuckeye.PlayerClasses
 {
@@ -135,6 +136,8 @@ namespace Game.ProjectBuckeye.PlayerClasses
         public void Damage()
         {
             state.DownPlayer();
+            myGame.gameState = new MenuGameState(myGame);
+            myGame.gameState.LoadContent();
         }
 
 
