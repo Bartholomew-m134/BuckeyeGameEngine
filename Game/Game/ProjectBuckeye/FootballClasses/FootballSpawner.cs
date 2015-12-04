@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Game.ProjectBuckeye.FootballClasses;
+using Game.Interfaces;
+using Game.ProjectBuckeye.EnemyClasses;
+using Game.ProjectBuckeye.EnemyClasses.WolverineChuckStates;
 
 namespace Game.ProjectBuckeye.FootballClasses
 {
@@ -18,17 +21,23 @@ namespace Game.ProjectBuckeye.FootballClasses
             this.game = game;
         }
 
-        public void ReleaseFootball(Vector2 location, bool lookingRight, bool isHostile)
+        public void ReleaseFootball(Vector2 location, bool lookingRight, bool isHostile, IGameObject thrower)
         {
-            if (count < MAXCOUNT)
+            if (count < MAXCOUNT && !(thrower is WolverineChuck))
             {
                 Football football = new Football(this, game, lookingRight, isHostile);
-                if (!isHostile)
-                    football.VectorCoordinates = new Vector2(location.X, location.Y + 10);
-                else
-                    football.VectorCoordinates = location;
+                football.VectorCoordinates = new Vector2(location.X, location.Y + 10);
                 WorldManager.CreateNewObject(football);
                 count++;
+            }
+            else if (isHostile && thrower is WolverineChuck)
+            {
+                Football football = new Football(this, game, lookingRight, isHostile);
+                if (((WolverineChuck)thrower).State is WolverineChuckIdleRightState || ((WolverineChuck)thrower).State is WolverineChuckIdleLeftState)
+                    football.VectorCoordinates = new Vector2(location.X, location.Y);
+                else
+                    football.VectorCoordinates = new Vector2(location.X, location.Y + 10);
+                WorldManager.CreateNewObject(football);
             }
         }
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Game.Interfaces;
 using Game.Collisions;
+using Game.ProjectBuckeye.EnemyClasses.WolverineChuckStates;
 
 namespace Game.ProjectBuckeye.Collision
 {
@@ -33,6 +34,8 @@ namespace Game.ProjectBuckeye.Collision
 
         public void HandleCollision()
         {
+            if(!(enemy.State is WolverineChuckIdleLeftState || enemy.State is WolverineChuckIdleRightState))
+                enemy.Physics.ResetY();
             collision.ResolveOverlap(enemy, collisionSide);
         }
     }

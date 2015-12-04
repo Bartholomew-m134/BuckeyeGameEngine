@@ -25,8 +25,8 @@ namespace Game.GameStates
         private IGameState prevGameState;
         private int delay;
         private bool isUnderground;
-        private int deathTimer;
-        private int initialCoins;
+        //private int deathTimer;
+       // private int initialCoins;
 
         public PacMarioGameState(Game1 game)
         {
@@ -36,7 +36,7 @@ namespace Game.GameStates
             controllerList.Add(new KeyboardController(new PacMarioControls(game)));
             controllerList.Add(new GamePadController(new PacMarioControls(game)));
             isUnderground = false;
-            initialCoins = HUDManager.CurrentAmountOfCoins();
+            //initialCoins = HUDManager.CurrentAmountOfCoins();
         }
 
         public void LoadContent()
@@ -73,10 +73,11 @@ namespace Game.GameStates
             {
                 delay++;
             }
+            /*
             if ((HUDManager.CurrentAmountOfCoins() - IGameStateConstants.TOTALPACLEVELCOINS) == initialCoins){
                 Console.WriteLine("all done");
             }
-            /*if (((PacMario)WorldManager.ReturnPlayer()).MarioState is PacMarioDeadState)
+            if (((PacMario)WorldManager.ReturnPlayer()).MarioState is PacMarioDeadState)
             {
                 if (deathTimer == 50)
                 {

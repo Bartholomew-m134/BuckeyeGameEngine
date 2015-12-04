@@ -45,7 +45,8 @@ namespace Game.ProjectBuckeye.Collision
                 {
                     player.Damage();
                     SoundEffectManager.StompEffect();
-                    enemy.ShiftDirection();
+                    if(!(enemy is WolverineChuck))
+                        enemy.ShiftDirection();
                 }
                 else if (side is TopSideCollision)
                 {

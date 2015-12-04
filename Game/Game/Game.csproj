@@ -123,6 +123,11 @@
     <Compile Include="Commands\PacMarioCommands\RaisePacMarioStanceCommand.cs" />
     <Compile Include="Commands\StartButtonCommand.cs" />
     <Compile Include="Enemies\GoombaClasses\Goomba.cs" />
+    <Compile Include="ProjectBuckeye\Collision\ProjectileTileCollisionHandler.cs" />
+    <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuckSprites\WolverineChuckIdleLeftSprite.cs" />
+    <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuckSprites\WolverineChuckIdleRightSprite.cs" />
+    <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuckStates\WolverineChuckIdleLeftState.cs" />
+    <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuckStates\WolverineChuckIdleRightState.cs" />
     <Compile Include="GameStates\MarioBrickBreakerGameState.cs" />
     <Compile Include="Spawners\FireBallSpawner.cs" />
     <Compile Include="FlagPoles\FlagPole.cs" />
@@ -255,6 +260,7 @@
     <Compile Include="ProjectBuckeye\Collision\BuckeyeTileCollisionHandler.cs" />
     <Compile Include="GameStates\ProjectBuckeyeGameState.cs" />
     <Compile Include="ProjectBuckeye\Collision\BuckeyeWolverineCollisionHandler.cs" />
+    <Compile Include="ProjectBuckeye\Collision\ProjectileProjectileCollisionHandler.cs" />
     <Compile Include="ProjectBuckeye\Collision\WolverineProjectileCollisionHandler.cs" />
     <Compile Include="ProjectBuckeye\Collision\WolverineTileCollisionHandler.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\JumpingWolverineEnemy.cs" />

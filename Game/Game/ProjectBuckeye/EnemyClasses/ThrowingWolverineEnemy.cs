@@ -112,7 +112,7 @@ namespace Game.ProjectBuckeye.EnemyClasses
 
         public void Throw()
         {
-            spawner.ReleaseFootball(location, FacingRight(), true);
+            spawner.ReleaseFootball(location, FacingRight(), true, this);
         }
 
         private bool FacingRight()
@@ -121,7 +121,6 @@ namespace Game.ProjectBuckeye.EnemyClasses
             if (this.state is WolverineMovingRightState)
                 movingRight = true;
             return movingRight;
-
         }
 
 

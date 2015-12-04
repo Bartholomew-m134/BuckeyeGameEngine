@@ -11,5 +11,6 @@ namespace Game.Interfaces
         void Damage();
         void DirectionChange();
         void Idle();
+        void Move();
     }
 }
