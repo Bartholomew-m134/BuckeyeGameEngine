@@ -25,7 +25,7 @@ namespace Game.GameStates
         private IGameState prevGameState;
         private int delay;
         private bool isUnderground;
-        //private int deathTimer;
+        private int deathTimer;
        // private int initialCoins;
 
         public PacMarioGameState(Game1 game)
@@ -77,18 +77,21 @@ namespace Game.GameStates
             if ((HUDManager.CurrentAmountOfCoins() - IGameStateConstants.TOTALPACLEVELCOINS) == initialCoins){
                 Console.WriteLine("all done");
             }
-            if (((PacMario)WorldManager.ReturnPlayer()).MarioState is PacMarioDeadState)
+            */
+            if (((IMario)WorldManager.ReturnPlayer()).MarioState is PacMarioDeadState)
             {
                 if (deathTimer == 50)
                 {
-                    game.gameState = prevGameState;
-                    WorldManager.ReturnPlayer().VectorCoordinates = new Vector2(0, 0);
                     CollisionManager.Update(this);
                     camera.Update(WorldManager.ReturnPlayer());
+                    game.gameState = prevGameState;
+                    game.gameState.LoadContent();
+                    deathTimer = 0;
                 }
                 deathTimer++;
             }
-             */
+             
+             
         }
 
         public void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch)
