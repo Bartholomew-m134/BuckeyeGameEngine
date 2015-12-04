@@ -7,6 +7,7 @@ using Game.Utilities;
 using Game.Utilities.Constants;
 using Microsoft.Xna.Framework;
 using Game.ProjectBuckeye.EnemyClasses.WolverineChuckStates;
+using Game.ProjectBuckeye.FootballClasses;
 
 namespace Game.ProjectBuckeye.EnemyClasses
 {
@@ -21,6 +22,8 @@ namespace Game.ProjectBuckeye.EnemyClasses
         private Game1 myGame;
         private int deathTimer = 0;
         private int hp = 35;
+        private int throwTimer = 0;
+        private FootballSpawner spawner;
 
         private int stepCounter = 0;
 
@@ -30,7 +33,8 @@ namespace Game.ProjectBuckeye.EnemyClasses
             isHit = false;
             canDealDamage = true;
             physics = new MarioGamePhysics();
-            state = new WolverineChuckCharginLeftState(this);
+            state = new WolverineChuckIdleLeftState(this);
+            spawner = new FootballSpawner(myGame);
         }
 
         public void Hit()
@@ -111,14 +115,37 @@ namespace Game.ProjectBuckeye.EnemyClasses
 
         public void Throw()
         {
+            if (throwTimer > 15)
+            {
+                spawner.ReleaseFootball(location, FacingRight(), true, this);
+                throwTimer = 0;
+            }
+            throwTimer++;
         }
 
+        private bool FacingRight()
+        {
+            bool movingRight = false;
+            if (this.state is WolverineChuckCharginRightState || this.state is WolverineChuckIdleRightState)
+                movingRight = true;
+            return movingRight;
+        }
 
         public void Idle()
         {
         }
 
         private void HandleAI()
+        {
+            Throw();
+            if (hp < 20)
+            {
+                state.Move();
+                Charge();
+            }
+        }
+
+        private void Charge()
         {
             stepCounter++;
             if (stepCounter > 56)

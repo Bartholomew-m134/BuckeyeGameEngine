@@ -51,5 +51,15 @@ namespace Game.SpriteFactories
         {
             return new WolverineChuckCharginRightSprite(chuckSpriteSheet);
         }
+
+        public static ISprite CreateWolverineChuckIdleRightSprite()
+        {
+            return new WolverineChuckIdleRightSprite(chuckSpriteSheet);
+        }
+
+        public static ISprite CreateWolverineChuckIdleLeftSprite()
+        {
+            return new WolverineChuckIdleLeftSprite(chuckSpriteSheet);
+        }
     }
 }

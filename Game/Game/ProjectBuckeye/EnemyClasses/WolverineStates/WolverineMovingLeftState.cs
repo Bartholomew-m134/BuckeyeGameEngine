@@ -38,5 +38,10 @@ namespace Game.ProjectBuckeye.EnemyClasses.WolverineStates
         public void Idle()
         {
         }
+
+
+        public void Move()
+        {
+        }
     }
 }
