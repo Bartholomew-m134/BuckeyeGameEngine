@@ -37,5 +37,10 @@ namespace Game.ProjectBuckeye.EnemyClasses.WolverineChuckStates
         public void Idle()
         {
         }
+
+
+        public void Move()
+        {
+        }
     }
 }

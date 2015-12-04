@@ -56,5 +56,11 @@ namespace Game.Utilities.Constants
 
         public static readonly Vector2 CHUCK_RIGHT_FRAME_2_SOURCE = new Vector2(84, 49);
         public static readonly Vector2 CHUCK_RIGHT_FRAME_2_DIMENSIONS = new Vector2(26, 27);
+
+        public static readonly Vector2 CHUCK_LEFT_IDLE_SOURCE = new Vector2(87, 8);
+        public static readonly Vector2 CHUCK_LEFT_IDLE_DIMENSIONS = new Vector2(22, 23);
+
+        public static readonly Vector2 CHUCK_RIGHT_IDLE_SOURCE = new Vector2(6, 51);
+        public static readonly Vector2 CHUCK_RIGHT_IDLE_DIMENSIONS = new Vector2(22, 23);
     }
 }

@@ -8,16 +8,14 @@ using Microsoft.Xna.Framework;
 
 namespace Game.ProjectBuckeye.EnemyClasses.WolverineChuckStates
 {
-    public class WolverineChuckCharginRightState : IWolverineState
+    public class WolverineChuckIdleLeftState : IWolverineState
     {
         IWolverine enemy;
-        public WolverineChuckCharginRightState(IWolverine enemy)
+        public WolverineChuckIdleLeftState(IWolverine enemy)
         {
             this.enemy = enemy;
-            this.enemy.Sprite = Game.SpriteFactories.WolverineSpriteFactory.CreateWolverineChuckCharginRightSprite();
-            enemy.Physics.VelocityMaximum = new Vector2(10, enemy.Physics.VelocityMaximum.Y);
-            enemy.Physics.VelocityMinimum = new Vector2(-10, enemy.Physics.VelocityMinimum.Y);
-            enemy.Physics.Velocity = new Vector2(10, 0);
+            this.enemy.Sprite = Game.SpriteFactories.WolverineSpriteFactory.CreateWolverineChuckIdleLeftSprite();
+            enemy.Physics.ResetPhysics();
         }
         public void Damage()
         {
@@ -25,7 +23,7 @@ namespace Game.ProjectBuckeye.EnemyClasses.WolverineChuckStates
 
         public void DirectionChange()
         {
-            enemy.State = new WolverineChuckCharginLeftState(enemy);
+            enemy.State = new WolverineChuckIdleRightState(enemy);
         }
 
         public void Update()
@@ -41,6 +39,7 @@ namespace Game.ProjectBuckeye.EnemyClasses.WolverineChuckStates
 
         public void Move()
         {
+            enemy.State = new WolverineChuckCharginLeftState(enemy);
         }
     }
 }
