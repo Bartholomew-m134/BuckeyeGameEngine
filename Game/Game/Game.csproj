@@ -120,7 +120,7 @@
     <Compile Include="Commands\PacMarioCommands\RaisePacMarioStanceCommand.cs" />
     <Compile Include="Commands\StartButtonCommand.cs" />
     <Compile Include="Enemies\GoombaClasses\Goomba.cs" />
-    <Compile Include="FireBallSpawner.cs" />
+    <Compile Include="Spawners\FireBallSpawner.cs" />
     <Compile Include="FlagPoles\FlagPole.cs" />
     <Compile Include="FlagPoles\FlagPoleSprites\ActiveFlagPoleSprite.cs" />
     <Compile Include="FlagPoles\FlagPoleSprites\InactiveFlagPoleSprite.cs" />
@@ -232,6 +232,7 @@
     <Compile Include="Menu\MainMenu.cs" />
     <Compile Include="Music\BackgroundThemeManager.cs" />
     <Compile Include="Music\BuckeyeOverworldTheme.cs" />
+    <Compile Include="Music\CarmenTheme.cs" />
     <Compile Include="Music\DeathTheme.cs" />
     <Compile Include="Music\FlagPoleVictoryTheme.cs" />
     <Compile Include="Music\MarioOverworldTheme.cs" />
@@ -245,14 +246,21 @@
     <Compile Include="Pipes\PipeSprites\SidePipeSprite.cs" />
     <Compile Include="Pipes\PipeSprites\VerticalPipeSprite.cs" />
     <Compile Include="Pipes\VerticalPipe.cs" />
+    <Compile Include="ProjectBuckeye\BuckeyeVictoryTransition.cs" />
     <Compile Include="ProjectBuckeye\Collision\BuckeyeProjectileCollisionHandler.cs" />
     <Compile Include="ProjectBuckeye\Collision\BuckeyeTileCollisionHandler.cs" />
     <Compile Include="GameStates\ProjectBuckeyeGameState.cs" />
     <Compile Include="ProjectBuckeye\Collision\BuckeyeWolverineCollisionHandler.cs" />
+    <Compile Include="ProjectBuckeye\Collision\ProjectileProjectileCollisionHandler.cs" />
     <Compile Include="ProjectBuckeye\Collision\WolverineProjectileCollisionHandler.cs" />
     <Compile Include="ProjectBuckeye\Collision\WolverineTileCollisionHandler.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\JumpingWolverineEnemy.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\ThrowingWolverineEnemy.cs" />
+    <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuck.cs" />
+    <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuckSprites\WolverineChuckCharginLeftSprite.cs" />
+    <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuckSprites\WolverineChuckCharginRightSprite.cs" />
+    <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuckStates\WolverineChuckCharginLeftState.cs" />
+    <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuckStates\WolverineChuckCharginRightState.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineEnemy.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineSprites\WolverineDownLeftSprite.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineSprites\WolverineDownRightSprite.cs" />
@@ -408,6 +416,7 @@
     <Compile Include="SoundEffects\SoundEffectManager.cs" />
     <Compile Include="SoundEffects\StompEffect.cs" />
     <Compile Include="SoundEffects\SuperMarioJumpEffect.cs" />
+    <Compile Include="Spawners\ItemSpawner.cs" />
     <Compile Include="SpriteFactories\BackgroundElementsSpriteFactory.cs" />
     <Compile Include="SpriteFactories\BuckeyePlayerSpriteFactory.cs" />
     <Compile Include="SpriteFactories\BuckeyeTileSpriteFactory.cs" />

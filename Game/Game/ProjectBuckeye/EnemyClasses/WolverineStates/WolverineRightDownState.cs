@@ -32,5 +32,10 @@ namespace Game.ProjectBuckeye.EnemyClasses.WolverineStates
         {
             enemy.Sprite.Update();
         }
+
+
+        public void Idle()
+        {
+        }
     }
 }

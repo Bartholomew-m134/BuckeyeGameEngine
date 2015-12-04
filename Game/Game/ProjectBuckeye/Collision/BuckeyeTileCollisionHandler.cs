@@ -6,6 +6,7 @@ using Game.Interfaces;
 using Game.Collisions;
 using Game.Blocks.BlockStates;
 using Game.Blocks;
+using Game.ProjectBuckeye.PlayerClasses.BuckeyePlayerStates;
 
 namespace Game.ProjectBuckeye.Collision
 {
@@ -35,6 +36,7 @@ namespace Game.ProjectBuckeye.Collision
 
         public void HandleCollision()
         {
+            ResetYPhysicsIfNotIdle();
             if (collisionSide is RightSideCollision)
                 HandleRightSide();
             else if (collisionSide is LeftSideCollision)
@@ -63,6 +65,12 @@ namespace Game.ProjectBuckeye.Collision
         private void HandleLeftSide()
         {
             collision.ResolveOverlap(player, collisionSide);
+        }
+
+        private void ResetYPhysicsIfNotIdle()
+        {
+            if (!(player.State is BuckeyeRightIdleState || player.State is BuckeyeLeftIdleState || player.State is BuckeyeLeftDownState || player.State is BuckeyeRightDownState))
+                player.Physics.ResetY();
         }
     }
 }

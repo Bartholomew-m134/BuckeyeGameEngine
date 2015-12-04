@@ -8,16 +8,19 @@ using Microsoft.Xna.Framework.Content;
 using Game.Interfaces;
 using Game.Utilities.Constants;
 using Game.ProjectBuckeye.EnemyClasses.WolverineSprites;
+using Game.ProjectBuckeye.EnemyClasses.WolverineChuckSprites;
 
 namespace Game.SpriteFactories
 {
     public static class WolverineSpriteFactory
     {
         private static Texture2D wolverineSpriteSheet;
+        private static Texture2D chuckSpriteSheet;
 
         public static void Load(ContentManager content)
         {
             wolverineSpriteSheet = content.Load<Texture2D>(SpriteFactoryConstants.WOLVERINEPLAYERSPRITESHEET);
+            chuckSpriteSheet = content.Load<Texture2D>(SpriteFactoryConstants.WOLVERINECHUCKSPRITESHEET);
         }
         public static ISprite CreateWolverineRightMovingSprite()
         {
@@ -37,6 +40,16 @@ namespace Game.SpriteFactories
         public static ISprite CreateWolverineRightDownSprite()
         {
             return new WolverineDownRightSprite(wolverineSpriteSheet);
+        }
+
+        public static ISprite CreateWolverineChuckCharginLeftSprite()
+        {
+            return new WolverineChuckCharginLeftSprite(chuckSpriteSheet);
+        }
+
+        public static ISprite CreateWolverineChuckCharginRightSprite()
+        {
+            return new WolverineChuckCharginRightSprite(chuckSpriteSheet);
         }
     }
 }

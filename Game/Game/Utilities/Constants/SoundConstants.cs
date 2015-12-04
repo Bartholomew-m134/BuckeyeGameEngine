@@ -31,6 +31,7 @@ namespace Game.Utilities.Constants
         public const String GAMEOVEREFFECT = @"Content\SoundEffects\smb-game-over.wav";
 
         public const String BUCKEYEOVERWORLD = @"Content\SoundTracks\across_the_field.wav";
+        public const String CARMEN = @"Content\SoundTracks\carmen(8-bit).wav";
 
         public const String PACOVERWORLD = @"Content\SoundTracks\PacMan_Original_Theme.wav";
         public const String PACDEAD = @"Content\SoundEffects\pacman_death.wav";

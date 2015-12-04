@@ -6,11 +6,11 @@ using Game.Interfaces;
 using Game.Utilities;
 using Game.Utilities.Constants;
 using Microsoft.Xna.Framework;
-using Game.ProjectBuckeye.EnemyClasses.WolverineStates;
+using Game.ProjectBuckeye.EnemyClasses.WolverineChuckStates;
 
 namespace Game.ProjectBuckeye.EnemyClasses
 {
-    public class WolverineEnemy : IWolverine
+    public class WolverineChuck : IWolverine
     {
         private ISprite sprite;
         private IWolverineState state;
@@ -20,19 +20,27 @@ namespace Game.ProjectBuckeye.EnemyClasses
         private IPhysics physics;
         private Game1 myGame;
         private int deathTimer = 0;
+        private int hp = 35;
 
-        public WolverineEnemy(Game1 game)
+        private int stepCounter = 0;
+
+        public WolverineChuck(Game1 game)
         {
             myGame = game;
             isHit = false;
             canDealDamage = true;
             physics = new MarioGamePhysics();
-            state = new WolverineMovingLeftState(this);
+            state = new WolverineChuckCharginLeftState(this);
         }
 
         public void Hit()
         {
-            state.Damage();
+            hp--;
+            if (hp <= 0)
+            {
+                isHit = true;
+                BuckeyeVictoryTransition.TransitionToVictory(myGame);
+            }
         }
 
         public void ShiftDirection()
@@ -66,6 +74,7 @@ namespace Game.ProjectBuckeye.EnemyClasses
             else if (!isHit)
             {
                 location = physics.Update(location);
+                HandleAI();
             }
             state.Update();  
         }
@@ -107,6 +116,16 @@ namespace Game.ProjectBuckeye.EnemyClasses
 
         public void Idle()
         {
+        }
+
+        private void HandleAI()
+        {
+            stepCounter++;
+            if (stepCounter > 56)
+            {
+                ShiftDirection();
+                stepCounter = 0;
+            }
         }
     }
 }

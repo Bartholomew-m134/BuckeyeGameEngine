@@ -10,5 +10,6 @@ namespace Game.Interfaces
         void Update();
         void Damage();
         void DirectionChange();
+        void Idle();
     }
 }
