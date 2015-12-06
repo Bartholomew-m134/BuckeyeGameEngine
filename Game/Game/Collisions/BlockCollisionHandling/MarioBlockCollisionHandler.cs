@@ -11,6 +11,7 @@ using Game.Mario.MarioStates;
 using Game.Utilities;
 using Game.Utilities.Constants;
 using Game.ProjectPacMario.PlayerClasses;
+using Game.ProjectPacMario.Blocks.BlockStates;
 
 namespace Game.Collisions.BlockCollisionHandling
 {
@@ -116,8 +117,13 @@ namespace Game.Collisions.BlockCollisionHandling
                 collision.ResolveOverlap(collidingMario, collisionSide);
                
             }
-            if (collidingBlock.State is HiddenBlockState && collidingMario is PacMario){
+            if (collidingBlock.State is TeleportBlockState && collidingMario is PacMario)
+            {
                 ((PacMario)collidingMario).TeleportRight();
+            }
+            else if (collidingBlock.State is TeleportBlockState && collidingMario is StarMarioDecorator)
+            {
+                ((StarMarioDecorator)collidingMario).TeleportRight();
             }
 
         }
@@ -128,9 +134,13 @@ namespace Game.Collisions.BlockCollisionHandling
                 collision.ResolveOverlap(collidingMario, collisionSide);
                 
             }
-            if (collidingBlock.State is HiddenBlockState && collidingMario is PacMario)
+            if (collidingBlock.State is TeleportBlockState && collidingMario is PacMario)
             {
                 ((PacMario)collidingMario).TeleportLeft();
+            }
+            else if (collidingBlock.State is TeleportBlockState && collidingMario is StarMarioDecorator)
+            {
+                ((StarMarioDecorator)collidingMario).TeleportLeft();
             }
         }
 

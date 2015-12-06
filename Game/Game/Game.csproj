@@ -133,6 +133,7 @@
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuckStates\WolverineChuckIdleLeftState.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuckStates\WolverineChuckIdleRightState.cs" />
     <Compile Include="GameStates\MarioBrickBreakerGameState.cs" />
+    <Compile Include="ProjectPacMario\Blocks\BlockStates\TeleportBlockState.cs" />
     <Compile Include="Spawners\FireBallSpawner.cs" />
     <Compile Include="FlagPoles\FlagPole.cs" />
     <Compile Include="FlagPoles\FlagPoleSprites\ActiveFlagPoleSprite.cs" />

@@ -30,11 +30,10 @@ namespace Game.Utilities
         public static void UpdateHUDCoins(int coinsToAdd)
         {
             coinsToPrint += coinsToAdd;
-            if (coinsToPrint >= HUDConstants.COINSPERLIFE)
+            if (coinsToPrint % HUDConstants.COINSPERLIFE  == 0 && !(coinsToPrint == 0))
             {
                 LifeManager.IncrementLives();
                 SoundEffectManager.OneUpEffect();
-                ResetCoins();
             }
         }
         public static int RemainingTime(){
@@ -73,7 +72,7 @@ namespace Game.Utilities
         {
             string scoreString = scoreToPrint.ToString();
             string timeCounterString = timeToPrint.ToString();
-            string coinString = HUDConstants.XCOINCOUNTER + coinsToPrint.ToString();
+            string coinString = HUDConstants.XCOINCOUNTER + (coinsToPrint % HUDConstants.COINSPERLIFE).ToString();
             coin.Draw(spriteBatch, HUDConstants.COINSPRITEHUDLOCATION);
 
             spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
