@@ -26,6 +26,8 @@ namespace Game.Utilities.Constants
 
         public const String PACMARIOSPRITESHEET = "PacMarioSpriteSheet";
         public const String PACMARIOENEMYSPRITESHEET = "PacMarioEnemySpriteSheet";
+
+        public const String ELEVATORSPRITESHEET = "ElevatorSpriteSheet";
       
     }
 }

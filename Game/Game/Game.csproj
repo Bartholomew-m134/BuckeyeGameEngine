@@ -73,22 +73,22 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Background Elements\BackgroundElementSprites\BigHillSprite.cs" />
-    <Compile Include="Background Elements\BackgroundElementSprites\CastleSprite.cs" />
-    <Compile Include="Background Elements\BackgroundElementSprites\LogoSprite.cs" />
-    <Compile Include="Background Elements\BackgroundElementSprites\SingleBushSprite.cs" />
-    <Compile Include="Background Elements\BackgroundElementSprites\SingleCloudSprite.cs" />
-    <Compile Include="Background Elements\BackgroundElementSprites\SmallHillSprite.cs" />
-    <Compile Include="Background Elements\BackgroundElementSprites\StartSprite.cs" />
-    <Compile Include="Background Elements\BackgroundElementSprites\TripleBushSprite.cs" />
-    <Compile Include="Background Elements\BackgroundElementSprites\TripleCloudSprite.cs" />
-    <Compile Include="Background Elements\BigHill.cs" />
-    <Compile Include="Background Elements\Castle.cs" />
-    <Compile Include="Background Elements\SingleBush.cs" />
-    <Compile Include="Background Elements\SingleCloud.cs" />
-    <Compile Include="Background Elements\SmallHill.cs" />
-    <Compile Include="Background Elements\TripleBush.cs" />
-    <Compile Include="Background Elements\TripleCloud.cs" />
+    <Compile Include="Blocks\Background Elements\BackgroundElementSprites\BigHillSprite.cs" />
+    <Compile Include="Blocks\Background Elements\BackgroundElementSprites\CastleSprite.cs" />
+    <Compile Include="Blocks\Background Elements\BackgroundElementSprites\LogoSprite.cs" />
+    <Compile Include="Blocks\Background Elements\BackgroundElementSprites\SingleBushSprite.cs" />
+    <Compile Include="Blocks\Background Elements\BackgroundElementSprites\SingleCloudSprite.cs" />
+    <Compile Include="Blocks\Background Elements\BackgroundElementSprites\SmallHillSprite.cs" />
+    <Compile Include="Blocks\Background Elements\BackgroundElementSprites\StartSprite.cs" />
+    <Compile Include="Blocks\Background Elements\BackgroundElementSprites\TripleBushSprite.cs" />
+    <Compile Include="Blocks\Background Elements\BackgroundElementSprites\TripleCloudSprite.cs" />
+    <Compile Include="Blocks\Background Elements\BigHill.cs" />
+    <Compile Include="Blocks\Background Elements\Castle.cs" />
+    <Compile Include="Blocks\Background Elements\SingleBush.cs" />
+    <Compile Include="Blocks\Background Elements\SingleCloud.cs" />
+    <Compile Include="Blocks\Background Elements\SmallHill.cs" />
+    <Compile Include="Blocks\Background Elements\TripleBush.cs" />
+    <Compile Include="Blocks\Background Elements\TripleCloud.cs" />
     <Compile Include="Blocks\Block.cs" />
     <Compile Include="Blocks\BlockSprites\BreakingBlockSprite.cs" />
     <Compile Include="Blocks\BlockSprites\BrickBlockSprite.cs" />
@@ -123,6 +123,8 @@
     <Compile Include="Commands\PacMarioCommands\RaisePacMarioStanceCommand.cs" />
     <Compile Include="Commands\StartButtonCommand.cs" />
     <Compile Include="Enemies\GoombaClasses\Goomba.cs" />
+    <Compile Include="Lemming\Elevators\Elevator.cs" />
+    <Compile Include="Lemming\Elevators\ElevatorSprite.cs" />
     <Compile Include="Music\IntroTheme.cs" />
     <Compile Include="ProjectBuckeye\Collision\ProjectileTileCollisionHandler.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuckSprites\WolverineChuckIdleLeftSprite.cs" />
@@ -430,6 +432,7 @@
     <Compile Include="SpriteFactories\BackgroundElementsSpriteFactory.cs" />
     <Compile Include="SpriteFactories\BuckeyePlayerSpriteFactory.cs" />
     <Compile Include="SpriteFactories\BuckeyeTileSpriteFactory.cs" />
+    <Compile Include="SpriteFactories\LemmingSpriteFactory.cs" />
     <Compile Include="SpriteFactories\MarioBrickBreakerSpriteFactory.cs" />
     <Compile Include="SpriteFactories\MenuSpriteFactories.cs" />
     <Compile Include="SpriteFactories\PacMarioSpriteFactory.cs" />
@@ -488,6 +491,8 @@
     <Compile Include="Utilities\Constants\IMarioObjectConstants.cs" />
     <Compile Include="Utilities\Constants\ItemConstants.cs" />
     <Compile Include="Utilities\Constants\ItemSpriteConstants.cs" />
+    <Compile Include="Utilities\Constants\LemmingObjectConstants.cs" />
+    <Compile Include="Utilities\Constants\LemmingSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\LifeConstants.cs" />
     <Compile Include="Utilities\Constants\MarioSpriteConstants.cs" />
     <Compile Include="Utilities\Constants\MarioStateConstants.cs" />
