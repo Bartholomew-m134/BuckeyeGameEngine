@@ -14,7 +14,7 @@ namespace Game.Menu
 {
     public class MainMenu : IMenu
     {
-        private enum Selections { MarioBros=0, ProjectBuckeye=1, FullScreen=2 };
+        private enum Selections { MarioBros=0, ProjectBuckeye=1, FullScreen=2, Quit=3};
 
         private Game1 game;
         private Selections currentSelection;
@@ -39,9 +39,13 @@ namespace Game.Menu
             {
                 gameState = new ProjectBuckeyeGameState(game);
             }
-            else
+            else if (currentSelection == Selections.FullScreen)
             {
                 ToggleFullScreen();
+            }
+            else
+            {
+                game.Exit();
             }
 
             return gameState;
@@ -69,6 +73,7 @@ namespace Game.Menu
             spriteBatch.DrawString(font, "MarioBros", new Vector2(25, 100), SelectColor(Selections.MarioBros));
             spriteBatch.DrawString(font, "ProjectBuckeye", new Vector2(25, 200), SelectColor(Selections.ProjectBuckeye));
             spriteBatch.DrawString(font, "FullScreen: " + game.graphics.IsFullScreen, new Vector2(25, 300), SelectColor(Selections.FullScreen));
+            spriteBatch.DrawString(font, "Quit", new Vector2(25, 400), SelectColor(Selections.Quit));
             spriteBatch.End();
         }
 
