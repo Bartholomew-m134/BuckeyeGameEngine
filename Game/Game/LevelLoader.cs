@@ -17,6 +17,7 @@ using Game.FlagPoles;
 using Game.ProjectBuckeye.PlayerClasses;
 using Game.ProjectBuckeye.EnemyClasses;
 using Game.Lemming;
+using Game.Lemming.Elevators;
 using Game.GameStates;
 using Game.ProjectPacMario.PlayerClasses;
 using Game.ProjectPacMario.EnemyClasses;
@@ -86,8 +87,12 @@ namespace Game
 
                     if (objectName.Equals("Mario"))
                         gameObject = new MarioInstance(game);
-                    else if (objectName.Equals("Lemming"))
-                        gameObject = new LemmingInstance(game);
+                    else if (objectName.Equals("Elevator,up"))
+                        gameObject = new Elevator(true, game);
+                    else if (objectName.Equals("Elevator,down"))
+                        gameObject = new Elevator(false, game);
+                    else if (objectName.Equals("Endblock"))
+                        gameObject = new Endblock(game);
                     if (objectName.Equals("PacMario"))
                         gameObject = new PacMario(game);
                     else if (objectName.Equals("Coin"))

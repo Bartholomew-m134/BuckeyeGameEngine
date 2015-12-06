@@ -41,11 +41,12 @@ namespace Game.GameStates
             TileSpriteFactory.Load(game.Content);
             ProjectileSpriteFactory.Load(game.Content);
             BackgroundElementsSpriteFactory.Load(game.Content);
+            LemmingSpriteFactory.Load(game.Content);
 
             WorldManager.LoadListFromFile(IGameStateConstants.LEMMINGWORLD, game);
 
             
-            camera = new MarioCamera(WorldManager.ReturnPlayer().VectorCoordinates);
+            camera = new MarioCamera(WorldManager.ReturnLemming().VectorCoordinates);
         }
 
 
@@ -62,20 +63,14 @@ namespace Game.GameStates
                     controller.Update();
 
                 WorldManager.Update(camera);
-                //New block collisions
                 CollisionManager.Update(this);
-                camera.Update(WorldManager.ReturnPlayer());
-                ScoreManager.Update();
-                HUDManager.Update();
+                camera.Update(WorldManager.ReturnLemming());
                 delay = 0;
             }
             else
             {
                 delay++;
             }
-
-            if (HUDManager.OutOfTime)
-                ((IMario)WorldManager.ReturnPlayer()).MarioState = new DeadMarioState((IMario)WorldManager.ReturnPlayer());
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -83,8 +78,6 @@ namespace Game.GameStates
             if (isUnderground)
                 game.GraphicsDevice.Clear(Color.Black);
             WorldManager.Draw(camera);
-            ScoreManager.DrawScore(spriteBatch, camera);
-            HUDManager.DrawHUD(spriteBatch);
         }
 
         public void StartButton()
@@ -98,12 +91,12 @@ namespace Game.GameStates
         }
         public void FlagPoleTransition()
         {
-            game.gameState = new FlagPoleVictoryGameState(camera, game);
+            game.gameState = new MenuGameState(game);
         }
 
         public void PlayerDied()
         {
-            game.gameState = new MarioDeathGameState(game);
+            game.gameState = new LemmingGameState(game);
         }
 
         public bool IsUnderground
@@ -115,7 +108,7 @@ namespace Game.GameStates
 
         public void MarioPowerUp()
         {
-            game.gameState = new MarioPowerUpGameState(camera, game);
+            
         }
 
         public void StateBackgroundTheme()

@@ -102,6 +102,8 @@
     <Compile Include="Blocks\BlockStates\BrickDebrisState.cs" />
     <Compile Include="Collisions\BlockCollisionHandling\BlockFireballCollisionHandler.cs" />
     <Compile Include="Collisions\CollisionManager.cs" />
+    <Compile Include="Collisions\EnemyCollisionHandling\EnemyElevatorCollisionHandler.cs" />
+    <Compile Include="Collisions\EnemyCollisionHandling\EnemyEndblockCollisionHandler.cs" />
     <Compile Include="Collisions\EnemyCollisionHandling\EnemyFireballCollisionHandler.cs" />
     <Compile Include="Collisions\FlagPoleCollisionHandling\MarioFlagPoleCollisionHandler.cs" />
     <Compile Include="Collisions\ItemCollisionHandling\ItemPipeCollisionHandler.cs" />
@@ -125,6 +127,8 @@
     <Compile Include="Enemies\GoombaClasses\Goomba.cs" />
     <Compile Include="Lemming\Elevators\Elevator.cs" />
     <Compile Include="Lemming\Elevators\ElevatorSprite.cs" />
+    <Compile Include="Lemming\Endblock.cs" />
+    <Compile Include="Lemming\EndblockSprite.cs" />
     <Compile Include="Music\IntroTheme.cs" />
     <Compile Include="ProjectBuckeye\Collision\ProjectileTileCollisionHandler.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuckSprites\WolverineChuckIdleLeftSprite.cs" />

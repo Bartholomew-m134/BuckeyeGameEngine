@@ -15,6 +15,8 @@ using Game.Collisions.PipeCollisionHandling;
 using Game.Interfaces;
 using Game.Collisions.FlagPoleCollisionHandling;
 using Game.ProjectBuckeye.Collision;
+using Game.Lemming;
+using Game.Lemming.Elevators;
 
 namespace Game.Collisions
 {
@@ -120,6 +122,16 @@ namespace Game.Collisions
             else if ((collision.GameObjectA is IProjectile && collision.GameObjectB is IBuckeyeTile) || (collision.GameObjectA is IBuckeyeTile && collision.GameObjectB is IProjectile))
             {
                 ProjectileTileCollisionHandler collisionHandler = new ProjectileTileCollisionHandler(collision);
+                collisionHandler.HandleCollision();
+            }
+            else if ((collision.GameObjectA is IEnemy && collision.GameObjectB is Elevator) || (collision.GameObjectA is Elevator && collision.GameObjectB is IEnemy))
+            {
+                EnemyElevatorCollisionHandler collisionHandler = new EnemyElevatorCollisionHandler(collision, gameState);
+                collisionHandler.HandleCollision();
+            }
+            else if ((collision.GameObjectA is IEnemy && collision.GameObjectB is Endblock) || (collision.GameObjectA is Endblock && collision.GameObjectB is IEnemy))
+            {
+                EnemyEndblockCollisionHandler collisionHandler = new EnemyEndblockCollisionHandler(collision, gameState);
                 collisionHandler.HandleCollision();
             }
         }

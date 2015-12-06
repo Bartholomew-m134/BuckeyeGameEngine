@@ -17,8 +17,9 @@ namespace Game.Lemming.Elevators
         private Vector2 location;
         private IPhysics physics;
         private bool up;
-        private int elevatorHeight;
-        private int shiftPosition;
+        private float top;
+        private float bottom;
+        private float elevatorHeight;
 
 
         public Elevator(bool up, Game1 game)
@@ -29,11 +30,16 @@ namespace Game.Lemming.Elevators
             physics = new MarioGamePhysics();
             physics.Acceleration = Vector2.Zero;
             physics.Velocity = Vector2.Zero;
-            elevatorHeight = (int)LemmingSpriteConstants.ELEVATORDIMENSIONS.Y;
+            elevatorHeight = LemmingSpriteConstants.ELEVATORDIMENSIONS.Y;
             if (up)
-                shiftPosition = elevatorHeight;
+            {
+                top = location.Y;
+                bottom = top + elevatorHeight;
+            }
             else
-                shiftPosition = 0;
+            {
+                bottom = location.Y;
+                top = bottom - elevatorHeight;            }
         }
 
         public void Update()
@@ -52,20 +58,18 @@ namespace Game.Lemming.Elevators
             if (up)
             {
                 up = false;  
-                while (!up & shiftPosition > 0)
+                while (!up & location.Y > bottom)
                 {
                     physics.Velocity = new Vector2(0, LemmingObjectConstants.DOWNELEVATORVELOCITY);
-                    shiftPosition--;
                 }
                 physics.Velocity = Vector2.Zero;
             }
             else
             {
                 up = true;  
-                while (up & shiftPosition < elevatorHeight)
+                while (up & location.Y < top)
                 {
                     physics.Velocity = new Vector2(0, LemmingObjectConstants.UPELEVATORVELOCITY);
-                    shiftPosition++;
                 }
                 physics.Velocity = Vector2.Zero;
             }

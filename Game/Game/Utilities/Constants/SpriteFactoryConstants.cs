@@ -28,6 +28,7 @@ namespace Game.Utilities.Constants
         public const String PACMARIOENEMYSPRITESHEET = "PacMarioEnemySpriteSheet";
 
         public const String ELEVATORSPRITESHEET = "ElevatorSpriteSheet";
+        public const String ENDBLOCKSPRITESHEET = "EndblockSpriteSheet";
       
     }
 }

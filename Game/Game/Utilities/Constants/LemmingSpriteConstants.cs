@@ -10,5 +10,8 @@ namespace Game.Utilities.Constants
     {
         public static readonly Vector2 ELEVATORDIMENSIONS = new Vector2(32, 48);
         public static readonly Vector2 ELEVATORSOURCE = new Vector2(0, 0);
+
+        public static readonly Vector2 ENDBLOCKDIMENSIONS = new Vector2(32, 48);
+        public static readonly Vector2 ENDBLOCKSOURCE = new Vector2(0, 0);
     }
 }

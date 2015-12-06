@@ -61,6 +61,11 @@ namespace Game
             return (IPlayer)objectList.Find(i => i is IPlayer);
         }
 
+        public static IEnemy ReturnLemming()
+        {
+            return (IEnemy)objectList.Find(i => i is IEnemy);
+        }
+
         public static void SetPlayer(IPlayer player)
         {
             int index = objectList.FindIndex(i => i is IPlayer);

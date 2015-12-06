@@ -1,5 +1,6 @@
 ﻿using Game.Interfaces;
-using Game.Items.ItemSprites;
+using Game.Lemming;
+using Game.Lemming.Elevators;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -15,11 +16,14 @@ namespace Game.SpriteFactories
 
         private static Texture2D elevatorSpriteSheet;
 
+        private static Texture2D endblockSpriteSheet;
+
         public static void Load(ContentManager content)
         {
             elevatorSpriteSheet = content.Load<Texture2D>(SpriteFactoryConstants.ELEVATORSPRITESHEET);
-
+            endblockSpriteSheet = content.Load<Texture2D>(SpriteFactoryConstants.ENDBLOCKSPRITESHEET);
         }
+
 
         public static void Unload()
         {
@@ -28,7 +32,12 @@ namespace Game.SpriteFactories
 
         public static ISprite CreateElevatorSprite()
         {
-            return new RedMushroomSprite(elevatorSpriteSheet);
+            return new ElevatorSprite(elevatorSpriteSheet);
+        }
+
+        public static ISprite CreateEndblockSprite()
+        {
+            return new EndblockSprite(endblockSpriteSheet);
         }
     }
 }

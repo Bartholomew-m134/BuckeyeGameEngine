@@ -75,6 +75,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>ProjectBuckeyeTest</Name>
     </None>
+    <None Include="Levels\LemmingWorld.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>LemmingWorld</Name>
+    </None>
     <None Include="Levels\World1-1.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>World1-1</Name>
@@ -386,6 +390,13 @@
   <ItemGroup>
     <Compile Include="ElevatorSpriteSheet.png">
       <Name>ElevatorSpriteSheet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EndblockSpriteSheet.png">
+      <Name>EndblockSpriteSheet</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
