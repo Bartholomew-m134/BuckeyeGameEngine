@@ -90,7 +90,7 @@ namespace Game.Utilities
         {
             Vector2 difference = Vector2.Subtract(marioLocation, prevMarioLocation);
 
-            if(Math.Abs(difference.Y) < CameraConstants.SCREENDIMENSIONS.Y)
+            if(Math.Abs(difference.Y) < DIMENSIONS.Y)
                 difference.Y = 0;
 
             if (difference.X < 0)

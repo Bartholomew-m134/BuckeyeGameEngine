@@ -27,6 +27,8 @@ namespace Game
             Content.RootDirectory = "Content";
             Window.AllowUserResizing = true;
             Window.Title = "BuckeyeGameEngine";
+            graphics.PreferredBackBufferHeight = 480;
+            graphics.PreferredBackBufferWidth = 800;
         }
 
         protected override void Initialize()
@@ -37,7 +39,7 @@ namespace Game
 
         protected override void LoadContent()
         {
-            spriteBatch = new SpriteBatch(GraphicsDevice);
+            spriteBatch = new SpriteBatch(GraphicsDevice); 
             gameState.LoadContent();
         }
 

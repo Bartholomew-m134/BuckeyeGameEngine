@@ -1,4 +1,5 @@
 ﻿using Game.Interfaces;
+using Game.Menu;
 using Game.Utilities;
 using Game.Utilities.Controls;
 using Microsoft.Xna.Framework;
@@ -15,14 +16,16 @@ namespace Game.GameStates
         private Game1 game;
         private IGameState prevGameState;
         private List<IController> controllerList;
+        private IMenu menu;
 
         public PauseGameState(Game1 game)
         {
             this.game = game;
             prevGameState = game.gameState;
+            menu = new PauseMenu(game);
             controllerList = new List<IController>();
-            controllerList.Add(new KeyboardController(new PausedControls(game)));
-            controllerList.Add(new GamePadController(new PausedControls(game)));
+            controllerList.Add(new KeyboardController(new MenuControls(menu, game)));
+            controllerList.Add(new GamePadController(new MenuControls(menu, game)));
         }
 
         public void LoadContent()
@@ -44,11 +47,22 @@ namespace Game.GameStates
         public void Draw(SpriteBatch spriteBatch)
         {
             prevGameState.Draw(spriteBatch);
+            menu.Draw(spriteBatch);
         }
 
         public void StartButton()
-        {
-            game.gameState = prevGameState;
+        {           
+            IGameState selectedGameState = menu.Select();
+
+            if (selectedGameState is NormalMarioGameState)
+            {
+                game.gameState = prevGameState;
+            }
+            else if (selectedGameState is LogoGameState)
+            {
+                game.gameState = new LogoGameState(game);
+                game.gameState.LoadContent();
+            }
         }
 
 

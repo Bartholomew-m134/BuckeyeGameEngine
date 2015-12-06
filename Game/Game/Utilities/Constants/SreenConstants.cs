@@ -6,9 +6,9 @@ using System.Text;
 
 namespace Game.Utilities.Constants
 {
-    public static class CameraConstants
+    public static class ScreenConstants
     {
-        public static readonly Vector2 SCREENDIMENSIONS = new Vector2(800, 480);
+        public static readonly Vector2 DEFAULT_SCREEN_DIMENSIONS = new Vector2(800f, 480f);
 
     }
 }

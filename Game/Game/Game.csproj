@@ -125,6 +125,7 @@
     <Compile Include="Enemies\GoombaClasses\Goomba.cs" />
     <Compile Include="Lemming\Elevators\Elevator.cs" />
     <Compile Include="Lemming\Elevators\ElevatorSprite.cs" />
+    <Compile Include="Menu\PauseMenu.cs" />
     <Compile Include="Music\IntroTheme.cs" />
     <Compile Include="ProjectBuckeye\Collision\ProjectileTileCollisionHandler.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuckSprites\WolverineChuckIdleLeftSprite.cs" />
@@ -485,7 +486,7 @@
     <Compile Include="Utilities\Constants\IEnemyObjectConstants.cs" />
     <Compile Include="Utilities\Constants\EnemySpriteConstants.cs" />
     <Compile Include="Utilities\Constants\FlagPoleSpriteConstants.cs" />
-    <Compile Include="Utilities\Constants\CameraConstants.cs" />
+    <Compile Include="Utilities\Constants\SreenConstants.cs" />
     <Compile Include="Utilities\Constants\HUDConstants.cs" />
     <Compile Include="Utilities\Constants\IGameStateConstants.cs" />
     <Compile Include="Utilities\Constants\IMarioObjectConstants.cs" />
