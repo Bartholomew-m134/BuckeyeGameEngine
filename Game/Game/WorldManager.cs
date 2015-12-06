@@ -1,4 +1,5 @@
 ﻿using Game.Interfaces;
+using Game.Lemming.Elevators;
 using Game.Mario;
 using Game.Utilities;
 using Microsoft.Xna.Framework;
@@ -64,6 +65,11 @@ namespace Game
         public static IEnemy ReturnLemming()
         {
             return (IEnemy)objectList.Find(i => i is IEnemy);
+        }
+
+        public static Elevator ReturnElevators()
+        {
+            return (Elevator)objectList.Find(i => i is Elevator);
         }
 
         public static void SetPlayer(IPlayer player)

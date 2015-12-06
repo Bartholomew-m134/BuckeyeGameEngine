@@ -67,6 +67,11 @@ namespace Game.GameStates
                 game.gameState = new ProjectBuckeyeGameState(game);
                 game.gameState.LoadContent();
             }
+            else if (selectedGameState is LemmingGameState)
+            {
+                game.gameState = new LemmingGameState(game);
+                game.gameState.LoadContent();
+            }
         }
 
         public void PipeTransition(IPipe warpPipe)

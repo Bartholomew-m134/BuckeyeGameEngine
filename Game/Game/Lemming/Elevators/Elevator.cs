@@ -10,7 +10,7 @@ using Game.Utilities.Constants;
 
 namespace Game.Lemming.Elevators
 {
-    class Elevator : IGameObject
+    public class Elevator : IGameObject
     {
         private Game1 myGame;
         private ISprite elevatorSprite;

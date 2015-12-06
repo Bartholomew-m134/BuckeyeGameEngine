@@ -14,7 +14,7 @@ namespace Game.Menu
 {
     public class MainMenu : IMenu
     {
-        private enum Selections { MarioBros=0, ProjectBuckeye=1, FullScreen=2, Quit=3};
+        private enum Selections { MarioBros=0, ProjectBuckeye=1, Lemming=2, FullScreen=3, Quit=4};
 
         private Game1 game;
         private Selections currentSelection;
@@ -38,6 +38,10 @@ namespace Game.Menu
             else if (currentSelection == Selections.ProjectBuckeye)
             {
                 gameState = new ProjectBuckeyeGameState(game);
+            }
+            else if (currentSelection == Selections.Lemming)
+            {
+                gameState = new LemmingGameState(game);
             }
             else if (currentSelection == Selections.FullScreen)
             {
@@ -70,10 +74,11 @@ namespace Game.Menu
             game.GraphicsDevice.Clear(Color.Black);
 
             spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
-            spriteBatch.DrawString(font, "MarioBros", new Vector2(25, 100), SelectColor(Selections.MarioBros));
-            spriteBatch.DrawString(font, "ProjectBuckeye", new Vector2(25, 200), SelectColor(Selections.ProjectBuckeye));
-            spriteBatch.DrawString(font, "FullScreen: " + game.graphics.IsFullScreen, new Vector2(25, 300), SelectColor(Selections.FullScreen));
-            spriteBatch.DrawString(font, "Quit", new Vector2(25, 400), SelectColor(Selections.Quit));
+            spriteBatch.DrawString(font, "MarioBros", new Vector2(25, 20), SelectColor(Selections.MarioBros));
+            spriteBatch.DrawString(font, "ProjectBuckeye", new Vector2(25, 120), SelectColor(Selections.ProjectBuckeye));
+            spriteBatch.DrawString(font, "Lemming", new Vector2(25, 220), SelectColor(Selections.Lemming));
+            spriteBatch.DrawString(font, "FullScreen: " + game.graphics.IsFullScreen, new Vector2(25, 320), SelectColor(Selections.FullScreen));
+            spriteBatch.DrawString(font, "Quit", new Vector2(25, 420), SelectColor(Selections.Quit));
             spriteBatch.End();
         }
 

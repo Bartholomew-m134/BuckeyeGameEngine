@@ -113,6 +113,7 @@
     <Compile Include="Commands\BuckeyeCommands\FurtherRightBuckeyeStanceCommand.cs" />
     <Compile Include="Commands\BuckeyeCommands\LowerBuckeyeStanceCommand.cs" />
     <Compile Include="Commands\BuckeyeCommands\RaiseBuckeyeStanceCommand.cs" />
+    <Compile Include="Commands\LemmingCommands\Shift.cs" />
     <Compile Include="Commands\MarioBrickBreakerCommands\FurtherLeftPaddleCommand.cs" />
     <Compile Include="Commands\MarioBrickBreakerCommands\FurtherRightPaddleCommand.cs" />
     <Compile Include="Commands\MarioBrickBreakerCommands\ReleaseBallPaddleCommand.cs" />
@@ -233,7 +234,6 @@
     <Compile Include="Items\ItemSprites\PacMarioCoinSprite.cs" />
     <Compile Include="Items\PacMarioCoin.cs" />
     <Compile Include="Items\Coin.cs" />
-    <Compile Include="Lemming\LemmingInstance.cs" />
     <Compile Include="Mario\FireMarioTransitionDecorator.cs" />
     <Compile Include="Mario\ThrowFireLeftDecorator.cs" />
     <Compile Include="Mario\ThrowFireRightDecorator.cs" />

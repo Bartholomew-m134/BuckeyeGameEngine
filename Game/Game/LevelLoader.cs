@@ -87,12 +87,6 @@ namespace Game
 
                     if (objectName.Equals("Mario"))
                         gameObject = new MarioInstance(game);
-                    else if (objectName.Equals("Elevator,up"))
-                        gameObject = new Elevator(true, game);
-                    else if (objectName.Equals("Elevator,down"))
-                        gameObject = new Elevator(false, game);
-                    else if (objectName.Equals("Endblock"))
-                        gameObject = new Endblock(game);
                     if (objectName.Equals("PacMario"))
                         gameObject = new PacMario(game);
                     else if (objectName.Equals("Coin"))
@@ -256,6 +250,12 @@ namespace Game
                         gameObject = new Paddle(game);
                     else if (objectName.Equals("PaddleBall"))
                         gameObject = new PaddleBall(game);
+                    else if (objectName.Equals("ElevatorU"))
+                        gameObject = new Elevator(true, game);
+                    else if (objectName.Equals("ElevatorD"))
+                        gameObject = new Elevator(false, game);
+                    else if (objectName.Equals("Endblock"))
+                        gameObject = new Endblock(game);
 
                     if (objectsItem != null)
                     {
