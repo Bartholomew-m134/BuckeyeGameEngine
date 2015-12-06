@@ -129,6 +129,7 @@
     <Compile Include="Lemming\Elevators\ElevatorSprite.cs" />
     <Compile Include="Lemming\Endblock.cs" />
     <Compile Include="Lemming\EndblockSprite.cs" />
+    <Compile Include="Menu\PauseMenu.cs" />
     <Compile Include="Music\IntroTheme.cs" />
     <Compile Include="ProjectBuckeye\Collision\ProjectileTileCollisionHandler.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuckSprites\WolverineChuckIdleLeftSprite.cs" />
@@ -136,6 +137,7 @@
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuckStates\WolverineChuckIdleLeftState.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuckStates\WolverineChuckIdleRightState.cs" />
     <Compile Include="GameStates\MarioBrickBreakerGameState.cs" />
+    <Compile Include="ProjectPacMario\Blocks\BlockStates\TeleportBlockState.cs" />
     <Compile Include="Spawners\FireBallSpawner.cs" />
     <Compile Include="FlagPoles\FlagPole.cs" />
     <Compile Include="FlagPoles\FlagPoleSprites\ActiveFlagPoleSprite.cs" />
@@ -489,7 +491,7 @@
     <Compile Include="Utilities\Constants\IEnemyObjectConstants.cs" />
     <Compile Include="Utilities\Constants\EnemySpriteConstants.cs" />
     <Compile Include="Utilities\Constants\FlagPoleSpriteConstants.cs" />
-    <Compile Include="Utilities\Constants\CameraConstants.cs" />
+    <Compile Include="Utilities\Constants\SreenConstants.cs" />
     <Compile Include="Utilities\Constants\HUDConstants.cs" />
     <Compile Include="Utilities\Constants\IGameStateConstants.cs" />
     <Compile Include="Utilities\Constants\IMarioObjectConstants.cs" />

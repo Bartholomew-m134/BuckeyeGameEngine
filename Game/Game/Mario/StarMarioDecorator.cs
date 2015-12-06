@@ -93,7 +93,14 @@ namespace Game.Mario
         {
             mario.StopJumping();
         }
-
+        public void TeleportLeft()
+        {
+            mario.VectorCoordinates = new Vector2(272, 240);
+        }
+        public void TeleportRight()
+        {
+            mario.VectorCoordinates = new Vector2(560, 240);
+        }
         public void Flower()
         {
             if (!this.IsFireMario())

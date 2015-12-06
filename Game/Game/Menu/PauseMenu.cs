@@ -12,18 +12,18 @@ using System.Text;
 
 namespace Game.Menu
 {
-    public class MainMenu : IMenu
+    public class PauseMenu : IMenu
     {
-        private enum Selections { MarioBros=0, ProjectBuckeye=1, FullScreen=2, Quit=3};
+        private enum Selections { Resume=0, FullScreen=1, Quit=2 };
 
         private Game1 game;
         private Selections currentSelection;
         private SpriteFont font;
 
-        public MainMenu(Game1 game)
+        public PauseMenu(Game1 game)
         {
             this.game = game;
-            currentSelection = Selections.MarioBros;
+            currentSelection = Selections.Resume;
             font = MenuSpriteFactory.CreateHUDFont();
         }
 
@@ -31,13 +31,9 @@ namespace Game.Menu
         {
             IGameState gameState = null;
 
-            if (currentSelection == Selections.MarioBros)
+            if (currentSelection == Selections.Resume)
             {
                 gameState = new NormalMarioGameState(game);
-            }
-            else if (currentSelection == Selections.ProjectBuckeye)
-            {
-                gameState = new ProjectBuckeyeGameState(game);
             }
             else if (currentSelection == Selections.FullScreen)
             {
@@ -45,7 +41,7 @@ namespace Game.Menu
             }
             else
             {
-                game.Exit();
+                gameState = new LogoGameState(game);
             }
 
             return gameState;
@@ -67,13 +63,10 @@ namespace Game.Menu
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            game.GraphicsDevice.Clear(Color.Black);
-
             spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
-            spriteBatch.DrawString(font, "MarioBros", new Vector2(25, 100), SelectColor(Selections.MarioBros));
-            spriteBatch.DrawString(font, "ProjectBuckeye", new Vector2(25, 200), SelectColor(Selections.ProjectBuckeye));
-            spriteBatch.DrawString(font, "FullScreen: " + game.graphics.IsFullScreen, new Vector2(25, 300), SelectColor(Selections.FullScreen));
-            spriteBatch.DrawString(font, "Quit", new Vector2(25, 400), SelectColor(Selections.Quit));
+            spriteBatch.DrawString(font, "Resume", new Vector2(25, 100), SelectColor(Selections.Resume));
+            spriteBatch.DrawString(font, "FullScreen: " + game.graphics.IsFullScreen, new Vector2(25, 200), SelectColor(Selections.FullScreen));
+            spriteBatch.DrawString(font, "Quit", new Vector2(25, 300), SelectColor(Selections.Quit));
             spriteBatch.End();
         }
 
@@ -87,7 +80,7 @@ namespace Game.Menu
 
         private void ToggleFullScreen()
         {
-            if (game.graphics.IsFullScreen)
+            if(game.graphics.IsFullScreen)
             {
                 game.graphics.PreferredBackBufferWidth = (int)ScreenConstants.DEFAULT_SCREEN_DIMENSIONS.X;
                 game.graphics.PreferredBackBufferHeight = (int)ScreenConstants.DEFAULT_SCREEN_DIMENSIONS.Y;

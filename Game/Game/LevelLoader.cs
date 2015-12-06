@@ -135,10 +135,7 @@ namespace Game
                         ISpawner spawner = new ItemSpawner((IItem)objectsItem);
                         gameObject = new Block(Block.Type.HiddenBlock, spawner, false, game);
                     }
-                    else if (objectName.Equals("TeleportBlock"))
-                    {
-                        gameObject = new Block(Block.Type.HiddenBlock, false, game);
-                    }
+                    
                     else if (objectName.Equals("InvisGreenMushBlock"))
                     {
                         objectsItem = new GreenMushroom(true, game);
@@ -197,6 +194,8 @@ namespace Game
                         gameObject = new Block(Block.Type.EnemyRightBlock, true, game);
                     else if (objectName.Equals("EnemyLeftBlock"))
                         gameObject = new Block(Block.Type.EnemyLeftBlock, true, game);
+                    else if (objectName.Equals("TeleportBlock"))
+                        gameObject = new Block(Block.Type.TeleportBlock, false, game);
                     else if (objectName.Equals("Pipe"))
                         gameObject = new Pipe(game);
                     else if (objectName.Equals("DoublePipe"))
