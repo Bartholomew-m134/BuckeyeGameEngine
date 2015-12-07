@@ -9,26 +9,11 @@ namespace Game.Collisions.EnemyCollisionHandling
 {
     public class EnemyEndblockCollisionHandler
     {
-        private IEnemy enemy;
-        private ICollisionSide side;
-        private CollisionData collision;
         private IGameState gameState;
 
-        public EnemyEndblockCollisionHandler(CollisionData collision, IGameState gamestate)
+        public EnemyEndblockCollisionHandler(IGameState gameState)
         {
-            this.collision = collision;
-            this.gameState = gamestate;
-
-            side = collision.CollisionSide;
-            if (collision.GameObjectA is IEnemy)
-            {
-                enemy = (IEnemy)collision.GameObjectA;
-            }
-            else
-            {
-                enemy = (IEnemy)collision.GameObjectB;
-                side = side.FlipSide();
-            }
+            this.gameState = gameState;
         }
 
         public void HandleCollision()

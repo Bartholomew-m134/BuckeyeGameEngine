@@ -19,6 +19,7 @@ namespace Game.Music
         private static IMusic carmen = new CarmenTheme();
         private static IMusic pacLevel = new PacManLevelTheme();
         private static IMusic pacDeath = new PacMarioDeadTheme();
+        private static IMusic pacEndTheme = new PacMarioEndTheme();
 
         private static IMusic prePowerUpTheme;
 
@@ -112,8 +113,8 @@ namespace Game.Music
         public static void PlayPacManEndTheme()
         {
             StopAllBackgroundThemes();
-            pacLevel = new PacMarioEndTheme();
-            pacLevel.PlayTheme();
+            pacEndTheme = new PacMarioEndTheme();
+            pacEndTheme.PlayTheme();
         }
 
         public static void ResetFromPowerUpTheme()

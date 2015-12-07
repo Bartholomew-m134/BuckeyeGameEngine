@@ -23,9 +23,11 @@ namespace Game.ProjectMarioBrickBreaker.PlayerClasses
         {
             
             myGame = game;
-            paddleSprite = MarioBrickBreakerSpriteFactory.CreateMushroomPaddleSprite();
+            paddleSprite = MarioBrickBreakerSpriteFactory.CreateNormalPaddleSprite();
             physics = new MarioGamePhysics();
             physics.Acceleration = Vector2.Zero;
+            physics.VelocityMaximum = ObjectPhysicsConstants.PADDLEBALLFASTMAXVELOCITY;
+            physics.VelocityMinimum = ObjectPhysicsConstants.PADDLEBALLFASTMINVELOCITY;
             isDead = false;
            
         }
@@ -59,12 +61,16 @@ namespace Game.ProjectMarioBrickBreaker.PlayerClasses
 
         public void Left()
         {
-            physics.Velocity = new Vector2(ObjectPhysicsConstants.INITIALXMINVELOCITY, 0);
+            physics.Velocity = new Vector2(ObjectPhysicsConstants.PADDLEXMINVELOCITY, 0);
+            if(!WorldManager.ReturnPaddleBall().IsReleased)
+                WorldManager.ReturnPaddleBall().Physics.Velocity = new Vector2(ObjectPhysicsConstants.PADDLEXMINVELOCITY, 0);
         }
 
         public void Right()
         {
-            physics.Velocity = new Vector2(ObjectPhysicsConstants.INITIALXMAXVELOCITY, 0);
+            physics.Velocity = new Vector2(ObjectPhysicsConstants.PADDLEXMAXVELOCITY, 0);
+            if (!WorldManager.ReturnPaddleBall().IsReleased)
+                WorldManager.ReturnPaddleBall().Physics.Velocity = new Vector2(ObjectPhysicsConstants.PADDLEXMAXVELOCITY, 0);
         }
 
         

@@ -249,6 +249,8 @@ namespace Game
                         gameObject = new GrassTile(game);
                     else if (objectName.Equals("BuckeyeGround"))
                         gameObject = new GroundTile(game);
+                    else if (objectName.Equals("BuckeyeStone"))
+                        gameObject = new StoneTile(game);
                     else if (objectName.Equals("Paddle"))
                         gameObject = new Paddle(game);
                     else if (objectName.Equals("PaddleBall"))

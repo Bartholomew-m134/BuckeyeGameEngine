@@ -12,13 +12,9 @@ namespace Game.Blocks.BlockSprites
 {
     public class HiddenBlockSprite : ISprite
     {
-        private Texture2D spriteSheet;
-        private Rectangle sourceRectangle = new Rectangle((int)BlockSpriteConstants.HIDDENBLOCKSOURCE.X + 1, (int)BlockSpriteConstants.HIDDENBLOCKSOURCE.Y + 1,
-                (int)BlockSpriteConstants.GENERICBLOCKDIMENSIONS.X, (int)BlockSpriteConstants.GENERICBLOCKDIMENSIONS.Y);
-
-        public HiddenBlockSprite(Texture2D spriteSheet)
+        public HiddenBlockSprite()
         {
-            this.spriteSheet = spriteSheet;
+
         }
         public void Update()
         {

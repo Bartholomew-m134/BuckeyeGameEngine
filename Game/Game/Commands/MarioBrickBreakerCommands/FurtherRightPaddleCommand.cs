@@ -25,6 +25,8 @@ namespace Game.Commands.MarioBrickBreakerCommands
         public void Release()
         {
             ((IPaddle)WorldManager.ReturnPlayer()).Physics.ResetX();
+            if (!WorldManager.ReturnPaddleBall().IsReleased)
+                WorldManager.ReturnPaddleBall().Physics.ResetX();
         }
     }
 }

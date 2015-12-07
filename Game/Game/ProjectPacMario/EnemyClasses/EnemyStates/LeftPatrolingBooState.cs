@@ -21,9 +21,7 @@ namespace Game.ProjectPacMario.EnemyClasses.EnemyStates
         {
             boo.state = new DeadBooState(boo);
         }
-        public void ChangeDirection()
-        {
-        }
+
         public void Left()
         {
             
@@ -34,7 +32,7 @@ namespace Game.ProjectPacMario.EnemyClasses.EnemyStates
         }
         public void Down()
         {
-            boo.state = new UpPatrolingBooState(boo);
+            boo.state = new DownPatrolingBooState(boo);
         }
         public void Up()
         {

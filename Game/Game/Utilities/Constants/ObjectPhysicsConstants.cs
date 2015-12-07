@@ -25,6 +25,9 @@ namespace Game.Utilities.Constants
         public const int PACMARIOINITIALXMINVELOCITY = -6;
         public const int PACMARIOINITIALYMINVELOCITY = -6;
 
+        public const int PADDLEXMINVELOCITY = -12;
+        public const int PADDLEXMAXVELOCITY = 12;
+
         public static readonly Vector2 PADDLEBALLINITIALMAXVELOCITY = new Vector2(8, 8);
         public static readonly Vector2 PADDLEBALLINITIALMINVELOCITY = new Vector2(-8, -8);
         public static readonly Vector2 PADDLEBALLFASTMAXVELOCITY = new Vector2(15, 15);
