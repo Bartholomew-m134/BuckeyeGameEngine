@@ -35,8 +35,8 @@ namespace Game.Utilities
                 LifeManager.IncrementLives();
                 if (marioStringToPrint == HUDConstants.MARIOHUDSTRING)
                     SoundEffectManager.OneUpEffect();
-                //else
-                    //SoundEffectManager.PacExtraLifeEffect();
+                else
+                    SoundEffectManager.PacExtraLifeEffect();
             }
         }
         public static int RemainingTime(){
