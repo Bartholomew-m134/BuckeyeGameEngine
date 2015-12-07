@@ -86,7 +86,7 @@ namespace Game.ProjectPacMario.PlayerClasses.PlayerSprites
         }
         public Vector2 SpriteDimensions
         {
-            get { return new Vector2(10,10); }
+            get { return PacMarioSpriteConstants.PACMARIO_HITBOX; }
         }
     }
 }
