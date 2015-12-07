@@ -11,18 +11,17 @@ namespace Game.ProjectPacMario.EnemyClasses.EnemyStates
     public class DeadBooState : IBooState
     {
         private Boo boo;
+
         public DeadBooState(Boo boo)
         {
             this.boo = boo;
-            this.boo.Sprite = Game.SpriteFactories.PacMarioSpriteFactory.CreateDeadBooSprite();
+            boo.Sprite = Game.SpriteFactories.PacMarioSpriteFactory.CreateDeadBooSprite();
             boo.Physics.ResetPhysics();
         }
         public void Die()
         {
         }
-        public void ChangeDirection()
-        {
-        }
+
         public void Left()
         {
 

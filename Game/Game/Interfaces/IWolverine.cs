@@ -32,5 +32,11 @@ namespace Game.Interfaces
         void Throw();
 
         void Idle();
+
+        bool IsGrounded
+        {
+            get;
+            set;
+        }
     }
 }

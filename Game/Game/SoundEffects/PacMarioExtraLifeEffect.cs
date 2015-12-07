@@ -12,17 +12,16 @@ using Game.Utilities.Constants;
 
 namespace Game.SoundEffects
 {
-    public class SmallMarioJumpEffect : ISoundEffect
+    public class PacMarioExtraLifeEffect : ISoundEffect
     {
-        private Stream backgroundSoundFile = TitleContainer.OpenStream(SoundConstants.SMALLMARIOJUMPEFFECT);
+        private Stream backgroundSoundFile = TitleContainer.OpenStream(SoundConstants.PACEXTRALIFE);
         private SoundEffect backgroundSoundEffect;
         private SoundEffectInstance instance;
 
-        public SmallMarioJumpEffect()
+        public PacMarioExtraLifeEffect()
         {
             backgroundSoundEffect = SoundEffect.FromStream(backgroundSoundFile);
             instance = backgroundSoundEffect.CreateInstance();
-            instance.Volume = 0.25f;
             instance.IsLooped = false;
         }
 

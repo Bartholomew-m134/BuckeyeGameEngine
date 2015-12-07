@@ -59,11 +59,11 @@ namespace Game.ProjectPacMario.PlayerClasses
         }
         public void TeleportLeft()
         {
-            location = new Vector2(272,240);
+            location = IEnemyObjectConstants.TELEPORTLEFTLOCATION;
         }
         public void TeleportRight()
         {
-            location = new Vector2(560,240);
+            location = IEnemyObjectConstants.TELEPORTRIGHTLOCATION;
         }
         public void Jump()
         {
@@ -151,11 +151,6 @@ namespace Game.ProjectPacMario.PlayerClasses
         public IPhysics Physics
         {
             get { return physics; }
-        }
-
-        public FireBallSpawner FireBallFactory
-        {
-            get { return null; }
         }
 
         public bool IsHurt()

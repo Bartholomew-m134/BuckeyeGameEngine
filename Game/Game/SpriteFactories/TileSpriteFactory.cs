@@ -51,7 +51,7 @@ namespace Game.SpriteFactories
 
         public static ISprite CreateHiddenBlockSprite()
         {
-            return new HiddenBlockSprite(tileSpriteSheet);
+            return new HiddenBlockSprite();
         }
 
         public static ISprite CreateSolidBlockSprite()

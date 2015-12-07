@@ -21,6 +21,7 @@ namespace Game.ProjectBuckeye.EnemyClasses
         private Game1 myGame;
         private int deathTimer = 0;
         private int jumpTimer = 15;
+        private bool isGrounded;
 
         public JumpingWolverineEnemy(Game1 game)
         {
@@ -71,6 +72,7 @@ namespace Game.ProjectBuckeye.EnemyClasses
                 if (jumpTimer == 30)
                 {
                     physics.Velocity = new Vector2( physics.Velocity.X, -8);
+                    isGrounded = false;
                     jumpTimer = 0;
                 }
             }
@@ -114,6 +116,12 @@ namespace Game.ProjectBuckeye.EnemyClasses
 
         public void Idle()
         {
+        }
+
+        public bool IsGrounded
+        {
+            get { return isGrounded; }
+            set { isGrounded = value; }
         }
     }
 }

@@ -21,18 +21,18 @@ namespace Game.ProjectBuckeye.FootballClasses
             this.game = game;
         }
 
-        public void ReleaseFootball(Vector2 location, bool lookingRight, bool isHostile, IGameObject thrower)
+        public void ReleaseFootball(Vector2 location, bool lookingRight, bool isHostile, IGameObject thrower, string type)
         {
             if (count < MAXCOUNT && !(thrower is WolverineChuck))
             {
-                Football football = new Football(this, game, lookingRight, isHostile);
+                Football football = new Football(this, game, lookingRight, isHostile, type);
                 football.VectorCoordinates = new Vector2(location.X, location.Y + 10);
                 WorldManager.CreateNewObject(football);
                 count++;
             }
             else if (isHostile && thrower is WolverineChuck)
             {
-                Football football = new Football(this, game, lookingRight, isHostile);
+                Football football = new Football(this, game, lookingRight, isHostile, type);
                 if (((WolverineChuck)thrower).State is WolverineChuckIdleRightState || ((WolverineChuck)thrower).State is WolverineChuckIdleLeftState)
                     football.VectorCoordinates = new Vector2(location.X, location.Y);
                 else

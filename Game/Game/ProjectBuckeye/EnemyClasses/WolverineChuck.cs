@@ -24,6 +24,7 @@ namespace Game.ProjectBuckeye.EnemyClasses
         private int hp = 35;
         private int throwTimer = 0;
         private FootballSpawner spawner;
+        private bool isGrounded;
 
         private int stepCounter = 0;
 
@@ -115,12 +116,6 @@ namespace Game.ProjectBuckeye.EnemyClasses
 
         public void Throw()
         {
-            if (throwTimer > 20)
-            {
-                spawner.ReleaseFootball(location, FacingRight(), true, this);
-                throwTimer = 0;
-            }
-            throwTimer++;
         }
 
         private bool FacingRight()
@@ -137,11 +132,35 @@ namespace Game.ProjectBuckeye.EnemyClasses
 
         private void HandleAI()
         {
-            Throw();
-            if (hp < 20)
+            if (hp <= 35 && hp >= 21)
+            {
+                Chuck();
+            }
+            else if (hp <= 20 && hp > 10)
             {
                 state.Move();
                 Charge();
+            }
+            else if (hp <= 10)
+            {
+                state.Move();
+                ChargeandChuck();
+            }
+        }
+
+        private void Chuck()
+        {
+            if (throwTimer > 10)
+            {
+                spawner.ReleaseFootball(location, FacingRight(), true, this, ProjectileConstants.CHUCK_PHASE_1_FOOTBALL);
+                throwTimer = 0;
+            }
+            throwTimer++;
+
+            if (isGrounded)
+            {
+                physics.Velocity = new Vector2(physics.Velocity.X, -8);
+                isGrounded = false;
             }
         }
 
@@ -153,6 +172,29 @@ namespace Game.ProjectBuckeye.EnemyClasses
                 ShiftDirection();
                 stepCounter = 0;
             }
+        }
+
+        private void ChargeandChuck()
+        {
+            if (throwTimer > 15)
+            {
+                spawner.ReleaseFootball(location, FacingRight(), true, this, ProjectileConstants.CHUCK_PHASE_2_FOOTBALL);
+                throwTimer = 0;
+            }
+            throwTimer++;
+
+            stepCounter++;
+            if (stepCounter > 56)
+            {
+                ShiftDirection();
+                stepCounter = 0;
+            }
+        }
+
+        public bool IsGrounded
+        {
+            get { return isGrounded; }
+            set { isGrounded = value; }
         }
     }
 }

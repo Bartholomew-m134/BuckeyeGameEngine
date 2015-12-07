@@ -23,6 +23,7 @@ namespace Game.ProjectBuckeye.EnemyClasses
         private int deathTimer = 0;
         private int throwTimer = 0;
         private FootballSpawner spawner;
+        private bool isGrounded;
 
         public ThrowingWolverineEnemy(Game1 game)
         {
@@ -112,7 +113,7 @@ namespace Game.ProjectBuckeye.EnemyClasses
 
         public void Throw()
         {
-            spawner.ReleaseFootball(location, FacingRight(), true, this);
+            spawner.ReleaseFootball(location, FacingRight(), true, this, ProjectileConstants.ENEMY_FOOTBALL);
         }
 
         private bool FacingRight()
@@ -126,6 +127,12 @@ namespace Game.ProjectBuckeye.EnemyClasses
 
         public void Idle()
         {
+        }
+
+        public bool IsGrounded
+        {
+            get { return isGrounded; }
+            set { isGrounded = value; }
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Game.Utilities
 {
     public class StillCamera : ICamera
     {
-     private readonly Vector2 DIMENSIONS = new Vector2(800, 480);
+        private readonly Vector2 DIMENSIONS = new Vector2(800, 480);
         private const float LEFT_UPDATE_ZONE_DIMENSIONS = 160;
         private const float RIGHT_UPDATE_ZONE_DIMENSIONS = 100;
         private const float UP_UPDATE_ZONE_DIMENSIONS = 100;
@@ -71,11 +71,6 @@ namespace Game.Utilities
         public bool IsBelowCamera(Vector2 position)
         {
             return position.Y > cameraLocation.Y + DIMENSIONS.Y;
-        }
-
-        private void AdjustCameraPosition(Vector2 marioLocation)
-        {
-
         }
     }
 }
