@@ -78,7 +78,8 @@ namespace Game.ProjectMarioBrickBreaker.Collision
         }
 
         private void HandleRightSide() {
-            HandleLeftSide();
+            collision.ResolveOverlap(collidingBall, collisionSide);
+            collidingBall.Physics.Velocity = new Vector2(-collidingBall.Physics.Velocity.X, collidingBall.Physics.Velocity.Y);
         }
     }
 }

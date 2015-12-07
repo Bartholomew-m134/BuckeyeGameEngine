@@ -64,9 +64,10 @@ namespace Game.ProjectMarioBrickBreaker.Collision
         {
             if (collidingBlock.State is BrickBlockState)
             {
-                collision.ResolveOverlap(collidingBall, collisionSide);
+                
                 if (!collidingBall.IsSuperPaddleBall())
                 {
+                    collision.ResolveOverlap(collidingBall, collisionSide);
                     collidingBall.Physics.Velocity = new Vector2(collidingBall.Physics.Velocity.X, -collidingBall.Physics.Velocity.Y);
                 }
                 collidingBlock.Disappear();
@@ -86,9 +87,10 @@ namespace Game.ProjectMarioBrickBreaker.Collision
         {
             if (collidingBlock.State is BrickBlockState)
             {
-                collision.ResolveOverlap(collidingBall, collisionSide);
+                
                 if (!collidingBall.IsSuperPaddleBall())
                 {
+                    collision.ResolveOverlap(collidingBall, collisionSide);
                     collidingBall.Physics.Velocity = new Vector2(-collidingBall.Physics.Velocity.X, collidingBall.Physics.Velocity.Y);
                 }
                 collidingBlock.Disappear();

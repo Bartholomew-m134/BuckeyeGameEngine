@@ -11,25 +11,25 @@ using System.Text;
 
 namespace Game.ProjectMarioBrickBreaker.Collision
 {
-    public class PaddleItemCollisionHandler
+    public class PaddleBallItemCollisionHandler
     {
-        private IPaddle paddle;
+        private IPaddleBall paddleBall;
         private IItem collidingItem;
         private ICollisionSide collisionSide;
         private CollisionData collision;
 
-        public PaddleItemCollisionHandler(CollisionData collision)
+        public PaddleBallItemCollisionHandler(CollisionData collision)
         {
             this.collision = collision;
             collisionSide = (ICollisionSide)collision.CollisionSide;
             if (collision.GameObjectA is IPaddle)
             {
-                paddle = (IPaddle)collision.GameObjectA;
+                paddleBall = (IPaddleBall)collision.GameObjectA;
                 collidingItem = (IItem)collision.GameObjectB;
             }
             else
             {
-                paddle = (IPaddle)collision.GameObjectB;
+                paddleBall = (IPaddleBall)collision.GameObjectB;
                 collidingItem = (IItem)collision.GameObjectA;
                 collisionSide = collisionSide.FlipSide();
             }
@@ -40,7 +40,7 @@ namespace Game.ProjectMarioBrickBreaker.Collision
             HandleScore();
             if (collidingItem is RedMushroom)
             {
-                paddle.MushroomPowerUp();
+                ((IPaddle)WorldManager.ReturnPlayer()).MushroomPowerUp();
                 SoundEffectManager.PowerPlayerUpEffect();
                 collidingItem.Disappear();
             }
@@ -59,13 +59,13 @@ namespace Game.ProjectMarioBrickBreaker.Collision
             {
                 SoundEffectManager.PowerPlayerUpEffect();
                 collidingItem.Disappear();
-                WorldManager.ReturnPaddleBall().ToSuperPaddleBall();
+                paddleBall.ToSuperPaddleBall();
             }
             else if (collidingItem is Star) 
             {
                 SoundEffectManager.PowerPlayerUpEffect();
                 collidingItem.Disappear();
-                WorldManager.ReturnPaddleBall().ToFastPaddleBall();
+                paddleBall.ToFastPaddleBall();
             }
              
         }
