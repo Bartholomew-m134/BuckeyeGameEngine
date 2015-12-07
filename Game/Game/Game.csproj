@@ -137,6 +137,7 @@
     <Compile Include="Lemming\InvisiMario.cs" />
     <Compile Include="Mario\MarioSprites\InvisibleMarioSprite.cs" />
     <Compile Include="Mario\MarioStates\InvisibleState.cs" />
+    <Compile Include="Menu\MenuSprites\MainMenuBackground.cs" />
     <Compile Include="Menu\PauseMenu.cs" />
     <Compile Include="Music\IntroTheme.cs" />
     <Compile Include="Music\PacMarioEndTheme.cs" />
