@@ -91,7 +91,7 @@ namespace Game.ProjectPacMario.EnemyClasses
             {
                 location = resetLocation;
                 deathTimer = 0;
-                state.Die();
+                state.Up();
             }
             else if (state is DeadBooState)
             {
