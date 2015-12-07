@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Game.Utilities.Constants;
+
 namespace Game.Enemies.GoombaClasses.GoombaStates
 {
     public class GoombaWalkingLeftState : IGoombaState

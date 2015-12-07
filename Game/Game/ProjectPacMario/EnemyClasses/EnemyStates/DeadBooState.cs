@@ -36,7 +36,7 @@ namespace Game.ProjectPacMario.EnemyClasses.EnemyStates
         }
         public void Up()
         {
-
+            boo.state = new UpPatrolingBooState(boo);
         }
         public void Update()
         {

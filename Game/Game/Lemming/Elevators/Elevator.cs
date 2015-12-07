@@ -61,6 +61,7 @@ namespace Game.Lemming.Elevators
             else
             {
                 physics.Velocity = Vector2.Zero;
+
             }
             elevatorSprite.Update();
             location = physics.Update(location);

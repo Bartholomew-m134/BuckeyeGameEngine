@@ -61,7 +61,7 @@ namespace Game.GameStates
         public void Update()
         {
             HUDManager.UpdateHUDMarioString(HUDConstants.PACMARIOHUDSTRING);
-            if (delay == IGameStateConstants.UPDATEDELAY && !isLevelOver())
+            if (delay == IGameStateConstants.UPDATEDELAY && !didPacMarioWin() && !isPacMarioDead())
             {
                 foreach (IController controller in controllerList)
                     controller.Update();
@@ -76,7 +76,20 @@ namespace Game.GameStates
                 delay++;
             }
 
-            if (isLevelOver())
+            if (didPacMarioWin() && !isPacMarioDead())
+            {
+                if (deathTimer == IGameStateConstants.PACMARIOVICTORYTIMER)
+                {
+                    LifeManager.DecrementLives();
+                    CollisionManager.Update(this);
+                    camera.Update(WorldManager.ReturnPlayer());
+                    game.gameState = prevGameState;
+                    game.gameState.LoadContent();
+                    deathTimer = 0;
+                }
+                deathTimer++;
+            }
+            else if (isPacMarioDead() && !didPacMarioWin())
             {
                 if (deathTimer == IGameStateConstants.PACMARIODEATHTIMER)
                 {
@@ -89,7 +102,6 @@ namespace Game.GameStates
                 }
                 deathTimer++;
             }
-             
              
         }
 
@@ -133,14 +145,18 @@ namespace Game.GameStates
             BackgroundThemeManager.PlayPacManLevelTheme();
         }
 
-        private bool isLevelOver()
+        private bool didPacMarioWin()
         {
-            if ((HUDManager.CurrentAmountOfCoins() - IGameStateConstants.TOTALPACLEVELCOINS) == initialCoins && hasPlayedEndTheme == false)
+            if (((HUDManager.CurrentAmountOfCoins() - IGameStateConstants.TOTALPACLEVELCOINS) == initialCoins) && !hasPlayedEndTheme)
             {
                 BackgroundThemeManager.PlayPacManEndTheme();
                 hasPlayedEndTheme = true;
             }
-            return ((IMario)WorldManager.ReturnPlayer()).MarioState is PacMarioDeadState || (HUDManager.CurrentAmountOfCoins() - IGameStateConstants.TOTALPACLEVELCOINS) == initialCoins;
+            return (HUDManager.CurrentAmountOfCoins() - IGameStateConstants.TOTALPACLEVELCOINS) == initialCoins;
+        }
+        private bool isPacMarioDead()
+        {
+            return (((IMario)WorldManager.ReturnPlayer()).MarioState is PacMarioDeadState);
         }
     }
 }
