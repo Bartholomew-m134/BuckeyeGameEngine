@@ -132,8 +132,7 @@ namespace Game
                     else if (objectName.Equals("InvisCoinBlock"))
                     {
                         objectsItem = new Coin(true, game);
-                        ISpawner spawner = new ItemSpawner((IItem)objectsItem);
-                        gameObject = new Block(Block.Type.HiddenBlock, spawner, false, game);
+                        gameObject = new Block(Block.Type.HiddenBlock, false, game);
                     }
 
                     else if (objectName.Equals("InvisGreenMushBlock"))
@@ -144,14 +143,12 @@ namespace Game
                     else if (objectName.Equals("QuestionCoinBlock"))
                     {
                         objectsItem = new Coin(true, game);
-                        ISpawner spawner = new ItemSpawner((IItem)objectsItem);
-                        gameObject = new Block(Block.Type.QuestionBlock, spawner, false, game);
+                        gameObject = new Block(Block.Type.QuestionBlock, false, game);
                     }
                     else if (objectName.Equals("BrickCoinBlock"))
                     {
                         objectsItem = new Coin(true, game);
-                        ISpawner spawner = new ItemSpawner((IItem)objectsItem);
-                        gameObject = new Block(Block.Type.BrickBlock, spawner, false, game);
+                        gameObject = new Block(Block.Type.BrickBlock, false, game);
                     }
                     else if (objectName.Equals("QuestionRedMushBlock"))
                     {
@@ -306,7 +303,11 @@ namespace Game
                     gameObjects.RemoveAt(index);
                     gameObjects.Insert(0, scenery);
                 }
-                else if (gameObjects[index] is IPipe)
+            }
+
+            for (int index = gameObjects.Count - 1; index > 0; index--)
+            {
+                if (gameObjects[index] is IPipe)
                 {
                     IGameObject pipe = gameObjects[index];
                     gameObjects.RemoveAt(index);

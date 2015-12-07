@@ -50,28 +50,7 @@ namespace Game.GameStates
 
         public void StartButton()
         {
-            IGameState selectedGameState = menu.Select();
-
-            if(selectedGameState is NormalMarioGameState)
-            {
-                game.gameState = new LoadingGameState(game);
-                game.gameState.LoadContent();
-                LifeManager.Lives = IGameStateConstants.MENUGAMESTATELIVES;
-                ScoreManager.ResetScore();
-                LifeManager.ResetLives();
-                HUDManager.UpdateHUDScore(0);
-                HUDManager.ResetCoins();
-            }
-            else if (selectedGameState is ProjectBuckeyeGameState)
-            {
-                game.gameState = new ProjectBuckeyeGameState(game);
-                game.gameState.LoadContent();
-            }
-            else if (selectedGameState is LemmingGameState)
-            {
-                game.gameState = new LemmingGameState(game);
-                game.gameState.LoadContent();
-            }
+            menu.Select();
         }
 
         public void PipeTransition(IPipe warpPipe)

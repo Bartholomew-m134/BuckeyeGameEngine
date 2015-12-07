@@ -17,23 +17,23 @@ namespace Game.Menu
         private enum Selections { Resume=0, FullScreen=1, Quit=2 };
 
         private Game1 game;
+        private IGameState prevGameState;
         private Selections currentSelection;
         private SpriteFont font;
 
-        public PauseMenu(Game1 game)
+        public PauseMenu(IGameState prevGameState, Game1 game)
         {
             this.game = game;
+            this.prevGameState = prevGameState;
             currentSelection = Selections.Resume;
             font = MenuSpriteFactory.CreateHUDFont();
         }
 
-        public IGameState Select()
+        public void Select()
         {
-            IGameState gameState = null;
-
             if (currentSelection == Selections.Resume)
             {
-                gameState = new NormalMarioGameState(game);
+                game.gameState = prevGameState;
             }
             else if (currentSelection == Selections.FullScreen)
             {
@@ -41,10 +41,9 @@ namespace Game.Menu
             }
             else
             {
-                gameState = new LogoGameState(game);
+                game.gameState = new LogoGameState(game);
+                game.gameState.LoadContent();
             }
-
-            return gameState;
         }
 
         public void Next()
