@@ -24,7 +24,7 @@ namespace Game.Commands.MarioCommands
 
         public void Release()
         {
-            ((IMario)WorldManager.ReturnPlayer()).Physics.ResetX();
+            ((IMario)WorldManager.ReturnPlayer()).Physics.ResetPhysics();
         }
     }
 }
