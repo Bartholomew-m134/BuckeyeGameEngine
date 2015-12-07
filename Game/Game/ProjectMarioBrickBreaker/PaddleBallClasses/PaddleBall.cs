@@ -1,6 +1,7 @@
 ﻿using Game.Interfaces;
 using Game.ProjectMarioBrickBreaker.PaddleBallClasses.PaddleBallStates;
 using Game.Utilities;
+using Game.Utilities.Constants;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -17,15 +18,19 @@ namespace Game.ProjectMarioBrickBreaker.BallClasses
         private Vector2 location;
         private IPaddleBallState paddleBallState;
         private IPhysics physics;
+        private bool isReleased;
         
 
         public PaddleBall(Game1 game)
         {
             
             myGame = game;
+            isReleased = false;
             paddleBallState = new NormalPaddleBallState(this);
             physics = new MarioGamePhysics();
             physics.Acceleration = Vector2.Zero;
+            physics.VelocityMaximum = ObjectPhysicsConstants.PADDLEBALLINITIALMAXVELOCITY;
+            physics.VelocityMinimum = ObjectPhysicsConstants.PADDLEBALLINITIALMINVELOCITY;
            
         }
 
@@ -63,15 +68,58 @@ namespace Game.ProjectMarioBrickBreaker.BallClasses
             set { paddleBallState = value; }
         }
 
+        public void ReleasePaddleBall() 
+        {
+            physics.Velocity = new Vector2(0, ObjectPhysicsConstants.PADDLEBALLINITIALMINVELOCITY.Y);
+            isReleased = true;
+        }
+
 
         public void ToSuperPaddleBall()
         {
             paddleBallState.ToSuperPaddleBall();
         }
 
+        public void ToFastPaddleBall() 
+        {
+            physics.VelocityMaximum = ObjectPhysicsConstants.PADDLEBALLFASTMAXVELOCITY;
+            physics.VelocityMinimum = ObjectPhysicsConstants.PADDLEBALLFASTMINVELOCITY;
+
+            if (physics.Velocity.X > 0 && physics.Velocity.Y > 0)
+                physics.Velocity = ObjectPhysicsConstants.PADDLEBALLFASTMAXVELOCITY;
+            else if (physics.Velocity.X < 0 && physics.Velocity.Y < 0)
+                physics.Velocity = ObjectPhysicsConstants.PADDLEBALLFASTMINVELOCITY;
+            else if (physics.Velocity.X > 0 && physics.Velocity.Y < 0)
+                physics.Velocity = new Vector2(ObjectPhysicsConstants.PADDLEBALLFASTMAXVELOCITY.X, ObjectPhysicsConstants.PADDLEBALLFASTMINVELOCITY.Y);
+            else if (physics.Velocity.X < 0 && physics.Velocity.Y > 0)
+                physics.Velocity = new Vector2(ObjectPhysicsConstants.PADDLEBALLFASTMINVELOCITY.X, ObjectPhysicsConstants.PADDLEBALLFASTMAXVELOCITY.Y);
+            else if (physics.Velocity.X == 0 && physics.Velocity.Y < 0)
+                physics.Velocity = new Vector2(0, ObjectPhysicsConstants.PADDLEBALLFASTMINVELOCITY.Y);
+            else
+                physics.Velocity = new Vector2(0, ObjectPhysicsConstants.PADDLEBALLFASTMAXVELOCITY.Y);
+        
+
+
+        }
+
         public bool IsSuperPaddleBall()
         {
             return paddleBallState.IsSuperPaddleBall();
+        }
+
+
+
+
+
+
+
+        public bool IsReleased
+        {
+            get
+            {
+                return isReleased;
+            }
+            
         }
     }
 }

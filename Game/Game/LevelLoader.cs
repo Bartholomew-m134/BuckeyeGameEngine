@@ -125,13 +125,17 @@ namespace Game
                         gameObject = new InvisibleFlagPoleBarrier(game);
                     else if (objectName.Equals("SolidBlock"))
                         gameObject = new Block(Block.Type.SolidBlock, false, game);
+                    else if (objectName.Equals("HBlockWall"))
+                        gameObject = new Block(Block.Type.HorizontalBlockWall, false, game);
+                    else if (objectName.Equals("VBlockWall"))
+                        gameObject = new Block(Block.Type.VerticalBlockWall, false, game);
                     else if (objectName.Equals("InvisCoinBlock"))
                     {
                         objectsItem = new Coin(true, game);
                         ISpawner spawner = new ItemSpawner((IItem)objectsItem);
                         gameObject = new Block(Block.Type.HiddenBlock, spawner, false, game);
                     }
-                    
+
                     else if (objectName.Equals("InvisGreenMushBlock"))
                     {
                         objectsItem = new GreenMushroom(true, game);
@@ -258,6 +262,7 @@ namespace Game
                         gameObject = new Elevator(false, game);
                     else if (objectName.Equals("Endblock"))
                         gameObject = new Endblock(game);
+                    
 
                     if (objectsItem != null)
                     {
@@ -324,6 +329,10 @@ namespace Game
             else if (text.Equals("PacMarioGameState"))
             {
                 gameState = new PacMarioGameState(game);
+            }
+            else if (text.Equals("MarioBrickBreakerGameState")) 
+            {
+                gameState = new MarioBrickBreakerGameState(game);
             }
 
             return gameState;

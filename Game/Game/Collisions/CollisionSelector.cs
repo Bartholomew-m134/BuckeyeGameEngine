@@ -17,6 +17,7 @@ using Game.Collisions.FlagPoleCollisionHandling;
 using Game.ProjectBuckeye.Collision;
 using Game.Lemming;
 using Game.Lemming.Elevators;
+using Game.ProjectMarioBrickBreaker.Collision;
 
 namespace Game.Collisions
 {
@@ -132,6 +133,26 @@ namespace Game.Collisions
             else if ((collision.GameObjectA is IEnemy && collision.GameObjectB is Endblock) || (collision.GameObjectA is Endblock && collision.GameObjectB is IEnemy))
             {
                 EnemyEndblockCollisionHandler collisionHandler = new EnemyEndblockCollisionHandler(collision, gameState);
+                collisionHandler.HandleCollision();
+            }
+            else if ((collision.GameObjectA is IItem && collision.GameObjectB is IPaddle) || (collision.GameObjectA is IPaddle && collision.GameObjectB is IItem))
+            {
+                PaddleItemCollisionHandler collisionHandler = new PaddleItemCollisionHandler(collision);
+                collisionHandler.HandleCollision();
+            }
+            else if ((collision.GameObjectA is IBlock && collision.GameObjectB is IPaddle) || (collision.GameObjectA is IPaddle && collision.GameObjectB is IBlock))
+            {
+                PaddleBlockCollisionHandler collisionHandler = new PaddleBlockCollisionHandler(collision);
+                collisionHandler.HandleCollision();
+            }
+            else if ((collision.GameObjectA is IPaddleBall && collision.GameObjectB is IPaddle) || (collision.GameObjectA is IPaddle && collision.GameObjectB is IPaddleBall))
+            {
+                PaddlePaddleBallCollisionHandler collisionHandler = new PaddlePaddleBallCollisionHandler(collision);
+                collisionHandler.HandleCollision();
+            }
+            else if ((collision.GameObjectA is IPaddleBall && collision.GameObjectB is IBlock) || (collision.GameObjectA is IBlock && collision.GameObjectB is IPaddleBall))
+            {
+                PaddleBallBlockCollisionHandler collisionHandler = new PaddleBallBlockCollisionHandler(collision);
                 collisionHandler.HandleCollision();
             }
         }

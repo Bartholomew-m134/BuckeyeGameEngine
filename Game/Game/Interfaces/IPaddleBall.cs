@@ -13,7 +13,16 @@ namespace Game.Interfaces
             set;
         }
 
+        bool IsReleased
+        {
+            get;
+        }
+
         void ToSuperPaddleBall();
+
+        void ToFastPaddleBall();
+
+        void ReleasePaddleBall();
 
         bool IsSuperPaddleBall();
     }

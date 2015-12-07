@@ -14,7 +14,8 @@ namespace Game.Commands.MarioBrickBreakerCommands
 
         public void Execute()
         {
-            ((IPaddle)WorldManager.ReturnPlayer()).ReleaseBall();
+            if(!WorldManager.ReturnPaddleBall().IsReleased)
+                ((IPaddleBall)WorldManager.ReturnPaddleBall()).ReleasePaddleBall();
         }
 
         public void Hold()

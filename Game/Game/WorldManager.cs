@@ -62,6 +62,11 @@ namespace Game
             return (IPlayer)objectList.Find(i => i is IPlayer);
         }
 
+        public static IPaddleBall ReturnPaddleBall()
+        {
+            return (IPaddleBall)objectList.Find(i => i is IPaddleBall);
+        }
+
         public static IEnemy ReturnLemming()
         {
             return (IEnemy)objectList.Find(i => i is IEnemy);

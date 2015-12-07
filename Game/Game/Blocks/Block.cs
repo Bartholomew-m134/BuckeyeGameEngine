@@ -15,7 +15,7 @@ namespace Game.Blocks
     public class Block : IBlock
     {
         public enum Type {NullBlock, BrickBlock, HiddenBlock, QuestionBlock, SolidBlock, BreakingBlock, 
-            EnemyDownBlock, EnemyUpBlock, EnemyLeftBlock, EnemyRightBlock,TeleportBlock};
+            EnemyDownBlock, EnemyUpBlock, EnemyLeftBlock, EnemyRightBlock,TeleportBlock, VerticalBlockWall, HorizontalBlockWall};
         
         private IBlockState blockState;
         private ISprite sprite;
@@ -142,6 +142,12 @@ namespace Game.Blocks
                     break;
                 case Type.TeleportBlock:
                     blockState = new TeleportBlockState(this);
+                    break;
+                case Type.VerticalBlockWall:
+                    blockState = new VerticalBlockWallState(this);
+                    break;
+                case Type.HorizontalBlockWall:
+                    blockState = new HorizontalBlockWallState(this);
                     break;
             }
         }
