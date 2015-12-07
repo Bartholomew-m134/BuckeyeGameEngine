@@ -36,6 +36,8 @@ namespace Game.ProjectBuckeye.Collision
         {
             if(!(enemy.State is WolverineChuckIdleLeftState || enemy.State is WolverineChuckIdleRightState))
                 enemy.Physics.ResetY();
+            if (collisionSide is TopSideCollision)
+                enemy.IsGrounded = true;
             collision.ResolveOverlap(enemy, collisionSide);
         }
     }

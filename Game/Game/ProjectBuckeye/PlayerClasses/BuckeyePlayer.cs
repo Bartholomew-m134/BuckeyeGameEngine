@@ -150,7 +150,7 @@ namespace Game.ProjectBuckeye.PlayerClasses
 
         public void Throw()
         {
-            spawner.ReleaseFootball(location, isFacingRight, false, this);
+            spawner.ReleaseFootball(location, isFacingRight, false, this, ProjectileConstants.PLAYER_FOOTBALL);
         }
     }
 }

@@ -20,6 +20,7 @@ namespace Game.ProjectBuckeye.EnemyClasses
         private IPhysics physics;
         private Game1 myGame;
         private int deathTimer = 0;
+        private bool isGrounded;
 
         public WolverineEnemy(Game1 game)
         {
@@ -107,6 +108,13 @@ namespace Game.ProjectBuckeye.EnemyClasses
 
         public void Idle()
         {
+        }
+
+
+        public bool IsGrounded
+        {
+            get { return isGrounded; }
+            set { isGrounded = value; }
         }
     }
 }
