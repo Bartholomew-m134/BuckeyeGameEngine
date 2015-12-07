@@ -147,7 +147,7 @@
     <Compile Include="GameStates\MarioBrickBreakerGameState.cs" />
     <Compile Include="ProjectMarioBrickBreaker\Collision\PaddleBallBlockCollisionHandler.cs" />
     <Compile Include="ProjectMarioBrickBreaker\Collision\PaddleBlockCollisionHandler.cs" />
-    <Compile Include="ProjectMarioBrickBreaker\Collision\PaddleItemCollisionHandler.cs" />
+    <Compile Include="ProjectMarioBrickBreaker\Collision\PaddleBallItemCollisionHandler.cs" />
     <Compile Include="ProjectMarioBrickBreaker\Collision\PaddlePaddleBallCollisionHandler.cs" />
     <Compile Include="ProjectPacMario\Blocks\BlockStates\TeleportBlockState.cs" />
     <Compile Include="Spawners\FireBallSpawner.cs" />

@@ -135,9 +135,9 @@ namespace Game.Collisions
                 EnemyEndblockCollisionHandler collisionHandler = new EnemyEndblockCollisionHandler(collision, gameState);
                 collisionHandler.HandleCollision();
             }
-            else if ((collision.GameObjectA is IItem && collision.GameObjectB is IPaddle) || (collision.GameObjectA is IPaddle && collision.GameObjectB is IItem))
+            else if ((collision.GameObjectA is IItem && collision.GameObjectB is IPaddleBall) || (collision.GameObjectA is IPaddleBall && collision.GameObjectB is IItem))
             {
-                PaddleItemCollisionHandler collisionHandler = new PaddleItemCollisionHandler(collision);
+                PaddleBallItemCollisionHandler collisionHandler = new PaddleBallItemCollisionHandler(collision);
                 collisionHandler.HandleCollision();
             }
             else if ((collision.GameObjectA is IBlock && collision.GameObjectB is IPaddle) || (collision.GameObjectA is IPaddle && collision.GameObjectB is IBlock))
