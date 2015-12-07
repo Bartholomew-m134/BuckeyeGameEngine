@@ -36,7 +36,7 @@ namespace Game.ProjectBuckeye.EnemyClasses.WolverineSprites
 
         public Vector2 SpriteDimensions
         {
-            get { return WolverineEnemyConstant.FALL_LOOKING_RIGHT_DIMENSIONS * WolverineEnemyConstant.SPRITE_SCALE_FACTOR; }
+            get { return new Vector2(16, 32); }
         }
     }
 }

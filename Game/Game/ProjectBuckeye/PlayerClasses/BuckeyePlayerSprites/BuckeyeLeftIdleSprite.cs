@@ -35,7 +35,7 @@ namespace Game.ProjectBuckeye.PlayerClasses.BuckeyePlayerSprites
 
         public Vector2 SpriteDimensions
         {
-            get { return BuckeyePlayerSpriteConstants.LEFT_FRAME_4_DIMENSIONS * BuckeyePlayerSpriteConstants.SPRITE_SCALE_FACTOR; }
+            get { return new Vector2(16, 32); }
         }
     }
 }

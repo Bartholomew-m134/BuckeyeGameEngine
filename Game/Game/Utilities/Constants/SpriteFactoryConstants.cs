@@ -23,6 +23,7 @@ namespace Game.Utilities.Constants
         public const String WOLVERINEPLAYERSPRITESHEET = "ProjectBuckeyeSprites/WolverineEnemySpriteSheet";
         public const String WOLVERINECHUCKSPRITESHEET = "ProjectBuckeyeSprites/WolverineChuckSpriteSheet";
         public const String PROJECTBUCKEYETILESHEET = "ProjectBuckeyeSprites/MarioWorldTileSprites";
+        public const String PROJECTBUCKEYEWALLSHEET = "ProjectBuckeyeSprites/BigAssStoneWall";
         public const String FOOTBALLSPRITE = "ProjectBuckeyeSprites/Football";
 
         public const String PACMARIOSPRITESHEET = "PacMarioSpriteSheet";
