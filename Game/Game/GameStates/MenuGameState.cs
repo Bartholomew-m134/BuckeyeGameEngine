@@ -24,7 +24,7 @@ namespace Game.GameStates
         {
             this.game = game;
             menu = new MainMenu(game);
-            sprite = MenuSpriteFactory.CreatePauseMenuBackgroundSprite();
+            sprite = MenuSpriteFactory.CreateMainMenuBackgroundSprite();
             controllerList = new List<IController>();
             controllerList.Add(new KeyboardController(new MenuControls(menu, game)));
             controllerList.Add(new GamePadController(new MenuControls(menu, game)));
