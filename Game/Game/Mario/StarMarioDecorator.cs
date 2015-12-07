@@ -95,11 +95,11 @@ namespace Game.Mario
         }
         public void TeleportLeft()
         {
-            mario.VectorCoordinates = new Vector2(272, 240);
+            mario.VectorCoordinates = IEnemyObjectConstants.TELEPORTLEFTLOCATION;
         }
         public void TeleportRight()
         {
-            mario.VectorCoordinates = new Vector2(560, 240);
+            mario.VectorCoordinates = IEnemyObjectConstants.TELEPORTRIGHTLOCATION;
         }
         public void Flower()
         {

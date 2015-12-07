@@ -39,5 +39,7 @@ namespace Game.Utilities.Constants
         public const String PACDEAD = @"Content\SoundEffects\pacman_death.wav";
         public const String PACMARIOCHOMP = @"Content\SoundEffects\pacman_chomp.wav";
         public const String PACEATGHOST = @"Content\SoundEffects\pacman_kill_ghost.wav";
+        public const String PACEXTRALIFE = @"Content\SoundEffects\pacman_extrapac.wav";
+        public const String PACENDTHEME = @"Content\SoundTracks\pacman_extrapac.wav";
     }
 }
