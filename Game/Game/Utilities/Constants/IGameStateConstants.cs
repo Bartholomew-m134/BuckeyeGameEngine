@@ -42,7 +42,7 @@ namespace Game.Utilities.Constants
         public const String PACMARIO_WORLD = "PacMarioWorld";
         public const String BRICKBREAKER_WORLD = "BrickBreakerWorld";
         public const int TOTALPACLEVELCOINS = 179;
-        public const int PACMARIODEATHTIMER = 50;
+        public const int PACMARIODEATHTIMER = 300;
         
     }
 }

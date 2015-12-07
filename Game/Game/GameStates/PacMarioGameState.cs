@@ -27,6 +27,7 @@ namespace Game.GameStates
         private bool isUnderground;
         private int deathTimer;
         private int initialCoins;
+        private bool hasPlayedEndTheme;
 
         public PacMarioGameState(Game1 game)
         {
@@ -36,6 +37,7 @@ namespace Game.GameStates
             controllerList.Add(new KeyboardController(new PacMarioControls(game)));
             controllerList.Add(new GamePadController(new PacMarioControls(game)));
             isUnderground = false;
+            hasPlayedEndTheme = false;
             initialCoins = HUDManager.CurrentAmountOfCoins();
         }
 
@@ -59,7 +61,7 @@ namespace Game.GameStates
         public void Update()
         {
             HUDManager.UpdateHUDMarioString(HUDConstants.PACMARIOHUDSTRING);
-            if (delay == IGameStateConstants.UPDATEDELAY)
+            if (delay == IGameStateConstants.UPDATEDELAY && !isLevelOver())
             {
                 foreach (IController controller in controllerList)
                     controller.Update();
@@ -133,9 +135,10 @@ namespace Game.GameStates
 
         private bool isLevelOver()
         {
-            if ((HUDManager.CurrentAmountOfCoins() - IGameStateConstants.TOTALPACLEVELCOINS) == initialCoins)
+            if ((HUDManager.CurrentAmountOfCoins() - IGameStateConstants.TOTALPACLEVELCOINS) == initialCoins && hasPlayedEndTheme == false)
             {
-                //BackgroundThemeManager.PlayPacManEndTheme();
+                BackgroundThemeManager.PlayPacManEndTheme();
+                hasPlayedEndTheme = true;
             }
             return ((IMario)WorldManager.ReturnPlayer()).MarioState is PacMarioDeadState || (HUDManager.CurrentAmountOfCoins() - IGameStateConstants.TOTALPACLEVELCOINS) == initialCoins;
         }
