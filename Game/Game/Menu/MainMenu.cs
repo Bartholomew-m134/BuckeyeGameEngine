@@ -27,21 +27,27 @@ namespace Game.Menu
             font = MenuSpriteFactory.CreateHUDFont();
         }
 
-        public IGameState Select()
+        public void Select()
         {
-            IGameState gameState = null;
-
             if (currentSelection == Selections.MarioBros)
             {
-                gameState = new NormalMarioGameState(game);
+                game.gameState = new LoadingGameState(game);
+                game.gameState.LoadContent();
+                LifeManager.Lives = IGameStateConstants.MENUGAMESTATELIVES;
+                ScoreManager.ResetScore();
+                LifeManager.ResetLives();
+                HUDManager.UpdateHUDScore(0);
+                HUDManager.ResetCoins();
             }
             else if (currentSelection == Selections.ProjectBuckeye)
             {
-                gameState = new ProjectBuckeyeGameState(game);
+                game.gameState = new ProjectBuckeyeGameState(game);
+                game.gameState.LoadContent();
             }
             else if (currentSelection == Selections.Lemming)
             {
-                gameState = new LemmingGameState(game);
+                game.gameState = new LemmingGameState(game);
+                game.gameState.LoadContent();
             }
             else if (currentSelection == Selections.FullScreen)
             {
@@ -51,8 +57,6 @@ namespace Game.Menu
             {
                 game.Exit();
             }
-
-            return gameState;
         }
 
         public void Next()

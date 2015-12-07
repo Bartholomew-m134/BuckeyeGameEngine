@@ -12,6 +12,7 @@ using Game.SpriteFactories;
 using Game.Interfaces;
 using Game.Utilities;
 using Game.GameStates;
+using Game.Utilities.Constants;
 
 namespace Game
 {
@@ -27,8 +28,8 @@ namespace Game
             Content.RootDirectory = "Content";
             Window.AllowUserResizing = true;
             Window.Title = "BuckeyeGameEngine";
-            graphics.PreferredBackBufferHeight = 480;
-            graphics.PreferredBackBufferWidth = 800;
+            graphics.PreferredBackBufferHeight = (int)ScreenConstants.DEFAULT_SCREEN_DIMENSIONS.Y;
+            graphics.PreferredBackBufferWidth = (int)ScreenConstants.DEFAULT_SCREEN_DIMENSIONS.X;
         }
 
         protected override void Initialize()

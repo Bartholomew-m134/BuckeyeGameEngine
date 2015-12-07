@@ -24,5 +24,10 @@ namespace Game.Utilities.Constants
         public static readonly Vector2 UNDERGROUNDBRICKBLOCKSOURCE = new Vector2(32, 32);
         public static readonly Vector2 BRICKBLOCKUPADJUSTMENT = new Vector2(1,6);
         public static readonly Vector2 BRICKBLOCKDOWNADJUSTMENT = new Vector2(1, -6);
+        public static readonly Vector2 VERTICALBLOCKWALLSOURCE = new Vector2(434, 136);
+        public static readonly Vector2 VERTICALBLOCKWALLDIMENSIONS = new Vector2(16, 240);
+        public static readonly Vector2 HORIZONTALBLOCKWALLSOURCE = new Vector2(182, 415);
+        public static readonly Vector2 HORIZONTALBLOCKWALLDIMENSIONS = new Vector2(160, 16);
+        
     }
 }

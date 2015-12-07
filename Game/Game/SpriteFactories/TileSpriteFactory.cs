@@ -71,6 +71,17 @@ namespace Game.SpriteFactories
         {
             return new UndergroundBreakingBlockSprite(tileSpriteSheet);
         }
+
+        public static ISprite CreateHorizontalBlockWallSprite() 
+        {
+            return new HorizontalBlockWallSprite(tileSpriteSheet);
+        }
+
+        public static ISprite CreateVerticalBlockWallSprite()
+        {
+            return new VerticalBlockWallSprite(tileSpriteSheet);
+        }
+
         public static ISprite CreatePipeSprite()
         {
             return new PipeSprite(scenerySpriteSheet);

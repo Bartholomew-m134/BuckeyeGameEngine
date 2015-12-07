@@ -125,13 +125,16 @@ namespace Game
                         gameObject = new InvisibleFlagPoleBarrier(game);
                     else if (objectName.Equals("SolidBlock"))
                         gameObject = new Block(Block.Type.SolidBlock, false, game);
+                    else if (objectName.Equals("HBlockWall"))
+                        gameObject = new Block(Block.Type.HorizontalBlockWall, false, game);
+                    else if (objectName.Equals("VBlockWall"))
+                        gameObject = new Block(Block.Type.VerticalBlockWall, false, game);
                     else if (objectName.Equals("InvisCoinBlock"))
                     {
                         objectsItem = new Coin(true, game);
-                        ISpawner spawner = new ItemSpawner((IItem)objectsItem);
-                        gameObject = new Block(Block.Type.HiddenBlock, spawner, false, game);
+                        gameObject = new Block(Block.Type.HiddenBlock, false, game);
                     }
-                    
+
                     else if (objectName.Equals("InvisGreenMushBlock"))
                     {
                         objectsItem = new GreenMushroom(true, game);
@@ -140,14 +143,12 @@ namespace Game
                     else if (objectName.Equals("QuestionCoinBlock"))
                     {
                         objectsItem = new Coin(true, game);
-                        ISpawner spawner = new ItemSpawner((IItem)objectsItem);
-                        gameObject = new Block(Block.Type.QuestionBlock, spawner, false, game);
+                        gameObject = new Block(Block.Type.QuestionBlock, false, game);
                     }
                     else if (objectName.Equals("BrickCoinBlock"))
                     {
                         objectsItem = new Coin(true, game);
-                        ISpawner spawner = new ItemSpawner((IItem)objectsItem);
-                        gameObject = new Block(Block.Type.BrickBlock, spawner, false, game);
+                        gameObject = new Block(Block.Type.BrickBlock, false, game);
                     }
                     else if (objectName.Equals("QuestionRedMushBlock"))
                     {
@@ -258,6 +259,7 @@ namespace Game
                         gameObject = new Elevator(false, game);
                     else if (objectName.Equals("Endblock"))
                         gameObject = new Endblock(game);
+                    
 
                     if (objectsItem != null)
                     {
@@ -301,7 +303,11 @@ namespace Game
                     gameObjects.RemoveAt(index);
                     gameObjects.Insert(0, scenery);
                 }
-                else if (gameObjects[index] is IPipe)
+            }
+
+            for (int index = gameObjects.Count - 1; index > 0; index--)
+            {
+                if (gameObjects[index] is IPipe)
                 {
                     IGameObject pipe = gameObjects[index];
                     gameObjects.RemoveAt(index);
@@ -324,6 +330,10 @@ namespace Game
             else if (text.Equals("PacMarioGameState"))
             {
                 gameState = new PacMarioGameState(game);
+            }
+            else if (text.Equals("MarioBrickBreakerGameState")) 
+            {
+                gameState = new MarioBrickBreakerGameState(game);
             }
 
             return gameState;

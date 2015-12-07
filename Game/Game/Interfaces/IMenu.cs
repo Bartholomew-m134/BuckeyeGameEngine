@@ -8,7 +8,7 @@ namespace Game.Interfaces
 {
     public interface IMenu
     {
-        IGameState Select();
+        void Select();
 
         void Next();
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,5 +24,12 @@ namespace Game.Utilities.Constants
 
         public const int PACMARIOINITIALXMINVELOCITY = -6;
         public const int PACMARIOINITIALYMINVELOCITY = -6;
+
+        public static readonly Vector2 PADDLEBALLINITIALMAXVELOCITY = new Vector2(8, 8);
+        public static readonly Vector2 PADDLEBALLINITIALMINVELOCITY = new Vector2(-8, -8);
+        public static readonly Vector2 PADDLEBALLFASTMAXVELOCITY = new Vector2(15, 15);
+        public static readonly Vector2 PADDLEBALLFASTMINVELOCITY = new Vector2(-15, -15);
+        
+
     }
 }

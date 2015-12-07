@@ -15,12 +15,11 @@ namespace Game.Blocks
     public class Block : IBlock
     {
         public enum Type {NullBlock, BrickBlock, HiddenBlock, QuestionBlock, SolidBlock, BreakingBlock, 
-            EnemyDownBlock, EnemyUpBlock, EnemyLeftBlock, EnemyRightBlock,TeleportBlock};
+            EnemyDownBlock, EnemyUpBlock, EnemyLeftBlock, EnemyRightBlock, TeleportBlock, VerticalBlockWall, HorizontalBlockWall};
         
         private IBlockState blockState;
         private ISprite sprite;
         private Game1 game;
-        private ISpawner spawner;
         private Vector2 location;
         private bool isBumped;
         private IPhysics physics;
@@ -32,16 +31,6 @@ namespace Game.Blocks
             SetInitialState(blockType, isUnderground);
             physics = new MarioGamePhysics();
             physics.Acceleration = Vector2.Zero;
-        }
-
-        public Block(Type blockType, ISpawner spawner, bool isUnderground, Game1 game)
-        {
-            isBumped = false;
-            this.game = game;
-            this.spawner = spawner;
-            SetInitialState(blockType, isUnderground);
-            physics = new MarioGamePhysics();
-            physics.Acceleration = Vector2.Zero;           
         }
 
         public void Update()
@@ -72,9 +61,6 @@ namespace Game.Blocks
                 SoundEffectManager.BlockBumpedEffect();
                 physics.ResetPhysics();
                 physics.Velocity = new Vector2(0,IBlockConstants.BUMPEDBLOCKVELOCITY);
-
-                if(spawner != null)
-                    spawner.Release();
             }
         }
 
@@ -142,6 +128,12 @@ namespace Game.Blocks
                     break;
                 case Type.TeleportBlock:
                     blockState = new TeleportBlockState(this);
+                    break;
+                case Type.VerticalBlockWall:
+                    blockState = new VerticalBlockWallState(this);
+                    break;
+                case Type.HorizontalBlockWall:
+                    blockState = new HorizontalBlockWallState(this);
                     break;
             }
         }

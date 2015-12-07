@@ -11,8 +11,6 @@ namespace Game.Interfaces
 
         void Right();
 
-        void ReleaseBall();
-
         void MushroomPowerUp();
     }
 }

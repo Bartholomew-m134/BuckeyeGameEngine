@@ -16,6 +16,7 @@ namespace Game.ProjectMarioBrickBreaker.PlayerClasses
         private ISprite paddleSprite;
         private Vector2 location;
         private IPhysics physics;
+        private bool isDead;
         
 
         public Paddle(Game1 game)
@@ -25,6 +26,7 @@ namespace Game.ProjectMarioBrickBreaker.PlayerClasses
             paddleSprite = MarioBrickBreakerSpriteFactory.CreateMushroomPaddleSprite();
             physics = new MarioGamePhysics();
             physics.Acceleration = Vector2.Zero;
+            isDead = false;
            
         }
 
@@ -65,21 +67,12 @@ namespace Game.ProjectMarioBrickBreaker.PlayerClasses
             physics.Velocity = new Vector2(ObjectPhysicsConstants.INITIALXMAXVELOCITY, 0);
         }
 
-        public void ReleaseBall()
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public bool IsDead
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return isDead; }
+            set { isDead = value; }
         }
 
 

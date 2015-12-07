@@ -22,6 +22,7 @@ namespace Game.SoundEffects
         {
             backgroundSoundEffect = SoundEffect.FromStream(backgroundSoundFile);
             instance = backgroundSoundEffect.CreateInstance();
+            instance.Volume = 0.25f;
             instance.IsLooped = false;
         }
 
