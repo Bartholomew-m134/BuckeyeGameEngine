@@ -115,5 +115,7 @@ namespace Game.Utilities.Constants
         public static readonly Vector2 NORMALFLAGFLIPPEDDIMENSIONS = new Vector2(14, 30);
         public static readonly Vector2 SMALLFLAGFLIPPEDSOURCE = new Vector2(61,30);
         public static readonly Vector2 SMALLFLAGFLIPPEDDIMENSIONS = new Vector2(13,15);
+        public static readonly Vector2 INVISIBLESOURCE = new Vector2(0, 0);
+        public static readonly Vector2 INVISIBLEDIMENSIONS = new Vector2(16, 15);
     }
 }

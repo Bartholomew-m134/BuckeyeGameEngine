@@ -91,12 +91,14 @@ namespace Game.GameStates
         }
         public void FlagPoleTransition()
         {
-            game.gameState = new MenuGameState(game);
+            game.gameState = new VictoryScreenGameState(game);
+            game.gameState.LoadContent();
         }
 
         public void PlayerDied()
         {
             game.gameState = new LemmingGameState(game);
+            game.gameState.LoadContent();
         }
 
         public bool IsUnderground

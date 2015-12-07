@@ -49,12 +49,12 @@ namespace Game.Lemming.Elevators
                     top = bottom - elevatorHeight;
                 }
             }
-            if (!up && location.Y <= bottom)
+            if (!up && location.Y < bottom)
             {
                 physics.Velocity = new Vector2(0, LemmingObjectConstants.DOWNELEVATORVELOCITY);
             }
             
-            else if (up && location.Y >= top)
+            else if (up && location.Y > top)
             {
                 physics.Velocity = new Vector2(0, LemmingObjectConstants.UPELEVATORVELOCITY);
             }

@@ -87,6 +87,8 @@ namespace Game
 
                     if (objectName.Equals("Mario"))
                         gameObject = new MarioInstance(game);
+                    if (objectName.Equals("InvisiMario"))
+                        gameObject = new InvisiMario(game);
                     if (objectName.Equals("PacMario"))
                         gameObject = new PacMario(game);
                     else if (objectName.Equals("Coin"))

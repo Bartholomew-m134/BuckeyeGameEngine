@@ -204,5 +204,9 @@ namespace Game.SpriteFactories
         {
             return new SmallFlagPoleFlippedSprite(marioSpriteSheet);
         }
+        public static ISprite CreateInvisibleSprite()
+        {
+            return new InvisibleMarioSprite(marioSpriteSheet);
+        }
     }
 }
