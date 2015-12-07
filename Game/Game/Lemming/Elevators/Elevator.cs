@@ -31,19 +31,37 @@ namespace Game.Lemming.Elevators
             physics.Acceleration = Vector2.Zero;
             physics.Velocity = Vector2.Zero;
             elevatorHeight = LemmingSpriteConstants.ELEVATORDIMENSIONS.Y;
-            if (up)
-            {
-                top = location.Y;
-                bottom = top + elevatorHeight;
-            }
-            else
-            {
-                bottom = location.Y;
-                top = bottom - elevatorHeight;            }
+            
         }
 
         public void Update()
         {
+            if (top == 0 && bottom == 0)
+            {
+                if (up)
+                {
+                    top = location.Y;
+                    bottom = top + elevatorHeight;
+                }
+                else
+                {
+                    bottom = location.Y;
+                    top = bottom - elevatorHeight;
+                }
+            }
+            if (!up && location.Y <= bottom)
+            {
+                physics.Velocity = new Vector2(0, LemmingObjectConstants.DOWNELEVATORVELOCITY);
+            }
+            
+            else if (up && location.Y >= top)
+            {
+                physics.Velocity = new Vector2(0, LemmingObjectConstants.UPELEVATORVELOCITY);
+            }
+            else
+            {
+                physics.Velocity = Vector2.Zero;
+            }
             elevatorSprite.Update();
             location = physics.Update(location);
         }
@@ -55,24 +73,9 @@ namespace Game.Lemming.Elevators
 
         public void Shift()
         {
-            if (up)
-            {
-                up = false;  
-                while (!up & location.Y > bottom)
-                {
-                    physics.Velocity = new Vector2(0, LemmingObjectConstants.DOWNELEVATORVELOCITY);
-                }
-                physics.Velocity = Vector2.Zero;
-            }
-            else
-            {
-                up = true;  
-                while (up & location.Y < top)
-                {
-                    physics.Velocity = new Vector2(0, LemmingObjectConstants.UPELEVATORVELOCITY);
-                }
-                physics.Velocity = Vector2.Zero;
-            }
+
+            up = !up;
+             
 
         }
 
