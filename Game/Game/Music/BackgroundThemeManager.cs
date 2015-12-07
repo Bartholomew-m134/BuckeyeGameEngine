@@ -109,6 +109,12 @@ namespace Game.Music
             pacLevel = new PacManLevelTheme();
             pacLevel.PlayTheme();
         }
+        public static void PlayPacManEndTheme()
+        {
+            StopAllBackgroundThemes();
+            pacLevel = new PacMarioEndTheme();
+            pacLevel.PlayTheme();
+        }
 
         public static void ResetFromPowerUpTheme()
         {

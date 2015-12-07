@@ -33,7 +33,10 @@ namespace Game.Utilities
             if (coinsToPrint % HUDConstants.COINSPERLIFE  == 0 && !(coinsToPrint == 0))
             {
                 LifeManager.IncrementLives();
-                SoundEffectManager.OneUpEffect();
+                if (marioStringToPrint == HUDConstants.MARIOHUDSTRING)
+                    SoundEffectManager.OneUpEffect();
+                //else
+                    //SoundEffectManager.PacExtraLifeEffect();
             }
         }
         public static int RemainingTime(){

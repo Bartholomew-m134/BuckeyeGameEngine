@@ -135,6 +135,7 @@
     <Compile Include="Mario\MarioStates\InvisibleState.cs" />
     <Compile Include="Menu\PauseMenu.cs" />
     <Compile Include="Music\IntroTheme.cs" />
+    <Compile Include="Music\PacMarioEndTheme.cs" />
     <Compile Include="ProjectBuckeye\Collision\ProjectileTileCollisionHandler.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuckSprites\WolverineChuckIdleLeftSprite.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuckSprites\WolverineChuckIdleRightSprite.cs" />
@@ -142,6 +143,7 @@
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuckStates\WolverineChuckIdleRightState.cs" />
     <Compile Include="GameStates\MarioBrickBreakerGameState.cs" />
     <Compile Include="ProjectPacMario\Blocks\BlockStates\TeleportBlockState.cs" />
+    <Compile Include="SoundEffects\PacMarioExtraLifeEffect.cs" />
     <Compile Include="Spawners\FireBallSpawner.cs" />
     <Compile Include="FlagPoles\FlagPole.cs" />
     <Compile Include="FlagPoles\FlagPoleSprites\ActiveFlagPoleSprite.cs" />

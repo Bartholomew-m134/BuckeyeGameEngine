@@ -133,6 +133,10 @@ namespace Game.GameStates
 
         private bool isLevelOver()
         {
+            if ((HUDManager.CurrentAmountOfCoins() - IGameStateConstants.TOTALPACLEVELCOINS) == initialCoins)
+            {
+                //BackgroundThemeManager.PlayPacManEndTheme();
+            }
             return ((IMario)WorldManager.ReturnPlayer()).MarioState is PacMarioDeadState || (HUDManager.CurrentAmountOfCoins() - IGameStateConstants.TOTALPACLEVELCOINS) == initialCoins;
         }
     }

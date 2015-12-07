@@ -59,11 +59,11 @@ namespace Game.ProjectPacMario.PlayerClasses
         }
         public void TeleportLeft()
         {
-            location = new Vector2(272,240);
+            location = IEnemyObjectConstants.TELEPORTLEFTLOCATION;
         }
         public void TeleportRight()
         {
-            location = new Vector2(560,240);
+            location = IEnemyObjectConstants.TELEPORTRIGHTLOCATION;
         }
         public void Jump()
         {
