@@ -15,6 +15,7 @@ namespace Game
     {
         private static List<IGameObject> objectList;
         private static List<IGameObject> objectWithinZoneList;
+        public static List<Elevator> ElevatorList = new List<Elevator>();
 
         private static Game1 currentGame;
 
@@ -72,9 +73,16 @@ namespace Game
             return (IEnemy)objectList.Find(i => i is IEnemy);
         }
 
-        public static Elevator ReturnElevators()
+        public static List<Elevator> ReturnElevators()
         {
-            return (Elevator)objectList.Find(i => i is Elevator);
+            foreach(IGameObject i in objectList){
+                if (i is Elevator)
+                {
+                    ElevatorList.Add((Elevator)i);
+                }
+                  
+            }
+            return ElevatorList;
         }
 
         public static void SetPlayer(IPlayer player)

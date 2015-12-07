@@ -15,7 +15,10 @@ namespace Game.Commands.LemmingCommands
 
         public void Execute()
         {
-            ((Elevator)WorldManager.ReturnElevators()).Shift();
+            foreach (Elevator i in WorldManager.ReturnElevators())
+            { i.Shift();}
+            foreach (Elevator i in WorldManager.ReturnElevators())
+            { i.Shift(); }
         }
 
         public void Hold()

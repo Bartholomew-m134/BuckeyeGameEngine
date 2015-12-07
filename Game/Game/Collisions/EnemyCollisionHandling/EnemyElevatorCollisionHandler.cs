@@ -47,11 +47,6 @@ namespace Game.Collisions.EnemyCollisionHandling
             {
                 enemy.ShiftDirection();
             }
-            else if (side is BottomSideCollision)
-            {
-                enemy.Flipped();
-                gameState.PlayerDied();
-            }
         }
     }
 }
