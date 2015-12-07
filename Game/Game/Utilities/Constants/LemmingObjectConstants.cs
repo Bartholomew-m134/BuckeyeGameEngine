@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Game.Utilities.Constants
 {
-    class LemmingObjectConstants
+    public static class LemmingObjectConstants
     {
 
         public const int DOWNELEVATORVELOCITY = 4;

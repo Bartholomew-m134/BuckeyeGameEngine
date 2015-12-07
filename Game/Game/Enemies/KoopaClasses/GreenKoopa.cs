@@ -14,6 +14,7 @@ namespace Game.Enemies.KoopaClasses
     public class GreenKoopa : IEnemy
     {
         public IKoopaState state;
+        public int weaponizedShellKillStreak;
         private ISprite sprite;
         private Game1 myGame;
         private Vector2 location;
@@ -23,7 +24,6 @@ namespace Game.Enemies.KoopaClasses
         private bool isFlipped = false;
         private bool isHit = false;
         private bool isWeaponized = false;
-        public int weaponizedShellKillStreak;
 
         public GreenKoopa(Game1 game)
         {

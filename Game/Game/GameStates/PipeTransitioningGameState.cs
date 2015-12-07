@@ -93,7 +93,7 @@ namespace Game.GameStates
         }
 
 
-        public void PipeTransition(IPipe warpPipe)
+        public void PipeTransition(IPipe warpingPipe)
         {
 
         }

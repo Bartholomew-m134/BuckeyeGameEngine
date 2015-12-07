@@ -11,16 +11,18 @@ namespace Game.Utilities
 {
     public static class ScoreManager
     {
+        public static Vector2 location;
+        public static int stompStreak;
+        public static int shellStreak;
+
         private static int totalScore;
-        public  static Vector2 location;
         private static SpriteFont scoreFont;
         private static bool flagTopBeenHit = false;
         private static bool hasChanged = false;
         private static int currentScoreToDraw;
         private static int drawOnScreenTimer = ScoreManagerConstants.RESETTOZERO;
         private static int upwardDrawYModifier = ScoreManagerConstants.RESETTOZERO;
-        public static int stompStreak = ScoreManagerConstants.RESETTOZERO;
-        public static int shellStreak = ScoreManagerConstants.RESETTOZERO;
+
         
         public static void IncreaseScore(int value)
         {

@@ -27,7 +27,7 @@ namespace Game.Menu
             font = MenuSpriteFactory.CreateHUDFont();
         }
 
-        public void Select()
+        public void SelectChoice()
         {
             if (currentSelection == Selections.MarioBros)
             {
@@ -59,14 +59,14 @@ namespace Game.Menu
             }
         }
 
-        public void Next()
+        public void NextChoice()
         {
             currentSelection++;
             if (((int)currentSelection) == Enum.GetNames(typeof(Selections)).Length)
                 currentSelection = 0;
         }
 
-        public void Previous()
+        public void PreviousChoice()
         {
             currentSelection--;
             if (((int)currentSelection) < 0)

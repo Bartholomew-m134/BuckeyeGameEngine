@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Game.Utilities.Constants
 {
-    public class LifeConstants
+    public static class LifeConstants
     {
         public const int INITIALLIVES = 3;
     }

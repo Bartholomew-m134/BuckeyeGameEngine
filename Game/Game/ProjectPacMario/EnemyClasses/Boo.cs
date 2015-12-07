@@ -38,19 +38,19 @@ namespace Game.ProjectPacMario.EnemyClasses
 
         public void Left()
         {
-            state = new LeftPatrolingBooState(this);
+            state.Left();
         }
         public void Right()
         {
-            state = new RightPatrolingBooState(this);
+            state.Right();
         }
         public void Up()
         {
-            state = new UpPatrolingBooState(this);
+            state.Up();
         }
         public void Down()
         {
-            state = new DownPatrolingBooState(this);
+            state.Down();
         }
 
         public void Flipped()
@@ -91,7 +91,7 @@ namespace Game.ProjectPacMario.EnemyClasses
             {
                 location = resetLocation;
                 deathTimer = 0;
-                state = new UpPatrolingBooState(this);
+                state.Die();
             }
             else if (state is DeadBooState)
             {
@@ -101,7 +101,7 @@ namespace Game.ProjectPacMario.EnemyClasses
             {
                 location = physics.Update(location);
             }
-            sprite.Update();
+            state.Update();
         }
 
         public Vector2 VectorCoordinates

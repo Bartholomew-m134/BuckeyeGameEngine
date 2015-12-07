@@ -43,6 +43,6 @@ namespace Game.Interfaces
 
         void ToIdle();
 
-        void Throw();
+        void Toss();
     }
 }

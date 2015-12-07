@@ -50,7 +50,7 @@ namespace Game.GameStates
 
         public void StartButton()
         {
-            menu.Select();
+            menu.SelectChoice();
         }
 
         public void PipeTransition(IPipe warpPipe)
