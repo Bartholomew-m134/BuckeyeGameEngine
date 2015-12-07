@@ -52,7 +52,7 @@ namespace Game.ProjectBuckeye.EnemyClasses.WolverineSprites
 
         public Vector2 SpriteDimensions
         {
-            get { return animationFrameDimensions[currentFrame] * WolverineEnemyConstant.SPRITE_SCALE_FACTOR; }
+            get { return new Vector2(16, 32); }
         }
     }
 }

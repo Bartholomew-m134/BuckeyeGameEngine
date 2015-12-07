@@ -43,9 +43,14 @@ namespace Game.SpriteFactories
             return new StartSprite(startSpriteSheet);
         }
 
-        public static ISprite CreatePauseMenuBackgroundSprite()
+        public static ISprite CreateMainMenuBackgroundSprite()
         {
             return new MainMenuBackgroundSprite(pauseMenuSpriteSheet);
+        }
+
+        public static ISprite CreatePauseMenuSprite()
+        {
+            return new PauseMenuSprite(pauseMenuSpriteSheet);
         }
 
         public static SpriteFont CreateScoreFont()

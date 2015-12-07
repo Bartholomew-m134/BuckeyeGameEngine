@@ -63,18 +63,18 @@ namespace Game.Menu
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
-            spriteBatch.DrawString(font, "Resume", new Vector2(25, 100), SelectColor(Selections.Resume));
-            spriteBatch.DrawString(font, "FullScreen: " + game.graphics.IsFullScreen, new Vector2(25, 200), SelectColor(Selections.FullScreen));
-            spriteBatch.DrawString(font, "Quit", new Vector2(25, 300), SelectColor(Selections.Quit));
+            spriteBatch.DrawString(font, "Resume", new Vector2(155, 130), SelectColor(Selections.Resume));
+            spriteBatch.DrawString(font, "FullScreen: " + game.graphics.IsFullScreen, new Vector2(155, 230), SelectColor(Selections.FullScreen));
+            spriteBatch.DrawString(font, "Quit", new Vector2(155, 330), SelectColor(Selections.Quit));
             spriteBatch.End();
         }
 
         private Color SelectColor(Selections selected)
         {
             if (currentSelection == selected)
-                return Color.Yellow;
-            else
                 return Color.White;
+            else
+                return Color.DarkGray;
         }
 
         private void ToggleFullScreen()

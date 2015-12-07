@@ -14,10 +14,12 @@ namespace Game.SpriteFactories
     public static class BuckeyeTileSpriteFactory
     {
         private static Texture2D tileSheet;
+        private static Texture2D wall;
 
         public static void Load(ContentManager content)
         {
             tileSheet = content.Load<Texture2D>(SpriteFactoryConstants.PROJECTBUCKEYETILESHEET);
+            wall = content.Load<Texture2D>(SpriteFactoryConstants.PROJECTBUCKEYEWALLSHEET);
         }
 
         public static void Unload()
@@ -38,6 +40,11 @@ namespace Game.SpriteFactories
         public static ISprite CreateStoneTile()
         {
             return new StoneTileSprite(tileSheet);
+        }
+
+        public static ISprite CreateStoneWallTile()
+        {
+            return new GiantVerticalStoneWallSprite(wall);
         }
     }
 }
