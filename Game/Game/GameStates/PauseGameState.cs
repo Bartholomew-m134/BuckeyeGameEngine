@@ -48,7 +48,7 @@ namespace Game.GameStates
         public void Draw(SpriteBatch spriteBatch)
         {
             prevGameState.Draw(spriteBatch);
-            sprite.Draw(spriteBatch, new Vector2(135,90));
+            sprite.Draw(spriteBatch, new Vector2(120,80));
             menu.Draw(spriteBatch);
         }
 
