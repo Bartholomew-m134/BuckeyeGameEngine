@@ -9,7 +9,7 @@ namespace Game.Utilities.Constants
     class LemmingObjectConstants
     {
 
-        public const int DOWNELEVATORVELOCITY = 3;
-        public const int UPELEVATORVELOCITY = -3;
+        public const int DOWNELEVATORVELOCITY = 4;
+        public const int UPELEVATORVELOCITY = -4;
     }
 }

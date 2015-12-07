@@ -20,19 +20,23 @@ namespace Game.Lemming
         private FireBallSpawner factory;
         private bool isPressingDown;
         private bool isDead;
+        private float lemmingLocation;
 
         public InvisiMario(Game1 game)
         {
             state = new InvisibleState(this);
             myGame = game;
             physics = new MarioGamePhysics();
+            physics.Velocity = Vector2.Zero;
+            physics.Acceleration = Vector2.Zero;
             factory = new FireBallSpawner(game);
             isPressingDown = false;
             isDead = false;
         }
         public void Update()
         {
-            location = physics.Update(location);
+            lemmingLocation = WorldManager.ReturnLemming().VectorCoordinates.X;
+            location = new Vector2(lemmingLocation,0);
             state.Update();    
         }
         public void Draw(ICamera camera)
