@@ -146,6 +146,8 @@
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuckStates\WolverineChuckIdleLeftState.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuckStates\WolverineChuckIdleRightState.cs" />
     <Compile Include="GameStates\MarioBrickBreakerGameState.cs" />
+    <Compile Include="ProjectBuckeye\Tiles\StoneTile.cs" />
+    <Compile Include="ProjectBuckeye\Tiles\TileSprites\StoneTileSprite.cs" />
     <Compile Include="ProjectMarioBrickBreaker\Collision\PaddleBallBlockCollisionHandler.cs" />
     <Compile Include="ProjectMarioBrickBreaker\Collision\PaddleBlockCollisionHandler.cs" />
     <Compile Include="ProjectMarioBrickBreaker\Collision\PaddleItemCollisionHandler.cs" />
