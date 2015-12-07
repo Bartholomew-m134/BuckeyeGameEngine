@@ -29,8 +29,8 @@ namespace Game.ProjectMarioBrickBreaker.BallClasses
             paddleBallState = new NormalPaddleBallState(this);
             physics = new MarioGamePhysics();
             physics.Acceleration = Vector2.Zero;
-            physics.VelocityMaximum = ObjectPhysicsConstants.PADDLEBALLINITIALMAXVELOCITY;
-            physics.VelocityMinimum = ObjectPhysicsConstants.PADDLEBALLINITIALMINVELOCITY;
+            physics.VelocityMaximum = ObjectPhysicsConstants.PADDLEBALLFASTMAXVELOCITY;
+            physics.VelocityMinimum = ObjectPhysicsConstants.PADDLEBALLFASTMINVELOCITY;
            
         }
 
@@ -71,6 +71,8 @@ namespace Game.ProjectMarioBrickBreaker.BallClasses
         public void ReleasePaddleBall() 
         {
             physics.Velocity = new Vector2(0, ObjectPhysicsConstants.PADDLEBALLINITIALMINVELOCITY.Y);
+            physics.VelocityMaximum = ObjectPhysicsConstants.PADDLEBALLINITIALMAXVELOCITY;
+            physics.VelocityMinimum = ObjectPhysicsConstants.PADDLEBALLINITIALMINVELOCITY;
             isReleased = true;
         }
 

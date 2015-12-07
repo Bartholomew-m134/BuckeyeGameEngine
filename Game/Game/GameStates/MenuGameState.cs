@@ -4,6 +4,7 @@ using Game.SpriteFactories;
 using Game.Utilities;
 using Game.Utilities.Constants;
 using Game.Utilities.Controls;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -17,11 +18,13 @@ namespace Game.GameStates
         private Game1 game;
         private List<IController> controllerList;
         private IMenu menu;
+        private ISprite sprite;
 
         public MenuGameState(Game1 game)
         {
             this.game = game;
             menu = new MainMenu(game);
+            sprite = MenuSpriteFactory.CreatePauseMenuBackgroundSprite();
             controllerList = new List<IController>();
             controllerList.Add(new KeyboardController(new MenuControls(menu, game)));
             controllerList.Add(new GamePadController(new MenuControls(menu, game)));
@@ -45,12 +48,14 @@ namespace Game.GameStates
 
         public void Draw(SpriteBatch spriteBatch)
         {
+            game.GraphicsDevice.Clear(Color.Black);
+            sprite.Draw(spriteBatch, Vector2.Zero);
             menu.Draw(spriteBatch);
         }
 
         public void StartButton()
         {
-            menu.Select();
+            menu.SelectChoice();
         }
 
         public void PipeTransition(IPipe warpPipe)

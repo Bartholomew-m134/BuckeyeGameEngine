@@ -148,7 +148,7 @@ namespace Game.ProjectBuckeye.PlayerClasses
         }
 
 
-        public void Throw()
+        public void Toss()
         {
             spawner.ReleaseFootball(location, isFacingRight, false, this, ProjectileConstants.PLAYER_FOOTBALL);
         }

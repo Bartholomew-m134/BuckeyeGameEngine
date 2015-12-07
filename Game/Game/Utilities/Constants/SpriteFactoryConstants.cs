@@ -10,6 +10,7 @@ namespace Game.Utilities.Constants
         public const String SCENERYSPRITESHEET = "ScenarySpriteSheet";
         public const String BGENAMESVERSION = "BGENamesVersion";
         public const String BGEPRESSSTARTVERSION = "BGEPressStartVersion";
+        public const String BGEPAUSEMENU = "PauseMenuBackground";
         public const String SCOREFONT = "ScoreFont";
         public const String HUDFONT = "HUDFont";
         public const String ENEMYSPRITESHEET = "EnemiesSpriteSheet";

@@ -13,14 +13,12 @@ namespace Game.GameStates
 {
     public class PauseGameState : IGameState
     {
-        private Game1 game;
         private IGameState prevGameState;
         private List<IController> controllerList;
         private IMenu menu;
 
         public PauseGameState(Game1 game)
         {
-            this.game = game;
             prevGameState = game.gameState;
             menu = new PauseMenu(prevGameState, game);
             controllerList = new List<IController>();
@@ -52,7 +50,7 @@ namespace Game.GameStates
 
         public void StartButton()
         {           
-            menu.Select();
+            menu.SelectChoice();
         }
 
 

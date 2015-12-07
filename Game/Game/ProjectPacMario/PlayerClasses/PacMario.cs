@@ -153,11 +153,6 @@ namespace Game.ProjectPacMario.PlayerClasses
             get { return physics; }
         }
 
-        public FireBallSpawner FireBallFactory
-        {
-            get { return null; }
-        }
-
         public bool IsHurt()
         {
             return false;

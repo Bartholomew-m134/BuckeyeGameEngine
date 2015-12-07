@@ -11,7 +11,7 @@ using Game.Utilities.Constants;
 
 namespace Game.SpriteFactories
 {
-    class LemmingSpriteFactory
+    public static class LemmingSpriteFactory
     {
 
         private static Texture2D elevatorSpriteSheet;

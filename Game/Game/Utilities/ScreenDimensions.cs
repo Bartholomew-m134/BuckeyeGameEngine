@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Game.Utilities.Constants;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,12 +13,8 @@ namespace Game.Utilities
 
         public static void Update(GraphicsDeviceManager graphics)
         {
-            // Default resolution is 800x600; scale sprites up or down based on
-            // current viewport
-            float horizontalScale = (float)graphics.GraphicsDevice.Viewport.Width / 800f;
-            float verticalScale = (float)graphics.GraphicsDevice.Viewport.Height / 480f;
-            // Create the scale transform for Draw. 
-            // Do not scale the sprite depth (Z=1).
+            float horizontalScale = (float)graphics.GraphicsDevice.Viewport.Width / ScreenConstants.DEFAULT_SCREEN_DIMENSIONS.X;
+            float verticalScale = (float)graphics.GraphicsDevice.Viewport.Height / ScreenConstants.DEFAULT_SCREEN_DIMENSIONS.Y;
             spriteScale = Matrix.CreateScale(horizontalScale, verticalScale, 1);
         }
 

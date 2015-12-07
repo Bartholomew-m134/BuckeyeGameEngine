@@ -8,11 +8,11 @@ namespace Game.Interfaces
 {
     public interface IMenu
     {
-        void Select();
+        void SelectChoice();
 
-        void Next();
+        void NextChoice();
 
-        void Previous();
+        void PreviousChoice();
 
         void Draw(SpriteBatch spriteBatch);
     }

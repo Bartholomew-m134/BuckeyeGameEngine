@@ -9,6 +9,14 @@ namespace Game.Interfaces
     {
         void Die();
 
-        void ChangeDirection();
+        void Left();
+
+        void Right();
+
+        void Up();
+
+        void Down();
+
+        void Update();
     }
 }

@@ -17,7 +17,7 @@ namespace Game.Commands.MenuCommands
 
         public void Execute()
         {
-            menu.Previous();
+            menu.PreviousChoice();
         }
 
         public void Hold()

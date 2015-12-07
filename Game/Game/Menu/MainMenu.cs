@@ -27,7 +27,7 @@ namespace Game.Menu
             font = MenuSpriteFactory.CreateHUDFont();
         }
 
-        public void Select()
+        public void SelectChoice()
         {
             if (currentSelection == Selections.MarioBros)
             {
@@ -59,14 +59,14 @@ namespace Game.Menu
             }
         }
 
-        public void Next()
+        public void NextChoice()
         {
             currentSelection++;
             if (((int)currentSelection) == Enum.GetNames(typeof(Selections)).Length)
                 currentSelection = 0;
         }
 
-        public void Previous()
+        public void PreviousChoice()
         {
             currentSelection--;
             if (((int)currentSelection) < 0)
@@ -75,8 +75,6 @@ namespace Game.Menu
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            game.GraphicsDevice.Clear(Color.Black);
-
             spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
             spriteBatch.DrawString(font, "MarioBros", new Vector2(25, 20), SelectColor(Selections.MarioBros));
             spriteBatch.DrawString(font, "ProjectBuckeye", new Vector2(25, 120), SelectColor(Selections.ProjectBuckeye));
@@ -89,7 +87,7 @@ namespace Game.Menu
         private Color SelectColor(Selections selected)
         {
             if (currentSelection == selected)
-                return Color.Yellow;
+                return Color.Black;
             else
                 return Color.White;
         }
