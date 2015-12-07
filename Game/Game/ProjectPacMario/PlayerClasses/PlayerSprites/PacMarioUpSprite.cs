@@ -86,7 +86,7 @@ namespace Game.ProjectPacMario.PlayerClasses.PlayerSprites
         }
         public Vector2 SpriteDimensions
         {
-            get { return new Vector2((int)PacMarioSpriteConstants.VERTICAL_DIMENSIONS.X, (int)PacMarioSpriteConstants.VERTICAL_DIMENSIONS.Y); }
+            get { return new Vector2(10,10); }
         }
     }
 }
