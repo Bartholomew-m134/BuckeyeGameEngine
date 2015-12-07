@@ -10,7 +10,7 @@ using Game.Utilities;
 
 namespace Game.Background_Elements.BackgroundElementSprites
 {
-    class LogoSprite : ISprite
+    public class LogoSprite : ISprite
     {
         private Texture2D Texture;
         private Rectangle sourceRectangle = new Rectangle((int)BackgroundElementSpriteConstants.LOGOSOURCE.X, (int)BackgroundElementSpriteConstants.LOGOSOURCE.Y,
