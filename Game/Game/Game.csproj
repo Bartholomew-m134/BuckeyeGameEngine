@@ -558,6 +558,8 @@
     <Content Include="CodeReviews\Sprint 5\NormalMarioGameStateCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 5\ScoreManagerCodeReview.txt" />
     <Content Include="CodeReviews\Sprint 5\SoundEffectManagerCodeQuality.txt" />
+    <Content Include="CodeReviews\Sprint 6\CharginChuckCodeQuality.txt" />
+    <Content Include="CodeReviews\Sprint 6\CharginChuckCodeReadability.txt" />
     <Content Include="CodeReviews\Sprint 6\PacMarioGameStateCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 6\PacMarioGameStateCodeReadability.txt" />
     <Content Include="CodeReviews\Sprint 6\MainMenuCodeQuality.txt" />
@@ -635,10 +637,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
+    <None Include="Utilities\ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ProjectMarioBrickBreaker\Utilities\" />
     <Folder Include="ProjectPacMario\Collisions\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
