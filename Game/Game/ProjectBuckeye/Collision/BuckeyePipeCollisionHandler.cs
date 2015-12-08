@@ -11,6 +11,7 @@ using Game.Pipes;
 using Game.Interfaces;
 using Game.ProjectBuckeye.PlayerClasses;
 using Game.Collisions;
+using Game.ProjectBuckeye.PlayerClasses.BuckeyePlayerStates;
 
 namespace Game.ProjectBuckeye.Collision
 {
@@ -69,7 +70,8 @@ namespace Game.ProjectBuckeye.Collision
                 }
                 else if (side is TopSideCollision)
                 {
-                    player.Physics.ResetY();
+                    if (!(player.State is BuckeyeLeftIdleState || player.State is BuckeyeRightIdleState))
+                        player.Physics.ResetY();
                     if (player.IsJumping())
                         player.State.ToIdle();
                 }
