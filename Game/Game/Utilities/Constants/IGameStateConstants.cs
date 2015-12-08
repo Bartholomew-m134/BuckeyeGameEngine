@@ -40,6 +40,7 @@ namespace Game.Utilities.Constants
         public static readonly Vector2 MINIGAMEVICTORYSCREENGAMESTATECONGRATSMESSAGELOCATION = new Vector2(125, 200);
         public static readonly Vector2 VICTORYSCREENGAMESTATESTARTMESSAGELOCATION = new Vector2(175, 250);
         public static readonly Vector2 MINIGAMEVICTORYSCREENGAMESTATESTARTMESSAGELOCATION = new Vector2(125, 250);
+        public static readonly Vector2 MINIGAMEVICTORYSCREENGAMESTATEBACKGROUNDLOCATION = new Vector2(80, 150);
 
         public const String LEMMINGWORLD = "LemmingWorld";
         public const String PROJECT_BUCKEYE_TEST_WORLD = "ProjectBuckeyeTest";

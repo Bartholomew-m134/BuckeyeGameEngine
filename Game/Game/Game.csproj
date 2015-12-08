@@ -140,6 +140,7 @@
     <Compile Include="Mario\MarioSprites\InvisibleMarioSprite.cs" />
     <Compile Include="Mario\MarioStates\InvisibleState.cs" />
     <Compile Include="Menu\MenuSprites\MainMenuBackgroundSprite.cs" />
+    <Compile Include="Menu\MenuSprites\MessageBackgroundSprite.cs" />
     <Compile Include="Menu\MenuSprites\PauseMenuSprite.cs" />
     <Compile Include="Menu\PauseMenu.cs" />
     <Compile Include="Music\IntroTheme.cs" />
