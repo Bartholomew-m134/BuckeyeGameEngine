@@ -33,6 +33,8 @@ namespace Game.Utilities.Controls
             keyboardControls.Add(Keys.D, new FurtherRightPacMarioStanceCommand());
 
             keyboardControls.Add(Keys.P, new StartButtonCommand(game));
+            keyboardControls.Add(Keys.Enter, new StartButtonCommand(game));
+            keyboardControls.Add(Keys.Escape, new StartButtonCommand(game));
 
             return keyboardControls;
         }
