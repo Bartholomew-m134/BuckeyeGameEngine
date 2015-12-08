@@ -557,6 +557,8 @@
     <Content Include="CodeReviews\Sprint 5\NormalMarioGameStateCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 5\ScoreManagerCodeReview.txt" />
     <Content Include="CodeReviews\Sprint 5\SoundEffectManagerCodeQuality.txt" />
+    <Content Include="CodeReviews\Sprint 6\CharginChuckCodeQuality.txt" />
+    <Content Include="CodeReviews\Sprint 6\CharginChuckCodeReadability.txt" />
     <Content Include="CodeReviews\Sprint 6\PacMarioGameStateCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 6\PacMarioGameStateCodeReadability.txt" />
     <Content Include="CodeReviews\Sprint 6\MainMenuCodeQuality.txt" />

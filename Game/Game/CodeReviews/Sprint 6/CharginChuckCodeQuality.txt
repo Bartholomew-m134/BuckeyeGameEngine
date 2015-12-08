@@ -1,0 +1,11 @@
+﻿Author: Kyle Powers
+Date: 12/7/2015
+Sprint: 6
+File name: WolverineChuck.cs
+Author: John Cramer
+Minutes to complete: 5
+
+Comments: The Wolverine Chuck class is very cohesive and contains all the methods necessary to serve its purpose of 
+being a boss enemy and has very low coupling. A hypothetical change to add would be to add different movement patterns,
+but the implementation of this feature would be very similar to the current movement patterns Chuck currently has, so
+such a change would not be difficult.
