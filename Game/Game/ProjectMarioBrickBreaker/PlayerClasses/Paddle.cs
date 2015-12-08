@@ -101,7 +101,6 @@ namespace Game.ProjectMarioBrickBreaker.PlayerClasses
 
         public void RespawnPaddleBall()
         {
-            Console.WriteLine(location);
             paddleBallSpawner.RespawnPaddleBall(location);
         }
     }

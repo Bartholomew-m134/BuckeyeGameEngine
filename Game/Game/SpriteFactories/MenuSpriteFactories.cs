@@ -18,6 +18,7 @@ namespace Game.SpriteFactories
         private static Texture2D pauseMenuSpriteSheet;
         private static SpriteFont spriteFont;
         private static SpriteFont hudFont;
+        private static Texture2D messageBackground;
 
         public static void Load(ContentManager content)
         {
@@ -26,6 +27,7 @@ namespace Game.SpriteFactories
             pauseMenuSpriteSheet = content.Load<Texture2D>(SpriteFactoryConstants.BGEPAUSEMENU);
             spriteFont = content.Load<SpriteFont>(SpriteFactoryConstants.SCOREFONT);
             hudFont = content.Load<SpriteFont>(SpriteFactoryConstants.HUDFONT);
+            messageBackground = content.Load<Texture2D>(SpriteFactoryConstants.MESSAGEBACKGROUNDSPRITE);
         }
 
         public static void Unload()
@@ -46,6 +48,10 @@ namespace Game.SpriteFactories
         public static ISprite CreateMainMenuBackgroundSprite()
         {
             return new MainMenuBackgroundSprite(pauseMenuSpriteSheet);
+        }
+        public static ISprite CreateMessageBackgroundSprite()
+        {
+            return new MessageBackgroundSprite(messageBackground);
         }
 
         public static ISprite CreatePauseMenuSprite()

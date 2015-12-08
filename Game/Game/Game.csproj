@@ -140,6 +140,7 @@
     <Compile Include="Mario\MarioSprites\InvisibleMarioSprite.cs" />
     <Compile Include="Mario\MarioStates\InvisibleState.cs" />
     <Compile Include="Menu\MenuSprites\MainMenuBackgroundSprite.cs" />
+    <Compile Include="Menu\MenuSprites\MessageBackgroundSprite.cs" />
     <Compile Include="Menu\MenuSprites\PauseMenuSprite.cs" />
     <Compile Include="Menu\PauseMenu.cs" />
     <Compile Include="Music\IntroTheme.cs" />
@@ -558,6 +559,8 @@
     <Content Include="CodeReviews\Sprint 5\NormalMarioGameStateCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 5\ScoreManagerCodeReview.txt" />
     <Content Include="CodeReviews\Sprint 5\SoundEffectManagerCodeQuality.txt" />
+    <Content Include="CodeReviews\Sprint 6\CharginChuckCodeQuality.txt" />
+    <Content Include="CodeReviews\Sprint 6\CharginChuckCodeReadability.txt" />
     <Content Include="CodeReviews\Sprint 6\PacMarioGameStateCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 6\PacMarioGameStateCodeReadability.txt" />
     <Content Include="CodeReviews\Sprint 6\MainMenuCodeQuality.txt" />
@@ -635,10 +638,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
+    <None Include="Utilities\ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ProjectMarioBrickBreaker\Utilities\" />
     <Folder Include="ProjectPacMario\Collisions\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
