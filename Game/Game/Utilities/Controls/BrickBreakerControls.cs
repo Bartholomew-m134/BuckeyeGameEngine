@@ -31,6 +31,7 @@ namespace Game.Utilities.Controls
             keyboardControls.Add(Keys.D, new FurtherRightPaddleCommand());
 
             keyboardControls.Add(Keys.P, new StartButtonCommand(game));
+            keyboardControls.Add(Keys.Z, new MagnetizePaddleCommand());
 
             return keyboardControls;
         }
@@ -43,6 +44,8 @@ namespace Game.Utilities.Controls
             gamePadControls.Add(Buttons.LeftThumbstickRight, new FurtherRightPaddleCommand());
 
             gamePadControls.Add(Buttons.A, new ReleaseBallPaddleCommand());
+            gamePadControls.Add(Buttons.B, new MagnetizePaddleCommand());
+
 
             gamePadControls.Add(Buttons.Start, new StartButtonCommand(game));
 

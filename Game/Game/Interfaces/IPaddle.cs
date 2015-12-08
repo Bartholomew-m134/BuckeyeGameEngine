@@ -11,6 +11,14 @@ namespace Game.Interfaces
 
         void Right();
 
+        void RespawnPaddleBall();
+
+        bool IsMagnetized
+        {
+            get;
+            set;
+        }
+
         void MushroomPowerUp();
     }
 }

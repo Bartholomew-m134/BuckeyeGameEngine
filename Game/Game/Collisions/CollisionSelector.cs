@@ -137,7 +137,7 @@ namespace Game.Collisions
             }
             else if ((collision.GameObjectA is IItem && collision.GameObjectB is IPaddleBall) || (collision.GameObjectA is IPaddleBall && collision.GameObjectB is IItem))
             {
-                PaddleBallItemCollisionHandler collisionHandler = new PaddleBallItemCollisionHandler(collision);
+                PaddleBallItemCollisionHandler collisionHandler = new PaddleBallItemCollisionHandler(collision, gameState);
                 collisionHandler.HandleCollision();
             }
             else if ((collision.GameObjectA is IBlock && collision.GameObjectB is IPaddle) || (collision.GameObjectA is IPaddle && collision.GameObjectB is IBlock))
@@ -152,7 +152,7 @@ namespace Game.Collisions
             }
             else if ((collision.GameObjectA is IPaddleBall && collision.GameObjectB is IBlock) || (collision.GameObjectA is IBlock && collision.GameObjectB is IPaddleBall))
             {
-                PaddleBallBlockCollisionHandler collisionHandler = new PaddleBallBlockCollisionHandler(collision);
+                PaddleBallBlockCollisionHandler collisionHandler = new PaddleBallBlockCollisionHandler(collision, gameState);
                 collisionHandler.HandleCollision();
             }
         }

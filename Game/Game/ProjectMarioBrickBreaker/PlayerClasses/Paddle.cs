@@ -1,4 +1,5 @@
 ﻿using Game.Interfaces;
+using Game.Spawners;
 using Game.SpriteFactories;
 using Game.Utilities;
 using Game.Utilities.Constants;
@@ -17,18 +18,22 @@ namespace Game.ProjectMarioBrickBreaker.PlayerClasses
         private Vector2 location;
         private IPhysics physics;
         private bool isDead;
+        private bool isMagnetized;
+        private PaddleBallSpawner paddleBallSpawner;
         
 
         public Paddle(Game1 game)
         {
             
             myGame = game;
+            paddleBallSpawner = new PaddleBallSpawner(game);
             paddleSprite = MarioBrickBreakerSpriteFactory.CreateNormalPaddleSprite();
             physics = new MarioGamePhysics();
             physics.Acceleration = Vector2.Zero;
             physics.VelocityMaximum = ObjectPhysicsConstants.PADDLEBALLFASTMAXVELOCITY;
             physics.VelocityMinimum = ObjectPhysicsConstants.PADDLEBALLFASTMINVELOCITY;
             isDead = false;
+            isMagnetized = false;
            
         }
 
@@ -81,10 +86,23 @@ namespace Game.ProjectMarioBrickBreaker.PlayerClasses
             set { isDead = value; }
         }
 
+        public bool IsMagnetized
+        {
+            get { return isMagnetized; }
+            set { isMagnetized = value; }
+        }
+
 
         public void MushroomPowerUp()
         {
             paddleSprite = MarioBrickBreakerSpriteFactory.CreateMushroomPaddleSprite();
+        }
+
+
+        public void RespawnPaddleBall()
+        {
+            Console.WriteLine(location);
+            paddleBallSpawner.RespawnPaddleBall(location);
         }
     }
 }
