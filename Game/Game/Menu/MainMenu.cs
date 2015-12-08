@@ -14,7 +14,7 @@ namespace Game.Menu
 {
     public class MainMenu : IMenu
     {
-        private enum Selections { MarioBros=0, ProjectBuckeye=1, Lemming=2, FullScreen=3, Quit=4};
+        private enum Selections { MarioBros=0, ProjectBuckeye=1, Credits=2, FullScreen=3, Quit=4};
 
         private Game1 game;
         private Selections currentSelection;
@@ -44,9 +44,9 @@ namespace Game.Menu
                 game.gameState = new ProjectBuckeyeGameState(game);
                 game.gameState.LoadContent();
             }
-            else if (currentSelection == Selections.Lemming)
+            else if (currentSelection == Selections.Credits)
             {
-                game.gameState = new LemmingGameState(game);
+                game.gameState = new CreditsGameState(game.gameState, game);
                 game.gameState.LoadContent();
             }
             else if (currentSelection == Selections.FullScreen)
@@ -75,12 +75,12 @@ namespace Game.Menu
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
-            spriteBatch.DrawString(font, "MarioBros", new Vector2(25, 20), SelectColor(Selections.MarioBros));
-            spriteBatch.DrawString(font, "ProjectBuckeye", new Vector2(25, 120), SelectColor(Selections.ProjectBuckeye));
-            spriteBatch.DrawString(font, "Lemming", new Vector2(25, 220), SelectColor(Selections.Lemming));
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenScaler.ScalingMatrix);
+            spriteBatch.DrawString(font, Selections.MarioBros.ToString(), new Vector2(25, 20), SelectColor(Selections.MarioBros));
+            spriteBatch.DrawString(font, Selections.ProjectBuckeye.ToString(), new Vector2(25, 120), SelectColor(Selections.ProjectBuckeye));
+            spriteBatch.DrawString(font, Selections.Credits.ToString(), new Vector2(25, 220), SelectColor(Selections.Credits));
             spriteBatch.DrawString(font, "FullScreen: " + game.graphics.IsFullScreen, new Vector2(25, 320), SelectColor(Selections.FullScreen));
-            spriteBatch.DrawString(font, "Quit", new Vector2(25, 420), SelectColor(Selections.Quit));
+            spriteBatch.DrawString(font, Selections.Quit.ToString(), new Vector2(25, 420), SelectColor(Selections.Quit));
             spriteBatch.End();
         }
 

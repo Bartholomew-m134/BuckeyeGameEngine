@@ -31,7 +31,7 @@ namespace Game.Lemming.Elevators
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
                 (int)LemmingSpriteConstants.ELEVATORDIMENSIONS.X, (int)LemmingSpriteConstants.ELEVATORDIMENSIONS.Y);
 
-            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenScaler.ScalingMatrix);
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }

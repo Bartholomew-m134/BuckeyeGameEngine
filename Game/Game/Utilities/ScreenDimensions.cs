@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Game.Utilities
 {
-    public static class ScreenDimensions
+    public static class ScreenScaler
     {
         private static Matrix spriteScale;
 

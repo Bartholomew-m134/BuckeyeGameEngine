@@ -28,7 +28,7 @@ namespace Game.Blocks.BlockSprites
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
                 (int)BlockSpriteConstants.HORIZONTALBLOCKWALLDIMENSIONS.X, (int)BlockSpriteConstants.HORIZONTALBLOCKWALLDIMENSIONS.Y);
 
-            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenScaler.ScalingMatrix);
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }

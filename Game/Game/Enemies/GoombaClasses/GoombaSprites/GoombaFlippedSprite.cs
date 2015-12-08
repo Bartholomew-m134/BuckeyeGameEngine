@@ -29,7 +29,7 @@ namespace Game.Enemies.GoombaClasses.GoombaSprites
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
                 (int)EnemySpriteConstants.GOOMBAFLIPPEDDIMENSIONS.X, (int)EnemySpriteConstants.GOOMBAFLIPPEDDIMENSIONS.Y);
 
-            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenScaler.ScalingMatrix);
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White, 0, new Vector2(0, 0), SpriteEffects.FlipVertically, 0);
             spriteBatch.End();
         }

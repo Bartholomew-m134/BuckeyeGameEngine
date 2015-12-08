@@ -31,7 +31,7 @@ namespace Game.Background_Elements.BackgroundElementSprites
                 (int)BackgroundElementSpriteConstants.STARTDIMENSIONS.X, (int)BackgroundElementSpriteConstants.STARTDIMENSIONS.Y);
 
             //float scale = .9f;
-            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenScaler.ScalingMatrix);
             //spriteBatch.Draw(Texture, location, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);

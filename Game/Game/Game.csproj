@@ -131,6 +131,7 @@
     <Compile Include="Commands\PacMarioCommands\RaisePacMarioStanceCommand.cs" />
     <Compile Include="Commands\StartButtonCommand.cs" />
     <Compile Include="Enemies\GoombaClasses\Goomba.cs" />
+    <Compile Include="GameStates\CreditsGameState.cs" />
     <Compile Include="GameStates\MinigameVictoryScreenGameState.cs" />
     <Compile Include="Lemming\Elevators\Elevator.cs" />
     <Compile Include="Lemming\Elevators\ElevatorSprite.cs" />

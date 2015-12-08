@@ -48,7 +48,7 @@ namespace Game.GameStates
         {
             game.GraphicsDevice.Clear(Color.Black);
             messageBackground.Draw(spriteBatch, IGameStateConstants.MINIGAMEVICTORYSCREENGAMESTATEBACKGROUNDLOCATION);
-            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenScaler.ScalingMatrix);
             spriteBatch.DrawString(font, IGameStateConstants.MINIGAMEVICTORYSCREENGAMESTATECONGRATSMESSAGE, IGameStateConstants.MINIGAMEVICTORYSCREENGAMESTATECONGRATSMESSAGELOCATION, Color.White);
             spriteBatch.DrawString(font, IGameStateConstants.MINIGAMEVICTORYSCREENGAMESTATESTARTMESSAGE, IGameStateConstants.MINIGAMEVICTORYSCREENGAMESTATESTARTMESSAGELOCATION, Color.White);
             spriteBatch.End();

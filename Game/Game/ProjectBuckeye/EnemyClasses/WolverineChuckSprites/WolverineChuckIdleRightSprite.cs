@@ -30,7 +30,7 @@ namespace Game.ProjectBuckeye.EnemyClasses.WolverineChuckSprites
         {
             Rectangle sourceRectangle = new Rectangle((int)frameLocation.X, (int)frameLocation.Y, (int)frameDimensions.X, (int)frameDimensions.Y);
 
-            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenScaler.ScalingMatrix);
             spriteBatch.Draw(spriteSheet, location, sourceRectangle, Color.White, 0f, Vector2.Zero, WolverineEnemyConstant.CHUCK_SPRITE_SCALE_FACTOR, SpriteEffects.None, 0f);
             spriteBatch.End();
         }
