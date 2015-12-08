@@ -167,7 +167,7 @@ namespace Game.ProjectBuckeye.EnemyClasses
         private void Charge()
         {
             stepCounter++;
-            if (stepCounter > 56)
+            if (stepCounter > 42)
             {
                 ShiftDirection();
                 stepCounter = 0;
@@ -184,7 +184,7 @@ namespace Game.ProjectBuckeye.EnemyClasses
             throwTimer++;
 
             stepCounter++;
-            if (stepCounter > 56)
+            if (stepCounter > 42)
             {
                 ShiftDirection();
                 stepCounter = 0;
