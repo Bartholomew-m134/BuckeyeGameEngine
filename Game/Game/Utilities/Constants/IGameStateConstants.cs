@@ -34,8 +34,12 @@ namespace Game.Utilities.Constants
         public const int PIPETRANSITIONINGGGAMESTATEMARIOYVELOCITY = 1;
         public const String VICTORYSCREENGAMESTATECONGRATSMESSAGE = "Congratulations, you won!";
         public const String VICTORYSCREENGAMESTATESTARTMESSAGE = "Press Start to restart the game.";
+        public const String MINIGAMEVICTORYSCREENGAMESTATECONGRATSMESSAGE = "Congratulations, you won the mini game!";
+        public const String MINIGAMEVICTORYSCREENGAMESTATESTARTMESSAGE = "Press Start to return to ProjectBuckeye.";
         public static readonly Vector2 VICTORYSCREENGAMESTATECONGRATSMESSAGELOCATION = new Vector2(200, 200);
+        public static readonly Vector2 MINIGAMEVICTORYSCREENGAMESTATECONGRATSMESSAGELOCATION = new Vector2(125, 200);
         public static readonly Vector2 VICTORYSCREENGAMESTATESTARTMESSAGELOCATION = new Vector2(175, 250);
+        public static readonly Vector2 MINIGAMEVICTORYSCREENGAMESTATESTARTMESSAGELOCATION = new Vector2(125, 250);
 
         public const String LEMMINGWORLD = "LemmingWorld";
         public const String PROJECT_BUCKEYE_TEST_WORLD = "ProjectBuckeyeTest";
@@ -44,6 +48,8 @@ namespace Game.Utilities.Constants
         public const int TOTALPACLEVELCOINS = 179;
         public const int PACMARIOVICTORYTIMER = 300;
         public const int PACMARIODEATHTIMER = 75;
+        public const int TOTALBRICKBREAKERBLOCKS = 123;
+        public const int INITIALBALLCOUNT = 3;
         
     }
 }

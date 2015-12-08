@@ -8,8 +8,8 @@ namespace Game.Interfaces
 {
     public interface IControls
     {
-        Dictionary<Keys, ICommand> GetKeyboardControls();
+        Dictionary<Keys, ICommand> RetrieveKeyboardControls();
 
-        Dictionary<Buttons, ICommand> GetGamePadControls();
+        Dictionary<Buttons, ICommand> RetrieveGamePadControls();
     }
 }

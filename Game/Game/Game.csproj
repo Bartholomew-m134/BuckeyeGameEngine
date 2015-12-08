@@ -120,6 +120,7 @@
     <Compile Include="Commands\LemmingCommands\Shift.cs" />
     <Compile Include="Commands\MarioBrickBreakerCommands\FurtherLeftPaddleCommand.cs" />
     <Compile Include="Commands\MarioBrickBreakerCommands\FurtherRightPaddleCommand.cs" />
+    <Compile Include="Commands\MarioBrickBreakerCommands\MagnetizePaddleCommand.cs" />
     <Compile Include="Commands\MarioBrickBreakerCommands\ReleaseBallPaddleCommand.cs" />
     <Compile Include="Commands\MarioCommands\MarioRunFireBallCommand.cs" />
     <Compile Include="Commands\MenuCommands\NextMenuCommand.cs" />
@@ -130,6 +131,7 @@
     <Compile Include="Commands\PacMarioCommands\RaisePacMarioStanceCommand.cs" />
     <Compile Include="Commands\StartButtonCommand.cs" />
     <Compile Include="Enemies\GoombaClasses\Goomba.cs" />
+    <Compile Include="GameStates\MinigameVictoryScreenGameState.cs" />
     <Compile Include="Lemming\Elevators\Elevator.cs" />
     <Compile Include="Lemming\Elevators\ElevatorSprite.cs" />
     <Compile Include="Lemming\Endblock.cs" />
@@ -137,7 +139,8 @@
     <Compile Include="Lemming\InvisiMario.cs" />
     <Compile Include="Mario\MarioSprites\InvisibleMarioSprite.cs" />
     <Compile Include="Mario\MarioStates\InvisibleState.cs" />
-    <Compile Include="Menu\MenuSprites\MainMenuBackground.cs" />
+    <Compile Include="Menu\MenuSprites\MainMenuBackgroundSprite.cs" />
+    <Compile Include="Menu\MenuSprites\PauseMenuSprite.cs" />
     <Compile Include="Menu\PauseMenu.cs" />
     <Compile Include="Music\IntroTheme.cs" />
     <Compile Include="Music\PacMarioEndTheme.cs" />
@@ -454,6 +457,7 @@
     <Compile Include="SoundEffects\StompEffect.cs" />
     <Compile Include="SoundEffects\SuperMarioJumpEffect.cs" />
     <Compile Include="Spawners\ItemSpawner.cs" />
+    <Compile Include="Spawners\PaddleBallSpawner.cs" />
     <Compile Include="SpriteFactories\BackgroundElementsSpriteFactory.cs" />
     <Compile Include="SpriteFactories\BuckeyePlayerSpriteFactory.cs" />
     <Compile Include="SpriteFactories\BuckeyeTileSpriteFactory.cs" />
@@ -553,6 +557,12 @@
     <Content Include="CodeReviews\Sprint 5\NormalMarioGameStateCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 5\ScoreManagerCodeReview.txt" />
     <Content Include="CodeReviews\Sprint 5\SoundEffectManagerCodeQuality.txt" />
+    <Content Include="CodeReviews\Sprint 6\PacMarioGameStateCodeQuality.txt" />
+    <Content Include="CodeReviews\Sprint 6\PacMarioGameStateCodeReadability.txt" />
+    <Content Include="CodeReviews\Sprint 6\MainMenuCodeQuality.txt" />
+    <Content Include="CodeReviews\Sprint 6\MainMenuReadability.txt" />
+    <Content Include="CodeReviews\Sprint 6\PaddleBallCodeQuality.txt" />
+    <Content Include="CodeReviews\Sprint 6\PaddleBallCodeReadability.txt" />
     <Content Include="ToDoList\ToDoList.txt" />
     <Content Include="CodeReviews\Sprint 2\JacksonBlockReadability.txt" />
     <Content Include="CodeReviews\Sprint 2\CoinSpriteCodeQuality.txt" />

@@ -87,9 +87,9 @@ namespace Game.Menu
         private Color SelectColor(Selections selected)
         {
             if (currentSelection == selected)
-                return Color.Black;
-            else
                 return Color.White;
+            else
+                return Color.DarkGray;
         }
 
         private void ToggleFullScreen()

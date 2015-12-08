@@ -1,7 +1,4 @@
 ﻿using Game.Interfaces;
-using Game.Menu;
-using Game.SpriteFactories;
-using Game.Utilities;
 using Game.Utilities.Controls;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -9,29 +6,28 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.Utilities.Constants;
+using Game.Utilities;
 
 namespace Game.GameStates
 {
-    public class PauseGameState : IGameState
+    public class MinigameVictoryScreenGameState : IGameState
     {
-        private IGameState prevGameState;
+        private Game1 game;
         private List<IController> controllerList;
-        private IMenu menu;
-        private ISprite sprite;
+        private SpriteFont font;
 
-        public PauseGameState(Game1 game)
+        public MinigameVictoryScreenGameState(Game1 game)
         {
-            prevGameState = game.gameState;
-            menu = new PauseMenu(prevGameState, game);
-            sprite = MenuSpriteFactory.CreatePauseMenuSprite();
+            this.game = game;
             controllerList = new List<IController>();
-            controllerList.Add(new KeyboardController(new MenuControls(menu, game)));
-            controllerList.Add(new GamePadController(new MenuControls(menu, game)));
+            controllerList.Add(new KeyboardController(new PausedControls(game)));
+            controllerList.Add(new GamePadController(new PausedControls(game)));
         }
 
         public void LoadContent()
         {
-            
+            font = SpriteFactories.MenuSpriteFactory.CreateHUDFont();
         }
 
         public void UnloadContent()
@@ -47,30 +43,33 @@ namespace Game.GameStates
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            prevGameState.Draw(spriteBatch);
-            sprite.Draw(spriteBatch, new Vector2(120,80));
-            menu.Draw(spriteBatch);
+            game.GraphicsDevice.Clear(Color.Black);
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
+            spriteBatch.DrawString(font, IGameStateConstants.MINIGAMEVICTORYSCREENGAMESTATECONGRATSMESSAGE, IGameStateConstants.MINIGAMEVICTORYSCREENGAMESTATECONGRATSMESSAGELOCATION, Color.White);
+            spriteBatch.DrawString(font, IGameStateConstants.MINIGAMEVICTORYSCREENGAMESTATESTARTMESSAGE, IGameStateConstants.MINIGAMEVICTORYSCREENGAMESTATESTARTMESSAGELOCATION, Color.White);
+            spriteBatch.End();
         }
 
         public void StartButton()
-        {           
-            menu.SelectChoice();
+        {
+            game.gameState = new ProjectBuckeyeGameState(game);
+            game.gameState.LoadContent();
         }
-
 
         public void PipeTransition(IPipe warpPipe)
         {
-            
+
         }
+
         public void FlagPoleTransition()
         {
+
         }
 
         public void PlayerDied()
         {
-            
-        }
 
+        }
 
         public bool IsUnderground
         {
@@ -80,14 +79,13 @@ namespace Game.GameStates
             }
             set
             {
-                
+
             }
         }
 
-
         public void MarioPowerUp()
         {
-           
+
         }
 
         public void StateBackgroundTheme()

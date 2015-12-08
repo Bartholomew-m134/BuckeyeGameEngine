@@ -62,7 +62,7 @@ namespace Game.Utilities
         {
             string scoreString = currentScoreToDraw.ToString();
             location.Y -= upwardDrawYModifier;
-            if(hasChanged && !(HUDManager.CurrentGameState() == HUDConstants.PACMARIOHUDSTRING))
+            if (hasChanged && !(HUDManager.CurrentGameState() == HUDConstants.PACMARIOHUDSTRING) && !(HUDManager.CurrentGameState() == HUDConstants.BRICKBREAKERHUDSTRING))
             {
                 spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
                 spriteBatch.DrawString(scoreFont, scoreString, camera.GetAdjustedPosition(location), Color.White);

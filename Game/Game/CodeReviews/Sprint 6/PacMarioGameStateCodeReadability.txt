@@ -1,0 +1,12 @@
+﻿Author:							Matt Bartholomew
+Date :							12/7/15
+Sprint:							6
+Reviewed file:					PacMarioGameState.cs
+File Author:					Connor Swick
+Minutes to complete:			4
+Code Readability:
+	Naming of variables and methods are clean and precise. All methods are short and simple except
+	for the Update() method which is borderline. There exists two, two deep if statements that 
+	determine what gamestate and how to transition to it. This could be improved by making the
+	if condition a method call, and thus making only an if-elseif. Otherwise, the file is
+	readable.

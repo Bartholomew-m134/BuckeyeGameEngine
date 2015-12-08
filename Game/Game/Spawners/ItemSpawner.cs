@@ -18,7 +18,7 @@ namespace Game.Spawners
             this.item = item;
         }
 
-        public void Release()
+        public void ReleaseProjectile()
         {
             if (count < MAXCOUNT)
             {
@@ -28,7 +28,7 @@ namespace Game.Spawners
             }
         }
 
-        public void Return()
+        public void ReturnProjectile()
         {
             if (count > 0)
                 count--;
