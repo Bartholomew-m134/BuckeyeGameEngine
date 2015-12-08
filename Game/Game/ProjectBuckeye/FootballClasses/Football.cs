@@ -118,7 +118,7 @@ namespace Game.ProjectBuckeye.FootballClasses
             else if (footballType.Equals(ProjectileConstants.CHUCK_PHASE_2_FOOTBALL))
                 gravityDelayAmount = 100;
             else if (footballType.Equals(ProjectileConstants.ENEMY_FOOTBALL))
-                gravityDelayAmount = 7;
+                gravityDelayAmount = 2;
         }
     }
 }
