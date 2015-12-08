@@ -29,7 +29,7 @@ namespace Game.Interfaces
             set;
         }
 
-        void Throw();
+        void Toss();
 
         void Idle();
 

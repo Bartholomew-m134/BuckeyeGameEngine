@@ -22,7 +22,7 @@ namespace Game.Music
         {
             backgroundSoundEffect = SoundEffect.FromStream(backgroundSoundFile);
             instance = backgroundSoundEffect.CreateInstance();
-            instance.IsLooped = true;
+            instance.IsLooped = false;
         }
 
         public void StopTheme(){
