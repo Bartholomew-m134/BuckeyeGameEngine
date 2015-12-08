@@ -77,7 +77,7 @@ namespace Game.ProjectBuckeye.PlayerClasses.BuckeyePlayerStates
             buckeyePlayer.State = new BuckeyeRightIdleState(buckeyePlayer);
         }
 
-        bool IPlayerState.IsJumping()
+        public bool IsJumping()
         {
             return false;
         }

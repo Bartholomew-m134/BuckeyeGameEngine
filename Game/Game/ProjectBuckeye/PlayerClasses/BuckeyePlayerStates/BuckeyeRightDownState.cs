@@ -70,7 +70,7 @@ namespace Game.ProjectBuckeye.PlayerClasses.BuckeyePlayerStates
         {
         }
 
-        bool IPlayerState.IsJumping()
+        public bool IsJumping()
         {
             return false;
         }

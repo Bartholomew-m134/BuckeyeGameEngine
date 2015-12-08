@@ -154,7 +154,8 @@ namespace Game.GameStates
             }
             return (HUDManager.CurrentAmountOfCoins() - IGameStateConstants.TOTALPACLEVELCOINS) == initialCoins;
         }
-        private bool isPacMarioDead()
+
+        private static bool isPacMarioDead()
         {
             return (((IMario)WorldManager.ReturnPlayer()).MarioState is PacMarioDeadState);
         }

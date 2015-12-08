@@ -74,7 +74,7 @@ namespace Game.ProjectBuckeye.EnemyClasses
                 location = physics.Update(location);
                 if (throwTimer == 30)
                 {
-                    Throw();
+                    Toss();
                     throwTimer = 0;
                 }
             }
@@ -111,7 +111,7 @@ namespace Game.ProjectBuckeye.EnemyClasses
         }
 
 
-        public void Throw()
+        public void Toss()
         {
             spawner.ReleaseFootball(location, FacingRight(), true, this, ProjectileConstants.ENEMY_FOOTBALL);
         }

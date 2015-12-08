@@ -20,7 +20,7 @@ namespace Game.Utilities.Controls
             this.menu = menu;
         }
 
-        public Dictionary<Keys, ICommand> GetKeyboardControls()
+        public Dictionary<Keys, ICommand> RetrieveKeyboardControls()
         {
             Dictionary<Keys, ICommand> keyboardControls = new Dictionary<Keys, ICommand>();
 
@@ -31,7 +31,7 @@ namespace Game.Utilities.Controls
             return keyboardControls;
         }
 
-        public Dictionary<Buttons, ICommand> GetGamePadControls()
+        public Dictionary<Buttons, ICommand> RetrieveGamePadControls()
         {
             Dictionary<Buttons, ICommand> gamePadControls = new Dictionary<Buttons, ICommand>();
 

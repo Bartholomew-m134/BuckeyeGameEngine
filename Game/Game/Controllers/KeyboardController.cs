@@ -16,7 +16,7 @@ namespace Game
 
         public KeyboardController(IControls controls)
         {
-            keyMappings = controls.GetKeyboardControls();
+            keyMappings = controls.RetrieveKeyboardControls();
             prevPressedKeys = Keyboard.GetState().GetPressedKeys();
         }
 

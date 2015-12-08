@@ -17,7 +17,7 @@ namespace Game
 
         public GamePadController(IControls controls)
         {
-            buttonMappings = controls.GetGamePadControls();
+            buttonMappings = controls.RetrieveGamePadControls();
             prevState = GamePad.GetState(PlayerIndex.One);
         }
 

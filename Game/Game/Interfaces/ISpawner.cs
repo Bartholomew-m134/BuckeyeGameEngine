@@ -8,8 +8,8 @@ namespace Game.Interfaces
 {
     public interface ISpawner
     {
-        void Release();
+        void ReleaseProjectile();
 
-        void Return();
+        void ReturnProjectile();
     }
 }
