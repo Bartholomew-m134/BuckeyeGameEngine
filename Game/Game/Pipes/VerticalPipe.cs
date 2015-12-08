@@ -14,7 +14,6 @@ namespace Game.Pipes
         private Game1 myGame;
         private ISprite pipeSprite;
         private Vector2 location;
-        private Vector2 warpLocation;
         private bool isWarpPipe;
 
         public VerticalPipe(Game1 game)
@@ -42,7 +41,7 @@ namespace Game.Pipes
 
         public Vector2 WarpVectorCoordinates
         {
-            get { return warpLocation; }
+            get { return Vector2.Zero; }
 
         }
 
