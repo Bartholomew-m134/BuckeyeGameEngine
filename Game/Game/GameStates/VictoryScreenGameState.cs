@@ -16,6 +16,7 @@ namespace Game.GameStates
         private Game1 game;
         private List<IController> controllerList;
         private SpriteFont font;
+        private ISprite messageBackground;
 
         public VictoryScreenGameState(Game1 game)
         {
@@ -28,6 +29,7 @@ namespace Game.GameStates
         public void LoadContent()
         {
             font = SpriteFactories.MenuSpriteFactory.CreateHUDFont();
+            messageBackground = SpriteFactories.MenuSpriteFactory.CreateMessageBackgroundSprite();
         }
 
         public void UnloadContent()
@@ -44,6 +46,7 @@ namespace Game.GameStates
         public void Draw(SpriteBatch spriteBatch)
         {
             game.GraphicsDevice.Clear(Color.Black);
+            messageBackground.Draw(spriteBatch, IGameStateConstants.MINIGAMEVICTORYSCREENGAMESTATEBACKGROUNDLOCATION);
             spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenScaler.ScalingMatrix);
             spriteBatch.DrawString(font, IGameStateConstants.VICTORYSCREENGAMESTATECONGRATSMESSAGE, IGameStateConstants.VICTORYSCREENGAMESTATECONGRATSMESSAGELOCATION, Color.White);
             spriteBatch.DrawString(font, IGameStateConstants.VICTORYSCREENGAMESTATESTARTMESSAGE, IGameStateConstants.VICTORYSCREENGAMESTATESTARTMESSAGELOCATION, Color.White);
