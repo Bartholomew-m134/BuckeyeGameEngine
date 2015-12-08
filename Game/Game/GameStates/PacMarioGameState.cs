@@ -24,7 +24,6 @@ namespace Game.GameStates
         private List<IController> controllerList;
         private IGameState prevGameState;
         private int delay;
-        private bool isUnderground;
         private int deathTimer;
         private int initialCoins;
         private bool hasPlayedEndTheme;
@@ -36,7 +35,6 @@ namespace Game.GameStates
             controllerList = new List<IController>();
             controllerList.Add(new KeyboardController(new PacMarioControls(game)));
             controllerList.Add(new GamePadController(new PacMarioControls(game)));
-            isUnderground = false;
             hasPlayedEndTheme = false;
             initialCoins = HUDManager.CurrentAmountOfCoins();
         }
@@ -136,8 +134,8 @@ namespace Game.GameStates
 
         public bool IsUnderground
         {
-            get { return isUnderground; }
-            set { isUnderground = value; }
+            get { return true; }
+            set { ; }
         }
 
         public void StateBackgroundTheme()

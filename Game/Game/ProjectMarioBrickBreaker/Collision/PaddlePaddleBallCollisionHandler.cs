@@ -1,5 +1,6 @@
 ﻿using Game.Collisions;
 using Game.Interfaces;
+using Game.Utilities.Constants;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -49,25 +50,44 @@ namespace Game.ProjectMarioBrickBreaker.Collision
         private void HandleTopSide()
         {
             collision.ResolveOverlap(collidingBall, collisionSide);
-            if(paddle.Physics.Velocity.X > 0)
-              collidingBall.Physics.Velocity = new Vector2(collidingBall.Physics.VelocityMaximum.X, -collidingBall.Physics.Velocity.Y);
-            else if(paddle.Physics.Velocity.X < 0)
-              collidingBall.Physics.Velocity = new Vector2(collidingBall.Physics.VelocityMinimum.X, -collidingBall.Physics.Velocity.Y);
-            else
-              collidingBall.Physics.Velocity = new Vector2(collidingBall.Physics.Velocity.X, -collidingBall.Physics.Velocity.Y);
+            if (!paddle.IsMagnetized)
+            {
+                if (paddle.Physics.Velocity.X > 0)
+                    collidingBall.Physics.Velocity = new Vector2(collidingBall.Physics.VelocityMaximum.X, -collidingBall.Physics.Velocity.Y);
+                else if (paddle.Physics.Velocity.X < 0)
+                    collidingBall.Physics.Velocity = new Vector2(collidingBall.Physics.VelocityMinimum.X, -collidingBall.Physics.Velocity.Y);
+                else
+                    collidingBall.Physics.Velocity = new Vector2(collidingBall.Physics.Velocity.X, -collidingBall.Physics.Velocity.Y);
+            }
+            else 
+            {
+                collidingBall.Physics.Velocity = Vector2.Zero;
+                collidingBall.Physics.VelocityMaximum = ObjectPhysicsConstants.PADDLEBALLFASTMAXVELOCITY;
+                collidingBall.Physics.VelocityMinimum = ObjectPhysicsConstants.PADDLEBALLFASTMINVELOCITY;
+                collidingBall.IsReleased = false;
+            }
 
         }
 
         private void HandleBottomSide()
         {
-            collision.ResolveOverlap(paddle, collisionSide);
-            if (paddle.Physics.Velocity.X > 0)
-                collidingBall.Physics.Velocity = new Vector2(collidingBall.Physics.VelocityMaximum.X, -collidingBall.Physics.Velocity.Y);
-            else if (paddle.Physics.Velocity.X < 0)
-                collidingBall.Physics.Velocity = new Vector2(collidingBall.Physics.VelocityMinimum.X, -collidingBall.Physics.Velocity.Y);
+            collision.ResolveOverlap(collidingBall, collisionSide);
+            if (!paddle.IsMagnetized)
+            {
+                if (paddle.Physics.Velocity.X > 0)
+                    collidingBall.Physics.Velocity = new Vector2(collidingBall.Physics.VelocityMaximum.X, -collidingBall.Physics.Velocity.Y);
+                else if (paddle.Physics.Velocity.X < 0)
+                    collidingBall.Physics.Velocity = new Vector2(collidingBall.Physics.VelocityMinimum.X, -collidingBall.Physics.Velocity.Y);
+                else
+                    collidingBall.Physics.Velocity = new Vector2(collidingBall.Physics.Velocity.X, -collidingBall.Physics.Velocity.Y);
+            }
             else
-                collidingBall.Physics.Velocity = new Vector2(collidingBall.Physics.Velocity.X, -collidingBall.Physics.Velocity.Y);
-
+            {
+                collidingBall.Physics.Velocity = Vector2.Zero;
+                collidingBall.Physics.VelocityMaximum = ObjectPhysicsConstants.PADDLEBALLFASTMAXVELOCITY;
+                collidingBall.Physics.VelocityMinimum = ObjectPhysicsConstants.PADDLEBALLFASTMINVELOCITY;
+                collidingBall.IsReleased = false;
+            }
         }
 
         private void HandleLeftSide()

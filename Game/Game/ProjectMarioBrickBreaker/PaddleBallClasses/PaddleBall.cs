@@ -1,5 +1,6 @@
 ﻿using Game.Interfaces;
 using Game.ProjectMarioBrickBreaker.PaddleBallClasses.PaddleBallStates;
+using Game.Spawners;
 using Game.Utilities;
 using Game.Utilities.Constants;
 using Microsoft.Xna.Framework;
@@ -19,12 +20,12 @@ namespace Game.ProjectMarioBrickBreaker.BallClasses
         private IPaddleBallState paddleBallState;
         private IPhysics physics;
         private bool isReleased;
-        
 
         public PaddleBall(Game1 game)
         {
             
             myGame = game;
+            
             isReleased = false;
             paddleBallState = new NormalPaddleBallState(this);
             physics = new MarioGamePhysics();
@@ -120,6 +121,10 @@ namespace Game.ProjectMarioBrickBreaker.BallClasses
             get
             {
                 return isReleased;
+            }
+            set 
+            {
+                isReleased = value;
             }
             
         }
