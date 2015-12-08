@@ -28,7 +28,7 @@ namespace Game.ProjectBuckeye.PlayerClasses.BuckeyePlayerSprites
             Rectangle sourceRectangle = new Rectangle((int)BuckeyePlayerSpriteConstants.LEFT_FRAME_2_SOURCE.X, (int)BuckeyePlayerSpriteConstants.LEFT_FRAME_2_SOURCE.Y,
                 (int)BuckeyePlayerSpriteConstants.LEFT_FRAME_2_DIMENSIONS.X, (int)BuckeyePlayerSpriteConstants.LEFT_FRAME_2_DIMENSIONS.Y);
 
-            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenScaler.ScalingMatrix);
             spriteBatch.Draw(spriteSheet, location, sourceRectangle, Color.White, 0f, Vector2.Zero, BuckeyePlayerSpriteConstants.SPRITE_SCALE_FACTOR, SpriteEffects.None, 0f);
             spriteBatch.End();
         }

@@ -38,11 +38,13 @@ namespace Game.ProjectBuckeye.PlayerClasses
         public void Left()
         {
             state.Left();
+            this.isPressingDown = false;
         }
 
         public void Right()
         {
             state.Right();
+            this.isPressingDown = false;
         }
 
         public void Up()
@@ -53,10 +55,12 @@ namespace Game.ProjectBuckeye.PlayerClasses
 
         public void Down()
         {
+            isPressingDown = true;
         }
 
         public void Jump()
         {
+            this.isPressingDown = false;
             state.Jump();
         }
 

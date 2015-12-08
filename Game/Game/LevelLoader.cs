@@ -339,6 +339,10 @@ namespace Game
             {
                 gameState = new MarioBrickBreakerGameState(game);
             }
+            else if (text.Equals("LemmingGameState"))
+            {
+                gameState = new LemmingGameState(game);
+            }
 
             return gameState;
         }

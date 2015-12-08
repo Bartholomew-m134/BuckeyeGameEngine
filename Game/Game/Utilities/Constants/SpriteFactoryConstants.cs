@@ -31,6 +31,7 @@ namespace Game.Utilities.Constants
 
         public const String ELEVATORSPRITESHEET = "ElevatorSpriteSheet";
         public const String ENDBLOCKSPRITESHEET = "EndblockSpriteSheet";
+        public const String MESSAGEBACKGROUNDSPRITE = "MessageBackground";
       
     }
 }

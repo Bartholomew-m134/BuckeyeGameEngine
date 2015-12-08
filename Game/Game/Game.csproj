@@ -131,6 +131,7 @@
     <Compile Include="Commands\PacMarioCommands\RaisePacMarioStanceCommand.cs" />
     <Compile Include="Commands\StartButtonCommand.cs" />
     <Compile Include="Enemies\GoombaClasses\Goomba.cs" />
+    <Compile Include="GameStates\CreditsGameState.cs" />
     <Compile Include="GameStates\MinigameVictoryScreenGameState.cs" />
     <Compile Include="Lemming\Elevators\Elevator.cs" />
     <Compile Include="Lemming\Elevators\ElevatorSprite.cs" />
@@ -140,11 +141,14 @@
     <Compile Include="Mario\MarioSprites\InvisibleMarioSprite.cs" />
     <Compile Include="Mario\MarioStates\InvisibleState.cs" />
     <Compile Include="Menu\MenuSprites\MainMenuBackgroundSprite.cs" />
+    <Compile Include="Menu\MenuSprites\MessageBackgroundSprite.cs" />
     <Compile Include="Menu\MenuSprites\PauseMenuSprite.cs" />
     <Compile Include="Menu\PauseMenu.cs" />
     <Compile Include="Music\IntroTheme.cs" />
     <Compile Include="Music\PacMarioEndTheme.cs" />
+    <Compile Include="ProjectBuckeye\Collision\BuckeyePipeCollisionHandler.cs" />
     <Compile Include="ProjectBuckeye\Collision\ProjectileTileCollisionHandler.cs" />
+    <Compile Include="ProjectBuckeye\Collision\WolverinePipeCollisionHandler.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuckSprites\WolverineChuckIdleLeftSprite.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuckSprites\WolverineChuckIdleRightSprite.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuckStates\WolverineChuckIdleLeftState.cs" />

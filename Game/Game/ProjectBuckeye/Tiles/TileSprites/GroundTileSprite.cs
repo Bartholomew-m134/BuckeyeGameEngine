@@ -30,7 +30,7 @@ namespace Game.ProjectBuckeye.Tiles.TileSprites
 
         public void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch, Microsoft.Xna.Framework.Vector2 location)
         {
-            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenScaler.ScalingMatrix);
             spriteBatch.Draw(texture, location, sourceRectangle, Color.White, 0f, Vector2.Zero, 1, SpriteEffects.None, 0f);
             spriteBatch.End();
         }

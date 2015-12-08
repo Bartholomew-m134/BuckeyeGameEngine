@@ -51,7 +51,7 @@ namespace Game.Blocks.BlockSprites
 
             if (timer < BlockSpriteConstants.BRICKDEBRISTIMER)
             {
-                spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
+                spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenScaler.ScalingMatrix);
                 spriteBatch.Draw(spriteSheet, topLeftDestination, sourceRectangle, Color.White);
                 spriteBatch.Draw(spriteSheet, topRightDestination, sourceRectangle, Color.White);
                 spriteBatch.Draw(spriteSheet, bottomLeftDestination, sourceRectangle, Color.White);

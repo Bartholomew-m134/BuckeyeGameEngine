@@ -51,7 +51,7 @@ namespace Game
 
         protected override void Update(GameTime gameTime)
         {
-            ScreenDimensions.Update(graphics);
+            ScreenScaler.Update(graphics);
             gameState.Update();
             base.Update(gameTime);
         }

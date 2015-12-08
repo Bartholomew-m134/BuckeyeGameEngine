@@ -25,7 +25,7 @@ namespace Game.FlagPoles.FlagPoleSprites
             Rectangle sourceRectangle = new Rectangle((int)FlagPoleSpriteConstants.FLAGPOLEBARRIERCOORDINATES.X, (int)FlagPoleSpriteConstants.FLAGPOLEBARRIERCOORDINATES.Y, FlagPoleSpriteConstants.FLAGPOLEBARRIERWIDTH, FlagPoleSpriteConstants.FLAGPOLEBARRIERHEIGHT);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, FlagPoleSpriteConstants.FLAGPOLEBARRIERWIDTH, FlagPoleSpriteConstants.FLAGPOLEBARRIERHEIGHT);
 
-            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenScaler.ScalingMatrix);
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
