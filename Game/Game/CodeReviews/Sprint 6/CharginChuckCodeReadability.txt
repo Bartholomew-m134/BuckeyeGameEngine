@@ -1,0 +1,10 @@
+﻿Author: Kyle Powers
+Date: 12/7/2015
+Sprint: 6
+File name: WolverineChuck.cs
+Author: John Cramer
+Minutes to complete: 5
+
+Comments: The class is very simple and easy to read. The method, field, and property names are descriptive and 
+make the class very easy to understand, and the use of methods to avoid convoluted if else logic makes it quite simple
+and easy to understand.

@@ -5,6 +5,7 @@ using System.Text;
 using Game.Interfaces;
 using Game.Collisions;
 using Game.ProjectBuckeye.EnemyClasses.WolverineChuckStates;
+using Game.ProjectBuckeye.EnemyClasses.WolverineStates;
 
 namespace Game.ProjectBuckeye.Collision
 {
@@ -34,7 +35,7 @@ namespace Game.ProjectBuckeye.Collision
 
         public void HandleCollision()
         {
-            if(!(enemy.State is WolverineChuckIdleLeftState || enemy.State is WolverineChuckIdleRightState))
+            if(!(enemy.State is WolverineChuckIdleLeftState || enemy.State is WolverineChuckIdleRightState || enemy.State is WolverineLeftIdleState))
                 enemy.Physics.ResetY();
             if (collisionSide is TopSideCollision)
                 enemy.IsGrounded = true;

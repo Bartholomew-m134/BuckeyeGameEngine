@@ -1,6 +1,7 @@
 ﻿using Game.Blocks;
 using Game.Blocks.BlockStates;
 using Game.Collisions;
+using Game.GameStates;
 using Game.Interfaces;
 using Game.Utilities;
 using Game.Utilities.Constants;
@@ -19,10 +20,12 @@ namespace Game.ProjectMarioBrickBreaker.Collision
         private IBlock collidingBlock;
         private ICollisionSide collisionSide;
         private CollisionData collision;
+        private IGameState brickBreakerGameState;
 
-        public PaddleBallBlockCollisionHandler(CollisionData collision)
+        public PaddleBallBlockCollisionHandler(CollisionData collision, IGameState gameState)
         {
             this.collision = collision;
+            brickBreakerGameState = gameState;
             collisionSide = (ICollisionSide)collision.CollisionSide;
             if (collision.GameObjectA is IPaddleBall)
             {
@@ -71,6 +74,7 @@ namespace Game.ProjectMarioBrickBreaker.Collision
                     collidingBall.Physics.Velocity = new Vector2(collidingBall.Physics.Velocity.X, -collidingBall.Physics.Velocity.Y);
                 }
                 collidingBlock.Disappear();
+                ((MarioBrickBreakerGameState)brickBreakerGameState).BrickBlockCount--;
             }
             else if (!(collidingBlock.State is BrickDebrisState))
             {
@@ -94,6 +98,7 @@ namespace Game.ProjectMarioBrickBreaker.Collision
                     collidingBall.Physics.Velocity = new Vector2(-collidingBall.Physics.Velocity.X, collidingBall.Physics.Velocity.Y);
                 }
                 collidingBlock.Disappear();
+                ((MarioBrickBreakerGameState)brickBreakerGameState).BrickBlockCount--;
             }
             else if (!(collidingBlock.State is BrickDebrisState))
             {

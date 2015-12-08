@@ -81,7 +81,7 @@ namespace Game.GameStates
                     LifeManager.DecrementLives();
                     CollisionManager.Update(this);
                     camera.Update(WorldManager.ReturnPlayer());
-                    game.gameState = prevGameState;
+                    game.gameState = new MinigameVictoryScreenGameState(game);
                     game.gameState.LoadContent();
                     deathTimer = 0;
                 }

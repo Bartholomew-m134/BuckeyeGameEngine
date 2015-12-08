@@ -91,7 +91,7 @@ namespace Game.GameStates
         }
         public void FlagPoleTransition()
         {
-            game.gameState = new VictoryScreenGameState(game);
+            game.gameState = new MinigameVictoryScreenGameState(game);
             game.gameState.LoadContent();
         }
 

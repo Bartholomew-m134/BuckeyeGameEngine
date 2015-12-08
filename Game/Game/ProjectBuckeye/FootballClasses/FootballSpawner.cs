@@ -26,7 +26,10 @@ namespace Game.ProjectBuckeye.FootballClasses
             if (count < MAXCOUNT && !(thrower is WolverineChuck))
             {
                 Football football = new Football(this, game, lookingRight, isHostile, type);
-                football.VectorCoordinates = new Vector2(location.X, location.Y + 10);
+                if (!(thrower is ThrowingWolverineEnemy))
+                    football.VectorCoordinates = new Vector2(location.X, location.Y + 10);
+                else
+                    football.VectorCoordinates = new Vector2(location.X, location.Y);
                 WorldManager.CreateNewObject(football);
                 count++;
             }

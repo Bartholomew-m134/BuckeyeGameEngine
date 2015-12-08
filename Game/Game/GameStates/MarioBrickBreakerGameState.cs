@@ -22,7 +22,9 @@ namespace Game.GameStates
         private IGameState prevGameState;
         private int delay;
         private bool isUnderground;
-        
+        private int brickCount;
+        private int ballCount;
+        private int deathTimer;
 
         public MarioBrickBreakerGameState(Game1 game)
         {
@@ -32,6 +34,8 @@ namespace Game.GameStates
             controllerList.Add(new KeyboardController(new BrickBreakerControls(game)));
             controllerList.Add(new GamePadController(new BrickBreakerControls(game)));
             isUnderground = false;
+            brickCount = IGameStateConstants.TOTALBRICKBREAKERBLOCKS;
+            ballCount = IGameStateConstants.INITIALBALLCOUNT;
             
         }
 
@@ -52,6 +56,7 @@ namespace Game.GameStates
         public void Update()
         {
             HUDManager.UpdateHUDMarioString(HUDConstants.BRICKBREAKERHUDSTRING);
+            HUDManager.UpdateBrickBreakerLives(ballCount);
             if (delay == IGameStateConstants.UPDATEDELAY)
             {
                 foreach (IController controller in controllerList)
@@ -66,7 +71,37 @@ namespace Game.GameStates
             {
                 delay++;
             }
-            
+
+            if (camera.IsBelowCamera(WorldManager.ReturnPaddleBall().VectorCoordinates)) 
+            {
+                ballCount--;
+                WorldManager.FreeObject(WorldManager.ReturnPaddleBall());
+                if (ballCount > 0)
+                    ((IPaddle)WorldManager.ReturnPlayer()).RespawnPaddleBall();
+                else 
+                {
+
+                    while (deathTimer != IGameStateConstants.PACMARIODEATHTIMER)
+                    {
+                        deathTimer++;
+                    }
+                    
+                        camera.Update(WorldManager.ReturnPlayer());
+                        game.gameState = prevGameState;
+                        game.gameState.LoadContent();
+                        
+                    
+                    
+                }
+                    
+            }
+
+
+            if (brickCount == 0) 
+            {
+                game.gameState = new MinigameVictoryScreenGameState(game);
+                game.gameState.LoadContent();
+            }
         }
 
         public void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch)
@@ -82,6 +117,17 @@ namespace Game.GameStates
             game.gameState = new PauseGameState(game);
         }
 
+        public int BrickBlockCount
+        {
+            get { return brickCount; }
+            set { brickCount = value; }
+        }
+
+        public int BallCount
+        {
+            get { return ballCount; }
+            set { ballCount = value; }
+        }
         public void PipeTransition(IPipe warpPipe)
         {
         }

@@ -18,6 +18,7 @@ namespace Game.Utilities
         private static SpriteFont hudFont = SpriteFactories.MenuSpriteFactory.CreateHUDFont();
         private static ISprite coin = SpriteFactories.ItemsSpriteFactory.CreateCoinSprite();
         private static int scoreToPrint;
+        private static int brickBreakerLives;
         private static int coinsToPrint;
         private static int updateTimerCounter = HUDConstants.RESETUPDATEDELAYCOUNTER;
         private static int timeToPrint = HUDConstants.STARTINGTIME;
@@ -52,6 +53,11 @@ namespace Game.Utilities
         {
             marioStringToPrint = marioString;
         }
+
+        public static void UpdateBrickBreakerLives(int lives) 
+        {
+            brickBreakerLives = lives;
+        }
         public static string CurrentGameState()
         {
             return marioStringToPrint;
@@ -84,8 +90,16 @@ namespace Game.Utilities
             spriteBatch.DrawString(hudFont, coinString, HUDConstants.COINHUDLOCATION, Color.White);
             spriteBatch.DrawString(hudFont, HUDConstants.WORLDHUDSTRING, HUDConstants.WORLDHUDLOCATION, Color.White);
             spriteBatch.DrawString(hudFont, HUDConstants.WORLDNUMBERHUDSTRING, HUDConstants.WORLDNUMBERHUDLOCATION, Color.White);
-            spriteBatch.DrawString(hudFont, HUDConstants.TIMEHUDSTRING, HUDConstants.TIMESTRINGHUDLOCATION, Color.White);
-            spriteBatch.DrawString(hudFont, timeCounterString, HUDConstants.TIMECOUNTERHUDLOCATION, Color.White);
+            if (marioStringToPrint == HUDConstants.BRICKBREAKERHUDSTRING)
+            {
+                spriteBatch.DrawString(hudFont, HUDConstants.BALLSHUDSTRING, HUDConstants.TIMESTRINGHUDLOCATION, Color.White);
+                spriteBatch.DrawString(hudFont, brickBreakerLives.ToString(), HUDConstants.TIMECOUNTERHUDLOCATION, Color.White);
+            }
+            else
+            {
+                spriteBatch.DrawString(hudFont, HUDConstants.TIMEHUDSTRING, HUDConstants.TIMESTRINGHUDLOCATION, Color.White);
+                spriteBatch.DrawString(hudFont, timeCounterString, HUDConstants.TIMECOUNTERHUDLOCATION, Color.White);
+            }
 
             spriteBatch.End();
 
@@ -94,6 +108,8 @@ namespace Game.Utilities
         {
             timeToPrint = HUDConstants.STARTINGTIME;
         }
+
+
 
         public static void SetTimeToZero()
         {

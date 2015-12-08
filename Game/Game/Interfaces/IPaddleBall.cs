@@ -16,6 +16,7 @@ namespace Game.Interfaces
         bool IsReleased
         {
             get;
+            set;
         }
 
         void ToSuperPaddleBall();

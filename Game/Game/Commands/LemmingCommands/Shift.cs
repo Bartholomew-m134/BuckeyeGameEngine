@@ -1,5 +1,6 @@
 ﻿using Game.Interfaces;
 using Game.Lemming.Elevators;
+using Game.SoundEffects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,7 @@ namespace Game.Commands.LemmingCommands
             { i.Shift();}
             foreach (Elevator i in WorldManager.ReturnElevators())
             { i.Shift(); }
+            SoundEffectManager.BreakingBlockSoundEffect();
         }
 
         public void Hold()

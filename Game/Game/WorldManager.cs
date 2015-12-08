@@ -101,6 +101,10 @@ namespace Game
             }
             else if (referenceObject is IPlayer)
                 currentGame.gameState.PlayerDied();
+            else if (referenceObject is IPaddleBall) 
+            {
+                objectList.Remove(referenceObject);
+            }
         }
 
         public static void CreateNewObject(IGameObject newObject)

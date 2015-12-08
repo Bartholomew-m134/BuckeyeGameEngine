@@ -31,7 +31,7 @@ namespace Game.ProjectBuckeye.EnemyClasses
             isHit = false;
             canDealDamage = true;
             physics = new MarioGamePhysics();
-            state = new WolverineMovingLeftState(this);
+            state = new WolverineLeftIdleState(this);
             spawner = new FootballSpawner(myGame);
         }
 
