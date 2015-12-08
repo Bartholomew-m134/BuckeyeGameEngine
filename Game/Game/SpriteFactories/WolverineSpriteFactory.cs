@@ -37,6 +37,11 @@ namespace Game.SpriteFactories
             return new WolverineDownLeftSprite(wolverineSpriteSheet);
         }
 
+        public static ISprite CreateWolverineLeftIdleSprite()
+        {
+            return new WolverineLeftIdleSprite(wolverineSpriteSheet);
+        }
+
         public static ISprite CreateWolverineRightDownSprite()
         {
             return new WolverineDownRightSprite(wolverineSpriteSheet);
