@@ -12,10 +12,24 @@ namespace Game.ProjectBuckeye.Collision
     {
         private IWolverine enemy;
         private IProjectile projectile;
+        private ICollisionSide collisionSide;
+        private CollisionData collision;
 
         public WolverineProjectileCollisionHandler(CollisionData collision)
         {
-
+            this.collision = collision;
+            collisionSide = (ICollisionSide)collision.CollisionSide;
+            if (collision.GameObjectA is IWolverine)
+            {
+                enemy = (IWolverine)collision.GameObjectA;
+                projectile = (IProjectile)collision.GameObjectB;
+            }
+            else
+            {
+                enemy = (IWolverine)collision.GameObjectB;
+                projectile = (IProjectile)collision.GameObjectA;
+                collisionSide = collisionSide.FlipSide();
+            }
         }
 
         public void HandleCollision()

@@ -140,7 +140,7 @@ namespace Game.ProjectBuckeye.PlayerClasses
         public void Damage()
         {
             state.DownPlayer();
-            myGame.gameState = new MenuGameState(myGame);
+            myGame.gameState = new LogoGameState(myGame);
             myGame.gameState.LoadContent();
         }
 

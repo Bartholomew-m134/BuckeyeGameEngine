@@ -90,6 +90,8 @@ namespace Game.GameStates
 
         public void PlayerDied()
         {
+            game.gameState = new LogoGameState(game);
+            game.gameState.LoadContent();
         }
 
         public void MarioPowerUp()
