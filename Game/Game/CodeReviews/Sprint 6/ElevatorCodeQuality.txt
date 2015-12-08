@@ -1,0 +1,10 @@
+﻿Author: John Cramer
+Date: 12/7/2015
+Sprint: 6
+File name: Elevator.cs
+Author: Jackson Luken
+Minutes to complete: 5
+
+Comments: The class is has high cohesion, as all of the logic has to deal with evevators. The code has fairly low
+coupling as most of the fields are interface or necessary for gameobjects. One theoretical change is to add the ability
+for the platforms to shift left or right.

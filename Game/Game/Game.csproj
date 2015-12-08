@@ -563,12 +563,14 @@
     <Content Include="CodeReviews\Sprint 5\SoundEffectManagerCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 6\CharginChuckCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 6\CharginChuckCodeReadability.txt" />
+    <Content Include="CodeReviews\Sprint 6\ElevatorCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 6\PacMarioGameStateCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 6\PacMarioGameStateCodeReadability.txt" />
     <Content Include="CodeReviews\Sprint 6\MainMenuCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 6\MainMenuReadability.txt" />
     <Content Include="CodeReviews\Sprint 6\PaddleBallCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 6\PaddleBallCodeReadability.txt" />
+    <Content Include="CodeReviews\Sprint 6\ElevatorReadability.txt" />
     <Content Include="ToDoList\ToDoList.txt" />
     <Content Include="CodeReviews\Sprint 2\JacksonBlockReadability.txt" />
     <Content Include="CodeReviews\Sprint 2\CoinSpriteCodeQuality.txt" />
