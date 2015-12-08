@@ -1,5 +1,6 @@
 ﻿using Game.Collisions;
 using Game.Interfaces;
+using Game.SoundEffects;
 using Game.Utilities.Constants;
 using Microsoft.Xna.Framework;
 using System;
@@ -37,6 +38,7 @@ namespace Game.ProjectMarioBrickBreaker.Collision
 
         public void HandleCollision() 
         {
+            SoundEffectManager.FireBallThrowEffect();
             if (collisionSide is TopSideCollision)
                 HandleTopSide();
             else if (collisionSide is BottomSideCollision)
@@ -50,6 +52,7 @@ namespace Game.ProjectMarioBrickBreaker.Collision
         private void HandleTopSide()
         {
             collision.ResolveOverlap(collidingBall, collisionSide);
+
             if (!paddle.IsMagnetized)
             {
                 if (paddle.Physics.Velocity.X > 0)

@@ -1,5 +1,6 @@
 ﻿using Game.Interfaces;
 using Game.ProjectMarioBrickBreaker.PaddleBallClasses.PaddleBallStates;
+using Game.SoundEffects;
 using Game.Spawners;
 using Game.Utilities;
 using Game.Utilities.Constants;
@@ -71,6 +72,7 @@ namespace Game.ProjectMarioBrickBreaker.BallClasses
 
         public void ReleasePaddleBall() 
         {
+            SoundEffectManager.FireBallThrowEffect();
             physics.Velocity = new Vector2(0, ObjectPhysicsConstants.PADDLEBALLINITIALMINVELOCITY.Y);
             physics.VelocityMaximum = ObjectPhysicsConstants.PADDLEBALLINITIALMAXVELOCITY;
             physics.VelocityMinimum = ObjectPhysicsConstants.PADDLEBALLINITIALMINVELOCITY;

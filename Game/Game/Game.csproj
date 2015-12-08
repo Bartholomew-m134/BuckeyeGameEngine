@@ -632,10 +632,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
+    <None Include="Utilities\ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ProjectMarioBrickBreaker\Utilities\" />
     <Folder Include="ProjectPacMario\Collisions\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
