@@ -62,7 +62,7 @@ namespace Game.Menu
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenScaler.ScalingMatrix);
             spriteBatch.DrawString(font, "Resume", new Vector2(155, 130), SelectColor(Selections.Resume));
             spriteBatch.DrawString(font, "FullScreen: " + game.graphics.IsFullScreen, new Vector2(155, 230), SelectColor(Selections.FullScreen));
             spriteBatch.DrawString(font, "Quit", new Vector2(155, 330), SelectColor(Selections.Quit));

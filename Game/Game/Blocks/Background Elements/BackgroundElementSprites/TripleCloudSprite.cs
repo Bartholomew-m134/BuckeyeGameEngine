@@ -28,7 +28,7 @@ namespace Game.Background_Elements.BackgroundElementSprites
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
                 (int)BackgroundElementSpriteConstants.TRIPLECLOUDDIMENSIONS.X, (int)BackgroundElementSpriteConstants.TRIPLECLOUDDIMENSIONS.Y);
 
-            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenScaler.ScalingMatrix);
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }

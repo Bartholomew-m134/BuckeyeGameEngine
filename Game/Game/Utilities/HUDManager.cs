@@ -78,7 +78,7 @@ namespace Game.Utilities
             string coinString = HUDConstants.XCOINCOUNTER + (coinsToPrint % HUDConstants.COINSPERLIFE).ToString();
             coin.Draw(spriteBatch, HUDConstants.COINSPRITEHUDLOCATION);
 
-            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenScaler.ScalingMatrix);
             spriteBatch.DrawString(hudFont, marioStringToPrint, HUDConstants.MARIOHUDLOCATION, Color.White);
             spriteBatch.DrawString(hudFont, scoreString, HUDConstants.SCOREHUDLOCATION, Color.White);
             spriteBatch.DrawString(hudFont, coinString, HUDConstants.COINHUDLOCATION, Color.White);

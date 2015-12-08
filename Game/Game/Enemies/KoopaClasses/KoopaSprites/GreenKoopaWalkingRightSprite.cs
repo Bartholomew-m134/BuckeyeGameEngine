@@ -36,7 +36,7 @@ namespace Game.Enemies.KoopaClasses.GreenKoopaSprites
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
                 (int)EnemySpriteConstants.KOOPAWALKINGRIGHTDIMENSIONS[currentFrame].X, (int)EnemySpriteConstants.KOOPAWALKINGRIGHTDIMENSIONS[currentFrame].Y);
 
-            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenScaler.ScalingMatrix);
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }

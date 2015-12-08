@@ -28,7 +28,7 @@ namespace Game.Menu.MenuSprites
         {
             //Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,0,0);
 
-            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenScaler.ScalingMatrix);
             spriteBatch.Draw(texture, Vector2.Zero, sourceRectangle, Color.White);
             spriteBatch.End();
         }

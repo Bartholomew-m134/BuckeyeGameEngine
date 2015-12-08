@@ -28,7 +28,7 @@ namespace Game.Mario.MarioSprites
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
                 (int)MarioSpriteConstants.SMALLFLAGFLIPPEDDIMENSIONS.X, (int)MarioSpriteConstants.SMALLFLAGFLIPPEDDIMENSIONS.Y);
 
-            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenScaler.ScalingMatrix);
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
@@ -40,21 +40,21 @@ namespace Game.Mario.MarioSprites
                 (int)MarioSpriteConstants.SMALLFLAGFLIPPEDDIMENSIONS.X, (int)MarioSpriteConstants.SMALLFLAGFLIPPEDDIMENSIONS.Y);
             if (starDrawCounter < MarioSpriteConstants.STARDRAWBROWNCOUNTER)
             {
-                spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
+                spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenScaler.ScalingMatrix);
                 spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.Brown);
                 spriteBatch.End();
                 starDrawCounter++;
             }
             else if (starDrawCounter > MarioSpriteConstants.STARDRAWBROWNCOUNTER && starDrawCounter < MarioSpriteConstants.STARDRAWYELLOWGREENCOUNTER)
             {
-                spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
+                spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenScaler.ScalingMatrix);
                 spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.YellowGreen);
                 spriteBatch.End();
                 starDrawCounter++;
             }
             else
             {
-                spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
+                spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenScaler.ScalingMatrix);
                 spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.Orange);
                 spriteBatch.End();
                 if (starDrawCounter < MarioSpriteConstants.STARDRAWORANGECOUNTER)

@@ -34,7 +34,7 @@ namespace Game.Items.ItemSprites
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y,
                 (int)ItemSpriteConstants.COINDIMENSIONS.X, (int)ItemSpriteConstants.COINDIMENSIONS.Y);
 
-            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenScaler.ScalingMatrix);
             spriteBatch.Draw(texture, destinationRectangle, sourceRectangle, Color.Red);
             spriteBatch.End();
         }

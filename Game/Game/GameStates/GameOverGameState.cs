@@ -49,7 +49,7 @@ namespace Game.GameStates
         public void Draw(SpriteBatch spriteBatch)
         {
             game.GraphicsDevice.Clear(Color.Black);
-            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenDimensions.ScalingMatrix);
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, ScreenScaler.ScalingMatrix);
             spriteBatch.DrawString(font, IGameStateConstants.GAMEOVERSTATEMESSAGE, IGameStateConstants.GAMEOVERSTATEMESSAGELOCATION, Color.White);
             spriteBatch.End();
         }
