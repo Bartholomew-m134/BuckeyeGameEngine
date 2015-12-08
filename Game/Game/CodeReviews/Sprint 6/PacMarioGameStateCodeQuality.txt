@@ -1,0 +1,15 @@
+﻿Author:							Matt Bartholomew
+Date :							12/7/15
+Sprint:							6
+Reviewed file:					PacMarioGameState.cs
+File Author:					Connor Swick
+Minutes to complete:			5
+Code Quality:
+	The class has a large amount of fields, however, most would be needed for use in any gamestate class. 
+	The fields are only coulped with IGamestate, ICamera, and Game1, meaning a weak coupling.  As for
+	the rest of the class, SpriteFactories, CollisionManager, WorldManager, etc. are needed to transition
+	from different gamestates but lead to an increased but needed coupling. As for coheasion, the class
+	manages the overall updating and drawing of the game through other classes. 
+Hypothetical Addition:
+	If the level wanted to be loaded was changed, all that would be required is to change the LoadListFromFile
+	argument to another string to read another file.
