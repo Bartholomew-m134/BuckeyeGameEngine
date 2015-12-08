@@ -1,0 +1,9 @@
+﻿Author: John Cramer
+Date: 12/7/2015
+Sprint: 6
+File name: Elevator.cs
+Author: Jackson Luken
+Minutes to complete: 5
+
+Comments: The readibility of this class is very high. The file size is under 200 lines of code, and the method
+names are very readible.
