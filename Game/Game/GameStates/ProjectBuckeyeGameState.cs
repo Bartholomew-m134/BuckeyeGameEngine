@@ -39,6 +39,8 @@ namespace Game.GameStates
             BuckeyeTileSpriteFactory.Load(game.Content);
             ProjectileSpriteFactory.Load(game.Content);
             BackgroundElementsSpriteFactory.Load(game.Content);
+            TileSpriteFactory.Load(game.Content);
+            ItemsSpriteFactory.Load(game.Content);
 
             WorldManager.LoadListFromFile(IGameStateConstants.PROJECT_BUCKEYE_TEST_WORLD, game);
 
@@ -79,10 +81,7 @@ namespace Game.GameStates
 
         public void PipeTransition(IPipe warpPipe)
         {
-            if (warpPipe.IsGameStatePipe)
-                game.gameState = warpPipe.GameState;
-            else
-                game.gameState = new PipeTransitioningGameState(camera, warpPipe, game);
+            game.gameState = new PipeTransitioningGameState(camera, warpPipe, game);
         }
 
         public void FlagPoleTransition()

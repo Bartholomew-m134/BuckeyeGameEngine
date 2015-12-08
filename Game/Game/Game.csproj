@@ -144,6 +144,7 @@
     <Compile Include="Menu\PauseMenu.cs" />
     <Compile Include="Music\IntroTheme.cs" />
     <Compile Include="Music\PacMarioEndTheme.cs" />
+    <Compile Include="ProjectBuckeye\Collision\BuckeyePipeCollisionHandler.cs" />
     <Compile Include="ProjectBuckeye\Collision\ProjectileTileCollisionHandler.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuckSprites\WolverineChuckIdleLeftSprite.cs" />
     <Compile Include="ProjectBuckeye\EnemyClasses\WolverineChuckSprites\WolverineChuckIdleRightSprite.cs" />
