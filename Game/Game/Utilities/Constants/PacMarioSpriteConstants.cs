@@ -20,8 +20,8 @@ namespace Game.Utilities.Constants
         public static readonly Vector2 MOUTH_OPEN_LEFT_SOURCE = new Vector2(2,19);
         public static readonly Vector2 MOUTH_CLOSED_LEFT_SOURCE = new Vector2(17,19);
 
-        public static readonly Vector2 VERTICAL_DIMENSIONS = new Vector2(14,14);
-        public static readonly Vector2 HORIZONTAL_DIMENSIONS = new Vector2(14,14);
+        public static readonly Vector2 VERTICAL_DIMENSIONS = new Vector2(15,15);
+        public static readonly Vector2 HORIZONTAL_DIMENSIONS = new Vector2(15,15);
 
         public static readonly Vector2 BOO_DIMENSIONS = new Vector2(16,16);
         public static readonly Vector2 LEFT_BOO_SOURCE = new Vector2(21,1);
@@ -29,6 +29,7 @@ namespace Game.Utilities.Constants
         public static readonly Vector2 UP_BOO_SOURCE = new Vector2(57,1);
         public static readonly Vector2 DOWN_BOO_SOURCE = new Vector2(39,1);
         public static readonly Vector2 DEAD_BOO_SOURCE = new Vector2(420,184);
+        public static readonly Vector2 PACMARIO_HITBOX = new Vector2(10,10);
         public const float PACMARIOSCALINGFACTOR = 0.9f;
 
     }

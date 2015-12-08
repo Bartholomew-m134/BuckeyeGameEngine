@@ -109,7 +109,7 @@ namespace Game.ProjectBuckeye.EnemyClasses
         }
 
 
-        public void Throw()
+        public void Toss()
         {
         }
 

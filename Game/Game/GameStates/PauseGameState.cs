@@ -1,5 +1,6 @@
 ﻿using Game.Interfaces;
 using Game.Menu;
+using Game.SpriteFactories;
 using Game.Utilities;
 using Game.Utilities.Controls;
 using Microsoft.Xna.Framework;
@@ -16,11 +17,13 @@ namespace Game.GameStates
         private IGameState prevGameState;
         private List<IController> controllerList;
         private IMenu menu;
+        private ISprite sprite;
 
         public PauseGameState(Game1 game)
         {
             prevGameState = game.gameState;
             menu = new PauseMenu(prevGameState, game);
+            sprite = MenuSpriteFactory.CreatePauseMenuSprite();
             controllerList = new List<IController>();
             controllerList.Add(new KeyboardController(new MenuControls(menu, game)));
             controllerList.Add(new GamePadController(new MenuControls(menu, game)));
@@ -45,6 +48,7 @@ namespace Game.GameStates
         public void Draw(SpriteBatch spriteBatch)
         {
             prevGameState.Draw(spriteBatch);
+            sprite.Draw(spriteBatch, new Vector2(120,80));
             menu.Draw(spriteBatch);
         }
 

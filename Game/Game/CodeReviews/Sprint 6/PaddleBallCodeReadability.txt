@@ -1,0 +1,12 @@
+﻿Author:							Connor Swick
+Date :							12/7/15
+Sprint:							6
+Reviewed file:					PaddleBall.cs
+File Author:					Kyle Powers
+Minutes to complete:			6
+Code Readability:
+		This class is very readable. The naming pattern for all of the methods,
+		fields, and magic numbers make it very obvious what is happening at 
+		all locations in the class. The class is also fairly compact for the 
+		number of responsibilities it has so it does not take long to read 
+		through and interpret. Excellent readability here.

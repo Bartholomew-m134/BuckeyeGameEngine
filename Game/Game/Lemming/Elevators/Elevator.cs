@@ -19,7 +19,7 @@ namespace Game.Lemming.Elevators
         private bool up;
         private float top;
         private float bottom;
-        private float elevatorHeight;
+        private float columnHeight;
 
 
         public Elevator(bool up, Game1 game)
@@ -30,7 +30,8 @@ namespace Game.Lemming.Elevators
             physics = new MarioGamePhysics();
             physics.Acceleration = Vector2.Zero;
             physics.Velocity = Vector2.Zero;
-            elevatorHeight = LemmingSpriteConstants.ELEVATORDIMENSIONS.Y;
+            columnHeight = (LemmingSpriteConstants.ELEVATORDIMENSIONS.Y - 1);
+
             
         }
 
@@ -41,14 +42,15 @@ namespace Game.Lemming.Elevators
                 if (up)
                 {
                     top = location.Y;
-                    bottom = top + elevatorHeight;
+                    bottom = top + columnHeight;
                 }
                 else
                 {
                     bottom = location.Y;
-                    top = bottom - elevatorHeight;
+                    top = bottom - columnHeight;
                 }
             }
+
             if (!up && location.Y < bottom)
             {
                 physics.Velocity = new Vector2(0, LemmingObjectConstants.DOWNELEVATORVELOCITY);
@@ -61,6 +63,7 @@ namespace Game.Lemming.Elevators
             else
             {
                 physics.Velocity = Vector2.Zero;
+
             }
             elevatorSprite.Update();
             location = physics.Update(location);

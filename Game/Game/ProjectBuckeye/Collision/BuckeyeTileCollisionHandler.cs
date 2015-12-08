@@ -61,10 +61,12 @@ namespace Game.ProjectBuckeye.Collision
         private void HandleRightSide()
         {
             collision.ResolveOverlap(player, collisionSide);
+            player.Physics.ResetPhysics();
         }
         private void HandleLeftSide()
         {
             collision.ResolveOverlap(player, collisionSide);
+            player.Physics.ResetPhysics();
         }
 
         private void ResetYPhysicsIfNotIdle()

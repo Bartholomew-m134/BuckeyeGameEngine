@@ -1,0 +1,11 @@
+﻿Author:							Jackson Luken
+Date :							12/7/15
+Sprint:							6
+Reviewed file:					MainMenu.cs
+File Author:					Matt Bartholemew
+Minutes to complete:			3
+Code Readability:
+		From the very beginning of the class, the enum structure become clear, and from that fact it becomes
+		easy to derive the meaning of the rest of the code. The list that the class produces on the screen can
+		be read in the code as a similar list, and so it is easy to figure out where certain functions are within
+		the code. All methods and variables are clearly labelled.

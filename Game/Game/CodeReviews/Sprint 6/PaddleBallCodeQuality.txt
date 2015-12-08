@@ -1,0 +1,15 @@
+﻿Author:							Connor Swick
+Date :							12/7/15
+Sprint:							6
+Reviewed file:					PaddleBall.cs
+File Author:					Kyle Powers
+Minutes to complete:			6
+Code Quality:
+		This class has very good code quality. To start, it has an acceptable amount of 
+		fields which are all private; this lowers the coupling. The class features the 
+		necessary draw and update methods along with a few other methods very specific 
+		to the functionality of the paddleball, making the cohesion high. The class also 
+		has loose coupling because it uses very few classes from other areas of the program, 
+		all of which are interface types, making them more abstract and reusable. 
+		One hypothetical change to this class would be to make multiple paddleballs a 
+		possibility. Overall, great job on this class.

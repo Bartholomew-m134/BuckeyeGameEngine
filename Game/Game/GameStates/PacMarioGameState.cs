@@ -24,7 +24,6 @@ namespace Game.GameStates
         private List<IController> controllerList;
         private IGameState prevGameState;
         private int delay;
-        private bool isUnderground;
         private int deathTimer;
         private int initialCoins;
         private bool hasPlayedEndTheme;
@@ -36,7 +35,6 @@ namespace Game.GameStates
             controllerList = new List<IController>();
             controllerList.Add(new KeyboardController(new PacMarioControls(game)));
             controllerList.Add(new GamePadController(new PacMarioControls(game)));
-            isUnderground = false;
             hasPlayedEndTheme = false;
             initialCoins = HUDManager.CurrentAmountOfCoins();
         }
@@ -61,7 +59,7 @@ namespace Game.GameStates
         public void Update()
         {
             HUDManager.UpdateHUDMarioString(HUDConstants.PACMARIOHUDSTRING);
-            if (delay == IGameStateConstants.UPDATEDELAY && !isLevelOver())
+            if (delay == IGameStateConstants.UPDATEDELAY && !didPacMarioWin() && !isPacMarioDead())
             {
                 foreach (IController controller in controllerList)
                     controller.Update();
@@ -76,7 +74,20 @@ namespace Game.GameStates
                 delay++;
             }
 
-            if (isLevelOver())
+            if (didPacMarioWin() && !isPacMarioDead())
+            {
+                if (deathTimer == IGameStateConstants.PACMARIOVICTORYTIMER)
+                {
+                    LifeManager.DecrementLives();
+                    CollisionManager.Update(this);
+                    camera.Update(WorldManager.ReturnPlayer());
+                    game.gameState = prevGameState;
+                    game.gameState.LoadContent();
+                    deathTimer = 0;
+                }
+                deathTimer++;
+            }
+            else if (isPacMarioDead() && !didPacMarioWin())
             {
                 if (deathTimer == IGameStateConstants.PACMARIODEATHTIMER)
                 {
@@ -89,7 +100,6 @@ namespace Game.GameStates
                 }
                 deathTimer++;
             }
-             
              
         }
 
@@ -124,8 +134,8 @@ namespace Game.GameStates
 
         public bool IsUnderground
         {
-            get { return isUnderground; }
-            set { isUnderground = value; }
+            get { return true; }
+            set { ; }
         }
 
         public void StateBackgroundTheme()
@@ -133,14 +143,19 @@ namespace Game.GameStates
             BackgroundThemeManager.PlayPacManLevelTheme();
         }
 
-        private bool isLevelOver()
+        private bool didPacMarioWin()
         {
-            if ((HUDManager.CurrentAmountOfCoins() - IGameStateConstants.TOTALPACLEVELCOINS) == initialCoins && hasPlayedEndTheme == false)
+            if (((HUDManager.CurrentAmountOfCoins() - IGameStateConstants.TOTALPACLEVELCOINS) == initialCoins) && !hasPlayedEndTheme)
             {
                 BackgroundThemeManager.PlayPacManEndTheme();
                 hasPlayedEndTheme = true;
             }
-            return ((IMario)WorldManager.ReturnPlayer()).MarioState is PacMarioDeadState || (HUDManager.CurrentAmountOfCoins() - IGameStateConstants.TOTALPACLEVELCOINS) == initialCoins;
+            return (HUDManager.CurrentAmountOfCoins() - IGameStateConstants.TOTALPACLEVELCOINS) == initialCoins;
+        }
+
+        private static bool isPacMarioDead()
+        {
+            return (((IMario)WorldManager.ReturnPlayer()).MarioState is PacMarioDeadState);
         }
     }
 }
