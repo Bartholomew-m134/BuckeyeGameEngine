@@ -42,6 +42,7 @@ namespace Game.GameStates
         public void LoadContent()
         {
             MarioBrickBreakerSpriteFactory.Load(game.Content);
+            ItemsSpriteFactory.Load(game.Content);
             
 
             WorldManager.LoadListFromFile(IGameStateConstants.BRICKBREAKER_WORLD, game);
