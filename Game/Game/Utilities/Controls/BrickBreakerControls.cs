@@ -31,6 +31,8 @@ namespace Game.Utilities.Controls
             keyboardControls.Add(Keys.D, new FurtherRightPaddleCommand());
 
             keyboardControls.Add(Keys.P, new StartButtonCommand(game));
+            keyboardControls.Add(Keys.Enter, new StartButtonCommand(game));
+            keyboardControls.Add(Keys.Escape, new StartButtonCommand(game));
             keyboardControls.Add(Keys.Z, new MagnetizePaddleCommand());
 
             return keyboardControls;
