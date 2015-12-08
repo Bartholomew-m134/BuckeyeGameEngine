@@ -554,6 +554,8 @@
     <Content Include="CodeReviews\Sprint 5\SoundEffectManagerCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 6\PacMarioGameStateCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 6\PacMarioGameStateCodeReadability.txt" />
+    <Content Include="CodeReviews\Sprint 6\MainMenuCodeQuality.txt" />
+    <Content Include="CodeReviews\Sprint 6\MainMenuReadability.txt" />
     <Content Include="CodeReviews\Sprint 6\PaddleBallCodeQuality.txt" />
     <Content Include="CodeReviews\Sprint 6\PaddleBallCodeReadability.txt" />
     <Content Include="ToDoList\ToDoList.txt" />

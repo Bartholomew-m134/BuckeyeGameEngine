@@ -50,6 +50,7 @@ namespace Game.Lemming.Elevators
                     top = bottom - columnHeight;
                 }
             }
+
             if (!up && location.Y < bottom)
             {
                 physics.Velocity = new Vector2(0, LemmingObjectConstants.DOWNELEVATORVELOCITY);
