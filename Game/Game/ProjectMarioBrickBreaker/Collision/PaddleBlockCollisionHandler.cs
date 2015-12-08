@@ -12,7 +12,6 @@ namespace Game.ProjectMarioBrickBreaker.Collision
     public class PaddleBlockCollisionHandler
     {
         private IPaddle paddle;
-        private Block collidingBlock;
         private ICollisionSide collisionSide;
         private CollisionData collision;
 
@@ -23,12 +22,10 @@ namespace Game.ProjectMarioBrickBreaker.Collision
             if (collision.GameObjectA is IPaddle)
             {
                 paddle = (IPaddle)collision.GameObjectA;
-                collidingBlock = (Block)collision.GameObjectB;
             }
             else
             {
                 paddle = (IPaddle)collision.GameObjectB;
-                collidingBlock = (Block)collision.GameObjectA;
                 collisionSide = collisionSide.FlipSide();
             }
         }

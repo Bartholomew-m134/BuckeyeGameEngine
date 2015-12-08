@@ -13,7 +13,6 @@ namespace Game.ProjectBuckeye.Collision
     public class BuckeyeTileCollisionHandler
     {
         private IBuckeyePlayer player;
-        private IBuckeyeTile block;
         private ICollisionSide collisionSide;
         private CollisionData collision;
 
@@ -24,12 +23,10 @@ namespace Game.ProjectBuckeye.Collision
             if (collision.GameObjectA is IBuckeyePlayer)
             {
                 player = (IBuckeyePlayer)collision.GameObjectA;
-                block = (IBuckeyeTile)collision.GameObjectB;
             }
             else
             {
                 player = (IBuckeyePlayer)collision.GameObjectB;
-                block = (IBuckeyeTile)collision.GameObjectA;
                 collisionSide = collisionSide.FlipSide();
             }
         }

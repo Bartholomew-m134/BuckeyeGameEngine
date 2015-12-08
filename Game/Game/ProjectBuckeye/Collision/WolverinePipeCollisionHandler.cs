@@ -12,7 +12,6 @@ namespace Game.ProjectBuckeye.Collision
     class WolverinePipeCollisionHandler
     {
         private IWolverine enemy;
-        private IPipe pipe;
         private ICollisionSide collisionSide;
         private CollisionData collision;
 
@@ -23,12 +22,10 @@ namespace Game.ProjectBuckeye.Collision
             if (collision.GameObjectA is IWolverine)
             {
                 enemy = (IWolverine)collision.GameObjectA;
-                pipe = (IPipe)collision.GameObjectB;
             }
             else
             {
                 enemy = (IWolverine)collision.GameObjectB;
-                pipe = (IPipe)collision.GameObjectA;
                 collisionSide = collisionSide.FlipSide();
             }
         }

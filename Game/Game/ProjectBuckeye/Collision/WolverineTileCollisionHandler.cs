@@ -12,7 +12,6 @@ namespace Game.ProjectBuckeye.Collision
     public class WolverineTileCollisionHandler
     {
         private IWolverine enemy;
-        private IBuckeyeTile block;
         private ICollisionSide collisionSide;
         private CollisionData collision;
 
@@ -23,12 +22,10 @@ namespace Game.ProjectBuckeye.Collision
             if (collision.GameObjectA is IWolverine)
             {
                 enemy = (IWolverine)collision.GameObjectA;
-                block = (IBuckeyeTile)collision.GameObjectB;
             }
             else
             {
                 enemy = (IWolverine)collision.GameObjectB;
-                block = (IBuckeyeTile)collision.GameObjectA;
                 collisionSide = collisionSide.FlipSide();
             }
         }

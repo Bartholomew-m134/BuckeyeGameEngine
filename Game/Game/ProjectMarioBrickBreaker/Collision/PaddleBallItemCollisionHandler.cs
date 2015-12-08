@@ -17,12 +17,10 @@ namespace Game.ProjectMarioBrickBreaker.Collision
         private IPaddleBall paddleBall;
         private IItem collidingItem;
         private ICollisionSide collisionSide;
-        private CollisionData collision;
         private IGameState brickBreakerGameState;
 
         public PaddleBallItemCollisionHandler(CollisionData collision, IGameState gameState)
         {
-            this.collision = collision;
             brickBreakerGameState = gameState;
             collisionSide = (ICollisionSide)collision.CollisionSide;
             if (collision.GameObjectA is IPaddle)
