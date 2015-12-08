@@ -13,6 +13,7 @@ namespace Game.Utilities.Constants
         public const string BRICKBREAKERHUDSTRING = "BRICK BREAKER";
         public const string WORLDHUDSTRING = "WORLD";
         public const string TIMEHUDSTRING = "TIME";
+        public const string BALLSHUDSTRING = "BALLS: ";
         public const string WORLDNUMBERHUDSTRING = "1-1";
         public const string XCOINCOUNTER = "x";
         public static readonly Vector2 LOGOLOCATION = new Vector2(-20,-20);

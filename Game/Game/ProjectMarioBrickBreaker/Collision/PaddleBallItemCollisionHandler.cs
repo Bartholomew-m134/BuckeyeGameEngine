@@ -1,4 +1,5 @@
 ﻿using Game.Collisions;
+using Game.GameStates;
 using Game.Interfaces;
 using Game.Items;
 using Game.SoundEffects;
@@ -17,10 +18,12 @@ namespace Game.ProjectMarioBrickBreaker.Collision
         private IItem collidingItem;
         private ICollisionSide collisionSide;
         private CollisionData collision;
+        private IGameState brickBreakerGameState;
 
-        public PaddleBallItemCollisionHandler(CollisionData collision)
+        public PaddleBallItemCollisionHandler(CollisionData collision, IGameState gameState)
         {
             this.collision = collision;
+            brickBreakerGameState = gameState;
             collisionSide = (ICollisionSide)collision.CollisionSide;
             if (collision.GameObjectA is IPaddle)
             {
@@ -47,7 +50,7 @@ namespace Game.ProjectMarioBrickBreaker.Collision
             else if (collidingItem is GreenMushroom)
             {
                 SoundEffectManager.OneUpEffect();
-                LifeManager.IncrementLives();
+                ((MarioBrickBreakerGameState)brickBreakerGameState).BallCount++;
                 collidingItem.Disappear();
             }
             else if (collidingItem is Coin) 
