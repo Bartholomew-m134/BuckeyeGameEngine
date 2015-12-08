@@ -1,0 +1,14 @@
+﻿Author: Jackson Luken
+Date: 12/7/2015
+Sprint: 6
+File name: MainMenu.cs
+Author: Matt Bartholemew
+
+Comments: Overall the code is very cohesive, with functions being neatly contained within clearly labeled and segmented methods, with
+no discernable overflow. There is a decent amount of coupling due to the fact that the menu must have the ability to call and instantiate
+various different game states, which each have their own requirements. sprites are also called, but kept within the proper methods to do so, 
+minimizing unnecessary tight coupling.
+
+A hypothetical change could be if you wanted to add or swap the gamestates that the main menu called. With how the menu is written, 
+this would be extremely easy. Everything is presented in a linguistic list so that adding and removing objects from the main menu list 
+is as simple as removing those object from the list shown in the code, and changing the position numbers to reflect that.
